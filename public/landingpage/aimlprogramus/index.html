@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Every successful Global student started with a simple decision — ONROL</title>
+<meta name="description" content="AI &amp; ML and Cyber Security programs for students aged 15+ (Class 9–12). Live mentor-led classes, no coding background needed. Batch 2026 admissions open at ONROL.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ONROL — Where future skills begin">
+<meta property="og:description" content="Every successful Global student started with a simple decision. AI &amp; ML and Cyber Defender programs for high school students.">
+<meta property="og:image" content="assets/hero-peel.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#fff;
+  --purple:#5a2d8f;                 /* the sheet in the artwork */
+  --purple-deep:#3b1d61;
+  --orange:#f26522;                 /* the logo's checker orange */
+  --orange-soft:#ff8a3d;
+  --ink:#241033;                    /* body text on the white cards */
+  --ink-soft:#6b5a7a;
+  --font:"Figtree","Segoe UI",system-ui,-apple-system,sans-serif;
+  --pad:clamp(18px,4vw,60px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family:var(--font);
+  background:var(--purple);
+  color:var(--white);
+  overflow:hidden;                  /* single screen — nothing scrolls */
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;user-select:none;-webkit-user-drag:none}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ================= STAGE ================= */
+/* The artwork is the page. Its aspect (1672×941) is almost exactly 16:9, so on
+   a normal screen it lands uncropped: white corner and boy on the left, the
+   open purple sheet on the right for everything we put on top. */
+.hero{
+  position:relative;
+  height:100svh;width:100vw;
+  display:flex;flex-direction:column;
+  padding:clamp(16px,2.6vh,30px) var(--pad) clamp(18px,3vh,34px);
+  overflow:hidden;
+  background:url("assets/hero-peel.jpg") center center / cover no-repeat, var(--purple);
+}
+/* Grade over the artwork: a violet key light behind the copy, a warm rim in the
+   top-right corner, and weight pulled into the bottom edge. The paper texture
+   still shows through — this deepens the sheet rather than flattening it. */
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(78% 62% at 72% 42%, rgba(163,96,224,.34) 0%, rgba(112,58,176,.12) 46%, transparent 70%),
+    radial-gradient(46% 44% at 100% 0%, rgba(255,138,61,.16), transparent 62%),
+    linear-gradient(196deg, rgba(59,29,97,0) 38%, rgba(40,17,71,.58) 100%);
+}
+/* one slow breath of light so the sheet never looks like a flat fill */
+.hero::after{
+  content:"";position:absolute;inset:-20%;z-index:1;pointer-events:none;
+  background:radial-gradient(closest-side, rgba(196,140,255,.20), transparent 70%);
+  animation:breathe 14s ease-in-out infinite alternate;
+}
+
+/* ---------- LOGO ---------- */
+.bar{
+  position:relative;z-index:5;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  animation:fade .8s ease both;
+}
+.logo{display:block;transition:opacity .3s}
+.logo:hover{opacity:.8}
+.logo:focus-visible{outline:2px solid var(--orange);outline-offset:8px;border-radius:4px}
+.logo img{height:clamp(26px,4.2vh,48px);width:auto}
+.logo .on-light{display:block}
+.logo .on-dark{display:none}
+
+/* ---------- CONTENT PANEL ---------- */
+/* sits over the open sheet, clear of the peel and the boy */
+.stage{
+  position:relative;z-index:4;
+  flex:1;min-height:0;
+  display:grid;
+  grid-template-columns:minmax(0,32%) minmax(0,68%);
+  align-items:center;
+}
+.panel{
+  grid-column:2;
+  display:flex;flex-direction:column;align-items:flex-start;
+  gap:clamp(14px,2.4vh,26px);
+  padding-left:clamp(10px,2vw,34px);
+  max-width:min(100%,820px);
+  animation:rise .95s cubic-bezier(.2,.8,.2,1) both;
+}
+
+/* ---------- KICKER ---------- */
+.kicker{
+  display:inline-flex;align-items:center;gap:.7em;
+  padding:.5em 1.05em;
+  font-size:clamp(9.5px,1.25vh,11.5px);font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.94);
+  border:1px solid rgba(255,255,255,.34);border-radius:999px;
+  background:rgba(255,255,255,.13);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+}
+.kicker b{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--orange-soft);
+  box-shadow:0 0 0 4px rgba(255,138,61,.28);
+  animation:ping 2.4s ease-in-out infinite;
+}
+
+h1{
+  font-size:clamp(26px,min(4.2vw,6.4vh),64px);
+  font-weight:800;line-height:1.03;letter-spacing:-.038em;
+  text-wrap:balance;
+  text-shadow:0 6px 30px rgba(30,10,50,.35);
+}
+h1 .accent{
+  display:block;
+  margin-top:clamp(3px,.8vh,10px);
+  color:var(--orange-soft);
+}
+
+/* ---------- FACT STRIP ---------- */
+/* fills the sheet under the cards and answers the three things a parent
+   checks first: who it's for, how it runs, what's on offer */
+.facts{
+  list-style:none;
+  display:flex;flex-wrap:wrap;align-items:stretch;
+  gap:clamp(14px,2.2vw,32px);
+  padding-top:clamp(4px,1vh,10px);
+  animation:rise .95s .55s cubic-bezier(.2,.8,.2,1) both;
+}
+.facts li{
+  display:flex;flex-direction:column;gap:2px;
+  padding-left:clamp(12px,1.4vw,20px);
+  border-left:2px solid rgba(255,255,255,.28);
+}
+.facts b{
+  font-size:clamp(15px,2.3vh,23px);font-weight:800;
+  letter-spacing:-.02em;color:var(--white);
+}
+.facts span{
+  font-size:clamp(9.5px,1.25vh,11.5px);font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.66);
+}
+
+/* the call to action holds back for three seconds, then arrives on its own */
+.cta{
+  position:relative;flex:none;
+  opacity:0;
+  animation:ctaIn .85s cubic-bezier(.2,.9,.25,1.15) 3s both;
+}
+/* a ring that pushes out from under the button once, as it lands */
+.cta::before{
+  content:"";position:absolute;inset:0;border-radius:999px;
+  border:2px solid var(--orange-soft);
+  opacity:0;pointer-events:none;   /* decorative ring must not swallow button clicks */
+  animation:ctaRing 1.4s ease-out 3.35s 2 both;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;
+  font-family:var(--font);
+  font-size:clamp(10px,1.35vh,12.5px);font-weight:800;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--white);
+  padding:1.05em 1.75em;
+  border:0;border-radius:999px;
+  background:linear-gradient(140deg,var(--orange-soft),var(--orange));
+  box-shadow:0 14px 34px rgba(40,10,60,.35);
+  cursor:pointer;white-space:nowrap;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,filter .35s;
+}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.06);box-shadow:0 22px 44px rgba(40,10,60,.45)}
+.btn:active{transform:translateY(-1px)}
+.btn:focus-visible{outline:2px solid var(--white);outline-offset:4px}
+.btn i{font-style:normal;transition:transform .35s}
+.btn:hover i{transform:translate(3px,-3px)}
+
+/* ---------- PROGRAM CARDS ---------- */
+/* paper cards laid on the sheet — same left edge as the headline above them */
+.cards{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:clamp(10px,1.2vw,18px);
+  width:100%;
+}
+.card{
+  position:relative;min-width:0;
+  display:flex;flex-direction:column;align-items:flex-start;
+  gap:clamp(5px,.9vh,10px);
+  padding:clamp(14px,2.1vh,22px) clamp(15px,1.5vw,24px);
+  border-radius:16px;
+  text-decoration:none;color:var(--ink);
+  background:rgba(255,255,255,.96);
+  box-shadow:0 16px 40px rgba(30,8,50,.28);
+  overflow:hidden;
+  /* deal each card in, tilted, as if laid onto the sheet */
+  opacity:0;
+  transform:translateY(26px) rotate(-1.2deg) scale(.97);
+  transition:
+    opacity .75s ease,
+    transform .75s cubic-bezier(.22,.9,.26,1.06),
+    box-shadow .45s ease;
+}
+.card.cyber{transform:translateY(26px) rotate(1.2deg) scale(.97)}
+.card.in{opacity:1;transform:none}
+.card::before{                      /* the accent edge down the left side */
+  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  transition:width .42s cubic-bezier(.2,.8,.2,1);
+}
+.card.ai::before{background:var(--orange)}
+.card.cyber::before{background:var(--purple)}
+/* a wash in the card's own colour, faded up on hover */
+.card::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  opacity:0;transition:opacity .45s ease;
+}
+.card.ai::after{background:linear-gradient(122deg,rgba(242,101,34,.14),transparent 58%)}
+.card.cyber::after{background:linear-gradient(122deg,rgba(90,45,143,.14),transparent 58%)}
+
+/* declared after .card.in so it wins the tie and hover still lifts */
+.card.in:hover,.card.in:focus-visible{
+  transform:translateY(-9px) scale(1.014);
+  box-shadow:0 32px 62px rgba(30,8,50,.42);
+}
+.card:hover::before{width:9px}
+.card:hover::after{opacity:1}
+.card:hover h2{color:var(--purple)}
+.card.ai:hover h2{color:var(--orange)}
+.card:focus-visible{outline:2px solid var(--white);outline-offset:3px}
+.card.in:active{transform:translateY(-3px) scale(1.004)}
+
+/* icon tile + badge on one line */
+.card .top{display:flex;align-items:center;gap:10px;width:100%}
+.card .icon{
+  flex:none;
+  width:clamp(30px,4.4vh,40px);height:clamp(30px,4.4vh,40px);
+  display:grid;place-items:center;
+  border-radius:11px;color:var(--white);
+  transition:transform .45s cubic-bezier(.2,.8,.2,1);
+}
+.card .icon svg{width:56%;height:56%;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.card.ai .icon{background:linear-gradient(140deg,var(--orange-soft),var(--orange))}
+.card.cyber .icon{background:linear-gradient(140deg,#8b5cc4,var(--purple))}
+.card:hover .icon{transform:rotate(-6deg) scale(1.08)}
+
+.card .badge{
+  font-size:clamp(9px,1.2vh,10.5px);font-weight:800;
+  letter-spacing:.16em;text-transform:uppercase;
+  padding:.45em .85em;border-radius:999px;
+  color:var(--white);white-space:nowrap;
+}
+.card.ai .badge{background:var(--orange)}
+.card.cyber .badge{background:var(--purple)}
+.card h2{
+  font-size:clamp(15px,2.2vh,22px);font-weight:800;
+  letter-spacing:-.022em;line-height:1.14;
+  transition:color .35s ease;
+}
+/* foot row: label on the left, a round arrow that fills on hover */
+.card .foot{
+  margin-top:auto;padding-top:clamp(7px,1.3vh,14px);
+  display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;
+}
+.card .go{
+  display:inline-flex;align-items:center;
+  font-size:clamp(9.5px,1.25vh,11.5px);font-weight:800;
+  letter-spacing:.14em;text-transform:uppercase;
+}
+.card.ai .go{color:var(--orange)}
+.card.cyber .go{color:var(--purple)}
+.card .arrow{
+  flex:none;
+  width:clamp(26px,3.6vh,34px);height:clamp(26px,3.6vh,34px);
+  display:grid;place-items:center;
+  font-size:13px;font-style:normal;line-height:1;
+  border-radius:50%;
+  border:1.5px solid currentColor;
+  transition:background .4s ease,color .4s ease,transform .4s cubic-bezier(.2,.8,.2,1);
+}
+.card.ai .arrow{color:var(--orange)}
+.card.cyber .arrow{color:var(--purple)}
+.card.ai:hover .arrow{background:var(--orange);color:var(--white);transform:translate(3px,-3px)}
+.card.cyber:hover .arrow{background:var(--purple);color:var(--white);transform:translate(3px,-3px)}
+
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes ctaIn{
+  from{opacity:0;transform:translateY(18px) scale(.9)}
+  60%{opacity:1;transform:translateY(-3px) scale(1.03)}
+  to{opacity:1;transform:none}
+}
+@keyframes ctaRing{
+  from{opacity:.85;transform:scale(1)}
+  to{opacity:0;transform:scale(1.28)}
+}
+@keyframes ping{
+  0%,100%{box-shadow:0 0 0 4px rgba(255,138,61,.28)}
+  50%{box-shadow:0 0 0 8px rgba(255,138,61,.04)}
+}
+@keyframes breathe{
+  from{transform:translate3d(-3%,2%,0) scale(1)}
+  to{transform:translate3d(4%,-3%,0) scale(1.12)}
+}
+
+/* ================= REGISTRATION MODAL ================= */
+.modal{
+  position:fixed;inset:0;z-index:60;
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
+  background:rgba(30,8,50,.62);
+  backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+  opacity:0;visibility:hidden;
+  transition:opacity .3s ease,visibility .3s ease;
+}
+.modal.open{opacity:1;visibility:visible}
+.modal[hidden]{display:none}        /* class display:flex would otherwise win over [hidden] */
+.modal-card{
+  position:relative;
+  width:min(470px,100%);
+  max-height:calc(100svh - 40px);
+  overflow:hidden auto;             /* vertical scroll only — never a horizontal bar */
+  padding:32px 32px 28px;
+  border-radius:22px;
+  color:var(--ink);
+  background:var(--white);
+  box-shadow:0 34px 80px rgba(20,5,40,.5);
+  transform:translateY(18px) scale(.98);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1);
+}
+.modal-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:5px;
+  border-radius:22px 22px 0 0;
+  background:linear-gradient(90deg,var(--orange),var(--purple));
+}
+.modal.open .modal-card{transform:none}
+.modal-close{
+  position:absolute;top:16px;right:16px;
+  width:34px;height:34px;
+  display:grid;place-items:center;
+  font-size:20px;line-height:1;
+  color:var(--ink-soft);
+  background:rgba(36,16,51,.06);
+  border:1px solid rgba(36,16,51,.12);
+  border-radius:50%;cursor:pointer;
+  transition:color .25s,background .25s;
+}
+.modal-close:hover{color:var(--ink);background:rgba(36,16,51,.13)}
+.modal-close:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+
+.modal-card h2{font-size:23px;font-weight:800;letter-spacing:-.026em;line-height:1.18;padding-right:34px}
+.modal-card .sub{margin:8px 0 22px;font-size:13.5px;line-height:1.5;color:var(--ink-soft)}
+
+.field{margin-bottom:17px}
+.field > label,.field .legend{
+  display:block;margin-bottom:8px;
+  font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.field input{
+  width:100%;
+  font-family:var(--font);font-size:15px;color:var(--ink);
+  padding:13px 15px;border-radius:11px;
+  border:1px solid rgba(36,16,51,.18);
+  background:rgba(36,16,51,.03);
+  transition:border-color .25s,background .25s;
+}
+.field input::placeholder{color:#a596b0}
+.field input:focus{outline:0;border-color:var(--orange);background:var(--white)}
+.field input.bad{border-color:#e0483c}
+
+/* dialling code beside the number — students apply from anywhere */
+.phone{display:grid;grid-template-columns:minmax(74px,96px) 1fr;gap:9px}
+.phone input{min-width:0}   /* allow inputs to shrink so a long number never widens the modal */
+.phone select{
+  width:100%;
+  font-family:var(--font);font-size:14px;color:var(--ink);
+  padding:13px 30px 13px 13px;border-radius:11px;
+  border:1px solid rgba(36,16,51,.18);
+  background:rgba(36,16,51,.03);
+  cursor:pointer;
+  appearance:none;-webkit-appearance:none;-moz-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%236b5a7a' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 11px center;
+  background-size:11px;
+  transition:border-color .25s,background-color .25s;
+}
+.phone select:focus{outline:0;border-color:var(--orange);background-color:var(--white)}
+.phone select.bad{border-color:#e0483c}
+
+.programs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.programs input{position:absolute;opacity:0;pointer-events:none}
+.programs label{
+  display:flex;flex-direction:column;gap:4px;
+  padding:13px 15px;border-radius:12px;
+  border:1px solid rgba(36,16,51,.18);
+  cursor:pointer;
+  transition:border-color .25s,background .25s,transform .25s;
+}
+.programs label:hover{transform:translateY(-2px);background:rgba(36,16,51,.04)}
+.programs .name{font-size:14.5px;font-weight:800;line-height:1.2}
+.programs .note{font-size:11.5px;color:var(--ink-soft)}
+.programs input#prog-ai:checked + label{border-color:var(--orange);background:rgba(242,101,34,.09);box-shadow:0 0 0 1px var(--orange) inset}
+.programs input#prog-cyber:checked + label{border-color:var(--purple);background:rgba(90,45,143,.09);box-shadow:0 0 0 1px var(--purple) inset}
+.programs input:focus-visible + label{outline:2px solid var(--orange);outline-offset:2px}
+.programs.bad label{border-color:#e0483c}
+
+.error{display:none;margin-top:7px;font-size:12px;font-weight:700;color:#d33f33}
+.error.show{display:block}
+
+.submit{
+  width:100%;margin-top:6px;
+  font-family:var(--font);
+  font-size:13.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--white);padding:16px;border:0;border-radius:12px;
+  background:linear-gradient(140deg,var(--orange-soft),var(--orange));
+  cursor:pointer;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),filter .3s;
+}
+.submit:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.submit:focus-visible{outline:2px solid var(--purple);outline-offset:3px}
+
+.done{display:none;text-align:center;padding:14px 0 6px}
+.done.show{display:block}
+.done .tick{
+  width:58px;height:58px;margin:0 auto 16px;
+  display:grid;place-items:center;font-size:28px;
+  color:var(--white);background:var(--orange);border-radius:50%;
+}
+.done h2{padding:0}
+.done p{margin-top:10px;font-size:14px;line-height:1.55;color:var(--ink-soft)}
+.done strong{color:var(--ink)}
+
+/* ================= NARROW ================= */
+/* The peel and the boy need width to read; below this the artwork is dropped
+   for a clean purple sheet, and the logo flips to its light version. */
+@media (max-width:900px){
+  .hero{
+    background:
+      radial-gradient(120% 80% at 82% 12%, #7b45b4 0%, var(--purple) 42%, var(--purple-deep) 100%);
+  }
+  .logo .on-light{display:none}
+  .logo .on-dark{display:block}
+
+  .stage{grid-template-columns:1fr}
+  .panel{grid-column:1;padding-left:0;max-width:560px}
+  h1{font-size:clamp(27px,7.4vw,42px)}
+
+  .cards{grid-template-columns:1fr;gap:9px}
+  .card{
+    flex-direction:row;align-items:center;justify-content:space-between;gap:12px;
+    padding:12px 16px;border-radius:13px;
+  }
+  .card .top{width:auto}
+  .card .badge{display:none}
+  .card h2{font-size:15px;flex:1}
+  .card .foot{margin-top:0;padding-top:0;width:auto}
+  .card .go{display:none}
+
+  .facts{gap:14px}
+  .facts b{font-size:14px}
+
+  .modal{padding:12px}
+  .modal-card{padding:26px 20px 22px;border-radius:18px}
+  .programs{grid-template-columns:1fr}
+}
+/* the label is long — let it shrink before it ever pushes the logo around */
+@media (max-width:620px){
+  .btn{font-size:9.5px;letter-spacing:.06em;padding:.95em 1.15em;gap:.45em}
+  .btn i{display:none}
+  .logo img{height:clamp(22px,3.4vh,34px)}
+  .kicker{letter-spacing:.12em}
+  .facts li:last-child{display:none}
+}
+/* very short windows: the fact strip is the first thing to go */
+@media (max-height:620px){
+  .facts{display:none}
+}
+
+/* With motion turned off the entrances are skipped, not lost — the CTA and the
+   cards must still be visible, since both start at opacity 0. */
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .cta,.card,.facts{opacity:1!important;transform:none!important}
+  .cta::before{display:none}
+}
+</style>
+<link rel="canonical" href="https://onrol.in/landingpage/aimlprogramus">
+</head>
+<body>
+
+<main class="hero">
+
+  <!-- ---------- LOGO ---------- -->
+  <header class="bar">
+    <a class="logo" href="index.html" aria-label="ONROL — AI Execution School, home">
+      <img class="on-light" src="assets/logo-black.png" alt="ONROL — AI Execution School">
+      <img class="on-dark"  src="assets/logo.png" alt="" aria-hidden="true">
+    </a>
+
+    <div class="cta">
+      <button type="button" class="btn js-register">Register for free master class <i>↗</i></button>
+    </div>
+  </header>
+
+  <!-- ---------- HEADLINE, CTA, PROGRAMS ---------- -->
+  <div class="stage">
+    <div class="panel">
+
+      <h1>
+        Every successful Global student started with
+        <span class="accent">a simple decision</span>
+      </h1>
+
+      <nav class="cards">
+        <a class="card ai" href="ai_gen_website/index.html">
+          <span class="top">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.3 6.3l2.8 2.8M14.9 14.9l2.8 2.8M17.7 6.3l-2.8 2.8M9.1 14.9l-2.8 2.8"/><circle cx="12" cy="12" r="3"/></svg>
+            </span>
+            <span class="badge">AI &amp; ML</span>
+          </span>
+          <h2>AI &amp; ML Builder Program</h2>
+          <span class="foot">
+            <span class="go">Explore</span>
+            <i class="arrow">↗</i>
+          </span>
+        </a>
+
+        <a class="card cyber" href="cyber_website/index.html">
+          <span class="top">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6l7-3Z"/><path d="M9.2 12.2l2 2 3.6-3.9"/></svg>
+            </span>
+            <span class="badge">Cyber Security</span>
+          </span> 
+          <h2>Cyber Defender Program</h2>
+          <span class="foot">
+            <span class="go">Explore</span>
+            <i class="arrow">↗</i>
+          </span>
+        </a>
+      </nav>
+
+      <ul class="facts">
+        <li><b>Ages 16+</b><span></span></li>
+        <li><b>Live &amp; mentor-led</b><span></span></li>
+        <li><b>2 tracks</b><span>Pick one to start</span></li>
+      </ul>
+
+    </div>
+  </div>
+
+</main>
+
+<!-- ================= REGISTRATION MODAL ================= -->
+<div class="modal" id="registerModal" role="dialog" aria-modal="true" aria-labelledby="registerTitle" hidden>
+  <div class="modal-card">
+    <button type="button" class="modal-close" id="closeRegister" aria-label="Close registration form">&times;</button>
+
+    <form id="registerForm" novalidate>
+      <h2 id="registerTitle">Register your interest</h2>
+      <p class="sub">Open to students aged 16+ worldwide. Leave a number, pick a track, and we'll call back with the next batch dates — a parent's number works too.</p>
+
+      <div class="field">
+        <label for="regName">Student's name</label>
+        <input type="text" id="regName" name="name" placeholder="Your name" autocomplete="name">
+        <p class="error" id="errName">Please enter your name.</p>
+      </div>
+
+      <div class="field">
+        <label for="regMobile">Phone (student or parent)</label>
+        <div class="phone">
+          <input type="text" id="regCode" name="code" value="+91" placeholder="+91" aria-label="Country code" inputmode="tel" autocomplete="tel-country-code" maxlength="6" style="text-align:center">
+          <input type="tel" id="regMobile" name="mobile" placeholder="Mobile number"
+                 autocomplete="tel-national" inputmode="tel">
+        </div>
+        <p class="error" id="errMobile">Please enter a valid mobile number.</p>
+      </div>
+
+      <div class="field">
+        <p class="legend" id="programsLabel">Choose a program</p>
+        <div class="programs" id="programsPick" role="radiogroup" aria-labelledby="programsLabel">
+          <input type="radio" name="program" id="prog-ai" value="AI &amp; ML Builder Program">
+          <label for="prog-ai">
+            <span class="name">AI &amp; ML</span>
+            <span class="note">Builder Program</span>
+          </label>
+
+          <input type="radio" name="program" id="prog-cyber" value="Cyber Defender Program">
+          <label for="prog-cyber">
+            <span class="name">Cyber Security</span>
+            <span class="note">Cyber Defender Program</span>
+          </label>
+        </div>
+        <p class="error" id="errProgram">Please select one program.</p>
+      </div>
+
+      <button type="submit" class="submit">Submit registration</button>
+    </form>
+
+    <div class="done" id="registerDone">
+      <div class="tick">✓</div>
+      <h2>You're registered</h2>
+      <p>Thanks <strong id="doneName"></strong> — we'll reach you on <strong id="doneMobile"></strong> about the <strong id="doneProgram"></strong>.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* deal the two programme cards in, one shortly after the other */
+  var cards = document.querySelectorAll('.card');
+  cards.forEach(function(card, i){
+    setTimeout(function(){ card.classList.add('in'); }, 500 + i*170);
+  });
+
+  var modal   = document.getElementById('registerModal');
+  var closeBtn= document.getElementById('closeRegister');
+  var form    = document.getElementById('registerForm');
+  var done    = document.getElementById('registerDone');
+  var nameEl  = document.getElementById('regName');
+  var mobEl   = document.getElementById('regMobile');
+  var codeEl  = document.getElementById('regCode');
+  var progs   = document.getElementById('programsPick');
+  var lastFocus = null;
+
+  function openModal(){
+    lastFocus = document.activeElement;
+    modal.hidden = false;
+    /* let the browser paint the hidden state first so the transition runs */
+    requestAnimationFrame(function(){ modal.classList.add('open'); });
+    setTimeout(function(){ nameEl.focus(); }, 60);
+  }
+  function closeModal(){
+    modal.classList.remove('open');
+    setTimeout(function(){
+      modal.hidden = true;
+      /* reset so the form is ready again next time */
+      form.style.display = '';
+      done.classList.remove('show');
+      form.reset();
+      clearErrors();
+    }, 300);
+    if(lastFocus) lastFocus.focus();
+  }
+
+  function setError(id, el, on){
+    document.getElementById(id).classList.toggle('show', on);
+    if(el) el.classList.toggle('bad', on);
+  }
+  function clearErrors(){
+    setError('errName', nameEl, false);
+    setError('errMobile', mobEl, false);
+    setError('errProgram', progs, false);
+  }
+
+  document.querySelectorAll('.js-register').forEach(function(b){
+    b.addEventListener('click', openModal);
+  });
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && !modal.hidden) closeModal();
+  });
+
+  /* clear a field's error as soon as it's being corrected */
+  nameEl.addEventListener('input', function(){ setError('errName', nameEl, false); });
+  mobEl.addEventListener('input',  function(){ setError('errMobile', mobEl, false); });
+  progs.addEventListener('change', function(){ setError('errProgram', progs, false); });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var name   = nameEl.value.trim();
+    var digits = mobEl.value.replace(/\D/g, '');
+    var code   = codeEl.value.trim(); if(code && code.charAt(0)!=='+') code='+'+code; if(!code) code='+91';
+    var full   = code + ' ' + mobEl.value.trim();
+    var picked = form.querySelector('input[name="program"]:checked');
+
+    var badName = name.length < 2;
+    /* the dialling code is picked separately, so this is the national number:
+       6 digits covers the shortest (Oman, Bahrain), 14 the longest */
+    var badMobile  = digits.length < 6 || digits.length > 14;
+    var badProgram = !picked;
+
+    setError('errName', nameEl, badName);
+    setError('errMobile', mobEl, badMobile);
+    setError('errProgram', progs, badProgram);
+
+    if(badName){ nameEl.focus(); return; }
+    if(badMobile){ mobEl.focus(); return; }
+    if(badProgram){ return; }
+
+    /* no backend yet — the entry is kept locally so nothing is lost */
+    try{
+      var all = JSON.parse(localStorage.getItem('onrol_registrations') || '[]');
+      all.push({name:name, code:code, mobile:mobEl.value.trim(), phone:full, program:picked.value});
+      localStorage.setItem('onrol_registrations', JSON.stringify(all));
+    }catch(err){}
+    /* ONROL CRM (upsert by mobile) + Google Sheet mirror */
+    try{
+      var _prog = picked ? picked.value : "";
+      var _cyber = /cyber/i.test(_prog);
+      var _src = _cyber ? "Global Cybersecurity" : "Global AI/ML";
+      var _camp = _cyber ? "global-cybersecurity" : "global-aiml";
+      fetch("https://go.onrol.in/api/public/leads",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({name:name,phone:full,email:"",role:"",source:_src,campaign:_camp,course:_prog,program:_prog,notes:_prog}),keepalive:true}).catch(function(){});
+      fetch("https://script.google.com/macros/s/AKfycbzDOsjoj6jx7KbX3AcMR_SpW7FA76z7bmonecaRSykClchoizgiSWZH5Og-HQ2WDRcHsw/exec",{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({form_type:"onrol_global",name:name,full_name:name,phone:full,source:_src,campaign:_camp,course:_prog,program:_prog,page_path:location.pathname,referrer:document.referrer}),keepalive:true}).catch(function(){});
+    }catch(err){}
+
+    document.getElementById('doneName').textContent    = name;
+    document.getElementById('doneMobile').textContent  = full;
+    document.getElementById('doneProgram').textContent = picked.value;
+
+    form.style.display = 'none';
+    done.classList.add('show');
+  });
+})();
+</script>
+
+</body>
+</html>

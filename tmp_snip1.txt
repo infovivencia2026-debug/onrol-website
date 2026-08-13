@@ -1,0 +1,160 @@
+    if (navigator.onLine) await refreshTasks();
+  };
+
+  const runVisitAction = async (
+    taskId: string,
+    action: "started" | "check_in" | "meeting_started" | "meeting_completed" | "check_out",
+  ) => {
+    const task = tasks.find((t) => t.id === taskId);
+    if (!task) return;
+    if ((action === "meeting_completed" || action === "check_out") && !(task?.visit_outcome?.length)) {
+      toast.error("Select visit outcome before completing the visit.");
+      return;
+    }
+    const noteDraft = (quickNoteDraftByTask[taskId] ?? task.quick_note ?? "").trim();
+    if ((action === "meeting_completed" || action === "check_out") && noteDraft.length < 5) {
+      toast.error("Add a short visit note before completing.");
+      return;
+    }
+    if ((action === "meeting_completed" || action === "check_out") && task?.task_category === "visit") {
+      const details = sanitizeBrandDetails(task.visit_brand || "Vivencia", getTaskBrandDetails(task));
+      if (!(details.program_interest || []).length) {
+        toast.error("Select at least one program interest before completing a visit.");
+        return;
+      }
+    }
+    const now = new Date().toISOString();
+    const updates: Partial<OfficeTask> = {};
+    if (action === "started") {
+      updates.started_at = now;
+      updates.visit_status = "planned";
+      updates.status = "ongoing";
+    }
+    if (action === "check_in") {
+      updates.check_in_at = now;
+      updates.visit_status = "reached";
+      updates.status = mapVisitToTaskStatus("reached");
+    }
+    if (action === "meeting_started") {
+      updates.meeting_started_at = now;
+      updates.visit_status = "in_meeting";
+      updates.status = mapVisitToTaskStatus("in_meeting");
+    }
+    if (action === "meeting_completed") {
+      updates.meeting_completed_at = now;
+      const nextVisit = autoVisitStatusFromOutcome(
+        (task?.visit_outcome || []) as VisitOutcome[],
+        Boolean(task?.follow_up_required),
+        (task?.visit_status as VisitStatus) || "completed",
+      );
+      updates.visit_status = nextVisit;
+      updates.status = mapVisitToTaskStatus(nextVisit);
+      updates.completed_at = now;
+      updates.quick_note = noteDraft;
+    }
+    if (action === "check_out") {
+      updates.check_out_at = now;
+      if (!updates.visit_status) {
+        const nextVisit = autoVisitStatusFromOutcome(
+          (task?.visit_outcome || []) as VisitOutcome[],
+          Boolean(task?.follow_up_required),
+          (task?.visit_status as VisitStatus) || "completed",
+        );
+        updates.visit_status = nextVisit;
+      }
+      if (!updates.status) updates.status = mapVisitToTaskStatus((updates.visit_status as VisitStatus) || "completed");
+      if (!updates.completed_at) updates.completed_at = now;
+      updates.quick_note = noteDraft;
+    }
+
+    try {
+      await queueOrRunTaskMutation({
+        actionType: "update_task",
+        entityId: taskId,
+        payload: updates,
+        queuedMessage: "Visit action queued offline.",
+      });
+    } catch (error: unknown) {
+      toast.error(getErrorMessage(error, "Unable to process visit action."));
+      return;
+    }
+    await logActivityEvent({
+      eventType: action,
+      summary: `${task?.task_title || "Visit task"}: ${action.replace(/_/g, " ")}`,
+      visitTaskId: taskId,
+      institutionId: task?.institution_id ?? null,
+      metadata: { action, visit_status: updates.visit_status || null },
+    });
+    if (task) {
+      await notifyAdminsForVisitEvent(
+        task,
+        "Visit status updated",
+        `${officeUser?.full_name || "Employee"} marked ${task.institution_name || "institution"} as ${String(
+          updates.visit_status || task.visit_status || "updated",
+        ).replace(/_/g, " ")}.`,
+      );
+    }
+    if (task) {
+      if (action === "check_in") {
+        await updateInstitutionMetaFromVisit(task, { leadStage: "visited", lastVisitAt: now });
+      }
+      if (action === "meeting_completed" || action === "check_out") {
+        await updateInstitutionMetaFromVisit(task, { lastVisitAt: now });
+      }
+    }
+    if (navigator.onLine) await refreshTasks();
+  };
+
+  const autoVisitStatusFromOutcome = (outcomes: VisitOutcome[], followUpRequired: boolean, current: VisitStatus | null | undefined): VisitStatus => {
+    if (followUpRequired) return "followup_pending";
+    if (outcomes.includes("not_interested")) return "closed_lost";
+    if (outcomes.includes("interested") || outcomes.includes("need_demo") || outcomes.includes("need_proposal")) return "completed";
+    return current || "planned";
+  };
+
+  const toggleVisitOutcome = async (task: OfficeTask, outcome: VisitOutcome) => {
+    if (task.task_category !== "visit") return;
+    const current = [...(task.visit_outcome || [])] as VisitOutcome[];
+    const exists = current.includes(outcome);
+    let next = exists ? current.filter((o) => o !== outcome) : [...current, outcome];
+    if (!exists && next.length > 2) {
+      next = [current[current.length - 1] || outcome, outcome].slice(0, 2) as VisitOutcome[];
+    }
+
+    const followUpRequired = Boolean(task.follow_up_required);
+    const nextVisitStatus = autoVisitStatusFromOutcome(next, followUpRequired, task.visit_status as VisitStatus | null);
+    const updates: Partial<OfficeTask> = {
+      visit_outcome: next,
+      visit_status: nextVisitStatus,
+      status: mapVisitToTaskStatus(nextVisitStatus),
+    };
+
+    if (next.includes("not_interested")) {
+      updates.follow_up_required = false;
+      updates.follow_up_type = null;
+      updates.follow_up_date = null;
+      updates.follow_up_status = null;
+    }
+
+    try {
+      await queueOrRunTaskMutation({
+        actionType: "update_task",
+        entityId: task.id,
+        payload: updates,
+        successMessage: navigator.onLine ? "Outcome updated." : undefined,
+        queuedMessage: "Outcome update saved offline and queued for sync.",
+      });
+    } catch (error: unknown) {
+      toast.error(getErrorMessage(error, "Unable to update outcome."));
+      return;
+    }
+    await logActivityEvent({
+      eventType: "visit_outcome_selected",
+      summary: `${task.task_title}: outcome updated`,
+      visitTaskId: task.id,
+      institutionId: task.institution_id ?? null,
+      metadata: { outcomes: next },
+    });
+    await notifyAdminsForVisitEvent(
+      task,
+      "Visit outcome updated",

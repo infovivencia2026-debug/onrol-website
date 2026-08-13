@@ -1,0 +1,259 @@
+<style>
+  .subpage{ font-family:'Manrope', sans-serif; }
+  body{ background:#fff; }
+  .subpage{ max-width:1000px; margin:0 auto; padding:150px 24px 90px; color:#16181b; }
+  .subpage .kicker{ font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--orange); }
+  .subpage .kicker::before{ content:""; display:inline-block; width:24px; height:1px; background:var(--orange); vertical-align:middle; margin-right:9px; opacity:.7; }
+  .sec-title{ font-size:clamp(26px,3.4vw,40px); font-weight:700; letter-spacing:-.015em; line-height:1.1; color:#16181b; margin:6px 0 10px; }
+  .sec-title span{ color:var(--orange); }
+  .sec-sub{ font-family:var(--mono); font-size:13.5px; line-height:1.7; color:#6a5f56; max-width:660px; }
+
+  /* ================= interactive track tabs ================= */
+  .ptabs{ display:flex; flex-wrap:wrap; gap:14px; margin-top:10px; }
+  .ptab{ display:inline-flex; align-items:center; gap:14px; padding:14px 26px 14px 16px; background:#fff; border:1px solid rgba(0,0,0,.16); cursor:pointer; text-align:left; transition:background .25s ease, border-color .25s ease, box-shadow .25s ease, transform .2s ease; }
+  .ptab:hover{ border-color:var(--orange); transform:translateY(-2px); }
+  .pt-ic{ flex:0 0 auto; width:42px; height:42px; border-radius:50%; display:grid; place-items:center; background:rgba(var(--orange-rgb),.12); color:var(--orange); transition:background .25s ease, color .25s ease; }
+  .pt-ic svg{ width:21px; height:21px; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .pt-t{ font-family:'Manrope', sans-serif; font-size:clamp(16px,1.6vw,20px); font-weight:700; color:#16181b; line-height:1.05; }
+  .pt-t small{ display:block; font-family:var(--mono); font-size:10px; font-weight:400; letter-spacing:1.2px; text-transform:uppercase; color:#8a8f96; margin-top:4px; }
+  .ptab.is-on{ background:linear-gradient(135deg,#2c2521,#14100c); border-color:#14100c; box-shadow:0 18px 36px -18px rgba(0,0,0,.55); }
+  .ptab.is-on .pt-t{ color:#fff; }
+  .ptab.is-on .pt-t small{ color:var(--orange-lt); }
+  .ptab.is-on .pt-ic{ background:var(--orange); color:#fff; }
+
+  /* switchable panels */
+  .ppanel{ display:none; margin-top:26px; }
+  .ppanel.is-on{ display:block; animation:panelIn .5s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes panelIn{ from{ opacity:0; transform:translateY(18px); } to{ opacity:1; transform:none; } }
+  .panel-sub{ font-family:var(--mono); font-size:13px; line-height:1.65; color:#6a5f56; margin:0 0 20px; max-width:640px; }
+
+  /* uniform 2-up program cards — equal height, perfectly aligned */
+  .prog-grid{ position:relative; display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(0,0,0,.16); border:1px solid rgba(0,0,0,.16); }
+  .prog-grid::before,.prog-grid::after{ content:""; position:absolute; width:7px; height:7px; background:var(--orange); z-index:4; pointer-events:none; }
+  .prog-grid::before{ top:0; left:0; transform:translate(-50%,-50%); }
+  .prog-grid::after{ bottom:0; right:0; transform:translate(50%,50%); }
+  .pcard{ position:relative; background:#fff; display:flex; flex-direction:column; padding:clamp(26px,2.8vw,38px); text-decoration:none; transition:background .28s ease, box-shadow .35s ease; }
+  .pcard::before{ content:""; position:absolute; left:0; top:50%; height:0; width:4px; background:var(--orange); transform:translateY(-50%); transition:height .35s cubic-bezier(.2,.7,.2,1); }
+  .pcard:hover{ background:#fff7f2; box-shadow:0 26px 54px -26px rgba(0,0,0,.30); z-index:5; }
+  .pcard:hover::before{ height:100%; }
+  .pcard-top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+  .pcard-num{ font-family:'Manrope', sans-serif; font-size:44px; font-weight:700; line-height:1; color:rgba(0,0,0,.11); transition:color .3s ease, transform .3s cubic-bezier(.2,.7,.2,1); transform-origin:left center; }
+  .pcard:hover .pcard-num{ color:rgba(var(--orange-rgb),.28); transform:scale(1.08); }
+  .pcard-tag{ font-family:var(--mono); font-size:10.5px; letter-spacing:1.2px; text-transform:uppercase; color:var(--orange); border:1px solid rgba(var(--orange-rgb),.35); padding:6px 12px; transition:background .3s ease, color .3s ease; }
+  .pcard:hover .pcard-tag{ background:var(--orange); color:#fff; }
+  .pcard h4{ font-family:'Manrope', sans-serif; font-size:clamp(21px,2vw,27px); font-weight:700; color:#16181b; line-height:1.08; margin:0 0 10px; }
+  .pcard > p{ font-family:var(--mono); font-size:13px; line-height:1.65; color:#5a5e64; margin:0 0 18px; }
+  .pcard-chips{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+  .pcard-chips span{ font-family:var(--mono); font-size:11px; color:#41454b; background:#f4efe9; padding:6px 11px; transition:background .3s ease, color .3s ease, transform .3s ease; }
+  .pcard:hover .pcard-chips span{ background:#ffe6d8; color:#7a3b16; }
+  .pcard-go{ margin-top:auto; display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11.5px; letter-spacing:1.2px; text-transform:uppercase; color:var(--orange); }
+  .pcard-go i{ font-style:normal; transition:transform .25s ease; }
+  .pcard:hover .pcard-go i{ transform:translateX(5px); }
+
+  /* ---- active-tab icon pulse ---- */
+  .ptab.is-on .pt-ic{ position:relative; }
+  .ptab.is-on .pt-ic::after{ content:""; position:absolute; inset:0; border-radius:50%; animation:tbPulse 2.6s ease-out infinite; }
+  @keyframes tbPulse{ 0%{ box-shadow:0 0 0 0 rgba(var(--orange-rgb),.55); } 70%{ box-shadow:0 0 0 12px rgba(var(--orange-rgb),0); } 100%{ box-shadow:0 0 0 0 rgba(var(--orange-rgb),0); } }
+
+  /* ---- button shine ---- */
+  .btn-apply{ position:relative; overflow:hidden; }
+  .btn-apply::after{ content:""; position:absolute; top:0; left:-70%; width:45%; height:100%; background:linear-gradient(120deg, transparent, rgba(255,255,255,.4), transparent); transform:skewX(-20deg); }
+  .btn-apply:hover::after{ animation:btnShine .85s ease; }
+  @keyframes btnShine{ from{ left:-70%; } to{ left:140%; } }
+
+  /* ---- scroll reveal (gated by .anim-ready so content shows without JS) ---- */
+  .anim-ready .anim{ opacity:0; transform:translateY(26px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .anim-ready .anim.in{ opacity:1; transform:none; }
+  .anim-ready .kicker.anim{ transition-delay:.02s; }
+  .anim-ready .ptabs.anim{ transition-delay:.10s; }
+
+  @media (prefers-reduced-motion:reduce){
+    .anim-ready .anim, .ppanel.is-on{ opacity:1 !important; transform:none !important; animation:none !important; }
+    .pt-ic::after{ animation:none; }
+  }
+
+  @media(max-width:720px){ .prog-grid{ grid-template-columns:1fr; } .ptab{ flex:1 1 100%; } }
+
+  .actions{ display:flex; flex-wrap:wrap; align-items:center; gap:14px 20px; margin-top:38px; }
+  .btn-apply{ display:inline-flex; align-items:center; gap:10px; padding:15px 30px; background:var(--orange); color:#fff; font-family:var(--mono); font-size:13px; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; box-shadow:0 14px 30px -12px rgba(var(--orange-rgb),.7); transition:transform .2s ease, background .2s ease; cursor:pointer; }
+  .btn-apply:hover{ transform:translateY(-2px); background:var(--orange-lt); }
+  .help{ font-family:var(--mono); font-size:13px; line-height:1.6; color:#6a5f56; margin:0; }
+  .help a{ color:var(--orange); text-decoration:none; }
+
+  .subpage .back{ display:inline-block; margin-top:42px; font-family:var(--mono); font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:#8a8f96; text-decoration:none; }
+  .subpage .back:hover{ color:#16181b; }
+</style>
+
+<a class="site-logo" href="/" aria-label="ONROL, AI Execution School, home">
+  <img src="/home-glydi/logo-mark.png" alt="ONROL, AI Execution School">
+</a>
+
+<nav class="nav">
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true"></span>
+    <a href="/programs">Programs</a>
+    <span class="sep" aria-hidden="true"></span>
+    <a href="/about">About</a>
+    <span class="sep" aria-hidden="true"></span>
+    <a href="/contact">Contact</a>
+  <a class="nav-apply" href="/programs/ai-generalist">Apply</a>
+  </div>
+</nav>
+
+<header class="pagehero prog-hero">
+  <div class="pagehero-inner">
+    <p class="ph-eyebrow">Programs</p>
+    <h1 class="ph-title">Two tracks. <span>Four programs.</span></h1>
+    <p class="ph-sub">Pick the one that fits. Each is built around a single outcome, you walk out able to build, ship, and defend real systems, with a portfolio to prove it.</p>
+  </div>
+</header>
+
+<main class="subpage has-hero">
+
+  <p class="kicker anim">Choose your track</p>
+
+  <div class="ptabs anim" role="tablist" aria-label="Choose a track">
+    <button class="ptab is-on" type="button" data-track="ai" role="tab" aria-selected="true">
+      <span class="pt-ic"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span>
+      <span class="pt-t">AI Track<small>2 Programs, 3, 6 months</small></span>
+    </button>
+    <button class="ptab" type="button" data-track="cy" role="tab" aria-selected="false">
+      <span class="pt-ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg></span>
+      <span class="pt-t">Cyber Security Track<small>2 Programs, 3, 6 months</small></span>
+    </button>
+  </div>
+
+  <!-- AI panel -->
+  <div class="ppanel is-on" data-track="ai" role="tabpanel">
+    <p class="panel-sub">Build &amp; ship real AI, from your first project to production systems.</p>
+    <div class="prog-grid">
+      <a class="pcard" href="/programs/ai-generalist">
+        <div class="pcard-top"><span class="pcard-num">01</span><span class="pcard-tag">Flagship, 3 mo</span></div>
+        <h4>AI Generalist</h4>
+        <p>Beginner to AI Generalist, the complete path from learning to earning, no prior coding required.</p>
+        <div class="pcard-chips"><span>Vibe coding</span><span>7+ projects</span><span>Portfolio</span></div>
+        <span class="pcard-go">Explore program <i>&rarr;</i></span>
+      </a>
+      <a class="pcard" href="/programs/ai-architect">
+        <div class="pcard-top"><span class="pcard-num">02</span><span class="pcard-tag">Advanced, 6 mo</span></div>
+        <h4>AI Architect</h4>
+        <p>Design, deploy &amp; scale complete AI powered systems, apps, agents, automations, and RAG.</p>
+        <div class="pcard-chips"><span>Multi agent</span><span>RAG</span><span>20+ projects</span></div>
+        <span class="pcard-go">Explore program <i>&rarr;</i></span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Cyber Security panel -->
+  <div class="ppanel" data-track="cy" role="tabpanel">
+    <p class="panel-sub">Zero to job ready defender, hands on labs, real tooling, and a security portfolio employers trust.</p>
+    <div class="prog-grid">
+      <a class="pcard" href="/cybersecurity">
+        <div class="pcard-top"><span class="pcard-num">01</span><span class="pcard-tag">Foundation, 6 mo</span></div>
+        <h4>Cyber Security</h4>
+        <p>Zero to job ready defender, 70%+ hands on with real tools, labs, and a portfolio employers trust.</p>
+        <div class="pcard-chips"><span>Blue team</span><span>Live labs</span><span>Portfolio</span></div>
+        <span class="pcard-go">Explore program <i>&rarr;</i></span>
+      </a>
+      <a class="pcard" href="/soc-analyst">
+        <div class="pcard-top"><span class="pcard-num">02</span><span class="pcard-tag">Specialist, 3 mo</span></div>
+        <h4>SOC Analyst</h4>
+        <p>Specialise on the SOC floor, detect, investigate, and respond. The fast track into a Security Operations role.</p>
+        <div class="pcard-chips"><span>SIEM</span><span>Incident response</span><span>Interview ready</span></div>
+        <span class="pcard-go">Explore program <i>&rarr;</i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="actions anim">
+    <a class="btn-apply js-apply" href="/programs/ai-generalist">Apply Now</a>
+    <p class="help">Not sure where to start? <a href="/tools/ai-skills-quiz">Take the 60-second quiz &rarr;</a></p>
+  </div>
+
+  <a class="back" href="/">&larr; Back to home</a>
+</main>
+
+<footer class="footer" id="contact">
+  <div class="footer-top">
+    <div class="f-brand">
+      <a class="f-logo" href="/">ONROL</a>
+      <p class="f-copy">&copy; 2026 ONROL, AI Execution School, Hyderabad. All rights reserved.</p>
+      <div class="f-socials">
+        <a href="https://instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1"/></svg></a>
+        <a href="https://linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10.5v6M7 7.5v.01M11.5 16.5v-3.2a2 2 0 0 1 4 0v3.2M11.5 16.5v-6"/></svg></a>
+        <a href="https://youtube.com/" target="_blank" rel="noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M11 9.6l4 2.4-4 2.4z"/></svg></a>
+        <a href="mailto:info@onrol.in" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7.5l8 5.5 8-5.5"/></svg></a>
+      </div>
+    </div>
+    <nav class="f-cols" aria-label="Footer links">
+      <div class="f-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="/programs/ai-generalist">AI Generalist</a></li>
+          <li><a href="/programs/ai-architect">AI Architect</a></li>
+          <li><a href="/soc-analyst">SOC Analyst</a></li>
+          <li><a href="/cybersecurity">Cyber Security</a></li>
+          <li><a href="/programs">All Programs</a></li>
+          <li><a href="/masterclass">Free Masterclass</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/glossary">Glossary</a></li>
+          <li><a href="/questions">FAQs</a></li>
+          <li><a href="/tools/ai-skills-quiz">AI Skills Quiz</a></li>
+          <li><a href="/why-now">Why AI matters now</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About ONROL</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-and-conditions">Terms</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-news">
+    <div class="f-news-text">
+      <h4>Join our newsletter</h4>
+      <p>Useful AI tips for India, straight to your inbox. No spam.</p>
+    </div>
+    <form class="f-form" id="newsletterForm">
+      <label for="newsletterEmail" class="visually-hidden">Email address</label>
+      <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" autocomplete="email" aria-label="Email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <p class="f-news-msg" id="newsMsg" role="status" hidden>Thanks, you&rsquo;re on the list.</p>
+</footer>
+
+<div class="lead-modal" id="leadModal" hidden>
+  <div class="lead-card" role="dialog" aria-modal="true" aria-labelledby="leadTitle">
+    <button class="lead-x" id="leadClose" type="button" aria-label="Close">&times;</button>
+    <p class="lead-eyebrow">Apply to ONROL</p>
+    <h3 id="leadTitle">Start with a quick hello.</h3>
+    <p class="lead-sub">Drop your details and our team reaches out about the next cohort, takes 20 seconds.</p>
+    <form id="leadForm" class="lead-form">
+      <input type="text" id="leadName" name="name" placeholder="Full name" autocomplete="name" required>
+      <input type="email" id="leadEmail" name="email" placeholder="Email address" autocomplete="email" required>
+      <input type="tel" id="leadPhone" name="phone" placeholder="Phone / WhatsApp number" autocomplete="tel" required>
+      <button type="submit" class="lead-submit">Apply Now</button>
+    </form>
+    <p class="lead-fine">No spam. We&rsquo;ll only contact you about your application.</p>
+  </div>
+</div>
+
+
+
+
+
+

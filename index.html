@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#353535" />
+    <title>ONROL - India's AI Execution School</title>
+    <meta
+      name="description"
+      content="ONROL is among India's top AI institutes for applied, builder-track AI in 2026. 3-month live cohort, 12 personas, ship 3 deployed AI projects, no coding required. Free 90-min Masterclass."
+    />
+    <meta name="author" content="ONROL" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <link rel="canonical" href="https://onrol.in/" />
+
+    <!-- Search engine verification -->
+    <meta name="msvalidate.01" content="09E1C896A95E028E4F04017059303719" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://onrol.in/" />
+    <meta property="og:title" content="ONROL — India's Top Applied AI Institute | 3-Month Builder Cohort" />
+    <meta
+      property="og:description"
+      content="Among India's top AI institutes for applied AI in 2026. 3-month live cohort, 12 personas, ship 3 deployed AI projects, no coding required."
+    />
+    <meta property="og:image" content="https://onrol.in/og/default.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ONROL — India's Top Applied AI Institute | 3-Month Builder Cohort" />
+    <meta
+      name="twitter:description"
+      content="Among India's top AI institutes for applied AI in 2026. 3-month live cohort, 12 personas, ship 3 deployed AI projects, no coding required."
+    />
+    <meta name="twitter:image" content="https://onrol.in/onrol-logo-home.png" />
+
+    <!-- Inter (body) + Manrope (hero headline) loaded via JS-injected <link>.
+         Lighthouse flags rel="preload" as="style" onload=... as render-blocking
+         (370ms in mobile audits). Injecting the link tag from JS after parse-time
+         means it never enters the critical path: the parser never sees a
+         stylesheet to wait on, FCP/LCP are not gated, and the fonts still
+         arrive within ~100ms of paint. Hero H1 has a system-font fallback in
+         its inline style so it doesn't visually shift when Manrope swaps. -->
+    <script>
+      (function () {
+        // Figtree (body/UI) + Fira Sans (headings) — Google Fonts, off the
+        // critical path (media=print → all onload). display=swap, no CLS.
+        var preconnect1 = document.createElement('link');
+        preconnect1.rel = 'preconnect';
+        preconnect1.href = 'https://fonts.googleapis.com';
+        document.head.appendChild(preconnect1);
+        var preconnect2 = document.createElement('link');
+        preconnect2.rel = 'preconnect';
+        preconnect2.href = 'https://fonts.gstatic.com';
+        preconnect2.crossOrigin = 'anonymous';
+        document.head.appendChild(preconnect2);
+        var fonts = document.createElement('link');
+        fonts.rel = 'stylesheet';
+        fonts.href = 'https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&family=Fira+Sans:wght@400;500;600;700;800;900&display=swap';
+        fonts.media = 'print';
+        fonts.onload = function () { this.media = 'all'; };
+        document.head.appendChild(fonts);
+      })();
+    </script>
+    <!-- No <noscript> fallback for Inter on purpose: Lighthouse treats
+         the noscript <link rel="stylesheet"> as render-blocking and
+         was costing 420ms on the home audit. Users with JS disabled
+         still get a readable system-font experience. -->
+
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <!-- RSS feed (blogs + AI news anchors). Auto-discovered by Feedly,
+         Inoreader, Mastodon/Bluesky bridges, and AI ingest pipelines. -->
+    <link rel="alternate" type="application/rss+xml" title="ONROL — AI Execution Updates" href="/rss.xml" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOC Analyst Course Online, Detect, Investigate &amp; Respond | ONROL</title>
+<link rel="canonical" href="https://onrol.in/programs/soc-analyst">
+  <meta name="description" content="A focused 3-month, 75%+ hands on SOC Analyst program. Master Splunk, ELK, Wireshark, MITRE ATT&amp;CK and the NIST IR lifecycle. Run a full incident simulation and get shift ready. Register now." />
+  <style>
+    :root {
+      /* brand orange — single source of truth (matches index theme) */
+      --orange-rgb: 244, 103, 24;
+      --orange: rgb(var(--orange-rgb));     /* #F46718 */
+      --orange-lt: #ff8a4a;                 /* lighter accent / hover */
+      --bg: #0c0c0c;                        /* dark hero / pricing / footer base */
+      --ink: #16181b;                       /* primary dark text on light */
+      --muted: #5a5e64;                     /* secondary text */
+      --line: rgba(0, 0, 0, 0.16);          /* thin grid lines on light */
+      --panel: #ffffff;
+      --soft: #fff7f2;                       /* faint warm tint */
+      --mono: 'Manrope', sans-serif;
+      --sans: 'Manrope', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.5;
+      overflow-x: clip;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: 100%;
+      overflow-x: clip;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* NAV — dark frosted floating pill (matches index.html) */
+    .nav {
+      position: fixed;
+      top: 26px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 50;
+      display: flex;
+      align-items: stretch;
+      padding: 3px 24px;
+      background: rgba(10, 10, 12, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(20px) saturate(140%);
+      -webkit-backdrop-filter: blur(20px) saturate(140%);
+    }
+
+    .nav a {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      text-decoration: none;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 2px 42px;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+
+    .nav a:hover {
+      opacity: 0.6;
+    }
+
+    .nav .sep {
+      width: 1px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* desktop: links inline, hamburger hidden */
+    .nav-links {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+
+    /* BUTTONS — mono uppercase, sharp corners */
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 30px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .button.orange {
+      border-color: var(--orange);
+      background: var(--orange);
+      color: #fff;
+    }
+
+    .button.orange:hover {
+      background: var(--orange-lt);
+      border-color: var(--orange-lt);
+      opacity: 1;
+    }
+
+    .button.light {
+      background: transparent;
+      color: var(--ink);
+      border-color: rgba(0, 0, 0, 0.35);
+    }
+
+    /* HERO — pure white, orange glow, orange form card */
+    .hero {
+      padding: 96px 0 64px;
+      position: relative;
+      background: #fff;
+      color: var(--ink);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -160px -20% auto auto;
+      width: 620px;
+      height: 620px;
+      background: radial-gradient(circle, rgba(var(--orange-rgb), 0.28), transparent 64%);
+      pointer-events: none;
+    }
+
+    /* 3D asterisk graphic — bottom-left corner, behind the hero content (like index .panel-aster) */
+    .hero-aster {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translate(-32%, 26%);
+      height: 56vh;
+      width: auto;
+      max-width: none;
+      z-index: 0;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) 430px;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      font-family: var(--mono);
+      background: rgba(var(--orange-rgb), 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.18);
+      padding: 10px 14px;
+      font-size: 12px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--orange);
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-family: var(--sans);
+      font-size: clamp(38px, 5.4vw, 68px);
+      line-height: 0.96;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+      max-width: 820px;
+    }
+
+    .gradient-text {
+      color: var(--orange);
+    }
+
+    .hero-copy {
+      font-size: clamp(15px, 1.3vw, 17px);
+      max-width: 640px;
+      color: #41454b;
+      margin-top: 26px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      margin-top: 36px;
+      max-width: 830px;
+    }
+
+    .stat {
+      background: #fff;
+      padding: 20px 16px;
+      min-height: 104px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--orange);
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 10px;
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    /* FORM CARD — orange block over the white hero */
+    .form-card {
+      background: linear-gradient(165deg, #ff824a 0%, #f96225 100%);
+      color: #fff;
+      border: 1px solid #f96225;
+      box-shadow: 0 24px 54px rgba(var(--orange-rgb), 0.20);
+      padding: 30px;
+      position: sticky;
+      top: 100px;
+    }
+
+    .form-card h2 {
+      font-family: var(--sans);
+      font-size: 26px;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .form-card p {
+      font-family: var(--mono);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    input, select {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid rgba(0, 0, 0, 0.28);
+      background: #fff;
+      padding: 0 14px;
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 500;
+      border-radius: 0;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--ink);
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25);
+    }
+
+    /* submit button sits on the orange card — make it dark for contrast */
+    .form-card .button.orange {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: #fff;
+    }
+
+    .form-card .button.orange:hover {
+      background: #000;
+      border-color: #000;
+    }
+
+    .form-note {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.85);
+      margin-top: 14px;
+    }
+
+    /* SECTIONS — light, thin lines */
+    section {
+      padding: clamp(64px, 10vh, 110px) 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.8fr 1fr;
+      gap: 36px;
+      align-items: end;
+      margin-bottom: 40px;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      color: var(--orange);
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 2px;
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+
+    h2.section-title {
+      font-family: var(--sans);
+      font-size: clamp(26px, 3.4vw, 44px);
+      line-height: 1.02;
+      letter-spacing: -0.01em;
+      font-weight: 600;
+    }
+
+    .section-desc {
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 620px;
+    }
+
+    /* WHAT YOU BUILD — premium numbered cards with icons + tool chips */
+    .build-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(214px, 1fr));
+      gap: 16px;
+    }
+
+    .build-card {
+      position: relative;
+      overflow: hidden;
+      padding: 26px 22px 24px;
+      min-height: 268px;
+      background: #fff;
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.32s cubic-bezier(.2,.7,.2,1), box-shadow 0.32s ease, border-color 0.32s ease;
+    }
+    .build-card::after {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; height: 3px; width: 0;
+      background: var(--orange);
+      transition: width 0.35s cubic-bezier(.2,.7,.2,1);
+    }
+    .build-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 26px 52px -22px rgba(0, 0, 0, 0.28);
+      border-color: rgba(var(--orange-rgb), 0.42);
+    }
+    .build-card:hover::after { width: 100%; }
+
+    .bc-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
+    .bc-ic {
+      width: 48px; height: 48px; flex: 0 0 auto;
+      display: grid; place-items: center;
+      background: rgba(var(--orange-rgb), 0.10); color: var(--orange);
+      transition: background 0.25s ease, color 0.25s ease, transform 0.4s cubic-bezier(.2,.7,.2,1);
+    }
+    .bc-ic svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .build-card:hover .bc-ic { background: var(--orange); color: #fff; transform: rotate(-6deg) scale(1.06); }
+    .bc-num {
+      font-family: var(--sans); font-weight: 700; font-size: 42px; line-height: 1;
+      letter-spacing: -0.02em; color: rgba(0, 0, 0, 0.08);
+      transition: color 0.3s ease;
+    }
+    .build-card:hover .bc-num { color: rgba(var(--orange-rgb), 0.24); }
+
+    .build-card h3 {
+      font-family: var(--sans); font-size: 19px; font-weight: 600;
+      line-height: 1.14; letter-spacing: -0.01em; margin: 0 0 10px; color: var(--ink);
+    }
+    .build-card p {
+      font-family: var(--mono); color: var(--muted); font-size: 12.5px; line-height: 1.6; margin: 0 0 18px;
+    }
+    .tools { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; }
+    .tools span {
+      font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.3px; color: var(--ink);
+      background: var(--soft); border: 1px solid rgba(var(--orange-rgb), 0.20); padding: 5px 9px;
+      transition: background 0.25s ease;
+    }
+    .build-card:hover .tools span { background: rgba(var(--orange-rgb), 0.10); }
+
+    /* CURRICULUM */
+    .journey {
+      display: grid;
+      gap: 16px;
+    }
+
+    .module {
+      display: grid;
+      grid-template-columns: 220px 1fr 200px;
+      gap: 0;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 0;
+      overflow: hidden;
+      align-items: stretch;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .module:hover {
+      border-color: rgba(var(--orange-rgb), 0.5);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.10);
+    }
+
+    /* left column is now a topic image tile (image set inline via --mi) */
+    .module-index {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      min-height: 150px;
+      padding: 18px 16px;
+      font-family: var(--mono);
+      font-weight: 500;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 12px;
+      background-color: #14100c;
+      background-image: var(--mi);            /* jpg = poster / fallback */
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    .module-vid { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+    .module-index::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(150deg, rgba(16,11,7,.18) 0%, rgba(16,11,7,.84) 100%); }
+    .mi-label { position: relative; z-index: 2; }
+    .module-index::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; z-index: 3; background: var(--orange); }
+    @media (prefers-reduced-motion: reduce) { .module-vid { display: none; } }
+    .module > div:nth-child(2) { padding: 24px 26px; }
+    .module-meta { align-self: center; margin: 22px 22px 22px 0; }
+
+    .module h3 {
+      font-family: var(--sans);
+      font-size: 23px;
+      line-height: 1.04;
+      letter-spacing: -0.01em;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .module ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1.5;
+      color: #41454b;
+    }
+
+    .module li::before {
+      content: "→ ";
+      color: var(--orange);
+      font-weight: 500;
+    }
+
+    .module-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .module-meta div {
+      padding: 14px;
+      background: #fff;
+    }
+
+    .module-meta strong {
+      display: block;
+      font-size: 28px;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--orange);
+    }
+
+    .module-meta span {
+      font-family: var(--mono);
+      color: var(--muted);
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    /* WHO IT'S FOR */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .audience-card {
+      background: #fff;
+      padding: 26px 22px;
+      min-height: 170px;
+      transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .audience-card:hover {
+      background: var(--soft);
+      transform: scale(1.03);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+    }
+
+    .audience-card h3 {
+      font-family: var(--sans);
+      font-size: 21px;
+      letter-spacing: -0.01em;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .audience-card p {
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* OUTCOMES */
+    .outcomes-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .outcome-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .outcome-item {
+      background: #fff;
+      padding: 22px;
+      min-height: 132px;
+    }
+
+    .outcome-item strong {
+      font-family: var(--sans);
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      font-weight: 600;
+    }
+
+    .outcome-item p {
+      margin-top: 8px;
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    /* PORTFOLIO CARD — dark accent block */
+    .portfolio-card {
+      background: var(--bg);
+      color: #fff;
+      padding: 36px;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgba(var(--orange-rgb), 0.3);
+    }
+
+    .portfolio-card h3 {
+      font-family: var(--sans);
+      font-size: clamp(28px, 3.6vw, 46px);
+      line-height: 0.96;
+      letter-spacing: -0.01em;
+      font-weight: 600;
+    }
+
+    .portfolio-card p {
+      font-family: var(--mono);
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-top: 18px;
+      max-width: 460px;
+    }
+
+    .portfolio-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.14);
+      margin-top: 40px;
+    }
+
+    .portfolio-stats div {
+      background: var(--bg);
+      padding: 18px;
+    }
+
+    .portfolio-stats strong {
+      display: block;
+      color: var(--orange-lt);
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .portfolio-stats span {
+      display: block;
+      margin-top: 8px;
+      font-family: var(--mono);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* COMPARISON */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .compare-col {
+      padding: 34px;
+      background: #fff;
+    }
+
+    .compare-col:last-child {
+      background: var(--soft);
+    }
+
+    .compare-col h3 {
+      font-family: var(--sans);
+      font-size: 30px;
+      letter-spacing: -0.01em;
+      line-height: 1.04;
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    .compare-col ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      font-family: var(--mono);
+      font-size: 14px;
+      line-height: 1.5;
+      color: #41454b;
+    }
+
+    .compare-col li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .compare-col li span {
+      color: var(--orange);
+      font-weight: 500;
+    }
+
+    /* PRICING — dark */
+    .pricing {
+      background: var(--bg);
+      color: #fff;
+      padding: clamp(64px, 10vh, 110px) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing::before {
+      content: "";
+      position: absolute;
+      inset: auto auto -160px -10%;
+      width: 620px;
+      height: 620px;
+      background: radial-gradient(circle, rgba(var(--orange-rgb), 0.22), transparent 64%);
+      pointer-events: none;
+    }
+
+    .pricing-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 36px;
+      align-items: stretch;
+    }
+
+    .pricing h2 {
+      font-family: var(--sans);
+      font-size: clamp(32px, 4.4vw, 58px);
+      line-height: 0.98;
+      letter-spacing: -0.01em;
+      font-weight: 600;
+      max-width: 820px;
+    }
+
+    .pricing p {
+      font-family: var(--mono);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-top: 22px;
+      max-width: 680px;
+    }
+
+    .pricing .hero-actions {
+      margin-top: 30px;
+    }
+
+    .pricing .button.light {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+
+    .pricing .button.light:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .cohort-card {
+      background: #fff;
+      color: var(--ink);
+      padding: 30px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .cohort-card .date {
+      font-family: var(--sans);
+      font-size: 52px;
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+      color: var(--orange);
+    }
+
+    .cohort-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
+      font-weight: 600;
+    }
+
+    .cohort-row span {
+      font-family: var(--mono);
+      color: var(--muted);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 13px;
+    }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    details {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 22px;
+      transition: border-color 0.2s ease;
+    }
+
+    details[open] {
+      border-color: rgba(var(--orange-rgb), 0.5);
+    }
+
+    summary {
+      cursor: pointer;
+      font-family: var(--sans);
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    details p {
+      margin-top: 12px;
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    /* FOOTER — dark gradient like index */
+    
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-family: var(--mono);
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%) translateY(120px);
+      background: var(--bg);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 14px 18px;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      z-index: 100;
+      transition: 0.3s ease;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      /* nav: hamburger pill pinned to the top-right corner */
+      .nav { top: 14px; left: auto; right: 14px; transform: none; padding: 6px 10px; }
+      .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+        width: 34px;
+        height: 30px;
+        padding: 0;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+      }
+      .nav-toggle span {
+        display: block;
+        width: 21px;
+        height: 2px;
+        margin: 0 auto;
+        background: #fff;
+        transition: transform 0.25s ease, opacity 0.2s ease;
+      }
+      .nav.open .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+      .nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+      .nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 0;
+        left: auto;
+        transform: none;
+        flex-direction: column;
+        align-items: stretch;
+        min-width: 190px;
+        padding: 8px;
+        background: rgba(10, 10, 12, 0.92);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(20px) saturate(140%);
+        -webkit-backdrop-filter: blur(20px) saturate(140%);
+      }
+      .nav.open .nav-links { display: flex; }
+      .nav-links a { padding: 12px 16px; font-size: 12px; letter-spacing: 1px; justify-content: center; }
+      .nav-links .sep { display: none; }
+
+      .hero-grid,
+      .section-head,
+      .pricing-grid,
+      .outcomes-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .form-card {
+        position: static;
+      }
+
+      .hero-stats,
+      .build-grid,
+      .audience-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .module {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 40px, 1180px);
+      }
+
+      .hero {
+        padding-top: 56px;
+      }
+
+      .hero-stats,
+      .build-grid,
+      .audience-grid,
+      .outcome-list,
+      .comparison,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .build-card {
+        min-height: auto;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+      /* site logo — same size/place/animation as home (styles.css isn't linked here) */
+    .site-logo{ position:fixed; top:20px; left:24px; z-index:60; display:block; line-height:0; transition:transform .2s ease; }
+    .site-logo:hover{ transform:translateY(-1px); }
+    .site-logo img{ height:44px; width:auto; display:block; transition:filter .5s ease; }
+    .site-logo.on-dark img{ filter:brightness(0) invert(1); }
+    @media(max-width:900px){ .site-logo{ top:14px; left:16px; } .site-logo img{ height:36px; } }
+      /* ---------- FOOTER — identical to the home page ---------- */
+    .footer{ background:linear-gradient(180deg,#18110b 0%,#120c08 100%); color:#fff; border-top:1px solid rgba(var(--orange-rgb),.32); padding:clamp(60px,9vh,110px) 8vw clamp(34px,4vh,50px); font-family:var(--mono); font-weight:300; text-transform:uppercase; }
+    .footer-grid{ display:grid; grid-template-columns:1.9fr 1fr 1.3fr 1fr 1.4fr; gap:clamp(28px,3vw,52px); }
+    .f-brand h3{ font-family:var(--sans); font-size:24px; font-weight:500; margin-bottom:12px; }
+    .f-tag{ font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--orange); margin-bottom:14px; }
+    .f-desc{ font-size:13px; line-height:1.65; color:#fff; max-width:36ch; margin-bottom:18px; }
+    .f-contact a{ display:block; color:#fff; text-decoration:none; font-size:13px; margin-bottom:5px; }
+    .f-contact a:hover{ color:var(--orange); }
+    .f-col h4, .f-news h4{ font-size:14px; letter-spacing:2px; text-transform:uppercase; color:var(--orange-lt); margin-bottom:16px; }
+    .f-col ul{ list-style:none; }
+    .f-col li{ margin-bottom:11px; }
+    .f-col a{ color:#fff; text-decoration:none; font-size:13px; transition:color .2s; }
+    .f-col a:hover{ color:var(--orange-lt); }
+    .f-news p{ font-size:13px; line-height:1.65; color:#fff; margin-bottom:16px; }
+    .f-form{ display:flex; }
+    .f-form input{ flex:1; min-width:0; padding:11px 12px; font-family:var(--mono); font-size:12px; color:#fff; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.2); }
+    .f-form input::placeholder{ color:rgba(255,255,255,.4); }
+    .f-form button{ padding:11px 16px; font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#fff; background:var(--orange); border:none; cursor:pointer; transition:background .2s; }
+    .f-form button:hover{ background:var(--orange-lt); }
+    .footer .dec{ color:var(--orange-lt); }
+    .f-news-msg{ margin-top:12px; font-family:var(--mono); font-size:12px; letter-spacing:.5px; color:var(--orange-lt); }
+    .footer-bottom{ margin-top:clamp(40px,6vh,72px); padding-top:24px; border-top:1px solid rgba(255,255,255,.1); font-size:12px; color:rgba(255,255,255,.85); text-align:center; }
+    .visually-hidden{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+    @media(max-width:900px){ .footer{ padding-left:7vw; padding-right:7vw; } .footer-grid{ grid-template-columns:1fr 1fr; gap:32px 24px; } .f-brand, .f-news{ grid-column:1 / -1; } }
+    @media(max-width:460px){ .footer-grid{ grid-template-columns:1fr; } }
+      /* nav: hide on scroll down / show on scroll up (same as home) */
+    .nav{ transition:transform .35s ease, opacity .35s ease; }
+    .nav.nav-hidden{ transform:translateX(-50%) translateY(-190%); opacity:0; }
+    @media(max-width:980px){ .nav.nav-hidden{ transform:translateY(-190%); } }
+
+    /* ===== scroll-linked curriculum (sticky module list + scrolling panels) ===== */
+    .curr{ display:grid; grid-template-columns:320px 1fr; gap:clamp(30px,4vw,64px); align-items:start; margin-top:34px; }
+    .curr-nav{ position:sticky; top:104px; display:flex; flex-direction:column; gap:20px; }
+    .curr-nav-item{ display:flex; gap:14px; align-items:baseline; text-decoration:none; font-family:var(--mono); font-size:14px; letter-spacing:.6px; text-transform:uppercase; line-height:1.35; color:#a2a09c; transition:color .25s ease; }
+    .curr-nav-item .cn-num{ flex:0 0 auto; font-variant-numeric:tabular-nums; }
+    .curr-nav-item:hover{ color:#5a5e64; }
+    .curr-nav-item.is-active{ color:#16181b; font-weight:600; }
+    .curr-body{ display:flex; flex-direction:column; gap:clamp(30px,5vh,56px); }
+    .curr-mod{ scroll-margin-top:100px; }
+    .curr-mod-banner{ position:relative; min-height:190px; border-radius:6px; overflow:hidden; background-size:cover; background-position:center; display:flex; flex-direction:column; justify-content:flex-end; padding:24px; isolation:isolate; }
+    .curr-mod-banner::after{ content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(160deg, rgba(10,8,6,.15) 0%, rgba(10,8,6,.82) 100%); }
+    .curr-mod-banner .cm-label{ font-family:var(--mono); font-size:12px; letter-spacing:1.6px; text-transform:uppercase; color:rgba(255,255,255,.82); margin-bottom:8px; }
+    .curr-mod-banner h3{ font-family:var(--sans); font-size:clamp(20px,2.3vw,28px); font-weight:700; line-height:1.1; color:#fff; letter-spacing:-.01em; }
+    .curr-checks{ list-style:none; margin:22px 0 0; padding:0; display:flex; flex-direction:column; gap:15px; }
+    .curr-checks li{ position:relative; padding-left:32px; font-family:var(--mono); font-size:14.5px; line-height:1.55; color:#41454b; }
+    .curr-checks li::before{ content:""; position:absolute; left:6px; top:3px; width:7px; height:12px; border:solid var(--orange); border-width:0 2px 2px 0; transform:rotate(45deg); }
+    @media (max-width:900px){
+      .curr{ grid-template-columns:1fr; gap:26px; }
+      .curr-nav{ position:static; flex-direction:row; flex-wrap:wrap; gap:10px 18px; padding-bottom:6px; }
+      .curr-nav-item{ font-size:12px; }
+    }
+
+  </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"SOC Analyst Program","description":"Specialise on the SOC floor: detection, triage, SIEM and incident response. The fast track into a Security Operations role.","provider":{"@type":"EducationalOrganization","name":"ONROL","url":"https://onrol.in/"},"inLanguage":"en","offers":{"@type":"Offer","category":"Paid","priceCurrency":"INR","price":"29999","availability":"https://schema.org/LimitedAvailability","url":"https://onrol.in/programs/soc-analyst"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"Online","startDate":"2026-08-25","courseWorkload":"P3M"}}</script>
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="preload" href="/home-glydi/assets/fonts/opensans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/home-glydi/logo-mark.png" type="image/png">
+<link rel="apple-touch-icon" href="/home-glydi/logo-mark.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ONROL">
+<meta property="og:locale" content="en_IN">
+<meta property="og:title" content="SOC Analyst Course Online, Detect, Investigate &amp;amp; Respond | ONROL">
+<meta property="og:description" content="A focused 3-month, 75%+ hands on SOC Analyst program. Master Splunk, ELK, Wireshark, MITRE ATT&amp;amp;CK and the NIST IR lifecycle. Run a full incident simulation and get shift ready. Register now.">
+<meta property="og:url" content="https://onrol.in/programs/soc-analyst">
+<meta property="og:image" content="https://onrol.in/og/programs.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SOC Analyst Course Online, Detect, Investigate &amp;amp; Respond | ONROL">
+<meta name="twitter:description" content="A focused 3-month, 75%+ hands on SOC Analyst program. Master Splunk, ELK, Wireshark, MITRE ATT&amp;amp;CK and the NIST IR lifecycle. Run a full incident simulation and get shift ready. Register now.">
+<meta name="twitter:image" content="https://onrol.in/og/programs.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://onrol.in/"},{"@type":"ListItem","position":2,"name":"Programs","item":"https://onrol.in/programs"},{"@type":"ListItem","position":3,"name":"SOC Analyst","item":"https://onrol.in/programs/soc-analyst"}]}</script>
+<style id="nav-login-fix">
+.nav .nav-login-btn,
+.nav.on-dark .nav-login-btn{ color:#16181b !important; }
+.nav .nav-login-btn .nl-chev{ color:currentColor !important; }
+</style>
+</head>
+<body>
+<a class="site-logo" href="/" aria-label="ONROL, AI Execution School, home">
+  <img src="/home-glydi/logo-mark.png" alt="ONROL, AI Execution School">
+</a>
+  <div class="page">
+    <nav class="nav">
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <span class="sep" aria-hidden="true"></span>
+        <a href="/programs">Programs</a>
+        <span class="sep" aria-hidden="true"></span>
+        <a href="/about">About</a>
+        <span class="sep" aria-hidden="true"></span>
+        <a href="/contact">Contact</a>
+      <a class="nav-apply" href="/programs/ai-generalist">Apply</a>
+      </div>
+    </nav>
+
+    <main id="top">
+      <header class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">SOC Analyst Program, Mentor led, 100% online</div>
+            <h1>Detect, Investigate &amp; <span class="gradient-text">Respond</span></h1>
+            <p class="hero-copy">Become the analyst companies put on the SOC floor. A 3-month, 75%+ hands on program on the real SOC toolset, Splunk, ELK, Wireshark, MITRE ATT&amp;CK, and the NIST incident response lifecycle.</p>
+
+            <div class="hero-stats" aria-label="Program highlights">
+              <div class="stat"><strong>3</strong><span>Months</span></div>
+              <div class="stat"><strong>60+</strong><span>Live hours</span></div>
+              <div class="stat"><strong>75%+</strong><span>Hands on</span></div>
+              <div class="stat"><strong>12</strong><span>Modules</span></div>
+            </div>
+
+            <div class="hero-actions">
+              <a class="button orange" data-magnetic href="#register">Register Now</a>
+              <a class="button light" href="#build">What You'll Do</a>
+            </div>
+          </div>
+
+          <aside class="form-card" id="register">
+            <h2>GET MORE DETAILS</h2>
+            <p>Drop your Mobile number, our team reaches out with the schedule, syllabus, and full cohort guide within 24 hours.</p>
+            <form id="leadForm" data-lead data-program="SOC Analyst Program">
+              <div class="field">
+                <label for="phone">Phone </label>
+                <input id="phone" name="phone" type="tel" placeholder="Enter Mobile number" required />
+              </div>
+              <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0">
+              <button class="button orange" type="submit" style="width:100%;">Register Now</button>
+              <div class="form-note">No spam. Used only to confirm your seat.</div>
+            </form>
+          </aside>
+        </div>
+      </header>
+
+      <section>
+        <div class="container section-head" data-reveal>
+          <div>
+            <div class="tag">Why ONROL</div>
+            <h2 class="section-title" data-split>Companies need analysts who can do the work</h2>
+          </div>
+          <p class="section-desc">The industry does not want more people with certificates. It wants people who can cut through the alert noise, dig into real threats, and respond well. You train the way the pros do, on Splunk, ELK, Wireshark, YARA, and live event logs, so you leave ready for a real shift.</p>
+        </div>
+      </section>
+
+      <section id="build">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <div class="tag">What You'll Be Able To Do</div>
+              <h2 class="section-title" data-split>Operate a real SOC, end to end</h2>
+            </div>
+            <p class="section-desc">The full workflow, practiced from start to finish: collect, detect, investigate, respond, report.</p>
+          </div>
+
+          <div class="build-grid" data-reveal>
+            <article class="build-card" data-tilt="6">
+              <div class="bc-top">
+                <span class="bc-ic"><svg viewBox="0 0 24 24"><path d="M4 6h9"/><path d="M4 18h9"/><path d="M4 12h16"/><circle cx="17" cy="6" r="2.4"/><circle cx="17" cy="18" r="2.4"/><circle cx="20" cy="12" r="1.6"/></svg></span>
+                <span class="bc-num">01</span>
+              </div>
+              <h3>Operate SIEM Platforms</h3>
+              <p>Deploy Splunk &amp; ELK for centralized monitoring.</p>
+              <div class="tools"><span>Splunk</span><span>ELK</span></div>
+            </article>
+            <article class="build-card" data-tilt="6">
+              <div class="bc-top">
+                <span class="bc-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8.5h18"/><path d="M6.5 6.3h.01M9 6.3h.01"/></svg></span>
+                <span class="bc-num">02</span>
+              </div>
+              <h3>Detection Engineering</h3>
+              <p>Write searches, dashboards, alerts, and correlation rules.</p>
+              <div class="tools"><span>SPL</span><span>Kibana</span></div>
+            </article>
+            <article class="build-card" data-tilt="6">
+              <div class="bc-top">
+                <span class="bc-ic"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1.4"/><path d="M9 14h.01M15 14h.01"/><path d="M2 13v3M22 13v3"/></svg></span>
+                <span class="bc-num">03</span>
+              </div>
+              <h3>Detect Real Attacks</h3>
+              <p>Brute force, malware, phishing, port scans, and web attacks.</p>
+              <div class="tools"><span>Wireshark</span><span>Suricata</span></div>
+            </article>
+            <article class="build-card" data-tilt="6">
+              <div class="bc-top">
+                <span class="bc-ic"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 9l5 3-5 3z"/></svg></span>
+                <span class="bc-num">04</span>
+              </div>
+              <h3>Incident Investigation</h3>
+              <p>Run a full investigation and produce a professional report.</p>
+              <div class="tools"><span>YARA</span><span>EDR</span></div>
+            </article>
+            <article class="build-card" data-tilt="6">
+              <div class="bc-top">
+                <span class="bc-ic"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg></span>
+                <span class="bc-num">05</span>
+              </div>
+              <h3>Capstone Simulation</h3>
+              <p>Detect → contain → forensics → report → present.</p>
+              <div class="tools"><span>MITRE</span><span>NIST</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="journey">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <div class="tag">Curriculum</div>
+              <h2 class="section-title" data-split>Your 3-month SOC Analyst journey</h2>
+            </div>
+            <p class="section-desc">A 12-module program in 5 stages that follow how a real team works, plus a full incident simulation and placement prep.</p>
+          </div>
+
+          <div class="curr">
+      <aside class="curr-nav" aria-label="Curriculum modules">
+        <a class="curr-nav-item is-active" href="#cm-1" data-target="cm-1"><span class="cn-num">01</span><span>Computer &amp; Networking Basics</span></a>
+        <a class="curr-nav-item" href="#cm-2" data-target="cm-2"><span class="cn-num">02</span><span>Data Into a Working SIEM</span></a>
+        <a class="curr-nav-item" href="#cm-3" data-target="cm-3"><span class="cn-num">03</span><span>Detect Attacks in Traffic &amp; Logs</span></a>
+        <a class="curr-nav-item" href="#cm-4" data-target="cm-4"><span class="cn-num">04</span><span>Investigate &amp; Respond</span></a>
+        <a class="curr-nav-item" href="#cm-5" data-target="cm-5"><span class="cn-num">05</span><span>Hunt, Automate &amp; Get Hired</span></a>
+      </aside>
+      <div class="curr-body">
+        <article class="curr-mod" id="cm-1">
+          <div class="curr-mod-banner" style="background-image:url('soc-1.jpg')">
+            <span class="cm-label">Segment 01, Foundations</span>
+            <h3>Computer &amp; Networking Basics</h3>
+          </div>
+          <ul class="curr-checks">
+            <li>Operating systems, CLI, and virtualization</li>
+            <li>OSI / TCP IP stack and IP addressing</li>
+            <li>Ports, protocols, and troubleshooting</li>
+            <li>Lab setup and the analyst baseline</li>
+          </ul>
+        </article>
+        <article class="curr-mod" id="cm-2">
+          <div class="curr-mod-banner" style="background-image:url('soc-2.jpg')">
+            <span class="cm-label">Segment 02, Packets, Logging &amp; SIEM</span>
+            <h3>Data Into a Working SIEM</h3>
+          </div>
+          <ul class="curr-checks">
+            <li>Packet capture, HTTP and DNS analysis</li>
+            <li>Windows &amp; Linux logs, forwarding and parsing</li>
+            <li>SIEM architecture and Splunk SPL</li>
+            <li>Kibana, dashboards, and alerts</li>
+          </ul>
+        </article>
+        <article class="curr-mod" id="cm-3">
+          <div class="curr-mod-banner" style="background-image:url('soc-3.jpg')">
+            <span class="cm-label">Segment 03, Threat Detection &amp; IDS</span>
+            <h3>Detect Attacks in Traffic &amp; Logs</h3>
+          </div>
+          <ul class="curr-checks">
+            <li>Brute force, port scan, malware, and phishing indicators</li>
+            <li>Web attack detection</li>
+            <li>Advanced Wireshark and Zeek</li>
+            <li>NetFlow and Suricata signatures</li>
+          </ul>
+        </article>
+        <article class="curr-mod" id="cm-4">
+          <div class="curr-mod-banner" style="background-image:url('soc-4.jpg')">
+            <span class="cm-label">Segment 04, Endpoint &amp; Incident Response</span>
+            <h3>Investigate &amp; Respond</h3>
+          </div>
+          <ul class="curr-checks">
+            <li>EDR, persistence, and memory acquisition</li>
+            <li>YARA and endpoint analysis</li>
+            <li>NIST IR lifecycle, triage and containment</li>
+            <li>Evidence, chain of custody, and tabletops</li>
+          </ul>
+        </article>
+        <article class="curr-mod" id="cm-5">
+          <div class="curr-mod-banner" style="background-image:url('soc-5.jpg')">
+            <span class="cm-label">Segment 05, Hunting, SOAR &amp; Career</span>
+            <h3>Hunt, Automate &amp; Get Hired</h3>
+          </div>
+          <ul class="curr-checks">
+            <li>IOC management, hunt methodology, and UEBA</li>
+            <li>Correlation rules and SOAR playbooks</li>
+            <li>Full incident simulation, end to end</li>
+            <li>Resume, LinkedIn, and interview prep</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section>
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <div class="tag">Who Is This For?</div>
+              <h2 class="section-title" data-split>Built for future SOC analysts</h2>
+            </div>
+            <p class="section-desc">Freshers and working professionals are both welcome. A basic interest in security helps, and we build your foundations before the advanced SOC work. It is fully online, so you can join from anywhere.</p>
+          </div>
+
+          <div class="audience-grid" data-reveal>
+            <div class="audience-card"><h3>Freshers &amp; Graduates</h3><p>Target your first SOC role.</p></div>
+            <div class="audience-card"><h3>Working Professionals</h3><p>Move into security operations or blue team work.</p></div>
+            <div class="audience-card"><h3>Cyber Security Learners</h3><p>Add a focused, job ready specialization.</p></div>
+            <div class="audience-card"><h3>Career Switchers</h3><p>Break into defense with hands on skills.</p></div>
+            <div class="audience-card"><h3>SOC Aspirants</h3><p>Get shift ready for L1 / L2 analyst roles.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="outcomes">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <div class="tag">By the End</div>
+              <h2 class="section-title" data-split>You'll be shift ready, not just certified</h2>
+            </div>
+            <p class="section-desc">It all adds up to a portfolio that gets you hired, the ONROL SOC Analyst credential, and dedicated placement prep.</p>
+          </div>
+
+          <div class="outcomes-wrap" data-reveal>
+            <div class="outcome-list">
+              <div class="outcome-item"><strong>SIEM Operations</strong><p>Run Splunk &amp; ELK for centralized monitoring.</p></div>
+              <div class="outcome-item"><strong>Detection Rules</strong><p>Searches, dashboards, alerts, and correlation.</p></div>
+              <div class="outcome-item"><strong>Threat Detection</strong><p>Spot real attacks in logs and traffic.</p></div>
+              <div class="outcome-item"><strong>Incident Response</strong><p>Triage, contain, and report cleanly.</p></div>
+              <div class="outcome-item"><strong>Threat Hunting</strong><p>Proactive IOC and UEBA hunting.</p></div>
+              <div class="outcome-item"><strong>SOAR Automation</strong><p>Automate response with playbooks.</p></div>
+              <div class="outcome-item"><strong>ONROL SOC Certificate</strong><p>MITRE ATT&amp;CK and NIST aligned.</p></div>
+              <div class="outcome-item"><strong>Placement Prep</strong><p>Resume, mock interviews, live shift sim.</p></div>
+            </div>
+
+            <div class="portfolio-card">
+              <div>
+                <h3>SOC Portfolio</h3>
+                <p>A full enterprise attack simulation and investigation reports, detect, contain, forensics, report, and present.</p>
+              </div>
+              <div class="portfolio-media"><img src="/home-glydi/portfolio-soc.png" alt="SOC portfolio showcase" loading="lazy" decoding="async" width="1000" height="600"></div>
+              <div class="portfolio-stats">
+                <div><strong>12</strong><span>Modules</span></div>
+                <div><strong>75%+</strong><span>Hands on</span></div>
+                <div><strong>Live</strong><span>Simulation</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <div class="tag">Where it takes you</div>
+              <h2 class="section-title" data-split>Roles you can target</h2>
+            </div>
+          </div>
+          <p class="section-desc">What you build here maps to real, in-demand work. These are the roles this program prepares you for.</p>
+          <div class="roles-list" data-reveal>
+            <div class="role-row"><span class="rr-name">Threat Hunter</span><span class="rr-ctc">&#8377;11 LPA</span></div>
+            <div class="role-row"><span class="rr-name">Incident Response Analyst</span><span class="rr-ctc">&#8377;9 LPA</span></div>
+            <div class="role-row"><span class="rr-name">Blue Team Analyst</span><span class="rr-ctc">&#8377;8 LPA</span></div>
+            <div class="role-row"><span class="rr-name">SIEM Analyst</span><span class="rr-ctc">&#8377;7 LPA</span></div>
+            <div class="role-row"><span class="rr-name">SOC Analyst (L1)</span><span class="rr-ctc">&#8377;5 LPA</span></div>
+          </div>
+          <p class="roles-note">Indicative roles for the Indian market. Actual outcomes vary by effort, experience, and role.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <div class="tag">Difference</div>
+              <h2 class="section-title" data-split>Certificate courses vs ONROL SOC</h2>
+            </div>
+            <p class="section-desc">Most hand you slides and a piece of paper. Here you work on real tools, real logs, and a full incident, the way a team actually runs.</p>
+          </div>
+
+          <div class="comparison" data-reveal>
+            <div class="compare-col">
+              <h3>Certificate Only Courses</h3>
+              <ul>
+                <li><span>×</span> Theory and slides, little hands on</li>
+                <li><span>×</span> No real tools or live logs</li>
+                <li><span>×</span> No investigation practice</li>
+                <li><span>×</span> A certificate, but no experience</li>
+                <li><span>×</span> No placement support</li>
+              </ul>
+            </div>
+            <div class="compare-col">
+              <h3>ONROL SOC Analyst</h3>
+              <ul>
+                <li><span>✓</span> 75%+ hands on labs from day one</li>
+                <li><span>✓</span> Real SIEM, Splunk &amp; ELK</li>
+                <li><span>✓</span> A full enterprise incident simulation</li>
+                <li><span>✓</span> Mapped to MITRE ATT&amp;CK &amp; NIST IR</li>
+                <li><span>✓</span> Placement prep built in</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <div class="tag">FAQ</div>
+              <h2 class="section-title" data-split>Questions before you register</h2>
+            </div>
+            <p class="section-desc">What you need to start, the tools you use, and the placement support you get.</p>
+          </div>
+
+          <div class="faq-grid" data-reveal>
+            <details>
+              <summary>Is this program for beginners?</summary>
+              <p>It's designed for freshers and working professionals. A basic interest in security helps, and the program builds your foundations before moving into advanced SOC work.</p>
+            </details>
+            <details>
+              <summary>Is it fully online?</summary>
+              <p>Yes, live online sessions you can join from anywhere in the world.</p>
+            </details>
+            <details>
+              <summary>How practical is it?</summary>
+              <p>75%+ hands on. You work real tools, real logs, and a full incident simulation.</p>
+            </details>
+            <details>
+              <summary>Which tools and frameworks will I learn?</summary>
+              <p>Splunk, ELK, Wireshark, Zeek, Suricata, YARA, and SOAR, mapped to MITRE ATT&amp;CK and the NIST IR lifecycle.</p>
+            </details>
+            <details>
+              <summary>Will I get a certificate?</summary>
+              <p>Yes, the ONROL SOC Analyst Program Certificate, built around real SOC workflows.</p>
+            </details>
+            <details>
+              <summary>Does it help with placement?</summary>
+              <p>Yes, resume and LinkedIn optimization, mock interviews, and a live SOC shift simulation are part of the program.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+
+      <style>
+        .lpath-sec .container{ text-align:center; }
+        .lpath{ display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:12px 8px; margin-top:34px; }
+        .lp-step{ display:flex; flex-direction:column; align-items:center; gap:10px; min-width:140px; padding:24px 18px; background:#fff; border:1px solid rgba(0,0,0,.1); border-radius:16px; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+        .lp-step:hover{ transform:translateY(-5px); border-color:var(--orange); box-shadow:0 24px 46px -24px rgba(0,0,0,.3); }
+        .lp-i{ width:36px; height:36px; display:grid; place-items:center; border-radius:50%; background:rgba(var(--orange-rgb),.12); color:var(--orange); font-weight:800; font-size:14px; }
+        .lp-t{ font-size:16px; font-weight:800; letter-spacing:.2px; color:#16181b; }
+        .lp-arrow{ color:var(--orange); display:grid; place-items:center; flex:0 0 auto; }
+        .lp-arrow svg{ width:24px; height:24px; }
+        .lp-quote{ margin:44px auto 0; max-width:760px; text-align:center; font-size:clamp(18px,2.2vw,25px); font-weight:600; line-height:1.5; color:#33363b; font-style:italic; }
+        .lp-quote span{ color:var(--orange); font-style:normal; }
+        .lp-close{ text-align:center; margin-top:46px; }
+        .lp-close h3{ font-size:clamp(24px,3.6vw,40px); font-weight:800; letter-spacing:-.02em; margin:0; }
+        .lp-close h3 span{ color:var(--orange); }
+        .lp-close p{ color:#54585e; font-size:16px; margin:12px 0 26px; }
+        @media(max-width:640px){ .lpath{ flex-direction:column; } .lp-arrow{ transform:rotate(90deg); } .lp-step{ width:min(280px,82%); flex-direction:row; justify-content:flex-start; gap:14px; } }
+      </style>
+      <section class="lpath-sec">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <div class="tag">The Learning Path</div>
+              <h2 class="section-title" data-split>The full SOC workflow, end to end.</h2>
+            </div>
+          </div>
+          <div class="lpath" data-reveal>
+            <div class="lp-step"><span class="lp-i">1</span><span class="lp-t">Collect</span></div>
+            <span class="lp-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+            <div class="lp-step"><span class="lp-i">2</span><span class="lp-t">Detect</span></div>
+            <span class="lp-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+            <div class="lp-step"><span class="lp-i">3</span><span class="lp-t">Investigate</span></div>
+            <span class="lp-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+            <div class="lp-step"><span class="lp-i">4</span><span class="lp-t">Respond</span></div>
+            <span class="lp-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+            <div class="lp-step"><span class="lp-i">5</span><span class="lp-t">Report</span></div>
+          </div>
+          <p class="lp-quote">The SOC Analyst Program makes you <span>shift ready</span> to detect, investigate, and respond to real threats on day one.</p>
+          <div class="lp-close">
+            <h3>Detect. Respond. <span>Get Hired.</span></h3>
+            <p>Your roadmap to a future proof cyber career starts here.</p>
+            <a class="button orange" data-magnetic href="#register">Apply Now</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+  <div class="footer-top">
+    <div class="f-brand">
+      <a class="f-logo" href="/">ONROL</a>
+      <p class="f-copy">&copy; 2026 ONROL, AI Execution School, Hyderabad. All rights reserved. Founded by <a href="/founders/dr-neeraja-reddy" style="color:inherit;text-decoration:underline">Dr. Neeraja Reddy</a> &middot; Updated July 2026.</p>
+      <div class="f-socials">
+        <a href="https://instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1"/></svg></a>
+        <a href="https://linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10.5v6M7 7.5v.01M11.5 16.5v-3.2a2 2 0 0 1 4 0v3.2M11.5 16.5v-6"/></svg></a>
+        <a href="https://youtube.com/" target="_blank" rel="noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M11 9.6l4 2.4-4 2.4z"/></svg></a>
+        <a href="mailto:info@onrol.in" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7.5l8 5.5 8-5.5"/></svg></a>
+      </div>
+    </div>
+    <nav class="f-cols" aria-label="Footer links">
+      <div class="f-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="/programs/ai-generalist">AI Generalist</a></li>
+          <li><a href="/programs/ai-architect">AI Architect</a></li>
+          <li><a href="/programs/soc-analyst">SOC Analyst</a></li>
+          <li><a href="/programs/cybersecurity">Cyber Security</a></li>
+          <li><a href="/programs">All Programs</a></li>
+          <li><a href="/masterclass">Free Masterclass</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/glossary">Glossary</a></li>
+          <li><a href="/questions">FAQs</a></li>
+          <li><a href="/tools/ai-skills-quiz">AI Skills Quiz</a></li>
+          <li><a href="/why-now">Why AI matters now</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About ONROL</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-and-conditions">Terms</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-news">
+    <div class="f-news-text">
+      <h4>Join our newsletter</h4>
+      <p>Useful AI tips for India, straight to your inbox. No spam.</p>
+    </div>
+    <form class="f-form" id="newsletterForm">
+      <label for="newsletterEmail" class="visually-hidden">Email address</label>
+      <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" autocomplete="email" aria-label="Email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <p class="f-news-msg" id="newsMsg" role="status" hidden>Thanks, you&rsquo;re on the list.</p>
+</footer>
+
+    <div class="toast" id="toast">Opening WhatsApp with your registration...</div>
+  </div>
+
+  <script>
+    /* mobile menu toggle */
+    (function () {
+      var nav = document.querySelector(".nav");
+      var toggle = document.getElementById("navToggle");
+      if (!nav || !toggle) return;
+      toggle.addEventListener("click", function () {
+        var open = nav.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      nav.querySelectorAll(".nav-links a").forEach(function (a) {
+        a.addEventListener("click", function () {
+          nav.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    })();
+
+  </script>
+<script>
+  /* logo colour adapts to the section behind it (white on dark, orange on light) */
+  (function(){
+    var logo = document.querySelector('.site-logo');
+    if (!logo || !('IntersectionObserver' in window)) return;
+    var darks = [];
+    ['.pricing', '.footer'].forEach(function(sel){
+      document.querySelectorAll(sel).forEach(function(el){ darks.push(el); });
+    });
+    if (!darks.length) return;
+    var active = new Set();
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) active.add(e.target); else active.delete(e.target); });
+      logo.classList.toggle('on-dark', active.size > 0);
+    }, { rootMargin:'-44px 0px -92% 0px', threshold:0 });
+    darks.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+<script>
+  (function(){
+    var form = document.getElementById('newsletterForm');
+    var msg = document.getElementById('newsMsg');
+    if (!form) return;
+    form.addEventListener('submit', function(e){ e.preventDefault(); var email = document.getElementById('newsletterEmail').value.trim(); if (!email) return; if (msg) msg.hidden = false; form.reset(); });
+  })();
+</script>
+<script>
+  /* ---- footer: decoding/scramble effect when it scrolls into view (matches home) ---- */
+  (function(){
+    var footer = document.querySelector('.footer');
+    if (!footer) return;
+    var targets = footer.querySelectorAll('h3, h4, .f-tag');
+    var CH = '!<>-_\\/[]{}=+*^?#@%$&';
+    function decode(el, delay){
+      if (el._dec) return;
+      el._dec = true;
+      var finalText = el.getAttribute('data-text') || el.textContent;
+      el.setAttribute('data-text', finalText);
+      var queue = [], frame = 0;
+      for (var i = 0; i < finalText.length; i++){
+        var c = finalText[i];
+        if (c === ' '){ queue.push({to:' ', start:0, end:0}); continue; }
+        var start = delay + Math.floor(Math.random() * 16);
+        var end = start + 14 + Math.floor(Math.random() * 24);
+        queue.push({to:c, start:start, end:end, ch:''});
+      }
+      (function run(){
+        var out = '', done = 0;
+        for (var i = 0; i < queue.length; i++){
+          var q = queue[i];
+          if (frame >= q.end){ done++; out += q.to; }
+          else if (frame >= q.start){
+            if (!q.ch || Math.random() < 0.3) q.ch = CH[Math.floor(Math.random() * CH.length)];
+            out += '<span class="dec">' + q.ch + '</span>';
+          }
+        }
+        el.innerHTML = out;
+        frame++;
+        if (done < queue.length) requestAnimationFrame(run);
+        else { el.textContent = finalText; el._dec = false; }
+      })();
+    }
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    footer.querySelectorAll('a, h3, h4, .f-tag').forEach(function(el){
+      el.addEventListener('mouseenter', function(){ decode(el, 0); });
+    });
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ targets.forEach(function(el, i){ decode(el, i * 5); }); io.disconnect(); }
+      });
+    }, { threshold:0.2 });
+    io.observe(footer);
+  })();
+</script>
+<script>
+  /* ---- nav: hide on scroll down, show on scroll up (matches home) ---- */
+  (function(){
+    var nav = document.querySelector('.nav');
+    if (!nav) return;
+    var last = window.pageYOffset || 0, ticking = false;
+    function onScroll(){
+      ticking = false;
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      if (nav.classList.contains('open')){ document.body.classList.remove('nav-up'); last = y; return; }
+      if (y > last && y > 140){ document.body.classList.add('nav-up'); }
+      else { document.body.classList.remove('nav-up'); }
+      last = y < 0 ? 0 : y;
+    }
+    window.addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, { passive:true });
+  })();
+</script>
+  <script src="/home-glydi/assets/js/config.js"></script>
+  <script src="/home-glydi/assets/js/widgets.js" defer></script>
+  <script src="/home-glydi/assets/js/cards.js?v=manrope" defer></script>
+  <script src="/home-glydi/assets/js/lead.js"></script>
+  <!-- premium motion engine (deferred; degrades gracefully) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="/home-glydi/assets/js/motion.js" defer></script>
+  <script>
+  /* module tiles: force muted autoplay, play only when in view (perf + reliability) */
+  (function(){
+    var vids = document.querySelectorAll('.module-vid');
+    if (!vids.length) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    vids.forEach(function(v){ v.muted = true; v.setAttribute('muted',''); });
+    if ('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(es){
+        es.forEach(function(e){ if (e.isIntersecting){ var p=e.target.play(); if(p&&p.catch)p.catch(function(){}); } else { e.target.pause(); } });
+      }, { threshold: 0.12 });
+      vids.forEach(function(v){ io.observe(v); });
+    } else { vids.forEach(function(v){ var p=v.play(); if(p&&p.catch)p.catch(function(){}); }); }
+  })();
+  </script>
+<script>(function(){try{var path=(location.pathname.replace(/\/+$/,"")||"/");document.querySelectorAll(".nav-links a[href]").forEach(function(a){var raw=(a.getAttribute("href")||"").split("#")[0];var href=raw?(raw.replace(/\/+$/,"")||"/"):"/";a.classList.toggle("is-active",href===path);});}catch(e){}})();</script>
+
+<script>
+/* curriculum scroll-spy: highlight the active module in the sticky list */
+(function(){
+  var mods = document.querySelectorAll('.curr-mod');
+  var items = document.querySelectorAll('.curr-nav-item');
+  if(!mods.length || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var id = e.target.id;
+        items.forEach(function(n){ n.classList.toggle('is-active', n.getAttribute('data-target')===id); });
+      }
+    });
+  }, { rootMargin:'-45% 0px -50% 0px', threshold:0 });
+  mods.forEach(function(m){ io.observe(m); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+/* Onrol shared design tokens.
+ *
+ * Single source of truth for colours, spacing, radii, shadows, and
+ * typography across onrol.in, tools.onrol.in, and the CRM. Import this
+ * once at the top of each surface's global stylesheet — do NOT
+ * duplicate any value in app-local CSS.
+ *
+ * Naming convention: --onrol-<category>-<role>-<step?>
+ *   --onrol-bg-base, --onrol-bg-elevated
+ *   --onrol-text-1 (primary), --onrol-text-2 (secondary), --onrol-text-3 (muted)
+ *   --onrol-space-1 (4px) ... --onrol-space-10 (96px)
+ *
+ * Dark mode is the default. Light mode flips under [data-theme="light"].
+ */
+
+:root {
+  /* Brand */
+  --onrol-brand:           #ff6a3d;     /* orange — primary CTA */
+  --onrol-brand-soft:      #ff8a64;
+  --onrol-brand-deep:      #d94a1f;
+  --onrol-accent:          #22d3ee;     /* cyan — secondary highlight */
+  --onrol-accent-soft:     #67e8f9;
+
+  /* Surface (dark) */
+  --onrol-bg-base:         #f3f5f8;
+  --onrol-bg-elevated:     #f3f5f8;
+  --onrol-bg-input:        #f3f5f8;
+  --onrol-border:          rgba(255,255,255,0.08);
+  --onrol-border-strong:   rgba(255,255,255,0.16);
+
+  /* Text (dark) */
+  --onrol-text-1:          #f3f4f6;
+  --onrol-text-2:          #cbd5e1;
+  --onrol-text-3:          #94a3b8;
+  --onrol-text-inverse:    #f3f5f8;
+
+  /* State */
+  --onrol-success:         #22c55e;
+  --onrol-warning:         #f59e0b;
+  --onrol-danger:          #ef4444;
+  --onrol-info:            #3b82f6;
+
+  /* Spacing (4 px scale) */
+  --onrol-space-1:  4px;
+  --onrol-space-2:  8px;
+  --onrol-space-3:  12px;
+  --onrol-space-4:  16px;
+  --onrol-space-5:  24px;
+  --onrol-space-6:  32px;
+  --onrol-space-7:  48px;
+  --onrol-space-8:  64px;
+  --onrol-space-9:  80px;
+  --onrol-space-10: 96px;
+
+  /* Radius */
+  --onrol-radius-xs:    4px;
+  --onrol-radius-sm:    8px;
+  --onrol-radius-md:    12px;
+  --onrol-radius-lg:    16px;
+  --onrol-radius-pill:  9999px;
+
+  /* Shadow */
+  --onrol-shadow-sm:    0 1px 2px rgba(0,0,0,0.32);
+  --onrol-shadow-md:    0 6px 18px rgba(0,0,0,0.32);
+  --onrol-shadow-lg:    0 20px 48px rgba(0,0,0,0.40);
+  --onrol-shadow-glow:  0 0 0 4px rgba(255,106,61,0.18);
+
+  /* Typography */
+  --onrol-font-sans:    "Figtree", system-ui, -apple-system, sans-serif;
+  --onrol-font-display: "Fira Sans", "Figtree", system-ui, sans-serif;
+  --onrol-font-mono:    "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --onrol-text-xs:   12px;
+  --onrol-text-sm:   14px;
+  --onrol-text-base: 16px;
+  --onrol-text-lg:   18px;
+  --onrol-text-xl:   22px;
+  --onrol-text-2xl:  28px;
+  --onrol-text-3xl:  36px;
+  --onrol-text-4xl:  48px;
+
+  --onrol-leading-tight: 1.18;
+  --onrol-leading-snug:  1.35;
+  --onrol-leading-body:  1.55;
+
+  /* Layout */
+  --onrol-container:       1200px;
+  --onrol-container-narrow: 880px;
+  --onrol-hero-mobile:     min(100vh, 720px);
+
+  /* Motion */
+  --onrol-ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+  --onrol-ease-snap:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --onrol-dur-fast:   140ms;
+  --onrol-dur-med:    240ms;
+  --onrol-dur-slow:   420ms;
+
+  /* Z scale */
+  --onrol-z-sticky:    50;
+  --onrol-z-side-rail: 100;
+  --onrol-z-overlay:   900;
+  --onrol-z-modal:     1000;
+  --onrol-z-toast:     1100;
+
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --onrol-bg-base:         #f8fafc;
+  --onrol-bg-elevated:     #ffffff;
+  --onrol-bg-input:        #f1f5f9;
+  --onrol-border:          rgba(0,0,0,0.08);
+  --onrol-border-strong:   rgba(0,0,0,0.16);
+
+  --onrol-text-1:          #f3f5f8;
+  --onrol-text-2:          #404040;
+  --onrol-text-3:          #64748b;
+  --onrol-text-inverse:    #ffffff;
+
+  --onrol-shadow-sm:    0 1px 2px rgba(0,0,0,0.08);
+  --onrol-shadow-md:    0 6px 18px rgba(0,0,0,0.10);
+  --onrol-shadow-lg:    0 20px 48px rgba(0,0,0,0.14);
+
+  color-scheme: light;
+}
+
+/* Tiny reset of focus ring across all three apps */
+.onrol-focus-ring:focus-visible {
+  outline: none;
+  box-shadow: var(--onrol-shadow-glow);
+  border-radius: var(--onrol-radius-md);
+}
+
+/* ── Mobile bottom-nav clearance ───────────────────────────────────
+   Push body content up by the height of the fixed mobile bottom nav
+   (~58px + safe-area-inset-bottom) so the last bit of content / footer
+   text doesn't sit hidden behind the nav. Only on mobile widths; the
+   nav itself is md:hidden, so desktop pays nothing. */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* ── content-visibility for below-fold home sections ─────────────────
+   Tells the browser to skip rendering work (style, layout, paint) for
+   the section until it scrolls near the viewport. Two wins:
+   1. Mobile LCP excludes off-screen images that would otherwise be
+      detected as "largest contentful paint".
+   2. Initial paint + main-thread work drops because the browser
+      doesn't lay out 12+ below-fold sections eagerly.
+   contain-intrinsic-size reserves a realistic height so scroll
+   position doesn't jump when sections materialise. */
+.onrol-lazy-section {
+  /* content-visibility: auto was masking framer-motion whileInView and leaving
+     below-fold sections stuck at opacity 0 (sections rendered as blank space).
+     Disabled. If we revisit, pair with sections that don't rely on whileInView. */
+}
+
+/* ── Autofilled form fields ──────────────────────────────────────────
+   Chrome/Safari paint autofilled inputs with their own background and
+   override the text color via -webkit-text-fill-color, which Tailwind's
+   text-* utilities cannot beat. That made autofilled values (name, email,
+   city) render fainter than the placeholder. Force a dark fill + keep the
+   white field background so typed and autofilled text both read clearly. */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: #0B1640 !important;
+  caret-color: #0B1640;
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  transition: background-color 9999s ease-in-out 0s;
+}

@@ -1,0 +1,80 @@
+# ONROL — AI Execution School (Full Reference)
+
+Last updated: 2026-07-13 · https://onrol.in
+
+## About ONROL
+ONROL is India's AI Execution School — a Hyderabad-based, online-first AI education platform focused on practical, project-based learning and real product building. ONROL does not teach AI as theory alone; it trains learners to build usable, deployable AI systems. Every module produces something deployable, and every week adds to a portfolio that replaces a resume. ONROL's approach is built around practical outputs, portfolio proof and market-ready AI capability for students, working professionals, freelancers, content creators, founders, developers and career switchers.
+
+ONROL teaches across the full modern AI stack with a no-code and low-code first philosophy: AI automation, AI agents and agentic workflows, RAG (retrieval-augmented generation), AI chatbots, vibe coding, AI app and full-stack development, generative AI, prompt engineering, diffusion models, AI video editing and content creation, AI for digital marketing and SEO, and AI orchestration and deployment.
+
+ONROL runs two flagship live programs: the **AI Generalist Program** (beginner-to-intermediate, 3 months) and the **AI Architect Program** (intermediate-to-advanced, 6 months live + 6 months guided execution). Both are delivered online in English on the ONROL LMS, require about 1–2 hours per day, are project-based, and follow flat, all-inclusive India pricing (no discounts, no upsells, no surprise charges).
+
+---
+
+## AI Generalist Program
+Tagline: "Your Roadmap to a Future-Proof AI Career." Build. Ship. Get paid.
+
+The AI Generalist Program is a 3-month execution program with 50+ live sessions in which you build 5 complete, publicly shippable AI systems. It is built for ambitious people who want to do, not just learn, and is fully beginner-friendly — no coding required. It uses vibe coding (prompt-to-app tools like Lovable) and no-code workflow tools (like n8n) so you can build production-ready systems without writing traditional code.
+
+Who it is for: college students, working professionals, freelancers, content creators, teachers, marketers and founders who can commit about two hours a day.
+
+The 5 AI systems you build:
+1. AI Automations — workflows that capture leads, send follow-ups, repurpose content and run business operations on autopilot, built in n8n; saves businesses 10+ hours a week.
+2. Websites & AI Apps — portfolio websites, lead-capture funnels and AI-powered mini applications built with vibe coding.
+3. AI Agents — autonomous systems that think, plan and act on your behalf: research agents, sales-qualifier agents and content-generation agents.
+4. AI Content & Videos — AI-generated reels, carousels, brand images, voiceovers and a full content-repurposing pipeline that runs while you sleep.
+5. AI Chatbots — WhatsApp business chatbots, website support bots and Telegram community bots that every Indian business wants to deploy.
+
+The 5 modules:
+- Module 1 — AI Foundations + Prompting + Diffusion Models: AI ecosystem, ethics, LLMs, productivity tools, prompt engineering fundamentals, image generation/editing with diffusion models, AI video and audio generation and editing.
+- Module 2 — Automation & Workflows: frameworks of automation; automation tools n8n, Zapier and Make; WhatsApp, email and Telegram automation and APIs.
+- Module 3 — AI Agents + Agentic Workflows: single-agent and multi-agent systems, agentic workflows, RAG basics, aligning agentic workflows with frameworks.
+- Module 4 — Vibe Coding + AI Development: website creation with Lovable, AI app development, AI-assisted full-stack development, backend/database/authentication integration, deploying and scaling AI applications.
+- Module 5 — Claude Ecosystem + Career Growth: Claude basics, Claude Skills, Claude Code and connectors, the OpenAI ecosystem, LinkedIn/portfolio/freelancing, and an AI career roadmap.
+
+The builder stack: ChatGPT and Claude (prompting, content generation), Gamma (decks and AI documents), Lovable (websites and AI apps without coding — vibe coding), Canva and Higgsfield (AI visuals, brand images, cinematic short videos), n8n (automation workflows and integrations), and Relevance AI and Flowise (building autonomous AI agents).
+
+What's included: 6 months of LMS access, all session recordings, templates/prompts/workflow libraries, access to the exclusive ONROL community, a personalized portfolio review, and the ONROL AI Generalist Certification plus a Builder Badge, with eligibility for future cohorts and advanced programs. Format: online live sessions, English, 1–2 hours/day, on the ONROL LMS.
+
+Program page: https://onrol.in/programs/ai-generalist/
+
+---
+
+## AI Architect Program
+Tagline: "Orchestrate. Connect. Deploy. — Build End-to-End AI Systems." Architect. Deploy. Lead.
+
+The AI Architect Program is for people ready to go beyond using AI tools and learn to design complete AI systems. Companies now need people who can connect AI with workflows, data, apps, agents and business operations. The program creates builders who can plan, architect and deploy real AI systems for businesses. It is 250+ hours across 20 modules / 20 weeks of live sessions, followed by 6 months of guided execution, and is low-code friendly (you do not need to be a developer, but should be comfortable with apps, APIs, databases and deployment).
+
+Who it is for: AI Generalist graduates ready to go deeper; developers and technical learners; career switchers moving into AI-enabled roles in tech, product, data or consulting; working professionals and IT teams; freelancers and entrepreneurs building AI products for clients; and ambitious final-year or post-graduate students who want a standout technical AI portfolio.
+
+What you walk away with — 15+ deployable, portfolio-ready AI systems, including: full-stack AI web applications (frontend, backend, database, authentication and deployment); advanced RAG systems (document-based AI assistants that retrieve, reason and respond from real business data); multi-agent AI workflows (autonomous agent teams that research, plan, generate and execute); automation platforms built in n8n; AI content and lead-generation engines; Android and desktop AI applications (Claude Code, Android Studio, Flutter); enterprise AI architecture blueprints; and marketing-automation and analytics systems. Every project is live on GitHub/Vercel, documented and shareable.
+
+The 5 phases / 20 weeks:
+- Phase 1 — Technical Foundations (weeks 1–4): web foundations (HTML, CSS, JavaScript, React), Python programming and libraries, data visualisation, web scraping, SQL and Power BI, and statistics for data science.
+- Phase 2 — AI Core Skills (weeks 5–8): AI foundations, prompting and the LLM ecosystem; RAG basics, diffusion models and generative AI; automation and workflow systems (n8n, Zapier, Make); chatbots, AI agents and MCP (Model Context Protocol), including custom MCP servers.
+- Phase 3 — Build & Deploy (weeks 9–11): vibe coding and AI-assisted development (Lovable, full-stack apps, SaaS MVP); app development and the Claude ecosystem (Android apps, desktop software, Claude-powered workflows); deployment, optimisation and monetisation (live products on Vercel, GitHub portfolio).
+- Phase 4 — Advanced AI Systems (weeks 12–15): advanced RAG and visual storytelling (enterprise knowledge systems); AI system architecture (multi-stack platforms, self-hosted automation); AI content, media and personal-branding systems; AI orchestration, internal tools and production readiness (monitoring, fallback, logs, retries).
+- Phase 5 — Growth, Marketing & Capstone (weeks 16–20): final capstone, portfolio and demo day; digital marketing foundations and AI strategy; lead generation, SEO, Search Console and content marketing; social media marketing and AI creative production; paid ads, analytics (GA4, GTM), automation and a marketing capstone.
+
+Plus 5 bonus sessions (3D game generation, stack alternatives, AI SEO, Google ecosystem, Spline 3D and advanced design tools) and 20 masterclasses (deep-dive clinics on web UI, Python, data, statistics, prompt engineering and more).
+
+The builder stack: VS Code, React, Python, Claude Code, Antigravity, Lovable (build & code); Claude, ChatGPT, Gemini, Ollama, OpenRouter, Dify (AI & LLMs); n8n, Zapier, Make, Twilio, Google Workspace (automation); SQL, Power BI, Pandas, NumPy, Matplotlib, Seaborn (data & analytics); GitHub, Vercel, Supabase, Firebase, Docker, Grafana (deploy & host); Figma, Canva, Gamma, Runway, HeyGen, ElevenLabs (design & content).
+
+The Guided Execution Phase (6 months post-class): structured support — not passive access — to ensure every learner completes their portfolio and reaches their goal. Includes project-completion guidance, portfolio review and improvement sessions, concept reinforcement, career and placement direction, and 1 full year of access to the LMS, recordings and resources.
+
+What's included: 6 months of live online sessions (250+ hours), 6 months of guided execution and project support, 1 year of LMS access and recordings, the exclusive ONROL community, templates/prompts/workflow libraries, a personalized portfolio review, the **AI Orchestrator Certification** plus a Builder Badge, placement assistance and career direction, and eligibility for future cohorts. Format: online live sessions, English, 1–2 hours/day, on the ONROL LMS.
+
+Program page: https://onrol.in/programs/ai-architect/
+
+---
+
+## Which program is right for you?
+- Choose the **AI Generalist Program** if you are a beginner or want a fast, practical, no-code path into applied AI — building automations, chatbots, agents, AI content and AI apps in 3 months.
+- Choose the **AI Architect Program** if you already understand AI basics and want to design and deploy end-to-end AI systems at a technical, systems level over 6 months plus 6 months of guided execution, with placement assistance and the AI Orchestrator Certification.
+Complete beginners typically start with AI Generalist; those ready to build systems (or AI Generalist graduates) move to AI Architect.
+
+## Key topics ONROL covers (for AI-search relevance)
+No-code AI and low-code AI; AI automation and n8n/Zapier/Make workflows; AI agents, agentic AI and multi-agent systems; RAG (retrieval-augmented generation) and knowledge/document assistants; MCP (Model Context Protocol) and custom MCP servers; AI chatbots for WhatsApp, websites and Telegram; vibe coding and AI-assisted full-stack development with Lovable, Claude Code and VS Code; generative AI, prompt engineering and diffusion models; AI video editing, AI avatars and AI content creation; AI for digital marketing, SEO, AI SEO, lead generation and paid ads; AI deployment with Vercel, GitHub, Docker, Supabase and Firebase; Python, SQL, Power BI and data analytics for AI; and AI orchestration and production-ready AI systems.
+
+## About the school
+ONROL — AI Execution School. Online, India-first, Hyderabad-based, serving learners nationwide (Hyderabad, Bangalore, Chennai, Mumbai, Delhi, Pune, Kolkata, Ahmedabad and more). Contact: info@onrol.in · 96093 12345 · https://onrol.in

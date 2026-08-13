@@ -1,0 +1,1290 @@
+{
+  "$schema": "Sitemap source of truth — `npm run build` regenerates dist/sitemap.xml from this list. Add new public routes here AND in scripts/prerender-routes.json.",
+  "routes": [
+    {
+      "path": "/",
+      "priority": 1,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/privacy-policy/",
+      "priority": 0.4,
+      "changefreq": "yearly"
+    },
+    {
+      "path": "/terms-and-conditions/",
+      "priority": 0.4,
+      "changefreq": "yearly"
+    },
+    {
+      "path": "/refund-policy/",
+      "priority": 0.4,
+      "changefreq": "yearly"
+    },
+    {
+      "path": "/contact/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/programs/ai-generalist/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/programs/ai-architect/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-generalist/",
+      "priority": 0.95,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-execution-school/",
+      "priority": 0.95,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/best-ai-course-in-india/",
+      "priority": 0.95,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/academic-ai-vs-applied-ai/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-course-for-beginners/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-course-for-students/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-course-for-working-professionals/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-course-for-freelancers/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-course-for-business-owners/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-course-for-content-creators/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-automation-course/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/best-ai-institutes-in-india/",
+      "priority": 0.98,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/top-vibe-coding-training-india/",
+      "priority": 0.95,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/proof/",
+      "priority": 0.9,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/glossary/llm/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/claude/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/chatgpt/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/gemini/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/perplexity/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/groq/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/openai/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/anthropic/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/google-deepmind/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/prompt-engineering/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/chain-of-thought/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/few-shot/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/zero-shot/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/system-prompt/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/tree-of-thought/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/rag/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/fine-tuning/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/lora/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/embedding/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/vector-database/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/semantic-search/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/training-data/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/ai-agent/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/ai-orchestration/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/tool-use/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/mcp/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/automation/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/n8n/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/zapier/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/make-com/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/vibe-coding/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/cursor/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/bolt-new/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/lovable/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/v0/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/replit/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/github-copilot/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/api/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/webhook/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/supabase/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/vercel/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/cloudflare/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/tokens/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/context-window/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/hallucination/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/temperature/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/ai-search/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/ai-overviews/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/applied-ai/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/academic-ai/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/seo/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/google-ai-studio/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/inference/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/agentic-ai/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/function-calling/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/structured-output/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/ai-eval/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/prompt-injection/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/mlops/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/aiops/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/ai-engineer/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/generative-ai/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/image-generation/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/video-generation/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/speech-to-text/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/whisper/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/text-to-speech/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/elevenlabs/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/voice-agent/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/ai-marketing/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/ai-seo/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/ai-content-marketing/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/ai-performance-marketing/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/no-code-ai/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/low-code-ai/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/india-ai-mission/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/sarvam-ai/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/krutrim-ai/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/bhashini/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/ai-policy-india/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/claude-opus-4-7/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/claude-sonnet-4-6/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/gpt-5-5/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/gemini-3/",
+      "priority": 0.55,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/deepseek-v4/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/mistral-small-4/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/open-weights/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/vibe-coding-tools/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/windsurf/",
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/ai-jobs-india/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/ai-bootcamp/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/ai-course-online/",
+      "priority": 0.65,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/glossary/ai-portfolio/",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/tools/ai-skills-quiz/",
+      "priority": 0.85,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/why-now/",
+      "priority": 0.9,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/community/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/community/feed/",
+      "priority": 0.85,
+      "changefreq": "daily"
+    },
+    {
+      "path": "/community/feed/news/",
+      "priority": 0.8,
+      "changefreq": "daily"
+    },
+    {
+      "path": "/community/feed/tools/",
+      "priority": 0.8,
+      "changefreq": "daily"
+    },
+    {
+      "path": "/community/feed/prompts/",
+      "priority": 0.8,
+      "changefreq": "daily"
+    },
+    {
+      "path": "/community/feed/hacks/",
+      "priority": 0.8,
+      "changefreq": "daily"
+    },
+    {
+      "path": "/community/feed/wins/",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/community/feed/jobs/",
+      "priority": 0.8,
+      "changefreq": "daily"
+    },
+    {
+      "path": "/community/feed/workshops/",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/about/",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/contact/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/questions/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/",
+      "priority": 0.7,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/best-ai-course-in-india-for-beginners/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/best-ai-course-for-students-in-india/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/how-to-learn-ai-without-coding/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/ai-skills-every-student-should-learn/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/best-ai-course-for-working-professionals/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/best-ai-course-for-freelancers/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/how-to-earn-money-using-ai/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/best-ai-automation-course-in-india/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/ai-tools-for-business-owners/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/best-ai-course-for-content-creators/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/how-to-grow-instagram-using-ai/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/how-to-grow-youtube-using-ai/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/how-to-grow-linkedin-using-ai/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/best-ai-course-for-teachers/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/academic-ai-vs-applied-ai-which-to-pick/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/personas/",
+      "priority": 0.92,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/personas/engineers/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/personas/students/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/personas/teachers/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/personas/sales-and-marketing/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/personas/real-estate/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/personas/startup-and-founders/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/personas/working-professionals/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/personas/unemployed-youth/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/personas/freelancers/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/personas/content-creators/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/personas/smb-owners/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/personas/women-returning-to-work/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/best-ai-bootcamps-in-india/",
+      "priority": 0.95,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institutes-near-me/",
+      "priority": 0.93,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-course-fees-india/",
+      "priority": 0.92,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/how-to-choose-ai-institute-india/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-hyderabad/",
+      "priority": 0.92,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-bangalore/",
+      "priority": 0.92,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-mumbai/",
+      "priority": 0.92,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-delhi/",
+      "priority": 0.92,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-chennai/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-pune/",
+      "priority": 0.88,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-kolkata/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-ahmedabad/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-kondapur/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-gachibowli/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-madhapur/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-kukatpally/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-hitech-city/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-whitefield/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-koramangala/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-visakhapatnam/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-jaipur/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-coimbatore/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-indore/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-lucknow/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/generative-ai-course-india/",
+      "priority": 0.92,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/agentic-ai-course-india/",
+      "priority": 0.92,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-engineer-course-india/",
+      "priority": 0.92,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/how-to-choose-ai-institute-india/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/ai-bootcamp-vs-degree-india/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/ai-course-fees-comparison-india/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/free-vs-paid-ai-courses-india/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/learn-vibe-coding-step-by-step/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/lovable-vs-bolt-vs-cursor-vs-v0/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/build-your-first-ai-agent/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/n8n-vs-make-vs-zapier-india/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/earn-money-with-ai-skills-india/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/ai-skills-most-in-demand-india-2026/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/should-i-learn-ai-without-coding/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/ai-course-for-women-india/",
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/founders/dr-neeraja-reddy/",
+      "priority": 0.9,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/ai-institute-telangana/",
+      "priority": 0.92,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-karnataka/",
+      "priority": 0.92,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-maharashtra/",
+      "priority": 0.92,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-tamil-nadu/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-andhra-pradesh/",
+      "priority": 0.88,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-gujarat/",
+      "priority": 0.88,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-for-healthcare-india/",
+      "priority": 0.93,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-for-legal-india/",
+      "priority": 0.92,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-for-fintech-india/",
+      "priority": 0.92,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-for-hospitality-india/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-for-edtech-india/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-for-retail-india/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-institute-comparison-guide-india/",
+      "priority": 0.92,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/best-ai-institute-in-hyderabad/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-course-in-hyderabad/",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/events/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/landingpage/",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/site-map/",
+      "priority": 0.7,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/landingpage/career-catalyst/",
+      "priority": 0.95,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/landingpage/ai-agents/",
+      "priority": 0.95,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/landingpage/aigeneralist/",
+      "priority": 0.95,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-news/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/gemini-3-default-rebuild-ai-tools-india/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/gemini-3-snowflake-mlops-playbook-india/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/claude-opus-4-7-million-context-india-builders/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/apple-gemini-siri-1b-deal-ai-for-business/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/us-chip-rules-changed-ai-in-india-beneficiary/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/ai-chip-tariff-ai-jobs-training-india-boom/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/compute-sovereignty-no-code-ai-overwatch-act/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/openai-frontier-vs-claude-vs-vertex-india/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/claude-inside-excel-ai-digital-marketing-smb/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/anthropic-380b-generative-ai-funding-ai-jobs/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/india-ai-impact-summit-2026-takeaways-ai-students/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/claude-sonnet-4-6-1m-prompt-engineering/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/sarvam-105b-open-source-ai-training-india/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/new-delhi-declaration-ai-for-business-india/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/nvidia-agent-toolkit-mlops-stack-ai-agent-india/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/openai-852b-raise-generative-ai-hiring-wave/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/mistral-small-4-no-code-ai-india/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/sora-inside-chatgpt-ai-for-marketers-video/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/gemini-apple-datacentre-siri-ai-tools-strategy/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/march-2026-tech-layoffs-ai-jobs-rewritten/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/vibe-coding-7b-ai-course-indian-developer/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/gpt-5-5-opus-4-7-gemini-3-1-ai-agent-india/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/siri-runs-on-gemini-ai-for-students-iphones/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/deepseek-v4-cheaper-opus-ai-for-business-india/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/anthropic-900b-ai-training-mlops-india/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/128k-tech-layoffs-2026-ai-course-future-proof/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/workday-agents-prompt-engineering-workplace/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/anthropic-900b-ai-digital-marketing-india/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/krutrim-pivot-ai-in-india-founders-lesson/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/anthropic-9b-to-45b-ai-jobs-india/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/windsurf-950-tokens-vibe-coding-india-devs/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/veo-3-1-tv-grade-ads-ai-for-marketers-india/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/india-ai-governance-guidelines-compliance-checklist/",
+      "priority": 0.6,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/blog/best-ai-robotics-colleges-hyderabad-2026/",
+      "priority": 0.85,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/ai-for-working-professionals-automate-30-percent-of-your-job/",
+      "priority": 0.85,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/ai-for-freelancers-income-playbook-india-2026/",
+      "priority": 0.85,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/blog/top-ai-tools-india-2026/",
+      "priority": 0.9,
+      "changefreq": "monthly"
+    }
+  ]
+}

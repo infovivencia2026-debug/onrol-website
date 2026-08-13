@@ -1,0 +1,44 @@
+<style>
+  .ty{ max-width:720px; margin:0 auto; padding:clamp(120px,20vh,200px) 24px 100px; text-align:center; }
+  .ty .tick{ width:74px; height:74px; margin:0 auto 26px; border-radius:50%; display:grid; place-items:center; background:rgba(var(--orange-rgb),.12); color:var(--orange); }
+  .ty .tick svg{ width:36px; height:36px; stroke:currentColor; fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+  .ty h1{ font-family:'Manrope', sans-serif; font-size:clamp(30px,5vw,52px); font-weight:700; letter-spacing:-.02em; color:#16181b; margin:0 0 14px; }
+  .ty h1 span{ color:var(--orange); }
+  .ty p{ font-family:var(--mono); font-size:15px; line-height:1.7; color:#5a5e64; margin:0 auto 10px; max-width:52ch; }
+  .ty .actions{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:34px; }
+  .ty a.btn{ display:inline-flex; align-items:center; gap:9px; padding:15px 30px; font-family:var(--mono); font-size:13px; letter-spacing:1.2px; text-transform:uppercase; text-decoration:none; transition:transform .2s ease, background .2s ease; }
+  .ty a.wa{ background:#16181b; color:#fff; } .ty a.wa:hover{ background:#1faf57; transform:translateY(-2px); }
+  .ty a.home{ background:var(--orange); color:#fff; } .ty a.home:hover{ background:var(--orange-lt); transform:translateY(-2px); }
+</style>
+
+<a class="site-logo" href="/" aria-label="ONROL, AI Execution School, home">
+  <img src="/home-glydi/logo-mark.png" alt="ONROL, AI Execution School" width="120" height="120">
+</a>
+
+<nav class="nav">
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+  <div class="nav-links" id="navLinks">
+    <a href="/">Home</a><span class="sep" aria-hidden="true"></span>
+    <a href="/programs">Programs</a><span class="sep" aria-hidden="true"></span>
+    <a href="/about">About</a><span class="sep" aria-hidden="true"></span>
+    <a href="/contact">Contact</a>
+  <a class="nav-apply" href="/programs/ai-generalist">Apply</a>
+  </div>
+</nav>
+
+<main class="ty">
+  <span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>
+  <h1>You're <span>in.</span></h1>
+  <p id="tyProgram">Your registration has been received.</p>
+  <p>Our team will confirm your seat with fees, schedule, and the full cohort guide on WhatsApp within 24 hours.</p>
+  <div class="actions">
+    <a class="btn wa" id="waLink" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5s0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.1 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15l-1.3 4.7L7 20.4A10 10 0 1 0 12 2z"/></svg>
+      Message us on WhatsApp
+    </a>
+    <a class="btn home" href="/">Back to home</a>
+  </div>
+</main>
+
+
+

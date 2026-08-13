@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Upcoming Webinar · ONROL</title>
+<meta name="description" content="Join the live ONROL webinar.">
+<link rel="icon" href="/favicon.png">
+<meta name="robots" content="noindex">
+<!-- Social preview -->
+<meta property="og:title" content="Join the live ONROL webinar">
+<meta property="og:description" content="Tap to join the session live.">
+<meta property="og:image" content="https://onrol.in/webinar/earn-webinar-wa.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#f46718; --orange-strong:#d6530c; --ink:#0a0a0a;
+    --cream:#fff7f2; --card:#ffffff; --line:rgba(10,10,10,.10);
+    --muted:rgba(10,10,10,.58);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    font-family:Figtree,system-ui,-apple-system,sans-serif;
+    color:var(--ink); background:var(--cream);
+    min-height:100svh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:24px; position:relative; overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* warm orange aurora canvas */
+  .aurora{position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none}
+  .aurora::before,.aurora::after{
+    content:""; position:absolute; border-radius:50%; filter:blur(70px); opacity:.5;
+  }
+  .aurora::before{width:60vmax;height:60vmax; top:-20vmax; right:-14vmax;
+    background:radial-gradient(circle at 30% 30%, #ff8a4c, transparent 62%);
+    animation:drift1 16s ease-in-out infinite alternate}
+  .aurora::after{width:52vmax;height:52vmax; bottom:-22vmax; left:-16vmax;
+    background:radial-gradient(circle at 60% 40%, #ffd0b0, transparent 60%);
+    animation:drift2 20s ease-in-out infinite alternate}
+  /* subtle grain */
+  .grain{position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  .card{
+    position:relative; z-index:2; width:100%; max-width:440px;
+    background:var(--card); border:1px solid var(--line); border-radius:22px;
+    padding:34px 28px 30px; text-align:center;
+    box-shadow:0 30px 70px -38px rgba(214,83,12,.55), 0 2px 0 rgba(255,255,255,.6) inset;
+  }
+  .logo{height:30px; width:auto; display:block; margin:0 auto 22px}
+
+  .chip{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--orange-strong); background:#fff1e8; border:1px solid #ffd9c4;
+    padding:7px 14px; border-radius:999px;
+  }
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--orange);
+    box-shadow:0 0 0 0 rgba(244,103,24,.6); animation:pulse 1.8s infinite}
+
+  h1{font-family:'Space Grotesk',Figtree,sans-serif; font-weight:700;
+    font-size:clamp(26px,7vw,34px); line-height:1.14; letter-spacing:-.02em;
+    margin:18px 0 0;}
+  .sub{margin:9px 0 0; font-size:15px; color:var(--muted); line-height:1.5}
+
+  .meta{display:flex; flex-direction:column; gap:10px; margin:22px 0 6px}
+  .row{display:flex; align-items:center; justify-content:center; gap:10px;
+    font-size:15px; font-weight:600}
+  .row svg{flex:0 0 auto; color:var(--orange-strong)}
+
+  .count{margin:20px 0 4px; display:flex; justify-content:center; gap:10px}
+  .seg{min-width:62px; background:var(--cream); border:1px solid var(--line);
+    border-radius:12px; padding:10px 6px}
+  .seg b{display:block; font-family:'Space Grotesk',sans-serif; font-size:26px;
+    font-weight:700; line-height:1; color:var(--ink); font-variant-numeric:tabular-nums}
+  .seg span{display:block; margin-top:5px; font-size:10.5px; font-weight:700;
+    letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+  .live-now{margin:20px 0 4px; font-family:'Space Grotesk',sans-serif;
+    font-size:19px; font-weight:700; color:var(--orange-strong)}
+
+  .cta{display:flex; align-items:center; justify-content:center; gap:10px;
+    width:100%; min-height:54px; margin-top:22px; padding:0 22px;
+    background:var(--orange); color:#fff; font-family:Figtree,sans-serif;
+    font-size:17px; font-weight:700; text-decoration:none;
+    border-radius:14px; border:0; cursor:pointer;
+    box-shadow:0 14px 26px -12px rgba(244,103,24,.85); transition:transform .15s, box-shadow .15s, background .15s}
+  .cta:hover{background:var(--orange-strong); transform:translateY(-1px); box-shadow:0 18px 30px -12px rgba(214,83,12,.9)}
+  .cta:active{transform:translateY(0)}
+  .cta:focus-visible{outline:3px solid var(--orange-strong); outline-offset:3px}
+
+  .fine{margin:14px 0 0; font-size:12.5px; color:var(--muted); line-height:1.5}
+  .foot{position:relative; z-index:2; margin-top:18px; font-size:12px; color:var(--muted)}
+
+  /* entrance */
+  .reveal{opacity:0; transform:translateY(12px); animation:up .55s cubic-bezier(.2,.7,.2,1) forwards}
+  .d1{animation-delay:.05s}.d2{animation-delay:.13s}.d3{animation-delay:.21s}
+  .d4{animation-delay:.29s}.d5{animation-delay:.37s}
+
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(244,103,24,.55)}70%{box-shadow:0 0 0 9px rgba(244,103,24,0)}100%{box-shadow:0 0 0 0 rgba(244,103,24,0)}}
+  @keyframes drift1{to{transform:translate(-5vmax,4vmax) scale(1.08)}}
+  @keyframes drift2{to{transform:translate(5vmax,-4vmax) scale(1.1)}}
+  @keyframes up{to{opacity:1; transform:none}}
+
+  @media (prefers-reduced-motion:reduce){
+    .aurora::before,.aurora::after,.dot{animation:none}
+    .reveal{animation:none; opacity:1; transform:none}
+    .cta{transition:none}
+  }
+  @media (max-width:380px){ .seg{min-width:54px} .card{padding:28px 20px 26px} }
+</style>
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main class="card">
+    <img class="logo reveal d1" src="/onrol-logo-dark.png" alt="ONROL" width="120" height="30">
+
+    <div class="reveal d2">
+      <span class="chip"><span class="dot" id="dot"></span><span id="chipText">Upcoming Webinar</span></span>
+    </div>
+
+    <!-- ====== EDIT PER WEBINAR ======================================= -->
+    <h1 class="reveal d2" id="title">Earn Your First Income with AI — Day&nbsp;2</h1>
+    <p class="sub reveal d3" id="subtitle">Live masterclass · Day 2 of the AI income series</p>
+
+    <div class="meta reveal d3">
+      <div class="row">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        <span id="dateText">Today · Sunday, 21 June 2026</span>
+      </div>
+      <div class="row">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span id="timeText">3:00 PM IST</span>
+      </div>
+    </div>
+
+    <!-- config: ISO start (IST +05:30) + the live join link -->
+    <span id="cfg"
+          data-start="2026-06-21T15:00:00+05:30"
+          data-link="https://live.zoho.in/coyc-rul-yzh"></span>
+    <!-- ============================================================== -->
+
+    <div class="count reveal d4" id="countdown" hidden>
+      <div class="seg"><b id="ch">00</b><span>Hrs</span></div>
+      <div class="seg"><b id="cm">00</b><span>Min</span></div>
+      <div class="seg"><b id="cs">00</b><span>Sec</span></div>
+    </div>
+    <div class="live-now reveal d4" id="liveNow" hidden>🔴 We're live now — join below</div>
+
+    <a class="cta reveal d5" id="join" href="#" target="_blank" rel="noopener">
+      Join Here
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <p class="fine reveal d5">Opens in Zoho Meeting · works on phone &amp; laptop. Keep this page handy.</p>
+  </main>
+
+  <p class="foot reveal d5">© ONROL · onrol.in</p>
+
+<script>
+(function(){
+  var cfg = document.getElementById('cfg');
+  var link = cfg.getAttribute('data-link');
+  var start = new Date(cfg.getAttribute('data-start')).getTime();
+  document.getElementById('join').href = link;
+
+  var countdown = document.getElementById('countdown');
+  var liveNow = document.getElementById('liveNow');
+  var chip = document.getElementById('chipText');
+  var ch=document.getElementById('ch'), cm=document.getElementById('cm'), cs=document.getElementById('cs');
+  var p2 = function(n){ return n<10 ? '0'+n : ''+n; };
+
+  function tick(){
+    var diff = start - Date.now();
+    if (isNaN(start)) { countdown.hidden=true; liveNow.hidden=true; return; }
+    if (diff <= 0){
+      countdown.hidden = true; liveNow.hidden = false;
+      chip.textContent = 'Live Now';
+      return;
+    }
+    countdown.hidden = false; liveNow.hidden = true;
+    chip.textContent = 'Starts Soon';
+    var s = Math.floor(diff/1000);
+    var h = Math.floor(s/3600), m = Math.floor((s%3600)/60), sec = s%60;
+    // show days rolled into hours for simplicity
+    ch.textContent = p2(h); cm.textContent = p2(m); cs.textContent = p2(sec);
+  }
+  tick(); setInterval(tick, 1000);
+})();
+</script>
+</body>
+</html>

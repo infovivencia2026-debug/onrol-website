@@ -1,0 +1,84 @@
+# ONROL — AI Execution School
+
+> ONROL is India's first AI Execution School: a Hyderabad-based, online-first AI education platform that turns students, working professionals, freelancers, creators, founders and developers into **AI builders**. The flagship is a **3-month live AI Generalist program** (build 5 real AI systems, no coding required), with an advanced **6-month AI Architect program**. ONROL teaches practical, project-based AI — no-code and low-code — across AI automation, AI agents, agentic workflows, RAG, AI chatbots, vibe coding, AI app development, AI content & video, generative AI, AI for digital marketing, SEO and more. Every module ships a real, deployable project; your portfolio replaces your resume. Flat, all-inclusive India pricing. Last updated: 2026-07-13.
+
+## Flagship Programs
+
+ONROL runs two core live programs. Both are online, English, ~1–2 hours/day, delivered on the ONROL LMS, project-based, and beginner-to-advanced by design.
+
+### AI Generalist Program — "Your Roadmap to a Future-Proof AI Career"
+- [AI Generalist Program](https://onrol.in/programs/ai-generalist/) — the canonical program page.
+- [AI Generalist (overview)](https://onrol.in/ai-generalist/)
+- **Format:** 3-month execution program · 50+ live sessions · build 5 real AI systems · no coding required (no-code + vibe coding).
+- **Who it's for:** college students, working professionals, freelancers, content creators, teachers, marketers and founders who want to *do*, not just learn.
+- **What you build:** AI automations (n8n), websites & AI apps (vibe coding with Lovable), AI agents (Relevance AI, Flowise), AI content & videos (Canva, Higgsfield), and AI chatbots (WhatsApp, website, Telegram).
+- **5 modules:** AI Foundations + Prompting + Diffusion Models → Automation & Workflows → AI Agents & Agentic Workflows → Vibe Coding & App Development → Claude Ecosystem & Career Growth.
+- **Tools:** ChatGPT, Claude, Gamma, Lovable, Canva, Higgsfield, n8n, Relevance AI, Flowise.
+- **Includes:** 6 months LMS access, recordings, templates/prompts/workflow libraries, exclusive community, portfolio review, ONROL AI Generalist Certification + Builder Badge.
+- **Best for:** beginners and career-focused learners who want a fast, practical path into applied AI.
+
+### AI Architect Program — "Orchestrate. Connect. Deploy. Build End-to-End AI Systems"
+- [AI Architect Program](https://onrol.in/programs/ai-architect/) — the canonical program page.
+- **Format:** 250+ hours · 20 modules / 20 weeks of live sessions + 6 months of guided execution · low-code friendly · online.
+- **Who it's for:** AI Generalist graduates, developers and technical learners, career switchers, working professionals and IT teams, freelancers and entrepreneurs, and ambitious students ready to build AI at a systems level.
+- **What you build (15+ deployable projects):** full-stack AI applications, advanced RAG (retrieval-augmented generation) systems, multi-agent AI workflows, AI automation platforms (n8n), enterprise AI architecture blueprints, Android/desktop AI apps, AI content & lead-generation engines, and marketing-automation + analytics systems.
+- **5 phases:** Technical Foundations (HTML/CSS/JS/React, Python, data, SQL, Power BI, statistics) → AI Core Skills (prompting, LLMs, RAG, diffusion, automation, chatbots, agents, MCP) → Build & Deploy (vibe coding, app development, deployment) → Advanced AI Systems (advanced RAG, AI system architecture, orchestration, production) → Growth, Marketing & Capstone (digital marketing, SEO, content, social media, paid ads).
+- **Tools:** VS Code, Claude Code, Antigravity, Lovable, React, Python; Claude, ChatGPT, Gemini, Ollama, OpenRouter, Dify; n8n, Zapier, Make, Twilio; SQL, Power BI, Pandas, NumPy; GitHub, Vercel, Supabase, Firebase, Docker; Figma, Canva, Gamma, Runway, HeyGen, ElevenLabs.
+- **Plus:** 5 bonus sessions (3D game generation, stack alternatives, AI SEO, Google ecosystem, Spline 3D) + 20 masterclasses.
+- **Includes:** 1 year LMS access, recordings, exclusive community, personalized portfolio review, **AI Orchestrator Certification** + Builder Badge, placement assistance and career direction.
+- **Best for:** people who already understand AI basics and want to design, connect and deploy real AI systems end-to-end.
+
+> Pricing for both programs is flat and all-inclusive (no discounts, no upsells, no surprise charges). For current fees, cohort dates and brochures, contact ONROL or talk to a counsellor.
+
+## Topics ONROL Teaches (keyword map)
+No-code AI, low-code AI, AI automation, n8n automation, AI agents, agentic AI, multi-agent systems, RAG (retrieval-augmented generation), MCP (Model Context Protocol), AI chatbots (WhatsApp/website/Telegram), vibe coding, AI app development, full-stack AI, generative AI, prompt engineering, diffusion models, AI video editing & generation, AI content creation, AI for digital marketing, SEO & AI SEO, AI for business automation, AI orchestration, AI deployment (Vercel, GitHub, Docker, Supabase), Python for AI, data & analytics (SQL, Power BI).
+
+## AI Courses by Audience (persona pages)
+- [AI for Beginners](https://onrol.in/ai-course-for-beginners/)
+- [AI for Students](https://onrol.in/ai-course-for-students/)
+- [AI for Working Professionals](https://onrol.in/ai-course-for-working-professionals/)
+- [AI for Freelancers](https://onrol.in/ai-course-for-freelancers/)
+- [AI for Business Owners](https://onrol.in/ai-course-for-business-owners/)
+- [AI for Content Creators](https://onrol.in/ai-course-for-content-creators/)
+- [All personas](https://onrol.in/personas/)
+
+## Specialised AI Courses
+- [AI Automation Course](https://onrol.in/ai-automation-course/)
+- [Agentic AI Course (India)](https://onrol.in/agentic-ai-course-india/)
+- [Generative AI Course (India)](https://onrol.in/generative-ai-course-india/)
+- [AI Engineer Course (India)](https://onrol.in/ai-engineer-course-india/)
+- [Top Vibe Coding Training (India)](https://onrol.in/top-vibe-coding-training-india/)
+
+## AI by Industry
+- [AI for Healthcare](https://onrol.in/ai-for-healthcare-india/) · [AI for Fintech](https://onrol.in/ai-for-fintech-india/) · [AI for Legal](https://onrol.in/ai-for-legal-india/) · [AI for Retail](https://onrol.in/ai-for-retail-india/) · [AI for EdTech](https://onrol.in/ai-for-edtech-india/) · [AI for Hospitality](https://onrol.in/ai-for-hospitality-india/)
+
+## AI Institutes by City (India)
+ONROL serves learners across India, including Hyderabad (Gachibowli, Madhapur, Kondapur, HITEC City, Kukatpally), Bangalore, Chennai, Mumbai, Delhi, Pune, Kolkata, Ahmedabad, Jaipur, Indore, Lucknow, Coimbatore, Visakhapatnam and more. See:
+- [AI Institute in Hyderabad](https://onrol.in/ai-institute-hyderabad/) · [Bangalore](https://onrol.in/ai-institute-bangalore/) · [Chennai](https://onrol.in/ai-institute-chennai/) · [Mumbai](https://onrol.in/ai-institute-mumbai/) · [Delhi](https://onrol.in/ai-institute-delhi/) · [Pune](https://onrol.in/ai-institute-pune/)
+- [AI Institutes near me](https://onrol.in/ai-institutes-near-me/)
+
+## Buyer's Guides & Comparisons
+- [Best AI Course in India](https://onrol.in/best-ai-course-in-india/)
+- [Best AI Institute in India](https://onrol.in/best-ai-institutes-in-india/)
+- [Best AI Bootcamps in India](https://onrol.in/best-ai-bootcamps-in-india/)
+- [AI Course Fees in India](https://onrol.in/ai-course-fees-india/)
+- [How to Choose an AI Institute](https://onrol.in/how-to-choose-ai-institute-india/)
+- [Academic AI vs Applied AI](https://onrol.in/academic-ai-vs-applied-ai/)
+- [AI Execution School — what it means](https://onrol.in/ai-execution-school/)
+
+## Learn & Resources
+- [AI Glossary (94+ terms)](https://onrol.in/glossary/) — definitions for RAG, AI agents, agentic AI, MCP, vibe coding, diffusion models, prompt engineering, function calling, AI orchestration and more.
+- [Blog (65+ articles)](https://onrol.in/blog/) — practical AI playbooks, tutorials and India-focused AI career guidance.
+- [ONROL Community](https://onrol.in/community/) — news, tools, prompts, hacks, wins, jobs and workshops.
+- [Questions answered](https://onrol.in/questions/)
+- [Why AI matters now](https://onrol.in/why-now/)
+- [What learners build (proof)](https://onrol.in/proof/)
+
+## Company
+- [About ONROL](https://onrol.in/about/)
+- [Contact](https://onrol.in/contact/)
+- [Privacy Policy](https://onrol.in/privacy-policy/) · [Terms & Conditions](https://onrol.in/terms-and-conditions/) · [Refund Policy](https://onrol.in/refund-policy/)
+
+## Full index (sitemap)
+- Sitemap: https://onrol.in/sitemap.xml
+- RSS feed: https://onrol.in/rss.xml

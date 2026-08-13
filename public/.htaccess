@@ -1,0 +1,128 @@
+Options -MultiViews
+DirectoryIndex index.html
+RewriteEngine On
+
+# ── Canonical host enforcement ────────────────────────────────────────────────
+#
+# Collapse every variant of the home to a single canonical origin:
+#   http://onrol.in        → https://onrol.in  (force HTTPS)
+#   http://www.onrol.in    → https://onrol.in  (drop www + force HTTPS)
+#   https://www.onrol.in   → https://onrol.in  (drop www)
+#
+# Without this, every variant returned 200 OK with the canonical's content,
+# so Google Search Console crawled all four and reported them under
+# "Alternate page with proper canonical tag" (33 failed validation
+# examples as of 2026-05-29). The <link rel="canonical"> in HTML was
+# correct — Google just had no server-side reason to collapse them.
+#
+# MUST run before the SPA fallback below. If the SPA fallback fires
+# first, REQUEST_URI gets rewritten to /index.html and the redirect
+# never gets the chance to fire.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.onrol\.in$ [NC]
+RewriteRule ^(.*)$ https://onrol.in/$1 [R=301,L]
+
+# ── Static marketing pages (native "offline" build) ───────────────────────
+# The onrol-home static site is served as REAL HTML files so it renders exactly
+# like the offline folder (its own CSS/GSAP/scripts, no SPA interference). The
+# React app (index.html) still handles every OTHER route via the SPA fallback
+# below — /task, /learn, /community, /admin, dynamic /blog/:slug, etc. untouched.
+# Home → the static landing page.
+RewriteRule ^$ home-static.html [L]
+# Generic "clean URL → static .html" mapping: if the request has no extension
+# and a matching <path>.html file exists on disk, serve it. This is the robust
+# LiteSpeed-friendly form (relative target + on-disk existence test) — the
+# per-path rules it replaces did not fire reliably on OpenLiteSpeed. Marketing
+# pages ship as real files (about.html, programs/ai-generalist.html, …) so they
+# match; app routes (/task, /login, /feedback, /blog/:slug) have no .html file
+# and fall through to the SPA below.
+RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]+$
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# ── SPA fallback (must come AFTER the canonical redirect + static pages) ────
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /index.html [QSA,L]
+
+# ── Security headers ──────────────────────────────────────────────────────────
+
+# Force HTTPS for 1 year; include subdomains
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+# Deny embedding in iframes (clickjacking protection)
+Header always set X-Frame-Options "DENY"
+
+# Prevent MIME-type sniffing
+Header always set X-Content-Type-Options "nosniff"
+
+# Only send origin as referrer for cross-origin requests
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Restrict powerful browser APIs
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(self), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
+
+# Content Security Policy
+# Includes fonts.googleapis.com (style) + fonts.gstatic.com (font src) for
+# the Google Fonts we use (Inter, Playfair Display, JetBrains Mono).
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://fcm.googleapis.com https://go.onrol.in https://api.web3forms.com https://script.google.com https://script.googleusercontent.com https://cdn.jsdelivr.net https://unpkg.com; img-src 'self' data: blob: https://*.supabase.co https://*.supabase.in; font-src 'self' data: https://fonts.gstatic.com; media-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me https://api.web3forms.com;"
+
+# Cross-Origin policies (required for SharedArrayBuffer / high-res timers)
+Header always set Cross-Origin-Opener-Policy "same-origin"
+Header always set Cross-Origin-Embedder-Policy "require-corp"
+Header always set Cross-Origin-Resource-Policy "same-origin"
+
+# ── Caching ───────────────────────────────────────────────────────────────────
+#
+# OLS honours mod_expires more reliably than mod_headers <FilesMatch>
+# blocks on this install — Lighthouse showed zero Cache-Control on JS
+# chunks even with the old <FilesMatch>. ExpiresByType + a Cache-Control
+# fallback covers both code paths.
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                       "access plus 1 hour"
+
+  # Hashed JS/CSS — Vite emits content-hashed filenames so 1-year immutable
+  # is safe.
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript        "access plus 1 year"
+  ExpiresByType text/css               "access plus 1 year"
+
+  # Images & fonts
+  ExpiresByType image/avif             "access plus 1 year"
+  ExpiresByType image/webp             "access plus 1 year"
+  ExpiresByType image/png              "access plus 1 year"
+  ExpiresByType image/jpeg             "access plus 1 year"
+  ExpiresByType image/svg+xml          "access plus 1 year"
+  ExpiresByType image/x-icon           "access plus 1 year"
+  ExpiresByType font/woff              "access plus 1 year"
+  ExpiresByType font/woff2             "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+
+  # Heavy media — cached, but not forever (so we can swap)
+  ExpiresByType video/mp4              "access plus 30 days"
+
+  # HTML — never long-cache (deploy visibility)
+  ExpiresByType text/html              "access plus 0 seconds"
+  ExpiresByType application/xhtml+xml  "access plus 0 seconds"
+</IfModule>
+
+# Belt-and-suspenders: explicit Cache-Control on hashed Vite output.
+# Some OLS installs ignore <FilesMatch> Header; ExpiresByType above is the
+# primary mechanism. If both fire, "immutable" is the strongest hint.
+<FilesMatch "\.(js|css|woff2?|avif|webp)$">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+
+# Never cache index.html — new deployments must be picked up immediately.
+<FilesMatch "^index\.html$">
+  Header set Cache-Control "no-cache, no-store, must-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires "0"
+</FilesMatch>
+
+# Service worker — never cache (browser must check for new SW on every load)
+<FilesMatch "(sw|service-worker)\.js$">
+  Header set Cache-Control "no-cache, no-store, must-revalidate"
+</FilesMatch>

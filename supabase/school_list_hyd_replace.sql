@@ -1,0 +1,3 @@
+-- Seed stub. Populate with VALUES rows if you want a local seed fallback
+-- for institutions when Supabase is empty. Leaving this empty is safe —
+-- useInstitutions.ts falls back to whatever the DB returns.

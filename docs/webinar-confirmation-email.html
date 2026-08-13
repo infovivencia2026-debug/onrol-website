@@ -1,0 +1,175 @@
+<!--
+  ONROL — AI Startup Webinar confirmation email (HTML), LIGHT-LOCKED.
+  Table-based, inline-styled, email-client-safe. Brand: orange #f46718 on
+  white, black ink #0A0A0A. 600px, mobile-fluid.
+
+  Dark-mode handling: the email is forced LIGHT in clients that honour
+  color-scheme (Apple Mail, iOS Mail, Outlook) and re-asserts its palette via
+  bgcolor attributes + [data-ogsc]/[data-ogsb] overrides for Gmail. So it
+  matches the onrol.in light UI instead of being auto-inverted to dark.
+
+  Placeholders: {{name}} {{webinar_when}} {{join_url}} {{community_url}} {{host_name}}
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="x-apple-disable-message-reformatting" />
+  <meta name="color-scheme" content="light only" />
+  <meta name="supported-color-schemes" content="light only" />
+  <title>You're registered — Build a Mini AI Startup in 60 Minutes</title>
+  <style>
+    :root { color-scheme: light only; supported-color-schemes: light only; }
+    /* Keep it light even when the client is in dark mode. */
+    @media (prefers-color-scheme: dark) {
+      .es-body   { background:#f4f4f2 !important; }
+      .es-card   { background:#ffffff !important; }
+      .es-ink    { color:#0A0A0A !important; }
+      .es-muted  { color:#3f3f3f !important; }
+      .es-faint  { color:#8a8a8a !important; }
+      .es-orange { color:#f46718 !important; }
+      .es-btn    { background:#f46718 !important; }
+      .es-btn a  { color:#0A0A0A !important; }
+    }
+    /* Gmail dark-mode (it rewrites with data-ogsc/data-ogsb attrs). */
+    [data-ogsc] .es-card  { background:#ffffff !important; }
+    [data-ogsb] .es-card  { background-color:#ffffff !important; }
+    [data-ogsc] .es-ink   { color:#0A0A0A !important; }
+    [data-ogsc] .es-muted { color:#3f3f3f !important; }
+    [data-ogsc] .es-faint { color:#8a8a8a !important; }
+    [data-ogsc] .es-btn a { color:#0A0A0A !important; }
+    [data-ogsb] .es-btn   { background-color:#f46718 !important; }
+    [data-ogsc] .es-orange{ color:#f46718 !important; }
+  </style>
+  <!--[if mso]><style>table,td,div,p,a{font-family:Arial,sans-serif !important;}</style><![endif]-->
+</head>
+<body class="es-body" bgcolor="#f4f4f2" style="margin:0;padding:0;background:#f4f4f2;-webkit-text-size-adjust:100%;">
+  <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#f4f4f2;font-size:1px;line-height:1px;">
+    Your seat is confirmed. Build an AI website, chatbot &amp; automation — live, in 60 minutes.
+  </div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#f4f4f2" class="es-body" style="background:#f4f4f2;">
+    <tr>
+      <td align="center" style="padding:28px 12px;">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" bgcolor="#ffffff" class="es-card" style="width:600px;max-width:600px;background:#ffffff;border:1px solid #e7e5e0;">
+
+          <tr><td bgcolor="#f46718" class="es-btn" style="height:4px;background:#f46718;line-height:4px;font-size:0;">&nbsp;</td></tr>
+
+          <tr>
+            <td bgcolor="#ffffff" class="es-card" style="padding:28px 36px 8px 36px;background:#ffffff;">
+              <img src="https://onrol.in/onrol-logo-home.png" width="116" alt="ONROL" style="display:block;border:0;height:auto;width:116px;" />
+            </td>
+          </tr>
+
+          <tr>
+            <td bgcolor="#ffffff" class="es-card" style="padding:14px 36px 0 36px;background:#ffffff;">
+              <p class="es-orange" style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#f46718;">You're registered</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td bgcolor="#ffffff" class="es-card" style="padding:8px 36px 0 36px;background:#ffffff;">
+              <h1 class="es-ink" style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:30px;line-height:1.15;font-weight:800;color:#0A0A0A;letter-spacing:-0.5px;">
+                Build a Mini <span class="es-orange" style="color:#f46718;">AI Startup</span><br />in 60 Minutes
+              </h1>
+            </td>
+          </tr>
+
+          <tr>
+            <td bgcolor="#ffffff" class="es-card" style="padding:18px 36px 0 36px;background:#ffffff;">
+              <p class="es-muted" style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#3f3f3f;">
+                Hi {{name}}, your seat is confirmed. In one live session you'll watch a single idea become a working
+                <strong class="es-ink" style="color:#0A0A0A;">AI website</strong>, a
+                <strong class="es-ink" style="color:#0A0A0A;">chatbot</strong>, and an
+                <strong class="es-ink" style="color:#0A0A0A;">automation</strong> — no coding required.
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td bgcolor="#ffffff" class="es-card" style="padding:22px 36px 0 36px;background:#ffffff;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e7e5e0;">
+                <tr>
+                  <td bgcolor="#ffffff" class="es-card" style="padding:16px 18px;border-bottom:1px solid #e7e5e0;font-family:Arial,Helvetica,sans-serif;background:#ffffff;">
+                    <span class="es-faint" style="font-size:11px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#8a8a8a;">When</span><br />
+                    <span class="es-ink" style="font-size:15px;font-weight:bold;color:#0A0A0A;">{{webinar_when}}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td bgcolor="#ffffff" class="es-card" style="padding:16px 18px;font-family:Arial,Helvetica,sans-serif;background:#ffffff;">
+                    <span class="es-faint" style="font-size:11px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#8a8a8a;">Format</span><br />
+                    <span class="es-ink" style="font-size:15px;font-weight:bold;color:#0A0A0A;">60 minutes &middot; Live &middot; Online &middot; No coding</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td bgcolor="#ffffff" class="es-card" style="padding:24px 36px 4px 36px;background:#ffffff;">
+              <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td bgcolor="#f46718" class="es-btn" style="background:#f46718;">
+                    <a href="{{join_url}}" style="display:inline-block;padding:14px 30px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;letter-spacing:0.5px;text-transform:uppercase;color:#0A0A0A;text-decoration:none;">Join the webinar &rarr;</a>
+                  </td>
+                </tr>
+              </table>
+              <p class="es-faint" style="margin:10px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#8a8a8a;">Save this email — we'll send a reminder before we go live.</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td bgcolor="#ffffff" class="es-card" style="padding:22px 36px 0 36px;background:#ffffff;">
+              <p class="es-orange" style="margin:0 0 10px 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#f46718;">What you'll see built live</p>
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" class="es-muted" style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;color:#3f3f3f;">
+                <tr><td class="es-muted" style="padding:4px 0;color:#3f3f3f;"><span class="es-orange" style="color:#f46718;font-weight:bold;">+</span>&nbsp;&nbsp;One idea turned into a clear AI offer</td></tr>
+                <tr><td class="es-muted" style="padding:4px 0;color:#3f3f3f;"><span class="es-orange" style="color:#f46718;font-weight:bold;">+</span>&nbsp;&nbsp;An AI-powered landing page</td></tr>
+                <tr><td class="es-muted" style="padding:4px 0;color:#3f3f3f;"><span class="es-orange" style="color:#f46718;font-weight:bold;">+</span>&nbsp;&nbsp;A chatbot + a lead-capture automation</td></tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td bgcolor="#ffffff" class="es-card" style="padding:22px 36px 0 36px;background:#ffffff;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #e7e5e0;">
+                <tr>
+                  <td class="es-card" style="padding:16px 0 0 0;font-family:Arial,Helvetica,sans-serif;">
+                    <span class="es-faint" style="font-size:11px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#8a8a8a;">Your mentor</span><br />
+                    <span class="es-ink" style="font-size:15px;font-weight:bold;color:#0A0A0A;">{{host_name}}</span><br />
+                    <span class="es-muted" style="font-size:13px;color:#6b6b6b;">Applied AI &middot; 12+ Years &middot; GenAI, Agentic AI &amp; Automation</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td bgcolor="#ffffff" class="es-card" style="padding:20px 36px 4px 36px;background:#ffffff;">
+              <p class="es-muted" style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.6;color:#3f3f3f;">
+                Questions or updates? Join our community:
+                <a href="{{community_url}}" class="es-orange" style="color:#f46718;font-weight:bold;text-decoration:none;">WhatsApp group &rarr;</a>
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td bgcolor="#ffffff" class="es-card" style="padding:26px 36px 30px 36px;background:#ffffff;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #e7e5e0;">
+                <tr>
+                  <td class="es-faint" style="padding:18px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.6;color:#9a9a9a;">
+                    <strong class="es-ink" style="color:#0A0A0A;">ONROL</strong> — India's AI Execution School<br />
+                    You're receiving this because you registered for the free webinar at onrol.in.<br />
+                    <a href="https://onrol.in/" class="es-faint" style="color:#9a9a9a;text-decoration:underline;">onrol.in</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

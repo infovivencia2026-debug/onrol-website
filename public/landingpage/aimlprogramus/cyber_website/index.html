@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light only">
+<title>Cyber Defender — Ethical Hacking &amp; Defence Program | ONROL</title>
+<meta name="description" content="Live, lab-based cybersecurity training for ages 14+. 30 sessions. 45 hours. Ends in a real penetration test and a SOC investigation report." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cyber Defender — ONROL">
+<meta property="og:description" content="Break it in a lab. Defend it for real. 30 live sessions, one professional report.">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+/* ===================================================================
+   ONROL · Cyber Defender
+   Obsidian ground, one warm gold light raking in from the top right,
+   faceted hex gems, bold grotesque headings, hairline glass cards.
+   =================================================================== */
+:root{
+  --bg:#F6F4EF;
+  --bg2:#EFEBE3;
+  --card:#FFFFFF;
+  --card2:#F2EEE5;
+  --line:rgba(21,23,27,.12);
+  --line2:rgba(206,59,21,.34);
+  --ink:#15171B;
+  --grey:#565C64;
+  --dim:#8A8F96;
+  --gold:#CE3B15;
+  --gold2:#E4552A;
+  --gold3:#9C2A0E;
+  --glow:rgba(206,59,21,.32);
+  --r:18px;
+  --ease:cubic-bezier(.19,1,.22,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Figtree",system-ui,sans-serif;font-size:16px;line-height:1.6;
+  font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+::selection{background:var(--gold);color:#FFF}
+
+h1,h2,h3,h4{font-weight:800;letter-spacing:-.035em;line-height:1.04}
+h1{font-size:clamp(2.6rem,6.4vw,5.1rem)}
+h2{font-size:clamp(2rem,4.4vw,3.4rem)}
+h3{font-size:clamp(1.15rem,1.7vw,1.4rem);letter-spacing:-.02em}
+.gold{color:var(--gold)}
+.eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--dim)}
+p{color:var(--grey);max-width:62ch}
+.lead{font-size:clamp(.98rem,1.2vw,1.08rem);color:var(--grey);max-width:52ch}
+
+.wrap{width:min(1240px,90vw);margin-inline:auto}
+section{position:relative;padding:clamp(64px,8vw,118px) 0}
+
+/* ---------- the raking light ---------- */
+.beam{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.beam::before{content:"";position:absolute;top:-40%;right:-10%;width:75%;height:150%;
+  background:conic-gradient(from 190deg at 60% 0%,
+    transparent 0deg,rgba(206,59,21,.13) 18deg,rgba(206,59,21,.04) 34deg,transparent 48deg);
+  filter:blur(28px)}
+.beam::after{content:"";position:absolute;top:-30%;right:2%;width:52%;height:90%;
+  background:radial-gradient(closest-side,rgba(206,59,21,.13),transparent 72%);
+  filter:blur(46px)}
+/* faint grid, like the reference's wireframe backdrop */
+.mesh{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:
+    linear-gradient(rgba(21,23,27,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(21,23,27,.05) 1px,transparent 1px);
+  background-size:74px 74px;
+  mask-image:radial-gradient(72% 62% at 62% 34%,#000 0%,transparent 78%)}
+
+/* ---------- masthead ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 0;
+  transition:background .45s var(--ease),padding .45s var(--ease),border-color .45s;
+  border-bottom:1px solid transparent}
+header.stuck{padding:11px 0;background:rgba(246,244,239,.84);
+  backdrop-filter:blur(16px) saturate(1.3);border-bottom-color:var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brandmark{display:inline-flex;align-items:center;gap:13px}
+.brandmark img{height:30px;width:auto;flex:none;transition:height .45s var(--ease)}
+header.stuck .brandmark img{height:26px}
+.brandmark small{font-size:.58rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dim);white-space:nowrap;padding-left:13px;border-left:1px solid var(--line)}
+nav.top{display:flex;align-items:center;gap:8px}
+nav.top .navlink{font-size:.87rem;font-weight:500;color:var(--grey);padding:9px 15px;
+  border-radius:999px;transition:color .3s,background .3s}
+nav.top .navlink:hover{color:var(--ink);background:rgba(21,23,27,.055)}
+nav.top .navlink.on{color:var(--ink);background:rgba(21,23,27,.07)}
+
+/* ---------- buttons ---------- */
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;overflow:hidden;
+  padding:13px 24px;border-radius:999px;font-size:.9rem;font-weight:700;letter-spacing:-.01em;
+  background:linear-gradient(180deg,var(--gold2),var(--gold));color:#FFF;
+  box-shadow:0 8px 26px -10px var(--glow);
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px -10px var(--glow)}
+.btn i{font-style:normal;transition:transform .4s var(--ease)}
+.btn:hover i{transform:translate(3px,-3px)}
+.btn.sm{padding:10px 19px;font-size:.84rem}
+.btn.ghost{background:rgba(21,23,27,.03);color:var(--ink);border:1px solid var(--line);
+  box-shadow:none;backdrop-filter:blur(8px)}
+.btn.ghost:hover{border-color:var(--line2);background:rgba(206,59,21,.07)}
+.tlink{display:inline-flex;align-items:center;gap:9px;font-size:.9rem;font-weight:600;
+  color:var(--gold);transition:gap .35s var(--ease)}
+.tlink:hover{gap:14px}
+
+/* ---------- pill badge ---------- */
+.badge{display:inline-flex;align-items:center;gap:11px;padding:6px 16px 6px 6px;
+  border-radius:999px;background:rgba(21,23,27,.03);border:1px solid var(--line);
+  font-size:.79rem;color:var(--grey);backdrop-filter:blur(8px)}
+.badge b{background:var(--gold);color:#FFF;font-size:.68rem;font-weight:700;
+  padding:3px 10px;border-radius:999px;letter-spacing:.02em}
+
+/* ---------- small-screen menu ---------- */
+.menubtn{display:none;width:42px;height:42px;border:1px solid var(--line);background:none;
+  cursor:pointer;position:relative;border-radius:999px;flex:none}
+.menubtn span{position:absolute;left:12px;width:18px;height:1.5px;background:var(--ink);
+  border-radius:2px;transition:transform .4s var(--ease)}
+.menubtn span:nth-child(1){top:17px}
+.menubtn span:nth-child(2){top:23px}
+.menubtn[aria-expanded="true"] span:nth-child(1){transform:translateY(3px) rotate(45deg)}
+.menubtn[aria-expanded="true"] span:nth-child(2){transform:translateY(-3px) rotate(-45deg)}
+.sheet{position:fixed;inset:0;z-index:48;background:var(--bg2);visibility:hidden;
+  display:grid;place-items:center;
+  clip-path:circle(0% at calc(100% - 44px) 42px);
+  transition:clip-path .75s var(--ease),visibility 0s .75s}
+.sheet.open{visibility:visible;clip-path:circle(150% at calc(100% - 44px) 42px);
+  transition:clip-path .75s var(--ease),visibility 0s}
+.sheet nav{width:min(520px,82vw)}
+.sheet a{display:flex;align-items:center;gap:16px;padding:17px 0;
+  border-bottom:1px solid var(--line);font-size:clamp(1.6rem,7vw,2.3rem);font-weight:800;
+  letter-spacing:-.03em}
+.sheet a em{font-style:normal;color:var(--gold);font-size:.7rem;font-weight:600;
+  letter-spacing:.18em}
+.sheet .btn{justify-content:center;border-bottom:0;font-size:.95rem;margin-top:26px}
+
+
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(120px,14vw,168px);padding-bottom:clamp(40px,5vw,60px);
+  position:relative;z-index:1}
+.herogrid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(24px,4vw,56px);
+  align-items:center}
+.hero h1{margin:26px 0 20px}
+.hero .cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:30px}
+.hero .fine{font-size:.79rem;color:var(--dim);line-height:1.5}
+/* the ask bar, standing in for the reference's search field */
+.askbar{display:flex;align-items:center;gap:10px;margin-top:34px;padding:7px 7px 7px 20px;
+  border-radius:999px;background:#FFF;border:1px solid var(--line);
+  backdrop-filter:blur(10px);max-width:520px;
+  transition:border-color .4s,background .4s}
+.askbar:focus-within{border-color:var(--line2);background:rgba(206,59,21,.045)}
+.askbar input{flex:1;min-width:0;background:none;border:0;outline:none;color:var(--ink);
+  font-family:inherit;font-size:.92rem}
+.askbar input::placeholder{color:var(--dim)}
+.askbar button{flex:none;border:0;cursor:pointer;font-family:inherit}
+
+/* stat strip */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  margin-top:clamp(44px,6vw,70px);position:relative;z-index:1}
+.strip div{padding:22px 22px 20px;border:1px solid var(--line);border-radius:var(--r);
+  background:linear-gradient(170deg,#FFFFFF,#FBFAF6);
+  transition:border-color .4s,transform .45s var(--ease)}
+.strip div:hover{border-color:var(--line2);transform:translateY(-4px)}
+.strip b{display:block;font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:800;
+  letter-spacing:-.04em;line-height:1}
+.strip span{display:block;margin-top:8px;font-size:.76rem;color:var(--dim);font-weight:500}
+
+/* giant watermark */
+.watermark{position:absolute;left:50%;bottom:-4%;translate:-50% 0;z-index:0;
+  font-size:clamp(7rem,21vw,17rem);font-weight:800;letter-spacing:-.06em;line-height:.8;
+  color:rgba(21,23,27,.055);pointer-events:none;white-space:nowrap}
+
+/* ---------- hex gems ---------- */
+.gems{position:relative;height:clamp(300px,34vw,440px)}
+.gem{position:absolute;width:var(--w);filter:drop-shadow(0 22px 34px rgba(21,23,27,.22));
+  animation:float 7s ease-in-out infinite}
+.gem svg{width:100%;height:auto;display:block}
+.g1{--w:40%;left:2%;top:22%;animation-delay:-1.2s}
+.g2{--w:46%;left:31%;top:4%;z-index:2;animation-delay:-3.4s}
+.g3{--w:36%;right:2%;top:30%;opacity:.85;animation-delay:-5.1s}
+@keyframes float{0%,100%{transform:translateY(-9px) rotate(-1.5deg)}
+                 50%{transform:translateY(11px) rotate(1.5deg)}}
+
+/* ---------- tool row ---------- */
+.tools{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:26px 0;overflow:hidden;
+  mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.tools ul{display:flex;gap:52px;width:max-content;list-style:none;
+  animation:slide 38s linear infinite}
+.tools li{display:flex;align-items:center;gap:52px;font-size:.95rem;font-weight:600;
+  color:var(--dim);white-space:nowrap;letter-spacing:-.01em}
+.tools li::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold);
+  opacity:.6}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- section head ---------- */
+.shead{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,4vw,60px);
+  align-items:end;margin-bottom:clamp(34px,4vw,54px)}
+.shead h2 span{display:block;color:var(--gold)}
+
+/* ---------- cards ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{position:relative;border:1px solid var(--line);border-radius:var(--r);padding:26px;
+  background:linear-gradient(170deg,#FFFFFF,#FBFAF6);
+  overflow:hidden;transition:border-color .4s,transform .45s var(--ease)}
+.card::after{content:"";position:absolute;inset:-1px;border-radius:inherit;opacity:0;
+  pointer-events:none;transition:opacity .45s;
+  background:radial-gradient(300px circle at var(--mx,50%) var(--my,50%),
+    rgba(206,59,21,.10),transparent 68%)}
+.card:hover::after{opacity:1}
+.card:hover{border-color:var(--line2);transform:translateY(-5px)}
+.card .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  margin-bottom:20px;font-size:1.05rem;color:var(--gold);
+  background:rgba(206,59,21,.08);border:1px solid rgba(206,59,21,.22)}
+.card h3{margin-bottom:9px}
+.card p{font-size:.89rem}
+.card .n{position:absolute;top:24px;right:26px;font-size:.72rem;font-weight:600;
+  color:var(--dim);letter-spacing:.1em}
+
+/* ---------- feature panel (the "Interested in us?" block) ---------- */
+.panel{display:grid;grid-template-columns:1fr .9fr;gap:clamp(20px,3vw,40px);
+  align-items:center;border:1px solid var(--line);border-radius:24px;
+  padding:clamp(26px,3.4vw,44px);overflow:hidden;position:relative;
+  background:linear-gradient(150deg,rgba(206,59,21,.07),rgba(255,255,255,.9) 46%)}
+.panel h3{font-size:clamp(1.5rem,2.6vw,2.1rem);margin-bottom:12px}
+.panel .gems{height:clamp(220px,24vw,300px)}
+
+/* ---------- accordion ---------- */
+.acc{border-top:1px solid var(--line)}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;padding:24px 4px;display:grid;
+  grid-template-columns:56px 1fr auto auto;gap:20px;align-items:center;
+  transition:padding-left .4s var(--ease)}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary:hover{padding-left:14px}
+.acc .n{font-size:.75rem;font-weight:700;color:var(--gold);letter-spacing:.08em}
+.acc .t{font-size:clamp(1.02rem,1.9vw,1.32rem);font-weight:700;letter-spacing:-.025em;
+  transition:color .3s}
+.acc .m{font-size:.78rem;color:var(--dim);white-space:nowrap;font-weight:500}
+.acc .pl{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);
+  position:relative;flex:none;transition:.4s var(--ease)}
+.acc .pl::before,.acc .pl::after{content:"";position:absolute;left:50%;top:50%;
+  background:var(--ink);transition:transform .4s var(--ease),background .3s}
+.acc .pl::before{width:11px;height:1.5px;transform:translate(-50%,-50%)}
+.acc .pl::after{width:1.5px;height:11px;transform:translate(-50%,-50%)}
+.acc details[open] .pl{border-color:var(--gold);background:rgba(206,59,21,.09)}
+.acc details[open] .pl::after{transform:translate(-50%,-50%) rotate(90deg)}
+.acc details[open] .pl::before,.acc details[open] .pl::after{background:var(--gold)}
+.acc details[open] .t{color:var(--gold)}
+.abody{padding:0 0 28px 76px;font-size:.92rem;color:var(--grey);max-width:80ch}
+.abody b{color:var(--ink);font-weight:600}
+@media(max-width:820px){
+  .acc summary{grid-template-columns:40px 1fr auto;gap:14px}
+  .acc .m{display:none}
+  .abody{padding-left:54px}
+}
+
+/* ---------- rows ---------- */
+.rows{border-top:1px solid var(--line)}
+.rows > div{display:grid;grid-template-columns:.78fr 1.3fr;gap:clamp(16px,3vw,44px);
+  padding:20px 4px;border-bottom:1px solid var(--line);
+  transition:padding-left .4s var(--ease),background .4s}
+.rows > div:hover{padding-left:14px;background:rgba(206,59,21,.04)}
+.rows h4{font-size:.97rem;font-weight:700;letter-spacing:-.015em}
+.rows p{font-size:.89rem}
+@media(max-width:820px){.rows > div{grid-template-columns:1fr;gap:5px}}
+
+.ticks{list-style:none;display:grid;gap:0;border-top:1px solid var(--line);margin-top:22px}
+.ticks li{display:grid;grid-template-columns:30px 1fr;padding:14px 0;
+  border-bottom:1px solid var(--line);color:var(--grey);font-size:.9rem}
+.ticks li::before{content:"→";color:var(--gold);font-weight:700}
+.note{border-left:2px solid var(--gold);padding:4px 0 4px 20px;margin-top:30px;
+  color:var(--ink);font-size:1.02rem;font-weight:500;max-width:46ch;letter-spacing:-.015em}
+
+/* ---------- media ---------- */
+.figure{position:relative;overflow:hidden;border-radius:var(--r);
+  border:1px solid var(--line);background:var(--card);
+  clip-path:inset(0 0 100% 0 round var(--r));
+  transition:clip-path 1.15s var(--ease),box-shadow .6s var(--ease),
+             border-color .6s var(--ease);
+  isolation:isolate}
+.figure.in{clip-path:inset(0 0 0 0 round var(--r))}
+.figure:hover{box-shadow:0 26px 54px -26px rgba(21,23,27,.42);border-color:transparent}
+
+/* the plate itself: monochrome at rest, full colour under the cursor */
+.figure img{width:100%;height:100%;object-fit:cover;display:block;
+  transform:scale(1.045);
+  filter:grayscale(1) contrast(1.12) brightness(.97);
+  transition:transform 1.4s var(--ease),filter .85s var(--ease)}
+.figure:hover img{transform:scale(1.005);
+  filter:grayscale(0) contrast(1.02) brightness(1.02) saturate(1.12)}
+
+/* a vermilion duotone rides on top of the greyscale and clears on hover,
+   so the change of state reads as a warm-up rather than a switch */
+.figure::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(120% 90% at 50% 40%,transparent 42%,rgba(21,23,27,.34));
+  opacity:1;transition:opacity .8s var(--ease)}
+.figure:hover::before{opacity:.35}
+
+/* the paper fade that lets the caption sit on the image */
+.figure::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(180deg,transparent 58%,rgba(246,244,239,.88));
+  transition:opacity .7s var(--ease)}
+.figure:hover::after{opacity:.72}
+
+.figure figcaption{position:absolute;left:18px;bottom:14px;z-index:3;
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gold);
+  transform:translateY(0);transition:transform .55s var(--ease)}
+.figure figcaption::before{content:"";width:0;height:1.5px;background:var(--gold);
+  transition:width .6s var(--ease)}
+.figure:hover figcaption{transform:translateY(-3px)}
+.figure:hover figcaption::before{width:26px}
+
+/* a single sheen crosses the plate as the colour comes up */
+.figure figcaption::after{content:"";position:absolute;left:-40%;top:-620%;
+  width:34%;height:1400%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.42),transparent);
+  transform:translateX(-260%) rotate(6deg);opacity:0}
+.figure:hover figcaption::after{
+  animation:figsheen 1.1s var(--ease) .06s}
+@keyframes figsheen{
+  0%{opacity:0;transform:translateX(-260%) rotate(6deg)}
+  22%{opacity:1}
+  100%{opacity:0;transform:translateX(560%) rotate(6deg)}}
+
+@media(hover:none){
+  .figure img{filter:none;transform:none}
+  .figure::before{opacity:0}
+}
+.pgrid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;
+  grid-auto-rows:clamp(280px,30vw,410px)}
+.p7{grid-column:span 7}.p5{grid-column:span 5}
+
+/* ---------- form ---------- */
+.formcard{border:1px solid var(--line);border-radius:24px;padding:clamp(26px,3.4vw,42px);
+  background:linear-gradient(160deg,#FFFFFF,#FBFAF6)}
+.formcard h3{margin-bottom:7px}
+.formcard > p{font-size:.88rem;margin-bottom:26px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
+.field{display:flex;flex-direction:column;gap:7px}
+label{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim)}
+input,select{background:#FFF;border:1px solid var(--line);border-radius:11px;
+  padding:12px 14px;color:var(--ink);font-family:inherit;font-size:.93rem;outline:none;
+  transition:border-color .3s,background .3s}
+input:focus,select:focus{border-color:var(--line2);background:rgba(206,59,21,.045)}
+select option{background:#FFF}
+button.submit{grid-column:span 2;justify-content:center;margin-top:8px;border:0;cursor:pointer;
+  font-family:inherit}
+#formdone{display:none;padding:8px 0}
+#formdone h3{color:var(--gold)}
+@media(max-width:820px){.fgrid{grid-template-columns:1fr}button.submit{grid-column:span 1}}
+
+/* ---------- footer ---------- */
+footer.site{border-top:1px solid var(--line);padding:clamp(56px,7vw,92px) 0 36px;
+  position:relative;overflow:hidden;
+  background:radial-gradient(74% 100% at 50% 128%,rgba(206,59,21,.09),transparent 68%)}
+.fbig{font-size:clamp(2.2rem,7.4vw,5.4rem);font-weight:800;letter-spacing:-.045em;
+  line-height:.98;margin-bottom:clamp(34px,5vw,64px)}
+.fbig span{color:var(--gold)}
+.fgridw{display:grid;grid-template-columns:1.5fr .7fr .7fr .9fr;gap:34px;
+  padding-top:34px;border-top:1px solid var(--line)}
+.fcol h5{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:16px}
+.fcol a{display:block;font-size:.92rem;color:var(--grey);margin-bottom:11px;
+  transition:color .25s}
+.fcol a:hover{color:var(--gold)}
+.brandmark-f{height:34px;width:auto}
+.fbar{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:48px;
+  padding-top:20px;border-top:1px solid var(--line);color:var(--dim);font-size:.79rem}
+@media(max-width:900px){.fgridw{grid-template-columns:1fr 1fr}}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(26px);
+  transition:opacity .95s var(--ease),transform .95s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:1000px){
+  .herogrid,.shead,.panel{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .strip{grid-template-columns:1fr 1fr}
+  .pgrid{grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(230px,50vw,320px)}
+  .p7,.p5{grid-column:span 2}
+  .gems{height:clamp(240px,58vw,340px)}
+  .watermark{bottom:auto;top:-2%}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  .figure{clip-path:none}
+}
+
+/* ===================================================================
+   INTRO — the mouth. A gold plate with a character head punched
+   through by its own open mouth; scrolling widens the hole until the
+   plate is gone and the site behind it takes over.
+   =================================================================== */
+#intro{position:fixed;inset:0;z-index:999;overflow:hidden;cursor:none;touch-action:none}
+#intro svg{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1}
+#intro .inner{position:absolute;inset:0;z-index:0;display:grid;place-items:center;
+  background:rgba(246,244,239,var(--fill,1));text-align:center;padding:20px}
+#intro .inner > div{transition:none}
+/* the plate pushes toward the viewer as the aperture widens, so the
+   opening reads as moving through it rather than a hole being cut */
+#intro svg{transform:scale(var(--plate,1));transform-origin:50% 50%;will-change:transform}
+#intro .inner span{display:block;margin-bottom:16px;font-size:.68rem;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+#intro .inner p{font-size:clamp(1.25rem,4.2vw,2.9rem);font-weight:800;line-height:1.06;
+  letter-spacing:-.035em;color:var(--ink)}
+#intro .inner em{font-style:normal;color:var(--gold)}
+#intro .corner{position:absolute;z-index:2;font-size:.68rem;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;color:#FBEEE8;opacity:.8;
+  pointer-events:none;transition:opacity .5s}
+#intro .tl{top:26px;left:28px}
+#intro .br{bottom:26px;right:28px}
+#intro .hint{position:absolute;left:50%;bottom:34px;translate:-50% 0;z-index:2;
+  display:flex;align-items:center;gap:10px;color:#FBEEE8;font-size:.68rem;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;pointer-events:none;transition:opacity .5s}
+#intro .hint::after{content:"";width:1.5px;height:24px;background:#FBEEE8;
+  animation:drop 1.7s var(--ease) infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}
+  45%{transform:scaleY(1);transform-origin:top}
+  55%{transform:scaleY(1);transform-origin:bottom}
+  100%{transform:scaleY(0);transform-origin:bottom}}
+#intro .dot{position:absolute;width:38px;height:38px;border-radius:50%;z-index:3;
+  border:1.5px solid rgba(251,238,232,.75);translate:-50% -50%;pointer-events:none}
+body.locked,body.locked > *{overflow:hidden}
+body.locked{height:100svh}
+@media(max-width:620px){#intro .inner span{font-size:.56rem;margin-bottom:11px}}
+
+/* ===================================================================
+   SIX CAPABILITIES — an arc of stations, after the reference
+   infographic. The ribbon carries the order; the list carries the
+   words; a timer walks through all six on its own.
+   =================================================================== */
+.walk{
+  display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);
+  gap:clamp(18px,3vw,48px);align-items:center;
+  margin-top:clamp(26px,3.4vw,44px);
+}
+
+/* ---- the arc ---- */
+.walk-arc{position:relative}
+.walk-arc svg{width:100%;height:auto;display:block;overflow:visible}
+
+.arcseg .band{
+  fill:none;stroke:var(--c);stroke-width:34;stroke-linecap:round;
+  opacity:.34;
+  transition:opacity .55s var(--ease);
+}
+.arcseg .halo{
+  fill:var(--c);opacity:0;
+  transition:opacity .5s var(--ease),r .55s var(--ease);
+}
+.arcseg .disc{
+  fill:#FFF;stroke:var(--c);stroke-width:3;
+  transition:r .55s var(--ease),stroke-width .5s var(--ease),filter .5s var(--ease);
+  filter:drop-shadow(0 6px 14px rgba(21,23,27,.16));
+}
+.arcseg .gi{
+  fill:none;stroke:var(--c);stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;
+  transition:stroke .4s var(--ease);
+}
+.arcseg .nn{
+  fill:var(--c);font-family:inherit;font-size:15px;font-weight:800;
+  text-anchor:middle;letter-spacing:.04em;opacity:.5;
+  transition:opacity .45s var(--ease);
+}
+.arcseg{cursor:pointer}
+
+/* the live station */
+.arcseg.on .band{opacity:1}
+.arcseg.on .halo{opacity:.16;r:46}
+.arcseg.on .disc{r:35;stroke-width:4;filter:drop-shadow(0 10px 22px rgba(21,23,27,.24))}
+.arcseg.on .nn{opacity:1}
+.arcseg:hover .band{opacity:.65}
+
+/* ---- the list ---- */
+.walk-list{display:grid;gap:4px;align-content:center}
+
+.wrow{
+  position:relative;width:100%;
+  display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;
+  padding:15px 18px 16px;border:0;border-radius:14px;
+  background:transparent;text-align:left;cursor:pointer;font:inherit;color:inherit;
+  transition:background .4s var(--ease);
+}
+.wrow:hover{background:rgba(21,23,27,.035)}
+.wrow.on{background:#FFF;box-shadow:0 2px 4px rgba(21,23,27,.05),0 18px 34px -22px rgba(21,23,27,.3)}
+
+.wn{
+  font-size:.72rem;font-weight:800;letter-spacing:.1em;
+  color:var(--c);opacity:.55;padding-top:3px;
+  transition:opacity .4s var(--ease);
+}
+.wrow.on .wn{opacity:1}
+
+.wtx{display:block;min-width:0}
+.wtx b{
+  display:block;font-size:clamp(1rem,1.35vw,1.16rem);font-weight:700;
+  letter-spacing:-.018em;color:var(--ink);
+  transition:color .35s var(--ease);
+}
+.wrow.on .wtx b{color:var(--c)}
+
+/* the description only exists for the live row */
+.wd{
+  display:grid;grid-template-rows:0fr;overflow:hidden;
+  font-size:.9rem;line-height:1.55;color:var(--grey);
+  transition:grid-template-rows .5s var(--ease),opacity .4s var(--ease),margin-top .5s var(--ease);
+  opacity:0;margin-top:0;
+}
+.wd > span{min-height:0;display:block}
+.wrow.on .wd{grid-template-rows:1fr;opacity:1;margin-top:6px}
+
+/* the auto-advance timer, drawn under the live row */
+.wbar{
+  position:absolute;left:0;right:0;bottom:0;height:3px;border-radius:0 0 14px 14px;overflow:hidden;
+  border-radius:2px;background:rgba(21,23,27,.09);
+  opacity:0;transition:opacity .35s var(--ease);
+}
+.wrow.on .wbar{opacity:1}
+.wbar i{display:block;height:100%;width:0;border-radius:inherit;background:var(--c);opacity:.75}
+.wrow.on .wbar i{animation:wtick var(--dur,4200ms) linear forwards}
+.walk.paused .wrow.on .wbar i{animation-play-state:paused}
+@keyframes wtick{from{width:0}to{width:100%}}
+
+@media(max-width:900px){
+  .walk{grid-template-columns:1fr;gap:6px}
+  .walk-arc{max-width:380px;margin:0 auto 6px}
+  .wrow{padding:13px 14px 15px}
+  .wbar{left:0;right:0}
+}
+@media(max-width:560px){
+  .walk-arc{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .wbar i{animation:none!important;width:100%}
+}
+
+/* the intro carries the real wordmark, white, sitting straight on
+   the plate - no plate, panel or card behind it */
+#intro .corner.tl{opacity:1;top:24px;left:28px;background:none;border:0;padding:0}
+#intro .corner.tl img{height:28px;width:auto;display:block;
+  /* the light artwork still has a dark checkerboard mark, which
+     disappears on the plate - force the whole lockup to white */
+  filter:brightness(0) invert(1)}
+@media(max-width:620px){#intro .corner.tl img{height:22px}}
+
+/* ===================================================================
+   THE BODY OF WORK — each deliverable shown as the artefact it is
+   =================================================================== */
+.evgrid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(12px,1.5vw,20px);
+}
+.ev{
+  background:#FFF;border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .4s var(--ease);
+}
+.ev:hover{transform:translateY(-6px);box-shadow:0 26px 52px -28px rgba(21,23,27,.4);border-color:transparent}
+
+.ev-vis{
+  position:relative;aspect-ratio:16/10;overflow:hidden;
+  background:linear-gradient(150deg,#F4F1EA,#EDE8DE);
+  display:grid;place-items:center;
+}
+.ev-vis::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(21,23,27,.09) 1px,transparent 1px);
+  background-size:13px 13px;opacity:.5;
+}
+.ev-vis svg{position:relative;width:86%;height:auto;transition:transform .55s var(--ease)}
+.ev:hover .ev-vis svg{transform:scale(1.035)}
+
+/* shared drawing language */
+.ev-vis .pane{fill:#fff;stroke:rgba(21,23,27,.1);stroke-width:1}
+.ev-vis .paper{fill:#fff;stroke:rgba(21,23,27,.1);stroke-width:1}
+.ev-vis .term{fill:#15171B}
+.ev-vis .hair{stroke:rgba(21,23,27,.11);stroke-width:1}
+.ev-vis .hairw{stroke:rgba(255,255,255,.16);stroke-width:1}
+.ev-vis .fill{fill:var(--gold)}
+.ev-vis .soft{fill:var(--gold);opacity:.32}
+.ev-vis .rowhi{fill:var(--gold);opacity:.12}
+.ev-vis .cols path{stroke:rgba(21,23,27,.07);stroke-width:1}
+.ev-vis .txt path{stroke:rgba(21,23,27,.2);stroke-width:2.4;stroke-linecap:round}
+.ev-vis .txtg{stroke:rgba(21,23,27,.18);stroke-width:2.4;stroke-linecap:round}
+.ev-vis .axis{stroke:rgba(21,23,27,.16);stroke-width:1.2}
+.ev-vis .ticks path{stroke:rgba(21,23,27,.14);stroke-width:1}
+.ev-vis .step circle{fill:var(--gold)}
+.ev-vis .rule{stroke:var(--gold);stroke-width:2}
+.ev-vis .fixbox{fill:none;stroke:rgba(21,23,27,.14);stroke-width:1;stroke-dasharray:3 3}
+.ev-vis .caret{fill:var(--gold)}
+.ev-vis .dotw{fill:rgba(255,255,255,.28)}
+
+/* severity ramp, the one place this page uses more than one hue */
+.ev-vis .sc-hi{fill:#C0392B}.ev-vis .b-hi{fill:#C0392B;opacity:.85}
+.ev-vis .sc-md{fill:#E8A020}.ev-vis .b-md{fill:#E8A020;opacity:.8}
+.ev-vis .sc-lo{fill:#C9CFD6}.ev-vis .b-lo{fill:#C9CFD6}
+.ev-vis .sc-fp{fill:#E6E2D8}.ev-vis .b-fp{fill:#E6E2D8}
+
+/* ATT&CK grid */
+.ev-vis .matrix rect{fill:rgba(21,23,27,.07)}
+.ev-vis .matrix rect.on{fill:var(--gold);opacity:.9}
+
+/* type inside the artefacts */
+.ev-vis text{font-family:inherit}
+.ev-vis .cap{font-size:6.6px;font-weight:600;fill:rgba(21,23,27,.5)}
+.ev-vis .capb{font-size:8.4px;font-weight:700;fill:var(--ink)}
+.ev-vis .capw{font-size:6.6px;font-weight:600;fill:rgba(255,255,255,.55)}
+.ev-vis .tag{font-size:5.4px;font-weight:800;fill:#fff;letter-spacing:.09em;text-anchor:middle}
+.ev-vis .tagd{font-size:5.4px;font-weight:800;fill:rgba(21,23,27,.62);letter-spacing:.09em;text-anchor:middle}
+.ev-vis .num text{font-size:8px;font-weight:800;fill:rgba(21,23,27,.42);text-anchor:end}
+.ev-vis .mono text{font-size:6.6px;font-weight:500;fill:rgba(255,255,255,.66)}
+.ev-vis .ok text{font-size:6.6px;font-weight:700;fill:#7FD37F}
+.ev-vis .title{font-size:11px;font-weight:800;fill:var(--ink);letter-spacing:-.01em}
+
+.ev-tx{padding:18px 20px 22px;position:relative}
+.ev-n{
+  position:absolute;top:-13px;right:16px;
+  width:28px;height:28px;display:grid;place-items:center;border-radius:50%;
+  background:var(--gold);color:#fff;font-size:.66rem;font-weight:800;
+  box-shadow:0 8px 18px -8px rgba(206,59,21,.7);
+}
+.ev-tx h4{font-size:1rem;font-weight:700;letter-spacing:-.018em;padding-right:26px}
+.ev-tx p{margin-top:7px;font-size:.86rem;line-height:1.55;color:var(--grey)}
+
+/* the artefacts assemble when the card arrives */
+.ev .ev-vis > svg > *{
+  opacity:0;transform:translateY(7px);
+  transition:opacity .55s var(--ease),transform .6s var(--ease);
+}
+.ev.in .ev-vis > svg > *{opacity:1;transform:none}
+.ev.in .ev-vis > svg > *:nth-child(1){transition-delay:.03s}
+.ev.in .ev-vis > svg > *:nth-child(2){transition-delay:.1s}
+.ev.in .ev-vis > svg > *:nth-child(3){transition-delay:.17s}
+.ev.in .ev-vis > svg > *:nth-child(4){transition-delay:.24s}
+.ev.in .ev-vis > svg > *:nth-child(5){transition-delay:.31s}
+.ev.in .ev-vis > svg > *:nth-child(6){transition-delay:.38s}
+.ev.in .ev-vis > svg > *:nth-child(n+7){transition-delay:.45s}
+
+@media(max-width:960px){.evgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.evgrid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){
+  .ev .ev-vis > svg > *{opacity:1;transform:none}
+}
+
+/* ---- the arc is one ribbon now, with a live trace over it ---- */
+.arc-rail{
+  fill:none;stroke:rgba(21,23,27,.09);stroke-width:34;stroke-linecap:round;
+}
+.arc-live{
+  fill:none;stroke:url(#arcRamp);stroke-width:34;stroke-linecap:round;
+  stroke-dasharray:var(--len,561);
+  stroke-dashoffset:calc(var(--len,561) * (1 - var(--prog,0)));
+  transition:stroke-dashoffset 1.1s var(--ease);
+  filter:drop-shadow(0 6px 16px rgba(206,59,21,.28));
+}
+.arcseg .halo{fill:var(--c);opacity:0;transition:opacity .5s var(--ease),r .55s var(--ease)}
+.arcseg .disc{
+  fill:#FFF;stroke:rgba(21,23,27,.14);stroke-width:2.5;
+  transition:r .55s var(--ease),stroke .5s var(--ease),stroke-width .5s var(--ease),filter .5s var(--ease);
+  filter:drop-shadow(0 5px 12px rgba(21,23,27,.14));
+}
+.arcseg .gi{fill:none;stroke:rgba(21,23,27,.34);stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;transition:stroke .45s var(--ease)}
+.arcseg .nn{fill:rgba(21,23,27,.34);font-family:inherit;font-size:15px;font-weight:800;
+  text-anchor:middle;letter-spacing:.04em;transition:fill .45s var(--ease)}
+
+/* the station the timer is on */
+.arcseg.on .halo{opacity:.14;r:48}
+.arcseg.on .disc{r:36;stroke:var(--c);stroke-width:4;filter:drop-shadow(0 12px 26px rgba(21,23,27,.26))}
+.arcseg.on .gi{stroke:var(--c)}
+.arcseg.on .nn{fill:var(--c)}
+/* stations already passed keep their colour, quietly */
+.arcseg.past .disc{stroke:var(--c);stroke-width:3}
+.arcseg.past .gi,.arcseg.past .nn{stroke:var(--c);fill:var(--c);opacity:.75}
+.arcseg.past .nn{stroke:none}
+.arcseg:hover .disc{stroke:var(--c)}
+
+/* ---- the list ---- */
+.wrow{padding:16px 18px 17px 20px}
+.wrow::before{
+  content:"";position:absolute;left:0;top:12px;bottom:12px;width:3px;border-radius:3px;
+  background:var(--c);transform:scaleY(0);transform-origin:center;
+  transition:transform .45s var(--ease);
+}
+.wrow.on::before{transform:scaleY(1)}
+.wrow.on{background:#FFF;box-shadow:0 2px 4px rgba(21,23,27,.05),0 20px 38px -24px rgba(21,23,27,.34)}
+.wtx b{font-size:clamp(1.02rem,1.4vw,1.2rem)}
+.wn{font-size:.7rem}
+
+/* ---- one rhythm for the page ----
+   sections were padded top and bottom, so every join stacked two
+   paddings; each block now carries its top space only, which makes
+   the distance between any two sections a single value ---- */
+:root{--sgap:clamp(52px,6vw,88px)}
+section{padding:var(--sgap) 0 0}
+section:last-of-type{padding-bottom:var(--sgap)}
+.marquee + .wrap section{padding-top:var(--sgap)}
+
+/* ---- hero photograph: mono at rest, colour under the cursor ---- */
+.heroshot-wrap{position:relative}
+.heroshot{
+  position:relative;
+  aspect-ratio:4/3.35;
+  border-radius:calc(var(--r) + 6px);
+  margin:0;
+}
+.heroshot img{width:100%;height:100%;object-fit:cover}
+
+@media(max-width:900px){
+  .heroshot{aspect-ratio:16/10}
+}
+
+/* ---------- footer ---------- */
+.foot{margin-top:var(--sgap);padding:28px 0 34px;border-top:1px solid var(--line)}
+.foot-in{display:flex;flex-wrap:wrap;gap:16px 22px;align-items:center;justify-content:space-between}
+.foot .mark{display:inline-flex;align-items:center}
+.foot .mark img{height:34px;width:auto;display:block;transition:opacity .3s var(--ease)}
+.foot .mark:hover img{opacity:.7}
+.foot p{font-size:.78rem;color:var(--dim);letter-spacing:.01em}
+@media(max-width:520px){
+  .foot-in{gap:14px}
+  .foot .mark img{height:29px}
+}
+
+/* the hero photo has no caption now, so the paper fade that seated it
+   is gone, and the sheen it used to carry moves onto the plate itself */
+.heroshot::after{
+  inset:-30% -50%;
+  background:linear-gradient(100deg,transparent 42%,rgba(255,255,255,.42) 50%,transparent 58%);
+  opacity:0;transform:translateX(-45%) rotate(8deg);
+  transition:none;
+}
+.heroshot:hover::after{animation:heroSheen 1.15s var(--ease) .05s}
+@keyframes heroSheen{
+  0%{opacity:0;transform:translateX(-45%) rotate(8deg)}
+  18%{opacity:1}
+  100%{opacity:0;transform:translateX(45%) rotate(8deg)}
+}
+
+/* ===================================================================
+   THE ROUTE — ribbon steps, after the reference infographic
+   =================================================================== */
+.steps{display:grid;gap:clamp(12px,1.4vw,18px);margin-top:clamp(24px,3vw,40px)}
+
+.step{
+  position:relative;
+  display:grid;grid-template-columns:clamp(92px,9vw,124px) 1fr;
+  align-items:stretch;
+}
+
+/* the number sits on its own white tile, overlapping the ribbon */
+.step-n{
+  position:relative;z-index:3;
+  display:grid;place-items:center;
+  margin:6px 0;
+  border-radius:999px 0 0 999px;
+  background:#fff;
+  box-shadow:-6px 6px 18px -8px rgba(21,23,27,.28);
+  font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800;letter-spacing:-.03em;
+  color:var(--c1);
+  transition:color .4s var(--ease),transform .5s var(--ease);
+}
+
+/* the ribbon itself */
+.step-band{
+  position:relative;z-index:2;
+  display:flex;align-items:center;gap:clamp(14px,2vw,30px);
+  padding:clamp(16px,2vw,24px) clamp(18px,2.4vw,34px) clamp(16px,2vw,24px) clamp(26px,3vw,44px);
+  border-radius:0 44px 44px 0;
+  background:linear-gradient(100deg,var(--c1),var(--c2));
+  color:#fff;
+  box-shadow:0 16px 34px -20px rgba(21,23,27,.55);
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease);
+}
+/* the darker tail that folds behind the number, as in the reference */
+.step-fold{
+  position:absolute;left:-1px;top:-9px;z-index:-1;
+  width:78px;height:22px;border-radius:6px 6px 0 0;
+  background:var(--c1);filter:brightness(.66);
+}
+
+.step-tx{flex:1;min-width:0}
+.step-meta{
+  display:block;
+  font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.72);
+}
+.step-tx h3{
+  margin-top:5px;
+  font-size:clamp(1.02rem,1.5vw,1.28rem);font-weight:700;letter-spacing:-.02em;
+  color:#fff;
+}
+.step-tx p{
+  margin-top:7px;
+  font-size:.875rem;line-height:1.55;color:rgba(255,255,255,.86);
+  max-width:78ch;
+}
+.step-tx p b{color:#fff;font-weight:700}
+
+.step-ic{
+  width:clamp(30px,3.4vw,42px);height:auto;flex:none;
+  fill:none;stroke:rgba(255,255,255,.9);stroke-width:1.5;
+  stroke-linecap:round;stroke-linejoin:round;
+  transition:transform .55s var(--ease);
+}
+
+/* the whole ribbon leans out under the pointer */
+.step:hover .step-band{transform:translateX(8px);box-shadow:0 22px 44px -20px rgba(21,23,27,.62)}
+.step:hover .step-ic{transform:scale(1.1) rotate(-6deg)}
+.step:hover .step-n{transform:translateX(-3px)}
+
+/* they arrive one after another, sliding in from the left */
+.js .steps.rv{opacity:1;transform:none;filter:none}
+.js .steps.rv .step{
+  opacity:0;transform:translateX(-26px);
+  transition:opacity .6s var(--ease),transform .75s var(--ease);
+  transition-delay:var(--d,0ms);
+}
+.js .steps.rv.in .step{opacity:1;transform:none}
+
+@media(max-width:760px){
+  .step{grid-template-columns:64px 1fr}
+  .step-n{font-size:1.5rem}
+  .step-band{border-radius:0 26px 26px 0;padding:15px 16px 16px 20px;gap:12px;flex-wrap:wrap}
+  .step-ic{width:26px}
+  .step-fold{width:52px;height:16px;top:-7px}
+}
+@media (prefers-reduced-motion:reduce){
+  .js .steps.rv .step{opacity:1;transform:none}
+}
+
+/* the light end of the ramp carries ink, not white */
+.step-band{color:var(--tx,#fff)}
+.step-meta{color:var(--tx,#fff);opacity:.62}
+.step-tx h3{color:var(--tx,#fff)}
+.step-tx p{color:var(--tx,#fff);opacity:.88}
+.step-tx p b{color:var(--tx,#fff);opacity:1}
+.step-ic{stroke:var(--tx,#fff);opacity:.9}
+/* the fold reads as the ribbon turning back on itself */
+.step-fold{
+  left:0;top:-10px;width:clamp(56px,6vw,84px);height:24px;
+  border-radius:8px 8px 0 0;
+  background:var(--c1);filter:brightness(.6);
+  box-shadow:0 -2px 6px -2px rgba(21,23,27,.35);
+}
+
+/* ---- home, matching the AI page but tuned for paper ---- */
+.home{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 17px 9px 14px;border-radius:999px;
+  background:rgba(21,23,27,.035);border:1px solid var(--line);
+  color:var(--ink);font-size:.84rem;font-weight:600;letter-spacing:-.005em;white-space:nowrap;
+  transition:background .35s var(--ease),border-color .35s var(--ease),
+             color .35s var(--ease),transform .45s var(--ease),box-shadow .4s var(--ease);
+}
+.home svg{
+  width:15px;height:15px;flex:none;fill:none;stroke:currentColor;
+  stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;
+  transition:transform .45s var(--ease);
+}
+.home:hover{
+  background:var(--gold);border-color:var(--gold);color:#fff;
+  transform:translateY(-2px);box-shadow:0 12px 26px -12px rgba(206,59,21,.75);
+}
+.home:hover svg{transform:translateY(-2px) scale(1.06)}
+.home:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* the bar carries three things now; below this it has to shed weight
+   or the CTA wraps and runs off the right edge */
+
+
+/* the CTA cannot shrink below its label, so below this it takes a
+   shorter one rather than being clipped by the viewport */
+.lbl-s{display:none}
+
+/* the bar is a nowrap flex row, so its items must be allowed to
+   shrink or the CTA is pushed past the right edge on small screens */
+
+/* ---- the bar, condensed for small screens ----
+   one block rather than five overlapping ones: the secondary label
+   goes, the CTA takes a shorter word, and the row is allowed to
+   shrink so nothing is pushed past the edge ---- */
+@media(max-width:640px){
+  header .wrap{width:94vw}
+  .bar{gap:10px;flex-wrap:nowrap}
+  .brandmark{flex:0 1 auto;min-width:0;overflow:hidden}
+  .brandmark small{display:none}
+  .brandmark img{flex:none;height:26px}
+  nav.top{flex:0 0 auto;gap:7px}
+  .home{padding:9px;gap:0}
+  .home span{display:none}
+  .btn.sm{flex:none;padding:9px 15px;font-size:.79rem;white-space:nowrap}
+  .btn.sm i{display:none}
+  .lbl-l{display:none}
+  .lbl-s{display:inline}
+}
+@media(max-width:420px){
+  .brandmark img{height:22px}
+  .btn.sm{padding:8px 13px;font-size:.75rem}
+}
+
+/* ===================================================================
+   FAQ — cards rather than a ruled list, matching the AI page
+   =================================================================== */
+.acc{
+  border-top:0;
+  max-width:920px;margin-inline:auto;
+  display:grid;gap:8px;
+}
+
+.acc details{
+  border-bottom:0;
+  border:1px solid var(--line);border-radius:18px;
+  background:#FFF;
+  padding:0 22px;
+  transition:border-color .35s var(--ease),box-shadow .4s var(--ease),
+             transform .4s var(--ease);
+}
+.acc details:hover{box-shadow:0 2px 4px rgba(21,23,27,.04),0 16px 30px -24px rgba(21,23,27,.3);
+  transform:translateY(-1px)}
+.acc details[open]{
+  border-color:transparent;transform:none;
+  box-shadow:0 2px 5px rgba(21,23,27,.05),0 22px 42px -26px rgba(21,23,27,.36);
+  background:linear-gradient(180deg,#FFF,#FDFCFA);
+}
+
+.acc summary{
+  grid-template-columns:auto 1fr auto;
+  gap:16px;padding:21px 0;
+}
+.acc summary:hover{padding-left:0}
+.acc summary:hover .t{color:var(--gold)}
+.acc summary:focus-visible{outline:2px solid var(--gold);outline-offset:6px;border-radius:10px}
+
+.acc .n{
+  font-size:.7rem;font-weight:800;letter-spacing:.12em;
+  color:var(--gold);opacity:.6;padding-top:3px;
+  transition:opacity .35s var(--ease);
+}
+.acc details[open] .n{opacity:1}
+.acc .t{font-size:clamp(1rem,1.5vw,1.16rem);line-height:1.35;letter-spacing:-.02em}
+.acc .m{display:none}
+
+/* the toggle fills in on open, as on the AI page */
+.acc .pl{
+  width:30px;height:30px;border:0;border-radius:50%;
+  background:var(--bg2);
+  transition:background .35s var(--ease),transform .45s var(--ease);
+}
+.acc .pl::before,.acc .pl::after{background:var(--gold);border-radius:2px}
+.acc details[open] .pl{background:var(--gold);transform:rotate(180deg)}
+.acc details[open] .pl::before,.acc details[open] .pl::after{background:#FFF}
+
+/* the answer */
+.abody{
+  padding:0 0 22px;
+  font-size:.92rem;line-height:1.65;color:var(--grey);max-width:66ch;
+}
+.acc details[open] .abody{animation:accIn .45s var(--ease) both}
+@keyframes accIn{
+  from{opacity:0;transform:translateY(-6px)}
+  to{opacity:1;transform:none}
+}
+
+/* ---- the closing prompt ---- */
+.faq-end{
+  max-width:920px;margin:26px auto 0;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;
+  padding:20px 24px;border-radius:18px;
+  background:linear-gradient(100deg,rgba(206,59,21,.07),rgba(206,59,21,.02) 60%,rgba(233,135,31,.1));
+  border:1px solid var(--line);
+}
+.faq-end p{font-size:.98rem;font-weight:700;letter-spacing:-.015em;color:var(--ink)}
+.faq-end span{display:block;font-size:.86rem;font-weight:400;color:var(--grey);margin-top:3px}
+.faq-end a{
+  display:inline-flex;align-items:center;gap:9px;flex:none;
+  padding:11px 20px;border-radius:999px;
+  background:var(--ink);color:#FFF;
+  font-size:.85rem;font-weight:600;
+  transition:transform .45s var(--ease),box-shadow .4s var(--ease),background .3s var(--ease);
+}
+.faq-end a:hover{background:var(--gold);transform:translateY(-2px);
+  box-shadow:0 14px 28px -14px rgba(206,59,21,.75)}
+.faq-end a i{font-style:normal;transition:transform .35s var(--ease)}
+.faq-end a:hover i{transform:translateX(3px)}
+
+@media(max-width:820px){
+  .acc summary{grid-template-columns:auto 1fr auto;gap:12px}
+  .abody{padding-left:0}
+}
+@media(max-width:560px){
+  .acc details{padding:0 16px}
+  .acc summary{padding:17px 0;gap:10px}
+  .acc .pl{width:26px;height:26px}
+  .faq-end{flex-direction:column;align-items:flex-start;padding:18px}
+}
+
+/* ---- alignment ----
+   the AI page centres its FAQ because its section heading is centred.
+   This page sets its headings hard left, so a centred column left the
+   cards floating away from the type above them. They now share the
+   container's left edge, and the answers keep their own measure. ---- */
+.acc{max-width:none;margin-inline:0;gap:10px}
+.faq-end{max-width:none;margin-inline:0;margin-top:22px}
+
+/* ---- legibility ---- */
+.acc details{padding:0 26px}
+.acc summary{padding:24px 0;gap:20px}
+.acc .n{font-size:.74rem;opacity:.75;letter-spacing:.1em}
+.acc .t{font-size:clamp(1.04rem,1.6vw,1.22rem)}
+.acc .pl{width:34px;height:34px}
+.acc .pl::before{width:13px}
+.acc .pl::after{height:13px}
+.abody{
+  padding:0 0 26px;
+  font-size:.95rem;line-height:1.7;color:#4C535B;
+  max-width:74ch;
+}
+@media(max-width:560px){
+  .acc details{padding:0 18px}
+  .acc summary{padding:18px 0;gap:12px}
+  .acc .pl{width:28px;height:28px}
+  .abody{font-size:.9rem}
+}
+
+/* opt out of Chrome Android's automatic dark-mode inversion */
+:root{color-scheme:light only}
+html,body{color-scheme:light only}
+
+#intro .skip{
+  position:absolute;right:26px;top:24px;z-index:4;
+  padding:8px 16px;border-radius:999px;cursor:pointer;
+  background:rgba(251,238,232,.14);border:1px solid rgba(251,238,232,.4);
+  color:#FBEEE8;font:inherit;font-size:.72rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;
+  transition:background .3s,transform .3s;
+}
+#intro .skip:hover{background:rgba(251,238,232,.28);transform:translateY(-1px)}
+#intro .skip:focus-visible{outline:2px solid #FBEEE8;outline-offset:3px}
+
+.phone-row{display:grid;grid-template-columns:minmax(108px,auto) 1fr;gap:8px}
+@media(max-width:520px){.phone-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ========== INTRO · THE MOUTH ========== -->
+<div id="intro" aria-hidden="true">
+  <div class="inner">
+    <div>
+      <span>ONROL — Cyber Defender</span>
+      <p>Break it.<br>Defend it.<br><em>Prove it.</em></p>
+    </div>
+  </div>
+
+  <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <mask id="bite">
+        <rect width="1000" height="1000" fill="#fff"/>
+        <circle id="hole" cx="500" cy="500" r="168" fill="#000"/>
+      </mask>
+      <linearGradient id="plate" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#E2521F"/><stop offset="55%" stop-color="#CE3B15"/>
+        <stop offset="100%" stop-color="#A02808"/>
+      </linearGradient>
+    </defs>
+
+    <g mask="url(#bite)">
+      <rect x="-1000" y="-1000" width="3000" height="3000" fill="url(#plate)"/>
+      <g id="face">
+        <circle cx="348" cy="292" r="36" fill="#100F0D"/>
+        <circle cx="652" cy="292" r="36" fill="#100F0D"/>
+        <path d="M270 706 L270 400 C270 300 360 235 500 235 C640 235 730 300 730 400
+                 L730 688 Q730 706 712 706 L288 706 Q270 706 270 688 Z" fill="#100F0D"/>
+        <g fill="none" stroke="#F6F4EF" stroke-width="10">
+          <circle cx="440" cy="268" r="42"/>
+          <circle cx="560" cy="268" r="42"/>
+          <path d="M482 264 Q500 253 518 264"/>
+          <path d="M398 268 Q366 261 348 250"/>
+          <path d="M602 268 Q634 261 652 250"/>
+        </g>
+      </g>
+    </g>
+
+    <circle id="lip" cx="500" cy="500" r="168" fill="none"
+            stroke="#FBEEE8" stroke-width="14"/>
+  </svg>
+
+  <span class="corner tl"><img src="assets/logo-light@3x.png" alt="ONROL — AI Execution School"></span>
+  <span class="corner br">Cyber Defender · 2026</span>
+  <span class="hint">Scroll to open</span>
+  <button class="skip" type="button">Skip</button>
+  <span class="dot"></span>
+</div>
+
+<header id="top">
+  <div class="wrap bar">
+    <a class="brandmark" href="#home" aria-label="ONROL — Cyber Defender, home">
+      <img src="assets/logo@3x.png" alt="ONROL — AI Execution School">
+      <small>Cyber Defender</small>
+    </a>
+    <nav class="top">
+      <a class="home" href="../index.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.2L12 3.5l9 7.7"/><path d="M5.8 9.6V20.5h12.4V9.6"/><path d="M10 20.5v-6h4v6"/></svg>
+        <span>Home</span>
+      </a>
+      <a class="btn sm" href="#masterclass"><span class="lbl-l">Free masterclass</span><span class="lbl-s">Join free</span> <i>↗</i></a>
+    </nav>
+  </div>
+</header>
+
+
+
+<main>
+
+  <!-- ========== HERO ========== -->
+  <div style="position:relative">
+    <div class="beam" aria-hidden="true"></div>
+    <div class="mesh" aria-hidden="true"></div>
+    <span class="watermark" aria-hidden="true">ONROL</span>
+
+    <div class="wrap">
+      <section class="hero" id="home">
+        <div class="herogrid">
+          <div>
+            <span class="badge rv"><b>New</b> Live cohort forming — ages 14+ →</span>
+            <h1 class="rv">Defence Against<br>Digital <span class="gold">Threats</span></h1>
+            <p class="lead rv">Thirty live sessions that take a beginner from their first packet
+              capture to a full penetration test — and the report that proves it.</p>
+
+            <form class="askbar rv" id="askform">
+              <input id="askmail" type="email" required
+                     placeholder="Your email — get the masterclass link" aria-label="Your email">
+              <button class="btn" type="submit"><span>Get started</span> <i>↗</i></button>
+            </form>
+
+            <div class="cta rv">
+              <span class="fine">Free · 60 minutes · no payment details.<br>Bring your child. Decide after.</span>
+            </div>
+          </div>
+
+          <div class="heroshot-wrap rv">
+          <figure class="figure heroshot">
+            <img src="assets/img/network.jpg"
+                 alt="A network patch panel, ports numbered, cables traced from one port to the next"
+                 loading="eager" decoding="async">
+            
+          </figure>
+          
+          </div>
+
+          
+
+        <div class="strip">
+          <div class="rv"><b data-count="30">0</b><span>Live sessions</span></div>
+          <div class="rv"><b data-count="45">0</b><span>Hours taught</span></div>
+          <div class="rv"><b data-count="6">0</b><span>Portfolio pieces</span></div>
+          <div class="rv"><b data-count="10">0</b><span>Defence sessions</span></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- ========== TOOL MARQUEE ========== -->
+  <div class="wrap">
+    <p class="eyebrow rv" style="text-align:center;margin-bottom:22px">The tooling they will master</p>
+  </div>
+  <div class="tools" aria-hidden="true">
+    <ul id="tick">
+      <li>Wireshark</li><li>Kali Linux</li><li>Nmap</li><li>Burp Suite</li><li>Splunk</li>
+      <li>MITRE ATT&amp;CK</li><li>OWASP Top 10</li><li>Active Directory</li><li>Juice Shop</li>
+      <li>Metasploit</li><li>Hashcat</li><li>SIEM Triage</li>
+    </ul>
+  </div>
+
+  <!-- ========== SKILLS ========== -->
+  <div class="wrap">
+    <section id="skills">
+      <p class="eyebrow rv">Six capabilities, built in order</p>
+      <div class="shead" style="margin-top:14px">
+        <h2 class="rv">What they walk out<br><span>able to do.</span></h2>
+        <p class="lead rv">Each one is practised in a sanctioned lab and ends in something written
+          down — not a quiz score.</p>
+      </div>
+      <div class="walk" id="walk">
+        <div class="walk-arc">
+          <svg id="skillsArc" viewBox="92 52 460 460" aria-hidden="true">
+          <defs>
+            <linearGradient id="arcRamp" x1="1" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#7A1A08"/><stop offset=".22" stop-color="#A82A0C"/>
+              <stop offset=".44" stop-color="#CE3B15"/><stop offset=".64" stop-color="#E05E1E"/>
+              <stop offset=".84" stop-color="#E9871F"/><stop offset="1" stop-color="#EFAE2E"/>
+            </linearGradient>
+          </defs>
+          <path class="arc-rail" d="M495.0 106.1 A392 392 0 0 0 144.2 482.3"/>
+          <path class="arc-live" id="arcLive" d="M495.0 106.1 A392 392 0 0 0 144.2 482.3"/>
+
+        <g class="arcseg" data-i="0" style="--c:#7A1A08">
+          <g class="node" transform="translate(454.5 112.6)">
+            <circle class="halo" r="40"/>
+            <circle class="disc" r="29"/>
+            <g class="gi" transform="translate(-12 -12)"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z"/><path d="M3.2 12h17.6M12 3.2c2.4 2.5 3.6 5.4 3.6 8.8S14.4 18.3 12 20.8C9.6 18.3 8.4 15.4 8.4 12S9.6 5.7 12 3.2z"/></g>
+            <text class="nn" y="52">01</text>
+          </g>
+        </g>
+        <g class="arcseg" data-i="1" style="--c:#A82A0C">
+          <g class="node" transform="translate(364.2 143.7)">
+            <circle class="halo" r="40"/>
+            <circle class="disc" r="29"/>
+            <g class="gi" transform="translate(-12 -12)"><rect x="2.6" y="4" width="18.8" height="16" rx="2.6"/><path d="M6.6 9.6l3.2 2.8-3.2 2.8M12 15.6h5"/></g>
+            <text class="nn" y="52">02</text>
+          </g>
+        </g>
+        <g class="arcseg" data-i="2" style="--c:#CE3B15">
+          <g class="node" transform="translate(284.0 195.7)">
+            <circle class="halo" r="40"/>
+            <circle class="disc" r="29"/>
+            <g class="gi" transform="translate(-12 -12)"><circle cx="12" cy="12" r="8.4"/><circle cx="12" cy="12" r="3.4"/><path d="M12 1.6v3.4M12 19v3.4M1.6 12h3.4M19 12h3.4"/></g>
+            <text class="nn" y="52">03</text>
+          </g>
+        </g>
+        <g class="arcseg" data-i="3" style="--c:#E05E1E">
+          <g class="node" transform="translate(218.9 265.6)">
+            <circle class="halo" r="40"/>
+            <circle class="disc" r="29"/>
+            <g class="gi" transform="translate(-12 -12)"><rect x="2.6" y="4" width="18.8" height="16" rx="2.6"/><path d="M2.6 8.8h18.8M6 6.4h.01M8.8 6.4h.01"/><path d="M9.6 14l2 2 4-4.4"/></g>
+            <text class="nn" y="52">04</text>
+          </g>
+        </g>
+        <g class="arcseg" data-i="4" style="--c:#E9871F">
+          <g class="node" transform="translate(172.5 349.2)">
+            <circle class="halo" r="40"/>
+            <circle class="disc" r="29"/>
+            <g class="gi" transform="translate(-12 -12)"><circle cx="10.6" cy="10.6" r="6.8"/><path d="M15.6 15.6l5.4 5.4"/><path d="M7.6 10.6h6M10.6 7.6v6"/></g>
+            <text class="nn" y="52">05</text>
+          </g>
+        </g>
+        <g class="arcseg" data-i="5" style="--c:#EFAE2E">
+          <g class="node" transform="translate(147.8 441.4)">
+            <circle class="halo" r="40"/>
+            <circle class="disc" r="29"/>
+            <g class="gi" transform="translate(-12 -12)"><path d="M6 2.8h8.4L19 7.4V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3.8a1 1 0 0 1 1-1z"/><path d="M14 2.8v5h5M8.4 12.6h7M8.4 16.4h4.6"/></g>
+            <text class="nn" y="52">06</text>
+          </g>
+        </g>
+          </svg>
+        </div>
+
+        <div class="walk-list" role="tablist" aria-label="Six capabilities">
+        <button class="wrow" data-i="0" style="--c:#7A1A08" type="button" aria-controls="skillsArc">
+          <span class="wn">01</span>
+          <span class="wtx"><b>Read a network</b><span class="wd"><span>Capture live traffic and trace one connection from handshake to payload.</span></span></span>
+          <span class="wbar"><i></i></span>
+        </button>
+        <button class="wrow" data-i="1" style="--c:#A82A0C" type="button" aria-controls="skillsArc">
+          <span class="wn">02</span>
+          <span class="wtx"><b>Command Linux</b><span class="wd"><span>Shell, permissions, SSH keys, hardening — plus scripts that do the boring parts.</span></span></span>
+          <span class="wbar"><i></i></span>
+        </button>
+        <button class="wrow" data-i="2" style="--c:#CE3B15" type="button" aria-controls="skillsArc">
+          <span class="wn">03</span>
+          <span class="wtx"><b>Think offensively</b><span class="wd"><span>Recon, scan, exploit, document. A real engagement, run by the book.</span></span></span>
+          <span class="wbar"><i></i></span>
+        </button>
+        <button class="wrow" data-i="3" style="--c:#E05E1E" type="button" aria-controls="skillsArc">
+          <span class="wn">04</span>
+          <span class="wtx"><b>Test a web app</b><span class="wd"><span>Surface injection and XSS in a training target, then patch what you found.</span></span></span>
+          <span class="wbar"><i></i></span>
+        </button>
+        <button class="wrow" data-i="4" style="--c:#E9871F" type="button" aria-controls="skillsArc">
+          <span class="wn">05</span>
+          <span class="wtx"><b>Hunt in the logs</b><span class="wd"><span>Triage a SIEM, map behaviour to ATT&amp;CK, run the incident to closure.</span></span></span>
+          <span class="wbar"><i></i></span>
+        </button>
+        <button class="wrow" data-i="5" style="--c:#EFAE2E" type="button" aria-controls="skillsArc">
+          <span class="wn">06</span>
+          <span class="wtx"><b>Write the report</b><span class="wd"><span>Turn findings into a document a non-technical reader can act on.</span></span></span>
+          <span class="wbar"><i></i></span>
+        </button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== CURRICULUM ========== -->
+  <div class="wrap">
+    <section id="curriculum">
+      <p class="eyebrow rv">Seven modules · thirty sessions</p>
+      <div class="shead" style="margin-top:14px">
+        <h2 class="rv">The route,<br><span>start to finish.</span></h2>
+        <p class="lead rv">Session one is ethics, authorisation and rules of engagement.
+          Everything technical comes after it.</p>
+      </div>
+      <div class="steps rv" data-stagger>
+        <article class="step" style="--c1:#0E857E;--c2:#17A79E">
+          <span class="step-n">01</span>
+          <div class="step-band">
+            <span class="step-fold" aria-hidden="true"></span>
+            <div class="step-tx">
+              <span class="step-meta">5 sessions &middot; 7.5 h</span>
+              <h3>Networking &amp; Security Foundations</h3>
+              <p>Ethics and authorisation, then <b>OSI and TCP/IP</b>, addressing and subnetting, the services every network leans on — DNS, HTTP, DHCP, NAT, firewalls — closing with a live <b>Wireshark</b> capture read header to payload.</p>
+            </div>
+            <svg class="step-ic" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11"/><path d="M5 16h22M16 5c3 3.2 4.6 6.9 4.6 11S19 24.8 16 28c-3-3.2-4.6-6.9-4.6-11S13 8.2 16 5z"/></svg>
+          </div>
+        </article>
+        <article class="step" style="--c1:#1C6FAE;--c2:#2C8ED0">
+          <span class="step-n">02</span>
+          <div class="step-band">
+            <span class="step-fold" aria-hidden="true"></span>
+            <div class="step-tx">
+              <span class="step-meta">3 sessions &middot; 4.5 h</span>
+              <h3>Linux for Security</h3>
+              <p>Filesystem, processes and services; <b>users, permissions and SSH</b> hardening; then Bash scripting to automate the repetitive half of the job.</p>
+            </div>
+            <svg class="step-ic" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="6" width="24" height="20" rx="3.4"/><path d="M9 13l4 3.6-4 3.6M16 20.4h7"/></svg>
+          </div>
+        </article>
+        <article class="step" style="--c1:#3B4C9E;--c2:#5566BC">
+          <span class="step-n">03</span>
+          <div class="step-band">
+            <span class="step-fold" aria-hidden="true"></span>
+            <div class="step-tx">
+              <span class="step-meta">2 sessions &middot; 3 h</span>
+              <h3>Windows &amp; Enterprise</h3>
+              <p>Windows accounts, privileges and event logging, followed by <b>Active Directory and Group Policy</b> — the single most targeted asset in most organisations.</p>
+            </div>
+            <svg class="step-ic" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 8.4l11-1.6v10H4zM17 6.5l11-1.6v11.9H17zM4 18.8h11v10l-11-1.6zM17 18.8h11v11.9l-11-1.6z"/></svg>
+          </div>
+        </article>
+        <article class="step" style="--c1:#6B3BA3;--c2:#8A57C4">
+          <span class="step-n">04</span>
+          <div class="step-band">
+            <span class="step-fold" aria-hidden="true"></span>
+            <div class="step-tx">
+              <span class="step-meta">8 sessions &middot; 12 h</span>
+              <h3>Ethical Hacking</h3>
+              <p>Engagement methodology, OSINT footprinting, <b>Nmap</b> enumeration, vulnerability validation, credential attacks and hashing, malware behaviour, interception attacks, and applied cryptography.</p>
+            </div>
+            <svg class="step-ic" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="10.5"/><circle cx="16" cy="16" r="4.2"/><path d="M16 2.4v4.4M16 25.2v4.4M2.4 16h4.4M25.2 16h4.4"/></svg>
+          </div>
+        </article>
+        <article class="step" style="--c1:#AE2A6E;--c2:#CB3F88">
+          <span class="step-n">05</span>
+          <div class="step-band">
+            <span class="step-fold" aria-hidden="true"></span>
+            <div class="step-tx">
+              <span class="step-meta">6 sessions &middot; 9 h</span>
+              <h3>Web Application Testing</h3>
+              <p>Web architecture and sessions, the <b>OWASP Top 10</b>, SQL injection and XSS with their fixes, a <b>Burp Suite</b> workflow, and a complete attack path through Juice Shop — written up as a report.</p>
+            </div>
+            <svg class="step-ic" viewBox="0 0 32 32" aria-hidden="true"><rect x="3.5" y="6" width="25" height="20" rx="3.2"/><path d="M3.5 12h25M8 9.2h.02M11.5 9.2h.02"/><path d="M12.6 18.6l2.8 2.8 5.4-5.8"/></svg>
+          </div>
+        </article>
+        <article class="step" style="--c1:#D98A17;--c2:#F0A62F;--tx:#2A1405">
+          <span class="step-n">06</span>
+          <div class="step-band">
+            <span class="step-fold" aria-hidden="true"></span>
+            <div class="step-tx">
+              <span class="step-meta">4 sessions &middot; 6 h</span>
+              <h3>Security Operations &amp; Blue Team</h3>
+              <p>How a SOC triages, <b>Splunk</b> log analysis, the incident response lifecycle mapped to <b>MITRE ATT&amp;CK</b>, and proactive threat hunting from indicators. This is where most first jobs are.</p>
+            </div>
+            <svg class="step-ic" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3.4l11 4.6v7c0 6.8-4.6 11-11 12.6C9 26 4.4 21.8 4.4 15V8z"/><path d="M11.4 16l3.4 3.4L21 12.6"/></svg>
+          </div>
+        </article>
+        <article class="step" style="--c1:#CE3B15;--c2:#E2551F">
+          <span class="step-n">07</span>
+          <div class="step-band">
+            <span class="step-fold" aria-hidden="true"></span>
+            <div class="step-tx">
+              <span class="step-meta">2 sessions &middot; 3 h</span>
+              <h3>Capstone &amp; Career</h3>
+              <p>One lab assessed from both sides — attacker and defender — delivered as a formal findings document. Then portfolio, resume, a technical mock interview and a certification roadmap.</p>
+            </div>
+            <svg class="step-ic" viewBox="0 0 32 32" aria-hidden="true"><path d="M8 3.6h11l5.6 5.6V28a1.4 1.4 0 0 1-1.4 1.4H8A1.4 1.4 0 0 1 6.6 28V5A1.4 1.4 0 0 1 8 3.6z"/><path d="M18.4 3.6v6.4h6.4M11.4 17h9M11.4 22h6"/></svg>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== ETHICS + FORMAT ========== -->
+  <div class="wrap">
+    <section id="ethics">
+      <p class="eyebrow rv">Safety, conduct &amp; format</p>
+      <div class="shead" style="margin-top:14px">
+        <h2 class="rv">Rules first.<br><span>Then tools.</span></h2>
+        <p class="lead rv">This course teaches how attacks work. That is only responsible if the
+          boundaries come first — and are enforced.</p>
+      </div>
+      <div class="rows rv">
+        <div><h4>Consent is the syllabus</h4><p>Scope, authorisation and disclosure open the course — before a single technique.</p></div>
+        <div><h4>Sanctioned targets only</h4><p>Purpose-built vulnerable apps, licensed platforms and the learner's own VMs. Never live systems.</p></div>
+        <div><h4>Enforced, not just stated</h4><p>Testing outside the lab removes a student from the cohort. That rule has no grey area.</p></div>
+        <div><h4>Defence carries equal weight</h4><p>A third of the course is hardening, monitoring, response and hunting.</p></div>
+        <div><h4>Supervised throughout</h4><p>An instructor is live in every session, and parents may observe any of them.</p></div>
+      </div>
+
+      <h2 class="rv" style="margin:66px 0 28px">How it <span class="gold">runs.</span></h2>
+      <div class="rows rv">
+        <div><h4>Format</h4><p>Live with an instructor — never pre-recorded. Every session is recorded for catch-up.</p></div>
+        <div><h4>Shape</h4><p>30 sessions · 1.5 hours each · 45 hours total.</p></div>
+        <div><h4>Timing</h4><p>US time zones, scheduled outside school hours.</p></div>
+        <div><h4>Who</h4><p>Ages 14 and up. No networking, Linux or coding needed to start.</p></div>
+        <div><h4>Kit</h4><p>A laptop that can run a virtual machine, plus internet. Labs and tooling supplied.</p></div>
+        <div><h4>Included</h4><p>Recordings, six deliverables, capstone report, mock interview, certificate, community access.</p></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== FAQ ========== -->
+  <div class="wrap">
+    <section id="faq">
+      <p class="eyebrow rv">Parents ask</p>
+      <div class="shead" style="margin-top:14px">
+        <h2 class="rv">Straight<br><span>answers.</span></h2>
+        <p class="lead rv">If something here matters to you and isn't covered, ask it live at the
+          masterclass.</p>
+      </div>
+      <div class="acc rv">
+        <details><summary><span class="n">Q1</span><span class="t">Are you teaching my child to hack?</span><span class="m"></span><span class="pl"></span></summary>
+          <div class="abody">We teach how attacks work so they can be spotted, blocked and investigated. Law and authorisation come first; practice happens only on deliberately vulnerable targets. Straying outside the lab ends a student's place in the cohort.</div></details>
+        <details><summary><span class="n">Q2</span><span class="t">Is any of this legal?</span><span class="m"></span><span class="pl"></span></summary>
+          <div class="abody">Yes — testing with documented permission on systems you own or are authorised to touch is a recognised profession with its own certifications and a large legitimate industry behind it.</div></details>
+        <details><summary><span class="n">Q3</span><span class="t">Could it get them into trouble?</span><span class="m"></span><span class="pl"></span></summary>
+          <div class="abody">The danger is the self-taught route: technique without context or supervision. This course supplies the framing, the boundaries and an adult in the room.</div></details>
+        <details><summary><span class="n">Q4</span><span class="t">Do they need coding first?</span><span class="m"></span><span class="pl"></span></summary>
+          <div class="abody">No. The opening ten sessions build networking, Linux and Windows from nothing before offensive material begins.</div></details>
+        <details><summary><span class="n">Q5</span><span class="t">Is 14 too young?</span><span class="m"></span><span class="pl"></span></summary>
+          <div class="abody">It's the intended starting point. Beginning early leaves years to build on the base before applications or first roles arrive.</div></details>
+        <details><summary><span class="n">Q6</span><span class="t">Does it help with college?</span><span class="m"></span><span class="pl"></span></summary>
+          <div class="abody">It produces artefacts most applicants lack — a pentest report, a documented investigation, a capstone they can defend in conversation. We promise credible evidence, not admission.</div></details>
+        <details><summary><span class="n">Q7</span><span class="t">Can they earn from it?</span><span class="m"></span><span class="pl"></span></summary>
+          <div class="abody">Not yet, and we don't sell it that way. Bounty platforms generally require eighteen. What we guarantee is capability and a portfolio.</div></details>
+        <details><summary><span class="n">Q8</span><span class="t">How much work outside class?</span><span class="m"></span><span class="pl"></span></summary>
+          <div class="abody">Roughly one to two hours of lab practice a week, heavier during the capstone depending on ambition.</div></details>
+      </div>
+
+      <div class="faq-end rv">
+        <p>Still have a question?<span>Bring it to the free masterclass and ask the instructor directly.</span></p>
+        <a href="#masterclass">Reserve a seat <i aria-hidden="true">&rarr;</i></a>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== MASTERCLASS ========== -->
+  <div class="wrap">
+    <section id="masterclass">
+      <div class="shead" style="align-items:start">
+        <div class="rv">
+          <p class="eyebrow" style="margin-bottom:14px">Next cohort</p>
+          <h2>The masterclass<br><span>costs nothing.</span></h2>
+          <p class="lead" style="margin-top:20px">One hour, live. Full curriculum walkthrough, a tour
+            of the lab environment, our supervision model explained, and every question answered.</p>
+          <p class="eyebrow" style="margin-top:26px">Free · 60 min · Live · Seats capped</p>
+        </div>
+        <div class="formcard rv">
+          <div id="formlive">
+            <h3>Reserve your seat</h3>
+            <p>For parents and learners together. No card required.</p>
+            <form class="fgrid" id="mcform" novalidate>
+              <div class="field"><label for="pn">Parent name</label><input id="pn" name="parent" required></div>
+              <div class="field"><label for="ln">Learner name</label><input id="ln" name="learner" required></div>
+              <div class="field"><label for="la">Learner age</label><input id="la" name="age" type="number" min="14" max="25" required></div>
+              <div class="field"><label for="em">Email</label><input id="em" name="email" type="email" required></div>
+              <div class="field"><label for="ph">Phone</label><span class="phone-row"><select name="cc" id="cc" aria-label="Country code" required>
+                <option value="+1">+1 &nbsp;US / Canada</option>
+                <option value="+91">+91 &nbsp;India</option>
+                <option value="+44">+44 &nbsp;UK</option>
+                <option value="+61">+61 &nbsp;Australia</option>
+                <option value="+971">+971 &nbsp;UAE</option>
+                <option value="+65">+65 &nbsp;Singapore</option>
+                <option value="+64">+64 &nbsp;New Zealand</option>
+                <option value="+27">+27 &nbsp;South Africa</option>
+                <option value="other">Other</option>
+              </select><input id="ph" name="phone" type="tel" required inputmode="tel"></span></div>
+              <button class="btn submit" type="submit"><span>Confirm my seat</span> <i>↗</i></button>
+            </form>
+          </div>
+          <div id="formdone">
+            <h3>You're on the list.</h3>
+            <p style="margin-top:10px">The joining link and calendar invite are on their way to your inbox.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <a class="mark" href="#top" aria-label="ONROL home">
+      <img src="assets/logo@3x.png" alt="ONROL — AI Execution School">
+    </a>
+    <p>Cyber Defender Program &middot; &copy; <span id="yr">2026</span> ONROL</p>
+  </div>
+</footer>
+
+<script>
+const REDUCE = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ===================================================================
+   INTRO — scroll widens the mouth until it swallows the viewport.
+   =================================================================== */
+(() => {
+  const intro = document.getElementById('intro');
+  if (!intro) return;
+  const hole  = document.getElementById('hole');
+  const lip   = document.getElementById('lip');
+  const dot   = intro.querySelector('.dot');
+  const face  = document.getElementById('face');
+  const inner = intro.querySelector('.inner');
+
+  const FACE_H = 482, FACE_W = 460;       // face bounding box in viewBox units
+  let R0 = 168, k = 1;
+  function fit(){
+    const s = Math.max(innerWidth, innerHeight) / 1000;   // px per viewBox unit
+    const visibleH = innerHeight / s, visibleW = innerWidth / s;
+    // height rules on a laptop, width rules on a phone
+    k = Math.min((visibleH * 0.74) / FACE_H, (visibleW * 0.62) / FACE_W);
+    face.setAttribute('transform', `translate(500 500) scale(${k}) translate(-500 -500)`);
+    R0 = 168 * k;
+    lip.setAttribute('stroke-width', 14 * k);
+  }
+  fit();
+  addEventListener('resize', fit);
+
+  const finish = () => {
+    intro.remove();
+    document.body.classList.remove('locked');
+    document.querySelectorAll('.hero .rv').forEach(el => el.classList.add('in'));
+  };
+
+  /* The aperture is a desktop flourish. On a phone it is an obstacle that
+     can trap a visitor behind a full-screen overlay, so it is skipped for
+     touch and small screens, for reduced motion, and if anything throws. */
+  const SKIP = REDUCE
+    || innerWidth < 900
+    || matchMedia('(hover: none)').matches
+    || matchMedia('(pointer: coarse)').matches;
+  if (SKIP){ finish(); return; }
+
+  /* last-resort escape hatch: never leave anyone stuck behind the plate */
+  const bail = setTimeout(() => { if (!done) finish(); }, 25000);
+
+  document.body.classList.add('locked');
+  scrollTo(0, 0);
+
+  const maxR = () => {
+    const s = Math.max(innerWidth, innerHeight) / 1000;
+    return Math.hypot(innerWidth, innerHeight) / 2 / s + 20;
+  };
+
+  let target = 0, cur = 0, done = false, warmed = false;
+  const push = amount => { target = Math.min(1.06, target + amount); };
+
+  addEventListener('wheel', e => { if (!done){ e.preventDefault(); push(e.deltaY / 1100); } },
+    { passive: false });
+  let ty = 0;
+  addEventListener('touchstart', e => { ty = e.touches[0].clientY; }, { passive: true });
+  addEventListener('touchmove', e => {
+    if (done) return;
+    const y = e.touches[0].clientY;
+    push((ty - y) / 420); ty = y;
+  }, { passive: true });
+  addEventListener('keydown', e => {
+    if (done) return;
+    if (['ArrowDown', 'PageDown', ' ', 'Enter'].includes(e.key)) push(.3);
+    if (e.key === 'Escape') target = 1.06;
+  });
+  intro.addEventListener('click', () => push(.34));
+  const skipBtn = intro.querySelector('.skip');
+  if (skipBtn) skipBtn.addEventListener('click', e => {
+    e.stopPropagation(); done = true; clearTimeout(bail); finish();
+  });
+  addEventListener('pointermove', e => {
+    dot.style.left = e.clientX + 'px';
+    dot.style.top  = e.clientY + 'px';
+  });
+
+  (function tick(){
+    if (done) return;
+    requestAnimationFrame(tick);
+    cur += (target - cur) * .085;
+
+    const p = Math.min(1, cur);
+    const clamp01 = v => v < 0 ? 0 : v > 1 ? 1 : v;
+
+    /* eases open, then accelerates once it has committed */
+    const r = R0 + (maxR() - R0) * Math.pow(p, 1.62);
+    hole.setAttribute('r', r);
+    lip.setAttribute('r', r);
+    lip.setAttribute('stroke-width', 14 * k * (1 - p * .9));
+    lip.style.opacity = String(clamp01(1 - Math.pow(p, 2.6)));
+
+    /* the plate advances toward the viewer as it opens */
+    intro.style.setProperty('--plate', (1 + p * 0.16).toFixed(4));
+
+    /* the panel behind the aperture thins out from about a third of
+       the way in, so the real page is visible through the hole long
+       before the plate clears — the way the reference reads */
+    intro.style.setProperty('--fill', clamp01(1 - (p - 0.26) / 0.36).toFixed(3));
+
+    /* wordmark and hint leave early; they belong to the closed state */
+    const fade = String(clamp01(1 - p * 3.1));
+    intro.querySelectorAll('.corner,.hint').forEach(el => el.style.opacity = fade);
+    inner.firstElementChild.style.opacity = String(clamp01(1 - p * 2.6));
+
+    /* the hero starts arriving while the plate is still clearing, so
+       the handoff is continuous instead of a pop at the end */
+    if (p > .52 && !warmed){
+      warmed = true;
+      document.querySelectorAll('.hero .rv').forEach(el => el.classList.add('in'));
+    }
+
+    if (cur >= 1.02){ done = true; clearTimeout(bail); finish(); }
+  })();
+})();
+
+/* ---------- small-screen menu ---------- */
+(() => {
+  const btn = document.getElementById('menubtn'), sheet = document.getElementById('sheet');
+  if (!btn || !sheet) return;
+  const set = open => {
+    btn.setAttribute('aria-expanded', String(open));
+    sheet.classList.toggle('open', open);
+    document.body.classList.toggle('locked', open);
+  };
+  btn.addEventListener('click', () => set(btn.getAttribute('aria-expanded') !== 'true'));
+  sheet.querySelectorAll('a').forEach(a => a.addEventListener('click', () => set(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape') set(false); });
+})();
+
+/* ---------- masthead condenses on scroll ---------- */
+addEventListener('scroll', () => {
+  document.getElementById('top').classList.toggle('stuck', scrollY > 30);
+}, { passive: true });
+
+/* ---------- reveal, driven by scroll position rather than an observer,
+   so a delayed callback can never leave the page blank ---------- */
+(() => {
+  const held = document.getElementById('intro') ? '.hero .rv' : null;
+  let pending = [...document.querySelectorAll('.rv,.figure')]
+    .filter(el => !(held && el.matches(held)));
+  pending.forEach((el, i) => { el.style.transitionDelay = (i % 3) * 100 + 'ms'; });
+
+  function check(){
+    if (!pending.length) return;
+    const limit = innerHeight * 0.92;
+    pending = pending.filter(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < limit && r.bottom > 0){ el.classList.add('in'); return false; }
+      return true;
+    });
+  }
+  let queued = false;
+  const onScroll = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => { check(); queued = false; });
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  addEventListener('load', check);
+  check();
+})();
+
+/* ---------- nav highlight follows the section in view ---------- */
+(() => {
+  const links = [...document.querySelectorAll('nav.top .navlink')];
+  const secs = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting)
+      links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id)); });
+  }, { threshold: .25 });
+  secs.forEach(s => io.observe(s));
+})();
+
+/* ---------- one panel open per accordion ---------- */
+document.querySelectorAll('.acc').forEach(group => {
+  const items = [...group.querySelectorAll('details')];
+  items.forEach(d => d.addEventListener('toggle', () => {
+    if (d.open) items.forEach(o => { if (o !== d) o.open = false; });
+  }));
+});
+
+/* ---------- stat strip counts up once ---------- */
+(() => {
+  const run = el => {
+    const target = Number(el.dataset.count);
+    if (REDUCE){ el.textContent = target; return; }
+    const t0 = performance.now(), dur = 1300;
+    (function step(now){
+      const p = Math.min(1, (now - t0) / dur);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(step);
+    })(t0);
+  };
+  const ob = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting){ run(e.target); ob.unobserve(e.target); }
+  }), { threshold: .6 });
+  document.querySelectorAll('[data-count]').forEach(e => ob.observe(e));
+})();
+
+/* ---------- marquee: duplicate so the loop is seamless ---------- */
+(() => { const ul = document.getElementById('tick'); if (ul) ul.innerHTML += ul.innerHTML; })();
+
+/* ---------- pointer-tracked sheen on the cards ---------- */
+(() => {
+  if (REDUCE) return;
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('pointermove', e => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) / r.width * 100 + '%');
+      card.style.setProperty('--my', (e.clientY - r.top) / r.height * 100 + '%');
+    });
+  });
+})();
+
+/* ---------- gentle parallax on the gems ---------- */
+(() => {
+  if (REDUCE) return;
+  const gems = [...document.querySelectorAll('.gem')];
+  let queued = false;
+  addEventListener('scroll', () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => {
+      for (const g of gems){
+        const r = g.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > innerHeight){ queued = false; continue; }
+        const depth = g.classList.contains('g2') ? 26 : 14;
+        g.style.marginTop = ((r.top + r.height / 2) / innerHeight - .5) * -depth + 'px';
+      }
+      queued = false;
+    });
+  }, { passive: true });
+})();
+
+/* ---------- hero email hand-off ---------- */
+document.getElementById('askform').addEventListener('submit', e => {
+  e.preventDefault();
+  const mail = document.getElementById('askmail');
+  if (!mail.checkValidity()){ mail.reportValidity(); return; }
+  // carry what they typed into the full form, so nothing is asked twice
+  document.getElementById('em').value = mail.value;
+  document.getElementById('masterclass').scrollIntoView({ behavior: 'smooth' });
+  setTimeout(() => document.getElementById('pn').focus(), 700);
+});
+
+/* ---------- masterclass form ---------- */
+document.getElementById('mcform').addEventListener('submit', e => {
+  e.preventDefault();
+  if (!e.target.checkValidity()){ e.target.reportValidity(); return; }
+  // TO CONNECT: POST these values to your CRM / registration endpoint.
+  try{ var _ph=(document.getElementById("pn")||{}).value||"",_em=(document.getElementById("em")||{}).value||"";
+    fetch("https://go.onrol.in/api/public/leads",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({name:"",phone:_ph,email:_em,source:"US Cyber Landing",campaign:"aimlprogramus-cyber"}),keepalive:true}).catch(function(){});
+    fetch("https://script.google.com/macros/s/AKfycbzDOsjoj6jx7KbX3AcMR_SpW7FA76z7bmonecaRSykClchoizgiSWZH5Og-HQ2WDRcHsw/exec",{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({form_type:"aimlprogramus_cyber",phone:_ph,email:_em,source:"US Cyber Landing",campaign:"aimlprogramus-cyber",page_path:location.pathname}),keepalive:true}).catch(function(){});
+  }catch(e){}
+  document.getElementById('formlive').style.display = 'none';
+  document.getElementById('formdone').style.display = 'block';
+});
+
+/* ---------- six capabilities: walks itself through the arc ---------- */
+(() => {
+  const wrap = document.getElementById('walk');
+  if (!wrap) return;
+  const rows = [...wrap.querySelectorAll('.wrow')];
+  const segs = [...wrap.querySelectorAll('.arcseg')];
+  if (!rows.length) return;
+
+  const live = document.getElementById('arcLive');
+  const FRAC = [.115, .285, .455, .625, .795, 1];
+  if (live){
+    const len = live.getTotalLength ? live.getTotalLength() : 561;
+    live.style.setProperty('--len', len.toFixed(1));
+  }
+  const DUR = 4200;
+  let i = 0, timer = null, running = false;
+
+  const show = n => {
+    i = (n + rows.length) % rows.length;
+    rows.forEach((r, k) => {
+      const on = k === i;
+      r.classList.toggle('on', on);
+      r.setAttribute('aria-selected', String(on));
+      if (on) {                       /* restart the timer bar */
+        const bar = r.querySelector('.wbar i');
+        bar.style.animation = 'none';
+        void bar.offsetWidth;
+        bar.style.animation = '';
+        r.style.setProperty('--dur', DUR + 'ms');
+      }
+    });
+    segs.forEach((s, k) => {
+      s.classList.toggle('on', k === i);
+      s.classList.toggle('past', k < i);
+    });
+    /* the ribbon fills up to the live station */
+    if (live) live.style.setProperty('--prog', FRAC[i]);
+  };
+
+  const stop = () => { clearInterval(timer); timer = null; running = false; };
+  const start = () => {
+    if (running || REDUCE) return;
+    running = true;
+    timer = setInterval(() => show(i + 1), DUR);
+  };
+  const restart = () => { stop(); start(); };
+
+  rows.forEach((r, k) => {
+    r.addEventListener('click', () => { show(k); restart(); });
+    r.addEventListener('focus', () => { show(k); restart(); });
+  });
+  segs.forEach((s, k) => s.addEventListener('click', () => { show(k); restart(); }));
+
+  /* hovering means they are reading — hold this one */
+  wrap.addEventListener('pointerenter', () => { wrap.classList.add('paused'); stop(); });
+  wrap.addEventListener('pointerleave', () => { wrap.classList.remove('paused'); start(); });
+
+  /* only run while the section is actually on screen */
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => e.isIntersecting ? start() : stop());
+  }, { threshold: .25 });
+  io.observe(wrap);
+
+  show(0);
+})();
+</script>
+<script>
+(() => { const y = document.getElementById("yr"); if (y) y.textContent = new Date().getFullYear(); })();
+</script>
+</body>
+</html>

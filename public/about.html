@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About ONROL, India's AI Execution School</title>
+<link rel="canonical" href="https://onrol.in/about">
+<meta name="description" content="ONROL is India's AI Execution School, founded in 2025 by Dr. Neeraja Reddy in Hyderabad. A premium, project based AI education platform with live mentorship, build real AI solutions, not just learn concepts.">
+<link rel="stylesheet" href="/home-glydi/styles.css?v=manrope">
+<style>
+  .subpage{ font-family:'Manrope', sans-serif; }
+  body{ background:#fbfaf9; }
+  body::before{
+    content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+    background:radial-gradient(60vw 42vw at 10% -8%, rgba(var(--orange-rgb),.08), transparent 58%),
+               radial-gradient(52vw 42vw at 100% 0%, rgba(var(--orange-rgb),.05), transparent 55%);
+  }
+  .subpage{ position:relative; background:transparent; max-width:1080px; margin:0 auto; padding:140px 24px 90px; color:#16181b; }
+
+  /* ---- section header atoms ---- */
+  section.ab{ margin-top:clamp(72px,11vh,128px); }
+  .ab-eyebrow{ display:inline-flex; align-items:center; gap:10px; font-size:12px; letter-spacing:2.4px; text-transform:uppercase; color:var(--orange); font-weight:700; }
+  .ab-eyebrow::before{ content:""; width:26px; height:2px; background:var(--orange); border-radius:2px; }
+  .ab-h2{ font-size:clamp(28px,4vw,44px); font-weight:800; letter-spacing:-.02em; line-height:1.08; margin:14px 0 0; }
+  .ab-h2 span{ color:var(--orange); }
+  .ab-lead{ font-size:clamp(16px,1.35vw,18px); line-height:1.65; color:#54585e; max-width:660px; margin:16px 0 0; }
+
+  /* ---- mission / intro ---- */
+  .ab-intro-h{ font-size:clamp(30px,5.2vw,60px); font-weight:800; letter-spacing:-.028em; line-height:1.04; margin:14px 0 0; max-width:16ch; }
+  .ab-intro-h span{ color:var(--orange); }
+
+  /* ---- stats band (count-up) ---- */
+  .ab-stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(0,0,0,.12); border:1px solid rgba(0,0,0,.12); border-radius:18px; overflow:hidden; margin-top:40px;
+    opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .ab-stats.in{ opacity:1; transform:none; }
+  .ab-stat{ background:#fff; padding:clamp(24px,3vw,34px) 22px; text-align:center; }
+  .ab-stat .num{ font-size:clamp(32px,4.4vw,50px); font-weight:800; letter-spacing:-.02em; color:#16181b; line-height:1; }
+  .ab-stat .num .or{ color:var(--orange); }
+  .ab-stat .lbl{ font-size:12.5px; letter-spacing:.6px; text-transform:uppercase; color:#8a8f96; margin-top:11px; font-weight:600; }
+  @media(max-width:720px){ .ab-stats{ grid-template-columns:repeat(2,1fr); } }
+
+  /* ---- perk marquee (infinite scroll badge row, inspired by reference) ---- */
+  .marquee{ margin-top:22px; overflow:hidden; border-block:1px solid rgba(0,0,0,.1); padding:16px 0;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); }
+  .marquee-track{ display:flex; gap:12px; width:max-content; animation:marq 30s linear infinite; }
+  .marquee:hover .marquee-track{ animation-play-state:paused; }
+  @keyframes marq{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .mq{ display:inline-flex; align-items:center; gap:9px; white-space:nowrap; font-size:14px; font-weight:600; color:#33363b; background:#fff; border:1px solid rgba(0,0,0,.1); border-radius:999px; padding:10px 18px; }
+  .mq::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--orange); flex:0 0 auto; }
+  @media (prefers-reduced-motion:reduce){ .marquee-track{ animation:none; flex-wrap:wrap; width:auto; justify-content:center; } }
+
+  /* ---- career outcomes (role + salary cards, inspired by reference) ---- */
+  .roles{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:36px; }
+  .role-card{ background:#fff; border:1px solid rgba(0,0,0,.09); border-radius:18px; padding:26px 28px;
+    opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease, box-shadow .3s ease, border-color .3s ease; }
+  .roles.in .role-card{ opacity:1; transform:none; }
+  .roles.in .role-card:nth-child(2){ transition-delay:.08s; }
+  .roles.in .role-card:nth-child(3){ transition-delay:.16s; }
+  .roles.in .role-card:nth-child(4){ transition-delay:.24s; }
+  .role-card:hover{ transform:translateY(-5px); box-shadow:0 30px 58px -30px rgba(0,0,0,.28); border-color:rgba(var(--orange-rgb),.4); }
+  .role-top{ display:flex; align-items:baseline; justify-content:space-between; gap:14px; }
+  .role-name{ font-size:18.5px; font-weight:800; letter-spacing:-.01em; color:#16181b; }
+  .role-pay{ font-size:16px; font-weight:800; color:var(--orange); white-space:nowrap; }
+  .role-desc{ font-size:14.5px; line-height:1.55; color:#54585e; margin:8px 0 0; }
+  .roles-note{ font-size:12.5px; color:#9a9089; margin:16px 0 0; }
+  @media(max-width:720px){ .roles{ grid-template-columns:1fr; } }
+
+  /* ---- roles by program: dropdown accordion ---- */
+  .roles-acc{ margin-top:36px; display:flex; flex-direction:column; gap:14px; }
+  .racc{ background:#fff; border:1px solid rgba(0,0,0,.1); border-radius:18px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease; }
+  .racc[open]{ border-color:rgba(var(--orange-rgb),.4); box-shadow:0 26px 52px -30px rgba(0,0,0,.28); }
+  .racc summary{ list-style:none; cursor:pointer; display:flex; align-items:center; gap:15px; padding:20px 24px; }
+  .racc summary::-webkit-details-marker{ display:none; }
+  .racc-ic{ width:46px; height:46px; border-radius:13px; background:rgba(var(--orange-rgb),.1); color:var(--orange); display:grid; place-items:center; flex:0 0 auto; transition:background .3s ease, color .3s ease, transform .3s ease; }
+  .racc[open] .racc-ic{ background:var(--orange); color:#fff; }
+  .racc summary:hover .racc-ic{ transform:translateY(-2px); }
+  .racc-ic svg{ width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .racc-name{ font-size:19px; font-weight:800; letter-spacing:-.01em; color:#16181b; }
+  .racc-meta{ margin-left:auto; font-size:12.5px; font-weight:700; color:#8a8f96; letter-spacing:.4px; text-transform:uppercase; white-space:nowrap; }
+  .racc-chev{ flex:0 0 auto; color:#a2a09c; transition:transform .3s ease, color .3s ease; }
+  .racc[open] .racc-chev{ transform:rotate(180deg); color:var(--orange); }
+  .racc-chev svg{ width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; display:block; }
+  .racc-body{ padding:2px 24px 20px; display:flex; flex-direction:column; }
+  .racc[open] .racc-body{ animation:raccIn .38s cubic-bezier(.2,.7,.2,1); }
+  @keyframes raccIn{ from{ opacity:0; transform:translateY(-8px); } to{ opacity:1; transform:none; } }
+  .racc-item{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 8px; border-top:1px solid rgba(0,0,0,.07); border-radius:10px; transition:background .2s ease; }
+  .racc-item:first-child{ border-top:0; }
+  .racc-item:hover{ background:rgba(var(--orange-rgb),.05); }
+  .racc-role{ font-size:15.5px; font-weight:600; color:#16181b; }
+  .racc-ctc{ font-size:15px; font-weight:800; color:var(--orange); white-space:nowrap; letter-spacing:-.01em; }
+  @media(max-width:560px){ .racc-name{ font-size:17px; } .racc-meta{ display:none; } .racc-role{ font-size:14.5px; } }
+
+  /* ---- founder ---- */
+  .ab-founder{ display:grid; grid-template-columns:280px 1fr; gap:clamp(28px,4vw,56px); align-items:center;
+    background:linear-gradient(140deg,#ffffff,#fff5ef); border:1px solid rgba(0,0,0,.08); border-radius:22px; padding:clamp(26px,3vw,46px); margin-top:32px; }
+  .ab-founder img{ width:100%; aspect-ratio:1/1; object-fit:cover; object-position:center 15%; border-radius:18px;
+    filter:grayscale(1) contrast(1.03); transition:filter .55s ease, transform .55s cubic-bezier(.2,.7,.2,1); box-shadow:0 22px 46px -18px rgba(0,0,0,.45); }
+  .ab-founder:hover img{ filter:none; transform:scale(1.03) rotate(-1deg); }
+  .fo-role{ font-size:12px; letter-spacing:1.6px; text-transform:uppercase; color:var(--orange); font-weight:700; margin:0; }
+  .fo-name{ font-size:clamp(24px,3vw,34px); font-weight:800; margin:8px 0 14px; letter-spacing:-.01em; }
+  .fo-bio{ font-size:16px; line-height:1.7; color:#54585e; margin:0; }
+  .fo-quote{ margin:18px 0 0; padding-left:18px; border-left:3px solid var(--orange); font-size:16px; font-style:italic; color:#33363b; line-height:1.55; }
+  @media(max-width:720px){ .ab-founder{ grid-template-columns:1fr; text-align:center; } .ab-founder img{ max-width:220px; margin:0 auto; } .fo-quote{ text-align:left; } }
+
+  /* ---- phases timeline ---- */
+  .phases{ position:relative; margin-top:44px; }
+  .phases::before{ content:""; position:absolute; left:31px; top:12px; bottom:12px; width:2px; background:rgba(var(--orange-rgb),.16); }
+  .phases::after{ content:""; position:absolute; left:31px; top:12px; width:2px; height:0; background:var(--orange); transition:height 1.3s cubic-bezier(.4,0,.2,1); }
+  .phases.in::after{ height:calc(100% - 24px); }
+  .phase{ position:relative; display:grid; grid-template-columns:64px 1fr; gap:24px; padding:16px 0;
+    opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
+  .phases.in .phase{ opacity:1; transform:none; }
+  .phases.in .phase:nth-child(2){ transition-delay:.12s; }
+  .phases.in .phase:nth-child(3){ transition-delay:.26s; }
+  .phases.in .phase:nth-child(4){ transition-delay:.40s; }
+  .ph-node{ position:relative; z-index:2; width:64px; height:64px; border-radius:18px; background:#fff; border:1px solid rgba(0,0,0,.1);
+    display:grid; place-items:center; color:var(--orange); box-shadow:0 14px 28px -14px rgba(0,0,0,.3);
+    transition:background .3s ease, color .3s ease, transform .3s ease; }
+  .phase:hover .ph-node{ background:var(--orange); color:#fff; transform:translateY(-3px) scale(1.04); }
+  .ph-node svg{ width:26px; height:26px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .ph-body{ padding-top:5px; }
+  .ph-step{ font-size:12px; letter-spacing:1.4px; text-transform:uppercase; color:var(--orange); font-weight:700; margin:0; }
+  .ph-title{ font-size:clamp(20px,2vw,25px); font-weight:800; margin:5px 0 7px; letter-spacing:-.01em; }
+  .ph-desc{ font-size:15.5px; line-height:1.62; color:#54585e; max-width:580px; margin:0; }
+
+  /* ---- value cards ---- */
+  .values{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:36px; }
+  .val-card{ position:relative; background:#fff; border:1px solid rgba(0,0,0,.09); border-radius:20px; padding:clamp(24px,2.4vw,32px); overflow:hidden;
+    opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease, box-shadow .3s ease, border-color .3s ease; }
+  .values.in .val-card{ opacity:1; transform:none; }
+  .values.in .val-card:nth-child(2){ transition-delay:.09s; }
+  .values.in .val-card:nth-child(3){ transition-delay:.18s; }
+  .values.in .val-card:nth-child(4){ transition-delay:.27s; }
+  .val-card:hover{ transform:translateY(-6px); box-shadow:0 32px 60px -30px rgba(0,0,0,.3); border-color:rgba(var(--orange-rgb),.4); }
+  .val-num{ position:absolute; top:20px; right:26px; font-size:42px; font-weight:800; color:rgba(0,0,0,.05); line-height:1; }
+  .val-ic{ width:54px; height:54px; border-radius:15px; background:rgba(var(--orange-rgb),.1); color:var(--orange); display:grid; place-items:center; margin-bottom:18px; transition:background .3s ease, color .3s ease, transform .35s cubic-bezier(.2,.7,.2,1); }
+  .val-card:hover .val-ic{ background:var(--orange); color:#fff; transform:rotate(-6deg) scale(1.07); }
+  .val-ic svg{ width:26px; height:26px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .val-card h3{ font-size:20px; font-weight:800; margin:0 0 8px; letter-spacing:-.01em; }
+  .val-card p{ font-size:15px; line-height:1.6; color:#54585e; margin:0; }
+  @media(max-width:720px){ .values{ grid-template-columns:1fr; } }
+
+  /* ---- learn + serve chips ---- */
+  .ab-two{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:36px; }
+  .chip-card{ background:#fff; border:1px solid rgba(0,0,0,.09); border-radius:20px; padding:clamp(24px,2.4vw,30px); }
+  .chip-card h3{ font-size:13px; letter-spacing:1.4px; text-transform:uppercase; color:var(--orange); font-weight:700; margin:0 0 16px; }
+  .chip-row{ display:flex; flex-wrap:wrap; gap:9px; }
+  .chip-row span{ font-size:14px; color:#33363b; background:rgba(var(--orange-rgb),.06); border:1px solid rgba(var(--orange-rgb),.2); border-radius:999px; padding:8px 15px; transition:background .2s ease, color .2s ease, transform .2s ease; }
+  .chip-row span:hover{ background:var(--orange); color:#fff; transform:translateY(-2px); }
+  @media(max-width:720px){ .ab-two{ grid-template-columns:1fr; } }
+
+  /* ---- closing CTA ---- */
+  .ab-cta{ margin-top:clamp(72px,11vh,128px); text-align:center; background:linear-gradient(155deg,#221a15,#0b0908) !important; border:1px solid rgba(255,255,255,.08); border-radius:28px; padding:clamp(56px,7vw,92px) 28px; color:#fff; position:relative; overflow:hidden; box-shadow:0 44px 90px -44px rgba(0,0,0,.6); }
+  .ab-cta::before{ content:""; position:absolute; inset:0; background:radial-gradient(62% 72% at 50% -12%, rgba(var(--orange-rgb),.38), transparent 64%); pointer-events:none; }
+  .ab-cta::after{ content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px); background-size:46px 46px; -webkit-mask-image:radial-gradient(62% 60% at 50% 42%, #000, transparent 76%); mask-image:radial-gradient(62% 60% at 50% 42%, #000, transparent 76%); pointer-events:none; }
+  .ab-cta .cta-eye{ position:relative; display:inline-flex; align-items:center; gap:9px; font-size:12px; letter-spacing:2.2px; text-transform:uppercase; font-weight:700; color:var(--orange-lt); margin:0 0 16px; }
+  .ab-cta .cta-eye::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--orange); animation:ctaPulse 2.2s ease-out infinite; }
+  @keyframes ctaPulse{ 0%{ box-shadow:0 0 0 0 rgba(var(--orange-rgb),.55); } 70%{ box-shadow:0 0 0 11px rgba(var(--orange-rgb),0); } 100%{ box-shadow:0 0 0 0 rgba(var(--orange-rgb),0); } }
+  .ab-cta .cta-fine{ position:relative; margin:22px 0 0; font-size:13px; color:rgba(255,255,255,.5); letter-spacing:.3px; }
+  .ab-cta h2{ font-size:clamp(30px,4.6vw,50px); font-weight:800; letter-spacing:-.02em; margin:0; position:relative; line-height:1.05; }
+  .ab-cta h2 span{ color:var(--orange-lt); }
+  .ab-cta p{ font-size:16.5px; color:rgba(255,255,255,.72); max-width:540px; margin:16px auto 0; line-height:1.6; position:relative; }
+  .ab-actions{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:32px; position:relative; }
+  .ab-btn{ display:inline-flex; align-items:center; gap:9px; padding:15px 30px; border-radius:999px; font-size:15px; font-weight:600; text-decoration:none; cursor:pointer; transition:transform .2s ease, box-shadow .2s ease, background .2s ease; }
+  .ab-btn.primary{ background:linear-gradient(135deg,#ff9152,#f4671a); color:#fff; box-shadow:0 12px 30px -10px rgba(244,103,24,.7); }
+  .ab-btn.primary:hover{ transform:translateY(-2px); box-shadow:0 18px 40px -12px rgba(244,103,24,.85); }
+  .ab-btn.ghost{ background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.25); }
+  .ab-btn.ghost:hover{ background:rgba(255,255,255,.16); transform:translateY(-2px); }
+
+  .back{ display:inline-block; margin-top:44px; font-size:13px; letter-spacing:1px; text-transform:uppercase; color:#9a9089; text-decoration:none; font-weight:600; transition:color .2s ease; }
+  .back:hover{ color:var(--orange); }
+
+  /* ---- scroll reveal ---- */
+  .subpage .reveal{ opacity:0; transform:translateY(26px); transition:opacity .75s ease, transform .75s cubic-bezier(.2,.7,.2,1); }
+  .subpage .reveal.in{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce){
+    .subpage .reveal, .phase, .val-card, .ab-stats{ opacity:1 !important; transform:none !important; }
+    .phases::after{ transition:none; height:calc(100% - 24px); }
+  }
+
+  /* ===== MOBILE: keep animations working on touch + tidy alignment ===== */
+  /* desktop: photo stays black & white and turns colour on hover (cursor).
+     touch devices have no hover, so there it colours in as it scrolls into view. */
+  @media (hover:none){
+    section.reveal.in .ab-founder img{ filter:none; }
+    .val-card{ box-shadow:0 18px 40px -30px rgba(0,0,0,.22); }
+  }
+  @media (max-width:600px){
+    .subpage{ padding:100px 18px 74px; }
+    section.ab{ margin-top:clamp(52px,8vh,84px); }
+    .ab-eyebrow{ font-size:11.5px; letter-spacing:2px; }
+    .ab-intro-h{ font-size:clamp(28px,8.6vw,40px); }
+    .ab-h2{ font-size:clamp(25px,7vw,34px); }
+    .ab-lead{ font-size:16px; }
+    .ab-founder{ padding:24px 20px; }
+    .fo-name{ font-size:26px; }
+    .fo-bio, .fo-quote{ font-size:15px; }
+    .ab-cta{ padding:46px 20px; border-radius:22px; }
+    .racc summary{ padding:18px; gap:13px; }
+    .racc-ic{ width:42px; height:42px; }
+    .racc-body{ padding:2px 18px 18px; }
+    .racc-item{ padding:13px 4px; }
+  }
+</style>
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="preload" href="/home-glydi/assets/fonts/opensans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/home-glydi/logo-mark.png" type="image/png">
+<link rel="apple-touch-icon" href="/home-glydi/logo-mark.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ONROL">
+<meta property="og:locale" content="en_IN">
+<meta property="og:title" content="About ONROL, India's AI Execution School">
+<meta property="og:description" content="ONROL is India's AI Execution School, founded in 2025 by Dr. Neeraja Reddy in Hyderabad. A premium, project based AI education platform with live mentorship, build real AI solutions, not just learn concepts.">
+<meta property="og:url" content="https://onrol.in/about">
+<meta property="og:image" content="https://onrol.in/og/default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About ONROL, India's AI Execution School">
+<meta name="twitter:description" content="ONROL is India's AI Execution School, founded in 2025 by Dr. Neeraja Reddy in Hyderabad. A premium, project based AI education platform with live mentorship, build real AI solutions, not just learn concepts.">
+<meta name="twitter:image" content="https://onrol.in/og/default.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://onrol.in/"},{"@type":"ListItem","position":2,"name":"About","item":"https://onrol.in/about"}]}</script>
+<style id="nav-login-fix">
+.nav .nav-login-btn,
+.nav.on-dark .nav-login-btn{ color:#16181b !important; }
+.nav .nav-login-btn .nl-chev{ color:currentColor !important; }
+</style>
+</head>
+<body>
+<a class="site-logo" href="/" aria-label="ONROL, AI Execution School, home">
+  <img src="/home-glydi/logo-mark.png" alt="ONROL, AI Execution School">
+</a>
+
+<nav class="nav">
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true"></span>
+    <a href="/programs">Programs</a>
+    <span class="sep" aria-hidden="true"></span>
+    <a href="/about">About</a>
+    <span class="sep" aria-hidden="true"></span>
+    <a href="/contact">Contact</a>
+  <a class="nav-apply js-apply" href="/programs/ai-generalist">Apply</a>
+  </div>
+</nav>
+
+<header class="pagehero">
+  <div class="pagehero-inner">
+    <p class="ph-eyebrow">About ONROL</p>
+    <h1 class="ph-title">India's <span>AI Execution School</span></h1>
+    <p class="ph-sub">A premium, project based AI school with live mentorship, where you build real AI solutions instead of just learning concepts.</p>
+  </div>
+</header>
+
+<main class="subpage has-hero">
+
+  <!-- MISSION -->
+  <section class="ab reveal" style="margin-top:24px">
+    <p class="ab-eyebrow">Who we are</p>
+    <h2 class="ab-intro-h">We don't just teach AI. <span>We make you build it.</span></h2>
+    <p class="ab-lead">ONROL is India's AI Execution School, based in Hyderabad. We exist to close the gap between watching tutorials and actually shipping real AI products, with live mentorship, real projects, and a portfolio that proves what you can do.</p>
+  </section>
+
+  <!-- STATS -->
+  <div class="ab-stats">
+    <div class="ab-stat"><div class="num"><span class="cv" data-count="4">0</span></div><div class="lbl">Programs</div></div>
+    <div class="ab-stat"><div class="num"><span class="cv" data-count="20">0</span><span class="or">+</span></div><div class="lbl">Projects to build</div></div>
+    <div class="ab-stat"><div class="num"><span class="cv" data-count="3">0</span></div><div class="lbl">Languages taught</div></div>
+    <div class="ab-stat"><div class="num"><span class="cv" data-count="100">0</span><span class="or">%</span></div><div class="lbl">Hands on</div></div>
+  </div>
+
+  <!-- PERK MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="mq">Live mentor-led</span><span class="mq">Project based</span><span class="mq">Ship a real portfolio</span><span class="mq">3 languages</span><span class="mq">Certificate on completion</span><span class="mq">Beginner friendly</span><span class="mq">Real deployments</span><span class="mq">1:1 mentorship</span><span class="mq">Career support</span><span class="mq">No coding required</span>
+      <span class="mq">Live mentor-led</span><span class="mq">Project based</span><span class="mq">Ship a real portfolio</span><span class="mq">3 languages</span><span class="mq">Certificate on completion</span><span class="mq">Beginner friendly</span><span class="mq">Real deployments</span><span class="mq">1:1 mentorship</span><span class="mq">Career support</span><span class="mq">No coding required</span>
+    </div>
+  </div>
+
+  <!-- FOUNDER -->
+  <section class="ab reveal">
+    <p class="ab-eyebrow">The founder</p>
+    <h2 class="ab-h2">Built by an educator, for real <span>outcomes</span>.</h2>
+    <div class="ab-founder">
+      <img src="/home-glydi/mam-0001.png" alt="Dr. Neeraja Reddy">
+      <div>
+        <p class="fo-role">Founder &amp; CEO</p>
+        <h3 class="fo-name">Dr. Neeraja Reddy</h3>
+        <p class="fo-bio">With over 16 years across healthcare, research, and education, Dr. Neeraja Reddy built ONROL to make AI learning practical, accessible, and outcome driven, so every learner leaves able to create, not just recite.</p>
+        <p class="fo-quote">"The future belongs to people who can build with AI. Our job is to get you there."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS / PHASES -->
+  <section class="ab reveal">
+    <p class="ab-eyebrow">How ONROL works</p>
+    <h2 class="ab-h2">Four phases, one <span>outcome</span>.</h2>
+    <p class="ab-lead">Every journey here follows the same path, from your first prompt to getting paid for what you build.</p>
+    <div class="phases">
+      <div class="phase">
+        <div class="ph-node"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 5.5V20.5"/><path d="M9 8h7M9 11h5"/></svg></div>
+        <div class="ph-body">
+          <p class="ph-step">Phase 01</p>
+          <h3 class="ph-title">Learn</h3>
+          <p class="ph-desc">Get comfortable with the AI tools that matter, writing good prompts, working with AI agents, and the workflow that takes you from idea to a working build fast.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="ph-node"><svg viewBox="0 0 24 24"><path d="M14.5 5.5l4 4L9 19l-4.5 1L5.5 15.5z"/><path d="M12 8l4 4"/><path d="M17 3l4 4-2 2-4-4z"/></svg></div>
+        <div class="ph-body">
+          <p class="ph-step">Phase 02</p>
+          <h3 class="ph-title">Build</h3>
+          <p class="ph-desc">Put it to work on real projects, not throwaway demos. You build features, fix what breaks, and make things people actually use.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="ph-node"><svg viewBox="0 0 24 24"><path d="M5 15c-1.5 1.2-2 4.5-2 4.5s3.3-.5 4.5-2"/><path d="M12 15l-3-3a20 20 0 0 1 2-4A11 11 0 0 1 21 3c0 3-1 7-6 10a20 20 0 0 1-3 2z"/><circle cx="15" cy="9" r="1.5"/></svg></div>
+        <div class="ph-body">
+          <p class="ph-step">Phase 03</p>
+          <h3 class="ph-title">Launch</h3>
+          <p class="ph-desc">Take it live. Your project goes on the web with a real link, and you walk away with something solid for your portfolio.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="ph-node"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18"/><path d="M16 15h2"/></svg></div>
+        <div class="ph-body">
+          <p class="ph-step">Phase 04</p>
+          <h3 class="ph-title">Earn</h3>
+          <p class="ph-desc">Use it to earn, freelance work, your own product, or a job. You learn how to package what you build and get paid for it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES / WHY -->
+  <section class="ab reveal">
+    <p class="ab-eyebrow">Why choose ONROL</p>
+    <h2 class="ab-h2">Built to make you a <span>builder</span>.</h2>
+    <div class="values">
+      <div class="val-card">
+        <span class="val-num">01</span>
+        <span class="val-ic"><svg viewBox="0 0 24 24"><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg></span>
+        <h3>Project based learning</h3>
+        <p>You build real AI applications from day one, not just watch lectures.</p>
+      </div>
+      <div class="val-card">
+        <span class="val-num">02</span>
+        <span class="val-ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <h3>Expert mentorship</h3>
+        <p>Live sessions with experienced professionals who have shipped real work.</p>
+      </div>
+      <div class="val-card">
+        <span class="val-num">03</span>
+        <span class="val-ic"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span>
+        <h3>Industry relevant curriculum</h3>
+        <p>Generative AI, agents, automation, and no code tools, kept current as the field moves.</p>
+      </div>
+      <div class="val-card">
+        <span class="val-num">04</span>
+        <span class="val-ic"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+        <h3>Career focused approach</h3>
+        <p>You finish with a portfolio built to land jobs, clients, and your own ventures.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- LEARN + SERVE -->
+  <section class="ab reveal">
+    <p class="ab-eyebrow">The curriculum</p>
+    <h2 class="ab-h2">What you'll learn, and who it's for.</h2>
+    <div class="ab-two">
+      <div class="chip-card">
+        <h3>What you'll learn</h3>
+        <div class="chip-row">
+          <span>AI Fundamentals</span><span>Generative AI</span><span>AI Agents</span><span>Prompt Engineering</span>
+          <span>Automation</span><span>AI Websites</span><span>No Code Tools</span><span>Business Automation</span><span>AI Productivity</span>
+        </div>
+      </div>
+      <div class="chip-card">
+        <h3>Who we serve</h3>
+        <div class="chip-row">
+          <span>Students</span><span>Professionals</span><span>Entrepreneurs</span><span>Freelancers</span>
+          <span>Business Owners</span><span>Educators</span><span>Career Switchers</span><span>Creators</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ab-cta reveal">
+    <p class="cta-eye">Your next step</p>
+    <h2>Ready to build with <span>AI</span>?</h2>
+    <p>Join the next cohort and start from day one, with mentors in your corner instead of just another video to watch.</p>
+    <div class="ab-actions">
+      <a class="ab-btn primary js-apply" href="/programs/ai-generalist">Apply Now</a>
+      <a class="ab-btn ghost" href="/programs">Explore Programs</a>
+    </div>
+    <p class="cta-fine">Limited seats, next cohort starts soon.</p>
+  </section>
+
+  <a class="back" href="/">&larr; Back to home</a>
+</main>
+
+<footer class="footer" id="contact">
+  <div class="footer-top">
+    <div class="f-brand">
+      <a class="f-logo" href="/">ONROL</a>
+      <p class="f-copy">&copy; 2026 ONROL, AI Execution School, Hyderabad. All rights reserved. Founded by <a href="/founders/dr-neeraja-reddy" style="color:inherit;text-decoration:underline">Dr. Neeraja Reddy</a> &middot; Updated July 2026.</p>
+      <div class="f-socials">
+        <a href="https://instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1"/></svg></a>
+        <a href="https://linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10.5v6M7 7.5v.01M11.5 16.5v-3.2a2 2 0 0 1 4 0v3.2M11.5 16.5v-6"/></svg></a>
+        <a href="https://youtube.com/" target="_blank" rel="noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M11 9.6l4 2.4-4 2.4z"/></svg></a>
+        <a href="mailto:info@onrol.in" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7.5l8 5.5 8-5.5"/></svg></a>
+      </div>
+    </div>
+    <nav class="f-cols" aria-label="Footer links">
+      <div class="f-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="/programs/ai-generalist">AI Generalist</a></li>
+          <li><a href="/programs/ai-architect">AI Architect</a></li>
+          <li><a href="/programs/soc-analyst">SOC Analyst</a></li>
+          <li><a href="/programs/cybersecurity">Cyber Security</a></li>
+          <li><a href="/programs">All Programs</a></li>
+          <li><a href="/masterclass">Free Masterclass</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/glossary">Glossary</a></li>
+          <li><a href="/questions">FAQs</a></li>
+          <li><a href="/tools/ai-skills-quiz">AI Skills Quiz</a></li>
+          <li><a href="/why-now">Why AI matters now</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About ONROL</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-and-conditions">Terms</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-news">
+    <div class="f-news-text">
+      <h4>Join our newsletter</h4>
+      <p>Useful AI tips for India, straight to your inbox. No spam.</p>
+    </div>
+    <form class="f-form" id="newsletterForm">
+      <label for="newsletterEmail" class="visually-hidden">Email address</label>
+      <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" autocomplete="email" aria-label="Email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <p class="f-news-msg" id="newsMsg" role="status" hidden>Thanks, you&rsquo;re on the list.</p>
+</footer>
+
+<div class="lead-modal" id="leadModal" hidden>
+  <div class="lead-card" role="dialog" aria-modal="true" aria-labelledby="leadTitle">
+    <button class="lead-x" id="leadClose" type="button" aria-label="Close">&times;</button>
+    <p class="lead-eyebrow">Apply to ONROL</p>
+    <h3 id="leadTitle">Start with a quick hello.</h3>
+    <p class="lead-sub">Drop your details and our team reaches out about the next cohort, takes 20 seconds.</p>
+    <form id="leadForm" class="lead-form">
+      <input type="text" id="leadName" name="name" placeholder="Full name" autocomplete="name" required>
+      <input type="email" id="leadEmail" name="email" placeholder="Email address" autocomplete="email" required>
+      <input type="tel" id="leadPhone" name="phone" placeholder="Phone / WhatsApp number" autocomplete="tel" required>
+      <button type="submit" class="lead-submit">Apply Now</button>
+    </form>
+    <p class="lead-fine">No spam. We&rsquo;ll only contact you about your application.</p>
+  </div>
+</div>
+
+<script>
+  (function(){
+    var nav = document.querySelector('.nav');
+    var toggle = document.getElementById('navToggle');
+    if (!nav || !toggle) return;
+    toggle.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+
+  /* scroll reveal for sections */
+  (function(){
+    var els = document.querySelectorAll('.subpage .reveal');
+    if (!els.length) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)){
+      els.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold:.14, rootMargin:'0px 0px -8% 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+
+  /* animated groups: stats count-up, phases timeline, value cards */
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var groups = document.querySelectorAll('.phases, .values, .ab-stats, .roles');
+    function count(el){
+      var target = parseInt(el.getAttribute('data-count'), 10) || 0, dur = 1050, t0 = null;
+      function ease(p){ return 1 - Math.pow(1 - p, 3); }
+      function step(ts){ if (!t0) t0 = ts; var p = Math.min((ts - t0) / dur, 1); el.textContent = Math.round(target * ease(p)); if (p < 1) requestAnimationFrame(step); else el.textContent = target; }
+      requestAnimationFrame(step);
+    }
+    function fire(el){ el.classList.add('in'); el.querySelectorAll('.cv[data-count]').forEach(count); }
+    if (!('IntersectionObserver' in window) || reduce){ groups.forEach(fire); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ fire(e.target); io.unobserve(e.target); } });
+    }, { threshold:.25 });
+    groups.forEach(function(g){ io.observe(g); });
+  })();
+
+  /* ---- friction-free lead capture (Apply Now) ---- */
+  (function(){
+    var modal = document.getElementById('leadModal');
+    if (!modal) return;
+    var form = document.getElementById('leadForm');
+    var closeBtn = document.getElementById('leadClose');
+    var lastFocus = null;
+    function open(e){ if (e) e.preventDefault(); lastFocus = document.activeElement; modal.hidden = false; document.documentElement.style.overflow = 'hidden'; var f = document.getElementById('leadName'); if (f) f.focus(); }
+    function close(){ modal.hidden = true; document.documentElement.style.overflow = ''; if (lastFocus) lastFocus.focus(); }
+    document.querySelectorAll('.js-apply').forEach(function(a){ a.addEventListener('click', open); });
+    closeBtn.addEventListener('click', close);
+    modal.addEventListener('click', function(e){ if (e.target === modal) close(); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !modal.hidden) close(); });
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('leadName').value.trim();
+      var email = document.getElementById('leadEmail').value.trim();
+      var phone = document.getElementById('leadPhone').value.trim();
+      if (!name || !email || !phone) return;
+      var text = 'Hi ONROL, I would like to apply for the next cohort.%0A%0AName: ' + encodeURIComponent(name) + '%0AEmail: ' + encodeURIComponent(email) + '%0APhone: ' + encodeURIComponent(phone);
+      window.open('https://wa.me/918121306701?text=' + text, '_blank', 'noopener,noreferrer');
+      close(); form.reset();
+    });
+  })();
+
+  /* ---- newsletter subscribe ---- */
+  (function(){
+    var form = document.getElementById('newsletterForm');
+    var msg = document.getElementById('newsMsg');
+    if (!form) return;
+    form.addEventListener('submit', function(e){ e.preventDefault(); var email = document.getElementById('newsletterEmail').value.trim(); if (!email) return; if (msg) msg.hidden = false; form.reset(); });
+  })();
+</script>
+<script>
+  /* logo colour adapts to the section behind it (white on dark, orange on light) */
+  (function(){
+    var logo = document.querySelector('.site-logo');
+    if (!logo || !('IntersectionObserver' in window)) return;
+    var darks = [];
+    ['.hero', '.ab-cta', '.footer'].forEach(function(sel){
+      document.querySelectorAll(sel).forEach(function(el){ darks.push(el); });
+    });
+    if (!darks.length) return;
+    var active = new Set();
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) active.add(e.target); else active.delete(e.target); });
+      logo.classList.toggle('on-dark', active.size > 0);
+    }, { rootMargin:'-44px 0px -92% 0px', threshold:0 });
+    darks.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+<script>
+  /* ---- nav: hide on scroll down, show on scroll up (matches home) ---- */
+  (function(){
+    var nav = document.querySelector('.nav');
+    if (!nav) return;
+    var last = window.pageYOffset || 0, ticking = false;
+    function onScroll(){
+      ticking = false;
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      if (nav.classList.contains('open')){ document.body.classList.remove('nav-up'); last = y; return; }
+      if (y > last && y > 140){ document.body.classList.add('nav-up'); }
+      else { document.body.classList.remove('nav-up'); }
+      last = y < 0 ? 0 : y;
+    }
+    window.addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, { passive:true });
+  })();
+</script>
+<script>(function(){try{var path=(location.pathname.replace(/\/+$/,"")||"/");document.querySelectorAll(".nav-links a[href]").forEach(function(a){var raw=(a.getAttribute("href")||"").split("#")[0];var href=raw?(raw.replace(/\/+$/,"")||"/"):"/";a.classList.toggle("is-active",href===path);});}catch(e){}})();</script>
+</body>
+</html>

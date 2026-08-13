@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Arrange a Free AI Masterclass — ONROL</title>
+<meta name="description" content="Request a free hands-on AI masterclass for your college students. ONROL — AI Execution School." />
+<meta name="robots" content="noindex" />
+<link rel="canonical" href="https://onrol.in/college-masterclass/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#111111; --orange:#F36617; --orange-hi:#ff7d33; --cream:#F5F1EB;
+    --panel:#FCFBFA; --line:#E5DFD8; --muted:#8C857B; --body:#374151; --peach:#FFE4D2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--cream);color:var(--body);
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 14px;line-height:1.55}
+  .card{width:100%;max-width:560px;background:var(--panel);border:1px solid var(--line);border-radius:4px;overflow:hidden;
+    box-shadow:0 24px 60px -30px rgba(17,17,17,.28)}
+  .head{background:var(--ink);padding:26px 30px 24px;position:relative}
+  .head::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--orange)}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand-logo{height:34px;width:auto;display:block}
+  .eyebrow{font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--orange-hi);margin:18px 0 8px;font-weight:600}
+  .head h1{font-family:Poppins,sans-serif;font-weight:600;font-size:23px;line-height:1.25;color:#fff}
+  .head p{color:#A9A29A;font-size:13.5px;margin-top:8px}
+  .body{padding:26px 30px 30px}
+  label{display:block;font-family:Poppins,sans-serif;font-size:12px;font-weight:600;color:var(--ink);letter-spacing:.2px;margin:0 0 6px}
+  label .req{color:var(--orange)}
+  .field{margin-bottom:16px}
+  input{width:100%;min-height:46px;border:1px solid var(--line);border-radius:3px;background:#fff;
+    padding:0 14px;font-size:15px;font-family:Inter,sans-serif;color:var(--ink);transition:border-color .15s,box-shadow .15s}
+  input:hover{border-color:#d8d0c6}
+  input:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(243,102,23,.12)}
+  input::placeholder{color:#b5ada2}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:480px){.row{grid-template-columns:1fr}}
+  .btn{width:100%;min-height:50px;border:0;border-radius:3px;background:var(--orange);color:#fff;
+    font-family:Poppins,sans-serif;font-weight:600;font-size:15px;cursor:pointer;transition:background .15s,transform .08s}
+  .btn:hover{background:var(--orange-hi)}
+  .btn:active{transform:translateY(1px)}
+  .btn:disabled{opacity:.65;cursor:default}
+  .err{background:#fff1ee;border:1px solid #f6c9bb;color:#9a3412;font-size:13.5px;padding:10px 12px;border-radius:3px;margin-bottom:14px;display:none}
+  .foot{border-top:1px solid var(--line);margin-top:22px;padding-top:16px;font-size:12.5px;color:var(--muted)}
+  .foot a{color:var(--orange);text-decoration:none}
+  .done{display:none;text-align:center;padding:14px 4px 6px}
+  .done .tick{width:64px;height:64px;border-radius:50%;background:var(--peach);display:inline-flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .done .tick svg{width:30px;height:30px;stroke:var(--orange);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  .done h2{font-family:Poppins,sans-serif;font-size:21px;color:var(--ink);margin-bottom:8px}
+  .done p{color:var(--body);font-size:15px;max-width:400px;margin:0 auto}
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="head">
+      <div class="brand">
+        <img class="brand-logo" src="/onrol-logo-light.png" alt="ONROL — AI Execution School" width="130" height="34" />
+      </div>
+      <div class="eyebrow">Free Masterclass · For Colleges</div>
+      <h1>Arrange a free AI masterclass<br>for your students</h1>
+      <p>Share a few details and our team will confirm a hands-on session at a time that suits your college.</p>
+    </div>
+
+    <div class="body">
+      <div class="err" id="err"></div>
+
+      <form id="form" novalidate>
+        <div class="field">
+          <label for="college">College / Institution name <span class="req">*</span></label>
+          <input id="college" name="college" required autocomplete="organization" placeholder="e.g. St. Xavier's College" />
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="person">Contact person <span class="req">*</span></label>
+            <input id="person" name="person" required autocomplete="name" placeholder="Full name" />
+          </div>
+          <div class="field">
+            <label for="phone">Contact number <span class="req">*</span></label>
+            <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="+91…" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="email">Email (optional)</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@college.edu" />
+          </div>
+          <div class="field">
+            <label for="date">Preferred masterclass date <span class="req">*</span></label>
+            <input id="date" name="date" type="date" required />
+          </div>
+        </div>
+
+        <button class="btn" id="submit" type="submit">Request the masterclass</button>
+
+        <div class="foot">
+          Prefer to talk first? WhatsApp us at
+          <a href="https://wa.me/919609312345?text=We%20would%20like%20to%20arrange%20the%20free%20AI%20masterclass%20for%20our%20students">+91 96093 12345</a>.
+        </div>
+      </form>
+
+      <div class="done" id="done">
+        <div class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg></div>
+        <h2>Request received.</h2>
+        <p>Thank you — our team will reach out shortly to confirm your free AI masterclass. You can also message us on WhatsApp any time.</p>
+      </div>
+    </div>
+  </main>
+
+<script>
+  var form = document.getElementById('form');
+  var errEl = document.getElementById('err');
+  var btn = document.getElementById('submit');
+  var CRM = 'https://go.onrol.in/api/public/leads';
+
+  try { document.getElementById('date').min = new Date().toISOString().slice(0,10); } catch(e){}
+  function showErr(m){ errEl.textContent = m; errEl.style.display = 'block'; }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errEl.style.display = 'none';
+    var college = document.getElementById('college').value.trim();
+    var person  = document.getElementById('person').value.trim();
+    var phone   = document.getElementById('phone').value.trim();
+    var email   = document.getElementById('email').value.trim();
+    var date    = document.getElementById('date').value;
+
+    if (!college || !person || !phone || !date) { showErr('Please fill in the college name, contact person, number and preferred date.'); return; }
+    if (!/^\+?\d[\d\s-]{7,15}\d$/.test(phone)) { showErr('Please enter a valid contact number.'); return; }
+
+    btn.disabled = true; btn.textContent = 'Sending…';
+
+    var payload = {
+      name: person, phone: phone, email: email,
+      source: 'College Masterclass', campaign: college,
+      notes: 'College masterclass request. Preferred date: ' + date + '. College: ' + college + '. Contact: ' + person + (email ? ' · ' + email : ''),
+      tag: 'college',
+      college_name: college, contact_person: person, masterclass_date: date
+    };
+
+    fetch(CRM, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function(r){
+      if (!r.ok) { if (r.status === 429) throw new Error('Too many requests — please wait a minute and try again.'); throw new Error('Could not submit (' + r.status + ').'); }
+      form.style.display = 'none';
+      document.getElementById('done').style.display = 'block';
+    }).catch(function(err){
+      btn.disabled = false; btn.textContent = 'Request the masterclass';
+      showErr(err && err.message ? err.message : 'Something went wrong — please try again or WhatsApp us.');
+    });
+  });
+</script>
+</body>
+</html>

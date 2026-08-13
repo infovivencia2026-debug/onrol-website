@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Cyber Security Masterclass — ONROL</title>
+<meta name="description" content="Step inside a real Security Operations Center in one free live session. See how SOC analysts detect and shut down attacks — and how to start a cyber career in months. Reserve your seat.">
+<link rel="canonical" href="https://onrol.in/cyber-masterclass/">
+<link rel="stylesheet" href="/home-glydi/styles.css?v=bargain2">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="icon" href="/home-glydi/logo-mark.png" type="image/png">
+<link rel="apple-touch-icon" href="/home-glydi/logo-mark.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ONROL">
+<meta property="og:locale" content="en_IN">
+<meta property="og:title" content="Free Cyber Security Masterclass — ONROL">
+<meta property="og:description" content="Step inside a real SOC in one free live session. See how analysts detect and shut down attacks — and how to start a cyber career in months.">
+<meta property="og:url" content="https://onrol.in/cyber-masterclass/">
+<meta property="og:image" content="https://onrol.in/og/default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Cyber Security Masterclass — ONROL">
+<meta name="twitter:description" content="Step inside a real SOC in one free live session — and start a cyber career in months.">
+<meta name="twitter:image" content="https://onrol.in/og/default.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://onrol.in/"},{"@type":"ListItem","position":2,"name":"Cyber Security Masterclass","item":"https://onrol.in/cyber-masterclass/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"Free Cyber Security Masterclass","description":"A free live masterclass that walks through a real Security Operations Center — detecting, investigating and shutting down attacks — plus a roadmap into SOC Analyst and cyber security careers.","provider":{"@type":"Organization","name":"ONROL, AI Execution School","sameAs":"https://onrol.in/"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR","category":"Free"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"online","courseWorkload":"PT90M"}}</script>
+<style id="nav-login-fix">
+.nav .nav-login-btn,
+.nav.on-dark .nav-login-btn{ color:#16181b !important; }
+.nav .nav-login-btn .nl-chev{ color:currentColor !important; }
+</style>
+<style>
+/* ============ Cyber Masterclass (scoped .cm-) — security-console motif ============ */
+:root{ --cm-ink:#0D0B0A; --cm-body:#5a5e64; --cm-line:rgba(13,11,10,.12); --cm-cream:#FBF7F2; }
+.cm{ font-family:var(--mono); color:var(--cm-body); background:#fff; }
+.cm *{ box-sizing:border-box; }
+
+/* --- Hero --- */
+.cm-hero{ position:relative; overflow:hidden; padding:150px 20px 74px; background:var(--cm-cream) !important;
+  border-bottom:1px solid var(--cm-line); }
+.cm-hero::before{ /* hairline grid */
+  content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+  background-image:linear-gradient(rgba(13,11,10,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(13,11,10,.05) 1px,transparent 1px);
+  background-size:44px 44px; mask-image:radial-gradient(120% 90% at 70% 0%,#000 30%,transparent 78%); }
+.cm-hero::after{ /* orange glow */
+  content:""; position:absolute; top:-30%; right:-10%; width:60vw; height:60vw; pointer-events:none;
+  background:radial-gradient(circle,rgba(var(--orange-rgb),.18),transparent 62%); }
+.cm-scan{ position:absolute; left:0; right:0; top:0; height:2px; pointer-events:none; z-index:1;
+  background:linear-gradient(90deg,transparent,rgba(var(--orange-rgb),.55),transparent);
+  animation:cm-scan 6.5s linear infinite; }
+@keyframes cm-scan{ 0%{ transform:translateY(0); opacity:0 } 8%{ opacity:1 } 92%{ opacity:1 } 100%{ transform:translateY(72vh); opacity:0 } }
+.cm-hero-inner{ position:relative; z-index:2; max-width:960px; margin:0 auto; }
+.cm-status{ display:inline-flex; align-items:center; gap:9px; font-size:12px; letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--orange); border:1px solid rgba(var(--orange-rgb),.4); border-radius:3px; padding:7px 12px; background:rgba(var(--orange-rgb),.06); }
+.cm-status .cm-dot{ width:8px; height:8px; border-radius:50%; background:var(--orange); box-shadow:0 0 0 0 rgba(var(--orange-rgb),.5); animation:cm-pulse 2s infinite; }
+@keyframes cm-pulse{ 0%{ box-shadow:0 0 0 0 rgba(var(--orange-rgb),.5) } 70%{ box-shadow:0 0 0 8px rgba(var(--orange-rgb),0) } 100%{ box-shadow:0 0 0 0 rgba(var(--orange-rgb),0) } }
+.cm-hero h1{ font-size:clamp(34px,6.4vw,62px); font-weight:800; line-height:1.03; letter-spacing:-.02em; color:var(--cm-ink); margin:20px 0 18px; }
+.cm-hero h1 span{ color:var(--orange); }
+.cm-lead{ font-size:clamp(16px,2.1vw,19px); line-height:1.65; color:var(--cm-body); max-width:640px; }
+.cm-meta{ display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; }
+.cm-chip{ font-size:12px; letter-spacing:.6px; color:var(--cm-ink); background:#fff; border:1px solid var(--cm-line);
+  border-radius:3px; padding:8px 12px; display:inline-flex; align-items:center; gap:7px; }
+.cm-chip svg{ width:15px; height:15px; stroke:var(--orange); fill:none; stroke-width:1.8; }
+
+/* staggered reveal */
+.cm-rise{ opacity:0; transform:translateY(14px); animation:cm-rise .6s cubic-bezier(.2,.7,.2,1) forwards; }
+.cm-rise.d1{ animation-delay:.05s } .cm-rise.d2{ animation-delay:.15s } .cm-rise.d3{ animation-delay:.25s } .cm-rise.d4{ animation-delay:.35s }
+@keyframes cm-rise{ to{ opacity:1; transform:none } }
+
+/* --- Body sections --- */
+.cm-sec{ max-width:960px; margin:0 auto; padding:64px 20px; }
+.cm-kicker{ font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--orange); margin-bottom:12px; }
+.cm-h2{ font-size:clamp(24px,3.4vw,32px); font-weight:800; letter-spacing:-.01em; color:var(--cm-ink); line-height:1.15; }
+.cm-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:30px; }
+@media(max-width:640px){ .cm-grid{ grid-template-columns:1fr } }
+.cm-card{ position:relative; background:#fff; border:1px solid var(--cm-line); border-radius:5px; padding:22px 22px 24px; transition:border-color .2s, transform .2s, box-shadow .2s; }
+.cm-card:hover{ border-color:rgba(var(--orange-rgb),.5); transform:translateY(-2px); box-shadow:0 18px 40px -26px rgba(13,11,10,.4); }
+.cm-card .cm-ic{ width:42px; height:42px; border-radius:5px; display:inline-flex; align-items:center; justify-content:center;
+  background:rgba(var(--orange-rgb),.1); border:1px solid rgba(var(--orange-rgb),.28); margin-bottom:14px; }
+.cm-card .cm-ic svg{ width:22px; height:22px; stroke:var(--orange); fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.cm-card h3{ font-size:16px; font-weight:700; color:var(--cm-ink); margin-bottom:6px; line-height:1.3; }
+.cm-card p{ font-size:14.5px; line-height:1.6; color:var(--cm-body); }
+.cm-num{ position:absolute; top:16px; right:18px; font-size:12px; letter-spacing:1px; color:rgba(13,11,10,.28); }
+
+/* --- Registration panel --- */
+.cm-reg{ background:var(--cm-ink) !important; position:relative; overflow:hidden; }
+.cm-reg::before{ content:""; position:absolute; inset:0; opacity:.5; pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:40px 40px; mask-image:radial-gradient(120% 100% at 50% 0%,#000 40%,transparent 85%); }
+.cm-reg-inner{ position:relative; z-index:2; max-width:960px; margin:0 auto; padding:64px 20px 72px;
+  display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:start; }
+@media(max-width:820px){ .cm-reg-inner{ grid-template-columns:1fr; gap:32px } }
+.cm-reg-copy .cm-kicker{ color:var(--orange-lt); }
+.cm-reg-copy h2{ font-size:clamp(24px,3.4vw,34px); font-weight:800; color:#fff; line-height:1.12; letter-spacing:-.01em; }
+.cm-reg-copy p{ color:#b9b3ac; font-size:15px; line-height:1.65; margin-top:14px; max-width:420px; }
+.cm-reg-list{ list-style:none; margin:22px 0 0; padding:0; }
+.cm-reg-list li{ display:flex; gap:10px; align-items:flex-start; color:#d7d2cc; font-size:14px; line-height:1.5; margin-bottom:12px; }
+.cm-reg-list li svg{ width:18px; height:18px; flex:none; stroke:var(--orange-lt); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; margin-top:1px; }
+
+.cm-panel{ background:#fff; border-radius:6px; padding:26px 26px 28px; box-shadow:0 30px 70px -34px rgba(0,0,0,.6); }
+.cm-panel-top{ display:flex; align-items:center; gap:8px; font-size:11px; letter-spacing:1.4px; text-transform:uppercase; color:var(--orange); margin-bottom:6px; }
+.cm-panel-top .cm-dot{ width:7px; height:7px; border-radius:50%; background:var(--orange); }
+.cm-panel h3{ font-size:20px; font-weight:800; color:var(--cm-ink); margin-bottom:4px; letter-spacing:-.01em; }
+.cm-panel .cm-panel-sub{ font-size:13px; color:var(--cm-body); margin-bottom:18px; }
+.cm-field{ margin-bottom:14px; }
+.cm-field label{ display:block; font-size:12px; font-weight:700; letter-spacing:.3px; color:var(--cm-ink); margin-bottom:6px; }
+.cm-field label .req{ color:var(--orange); }
+.cm-field input, .cm-field select{ width:100%; min-height:46px; border:1px solid var(--cm-line); border-radius:4px; background:#fff;
+  padding:0 13px; font-size:15px; font-family:var(--mono); color:var(--cm-ink); transition:border-color .15s, box-shadow .15s; }
+.cm-field select{ appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F46718' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; background-size:18px; padding-right:38px; }
+.cm-field input:focus, .cm-field select:focus{ outline:none; border-color:var(--orange); box-shadow:0 0 0 3px rgba(var(--orange-rgb),.14); }
+.cm-field input::placeholder{ color:#b5ada2; }
+.cm-phone{ display:grid; grid-template-columns:88px 1fr; gap:10px; }
+.cm-phone input{ min-width:0; }
+.cm-phone input:first-child{ text-align:center; }
+.cm-btn{ width:100%; min-height:52px; border:0; border-radius:4px; background:var(--orange); color:#fff;
+  font-family:var(--mono); font-weight:700; font-size:15px; letter-spacing:.4px; cursor:pointer; margin-top:4px;
+  display:inline-flex; align-items:center; justify-content:center; gap:9px; transition:background .15s, transform .08s; }
+.cm-btn:hover{ background:var(--orange-lt); }
+.cm-btn:active{ transform:translateY(1px); }
+.cm-btn:disabled{ opacity:.62; cursor:default; }
+.cm-btn svg{ width:17px; height:17px; stroke:#fff; fill:none; stroke-width:2.2; }
+.cm-fine{ font-size:11.5px; color:#8a8f96; margin-top:12px; text-align:center; }
+.cm-err{ background:#fff1ee; border:1px solid #f6c9bb; color:#9a3412; font-size:13.5px; padding:10px 12px; border-radius:4px; margin-bottom:14px; display:none; }
+.cm-done{ display:none; text-align:center; padding:12px 4px; }
+.cm-done .cm-tick{ width:64px; height:64px; border-radius:50%; background:rgba(var(--orange-rgb),.12); display:inline-flex; align-items:center; justify-content:center; margin-bottom:14px; }
+.cm-done .cm-tick svg{ width:30px; height:30px; stroke:var(--orange); fill:none; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
+.cm-done h3{ font-size:21px; color:var(--cm-ink); margin-bottom:8px; }
+.cm-done p{ color:var(--cm-body); font-size:14.5px; max-width:340px; margin:0 auto; }
+
+.cm-back{ display:inline-block; margin-top:6px; font-size:12px; letter-spacing:1.3px; text-transform:uppercase; color:#8a8f96; text-decoration:none; }
+.cm-back:hover{ color:var(--cm-ink); }
+
+@media(prefers-reduced-motion:reduce){
+  .cm-scan{ display:none; }
+  .cm-rise{ opacity:1; transform:none; animation:none; }
+  .cm-status .cm-dot{ animation:none; }
+}
+</style>
+</head>
+<body class="cm">
+<a class="site-logo" href="/" aria-label="ONROL, AI Execution School, home">
+  <img src="/home-glydi/logo-mark.png" alt="ONROL, AI Execution School">
+</a>
+
+<nav class="nav">
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true"></span>
+    <a href="/programs">Programs</a>
+    <span class="sep" aria-hidden="true"></span>
+    <a href="/about">About</a>
+    <span class="sep" aria-hidden="true"></span>
+    <a href="/contact">Contact</a>
+  <div class="nav-login">
+    <button class="nav-login-btn" type="button" aria-haspopup="true" aria-expanded="false">Login
+      <svg class="nl-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="login-menu" role="menu">
+      <div class="lm-head">
+        <span class="lm-eyebrow">ONROL Portals</span>
+        <span class="lm-title">Log in to your account</span>
+      </div>
+      <a class="login-card" role="menuitem" href="https://lms.187-127-178-100.sslip.io/" target="_blank" rel="noopener noreferrer">
+        <span class="lc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M7 9.6V15c0 1.1 2.2 2.6 5 2.6s5-1.5 5-2.6V9.6"/><path d="M21 7v5"/></svg></span>
+        <span class="lc-tx"><b>Student LMS</b><small>Courses, lessons &amp; progress</small></span>
+        <span class="lc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="login-card" role="menuitem" href="https://affiliate.onrol.in/login" target="_blank" rel="noopener noreferrer">
+        <span class="lc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19v-1A4.5 4.5 0 0 1 8 13.5h2a4.5 4.5 0 0 1 4.5 4.5v1"/><path d="M16.5 8.5l2 2 3.2-3.4"/></svg></span>
+        <span class="lc-tx"><b>Affiliate</b><small>Partner dashboard &amp; payouts</small></span>
+        <span class="lc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="login-card" role="menuitem" href="https://franchise.onrol.in/login" target="_blank" rel="noopener noreferrer">
+        <span class="lc-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5"/><path d="M5 10v9h14v-9"/><path d="M9.5 19v-5h5v5"/></svg></span>
+        <span class="lc-tx"><b>Franchise</b><small>Owner portal &amp; centres</small></span>
+        <span class="lc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <div class="lm-foot">Need access? <a href="/contact">Talk to our team</a></div>
+    </div>
+  </div>
+  <a class="nav-apply" href="#cm-register">Reserve seat</a>
+  </div>
+</nav>
+
+<header class="cm-hero">
+  <span class="cm-scan" aria-hidden="true"></span>
+  <div class="cm-hero-inner">
+    <span class="cm-status cm-rise d1"><span class="cm-dot" aria-hidden="true"></span>Free live session · Cyber Security</span>
+    <h1 class="cm-rise d2">Free Cyber Security <span>Masterclass</span></h1>
+    <p class="cm-lead cm-rise d3">Step inside a real Security Operations Center. In one live session, watch how analysts detect, investigate and shut down attacks &mdash; and see how you can start a cyber career in <strong>months, not years</strong>.</p>
+    <div class="cm-meta cm-rise d4">
+      <span class="cm-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>90-minute live session</span>
+      <span class="cm-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8"/></svg>Online</span>
+      <span class="cm-chip"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.4-3 7.4-7 9-4-1.6-7-4.6-7-9V6z"/></svg>Beginner-friendly &middot; no experience needed</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="cm-sec">
+    <p class="cm-kicker">What you'll walk away with</p>
+    <h2 class="cm-h2">A live look inside the work, not another slide deck.</h2>
+    <div class="cm-grid">
+      <article class="cm-card">
+        <span class="cm-num">01</span>
+        <span class="cm-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 2-3 2M12 14h5"/></svg></span>
+        <h3>A real SOC walkthrough</h3>
+        <p>Logs, alerts and a live incident traced from first signal to containment &mdash; exactly how a Security Operations Center runs.</p>
+      </article>
+      <article class="cm-card">
+        <span class="cm-num">02</span>
+        <span class="cm-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="3"/></svg></span>
+        <h3>The tools analysts use daily</h3>
+        <p>See SIEM dashboards, threat intelligence and alert triage in action &mdash; the stack behind everyday cyber defence.</p>
+      </article>
+      <article class="cm-card">
+        <span class="cm-num">03</span>
+        <span class="cm-ic"><svg viewBox="0 0 24 24"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg></span>
+        <h3>A clear career roadmap</h3>
+        <p>The path from complete beginner to SOC Analyst and cyber security roles &mdash; skills, certifications and hiring reality.</p>
+      </article>
+      <article class="cm-card">
+        <span class="cm-num">04</span>
+        <span class="cm-ic"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <h3>Live Q&amp;A with mentors</h3>
+        <p>Ask ONROL cyber mentors anything &mdash; career switches, background, timelines &mdash; and get straight answers.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="cm-reg" id="cm-register">
+    <div class="cm-reg-inner">
+      <div class="cm-reg-copy">
+        <p class="cm-kicker">Reserve your seat</p>
+        <h2>Seats are limited. Enrolment takes 20 seconds.</h2>
+        <p>Drop your details and our team confirms your spot for the next live cyber security masterclass, plus the joining link.</p>
+        <ul class="cm-reg-list">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>100% free &mdash; no payment, no catch</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Live and interactive &mdash; ask questions in real time</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Recording and roadmap shared with everyone who registers</li>
+        </ul>
+      </div>
+
+      <div class="cm-panel">
+        <div class="cm-err" id="cmErr" role="alert"></div>
+        <form id="cmForm" novalidate>
+          <div class="cm-panel-top"><span class="cm-dot" aria-hidden="true"></span>Secure enrolment</div>
+          <h3>Claim your free seat</h3>
+          <p class="cm-panel-sub">Next live cohort &mdash; register below.</p>
+
+          <div class="cm-field">
+            <label for="cmName">Full name <span class="req">*</span></label>
+            <input id="cmName" name="name" required autocomplete="name" placeholder="Your full name">
+          </div>
+          <div class="cm-field">
+            <label for="cmPhone">Phone / WhatsApp <span class="req">*</span></label>
+            <div class="cm-phone">
+              <input id="cmCode" name="code" value="+91" inputmode="tel" autocomplete="tel-country-code" maxlength="6" aria-label="Country code">
+              <input id="cmPhoneNum" name="phone" type="tel" required autocomplete="tel" inputmode="numeric" placeholder="Mobile number">
+            </div>
+          </div>
+          <div class="cm-field">
+            <label for="cmEmail">Email <span class="req">*</span></label>
+            <input id="cmEmail" name="email" type="email" required autocomplete="email" placeholder="you@email.com">
+          </div>
+          <div class="cm-field">
+            <label for="cmBg">Your background <span class="req">*</span></label>
+            <select id="cmBg" name="background" required>
+              <option value="" disabled selected>Select one</option>
+              <option>Student</option>
+              <option>Fresher / recent graduate</option>
+              <option>IT / software professional</option>
+              <option>Career switcher (non-IT)</option>
+              <option>Working in cyber / IT security</option>
+            </select>
+          </div>
+
+          <button class="cm-btn" id="cmSubmit" type="submit">Reserve my seat
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="cm-fine">No spam. We only contact you about the masterclass.</p>
+        </form>
+
+        <div class="cm-done" id="cmDone">
+          <div class="cm-tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg></div>
+          <h3>Seat reserved.</h3>
+          <p>Thank you &mdash; our team will confirm your spot and send the joining link shortly. Check WhatsApp and email.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cm-sec" style="padding-top:44px">
+    <a class="cm-back" href="/">&larr; Back to home</a>
+  </section>
+</main>
+
+<footer class="footer" id="contact">
+  <div class="footer-top">
+    <div class="f-brand">
+      <a class="f-logo" href="/" aria-label="ONROL, AI Execution School">
+        <img src="/home-glydi/logo-mark.png" alt="" aria-hidden="true">
+        <span class="f-logo-tx"><b>ONROL</b><small>AI Execution School</small></span>
+      </a>
+      <p class="f-copy">&copy; 2026 ONROL, AI Execution School, Hyderabad. All rights reserved. Founded by <a href="/founders/dr-neeraja-reddy" style="color:inherit;text-decoration:underline">Dr. Neeraja Reddy</a> &middot; Updated July 2026.</p>
+      <div class="f-socials">
+        <a href="https://instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1"/></svg></a>
+        <a href="https://linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10.5v6M7 7.5v.01M11.5 16.5v-3.2a2 2 0 0 1 4 0v3.2M11.5 16.5v-6"/></svg></a>
+        <a href="https://youtube.com/" target="_blank" rel="noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M11 9.6l4 2.4-4 2.4z"/></svg></a>
+        <a href="mailto:info@onrol.in" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7.5l8 5.5 8-5.5"/></svg></a>
+      </div>
+    </div>
+    <nav class="f-cols" aria-label="Footer links">
+      <div class="f-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="/programs/ai-generalist">AI Generalist</a></li>
+          <li><a href="/programs/ai-architect">AI Architect</a></li>
+          <li><a href="/programs/soc-analyst">SOC Analyst</a></li>
+          <li><a href="/programs/cybersecurity">Cyber Security</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/glossary">Glossary</a></li>
+          <li><a href="/questions">FAQs</a></li>
+          <li><a href="/tools/ai-skills-quiz">AI Skills Quiz</a></li>
+          <li><a href="/why-now">Why AI matters now</a></li>
+          <li><a href="https://career.onrol.in" target="_blank" rel="noreferrer">Careers</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About ONROL</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-and-conditions">Terms</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  /* nav toggle */
+  (function(){
+    var nav = document.querySelector('.nav');
+    var toggle = document.getElementById('navToggle');
+    if (!nav || !toggle) return;
+    toggle.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click', function(){ nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); });
+    });
+  })();
+
+  /* ---- cyber masterclass registration → CRM ---- */
+  (function(){
+    var form = document.getElementById('cmForm');
+    if (!form) return;
+    var errEl = document.getElementById('cmErr');
+    var btn = document.getElementById('cmSubmit');
+    var CRM = 'https://go.onrol.in/api/public/leads';
+    var SHEET = 'https://script.google.com/macros/s/AKfycbzDOsjoj6jx7KbX3AcMR_SpW7FA76z7bmonecaRSykClchoizgiSWZH5Og-HQ2WDRcHsw/exec';
+    function showErr(m){ errEl.textContent = m; errEl.style.display = 'block'; }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      errEl.style.display = 'none';
+      var name  = document.getElementById('cmName').value.trim();
+      var code  = document.getElementById('cmCode').value.trim();
+      var num   = document.getElementById('cmPhoneNum').value.trim();
+      var email = document.getElementById('cmEmail').value.trim();
+      var bg    = document.getElementById('cmBg').value;
+
+      if (code && code.charAt(0) !== '+') code = '+' + code;
+      if (!code) code = '+91';
+      var full = code + ' ' + num;
+
+      if (!name || !num || !email || !bg) { showErr('Please fill in your name, phone, email and background.'); return; }
+      if (!/^\d[\d\s-]{6,14}\d$/.test(num)) { showErr('Please enter a valid mobile number.'); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showErr('Please enter a valid email address.'); return; }
+
+      btn.disabled = true; btn.textContent = 'Reserving…';
+
+      var payload = {
+        name: name, phone: full, email: email,
+        source: 'Cyber Masterclass', campaign: 'cyber-masterclass',
+        course: 'Cyber Security', program: 'Cyber Security Masterclass',
+        notes: 'Cyber masterclass registration. Background: ' + bg + '.',
+        tag: 'cyber-masterclass', background: bg
+      };
+
+      fetch(CRM, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload), keepalive: true
+      }).then(function(r){
+        if (!r.ok) { if (r.status === 429) throw new Error('Too many requests — please wait a minute and try again.'); throw new Error('Could not register (' + r.status + ').'); }
+        /* mirror to Google Sheet (best-effort, no-cors) */
+        fetch(SHEET, { method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'},
+          body: JSON.stringify({ form_type:'cyber_masterclass', name:name, full_name:name, phone:full, email:email,
+            source:'Cyber Masterclass', campaign:'cyber-masterclass', program:'Cyber Security Masterclass',
+            background:bg, page_path:location.pathname, referrer:document.referrer }), keepalive:true }).catch(function(){});
+        form.style.display = 'none';
+        document.getElementById('cmDone').style.display = 'block';
+      }).catch(function(err){
+        btn.disabled = false; btn.textContent = 'Reserve my seat';
+        showErr(err && err.message ? err.message : 'Something went wrong — please try again.');
+      });
+    });
+  })();
+</script>
+<script>
+  /* logo colour adapts to the section behind it (white on dark, orange on light) */
+  (function(){
+    var logo = document.querySelector('.site-logo');
+    if (!logo || !('IntersectionObserver' in window)) return;
+    var darks = [];
+    ['.cm-reg', '.footer'].forEach(function(sel){ document.querySelectorAll(sel).forEach(function(el){ darks.push(el); }); });
+    if (!darks.length) return;
+    var active = new Set();
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) active.add(e.target); else active.delete(e.target); });
+      logo.classList.toggle('on-dark', active.size > 0);
+    }, { rootMargin:'-44px 0px -92% 0px', threshold:0 });
+    darks.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+<script>
+  /* nav: hide on scroll down, show on scroll up */
+  (function(){
+    var nav = document.querySelector('.nav');
+    if (!nav) return;
+    var last = window.pageYOffset || 0, ticking = false;
+    function onScroll(){
+      ticking = false;
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      if (nav.classList.contains('open')){ document.body.classList.remove('nav-up'); last = y; return; }
+      if (y > last && y > 140){ document.body.classList.add('nav-up'); } else { document.body.classList.remove('nav-up'); }
+      last = y < 0 ? 0 : y;
+    }
+    window.addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, { passive:true });
+  })();
+</script>
+<script>(function(){try{var path=(location.pathname.replace(/\/+$/,"")||"/");document.querySelectorAll(".nav-links a[href]").forEach(function(a){var raw=(a.getAttribute("href")||"").split("#")[0];var href=raw?(raw.replace(/\/+$/,"")||"/"):"/";a.classList.toggle("is-active",href===path);});}catch(e){}})();</script>
+<script>
+/* nav Login dropdown */
+(function(){
+  if (window.__onrolLogin) return; window.__onrolLogin = true;
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest && e.target.closest('.nav-login-btn');
+    if (btn){
+      e.preventDefault();
+      var wrap = btn.closest('.nav-login'), open = wrap.classList.contains('open');
+      document.querySelectorAll('.nav-login.open').forEach(function(el){ el.classList.remove('open'); var b=el.querySelector('.nav-login-btn'); if(b)b.setAttribute('aria-expanded','false'); });
+      if (!open){ wrap.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+      return;
+    }
+    if (!(e.target.closest && e.target.closest('.login-menu'))){
+      document.querySelectorAll('.nav-login.open').forEach(function(el){ el.classList.remove('open'); var b=el.querySelector('.nav-login-btn'); if(b)b.setAttribute('aria-expanded','false'); });
+    }
+  });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ document.querySelectorAll('.nav-login.open').forEach(function(el){ el.classList.remove('open'); var b=el.querySelector('.nav-login-btn'); if(b)b.setAttribute('aria-expanded','false'); }); } });
+})();
+</script>
+</body>
+</html>

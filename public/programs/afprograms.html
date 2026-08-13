@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programs — Onrol</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:      #050318;   /* deep space navy */
+      --card:    #fefcd7;   /* light card */
+      --dark:    #141311;   /* dark card */
+      --ink:     #f0eeff;   /* light text on dark bg */
+      --dim:     #9b97b5;   /* muted light */
+      --border:  #141311;   /* black card borders */
+      --line:    rgba(240,238,255,0.2);   /* light hairlines on dark bg */
+      --hair:    rgba(20,19,17,0.14);     /* dark hairlines inside light cards */
+      --red:     #e8331f;
+      --red-hi:  #ff4635;
+      --cream:   #f3efe6;
+      --ease:    cubic-bezier(0.22, 1, 0.36, 1);
+      --shadow:  0 30px 60px -22px rgba(0,0,0,0.75);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Archivo', system-ui, sans-serif;
+      /* subtle grid texture + red aurora glow over the dark base */
+      background:
+        linear-gradient(rgba(240,238,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(240,238,255,0.045) 1px, transparent 1px),
+        radial-gradient(900px 600px at 75% 20%, rgba(232,51,31,0.12), transparent 65%),
+        radial-gradient(700px 500px at 10% 90%, rgba(232,51,31,0.07), transparent 60%),
+        var(--bg);
+      background-size: 44px 44px, 44px 44px, auto, auto, auto;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    ::selection { background: var(--red); color: #fff; }
+
+    /* ---------- Page frame + decor ---------- */
+    .frame {
+      position: fixed; inset: 10px; z-index: 40;
+      border: 1.5px solid var(--line);
+      pointer-events: none;
+    }
+    .frame span {
+      position: absolute;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--dim); background: var(--bg);
+      padding: 0 10px; white-space: nowrap;
+    }
+    .frame .f-tl { top: -7px; left: 26px; }
+    .frame .f-tr { top: -7px; right: 26px; color: var(--red); }
+    .frame .f-bl { bottom: -7px; left: 26px; }
+    .frame .f-br { bottom: -7px; right: 26px; }
+
+
+
+    /* tall scroll region — scrolling through it drives the cascade (5 cards) */
+    .scroll-space { position: relative; height: 360vh; }
+
+    .shell {
+      position: sticky; top: 0;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: minmax(260px, 0.8fr) minmax(600px, 2fr);
+      grid-template-rows: auto auto 1fr;
+      grid-template-areas:
+        "copy     stage"
+        "register stage"
+        ".        stage";
+      column-gap: clamp(22px, 3vw, 56px);
+      row-gap: clamp(26px, 4vh, 52px);
+      max-width: 1640px;
+      margin: 0 auto;
+      padding: clamp(24px, 3.5vw, 52px) clamp(18px, 3.5vw, 56px);
+    }
+
+    /* ---------- LEFT-TOP / copy ---------- */
+    .copy {
+      grid-area: copy; align-self: start; position: relative; z-index: 3;
+      padding-top: clamp(42px, 6vh, 64px);   /* clears the corner-pinned logo */
+    }
+
+    /* pinned to the top-left corner, just inside the frame */
+    .logo {
+      position: fixed; top: 22px; left: 30px; z-index: 45;
+      display: inline-block; margin: 0;
+      transition: opacity 0.3s var(--ease);
+    }
+    .logo img {
+      height: clamp(32px, 3.2vw, 44px); width: auto; display: block;
+      /* dark theme: flip the logo to light and melt its background away */
+      filter: invert(1) hue-rotate(180deg);
+      mix-blend-mode: screen;
+    }
+    .logo:hover { opacity: 0.85; }
+    .strip {
+      display: flex; gap: 18px; flex-wrap: wrap;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--dim);
+      padding-bottom: 18px; margin-bottom: 28px;
+      border-bottom: 1.5px solid var(--border);
+    }
+    .strip .r { color: var(--red); }
+
+    .kick {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--red); margin-bottom: 20px; display: block;
+    }
+    h1 {
+      font-family: 'Archivo Expanded', 'Archivo', sans-serif;
+      font-weight: 800;
+      font-size: clamp(40px, 5.4vw, 92px);
+      line-height: 0.88;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+    h1 .red { color: var(--red); }
+    h1 .out { color: transparent; -webkit-text-stroke: 1.6px var(--ink); }
+
+    .kick i {
+      display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+      background: var(--red); margin-right: 6px; vertical-align: middle;
+      animation: pulse 2s var(--ease) infinite;
+    }
+
+    /* headline — line-by-line rise */
+    h1 .line { display: block; overflow: hidden; }
+    h1 .line > span { display: inline-block; transform: translateY(115%); animation: lineUp 0.9s var(--ease) forwards; }
+    h1 .line:nth-child(2) > span { animation-delay: 0.14s; }
+    h1 .line:nth-child(3) > span { animation-delay: 0.28s; }
+    @keyframes lineUp { to { transform: translateY(0); } }
+
+    /* REAL — living red-to-amber gradient shimmer */
+    h1 .line > .red {
+      background: linear-gradient(90deg, #e8331f, #ff8a3c, #e8331f);
+      background-size: 220% 100%;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      animation: lineUp 0.9s var(--ease) 0.14s forwards, gradShift 4.5s linear infinite;
+    }
+    @keyframes gradShift { to { background-position: 220% 0; } }
+
+    /* SKILLS — outline with a breathing red glow */
+    h1 .line > .out { animation: lineUp 0.9s var(--ease) 0.28s forwards, outGlow 4s ease-in-out 1.4s infinite; }
+    @keyframes outGlow {
+      0%, 100% { text-shadow: 0 0 0 rgba(232,51,31,0); }
+      50%      { text-shadow: 0 0 30px rgba(232,51,31,0.45); }
+    }
+
+
+    .tagline {
+      margin-top: clamp(20px, 2.4vw, 30px);
+      max-width: 34ch;
+      font-size: clamp(15px, 1.25vw, 17px);
+      line-height: 1.6; color: var(--dim);
+    }
+
+    .lede {
+      margin-top: clamp(22px, 2.6vw, 34px);
+      font-size: clamp(15px, 1.3vw, 17px);
+      line-height: 1.6; color: var(--dim);
+      max-width: 40ch;
+    }
+    .legend {
+      display: flex; gap: 24px; flex-wrap: wrap;
+      margin-top: 26px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--dim);
+    }
+    .legend span { display: inline-flex; align-items: center; gap: 9px; }
+    .legend i { width: 11px; height: 11px; display: inline-block; border: 1.5px solid var(--line); }
+    .legend .ai { background: var(--red); }
+    .legend .cy { background: var(--dark); }
+
+    .backlink {
+      margin-top: 38px;
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--ink); text-decoration: none;
+      transition: gap 0.3s var(--ease), color 0.3s var(--ease);
+    }
+    .backlink:hover { gap: 15px; color: var(--red); }
+
+    /* ---------- RIGHT / 3D cascade ---------- */
+    .stage {
+      grid-area: stage; align-self: center;
+      position: relative;
+      z-index: 8;                 /* cards on the front / upper layer */
+      height: min(94vh, 940px);
+      perspective: 1700px;
+      perspective-origin: 50% 46%;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 15%, #000 88%, transparent 100%);
+              mask-image: linear-gradient(to bottom, transparent 0%, #000 15%, #000 88%, transparent 100%);
+    }
+    .rotor {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 500px;
+      /* scaled 1.5x, centred — --px/--pz are mouse-parallax tilt offsets */
+      transform: translate(-50%, -50%)
+                 rotateX(calc(44deg + var(--px, 0deg)))
+                 rotateZ(-14deg)
+                 scale(1.5);
+      transform-style: preserve-3d;
+    }
+    .track {
+      display: flex; flex-direction: column;
+      will-change: transform;
+      transform: translateY(0);
+    }
+    .track > .card { margin-bottom: 30px; }
+
+    .card {
+      position: relative;
+      display: flex; flex-direction: column;
+      /* frosted glass with a colour gradient — clearly lighter than the dark variant */
+      background: linear-gradient(135deg, rgba(255,255,255,0.34), rgba(255,255,255,0.12));
+      -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(255,255,255,0.42);
+      border-radius: 16px;
+      padding: 34px 38px;
+      text-decoration: none;
+      color: var(--ink);
+      overflow: hidden;
+      box-shadow: 0 30px 60px -22px rgba(0,0,0,0.6);
+      transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.4s var(--ease);
+      transform: translateZ(0);
+    }
+    /* animated light sweep gliding across the glass */
+    .card::before {
+      content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+      border-radius: inherit;
+      background: linear-gradient(115deg, transparent 25%, rgba(255,255,255,0.22) 45%, transparent 62%);
+      transform: translateX(-130%);
+      animation: sheen 7s var(--ease) infinite;
+    }
+    @keyframes sheen {
+      0%        { transform: translateX(-130%); }
+      55%, 100% { transform: translateX(130%); }
+    }
+    /* idle 3D float — each card gently breathes in depth, staggered */
+    @keyframes cardFloat {
+      0%, 100% { translate: 0 0 0; }
+      50%      { translate: 0 0 26px; }
+    }
+    .track > .card { animation: cardFloat 7s ease-in-out infinite; }
+    .track > .card:nth-child(2), .track > .card:nth-child(2)::before { animation-delay: -1.4s; }
+    .track > .card:nth-child(3), .track > .card:nth-child(3)::before { animation-delay: -2.8s; }
+    .track > .card:nth-child(4), .track > .card:nth-child(4)::before { animation-delay: -4.2s; }
+    .track > .card:nth-child(5), .track > .card:nth-child(5)::before { animation-delay: -5.6s; }
+
+    .card:hover {
+      transform: translateZ(90px);
+      border-color: rgba(255,255,255,0.55);
+      box-shadow: 0 50px 90px -26px rgba(232,51,31,0.55);
+    }
+    /* colour-gradient glass variants */
+    .card.red {
+      background: linear-gradient(135deg, rgba(232,51,31,0.9), rgba(232,51,31,0.42));
+      border-color: rgba(255,130,110,0.55);
+      color: #fff;
+      box-shadow: 0 34px 76px -24px rgba(232,51,31,0.55);
+    }
+    .card.dark {
+      background: linear-gradient(135deg, rgba(26,23,44,0.92), rgba(20,19,17,0.6));
+      border-color: rgba(240,238,255,0.22);
+      color: var(--cream);
+      box-shadow: 0 34px 76px -24px rgba(0,0,0,0.85);
+    }
+    .card.orange {
+      background: linear-gradient(135deg, rgba(242,101,34,0.9), rgba(242,101,34,0.4));
+      border-color: rgba(255,160,110,0.55);
+      color: #fff;
+      box-shadow: 0 34px 76px -24px rgba(242,101,34,0.55);
+    }
+    .card.orange .c-num { color: rgba(255,255,255,0.42); }
+    .card.orange .badge { color: #fff; border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.16); }
+    .card.orange p { color: rgba(255,255,255,0.92); }
+    .card.orange .tags span { background: rgba(255,255,255,0.2); color: #fff; border-color: rgba(255,255,255,0.2); }
+    .card.orange .c-cta { color: #fff; }
+    .card.orange .c-cta svg { stroke: #fff; }
+    .card.violet {
+      background: linear-gradient(135deg, rgba(124,58,237,0.88), rgba(124,58,237,0.38));
+      border-color: rgba(190,150,255,0.55);
+      color: #fff;
+      box-shadow: 0 34px 76px -24px rgba(124,58,237,0.55);
+    }
+    .card.violet .c-num { color: rgba(255,255,255,0.42); }
+    .card.violet .badge { color: #fff; border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.16); }
+    .card.violet p { color: rgba(255,255,255,0.92); }
+    .card.violet .tags span { background: rgba(255,255,255,0.2); color: #fff; border-color: rgba(255,255,255,0.2); }
+    .card.violet .c-cta { color: #fff; }
+    .card.violet .c-cta svg { stroke: #fff; }
+    .card.teal {
+      background: linear-gradient(135deg, rgba(13,148,136,0.9), rgba(13,148,136,0.38));
+      border-color: rgba(120,230,215,0.5);
+      color: #fff;
+      box-shadow: 0 34px 76px -24px rgba(13,148,136,0.55);
+    }
+    .card.teal .c-num { color: rgba(255,255,255,0.42); }
+    .card.teal .badge { color: #fff; border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.16); }
+    .card.teal p { color: rgba(255,255,255,0.92); }
+    .card.teal .tags span { background: rgba(255,255,255,0.2); color: #fff; border-color: rgba(255,255,255,0.2); }
+    .card.teal .c-cta { color: #fff; }
+    .card.teal .c-cta svg { stroke: #fff; }
+
+    .ghost {
+      position: absolute; top: -0.34em; right: -0.04em;
+      font-family: 'Archivo Expanded','Archivo',sans-serif; font-weight: 800;
+      font-size: 240px; line-height: 1; z-index: 0; pointer-events: none;
+      color: transparent; -webkit-text-stroke: 1.5px rgba(20,19,17,0.07);
+    }
+    .card.red .ghost  { -webkit-text-stroke-color: rgba(255,255,255,0.24); }
+    .card.dark .ghost { -webkit-text-stroke-color: rgba(255,255,255,0.08); }
+
+    /* number + badge row */
+    .c-top {
+      position: relative; z-index: 1;
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+      margin-bottom: 8px;
+    }
+    .c-num {
+      font-family: 'Archivo Expanded','Archivo',sans-serif;
+      font-weight: 800; font-size: 46px; line-height: 1;
+      color: rgba(240,238,255,0.3);
+    }
+    .card.red .c-num  { color: rgba(255,255,255,0.42); }
+    .card.dark .c-num { color: rgba(255,255,255,0.18); }
+    .badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--red-hi); border: 1.5px solid rgba(255,70,53,0.6);
+      background: rgba(232,51,31,0.16);
+      padding: 7px 12px; border-radius: 6px; white-space: nowrap;
+    }
+    .card.red .badge  { color: var(--red); border-color: #fff; background: #fff; }
+    .card.dark .badge { color: var(--red-hi); border-color: rgba(255,70,53,0.55); background: rgba(232,51,31,0.14); }
+
+    .card h2 {
+      position: relative; z-index: 1;
+      font-family: 'Archivo Expanded','Archivo',sans-serif;
+      font-weight: 700; font-size: 30px; line-height: 1.12;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+    .card p {
+      position: relative; z-index: 1;
+      font-size: 15px; line-height: 1.6; color: rgba(240,238,255,0.72);
+      max-width: 42ch; margin-bottom: 24px;
+    }
+    .card.red p  { color: rgba(255,255,255,0.92); }
+    .card.dark p { color: rgba(243,239,230,0.72); }
+
+    /* tag chips */
+    .tags {
+      position: relative; z-index: 1;
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-top: auto; margin-bottom: 24px;
+    }
+    .tags span {
+      font-size: 13px; font-weight: 500;
+      padding: 7px 13px; border-radius: 6px;
+      background: rgba(255,255,255,0.14); color: #fff;
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+    .card.red .tags span  { background: rgba(255,255,255,0.18); color: #fff; }
+    .card.dark .tags span { background: rgba(255,255,255,0.1); color: var(--cream); }
+
+    /* explore link */
+    .c-cta {
+      position: relative; z-index: 1;
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--red-hi);
+    }
+    .c-cta svg { width: 18px; height: 18px; stroke: var(--red-hi); transition: transform 0.35s var(--ease); }
+    .card:hover .c-cta svg { transform: translateX(5px); }
+    .card.red .c-cta { color: #fff; }
+    .card.red .c-cta svg { stroke: #fff; }
+    .card.dark .c-cta { color: var(--red-hi); }
+    .card.dark .c-cta svg { stroke: var(--red-hi); }
+
+    /* scroll cue — outside the stage so the fade never hides it */
+    .scrollcue {
+      position: absolute; left: 50%; bottom: clamp(16px, 2.6vh, 28px); transform: translateX(-50%);
+      z-index: 9;
+      display: inline-flex; flex-direction: column; align-items: center; gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink);
+      transition: opacity 0.4s var(--ease);
+    }
+    .scrollcue .mouse {
+      width: 25px; height: 40px; border: 2px solid var(--ink); border-radius: 14px;
+      position: relative;
+    }
+    .scrollcue .mouse::after {
+      content: ""; position: absolute; left: 50%; top: 7px; width: 3px; height: 8px;
+      background: var(--red); border-radius: 2px; transform: translateX(-50%);
+      animation: wheel 1.5s var(--ease) infinite;
+    }
+    @keyframes wheel {
+      0% { opacity: 0; transform: translate(-50%, 0); }
+      30% { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%, 13px); }
+    }
+    .scrollcue.hide { opacity: 0; pointer-events: none; }
+
+    /* ---------- LEFT-BOTTOM / register — card-less, open form ---------- */
+    .register {
+      grid-area: register; align-self: start; justify-self: start;
+      position: relative; z-index: 6;
+      width: 100%; max-width: 400px; text-align: left;
+      color: var(--ink);
+    }
+    /* soft ambient warmth behind the form */
+    .register::before {
+      content: ""; position: absolute; z-index: -1;
+      top: -60px; left: -80px; width: 340px; height: 300px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,51,31,0.1), transparent 70%);
+      pointer-events: none;
+    }
+
+    .register .rk {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--red-hi); margin-bottom: 12px;
+    }
+    .register .rk i {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--red);
+      animation: pulse 2s var(--ease) infinite;
+    }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(232,51,31,0.55); }
+      70%  { box-shadow: 0 0 0 9px rgba(232,51,31,0); }
+      100% { box-shadow: 0 0 0 0 rgba(232,51,31,0); }
+    }
+    .register h3 {
+      font-family: 'Archivo Expanded','Archivo',sans-serif;
+      font-weight: 700; font-size: clamp(21px, 1.8vw, 28px); line-height: 1.06;
+      letter-spacing: 0; text-transform: uppercase; margin-bottom: 8px;
+      /* red → amber gradient, matching the "REAL" shimmer */
+      background: linear-gradient(90deg, #ff4635, #ff8a3c, #ff4635);
+      background-size: 220% 100%;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      /* shimmer + breathing glow so it clearly asks for attention */
+      animation: gradShift 5s linear infinite, titleGlow 2.6s ease-in-out infinite;
+    }
+    @keyframes titleGlow {
+      0%, 100% { filter: drop-shadow(0 0 0 rgba(255,70,53,0)); }
+      50%      { filter: drop-shadow(0 0 16px rgba(255,70,53,0.65)); }
+    }
+    .register .rsub { font-size: 14px; line-height: 1.55; color: rgba(240,238,255,0.62); margin-bottom: 22px; }
+
+    .flabel {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(240,238,255,0.5); display: block; margin-bottom: 8px;
+    }
+    .field {
+      display: flex; align-items: stretch;
+      border: 1.5px solid rgba(255,255,255,0.22); border-radius: 12px;
+      background: rgba(255,255,255,0.07);
+      margin-bottom: 14px; overflow: hidden;
+      border-radius: 14px;
+      transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease), background 0.3s var(--ease);
+    }
+    .field .cc {
+      display: grid; place-items: center; padding: 0 16px;
+      font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 500;
+      color: rgba(240,238,255,0.85);
+      border-right: 1.5px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.06);
+    }
+    .field input {
+      flex: 1; min-width: 0;
+      background: transparent; border: 0; outline: none;
+      color: #fff; font-family: 'Archivo', sans-serif; font-size: 16px; font-weight: 500;
+      letter-spacing: 0.05em; padding: 14px 16px;
+    }
+    .field input::placeholder { color: rgba(240,238,255,0.32); }
+    .field:focus-within {
+      border-color: rgba(255,70,53,0.65);
+      background: rgba(255,255,255,0.11);
+      box-shadow: 0 0 0 4px rgba(232,51,31,0.16);
+    }
+
+    .rbtn {
+      position: relative; overflow: hidden;
+      width: 100%;
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      background: linear-gradient(120deg, #e8331f, #ff6a3c);
+      color: #fff; border: 0; border-radius: 12px;
+      cursor: pointer;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500;
+      padding: 15px 20px;
+      box-shadow: 0 12px 28px -12px rgba(232,51,31,0.65);
+      transition: box-shadow 0.3s var(--ease), transform 0.15s var(--ease), filter 0.3s var(--ease);
+    }
+    .rbtn::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.38) 50%, transparent 70%);
+      transform: translateX(-120%);
+    }
+    .rbtn:hover { filter: brightness(1.12); box-shadow: 0 16px 34px -12px rgba(232,51,31,0.8); }
+    .rbtn:hover::after { transform: translateX(120%); transition: transform 0.7s var(--ease); }
+    .rbtn:active { transform: scale(0.98); }
+    .rbtn svg { width: 20px; height: 20px; stroke: #fff; transition: transform 0.35s var(--ease); }
+    .rbtn:hover svg { transform: translateX(4px); }
+
+    .rfine { margin-top: 12px; font-size: 11px; line-height: 1.5; color: rgba(240,238,255,0.4); text-align: center; }
+    .rok {
+      margin-top: 14px; font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; letter-spacing: 0.04em; color: #fff;
+      border-left: 3px solid var(--red); padding-left: 12px; display: none;
+    }
+    .rok.show { display: block; }
+
+    /* ---------- Reveal ---------- */
+    .reveal { opacity: 0; transform: translateY(20px); }
+    .reveal.in { opacity: 1; transform: none; transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1180px) {
+      .shell {
+        display: flex; flex-direction: column; align-items: stretch;
+        gap: clamp(28px, 5vw, 44px); height: auto; min-height: 100vh;
+      }
+      /* stack: logo + headline first, then register card, then cards */
+      .copy { order: 0; align-self: start; }
+      .register { position: static; order: 1; width: 100%; max-width: 400px; align-self: start; }
+      .stage { order: 2; height: 520px; perspective: 1200px; align-self: auto; }
+      .rotor { width: 440px; transform: translate(-50%,-50%) rotateX(38deg) rotateZ(-10deg); }
+      .scroll-space { height: 380vh; }
+      .scrollcue { display: none; }   /* not needed in the stacked layout */
+    }
+    @media (max-width: 720px) {
+      .shell { padding: clamp(22px, 6vw, 32px) clamp(16px, 5vw, 24px); gap: clamp(26px, 7vw, 40px); }
+      h1 { font-size: clamp(36px, 13vw, 58px); }
+      .tagline { font-size: 14px; }
+      .logo { margin-bottom: 18px; }
+      .logo img { height: clamp(28px, 8vw, 38px); }
+      .stage { order: 2; height: 430px; perspective: 950px; }
+      .rotor { width: 280px; transform: translate(-50%,-50%) rotateX(35deg) rotateZ(-7deg); }
+      .card { min-height: 330px; padding: 22px 24px; }
+      .card h2 { font-size: 26px; }
+      .card p { font-size: 13.5px; margin-bottom: 20px; }
+      .spec .v { font-size: 19px; }
+      .ghost { font-size: 128px; }
+      .register { max-width: 100%; }
+      .frame { inset: 7px; }
+      .frame .f-tr, .frame .f-bl { display: none; }   /* fewer corner labels on phones */
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-space { height: auto; }
+      .shell { position: static; height: auto; min-height: 100vh; }
+      .track { transform: none !important; }
+      .rotor { transform: translate(-50%,-50%); }
+      .stage { -webkit-mask-image: none; mask-image: none; height: auto; overflow: visible; }
+      .card:hover { transform: none; }
+      .track > .card { animation: none; translate: none; }
+      .card::before { animation: none; transform: none; }
+      h1 .line > span { animation: none; transform: none; }
+      .kick i { animation: none; }
+      .register:hover { transform: none; }
+      .register .rk i { animation: none; }
+      .scrollcue { display: none; }
+    }
+  </style>
+<link rel="icon" href="/home-glydi/logo-mark.png" type="image/png">
+<link rel="apple-touch-icon" href="/home-glydi/logo-mark.png">
+<link rel="canonical" href="https://onrol.in/programs/afprograms">
+<meta name="description" content="Explore ONROL programs — AI Generalist, AI Architect, AI Accelerator, Cyber Security and SOC Analyst. Register with your mobile number and our team will reach out.">
+<meta name="robots" content="noindex, follow">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1520493643156247');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1520493643156247&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style id="afprograms-mobile-oneviewport">
+/* Mobile: single-viewport layout — page locked, cards scroll internally. */
+@media (max-width: 720px) {
+  html, body { height: 100vh; height: 100dvh; overflow: hidden; }
+  /* .scroll-space WRAPS .shell — never display:none it. Just collapse the
+     380vh scroll-driver height so the page no longer scrolls. */
+  .scroll-space { height: auto; }
+  .shell {
+    position: relative; height: 100vh; height: 100dvh; min-height: 0;
+    display: flex; flex-direction: column;
+    gap: 12px; padding: 16px 16px 8px; overflow: hidden;
+  }
+  .logo { margin-bottom: 6px; }
+  .logo img { height: 26px; }
+  .kick { font-size: 10px; }
+  h1 { font-size: clamp(22px, 7.5vw, 32px); }      /* smaller BUILD REAL SKILLS */
+  .tagline { font-size: 12.5px; margin-top: 6px; }
+  .register h3 { font-size: 17px; margin-bottom: 2px; }
+  .register .rsub { font-size: 12px; margin-bottom: 10px; }
+  .field { margin-bottom: 10px; }
+  .rbtn { padding: 12px 18px; }
+  .stage {
+    order: 2; flex: 1 1 auto; min-height: 0; height: auto;
+    overflow-y: auto; -webkit-overflow-scrolling: touch;
+    perspective: none;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 16px, #000 calc(100% - 16px), transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0, #000 16px, #000 calc(100% - 16px), transparent 100%);
+  }
+  .rotor { position: static; width: 100%; transform: none; }
+  .track { transform: none !important; }
+  .track > .card { margin-bottom: 12px; }
+  .card { min-height: 0; padding: 20px; }
+  .ghost { font-size: 80px; }
+  .scrollcue { display: none; }
+}
+</style>
+</head>
+<body>
+  <div class="frame" aria-hidden="true">
+    <span class="f-tl">AF Programs</span>
+    <span class="f-tr">◆ 05 Programs / 02 Tracks</span>
+    <span class="f-bl">Onrol — AI Execution School</span>
+    <span class="f-br">Est. 2026</span>
+  </div>
+
+  <div class="scroll-space">
+  <main class="shell">
+
+
+    <!-- LEFT-TOP: logo + copy -->
+    <section class="copy">
+      <a class="logo reveal" href="https://onrol.in/" aria-label="onrol — AI Execution School">
+        <img src="/afprograms-logo.png" alt="onrol — AI Execution School" />
+      </a>
+
+      <span class="kick reveal"><i></i> 05 Programs · 02 Tracks</span>
+
+      <h1>
+        <span class="line"><span>Build</span></span>
+        <span class="line"><span class="red">Real</span></span>
+        <span class="line"><span class="out">Skills</span></span>
+      </h1>
+
+      <p class="tagline reveal">Two tracks — AI &amp; Cyber Security. Learn by building, graduate job-ready.</p>
+    </section>
+
+    <!-- CENTER: animated 3D cascade (4 programs) -->
+    <section class="stage" aria-label="Programs">
+      <div class="rotor">
+        <div class="track" id="track">
+
+          <!-- 01 AI Generalist -->
+          <a class="card red" data-track="ai" href="https://onrol.in/programs/ai-generalist">
+            <div class="c-top"><span class="c-num">01</span><span class="badge">Flagship, 3 Months</span></div>
+            <h2>AI Generalist</h2>
+            <p>Beginner to AI Generalist, the complete path from learning to earning, no prior coding required.</p>
+            <div class="tags"><span>Vibe coding</span><span>7+ projects</span><span>Portfolio</span></div>
+            <div class="c-cta">Explore Program
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+          </a>
+
+          <!-- 02 AI Architect -->
+          <a class="card" data-track="ai" href="https://onrol.in/programs/ai-architect">
+            <div class="c-top"><span class="c-num">02</span><span class="badge">Advanced, 6 Months</span></div>
+            <h2>AI Architect</h2>
+            <p>Design, deploy &amp; scale complete AI powered systems, apps, agents, automations, and RAG.</p>
+            <div class="tags"><span>Multi agent</span><span>RAG</span><span>20+ projects</span></div>
+            <div class="c-cta">Explore Program
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+          </a>
+
+           <!-- 03 AI Accelerator -->
+          <a class="card violet" data-track="ai" href="https://onrol.in/programs/ai-generalist">
+            <div class="c-top"><span class="c-num">03</span><span class="badge">Fast-Track, 3 Months</span></div>
+            <h2>AI Accelerator</h2>
+            <p>The intensive fast track into applied AI, build and ship real projects, master the tools, and get job ready in 3 months.</p>
+            <div class="tags"><span>Applied AI</span><span>Live projects</span><span>Job ready</span></div>
+            <div class="c-cta">Explore Program
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+          </a>
+
+          <!-- 04 Cyber Security (dark) -->
+          <a class="card teal" data-track="cyber" href="https://onrol.in/programs/cybersecurity">
+            <div class="c-top"><span class="c-num">04</span><span class="badge">Foundation, 6 Months</span></div>
+            <h2>Cyber Security</h2>
+            <p>Zero to job ready defender, 70%+ hands on with real tools, labs, and a portfolio employers trust.</p>
+            <div class="tags"><span>Blue team</span><span>Live labs</span><span>Portfolio</span></div>
+            <div class="c-cta">Explore Program
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+          </a>
+
+          <!-- 05 SOC Analyst -->
+          <a class="card orange" data-track="cyber" href="https://onrol.in/programs/soc-analyst">
+            <div class="c-top"><span class="c-num">05</span><span class="badge">Specialist, 3 Months</span></div>
+            <h2>SOC Analyst</h2>
+            <p>Specialise on the SOC floor, detect, investigate, and respond. The fast track into a Security Operations role.</p>
+            <div class="tags"><span>SIEM</span><span>Incident response</span><span>Interview ready</span></div>
+            <div class="c-cta">Explore Program
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+          </a>
+
+         
+
+        </div>
+      </div>
+      
+
+    </section>
+
+    <!-- LEFT-BOTTOM: register card -->
+    <aside class="register reveal">
+     
+      <h3>Drop Your Number</h3>
+      <p class="rsub">To unlock your personalized AI learning path.</p>
+      <form id="regForm" novalidate>
+       
+        <div class="field">
+          <span class="cc">+91</span>
+          <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel"
+                 placeholder="XXXXXXXXXX" pattern="[0-9 ]{8,}" maxlength="12" required />
+        </div>
+        <button class="rbtn" type="submit">
+          Register
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+
+        
+        
+        <p class="rok" id="rok">✓ Thanks! Our team will reach out shortly.</p>
+      </form>
+    </aside>
+
+    <div class="scrollcue" id="cue">
+      <span class="mouse"></span>
+      Scroll to explore
+    </div>
+
+  </main>
+  </div>
+
+  <script>
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---- Scroll-driven cascade (5 cards, finite travel) --------------- */
+    if (!reduce) {
+      const track = document.getElementById('track');
+      const space = document.querySelector('.scroll-space');
+      const cue = document.getElementById('cue');
+      let travel = 0, target = 0, current = 0, running = false;
+
+      function measure() {
+        travel = track.scrollHeight * 0.66;   // scroll walks through the 4-card stack
+      }
+      function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+      function progress() {
+        const scrollable = space.offsetHeight - window.innerHeight;
+        if (scrollable <= 0) return 0;
+        const scrolled = -space.getBoundingClientRect().top;
+        return clamp(scrolled / scrollable, 0, 1);
+      }
+      function onScroll() {
+        const p = progress();
+        target = (0.5 - p) * travel;     // centered at mid-scroll
+        if (window.scrollY > 30) cue.classList.add('hide'); else cue.classList.remove('hide');
+        if (!running) { running = true; requestAnimationFrame(render); }
+      }
+      function render() {
+        current += (target - current) * 0.12;
+        track.style.transform = 'translateY(' + current.toFixed(2) + 'px)';
+        if (Math.abs(target - current) > 0.3) {
+          requestAnimationFrame(render);
+        } else {
+          current = target;
+          track.style.transform = 'translateY(' + current.toFixed(2) + 'px)';
+          running = false;
+        }
+      }
+      window.addEventListener('load', () => { measure(); onScroll(); });
+      window.addEventListener('resize', () => { measure(); onScroll(); });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      measure(); onScroll();
+
+      /* ---- 3D pointer parallax — the whole stack tilts with the mouse ---- */
+      const rotor = document.querySelector('.rotor');
+      if (rotor && window.matchMedia('(pointer: fine)').matches) {
+        let tpx = 0, tpz = 0, cpx = 0, cpz = 0, pRun = false;
+        window.addEventListener('mousemove', (e) => {
+          tpx = (0.5 - e.clientY / window.innerHeight) * 5;   // ±2.5deg pitch
+          tpz = (e.clientX / window.innerWidth - 0.5) * 4;    // ±2deg twist
+          if (!pRun) { pRun = true; requestAnimationFrame(pRender); }
+        }, { passive: true });
+        function pRender() {
+          cpx += (tpx - cpx) * 0.06;
+          cpz += (tpz - cpz) * 0.06;
+          rotor.style.setProperty('--px', cpx.toFixed(2) + 'deg');
+          rotor.style.setProperty('--pz', cpz.toFixed(2) + 'deg');
+          if (Math.abs(tpx - cpx) > 0.01 || Math.abs(tpz - cpz) > 0.01) requestAnimationFrame(pRender);
+          else pRun = false;
+        }
+      }
+    }
+
+    /* ---- Register form (front-end only placeholder) ------------------ */
+    const form = document.getElementById('regForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const phone = document.getElementById('phone');
+      const digits = (phone.value || '').replace(/\D/g, '');
+      if (digits.length < 10) { phone.focus(); phone.style.color = '#e8331f'; return; }
+      phone.style.color = '';
+      document.getElementById('rok').classList.add('show');
+      form.querySelector('.rbtn').textContent = 'Registered ✓';
+      /* Lead capture: ONROL CRM upserts by mobile number + Google Sheet mirror. */
+      try {
+        var q = new URLSearchParams(location.search);
+        var ref = q.get("ref") || "";
+        var utm = {};
+        ["utm_source","utm_medium","utm_campaign","utm_term","utm_content"].forEach(function(k){ var v=q.get(k); if(v) utm[k]=v; });
+        var campaign = ref ? ("afprograms-" + ref) : "afprograms";
+        fetch("https://go.onrol.in/api/public/leads", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(Object.assign({ name: "", phone: digits, email: "", role: "",
+            source: "AF Programs page", campaign: campaign, notes: ref ? ("ref:" + ref) : "" }, utm)),
+          keepalive: true
+        }).catch(function(){});
+        fetch("https://script.google.com/macros/s/AKfycbzDOsjoj6jx7KbX3AcMR_SpW7FA76z7bmonecaRSykClchoizgiSWZH5Og-HQ2WDRcHsw/exec", {
+          method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(Object.assign({ form_type: "afprograms", name: "", full_name: "", phone: digits,
+            source: "AF Programs page", campaign: campaign, page_path: location.pathname,
+            page_title: document.title, referrer: document.referrer, ua: navigator.userAgent }, utm)),
+          keepalive: true
+        }).catch(function(){});
+      } catch (err) { /* never block the UI */ }
+    });
+
+    /* Scroll reveal for side copy */
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+
+    <script>
+      (function(){
+        try {
+          var q = new URLSearchParams(location.search);
+          var carry = ["ref","coupon","utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
+          var any = carry.some(function(k){ return q.get(k); });
+          if (!any) return;
+          document.querySelectorAll('a[href*="onrol.in/programs/"]').forEach(function(a){
+            try {
+              var u = new URL(a.href);
+              if (u.pathname.replace(/\/+$/,"") === "/programs/afprograms") return; /* don't self-loop */
+              carry.forEach(function(k){ var v=q.get(k); if(v && !u.searchParams.has(k)) u.searchParams.set(k,v); });
+              a.href = u.toString();
+            } catch(e){}
+          });
+        } catch(e){}
+      })();
+    </script>
+</body>
+</html>

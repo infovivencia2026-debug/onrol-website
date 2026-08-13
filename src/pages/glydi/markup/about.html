@@ -1,0 +1,456 @@
+<style>
+  .subpage{ font-family:'Manrope', sans-serif; }
+  body{ background:#fbfaf9; }
+  body::before{
+    content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+    background:radial-gradient(60vw 40vw at 12% -6%, rgba(var(--orange-rgb),.06), transparent 58%),
+               radial-gradient(50vw 40vw at 100% 2%, rgba(var(--orange-rgb),.05), transparent 55%);
+  }
+  .subpage{ position:relative; background:transparent; max-width:1000px; margin:0 auto; padding:150px 24px 90px; color:#16181b; }
+  .subpage h2{ font-size:clamp(24px,3vw,36px); font-weight:600; color:#16181b; letter-spacing:-.015em; margin:6px 0 4px; line-height:1.1; }
+  .subpage h2 span{ color:var(--orange); }
+  .subpage .kicker{ font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--orange); margin-top:70px; }
+  .subpage .kicker::before{ content:""; display:inline-block; width:24px; height:1px; background:var(--orange); vertical-align:middle; margin-right:9px; opacity:.7; }
+  .subpage .kicker + h2{ margin-top:6px; }
+
+  /* ===== BOX GRID (sharp cells, hairline lines, orange junction dots) ===== */
+  .bento{ display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:minmax(96px,auto); gap:1px; background:rgba(0,0,0,.16); border:1px solid rgba(0,0,0,.16); margin-top:26px; }
+  .t{ position:relative; overflow:hidden; background:#fff; padding:26px; opacity:0; transform:translateY(26px); transition:transform .34s ease, opacity .6s cubic-bezier(.2,.7,.2,1), background .25s ease, box-shadow .3s ease; }
+  .t.show{ opacity:1; transform:none; }
+  .t.show:hover{ transform:translateY(-5px); z-index:5; background:#fff7f2; box-shadow:0 24px 48px -18px rgba(0,0,0,.24); }   /* lift + warm tint */
+  .t::before,.t::after{ content:""; position:absolute; width:6px; height:6px; background:var(--orange); z-index:3; pointer-events:none; }
+  .t::before{ top:0; left:0; transform:translate(-50%,-50%); }
+  .t::after{ bottom:0; right:0; transform:translate(50%,50%); }
+  .s2{ grid-column:span 2; }
+  .s4{ grid-column:span 4; }
+  .r2{ grid-row:span 2; }
+  @media(max-width:760px){
+    .bento{ grid-template-columns:repeat(2,1fr); }
+    .s4{ grid-column:span 2; }
+    .r2{ grid-row:auto; }
+  }
+  @media(max-width:460px){
+    .bento{ grid-template-columns:1fr; }
+    .s2,.s4{ grid-column:auto; }
+  }
+
+  /* tile atoms */
+  .t .t-k{ font-family:var(--mono); font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:var(--orange); margin-bottom:12px; }
+  .t h3{ font-size:19px; font-weight:600; color:#16181b; margin-bottom:9px; line-height:1.2; }
+  .t p{ font-family:var(--mono); font-size:13px; line-height:1.65; color:#5e554d; margin:0; }
+
+  /* founder tile */
+  .t-founder{ display:flex; align-items:center; gap:clamp(18px,2.5vw,28px); }
+  .f-photo{ position:relative; flex:0 0 auto; width:clamp(112px,13vw,150px); aspect-ratio:1/1; height:auto; object-fit:cover; object-position:center 16%; border:1px solid rgba(0,0,0,.12); box-shadow:0 18px 36px -16px rgba(0,0,0,.5); }
+  .f-body{ position:relative; }
+  .f-k{ font-family:var(--mono); font-size:11px; letter-spacing:1.4px; text-transform:uppercase; color:var(--orange); }
+  .f-name{ font-size:23px; font-weight:700; color:#16181b; line-height:1.15; margin:6px 0 12px; }
+  .t-founder p{ font-size:13px; }
+  @media(max-width:460px){ .t-founder{ flex-direction:column; text-align:center; } }
+
+  /* stat tiles */
+  .t-stat{ display:flex; flex-direction:column; justify-content:center; text-align:center; padding:22px 14px; }
+  .t-stat .n{ font-size:clamp(26px,3.4vw,38px); font-weight:700; color:#16181b; letter-spacing:-.02em; line-height:1; }
+  .t-stat .n span{ color:var(--orange); }
+  .t-stat .l{ font-family:var(--mono); font-size:10.5px; letter-spacing:1.2px; text-transform:uppercase; color:#8a8f96; margin-top:9px; }
+
+  /* accent (orange) tile */
+  .t-accent{ background:linear-gradient(150deg, var(--orange), #e8490f); color:#fff; border-color:transparent; display:flex; flex-direction:column; justify-content:center; }
+  .t-accent .t-k{ color:rgba(255,255,255,.85); }
+  .t-accent .big{ font-size:clamp(20px,2.2vw,26px); font-weight:700; line-height:1.15; }
+  .t-accent:hover{ background:linear-gradient(150deg, var(--orange), #e8490f); }   /* keep orange while it pops */
+
+  /* numbered feature tile */
+  .t-feat .num{ font-family:var(--mono); font-size:clamp(26px,3vw,40px); font-weight:500; color:var(--orange); line-height:1; margin-bottom:16px; }
+
+  /* facts tile */
+  .t-fact{ display:flex; flex-direction:column; justify-content:center; padding:20px 22px; }
+  .t-fact .k{ font-family:var(--mono); font-size:10.5px; letter-spacing:1.2px; text-transform:uppercase; color:#9a9089; margin-bottom:6px; }
+  .t-fact .val{ font-size:15px; font-weight:600; color:#16181b; line-height:1.3; }
+
+  /* chip panel */
+  .chips{ display:flex; flex-wrap:wrap; gap:9px; margin-top:16px; }
+  .chips span{ display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:12.5px; color:#33363b; background:rgba(var(--orange-rgb),.05); border:1px solid rgba(var(--orange-rgb),.22); padding:9px 15px; transition:background .2s ease, transform .2s ease; }
+  .chips span::before{ content:""; width:6px; height:6px; background:var(--orange); }
+  .chips span:hover{ background:rgba(var(--orange-rgb),.13); transform:translateY(-2px); }
+
+  /* check panel */
+  .checks{ list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px 24px; margin:16px 0 0; padding:0; }
+  .checks li{ display:flex; align-items:center; gap:12px; font-family:var(--mono); font-size:13px; color:#33363b; }
+  .checks li .ck{ flex:0 0 auto; width:24px; height:24px; display:grid; place-items:center; background:rgba(var(--orange-rgb),.12); color:var(--orange); }
+  .checks li .ck svg{ width:13px; height:13px; stroke:currentColor; fill:none; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
+
+  /* CTA tile */
+  .t-cta{ text-align:center; padding:clamp(34px,4.5vw,52px); background:linear-gradient(155deg, rgba(var(--orange-rgb),.10), rgba(var(--orange-rgb),.02) 65%); border-color:rgba(var(--orange-rgb),.28); }
+  .t-cta h2{ margin:0 auto 10px; }
+  .t-cta .lead{ font-family:var(--mono); font-size:13.5px; line-height:1.7; color:#6a5f56; margin:0 auto; max-width:520px; }
+  .t-cta .tagline{ font-family:var(--mono); font-size:clamp(14px,1.7vw,17px); letter-spacing:2px; text-transform:uppercase; color:var(--orange); margin:20px auto 0; }
+  .t-cta:hover{ transform:none; background:linear-gradient(155deg, rgba(var(--orange-rgb),.10), rgba(var(--orange-rgb),.02) 65%); }
+  .actions{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:12px 16px; margin-top:26px; }
+  .cta{ display:inline-flex; align-items:center; gap:10px; padding:15px 30px; background:var(--orange); color:#fff; font-family:var(--mono); font-size:13px; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; box-shadow:0 14px 30px -12px rgba(var(--orange-rgb),.7); transition:transform .2s ease, background .2s ease; }
+  .cta:hover{ transform:translateY(-2px); background:var(--orange-lt); }
+  .cta.ghost{ background:#fff; color:#16181b; border:1px solid rgba(0,0,0,.16); box-shadow:0 10px 24px -16px rgba(0,0,0,.5); }
+  .cta.ghost:hover{ border-color:var(--orange); color:var(--orange); }
+  .cta .arw{ transition:transform .2s ease; }
+  .cta:hover .arw{ transform:translateX(4px); }
+  .back{ display:inline-block; margin-top:38px; font-family:var(--mono); font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:#9a9089; text-decoration:none; transition:color .2s ease; }
+  .back:hover{ color:#16181b; }
+
+  /* scroll reveal */
+  .subpage .reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+  .subpage .reveal.in{ opacity:1; transform:none; }
+  /* the bento box itself shows immediately; its tiles cascade in (JS adds .show) */
+  .bento.reveal{ opacity:1; transform:none; }
+  .subpage .kicker.reveal, .subpage h2.reveal{ transition:opacity .6s ease, transform .6s ease; }
+
+  /* ===== ENHANCED MOTION & VISUAL DETAIL ===== */
+  /* keep the accent tile on-brand while it lifts */
+  .t-accent.show:hover{ background:linear-gradient(150deg, var(--orange), #e8490f); box-shadow:0 24px 48px -18px rgba(var(--orange-rgb),.5); }
+
+  /* feature tile — premium FLIP card (icon+title front, description on the dark back) */
+  .t-feat{ perspective:1300px; min-height:clamp(208px,24vh,250px); padding:0; overflow:visible; }
+  .t-feat.show:hover{ transform:none; background:transparent; z-index:6; box-shadow:0 26px 54px -20px rgba(0,0,0,.30); }
+  .ff{ position:absolute; inset:0; transform-style:preserve-3d; transition:transform .7s cubic-bezier(.3,.75,.2,1); }
+  .t-feat.show:hover .ff, .t-feat:focus-within .ff{ transform:rotateY(180deg); }
+  .ff-face{ position:absolute; inset:0; display:flex; flex-direction:column; padding:26px; box-sizing:border-box; -webkit-backface-visibility:hidden; backface-visibility:hidden; }
+  /* front — icon + big title, vertically centred (no empty gap) */
+  .ff-front{ background:#fff; justify-content:center; gap:22px; }
+  .ff-front .fi{ width:54px; height:54px; display:grid; place-items:center; background:rgba(var(--orange-rgb),.10); color:var(--orange); transition:transform .4s cubic-bezier(.2,.7,.2,1); }
+  .ff-front .fi svg{ width:27px; height:27px; stroke:currentColor; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .t-feat.show:hover .ff-front .fi{ transform:rotate(-8deg) scale(1.05); }
+  .ff-front .num{ position:absolute; top:20px; right:22px; font-family:var(--mono); font-size:clamp(28px,3vw,42px); font-weight:500; color:rgba(0,0,0,.10); line-height:1; }
+  .ff-front h3{ font-size:clamp(22px,2.6vw,30px); font-weight:700; color:#16181b; margin:0; line-height:1.14; letter-spacing:-.01em; max-width:15ch; }
+  /* back — dark premium reveal */
+  .ff-back{ transform:rotateY(180deg); background:linear-gradient(150deg,#2c2521,#14100c); color:#fff; justify-content:center; box-shadow:inset 3px 0 0 var(--orange); }
+  .ff-back .ff-n{ font-family:var(--mono); font-size:11px; letter-spacing:1.4px; text-transform:uppercase; color:var(--orange-lt); margin-bottom:13px; }
+  .ff-back p{ font-family:var(--mono); font-size:13.5px; line-height:1.7; color:#e9e4df; margin:0; }
+  .ff-back .ff-more{ display:inline-flex; align-items:center; gap:8px; margin-top:18px; font-family:var(--mono); font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase; color:var(--orange); }
+  .ff-back .ff-more i{ font-style:normal; transition:transform .25s ease; }
+  .t-feat.show:hover .ff-more i{ transform:translateX(4px); }
+  .flip-hint{ font-family:var(--mono); font-size:11px; letter-spacing:1px; text-transform:uppercase; color:#9a9089; margin:14px 0 0; text-align:right; }
+
+  /* touch / reduced-motion: no flip — stack both faces so the text is always visible */
+  @media (hover:none), (prefers-reduced-motion:reduce){
+    .t-feat{ perspective:none; min-height:0; }
+    .ff{ position:static; transform:none !important; }
+    .ff-face{ position:static; backface-visibility:visible; transform:none !important; }
+    .ff-front{ padding-bottom:6px; }
+    .ff-front h3{ margin-top:14px; }
+    .ff-back{ background:none; color:inherit; box-shadow:none; padding-top:0; justify-content:flex-start; }
+    .ff-back .ff-n, .ff-back .ff-more{ display:none; }
+    .ff-back p{ color:#5e554d; }
+  }
+
+  /* founder tile — warm gradient + photo motion */
+  .t-founder{ background:linear-gradient(140deg,#ffffff, #fff5ef); }
+  .f-photo{ filter:grayscale(1) contrast(1.03); transition:transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease, filter .5s ease; }
+  .f-photo:hover{ filter:grayscale(0) contrast(1); }   /* colour up when the cursor is on the photo */
+  .t-founder.show:hover .f-photo{ transform:scale(1.04) rotate(-1deg); box-shadow:0 26px 46px -16px rgba(var(--orange-rgb),.55); }
+
+  /* accent tile — slow light sheen */
+  .t-accent{ position:relative; }
+  .t-accent::after{ content:""; position:absolute; top:0; left:-60%; width:45%; height:100%; background:linear-gradient(120deg, transparent, rgba(255,255,255,.30), transparent); transform:skewX(-18deg); animation:accSheen 6s ease-in-out infinite; pointer-events:none; }
+  @keyframes accSheen{ 0%,100%{ left:-60%; } 55%,72%{ left:135%; } }
+
+  /* checklist — ticks draw themselves when the panel appears */
+  .checks li{ transition:color .2s ease; }
+  .checks li:hover{ color:var(--orange); }
+  .checks li .ck{ transition:background .25s ease, color .25s ease, transform .3s ease; }
+  .checks li:hover .ck{ background:var(--orange); color:#fff; transform:scale(1.08); }
+  .checks li .ck svg path{ stroke-dasharray:26; stroke-dashoffset:26; }
+  .t.show .checks li .ck svg path{ animation:ckDraw .6s ease .2s forwards; }
+  @keyframes ckDraw{ to{ stroke-dashoffset:0; } }
+
+  /* mission / vision tile icon badges */
+  .t-ic{ width:42px; height:42px; display:grid; place-items:center; background:rgba(var(--orange-rgb),.10); color:var(--orange); margin-bottom:14px; transition:background .25s ease, color .25s ease, transform .35s cubic-bezier(.2,.7,.2,1); }
+  .t-ic svg{ width:21px; height:21px; stroke:currentColor; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .t.show:hover .t-ic{ background:var(--orange); color:#fff; transform:scale(1.08) rotate(-5deg); }
+
+  /* quick-fact tile icon badges */
+  .t-fact{ align-items:flex-start; }
+  .fa-ic{ width:34px; height:34px; display:grid; place-items:center; background:rgba(var(--orange-rgb),.10); color:var(--orange); margin-bottom:12px; transition:background .25s ease, color .25s ease, transform .3s ease; }
+  .fa-ic svg{ width:17px; height:17px; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .t-fact.show:hover .fa-ic{ background:var(--orange); color:#fff; transform:rotate(-6deg) scale(1.1); }
+  /* accent tile: white icon chip */
+  .t-accent .fa-ic{ background:rgba(255,255,255,.22); color:#fff; }
+  .t-accent.show:hover .fa-ic{ background:#fff; color:var(--orange); transform:rotate(-6deg) scale(1.1); }
+
+  @media (prefers-reduced-motion: reduce){
+    .subpage .reveal{ opacity:1; transform:none; }
+    .t{ opacity:1 !important; transform:none !important; }
+    .t-accent::after{ animation:none; }
+    .checks li .ck svg path{ stroke-dashoffset:0 !important; animation:none !important; }
+  }
+
+  /* footer */
+  .sub-footer{ border-top:1px solid rgba(0,0,0,.09); }
+  .sub-footer-inner{ max-width:1000px; margin:0 auto; padding:34px 24px; display:flex; flex-wrap:wrap; gap:16px 28px; align-items:center; justify-content:space-between; }
+  .sub-footer .brand{ font-family:var(--mono); font-size:13px; letter-spacing:2px; text-transform:uppercase; color:#16181b; }
+  .sub-footer .brand span{ color:var(--orange); }
+  .sub-footer nav{ display:flex; flex-wrap:wrap; gap:22px; }
+  .sub-footer nav a{ font-family:var(--mono); font-size:12px; letter-spacing:1px; text-transform:uppercase; color:#8a8f96; text-decoration:none; transition:color .2s ease; }
+  .sub-footer nav a:hover{ color:var(--orange); }
+  .sub-footer .copy{ font-family:var(--mono); font-size:11px; letter-spacing:.5px; color:#a8adb4; width:100%; }
+</style>
+
+<a class="site-logo" href="/" aria-label="ONROL, AI Execution School, home">
+  <img src="/home-glydi/logo-mark.png" alt="ONROL, AI Execution School">
+</a>
+
+<nav class="nav">
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true"></span>
+    <a href="/programs">Programs</a>
+    <span class="sep" aria-hidden="true"></span>
+    <a href="/about">About</a>
+    <span class="sep" aria-hidden="true"></span>
+    <a href="/contact">Contact</a>
+  <a class="nav-apply" href="/programs/ai-generalist">Apply</a>
+  </div>
+</nav>
+
+<header class="pagehero">
+  <div class="pagehero-inner">
+    <p class="ph-eyebrow">About ONROL</p>
+    <h1 class="ph-title">India's <span>AI Execution School</span></h1>
+    <p class="ph-sub">A premium, project based AI school with live mentorship, build real AI solutions, not just learn concepts.</p>
+  </div>
+</header>
+
+<main class="subpage has-hero">
+
+  <!-- BENTO: FOUNDER + MISSION/VISION -->
+  <div class="bento reveal">
+    <div class="t t-founder s2 r2">
+      <img class="f-photo" src="/home-glydi/mam-0001.png" alt="Dr. Neeraja Reddy">
+      <div class="f-body">
+        <span class="f-k">Founder &amp; CEO</span>
+        <div class="f-name">Dr. Neeraja Reddy</div>
+        <p>16+ years across healthcare, research, and education, she built ONROL to make AI learning practical, accessible, and outcome driven.</p>
+      </div>
+    </div>
+    <div class="t s2">
+      <span class="t-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span>
+      <p class="t-k">Our Mission</p>
+      <p>Bridge the gap between learning AI and applying it, practical, project based education for the future of work.</p>
+    </div>
+    <div class="t s2">
+      <span class="t-ic"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
+      <p class="t-k">Our Vision</p>
+      <p>India's most trusted AI ecosystem, where every learner can create, innovate, and succeed with AI.</p>
+    </div>
+  </div>
+
+  <!-- WHY CHOOSE -->
+  <p class="kicker reveal">Why Choose ONROL?</p>
+  <h2 class="reveal">Built to make you a <span>builder</span>.</h2>
+  <div class="bento reveal">
+    <div class="t t-feat s2" tabindex="0">
+      <div class="ff">
+        <div class="ff-face ff-front">
+          <span class="fi"><svg viewBox="0 0 24 24"><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg></span>
+          <span class="num">01</span>
+          <h3>Project Based Learning</h3>
+        </div>
+        <div class="ff-face ff-back">
+          <span class="ff-n">Project Based Learning</span>
+          <p>Build real AI applications, not just watch lectures.</p>
+          <span class="ff-more">Hands on <i>&rarr;</i></span>
+        </div>
+      </div>
+    </div>
+    <div class="t t-feat s2" tabindex="0">
+      <div class="ff">
+        <div class="ff-face ff-front">
+          <span class="fi"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <span class="num">02</span>
+          <h3>Expert Mentorship</h3>
+        </div>
+        <div class="ff-face ff-back">
+          <span class="ff-n">Expert Mentorship</span>
+          <p>Live sessions with experienced industry professionals.</p>
+          <span class="ff-more">Live 1:1 <i>&rarr;</i></span>
+        </div>
+      </div>
+    </div>
+    <div class="t t-feat s2" tabindex="0">
+      <div class="ff">
+        <div class="ff-face ff-front">
+          <span class="fi"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span>
+          <span class="num">03</span>
+          <h3>Industry Relevant Curriculum</h3>
+        </div>
+        <div class="ff-face ff-back">
+          <span class="ff-n">Industry Relevant Curriculum</span>
+          <p>Generative AI, AI agents, automation, and no code.</p>
+          <span class="ff-more">Always current <i>&rarr;</i></span>
+        </div>
+      </div>
+    </div>
+    <div class="t t-feat s2" tabindex="0">
+      <div class="ff">
+        <div class="ff-face ff-front">
+          <span class="fi"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+          <span class="num">04</span>
+          <h3>Career Focused Approach</h3>
+        </div>
+        <div class="ff-face ff-back">
+          <span class="ff-n">Career Focused Approach</span>
+          <p>A portfolio that lands jobs, clients, and ventures.</p>
+          <span class="ff-more">Get hired <i>&rarr;</i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="flip-hint reveal">Hover a card to flip it &rarr;</p>
+
+  <!-- QUICK FACTS -->
+  <p class="kicker reveal">Quick Facts</p>
+  <h2 class="reveal">ONROL at a glance.</h2>
+  <div class="bento reveal">
+    <div class="t t-fact"><span class="fa-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><span class="k">Founded</span><span class="val">2025</span></div>
+    <div class="t t-fact"><span class="fa-ic"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><span class="k">Founder</span><span class="val">Dr. Neeraja Reddy</span></div>
+    <div class="t t-fact"><span class="fa-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="k">Headquarters</span><span class="val">Hyderabad, Telangana</span></div>
+    <div class="t t-fact"><span class="fa-ic"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><span class="k">Learning Mode</span><span class="val">Live Online &amp; Offline</span></div>
+    <div class="t t-fact"><span class="fa-ic"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.6.6-5 4.4 1.5 6.5L12 17l-5.9 3.3 1.5-6.5-5-4.4 6.6-.6z"/></svg></span><span class="k">Flagship</span><span class="val">AI Generalist Program</span></div>
+    <div class="t t-fact"><span class="fa-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="k">Duration</span><span class="val">3 Months</span></div>
+    <div class="t t-fact"><span class="fa-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg></span><span class="k">Certificate</span><span class="val">ONROL Certificate</span></div>
+    <div class="t t-accent"><span class="fa-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg></span><p class="t-k">Support</p><div class="big">English, Hindi, Telugu</div></div>
+  </div>
+
+  <!-- LEARN + SERVE (paired panels) -->
+  <p class="kicker reveal">What You'll Learn &amp; Who We Serve</p>
+  <div class="bento reveal">
+    <div class="t s2">
+      <p class="t-k">What You'll Learn</p>
+      <div class="chips">
+        <span>AI Fundamentals</span>
+        <span>Generative AI</span>
+        <span>AI Agents</span>
+        <span>Prompt Engineering</span>
+        <span>Automation</span>
+        <span>AI Websites</span>
+        <span>No Code Tools</span>
+        <span>Business Automation</span>
+        <span>AI Productivity</span>
+      </div>
+    </div>
+    <div class="t s2">
+      <p class="t-k">Who We Serve</p>
+      <div class="chips">
+        <span>Students</span>
+        <span>Professionals</span>
+        <span>Entrepreneurs</span>
+        <span>Freelancers</span>
+        <span>Business Owners</span>
+        <span>Educators</span>
+        <span>Career Switchers</span>
+        <span>Creators</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEARNING EXPERIENCE (wide panel) -->
+  <p class="kicker reveal">Learning Experience</p>
+  <div class="bento reveal">
+    <div class="t s4">
+      <p class="t-k">What every learner gets</p>
+      <ul class="checks">
+        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Live Interactive Classes</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Mentor Guidance</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Practical Assignments</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Hands on Projects</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Community Access</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Career Support</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Certificate of Completion</li>
+      </ul>
+    </div>
+  </div>
+
+  <a class="back" href="/">&larr; Back to home</a>
+</main>
+
+<footer class="footer" id="contact">
+  <div class="footer-top">
+    <div class="f-brand">
+      <a class="f-logo" href="/">ONROL</a>
+      <p class="f-copy">&copy; 2026 ONROL, AI Execution School, Hyderabad. All rights reserved.</p>
+      <div class="f-socials">
+        <a href="https://instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1"/></svg></a>
+        <a href="https://linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10.5v6M7 7.5v.01M11.5 16.5v-3.2a2 2 0 0 1 4 0v3.2M11.5 16.5v-6"/></svg></a>
+        <a href="https://youtube.com/" target="_blank" rel="noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M11 9.6l4 2.4-4 2.4z"/></svg></a>
+        <a href="mailto:info@onrol.in" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7.5l8 5.5 8-5.5"/></svg></a>
+      </div>
+    </div>
+    <nav class="f-cols" aria-label="Footer links">
+      <div class="f-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="/programs/ai-generalist">AI Generalist</a></li>
+          <li><a href="/programs/ai-architect">AI Architect</a></li>
+          <li><a href="/soc-analyst">SOC Analyst</a></li>
+          <li><a href="/cybersecurity">Cyber Security</a></li>
+          <li><a href="/programs">All Programs</a></li>
+          <li><a href="/masterclass">Free Masterclass</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/glossary">Glossary</a></li>
+          <li><a href="/questions">FAQs</a></li>
+          <li><a href="/tools/ai-skills-quiz">AI Skills Quiz</a></li>
+          <li><a href="/why-now">Why AI matters now</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About ONROL</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-and-conditions">Terms</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-news">
+    <div class="f-news-text">
+      <h4>Join our newsletter</h4>
+      <p>Useful AI tips for India, straight to your inbox. No spam.</p>
+    </div>
+    <form class="f-form" id="newsletterForm">
+      <label for="newsletterEmail" class="visually-hidden">Email address</label>
+      <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" autocomplete="email" aria-label="Email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <p class="f-news-msg" id="newsMsg" role="status" hidden>Thanks, you&rsquo;re on the list.</p>
+</footer>
+
+<div class="lead-modal" id="leadModal" hidden>
+  <div class="lead-card" role="dialog" aria-modal="true" aria-labelledby="leadTitle">
+    <button class="lead-x" id="leadClose" type="button" aria-label="Close">&times;</button>
+    <p class="lead-eyebrow">Apply to ONROL</p>
+    <h3 id="leadTitle">Start with a quick hello.</h3>
+    <p class="lead-sub">Drop your details and our team reaches out about the next cohort, takes 20 seconds.</p>
+    <form id="leadForm" class="lead-form">
+      <input type="text" id="leadName" name="name" placeholder="Full name" autocomplete="name" required>
+      <input type="email" id="leadEmail" name="email" placeholder="Email address" autocomplete="email" required>
+      <input type="tel" id="leadPhone" name="phone" placeholder="Phone / WhatsApp number" autocomplete="tel" required>
+      <button type="submit" class="lead-submit">Apply Now</button>
+    </form>
+    <p class="lead-fine">No spam. We&rsquo;ll only contact you about your application.</p>
+  </div>
+</div>
+
+
+
+
+
+

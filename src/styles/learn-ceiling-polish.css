@@ -1,0 +1,199 @@
+/* =====================================================================
+   learn.onrol.in — ceiling polish.
+   Token-only refinements layered over learn-shell.css. Buttons, inputs,
+   pills, skeletons, focus rings, mobile responsiveness.
+   Cascade order: import LAST in main.tsx so this wins everything.
+   ===================================================================== */
+
+/* ---------- Focus visible everywhere ---------- */
+:where(button, a, input, select, textarea, [tabindex]):focus { outline: none; }
+:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 106, 61, 0.30);
+  border-radius: 10px;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- Brand buttons (.lh-btn was orange-only before) ---------- */
+.lh-btn-primary,
+.aes-btn-primary,
+.learn-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  background: linear-gradient(180deg, var(--onrol-brand, #ff6a3d) 0%, var(--onrol-brand-deep, #d94a1f) 100%);
+  color: #fff;
+  border: 1px solid var(--onrol-brand-deep, #d94a1f);
+  box-shadow: 0 4px 10px rgba(255, 106, 61, 0.28);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 120ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 200ms;
+  font-family: inherit;
+}
+.lh-btn-primary:hover,
+.aes-btn-primary:hover,
+.learn-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(255, 106, 61, 0.36);
+}
+.lh-btn-primary:active,
+.aes-btn-primary:active,
+.learn-btn-primary:active { transform: translateY(0); }
+
+.lh-btn-secondary,
+.learn-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  background: #fff;
+  color: #0f172a;
+  border: 1px solid #d6d9e0;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 120ms, background 120ms;
+  font-family: inherit;
+}
+.lh-btn-secondary:hover,
+.learn-btn-secondary:hover {
+  background: #fff7ed;
+  border-color: var(--onrol-brand, #ff6a3d);
+  color: #c2410c;
+}
+
+/* ---------- Inputs ---------- */
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+  font-family: inherit;
+  font-size: 13.5px;
+  color: #0f172a;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  transition: border-color 120ms, box-shadow 120ms;
+}
+input[type="text"]:focus-visible,
+input[type="search"]:focus-visible,
+input[type="email"]:focus-visible,
+input[type="tel"]:focus-visible,
+input[type="password"]:focus-visible,
+input[type="number"]:focus-visible,
+input[type="date"]:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+  border-color: var(--onrol-brand, #ff6a3d);
+  box-shadow: 0 0 0 3px rgba(255, 106, 61, 0.30);
+}
+
+/* ---------- Course tile refinement (LearnHome + MyCourses) ---------- */
+.lh-tile {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform   200ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow  200ms,
+    border-color 200ms;
+}
+.lh-tile:hover {
+  transform: translateY(-3px);
+  border-color: var(--onrol-brand, #ff6a3d);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08), 0 4px 8px rgba(15, 23, 42, 0.04);
+}
+
+/* ---------- Skeleton ---------- */
+.learn-skeleton {
+  display: block;
+  background: linear-gradient(90deg, #f3f4f6 0%, #f9fafb 50%, #f3f4f6 100%);
+  background-size: 200% 100%;
+  animation: learn-skel 1.4s ease-in-out infinite;
+  border-radius: 6px;
+}
+@keyframes learn-skel {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .learn-skeleton { animation: none; opacity: 0.7; }
+}
+
+/* ---------- Empty state ---------- */
+.learn-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 16px;
+  gap: 8px;
+}
+.learn-empty-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff7ed;
+  color: #c2410c;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+.learn-empty-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+.learn-empty-body {
+  margin: 0;
+  font-size: 12.5px;
+  color: #64748b;
+  max-width: 280px;
+  line-height: 1.3;
+}
+
+/* ---------- Selection ---------- */
+::selection {
+  background: rgba(255, 106, 61, 0.18);
+  color: #9a3412;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: #d6d9e0;
+  border-radius: 999px;
+  border: 2px solid #fafbfc;
+}
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }

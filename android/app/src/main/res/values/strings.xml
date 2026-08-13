@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ONROL</string>
+    <string name="title_activity_main">ONROL</string>
+    <string name="package_name">com.onrol.app</string>
+    <string name="custom_url_scheme">com.onrol.app</string>
+</resources>
