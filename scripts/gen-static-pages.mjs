@@ -377,6 +377,12 @@ for (const [src, meta] of Object.entries(PAGES)) {
     raw = raw.replace(/<\/main>/, seoLinksBlock() + "\n</main>");  // internal links → programmatic SEO pages
   }
   let html = fixNavActive(fixAbsolute(rewriteLinks(rewriteAssets(raw))));
+  // Footer: link the free Prompt Library alongside the AI Skills Quiz (internal
+  // inbound links to the linkable-asset tools from every crawled page).
+  html = html.replace(
+    '<li><a href="/tools/ai-skills-quiz">AI Skills Quiz</a></li>',
+    '<li><a href="/tools/ai-skills-quiz">AI Skills Quiz</a></li>\n          <li><a href="/tools/ai-prompt-library">AI Prompt Library</a></li>',
+  );
   // Home SERP tuning (ooty.io audit): title ≤60 chars with a number; meta
   // description trimmed from 230 → ~150 chars so Google shows it untruncated.
   if (src === "index.html") {
