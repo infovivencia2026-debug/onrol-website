@@ -8,6 +8,10 @@
   "courses/ai-agents": "f862a5b614f9",
   "courses/vibe-coding": "2036c03049de",
   "courses/ai-digital-marketing": "97b124439268",
+  "courses/python-for-ai": "bd36dbee0dcc",
+  "courses/sql": "a6d0034ef76b",
+  "courses/ai-app-development": "da3cb5dc5545",
+  "courses/ai-content-creation": "d30dde990a9c",
   "ai-course-in-bangalore": "93bb1a8018a5",
   "ai-course-in-chennai": "c38db4eac932",
   "ai-course-in-pune": "166dfb5bc2c5",
@@ -25,5 +29,16 @@
   "ai-training-for-colleges": "1b2926dcf20d",
   "corporate-ai-training": "524bdf34a1af",
   "ai-certification-course": "cd5c3f432f61",
-  "ai-course-with-placement-support": "964624f0f38d"
+  "ai-course-in-visakhapatnam": "8148f86382f2",
+  "ai-course-in-vijayawada": "5c99e9e3a748",
+  "ai-course-in-warangal": "3b560317abb4",
+  "ai-course-in-coimbatore": "565a4f4eb036",
+  "ai-course-in-indore": "4d604d9c1eac",
+  "ai-course-in-jaipur": "d4120299d8dd",
+  "courses/machine-learning": "ab5c2f020fba",
+  "courses/chatgpt": "e0652e043c90",
+  "ai-course-for-managers": "b6302856bec6",
+  "ai-course-for-teachers": "249c91b78bf0",
+  "ai-course-for-healthcare-professionals": "028a04500c5d",
+  "ai-course-with-placement-support": "8941398915a1"
 }
