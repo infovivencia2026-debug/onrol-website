@@ -1,0 +1,1195 @@
+{
+  "_note": "Single source of truth for programmatic SEO pages. Edit content here; run `node scripts/gen-seo.mjs` to regenerate static HTML (no browser), then `node scripts/deploy-seo.mjs` to push only changed files. Geo pages MUST carry genuinely unique per-city content (context/outcomes/faqs) — near-duplicate city pages do not get indexed (proven in GSC).",
+  "pages": [
+    {
+      "type": "course",
+      "slug": "courses/ai-automation",
+      "title": "AI Automation Course (n8n, Make, Zapier) — Live Online | ONROL",
+      "description": "Learn to automate real business workflows with AI — n8n, Make, Zapier, webhooks, WhatsApp, email and multi-step agents. Live online, project-first. Build automations you can ship the same week.",
+      "eyebrow": "AI Automation Course · Live Online",
+      "h1": "Automate the busywork with",
+      "h1accent": "AI",
+      "lead": "Turn repetitive business tasks into automations that run themselves. Over live, hands-on sessions you build real workflows — lead capture, WhatsApp and email bots, Google Workspace automation and multi-step AI agents — using n8n, Make and Zapier.",
+      "meta": [
+        { "icon": "clock", "text": "Live online · hands-on" },
+        { "icon": "screen", "text": "Project-first, not slides" },
+        { "icon": "shield", "text": "No prior coding needed" }
+      ],
+      "outcomes": [
+        { "title": "Ship working automations", "text": "Build and deploy real workflows — triggers, nodes, webhooks and credentials — that run without you." },
+        { "title": "Master the tool stack", "text": "n8n, Make and Zapier side by side, so you pick the right tool for each job instead of guessing." },
+        { "title": "Connect anything to anything", "text": "Gmail, Sheets, WhatsApp, Telegram, CRMs and APIs wired into automated, AI-driven pipelines." },
+        { "title": "Add AI agents to workflows", "text": "Go beyond simple automation — plug LLM agents into your flows for decisions, replies and research." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "A lead-collection automation that captures, enriches and routes new leads",
+        "Webhook- and form-driven workflows for real business processes",
+        "Gmail + Google Sheets automation across the Google ecosystem",
+        "WhatsApp, email and Telegram automations for customer communication",
+        "An AI agent embedded in a workflow that makes decisions, not just moves data"
+      ],
+      "faqs": [
+        { "q": "Do I need to know how to code?", "a": "No. AI automation with n8n, Make and Zapier is visual and node-based. You'll build production workflows without writing traditional code — that's the point of the course." },
+        { "q": "Which automation tool does the course focus on?", "a": "You learn n8n in depth (the most flexible, self-hostable option) and see Make and Zapier alongside it, so you can choose the right tool for each use case rather than being locked into one." },
+        { "q": "Is this course live or recorded?", "a": "Live and online, with hands-on building in every session. You leave each class with a working automation, and recordings are shared for revision." },
+        { "q": "What will I have to show at the end?", "a": "Real, deployed automations in your portfolio — lead capture, communication bots and an AI-agent workflow — the kind of proof that gets freelance clients and jobs. ONROL is project-first: you keep everything you build." }
+      ],
+      "cta": "Reserve your seat",
+      "form": { "source": "AI Automation Course", "campaign": "course-ai-automation", "program": "AI Automation Course" },
+      "breadcrumb": [ { "name": "Courses", "url": "https://onrol.in/programs" }, { "name": "AI Automation Course", "url": "https://onrol.in/courses/ai-automation/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "courses/data-analytics-with-ai",
+      "title": "Data Analytics Course with AI (Python, SQL, Power BI) | ONROL",
+      "description": "Learn data analytics the AI-first way — Python, Pandas, SQL, Power BI, statistics and EDA, with AI accelerating every step. Live online, project-first. Build real analytics dashboards and reports you keep.",
+      "eyebrow": "Data Analytics Course · AI-First",
+      "h1": "Data analytics, accelerated by",
+      "h1accent": "AI",
+      "lead": "Learn to turn raw data into decisions — Python, Pandas, SQL, Power BI, statistics and exploratory analysis — with AI speeding up cleaning, analysis and visualisation at every step. Live online and project-first: you build real dashboards and reports, not just notebooks.",
+      "meta": [
+        { "icon": "clock", "text": "Live online · hands-on" },
+        { "icon": "screen", "text": "Real datasets, real dashboards" },
+        { "icon": "shield", "text": "Beginner-friendly" }
+      ],
+      "outcomes": [
+        { "title": "Analyse data end to end", "text": "Clean, transform and analyse real datasets with Python and Pandas — and let AI accelerate the tedious parts." },
+        { "title": "Query databases with SQL", "text": "Write real SQL — joins, aggregations, window functions — to pull answers straight from relational data." },
+        { "title": "Build BI dashboards", "text": "Turn analysis into Power BI dashboards with DAX, slicers and KPIs that stakeholders actually use." },
+        { "title": "Think statistically", "text": "Descriptive stats, distributions and hypothesis testing so your conclusions hold up, not just look good." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "A data-cleaning pipeline in Python + Pandas on a messy real dataset",
+        "SQL queries and reports against a real relational database",
+        "An interactive Power BI dashboard with DAX measures and slicers",
+        "An exploratory data analysis (EDA) notebook with visual storytelling",
+        "An end-to-end analytics case study — data to dashboard to insight"
+      ],
+      "contextKicker": "Who it's for",
+      "contextHeading": "Analytics skills, minus the years of grind",
+      "context": [
+        "Data analytics is one of the most in-demand skill sets in India — but most courses teach it the slow, pre-AI way. ONROL teaches the same fundamentals (Python, SQL, statistics, Power BI) while using AI to accelerate the parts that used to take months to get fluent in: writing queries, cleaning data, generating charts and explaining results. You learn the concepts properly and move faster.",
+        "It suits freshers targeting analyst roles, working professionals who want to add data skills to their job, and business people who want to stop waiting on someone else for reports. Because ONROL is project-first, you finish with real dashboards and analyses in a portfolio — the proof that gets analytics interviews and freelance work."
+      ],
+      "faqs": [
+        { "q": "Do I need a maths or coding background for data analytics?", "a": "No. The course starts from fundamentals — basic Python, then Pandas, SQL and statistics — and uses AI to smooth the learning curve. Beginners and career switchers are exactly who it's built for." },
+        { "q": "Is this a data analytics or data science course?", "a": "It's the analytics core — Python, SQL, statistics, EDA and Power BI — with an AI-first workflow. It's the practical, employable foundation that data-analyst and junior data-science roles hire for." },
+        { "q": "Will I build a portfolio?", "a": "Yes. You finish with real dashboards, SQL reports and an end-to-end analytics case study you keep — the demonstrable work that wins analytics interviews and freelance projects." },
+        { "q": "How is AI used in the course?", "a": "AI accelerates the workflow — drafting SQL, cleaning data, generating and explaining visualisations — so you get fluent faster while still learning the underlying concepts properly." }
+      ],
+      "cta": "Reserve your seat",
+      "form": { "source": "Data Analytics Course", "campaign": "course-data-analytics", "program": "Data Analytics with AI" },
+      "breadcrumb": [ { "name": "Courses", "url": "https://onrol.in/programs" }, { "name": "Data Analytics with AI", "url": "https://onrol.in/courses/data-analytics-with-ai/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "courses/power-bi",
+      "title": "Power BI Course — Dashboards, DAX & Data Modelling | ONROL",
+      "description": "Learn Power BI hands-on — Power Query, data modelling, DAX, interactive dashboards, slicers, RLS and publishing. Live online, project-first. Build real business dashboards you keep in your portfolio.",
+      "eyebrow": "Power BI Course · Live Online",
+      "h1": "Turn data into dashboards with",
+      "h1accent": "Power BI",
+      "lead": "Learn Power BI the way businesses actually use it — import and shape data with Power Query, model it, write DAX, and build interactive dashboards with slicers, KPIs and row-level security. Live online and project-first: you build real dashboards, not screenshots.",
+      "meta": [
+        { "icon": "clock", "text": "Live online · hands-on" },
+        { "icon": "screen", "text": "Real business dashboards" },
+        { "icon": "shield", "text": "No coding needed" }
+      ],
+      "outcomes": [
+        { "title": "Shape data with Power Query", "text": "Import from Excel, CSV, databases and the web, then clean and transform it into a proper model." },
+        { "title": "Write DAX that works", "text": "Measures, calculated columns and time intelligence — the DAX that makes dashboards genuinely useful." },
+        { "title": "Build interactive dashboards", "text": "Visuals, slicers, matrices and drill-downs that stakeholders can explore themselves." },
+        { "title": "Publish & secure", "text": "Publish, share, and apply row-level security so the right people see the right data." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "A cleaned, modelled dataset built with Power Query",
+        "A sales or KPI dashboard with DAX measures and time intelligence",
+        "Interactive reports with slicers, drill-through and matrices",
+        "A published dashboard with row-level security applied",
+        "A portfolio-ready BI project on a real business scenario"
+      ],
+      "contextKicker": "Who it's for",
+      "contextHeading": "The BI skill every data role expects",
+      "context": [
+        "Power BI is the reporting layer of most Indian businesses — and knowing it well is a fast, practical route into analytics and business-intelligence work. This course focuses on the parts that matter in real jobs: modelling data correctly, writing DAX that doesn't break, and building dashboards people actually use, then publishing and securing them.",
+        "It suits analysts, finance and operations professionals, and freshers who want a concrete, employable skill quickly. ONROL is project-first, so you finish with real dashboards in a portfolio — the proof that gets BI and analytics interviews and freelance reporting work."
+      ],
+      "faqs": [
+        { "q": "Do I need coding for Power BI?", "a": "No. Power BI is largely visual — Power Query and DAX are formula-based, not traditional programming. The course is built for non-coders, including finance, operations and business professionals." },
+        { "q": "Is Power BI worth learning in 2026?", "a": "Yes. It remains one of the most widely used BI tools in Indian companies, and a strong, practical Power BI skill is an employable, in-demand addition to almost any data or business role." },
+        { "q": "What will I have to show at the end?", "a": "Real, published dashboards on business scenarios — with DAX, slicers and row-level security — in a portfolio you keep. That demonstrable work is what wins BI interviews and freelance projects." },
+        { "q": "Is this live or recorded?", "a": "Live and online, with hands-on building in every session and recordings shared for revision." }
+      ],
+      "cta": "Reserve your seat",
+      "form": { "source": "Power BI Course", "campaign": "course-power-bi", "program": "Power BI Course" },
+      "breadcrumb": [ { "name": "Courses", "url": "https://onrol.in/programs" }, { "name": "Power BI Course", "url": "https://onrol.in/courses/power-bi/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "courses/prompt-engineering",
+      "title": "Prompt Engineering Course — Advanced Prompting & LLMs | ONROL",
+      "description": "Master prompt engineering hands-on — structured prompts, advanced techniques, context engineering, JSON outputs, custom GPTs and local LLMs. Live online, project-first. Build AI assistants and prompt systems you keep.",
+      "eyebrow": "Prompt Engineering Course · Live Online",
+      "h1": "Get real work out of",
+      "h1accent": "LLMs",
+      "lead": "Learn to make large language models do reliable, useful work — structured prompts, advanced techniques, context engineering, token optimisation, JSON outputs, custom GPTs and even local models. Live online and project-first: you build prompt systems and AI assistants, not just chat.",
+      "meta": [
+        { "icon": "clock", "text": "Live online · hands-on" },
+        { "icon": "screen", "text": "Build real AI assistants" },
+        { "icon": "shield", "text": "No coding needed" }
+      ],
+      "outcomes": [
+        { "title": "Write prompts that work", "text": "Structured, repeatable prompts for real tasks — not lucky one-offs that break next time." },
+        { "title": "Master advanced techniques", "text": "Context engineering, token optimisation, structured JSON outputs and reliable multi-step prompting." },
+        { "title": "Build custom GPTs", "text": "Turn prompts into reusable custom GPTs and AI assistants tailored to a job or business." },
+        { "title": "Run models your way", "text": "Understand model selection across ChatGPT, Claude and Gemini, and run local LLMs with Ollama." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "A reusable prompt library for real business and content tasks",
+        "A custom GPT / AI assistant tuned to a specific use case",
+        "Structured JSON-output prompts for automation-ready results",
+        "A context-engineered workflow that stays reliable at scale",
+        "A local LLM setup you control end to end"
+      ],
+      "contextKicker": "Who it's for",
+      "contextHeading": "The skill under every AI workflow",
+      "context": [
+        "Prompt engineering is the foundational skill behind every serious AI workflow — agents, automations, RAG systems and content engines all depend on prompts that are structured and reliable. This course goes well past 'write a good prompt' into context engineering, structured outputs and building reusable assistants, so your AI work is repeatable instead of hit-or-miss.",
+        "It suits anyone who uses AI at work — professionals, marketers, founders, students — and it's the natural first step before automation and agents. ONROL is project-first, so you finish with a prompt library, custom GPTs and assistants in a portfolio you keep and reuse."
+      ],
+      "faqs": [
+        { "q": "Is prompt engineering still a useful skill?", "a": "Yes — more than ever. As AI moves into automations, agents and RAG systems, the ability to write structured, reliable prompts and engineer context is the foundation everything else is built on." },
+        { "q": "Do I need to code?", "a": "No. Prompt engineering is done in natural language. The course is built for non-coders — professionals, marketers, founders and students who want dependable results from AI." },
+        { "q": "What will I build?", "a": "A reusable prompt library, custom GPTs and AI assistants, structured JSON workflows, and a local LLM setup — all kept in a portfolio you can reuse in your work or freelance projects." },
+        { "q": "Which AI models does it cover?", "a": "ChatGPT, Claude and Gemini for model selection, plus running local models with Ollama — so you understand strengths and trade-offs rather than relying on one tool." }
+      ],
+      "cta": "Reserve your seat",
+      "form": { "source": "Prompt Engineering Course", "campaign": "course-prompt-engineering", "program": "Prompt Engineering Course" },
+      "breadcrumb": [ { "name": "Courses", "url": "https://onrol.in/programs" }, { "name": "Prompt Engineering Course", "url": "https://onrol.in/courses/prompt-engineering/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "courses/generative-ai",
+      "title": "Generative AI Course — LLMs, Images, Audio & Video | ONROL",
+      "description": "Learn generative AI hands-on — LLMs, prompting, RAG basics, and image, audio and video generation with diffusion models. Live online, project-first. Build real generative AI projects you keep in your portfolio.",
+      "eyebrow": "Generative AI Course · Live Online",
+      "h1": "Create with",
+      "h1accent": "Generative AI",
+      "lead": "Learn generative AI across text, image, audio and video — how LLMs work, how to prompt and retrieve knowledge, and how diffusion models generate media. Live online and project-first: you build real generative projects, from AI assistants to AI-made visuals and avatars.",
+      "meta": [
+        { "icon": "clock", "text": "Live online · hands-on" },
+        { "icon": "screen", "text": "Text, image, audio & video" },
+        { "icon": "shield", "text": "No coding needed" }
+      ],
+      "outcomes": [
+        { "title": "Understand how LLMs work", "text": "Models, prompting, context and retrieval — enough to use generative AI deliberately, not by luck." },
+        { "title": "Generate images & video", "text": "Use diffusion models to create marketing creatives, visuals and AI video for real use cases." },
+        { "title": "Clone voice & build avatars", "text": "Create custom avatars and audio/video with tools like ElevenLabs and HeyGen." },
+        { "title": "Retrieve real knowledge", "text": "Build a basic RAG assistant so generative output is grounded in your own documents." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "An AI assistant grounded in your own knowledge (basic RAG)",
+        "A set of AI-generated marketing creatives and visuals",
+        "An AI-generated video for a real use case",
+        "A custom avatar and cloned voice spokesperson",
+        "A generative AI project combining text, image and media"
+      ],
+      "contextKicker": "Who it's for",
+      "contextHeading": "Generative AI you can actually ship",
+      "context": [
+        "Generative AI is the umbrella over most of today's AI excitement — chatbots, AI images, AI video, voice cloning and knowledge assistants. This course gives you a working grasp of how it functions and, more importantly, how to produce real output with it: grounded assistants, marketing media, and AI video and avatars you can use.",
+        "It suits creators, marketers, founders and professionals who want to build with generative AI rather than just read about it. ONROL is project-first, so you finish with real generative projects across text and media in a portfolio you keep."
+      ],
+      "faqs": [
+        { "q": "What does a generative AI course cover?", "a": "Both sides of generative AI: text (LLMs, prompting, basic RAG) and media (image, audio and video generation with diffusion models, plus avatars and voice cloning). You build real projects across both." },
+        { "q": "Do I need coding for generative AI?", "a": "No. The course uses no-code and AI-assisted tools throughout, so creators, marketers and professionals can build generative projects without traditional programming." },
+        { "q": "What will I have to show?", "a": "Real generative projects — a grounded AI assistant, AI-made creatives and video, and a custom avatar — kept in a portfolio you can use for work, content or freelance." },
+        { "q": "How is this different from a prompt engineering course?", "a": "Prompt engineering focuses on getting reliable results from LLMs; this generative AI course is broader, adding image, audio and video generation and basic retrieval, so you create across all media." }
+      ],
+      "cta": "Reserve your seat",
+      "form": { "source": "Generative AI Course", "campaign": "course-generative-ai", "program": "Generative AI Course" },
+      "breadcrumb": [ { "name": "Courses", "url": "https://onrol.in/programs" }, { "name": "Generative AI Course", "url": "https://onrol.in/courses/generative-ai/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "courses/rag-development",
+      "title": "RAG Course — Build Retrieval-Augmented AI Systems | ONROL",
+      "description": "Learn to build RAG systems hands-on — vector databases, chunking, embeddings, retrieval and knowledge assistants with Dify. Live online, project-first. Build real document Q&A and knowledge AI you keep.",
+      "eyebrow": "RAG Course · Live Online",
+      "h1": "Build AI that knows your",
+      "h1accent": "data",
+      "lead": "Learn Retrieval-Augmented Generation — the technique behind AI that answers from your own documents. Vector databases, chunking, embeddings, cosine similarity and retrieval pipelines, built with Dify. Live online and project-first: you ship a real document Q&A assistant.",
+      "meta": [
+        { "icon": "clock", "text": "Live online · hands-on" },
+        { "icon": "screen", "text": "Build a real knowledge AI" },
+        { "icon": "shield", "text": "No heavy coding" }
+      ],
+      "outcomes": [
+        { "title": "Understand RAG architecture", "text": "Pipelines, vector databases, chunks, embeddings and cosine similarity — how retrieval actually works." },
+        { "title": "Ground AI in real documents", "text": "Make an assistant answer from your knowledge base instead of hallucinating." },
+        { "title": "Build with Dify", "text": "Assemble a working RAG application with Dify and a vector store, end to end." },
+        { "title": "Know memory vs RAG", "text": "Choose the right approach — conversational memory, retrieval, or both — for each use case." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "A vector-database-backed retrieval pipeline from scratch",
+        "A working document Q&A assistant on real documents",
+        "A knowledge base with proper chunking and embeddings",
+        "A RAG-enabled business assistant that retrieves and responds",
+        "An enterprise-style knowledge system as a portfolio project"
+      ],
+      "contextKicker": "Who it's for",
+      "contextHeading": "The technique behind enterprise AI assistants",
+      "context": [
+        "RAG — Retrieval-Augmented Generation — is how serious AI assistants answer accurately from company data instead of making things up. It's one of the most sought-after AI skills right now, because almost every business wants an assistant that knows its own documents, policies and products. This course teaches the architecture and has you build a working system with Dify and a vector database.",
+        "It suits developers, AI builders, founders and professionals who want to create real knowledge assistants. ONROL is project-first, so you finish with a document Q&A assistant and an enterprise-style knowledge system in a portfolio you keep."
+      ],
+      "faqs": [
+        { "q": "What is a RAG course and why does it matter?", "a": "RAG (Retrieval-Augmented Generation) lets AI answer from your own documents accurately. It's one of the most in-demand AI skills because nearly every business wants an assistant grounded in its own data — and this course has you build one." },
+        { "q": "Do I need to be a heavy coder?", "a": "No. You build RAG systems with Dify and vector databases using a low-code approach, so builders and technically-minded professionals can create real retrieval systems without deep programming." },
+        { "q": "What will I build?", "a": "A working document Q&A assistant, a properly chunked knowledge base, and an enterprise-style knowledge system — real, portfolio-ready projects that demonstrate a genuinely in-demand skill." },
+        { "q": "How does this relate to AI agents?", "a": "RAG is often a component inside agents — it gives them accurate knowledge. This course focuses on retrieval; our AI Agents course builds the agent workflows that can use it." }
+      ],
+      "cta": "Reserve your seat",
+      "form": { "source": "RAG Course", "campaign": "course-rag", "program": "RAG Development Course" },
+      "breadcrumb": [ { "name": "Courses", "url": "https://onrol.in/programs" }, { "name": "RAG Course", "url": "https://onrol.in/courses/rag-development/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "courses/ai-agents",
+      "title": "AI Agents Course — Build Single & Multi-Agent Systems | ONROL",
+      "description": "Learn to build AI agents hands-on — single-agent workflows, multi-agent systems, agentic workflows, APIs and MCP. Live online, project-first. Build real AI agents and agent teams you keep in your portfolio.",
+      "eyebrow": "AI Agents Course · Live Online",
+      "h1": "Build autonomous",
+      "h1accent": "AI agents",
+      "lead": "Learn to build AI agents that take action, not just answer — single-agent workflows, multi-agent systems and agentic pipelines, connected to real tools through APIs and MCP. Live online and project-first: you ship working agents and an agent team.",
+      "meta": [
+        { "icon": "clock", "text": "Live online · hands-on" },
+        { "icon": "screen", "text": "Build real agent systems" },
+        { "icon": "shield", "text": "Low-code friendly" }
+      ],
+      "outcomes": [
+        { "title": "Build a working agent", "text": "Design a single AI agent that plans, decides and acts on a real task." },
+        { "title": "Orchestrate multi-agent teams", "text": "Coordinate multiple agents into agentic workflows that tackle bigger problems together." },
+        { "title": "Connect to real tools", "text": "Wire agents into business systems through APIs and the Model Context Protocol (MCP)." },
+        { "title": "Combine with RAG & automation", "text": "Give agents knowledge and hands — retrieval for facts, automation for actions." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "A single AI agent that completes a real, multi-step task",
+        "A multi-agent system where agents collaborate on a goal",
+        "An agentic workflow integrated with external tools",
+        "A custom MCP connection giving an agent real capabilities",
+        "An agent project combining RAG, automation and tools"
+      ],
+      "contextKicker": "Who it's for",
+      "contextHeading": "The frontier skill everyone's hiring for",
+      "context": [
+        "AI agents are the current frontier — systems that don't just respond but plan and act, calling tools, retrieving knowledge and coordinating with other agents. It's among the most valuable AI skills right now, and it builds directly on prompting, RAG and automation. This course takes you from a single agent to multi-agent systems and real tool integration through APIs and MCP.",
+        "It suits AI builders, developers, founders and technically-minded professionals who want to build genuinely capable AI. ONROL is project-first, so you finish with working agents, an agent team and an MCP integration in a portfolio you keep."
+      ],
+      "faqs": [
+        { "q": "What is an AI agents course?", "a": "It teaches you to build AI systems that take action — planning, using tools, retrieving knowledge and coordinating as multi-agent teams — rather than just answering questions. You build real agents, not theory." },
+        { "q": "What is MCP and why is it in the course?", "a": "MCP (Model Context Protocol) is the emerging standard for giving AI agents real capabilities and connections to tools and data. You build a custom MCP integration so your agents can actually do things." },
+        { "q": "What do I need before this course?", "a": "Comfort with prompting and basic AI concepts helps; retrieval and automation knowledge is a bonus. The course is low-code friendly, so you focus on designing capable agents rather than heavy programming." },
+        { "q": "What will I have to show?", "a": "Working single and multi-agent systems, an agentic workflow and an MCP integration — real, portfolio-ready projects demonstrating one of the most in-demand AI skills today." }
+      ],
+      "cta": "Reserve your seat",
+      "form": { "source": "AI Agents Course", "campaign": "course-ai-agents", "program": "AI Agents Course" },
+      "breadcrumb": [ { "name": "Courses", "url": "https://onrol.in/programs" }, { "name": "AI Agents Course", "url": "https://onrol.in/courses/ai-agents/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "courses/vibe-coding",
+      "title": "Vibe Coding Course — Build Software with AI (No Deep Coding) | ONROL",
+      "description": "Learn vibe coding hands-on — build real websites, apps and software with AI coding tools like Lovable, Cursor and Claude Code, from PRD to deployment. Live online, project-first. Ship real products you keep.",
+      "eyebrow": "Vibe Coding Course · Live Online",
+      "h1": "Build software by",
+      "h1accent": "vibe coding",
+      "lead": "Learn to build real software with AI doing the heavy lifting — websites, apps and full-stack products using Lovable, Cursor, VS Code and Claude Code, from a written idea (PRD) to a deployed, working product. Live online and project-first: you ship, not just watch.",
+      "meta": [
+        { "icon": "clock", "text": "Live online · hands-on" },
+        { "icon": "screen", "text": "Ship real products" },
+        { "icon": "shield", "text": "Built for non-traditional coders" }
+      ],
+      "outcomes": [
+        { "title": "Build without deep coding", "text": "Use AI coding tools to turn ideas into working websites and apps, even without a CS background." },
+        { "title": "Go from PRD to product", "text": "Write a product spec and let AI help you build, debug and iterate toward a working MVP." },
+        { "title": "Understand front & back end", "text": "Grasp how the pieces fit — UI, backend, databases and auth — enough to direct AI effectively." },
+        { "title": "Deploy and ship", "text": "Set up databases and authentication, then deploy a live product with Supabase and modern hosting." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "A website built with an AI builder like Lovable",
+        "A full-stack app built in VS Code with AI coding agents",
+        "A PRD turned into a working MVP through AI-assisted building",
+        "A database and authentication layer with Supabase or Firebase",
+        "A deployed, live product you can share and put in your portfolio"
+      ],
+      "contextKicker": "Who it's for",
+      "contextHeading": "Ship products, not just prototypes",
+      "context": [
+        "Vibe coding is the new way to build software: you describe what you want and direct AI coding tools to build it, focusing on the product rather than memorising syntax. It's opening software creation to founders, designers, product people and career switchers who were locked out before — and even helping developers move far faster.",
+        "This course is deliberately practical: from a written idea to a deployed product, with databases, authentication and real hosting. ONROL is project-first, so you finish with shipped, working software in a portfolio — the kind of proof that starts businesses, wins clients and lands roles."
+      ],
+      "faqs": [
+        { "q": "What is vibe coding?", "a": "Vibe coding is building software by directing AI coding tools — describing what you want and iterating with the AI — rather than writing every line by hand. It lets non-traditional coders ship real products." },
+        { "q": "Can I really build apps without being a developer?", "a": "Yes. With AI coding tools like Lovable, Cursor and Claude Code, founders, designers and career switchers build real websites and apps. You learn enough of how software works to direct the AI well and ship." },
+        { "q": "What will I have to show?", "a": "Real, deployed products — a website, a full-stack app, an MVP with database and auth — live and in a portfolio. That shipped work is what wins clients, starts businesses and lands roles." },
+        { "q": "Do I need any coding background?", "a": "No deep background is required. Basic comfort with computers is enough; the course teaches you to build and deploy with AI assistance from the ground up." }
+      ],
+      "cta": "Reserve your seat",
+      "form": { "source": "Vibe Coding Course", "campaign": "course-vibe-coding", "program": "Vibe Coding Course" },
+      "breadcrumb": [ { "name": "Courses", "url": "https://onrol.in/programs" }, { "name": "Vibe Coding Course", "url": "https://onrol.in/courses/vibe-coding/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "courses/ai-digital-marketing",
+      "title": "AI Digital Marketing Course — SEO, Ads, Social & Automation | ONROL",
+      "description": "Learn AI-powered digital marketing hands-on — SEO, content, social media, Meta and Google Ads, analytics and marketing automation, with AI accelerating every channel. Live online, project-first. Build real campaigns you keep.",
+      "eyebrow": "AI Digital Marketing Course · Live Online",
+      "h1": "Market smarter with",
+      "h1accent": "AI",
+      "lead": "Learn digital marketing the AI-first way — SEO, content, social media, Meta and Google Ads, analytics and automation, with AI speeding up research, creation and optimisation across every channel. Live online and project-first: you build and run real campaigns.",
+      "meta": [
+        { "icon": "clock", "text": "Live online · hands-on" },
+        { "icon": "screen", "text": "Real campaigns & funnels" },
+        { "icon": "shield", "text": "Beginner-friendly" }
+      ],
+      "outcomes": [
+        { "title": "Rank with SEO & AI content", "text": "Keyword research, technical SEO, Search Console and AI-assisted content that actually ranks." },
+        { "title": "Run paid ads", "text": "Meta and Google Ads — setup, pixels, retargeting and performance marketing that converts." },
+        { "title": "Grow on social", "text": "AI-powered content systems and short-form video for LinkedIn, Instagram and YouTube." },
+        { "title": "Automate & measure", "text": "Marketing automation with AI agents plus GA4/GTM analytics to prove what works." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "An SEO strategy with keyword research and a content plan",
+        "A high-converting landing page and lead-capture funnel",
+        "Live Meta and Google ad campaigns with tracking and retargeting",
+        "A 30-day AI-assisted social content calendar and creatives",
+        "An end-to-end marketing automation system with AI agents"
+      ],
+      "contextKicker": "Who it's for",
+      "contextHeading": "The marketing skill set, rebuilt around AI",
+      "context": [
+        "Digital marketing is one of India's most in-demand and freelance-friendly skill sets — and AI has changed how every part of it is done. This course teaches the full stack (SEO, content, social, paid ads, analytics, automation) with AI woven through: faster research, AI content and creatives, and automated systems that used to need a whole team.",
+        "It suits founders and business owners marketing themselves, professionals moving into marketing, and freelancers who want a complete, current skill. ONROL is project-first, so you finish with real campaigns, funnels and an automation system in a portfolio — the proof that wins clients and marketing roles."
+      ],
+      "faqs": [
+        { "q": "What does an AI digital marketing course cover?", "a": "The full digital marketing stack — SEO, content, social media, Meta and Google Ads, analytics (GA4/GTM) and marketing automation — all with AI accelerating research, creation and optimisation. You build real campaigns, not just theory." },
+        { "q": "Do I need marketing experience?", "a": "No. The course starts from foundations and is built for beginners, career switchers, founders and freelancers. AI helps you produce professional-level work faster while you learn the fundamentals." },
+        { "q": "Is digital marketing good for freelancing?", "a": "It's one of the most freelance-friendly skills in India. Because ONROL is project-first, you finish with real campaigns and funnels in a portfolio — exactly what wins freelance clients and marketing jobs." },
+        { "q": "How is AI used across the course?", "a": "AI accelerates every channel — content and creative generation, keyword and competitor research, ad copy, and automation with AI agents — so you run marketing at a scale that used to require a team." }
+      ],
+      "cta": "Reserve your seat",
+      "form": { "source": "AI Digital Marketing Course", "campaign": "course-ai-digital-marketing", "program": "AI Digital Marketing Course" },
+      "breadcrumb": [ { "name": "Courses", "url": "https://onrol.in/programs" }, { "name": "AI Digital Marketing Course", "url": "https://onrol.in/courses/ai-digital-marketing/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-bangalore",
+      "city": "Bangalore",
+      "title": "AI Course in Bangalore — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for Bangalore learners. Build real AI products for the city's startup and product ecosystem — automation, agents, apps. No coding required, portfolio you keep. Join the next cohort.",
+      "eyebrow": "Live Online · Serving Bengaluru",
+      "h1": "AI course in",
+      "h1accent": "Bangalore",
+      "lead": "Learn applied AI live online from anywhere in Bengaluru — Whitefield, Koramangala, HSR Layout or Electronic City. In India's product capital, knowing AI theory isn't enough; ONROL is an execution school where you build and ship real AI products and keep them as your portfolio.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "Built for a product city", "text": "Bengaluru runs on shipping software. You learn to build and deploy AI products — the skill the city's startups and GCCs actually hire for." },
+        { "title": "Learn without the commute", "text": "Skip crossing town in ORR traffic — live interactive cohorts reach Whitefield to Electronic City equally, with full mentor time." },
+        { "title": "A portfolio for startups & GCCs", "text": "Ship automations, agents and AI apps you can show to Bengaluru product teams, founders and global capability centres." },
+        { "title": "Freelance in a startup hub", "text": "The city's dense startup scene means constant demand for AI builders — turn your portfolio into freelance and contract work." }
+      ],
+      "learnHeading": "What Bengaluru learners build",
+      "learn": [
+        "AI automations that remove repetitive ops for startups and product teams",
+        "AI agents and chatbots wired into real SaaS tools and APIs",
+        "AI-assisted apps and MVPs, built and deployed live — startup-ready",
+        "A portfolio of shipped AI products that speaks to Bengaluru's build culture"
+      ],
+      "contextKicker": "Why Bengaluru",
+      "contextHeading": "AI, tuned to India's startup capital",
+      "context": [
+        "Bengaluru is where India builds software. From the unicorns of Koramangala and HSR to the global capability centres along Outer Ring Road and the deep-tech founders around Indiranagar, the city's economy rewards people who can ship — not just people who can explain. That is exactly the gap ONROL is built for: applied AI you can put into production, not slideware.",
+        "For working professionals in Bengaluru's IT and product companies, AI is quickly becoming table stakes. Instead of switching careers, our learners add AI to what they already do — a backend engineer automating internal workflows, a product manager prototyping with AI, an operations lead building agents that handle repetitive tickets. For students and freshers from the city's engineering colleges, a portfolio of shipped AI products stands out far more than another certificate in a market this competitive.",
+        "Because delivery is 100% live online, you get the same hands-on cohort whether you're in Whitefield, Electronic City, Jayanagar or working remotely for a Bengaluru company from another state. The projects you build map to the kind of work the city hires for: automation for lean startups, AI features for SaaS products, and AI-assisted development that fits Bengaluru's fast shipping cycles."
+      ],
+      "faqs": [
+        { "q": "Is the AI course in Bangalore offline or online?", "a": "It's delivered 100% live online, so learners across Bengaluru — Whitefield, Koramangala, HSR, Electronic City, Jayanagar — join the same interactive cohort without fighting ORR or Silk Board traffic. Every session is hands-on." },
+        { "q": "Will this help me get an AI job in Bengaluru's startups or GCCs?", "a": "That's the focus. Bengaluru's product companies and global capability centres hire for the ability to build and ship AI, so the course is project-first: you finish with a portfolio of real AI products plus interview and resume support. We don't promise a guaranteed job — we make you genuinely employable through demonstrable work." },
+        { "q": "I work at an IT company in Bengaluru — is this for me?", "a": "Yes. Many learners are working professionals from the city's IT and product firms who want to add AI to their existing role rather than switch careers. Evening and weekend cohorts are built around Bengaluru working hours." },
+        { "q": "When does the next Bengaluru cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a timing that suits Bengaluru schedules." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Bangalore", "campaign": "geo-bangalore", "program": "AI Course (Bangalore, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Bangalore", "url": "https://onrol.in/ai-course-in-bangalore/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-chennai",
+      "city": "Chennai",
+      "title": "AI Course in Chennai — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for Chennai learners. Build real AI products for the city's SaaS and manufacturing economy — automation, agents, apps. No coding required, portfolio you keep. Join the next cohort.",
+      "eyebrow": "Live Online · Serving Chennai",
+      "h1": "AI course in",
+      "h1accent": "Chennai",
+      "lead": "Learn applied AI live online from anywhere in Chennai — the OMR IT corridor, Guindy, Velachery or Ambattur. In a city that pairs a deep SaaS culture with serious manufacturing, ONROL teaches you to build and ship real AI products and keep them as your portfolio.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "Built for a SaaS city", "text": "Chennai gave India some of its biggest SaaS names. You learn to build AI features and automations that product companies here actually use." },
+        { "title": "AI for manufacturing & ops", "text": "Beyond software, Chennai's automotive and manufacturing base needs AI-driven automation — a skill set our projects build directly." },
+        { "title": "Reach from OMR to Ambattur", "text": "Live online cohorts serve the whole city equally — no daily haul down the IT corridor." },
+        { "title": "Strong engineering base, real proof", "text": "In a city full of engineering graduates, a portfolio of shipped AI products is what sets you apart to employers." }
+      ],
+      "learnHeading": "What Chennai learners build",
+      "learn": [
+        "AI automations for SaaS operations, support and back-office work",
+        "AI agents and chatbots integrated with real business tools",
+        "AI-assisted apps and internal tools, built and deployed live",
+        "Automation use-cases relevant to manufacturing and operations teams"
+      ],
+      "contextKicker": "Why Chennai",
+      "contextHeading": "AI, built for Chennai's SaaS and manufacturing economy",
+      "context": [
+        "Chennai has two engines most other Indian cities don't combine: a globally respected SaaS product culture and a heavy manufacturing and automotive base. Both are being reshaped by AI — SaaS teams are embedding AI features and automating support, while manufacturers and operations groups are turning to AI-driven automation to cut repetitive work. ONROL's applied, build-first approach fits both worlds.",
+        "For Chennai's large pool of engineering graduates and working professionals along the OMR corridor, the differentiator in a crowded job market isn't another course certificate — it's demonstrable output. Our learners finish with real AI products they built and deployed: automations, agents and AI-assisted apps that map directly onto the kind of work the city's product and services companies hire for.",
+        "Delivery is 100% live online, so whether you're in Guindy, Velachery, Ambattur or Tambaram — or working remotely for a Chennai company — you join the same hands-on cohort. The projects are practical and portfolio-first, built around the real automation and AI-feature work that Chennai's SaaS and manufacturing employers value."
+      ],
+      "faqs": [
+        { "q": "Is the AI course in Chennai online or offline?", "a": "100% live online. Learners from across Chennai — the OMR IT corridor, Guindy, Velachery, Ambattur, Tambaram — join the same interactive, hands-on cohort without the daily commute down the corridor." },
+        { "q": "Is this relevant to Chennai's SaaS and manufacturing companies?", "a": "Yes — deliberately. Chennai's SaaS product teams need people who can build AI features and automate support, and its manufacturing and operations sector needs AI-driven automation. The course builds exactly these skills through real projects." },
+        { "q": "I'm an engineering graduate in Chennai — will this help me get hired?", "a": "In a city with a huge engineering talent pool, a portfolio of real, deployed AI products is what makes you stand out. The course is project-first and includes interview and resume support. We don't guarantee a job — we make you genuinely employable through proof of work." },
+        { "q": "When does the next Chennai cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a timing that suits Chennai schedules." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Chennai", "campaign": "geo-chennai", "program": "AI Course (Chennai, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Chennai", "url": "https://onrol.in/ai-course-in-chennai/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-pune",
+      "city": "Pune",
+      "title": "AI Course in Pune — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for Pune learners. Build real AI products for the city's IT, automotive and education ecosystem — automation, agents, apps. No coding required, portfolio you keep. Join the next cohort.",
+      "eyebrow": "Live Online · Serving Pune",
+      "h1": "AI course in",
+      "h1accent": "Pune",
+      "lead": "Learn applied AI live online from anywhere in Pune — Hinjewadi, Kharadi, Baner or Viman Nagar. In a city that blends a large IT workforce, an automotive manufacturing belt and one of India's biggest student populations, ONROL teaches you to build and ship real AI products you keep as a portfolio.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "Built for Pune's IT belt", "text": "From Hinjewadi to Kharadi, Pune's IT services and product firms increasingly hire for AI. You learn to build the automations and agents they need." },
+        { "title": "AI for a manufacturing hub", "text": "Pune's automotive and manufacturing sector runs on process — exactly the repetitive work AI automation is built to handle." },
+        { "title": "Made for a student city", "text": "With one of India's largest student populations, standing out means proof. You graduate with real AI projects, not just a certificate." },
+        { "title": "Learn across the city, online", "text": "Hinjewadi to Viman Nagar, the same live cohort — no Pune-Mumbai expressway commute, no cross-city travel." }
+      ],
+      "learnHeading": "What Pune learners build",
+      "learn": [
+        "AI automations for IT services delivery and internal operations",
+        "AI agents and chatbots connected to real business systems",
+        "AI-assisted apps and tools, built and deployed live",
+        "Automation projects relevant to manufacturing and process teams"
+      ],
+      "contextKicker": "Why Pune",
+      "contextHeading": "AI, tuned to Pune's IT, auto and student economy",
+      "context": [
+        "Pune is unusual: a major IT services and product hub in Hinjewadi and Kharadi, a serious automotive and manufacturing belt, and one of India's largest concentrations of students, all in one city. Each of these is being reshaped by AI — IT teams automating delivery, manufacturers automating process work, and students racing to build employable skills before they graduate. ONROL's build-first, applied approach speaks to all three.",
+        "For Pune's working professionals, the smart move isn't abandoning your career for AI — it's adding AI to it. Our learners are IT engineers automating their own workflows, operations staff building agents, and manufacturing professionals applying automation to real process problems. For the city's enormous student population, a portfolio of shipped AI products is a genuine edge in placements and internships.",
+        "Everything is delivered 100% live online, so whether you're in Hinjewadi, Baner, Kharadi, Viman Nagar or Pimpri-Chinchwad, you join the same hands-on cohort. The projects are practical and portfolio-first, built around the automation and AI work that Pune's IT, manufacturing and product employers actually value."
+      ],
+      "faqs": [
+        { "q": "Is the AI course in Pune offline or online?", "a": "100% live online. Learners from Hinjewadi, Kharadi, Baner, Viman Nagar and Pimpri-Chinchwad join the same interactive, hands-on cohort — no cross-city travel or expressway commute needed." },
+        { "q": "I work in a Pune IT company — is this useful for me?", "a": "Very. Pune's IT services and product firms increasingly expect AI skills. Rather than switching careers, you add AI to your existing role — automating delivery, building agents, prototyping AI features — with evening and weekend cohorts built around Pune working hours." },
+        { "q": "I'm a student in Pune — will this help with placements?", "a": "In a city with this many students, a portfolio of real, deployed AI products is a serious placement advantage. The course is project-first, so you finish with demonstrable work plus interview and resume support. We don't guarantee a job — we make you genuinely employable." },
+        { "q": "When does the next Pune cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a timing that suits Pune schedules." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Pune", "campaign": "geo-pune", "program": "AI Course (Pune, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Pune", "url": "https://onrol.in/ai-course-in-pune/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-hyderabad-online",
+      "city": "Hyderabad",
+      "title": "AI Course in Hyderabad — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for Hyderabad learners, from ONROL's home city. Build real AI products for the HITEC City tech and pharma economy — automation, agents, apps. No coding required, portfolio you keep.",
+      "eyebrow": "Live Online · Serving Hyderabad",
+      "h1": "AI course in",
+      "h1accent": "Hyderabad",
+      "lead": "Learn applied AI live online from anywhere in Hyderabad — HITEC City, Gachibowli, Madhapur or Kondapur. This is ONROL's home city, and we built our execution school for exactly this market: build and ship real AI products, and keep them as your portfolio.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "Built for a Big Tech hub", "text": "Hyderabad hosts the campuses of the world's largest tech firms. You learn to build the AI products their global capability centres hire for." },
+        { "title": "AI for pharma & life sciences", "text": "The city's pharma and life-sciences base is adopting AI fast — our projects build the automation and analysis skills that sector needs." },
+        { "title": "Plugged into the local scene", "text": "As a Hyderabad-founded school, ONROL's network, mentors and projects are tuned to the city's employers and startups." },
+        { "title": "T-Hub-ready builders", "text": "Ship AI products and a portfolio that speaks to Hyderabad's founders and its T-Hub startup ecosystem." }
+      ],
+      "learnHeading": "What Hyderabad learners build",
+      "learn": [
+        "AI automations for the GCCs and IT services firms across HITEC City",
+        "AI agents and chatbots integrated with real enterprise tools",
+        "AI-assisted apps and internal tools, built and deployed live",
+        "A portfolio of shipped AI products aimed at Hyderabad's tech and pharma employers"
+      ],
+      "contextKicker": "Why Hyderabad",
+      "contextHeading": "AI, tuned to Hyderabad's tech and pharma economy",
+      "context": [
+        "Hyderabad has quietly become one of India's most important technology cities. The global capability centres of the world's biggest tech companies sit in HITEC City, Gachibowli and the Financial District, alongside a deep pharma and life-sciences base and a fast-growing startup scene anchored by T-Hub. All of them are being reshaped by AI — and they hire for people who can build with it, not just talk about it.",
+        "As a Hyderabad-founded execution school, ONROL is built for this market specifically. Our working-professional learners add AI to careers in the city's IT, pharma and services companies rather than switching tracks; our student learners graduate from local colleges with a portfolio of shipped AI products that stands out to Hyderabad recruiters. The projects map to real local demand — enterprise automation, AI features, and data-driven work.",
+        "Delivery is 100% live online, so whether you're in Kukatpally, Gachibowli, Kondapur, Madhapur or the Old City, you join the same hands-on cohort without crossing town. And because ONROL is based here, our mentor network and employer connections are strongest exactly where you're looking to build a career."
+      ],
+      "faqs": [
+        { "q": "Is the AI course in Hyderabad offline or online?", "a": "It's delivered 100% live online, so learners across Hyderabad — HITEC City, Gachibowli, Madhapur, Kondapur, Kukatpally — join the same interactive, hands-on cohort without commuting. ONROL is Hyderabad-founded, so our network is strongest in this city." },
+        { "q": "Will this help me get hired at a Hyderabad GCC or tech company?", "a": "That's the focus. Hyderabad's global capability centres and IT firms hire for the ability to build and ship AI. The course is project-first — you finish with a real portfolio plus interview and resume support. We don't guarantee a job; we make you genuinely employable through proof of work." },
+        { "q": "I work in pharma or IT in Hyderabad — is this for me?", "a": "Yes. Many learners are working professionals from the city's pharma, IT and services companies who add AI to their existing role. Evening and weekend cohorts are built around Hyderabad working hours." },
+        { "q": "When does the next Hyderabad cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a timing that suits Hyderabad schedules." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Hyderabad", "campaign": "geo-hyderabad", "program": "AI Course (Hyderabad, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Hyderabad", "url": "https://onrol.in/ai-course-in-hyderabad-online/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-delhi-ncr",
+      "city": "Delhi NCR",
+      "title": "AI Course in Delhi NCR — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for Delhi, Gurugram and Noida learners. Build real AI products for NCR's corporate and startup economy — automation, agents, apps. No coding required, portfolio you keep.",
+      "eyebrow": "Live Online · Serving Delhi NCR",
+      "h1": "AI course in",
+      "h1accent": "Delhi NCR",
+      "lead": "Learn applied AI live online from anywhere across Delhi NCR — the capital, Gurugram's Cyber City, or Noida's tech corridor. In India's largest and most diverse market, ONROL teaches you to build and ship real AI products you keep as a portfolio.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "Built for a corporate capital", "text": "Gurugram and Noida host the Indian headquarters of countless corporates and consultancies. You learn to build the AI automations and tools they now expect." },
+        { "title": "AI for a huge startup base", "text": "NCR has one of India's densest startup ecosystems. Ship AI products and a portfolio that opens doors with founders and product teams." },
+        { "title": "Serve the whole region, online", "text": "Delhi, Gurugram, Noida, Ghaziabad, Faridabad — one live cohort, no punishing NCR commute or metro crush." },
+        { "title": "Enterprise & government scale", "text": "NCR's enterprise and public-sector digitisation runs on automation — exactly the skills our projects build." }
+      ],
+      "learnHeading": "What NCR learners build",
+      "learn": [
+        "AI automations for corporates, consultancies and large enterprises",
+        "AI agents and chatbots wired into real business systems",
+        "AI-assisted apps and internal tools, built and deployed live",
+        "A portfolio of shipped AI products aimed at NCR's corporate and startup employers"
+      ],
+      "contextKicker": "Why Delhi NCR",
+      "contextHeading": "AI, tuned to India's largest, most diverse market",
+      "context": [
+        "Delhi NCR is India at its biggest and most varied: the corporate towers of Gurugram's Cyber City, the tech and manufacturing corridor of Noida, a vast enterprise and consulting base, government and public-sector digitisation, and one of the country's densest startup ecosystems. Each of these is adopting AI, and all of them value people who can actually build and deploy it.",
+        "For NCR's enormous population of working professionals, adding AI to an existing corporate or consulting career is often smarter than switching — our learners automate their own workflows, build agents and prototype AI features. For the region's students and freshers, a portfolio of real AI products is a serious edge in a market this competitive. ONROL's project-first approach is designed for exactly that outcome.",
+        "Everything is delivered 100% live online, so whether you're in South Delhi, Gurugram, Noida, Ghaziabad or Faridabad, you join the same hands-on cohort without the region's notorious commute. The projects map to NCR's real demand — enterprise automation, AI features and data-driven tools."
+      ],
+      "faqs": [
+        { "q": "Is the AI course in Delhi NCR online or offline?", "a": "100% live online. Learners from Delhi, Gurugram, Noida, Ghaziabad and Faridabad join the same interactive, hands-on cohort — no cross-NCR commute needed. Every session is hands-on." },
+        { "q": "Is this useful for a corporate job in Gurugram or Noida?", "a": "Very. NCR's corporates, consultancies and startups increasingly hire for AI skills. The course is project-first, so you finish with a real portfolio plus interview and resume support. We don't guarantee a job — we make you genuinely employable." },
+        { "q": "I already work at an NCR company — should I take this?", "a": "Yes. Many learners are working professionals who add AI to an existing corporate or consulting role rather than switching careers, with evening and weekend cohorts built around NCR working hours." },
+        { "q": "When does the next Delhi NCR cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a timing that suits NCR schedules." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Delhi NCR", "campaign": "geo-delhi-ncr", "program": "AI Course (Delhi NCR, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Delhi NCR", "url": "https://onrol.in/ai-course-in-delhi-ncr/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-mumbai",
+      "city": "Mumbai",
+      "title": "AI Course in Mumbai — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for Mumbai learners. Build real AI products for the city's finance, media and startup economy — automation, agents, apps. No coding required, portfolio you keep.",
+      "eyebrow": "Live Online · Serving Mumbai",
+      "h1": "AI course in",
+      "h1accent": "Mumbai",
+      "lead": "Learn applied AI live online from anywhere in Mumbai — BKC, Andheri, Powai or Navi Mumbai. In India's finance and media capital, ONROL teaches you to build and ship real AI products that fit the city's fast-moving business world, and keep them as your portfolio.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "Built for the finance capital", "text": "Mumbai runs India's banking, markets and fintech. You learn to build the AI automations and analysis tools that BFSI increasingly demands." },
+        { "title": "AI for media & marketing", "text": "From ad agencies to entertainment, Mumbai's media economy is adopting AI content and automation — exactly what our projects teach." },
+        { "title": "Reach the whole MMR, online", "text": "South Mumbai, BKC, Andheri, Powai, Thane, Navi Mumbai — one live cohort, no crushing local-train commute." },
+        { "title": "Corporate HQ demand", "text": "Mumbai hosts countless corporate headquarters; ship a portfolio that speaks to their appetite for AI productivity and automation." }
+      ],
+      "learnHeading": "What Mumbai learners build",
+      "learn": [
+        "AI automations for finance, operations and back-office work",
+        "AI agents and chatbots integrated with real business tools",
+        "AI content and marketing systems relevant to media and agencies",
+        "A portfolio of shipped AI products aimed at Mumbai's BFSI, media and corporate employers"
+      ],
+      "contextKicker": "Why Mumbai",
+      "contextHeading": "AI, tuned to Mumbai's finance and media economy",
+      "context": [
+        "Mumbai is India's financial and media capital in one city: the banks, markets, insurers and fintechs of BKC and Nariman Point, the ad agencies and entertainment houses of Andheri, and the corporate headquarters that anchor the national economy. Each of these is moving fast on AI — finance for analysis and automation, media for content and campaigns — and all of them reward people who can build with it.",
+        "For Mumbai's dense population of working professionals, the pragmatic move is adding AI to a finance, marketing or operations career rather than leaving it — our learners automate workflows, build agents and create AI content systems. For students and freshers in a fiercely competitive market, a portfolio of real AI products is what earns attention. ONROL's build-first approach is aimed squarely at that.",
+        "Delivery is 100% live online, so whether you're in South Mumbai, BKC, Andheri, Powai, Thane or Navi Mumbai, you join the same hands-on cohort without spending hours on the local train. The projects map to the city's real demand — finance and operations automation, AI content and marketing, and data-driven tools."
+      ],
+      "faqs": [
+        { "q": "Is the AI course in Mumbai online or offline?", "a": "100% live online. Learners from South Mumbai, BKC, Andheri, Powai, Thane and Navi Mumbai join the same interactive, hands-on cohort — no local-train commute needed. Every session is hands-on." },
+        { "q": "Is this relevant to finance or media jobs in Mumbai?", "a": "Deliberately so. Mumbai's BFSI sector needs AI-driven analysis and automation, and its media and marketing world needs AI content and workflow skills. The course builds exactly these through real projects." },
+        { "q": "I work in a Mumbai corporate — is this for me?", "a": "Yes. Many learners are working professionals in finance, marketing or operations who add AI to their existing role, with evening and weekend cohorts built around Mumbai working hours." },
+        { "q": "When does the next Mumbai cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a timing that suits Mumbai schedules." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Mumbai", "campaign": "geo-mumbai", "program": "AI Course (Mumbai, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Mumbai", "url": "https://onrol.in/ai-course-in-mumbai/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-kolkata",
+      "city": "Kolkata",
+      "title": "AI Course in Kolkata — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for Kolkata learners. Build real AI products for eastern India's growing IT and startup economy — automation, agents, apps. No coding required, portfolio you keep.",
+      "eyebrow": "Live Online · Serving Kolkata",
+      "h1": "AI course in",
+      "h1accent": "Kolkata",
+      "lead": "Learn applied AI live online from anywhere in Kolkata — Salt Lake Sector V, New Town or the city centre. As eastern India's biggest tech and education hub grows its IT base, ONROL teaches you to build and ship real AI products you keep as a portfolio.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "Built for a growing IT hub", "text": "Salt Lake Sector V and New Town anchor eastern India's IT services growth. You learn to build the AI skills these firms are starting to hire for." },
+        { "title": "A strong academic base, real proof", "text": "Kolkata's deep education legacy produces serious talent — a portfolio of shipped AI products is how you stand out from it." },
+        { "title": "Eastern India's gateway", "text": "Serve Kolkata and the wider east — one live online cohort, reaching learners the big southern and western hubs overlook." },
+        { "title": "Freelance and remote ready", "text": "AI skills plus a real portfolio open remote and freelance work far beyond the local market." }
+      ],
+      "learnHeading": "What Kolkata learners build",
+      "learn": [
+        "AI automations for IT services and business operations",
+        "AI agents and chatbots connected to real business tools",
+        "AI-assisted apps and tools, built and deployed live",
+        "A portfolio of shipped AI products for local, remote and freelance opportunities"
+      ],
+      "contextKicker": "Why Kolkata",
+      "contextHeading": "AI, tuned to eastern India's growing tech economy",
+      "context": [
+        "Kolkata pairs one of India's richest education legacies with a steadily growing IT base in Salt Lake Sector V and New Town. As eastern India's largest city, it produces a huge pool of capable graduates — but the market has historically sent much of that talent elsewhere. AI changes the calculation: with the right applied skills and a real portfolio, Kolkata's talent can build for local firms, remote employers and freelance clients alike.",
+        "ONROL's project-first approach fits this well. Working professionals in the city's IT and services companies add AI to their roles; students and freshers from Kolkata's strong colleges graduate with shipped AI products instead of just certificates. Because the work is demonstrable, it travels — opening remote and freelance opportunities that aren't limited by the local job market.",
+        "Delivery is 100% live online, so whether you're in Salt Lake, New Town, Howrah or central Kolkata, you join the same hands-on cohort. The projects are practical and portfolio-first, built around the automation and AI work that a growing eastern-India tech economy increasingly values."
+      ],
+      "faqs": [
+        { "q": "Is the AI course in Kolkata online or offline?", "a": "100% live online. Learners from Salt Lake Sector V, New Town, Howrah and central Kolkata join the same interactive, hands-on cohort without commuting. Every session is hands-on." },
+        { "q": "Will this help me find AI work from Kolkata?", "a": "Yes — and not only locally. Because you finish with a portfolio of real, deployed AI products, your work opens local IT roles, remote positions and freelance clients. The course is project-first, with interview and resume support. We don't guarantee a job; we make you genuinely employable." },
+        { "q": "I'm a student in Kolkata — is this useful for placements?", "a": "In a city with such a strong academic base, a portfolio of real AI products is a genuine differentiator in placements and internships. The course is built to produce exactly that demonstrable work." },
+        { "q": "When does the next Kolkata cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a timing that suits Kolkata schedules." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Kolkata", "campaign": "geo-kolkata", "program": "AI Course (Kolkata, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Kolkata", "url": "https://onrol.in/ai-course-in-kolkata/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-ahmedabad",
+      "city": "Ahmedabad",
+      "title": "AI Course in Ahmedabad — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for Ahmedabad learners. Build real AI products for Gujarat's business, manufacturing and fintech economy — automation, agents, apps. No coding required, portfolio you keep.",
+      "eyebrow": "Live Online · Serving Ahmedabad",
+      "h1": "AI course in",
+      "h1accent": "Ahmedabad",
+      "lead": "Learn applied AI live online from anywhere in Ahmedabad — from the city's business districts to GIFT City nearby. In Gujarat's entrepreneurial heartland, ONROL teaches you to build and ship real AI products that serve businesses directly, and keep them as your portfolio.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "Built for a business city", "text": "Ahmedabad runs on enterprise and SMEs. You learn to build AI automations and tools that owners and businesses put to work immediately." },
+        { "title": "AI for manufacturing & trade", "text": "Gujarat's manufacturing, textile and trading base is ripe for automation — exactly the repetitive work our projects target." },
+        { "title": "GIFT City fintech nearby", "text": "With India's fintech hub next door, AI skills in finance automation and analysis are increasingly in demand." },
+        { "title": "Entrepreneur-ready", "text": "Ship AI products you can turn into a business, a service, or freelance income — a natural fit for Gujarat's enterprising culture." }
+      ],
+      "learnHeading": "What Ahmedabad learners build",
+      "learn": [
+        "AI automations for SMEs, trading and back-office operations",
+        "AI agents and chatbots for customer handling and sales",
+        "AI-assisted apps and internal tools, built and deployed live",
+        "A portfolio of shipped AI products aimed at businesses and entrepreneurs"
+      ],
+      "contextKicker": "Why Ahmedabad",
+      "contextHeading": "AI, tuned to Gujarat's business and manufacturing economy",
+      "context": [
+        "Ahmedabad is the commercial heart of one of India's most entrepreneurial states. Its economy runs on a dense network of SMEs, manufacturing and textile units, trading businesses, and — with GIFT City nearby — a growing fintech presence. This is a market that adopts technology when it clearly pays off, and AI automation is exactly that: it removes repetitive work and gives small teams outsized leverage.",
+        "ONROL's applied, build-first approach fits Ahmedabad's practical mindset. Business owners and professionals learn to automate operations, build customer-facing AI, and cut manual work; students and freshers graduate with real AI products that appeal to local businesses and beyond. Because the projects are usable, many learners turn them into services, freelance work or a business of their own.",
+        "Delivery is 100% live online, so whether you're in central Ahmedabad, the SG Highway corridor, or nearby Gandhinagar and GIFT City, you join the same hands-on cohort. The projects map to real Gujarat demand — SME and manufacturing automation, customer-facing AI, and finance workflows."
+      ],
+      "faqs": [
+        { "q": "Is the AI course in Ahmedabad online or offline?", "a": "100% live online. Learners from across Ahmedabad, the SG Highway corridor and nearby Gandhinagar join the same interactive, hands-on cohort without commuting. Every session is hands-on." },
+        { "q": "I run a business in Ahmedabad — can AI actually help?", "a": "That's a core use case. Gujarat's SMEs and manufacturers gain the most from automation — removing repetitive work, handling customers with AI, and speeding up operations. You build these automations yourself during the course." },
+        { "q": "Can I turn this into freelance or business income?", "a": "Yes, and it suits Gujarat's entrepreneurial culture. The AI products you build are usable and portfolio-first, so many learners convert them into services, freelance work or their own business rather than only seeking a job." },
+        { "q": "When does the next Ahmedabad cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a timing that suits Ahmedabad schedules." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Ahmedabad", "campaign": "geo-ahmedabad", "program": "AI Course (Ahmedabad, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Ahmedabad", "url": "https://onrol.in/ai-course-in-ahmedabad/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-kochi",
+      "city": "Kochi",
+      "title": "AI Course in Kochi — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for Kochi learners. Build real AI products for Kerala's Infopark and startup economy — automation, agents, apps. No coding required, portfolio you keep.",
+      "eyebrow": "Live Online · Serving Kochi",
+      "h1": "AI course in",
+      "h1accent": "Kochi",
+      "lead": "Learn applied AI live online from anywhere in Kochi — Infopark, Kakkanad or the city centre. In Kerala's tech and startup capital, ONROL teaches you to build and ship real AI products for a globally connected job market, and keep them as your portfolio.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "Built for Kerala's tech hub", "text": "Infopark and Kakkanad anchor Kerala's IT industry. You learn to build the AI products these firms and their clients increasingly need." },
+        { "title": "A vibrant startup ecosystem", "text": "Backed by the Kerala Startup Mission, Kochi's founders value builders — ship AI products that get you noticed." },
+        { "title": "Globally connected talent", "text": "Kochi's workforce works with clients worldwide. A real AI portfolio opens remote and international opportunities." },
+        { "title": "Freelance & remote ready", "text": "Turn AI skills and shipped projects into freelance and remote income, not just a local role." }
+      ],
+      "learnHeading": "What Kochi learners build",
+      "learn": [
+        "AI automations for IT services and client delivery",
+        "AI agents and chatbots integrated with real business tools",
+        "AI-assisted apps and products, built and deployed live",
+        "A portfolio of shipped AI products for local, remote and global opportunities"
+      ],
+      "contextKicker": "Why Kochi",
+      "contextHeading": "AI, tuned to Kerala's tech and startup economy",
+      "context": [
+        "Kochi is Kerala's technology and startup capital. Infopark and Kakkanad house a growing IT services industry, the Kerala Startup Mission has built one of India's most active regional startup ecosystems, and the city's workforce is unusually globally connected — working with clients and companies around the world. That outward orientation makes applied AI especially valuable: skills and a portfolio that travel beyond the local market.",
+        "ONROL's build-first approach suits Kochi well. IT professionals add AI to client delivery and their own careers; students and freshers from Kerala's strong colleges graduate with shipped AI products that appeal to local firms and remote employers alike. Because the work is demonstrable, it converts directly into freelance, remote and international opportunities — a natural fit for the city's global mindset.",
+        "Delivery is 100% live online, so whether you're near Infopark, in Kakkanad, Edappally or central Kochi, you join the same hands-on cohort. The projects are practical and portfolio-first, built around the automation and AI work Kochi's tech firms, startups and global clients value."
+      ],
+      "faqs": [
+        { "q": "Is the AI course in Kochi online or offline?", "a": "100% live online. Learners from Infopark, Kakkanad, Edappally and central Kochi join the same interactive, hands-on cohort without commuting. Every session is hands-on." },
+        { "q": "Will this help me work with global clients from Kochi?", "a": "Yes — that's a real strength here. Kochi's workforce is globally connected, and a portfolio of real, deployed AI products opens remote and international work, not just local roles. The course is project-first, with interview and resume support." },
+        { "q": "Is this useful for Kochi's startups and Infopark firms?", "a": "Very. Infopark IT firms and Kerala Startup Mission-backed startups value people who can build and ship AI. You finish with exactly that demonstrable capability." },
+        { "q": "When does the next Kochi cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a timing that suits Kochi schedules." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Kochi", "campaign": "geo-kochi", "program": "AI Course (Kochi, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Kochi", "url": "https://onrol.in/ai-course-in-kochi/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-course-for-it-professionals",
+      "title": "AI Course for IT Professionals — Developers, QA, DevOps | ONROL",
+      "description": "An AI course for IT professionals — developers, software engineers, QA, DevOps and data teams. Add AI-assisted coding, automation and agents to your existing role. Live online, project-first. Don't switch careers — add AI to yours.",
+      "eyebrow": "AI for IT Professionals · Live Online",
+      "h1": "Add AI to your",
+      "h1accent": "IT career",
+      "lead": "You don't need to change your career for AI — you need to add AI to it. Built for developers, software engineers, QA, DevOps and data professionals, this live online program shows you how to use AI-assisted coding, automation and agents to do your existing job faster and grow into AI-heavy roles.",
+      "meta": [
+        { "icon": "screen", "text": "For IT & software pros" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "Project-first, hands-on" }
+      ],
+      "outcomes": [
+        { "title": "Code faster with AI", "text": "Use AI coding agents to build, debug and ship on real codebases — the way modern engineering teams now work." },
+        { "title": "Automate your workflows", "text": "Replace repetitive delivery and ops tasks with automations and internal AI tools." },
+        { "title": "Build agents & AI features", "text": "Add AI features, RAG and agents to products — the skills that mark out senior, AI-fluent engineers." },
+        { "title": "Grow, don't switch", "text": "Become the AI-capable person on your team instead of restarting your career elsewhere." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "AI-assisted development on a real codebase with coding agents",
+        "Automations that remove repetitive delivery and ops work",
+        "An AI feature or RAG assistant added to an application",
+        "An AI agent integrated with real tools via APIs and MCP",
+        "A portfolio of AI work that supports a promotion or role change"
+      ],
+      "contextKicker": "Who it's for",
+      "contextHeading": "For the engineer who wants to stay ahead",
+      "context": [
+        "AI isn't replacing IT professionals — but IT professionals who use AI are replacing those who don't. Developers, QA engineers, DevOps and data professionals are all seeing their work reshaped by AI-assisted coding, automation and agents. The smart response isn't to abandon a hard-won technical career; it's to become the AI-fluent person on the team.",
+        "This program is built for exactly that. You keep your job and add the AI skills that make you faster and more valuable — AI-assisted development, automation, RAG and agents — all through real projects. ONROL is project-first, so you finish with demonstrable AI work that supports a raise, a promotion or a move into an AI-heavy role."
+      ],
+      "faqs": [
+        { "q": "I'm already a developer — what does this add?", "a": "It makes you AI-fluent: AI-assisted coding on real codebases, automation, and building AI features, RAG and agents. These are the skills separating senior, future-proof engineers from the rest — without leaving your current track." },
+        { "q": "Do I need to leave my job to do this?", "a": "No. It's live online with evening and weekend cohorts, designed for working IT professionals to add AI to their existing role rather than switch careers." },
+        { "q": "Is it too basic for experienced engineers?", "a": "No — it's aimed at professionals. The focus is applied AI (coding agents, automation, RAG, agents, MCP) that experienced IT people can put to work immediately on real systems." },
+        { "q": "What will I have to show?", "a": "A portfolio of real AI work — AI-assisted builds, automations, an AI feature or agent — that demonstrates your AI capability for a promotion or a role change." }
+      ],
+      "cta": "Talk to us about your goals",
+      "form": { "source": "Persona - IT Professionals", "campaign": "persona-it", "program": "AI for IT Professionals" },
+      "breadcrumb": [ { "name": "Programs", "url": "https://onrol.in/programs" }, { "name": "AI for IT Professionals", "url": "https://onrol.in/ai-course-for-it-professionals/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-course-for-hr-professionals",
+      "title": "AI Course for HR Professionals — Recruitment, L&D, Ops | ONROL",
+      "description": "An AI course for HR professionals — recruitment, talent acquisition, L&D, HR operations and analytics. Automate hiring and HR workflows and add AI to your role. Live online, project-first. Don't switch careers — add AI to yours.",
+      "eyebrow": "AI for HR Professionals · Live Online",
+      "h1": "Add AI to your",
+      "h1accent": "HR career",
+      "lead": "Recruitment, L&D and HR operations are being transformed by AI — and HR professionals who master it become far more valuable. This live online program shows you how to automate hiring, screening, onboarding and HR workflows, and use AI for analytics and engagement, without leaving your HR career.",
+      "meta": [
+        { "icon": "screen", "text": "For HR & talent pros" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding needed" }
+      ],
+      "outcomes": [
+        { "title": "Automate recruitment", "text": "Build AI workflows for sourcing, screening, scheduling and candidate communication that save hours a week." },
+        { "title": "AI for L&D & engagement", "text": "Create training content, assessments and engagement systems with AI in a fraction of the time." },
+        { "title": "HR ops on autopilot", "text": "Automate onboarding, documentation and repetitive HR operations with no-code AI tools." },
+        { "title": "Turn HR data into insight", "text": "Use AI to analyse HR data and produce the analytics leadership asks for." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "An AI recruitment workflow — sourcing to screening to scheduling",
+        "AI-generated L&D content and assessments",
+        "An automated onboarding and HR-ops process",
+        "An HR chatbot for employee queries",
+        "An HR analytics dashboard powered by AI"
+      ],
+      "contextKicker": "Who it's for",
+      "contextHeading": "For the HR professional AI is reshaping around",
+      "context": [
+        "Few functions are changing faster than HR. AI now touches sourcing, screening, onboarding, L&D, engagement and analytics — and HR professionals who can wield it are becoming strategic rather than administrative. The opportunity isn't to leave HR for tech; it's to bring AI into HR.",
+        "This program is built for recruiters, talent acquisition specialists, L&D and HR-ops professionals — no coding required. You automate real HR workflows and build AI tools your team can use immediately. ONROL is project-first, so you finish with demonstrable AI-in-HR work that raises your value and career ceiling."
+      ],
+      "faqs": [
+        { "q": "I work in HR with no tech background — can I do this?", "a": "Yes. The program is built for HR professionals and uses no-code AI and automation tools throughout. You'll automate real hiring and HR workflows without writing code." },
+        { "q": "How does AI actually help in HR?", "a": "It automates and accelerates sourcing, screening, scheduling, onboarding, L&D content and HR analytics — removing repetitive work and letting you focus on people and strategy. You build these systems during the course." },
+        { "q": "Do I need to leave my HR job?", "a": "No. It's live online with evening and weekend cohorts, designed to add AI to your existing HR role rather than switch careers." },
+        { "q": "What will I have to show?", "a": "Real AI-in-HR projects — an automated recruitment workflow, an HR chatbot, an analytics dashboard — in a portfolio that proves your new capability." }
+      ],
+      "cta": "Talk to us about your goals",
+      "form": { "source": "Persona - HR Professionals", "campaign": "persona-hr", "program": "AI for HR Professionals" },
+      "breadcrumb": [ { "name": "Programs", "url": "https://onrol.in/programs" }, { "name": "AI for HR Professionals", "url": "https://onrol.in/ai-course-for-hr-professionals/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-course-for-finance-professionals",
+      "title": "AI Course for Finance Professionals — Analysis & Automation | ONROL",
+      "description": "An AI course for finance professionals — financial analysis, Excel + AI, reporting, research and automation. Add AI to accounting, FP&A and finance operations. Live online, project-first. Don't switch careers — add AI to yours.",
+      "eyebrow": "AI for Finance Professionals · Live Online",
+      "h1": "Add AI to your",
+      "h1accent": "finance career",
+      "lead": "Financial analysis, reporting and research are being supercharged by AI. This live online program shows finance professionals how to pair Excel with AI, automate reporting and reconciliation, and speed up research and analysis, all without leaving your finance career.",
+      "meta": [
+        { "icon": "screen", "text": "For finance & accounting pros" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding needed" }
+      ],
+      "outcomes": [
+        { "title": "Excel, supercharged by AI", "text": "Use AI alongside Excel to build models, clean data and produce analysis far faster." },
+        { "title": "Automate reporting", "text": "Turn repetitive monthly reporting and reconciliation into automated, reliable workflows." },
+        { "title": "Faster research & analysis", "text": "Use AI to research, summarise and analyse financial information in minutes, not hours." },
+        { "title": "Build finance automations", "text": "Create no-code automations for finance operations and approvals." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "An AI-assisted financial model and analysis in Excel",
+        "An automated monthly reporting workflow",
+        "An AI research assistant for financial information",
+        "A finance-operations automation (approvals, reconciliation)",
+        "A portfolio of AI-in-finance work that raises your value"
+      ],
+      "contextKicker": "Who it's for",
+      "contextHeading": "For the finance professional who wants leverage",
+      "context": [
+        "Finance runs on analysis, reporting and research — all of which AI now accelerates dramatically. Accountants, analysts and FP&A professionals who pair their domain expertise with AI produce more, faster, and move from number-crunching to insight. The move isn't to leave finance for tech; it's to bring AI into finance.",
+        "This program is built for finance and accounting professionals, no coding required. You pair Excel with AI, automate reporting and finance operations, and speed up research on real tasks. ONROL is project-first, so you finish with demonstrable AI-in-finance work that raises your value and career ceiling."
+      ],
+      "faqs": [
+        { "q": "I'm in finance, not tech — is this suitable?", "a": "Yes. It's built for finance and accounting professionals and uses Excel plus no-code AI tools. You add AI to work you already do — analysis, reporting, research — without programming." },
+        { "q": "How does AI help finance work specifically?", "a": "It accelerates modelling and analysis in Excel, automates repetitive reporting and reconciliation, and speeds up research and summarisation — freeing you for insight and decisions. You build these during the course." },
+        { "q": "Do I need to leave my finance job?", "a": "No. Live online with evening and weekend cohorts, designed to add AI to your existing finance role rather than switch careers." },
+        { "q": "What will I have to show?", "a": "Real AI-in-finance projects — an AI-assisted model, an automated reporting workflow, a research assistant — in a portfolio proving your new capability." }
+      ],
+      "cta": "Talk to us about your goals",
+      "form": { "source": "Persona - Finance Professionals", "campaign": "persona-finance", "program": "AI for Finance Professionals" },
+      "breadcrumb": [ { "name": "Programs", "url": "https://onrol.in/programs" }, { "name": "AI for Finance Professionals", "url": "https://onrol.in/ai-course-for-finance-professionals/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-course-for-sales-professionals",
+      "title": "AI Course for Sales Professionals — Prospecting & CRM AI | ONROL",
+      "description": "An AI course for sales professionals — lead generation, prospect research, outreach, CRM automation and sales agents. Add AI to your sales role and close more. Live online, project-first. Don't switch careers — add AI to yours.",
+      "eyebrow": "AI for Sales Professionals · Live Online",
+      "h1": "Add AI to your",
+      "h1accent": "sales career",
+      "lead": "Prospecting, research and follow-up eat most of a salesperson's day — and AI can do the heavy lifting. This live online program shows sales professionals how to automate lead generation, research prospects, personalise outreach and build sales agents, so you spend more time actually selling.",
+      "meta": [
+        { "icon": "screen", "text": "For sales & BD pros" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding needed" }
+      ],
+      "outcomes": [
+        { "title": "Automate lead generation", "text": "Build AI workflows that find, enrich and qualify leads while you focus on closing." },
+        { "title": "Research in seconds", "text": "Use AI to research prospects and accounts instantly, so every conversation is informed." },
+        { "title": "Personalise outreach at scale", "text": "Generate tailored outreach and follow-ups that feel personal without the manual grind." },
+        { "title": "Build sales agents", "text": "Create AI agents that handle qualification, CRM updates and follow-up automatically." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "An AI lead-generation and enrichment workflow",
+        "An AI prospect-research assistant",
+        "A personalised outreach and follow-up system",
+        "CRM automation that logs and updates deals for you",
+        "A sales agent that qualifies and follows up automatically"
+      ],
+      "contextKicker": "Who it's for",
+      "contextHeading": "For the seller who wants to sell more, admin less",
+      "context": [
+        "Most of a sales professional's day disappears into prospecting, research, data entry and follow-up — exactly the work AI is best at. Salespeople who automate it get more selling time and a real edge. The move isn't to leave sales for tech; it's to bring AI into sales.",
+        "This program is built for sales and business-development professionals, no coding required. You automate lead generation, research and outreach, and build sales agents on real workflows. ONROL is project-first, so you finish with demonstrable AI-in-sales systems that lift your numbers and your value."
+      ],
+      "faqs": [
+        { "q": "I'm in sales, not tech — can I do this?", "a": "Yes. It's built for sales and BD professionals and uses no-code AI and automation tools. You automate real sales work — prospecting, research, outreach, CRM — without coding." },
+        { "q": "How does AI help in sales?", "a": "It automates lead generation and enrichment, researches prospects instantly, personalises outreach at scale, and updates your CRM — giving you far more time to actually sell. You build these systems during the course." },
+        { "q": "Do I need to leave my sales job?", "a": "No. Live online with evening and weekend cohorts, designed to add AI to your existing sales role rather than switch careers." },
+        { "q": "What will I have to show?", "a": "Real AI-in-sales systems — lead-gen automation, a research assistant, a sales agent — in a portfolio that proves your new capability." }
+      ],
+      "cta": "Talk to us about your goals",
+      "form": { "source": "Persona - Sales Professionals", "campaign": "persona-sales", "program": "AI for Sales Professionals" },
+      "breadcrumb": [ { "name": "Programs", "url": "https://onrol.in/programs" }, { "name": "AI for Sales Professionals", "url": "https://onrol.in/ai-course-for-sales-professionals/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-course-for-non-it-professionals",
+      "title": "AI Course for Non-IT Professionals — Add AI to Any Career | ONROL",
+      "description": "An AI course for non-IT professionals — mechanical, civil, ECE, operations, admin and more. Add AI productivity and automation to any career, no coding needed. Live online, project-first. Don't switch careers — add AI to yours.",
+      "eyebrow": "AI for Non-IT Professionals · Live Online",
+      "h1": "Add AI to any",
+      "h1accent": "career",
+      "lead": "You don't need an IT background to benefit from AI. Built for professionals from mechanical, civil, ECE, electrical, operations, admin and other non-IT fields, this live online program shows you how to use AI for productivity, automation and real projects in your own domain, without switching careers.",
+      "meta": [
+        { "icon": "screen", "text": "For non-IT backgrounds" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "Absolutely no coding" }
+      ],
+      "outcomes": [
+        { "title": "AI productivity for any role", "text": "Use AI to research, write, plan and analyse — cutting hours from everyday professional work." },
+        { "title": "Automate your domain's busywork", "text": "Build no-code automations for the repetitive tasks specific to your field." },
+        { "title": "Ship real projects", "text": "Apply AI to genuine problems in your own domain and build something you can show." },
+        { "title": "Future-proof your career", "text": "Become the AI-capable person in a non-tech team — a rare and valued position." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "An AI productivity workflow for your daily professional work",
+        "A no-code automation for a repetitive task in your field",
+        "An AI assistant tailored to your domain",
+        "A real project applying AI to a problem you actually face",
+        "A portfolio that proves AI capability in a non-IT career"
+      ],
+      "contextKicker": "Who it's for",
+      "contextHeading": "For every professional outside of tech",
+      "context": [
+        "AI is often talked about as a tech thing — but its biggest impact is on everyone else. Professionals in mechanical, civil, ECE, electrical, operations, administration, sales and countless other fields can use AI to remove busywork, research and plan faster, and automate the repetitive parts of their jobs. You don't need to become a programmer to benefit enormously.",
+        "This program is deliberately built for non-IT professionals — zero coding — and focuses on applying AI to your own domain. You build real productivity workflows, automations and a project relevant to your field. ONROL is project-first, so you finish with demonstrable AI work that makes you the AI-capable person on any team."
+      ],
+      "faqs": [
+        { "q": "I have a non-IT background — is this really for me?", "a": "Yes — it's built specifically for you. Mechanical, civil, ECE, electrical, operations, admin and other non-IT professionals learn to apply AI to their own work with absolutely no coding required." },
+        { "q": "What can AI do for a non-tech professional?", "a": "A lot: research, writing, planning and analysis for daily work, plus no-code automation of repetitive tasks specific to your field. You build these during the course, applied to your actual domain." },
+        { "q": "Do I need to switch to a tech career?", "a": "No — the opposite. The goal is to add AI to your existing non-IT career, becoming the AI-capable person on your team without leaving your field." },
+        { "q": "What will I have to show?", "a": "Real AI work in your own domain — a productivity workflow, an automation, a domain project — in a portfolio proving your capability." }
+      ],
+      "cta": "Talk to us about your goals",
+      "form": { "source": "Persona - Non-IT Professionals", "campaign": "persona-non-it", "program": "AI for Non-IT Professionals" },
+      "breadcrumb": [ { "name": "Programs", "url": "https://onrol.in/programs" }, { "name": "AI for Non-IT Professionals", "url": "https://onrol.in/ai-course-for-non-it-professionals/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-training-for-colleges",
+      "title": "AI Training for Colleges — Campus & Online Programs | ONROL",
+      "description": "ONROL partners with colleges to deliver hands-on AI training — campus, online or hybrid. Employability-focused AI programs, workshops and faculty enablement that give students a real project portfolio. Talk to our team.",
+      "eyebrow": "For Colleges & Universities",
+      "h1": "AI training for",
+      "h1accent": "colleges",
+      "lead": "Give your students AI skills employers actually want. ONROL partners with colleges and universities across India to deliver hands-on, project-first AI programs — on campus, online or hybrid — so students graduate with a portfolio of real AI products, not just a certificate.",
+      "meta": [
+        { "icon": "screen", "text": "Campus · online · hybrid" },
+        { "icon": "shield", "text": "Employability-focused" },
+        { "icon": "bolt", "text": "Faculty enablement included" }
+      ],
+      "outcomes": [
+        { "title": "Employability, measurably", "text": "Students finish with a portfolio of shipped AI projects — the proof that lifts placement outcomes." },
+        { "title": "Flexible delivery", "text": "Full campus editions, live online, or hybrid — fitted to your calendar and infrastructure." },
+        { "title": "Faculty enablement", "text": "We upskill your faculty so AI capability stays in the institution, not just the cohort." },
+        { "title": "Aligned to real hiring", "text": "Curriculum built around the applied AI skills employers hire for — automation, agents, apps, data." }
+      ],
+      "learnHeading": "What a college partnership includes",
+      "learn": [
+        "Campus, online or hybrid AI programs mapped to your academic calendar",
+        "Project-first curriculum — students ship real AI products",
+        "Employability tracks: portfolio, interview readiness, career support",
+        "Faculty development so AI capability stays in-house",
+        "Options across AI generalist, cyber security, finance and marketing tracks"
+      ],
+      "contextKicker": "For institutions",
+      "contextHeading": "Turn AI hype into student outcomes",
+      "context": [
+        "Every college wants to add AI to its offering, but few can turn it into the one thing that matters: student employability. ONROL's execution-first model is built for exactly that. Instead of theory-heavy modules, students build and ship real AI products and graduate with a portfolio that stands out in placements — while faculty are enabled to sustain the capability.",
+        "We work with institutions across India on flexible terms — full campus editions of our flagship programs, shorter employability tracks, or workshops — delivered on campus, online or hybrid. Programs span AI generalist skills, cyber security, finance and digital marketing, so you can match them to your departments and outcomes."
+      ],
+      "faqs": [
+        { "q": "How does ONROL deliver training in colleges?", "a": "Flexibly — full campus editions, live online, or hybrid — mapped to your academic calendar. All formats are project-first, so students build and keep real AI products rather than only sitting through lectures." },
+        { "q": "Which programs are available for colleges?", "a": "Campus editions across AI generalist, the AI Career Accelerator, cyber security and SOC analyst, plus AI for finance and digital marketing — matched to your departments and placement goals." },
+        { "q": "Do you support our faculty?", "a": "Yes. Faculty enablement is part of a partnership, so your institution builds lasting AI capability rather than depending on a single cohort or vendor." },
+        { "q": "How do we start a partnership?", "a": "Share your details and our team will discuss your goals, departments and calendar, then propose a delivery model and curriculum that fit your institution." }
+      ],
+      "cta": "Partner with ONROL",
+      "regHeading": "Bring AI to your campus.",
+      "regSub": "Share a few details and our team will design an AI training partnership around your college's departments, calendar and placement goals.",
+      "form": { "source": "College Partnership", "campaign": "b2b-college", "program": "AI Training for Colleges" },
+      "breadcrumb": [ { "name": "Programs", "url": "https://onrol.in/programs" }, { "name": "AI Training for Colleges", "url": "https://onrol.in/ai-training-for-colleges/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "corporate-ai-training",
+      "title": "Corporate AI Training — Upskill Your Teams | ONROL",
+      "description": "Custom corporate AI training for teams — AI productivity, automation, AI-assisted development and enterprise vibe coding. Department-specific, hands-on, outcomes-driven. Live online or on-site. Talk to our team.",
+      "eyebrow": "For Companies & Teams",
+      "h1": "Corporate AI",
+      "h1accent": "training",
+      "lead": "Turn AI from a buzzword into real productivity across your organisation. ONROL delivers custom, hands-on AI training for teams — from everyday AI productivity to automation, AI-assisted development and enterprise vibe coding — tailored to each department and built around measurable outcomes.",
+      "meta": [
+        { "icon": "screen", "text": "Live online or on-site" },
+        { "icon": "bolt", "text": "Department-specific" },
+        { "icon": "shield", "text": "Outcomes-driven" }
+      ],
+      "outcomes": [
+        { "title": "AI productivity for teams", "text": "Get every team fluent in ChatGPT, Claude and Gemini for research, documents, data and daily work." },
+        { "title": "Automate business processes", "text": "Build internal automations and AI agents that remove repetitive work across functions." },
+        { "title": "AI-assisted development", "text": "Upskill engineering teams in AI coding, agents and enterprise vibe coding on your own codebase." },
+        { "title": "Tailored to each department", "text": "Programs mapped to the real workflows of sales, finance, HR, ops and engineering." }
+      ],
+      "learnHeading": "What corporate training covers",
+      "learn": [
+        "AI productivity across ChatGPT, Claude and Gemini for everyday work",
+        "Business process automation with n8n, Make and APIs",
+        "Internal AI agents and tools for repeated team work",
+        "AI-assisted software development on your existing codebase",
+        "Department-specific tracks with measurable outcomes"
+      ],
+      "contextKicker": "For organisations",
+      "contextHeading": "AI adoption that actually sticks",
+      "context": [
+        "Most corporate AI initiatives stall because training is generic and theoretical. ONROL's approach is department-specific and hands-on: teams learn AI by applying it to their own workflows and building real automations and tools they keep using after the program ends. That's how AI adoption actually sticks.",
+        "We design custom programs for each organisation — from broad AI-productivity enablement across all staff to deep technical tracks for engineering teams (AI-assisted development, agents, enterprise vibe coding). Delivered live online or on-site, mapped to your functions, and built around outcomes you can measure."
+      ],
+      "faqs": [
+        { "q": "What does corporate AI training from ONROL include?", "a": "Custom, department-specific programs — AI productivity for all teams, business-process automation, internal AI agents, and AI-assisted development for engineering — delivered hands-on so teams build real tools, not just attend sessions." },
+        { "q": "Can training be tailored to our departments?", "a": "Yes — that's the core of it. We map programs to the real workflows of your sales, finance, HR, operations and engineering teams, with outcomes defined up front." },
+        { "q": "Do you deliver on-site or online?", "a": "Both. Corporate programs run live online or on-site, structured around your teams' availability and goals." },
+        { "q": "How do we get started?", "a": "Share your details and our team will scope your objectives, departments and team sizes, then propose a tailored corporate AI training plan." }
+      ],
+      "cta": "Book a consultation",
+      "regHeading": "Upskill your teams in AI.",
+      "regSub": "Tell us about your organisation and our team will design a corporate AI training program around your departments and outcomes.",
+      "form": { "source": "Corporate Training", "campaign": "b2b-corporate", "program": "Corporate AI Training" },
+      "breadcrumb": [ { "name": "Programs", "url": "https://onrol.in/programs" }, { "name": "Corporate AI Training", "url": "https://onrol.in/corporate-ai-training/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-certification-course",
+      "title": "AI Certification Course — Certificate + Real Portfolio | ONROL",
+      "description": "An AI certification course that means something — earn a certificate and a portfolio of real, deployed AI products. Live online, project-first, no coding required. The proof employers actually value.",
+      "eyebrow": "AI Certification Course · Live Online",
+      "h1": "AI certification that comes with real",
+      "h1accent": "proof",
+      "lead": "A certificate opens the conversation; a portfolio wins the job. ONROL's AI certification course gives you both — you earn a recognised certificate and, more importantly, graduate with a portfolio of real AI products you built and deployed. Live online, project-first, no coding required.",
+      "meta": [
+        { "icon": "shield", "text": "Certificate + portfolio" },
+        { "icon": "screen", "text": "Project-first" },
+        { "icon": "clock", "text": "Live online cohorts" }
+      ],
+      "outcomes": [
+        { "title": "A certificate that's backed by work", "text": "Earn a recognised AI certificate — and back it with real projects, so it's more than a line on a CV." },
+        { "title": "A portfolio employers trust", "text": "Finish with deployed AI products — automations, agents, apps — that prove capability beyond any certificate." },
+        { "title": "Applied, current skills", "text": "Certification on the AI skills that matter now: prompting, automation, RAG, agents and AI-assisted building." },
+        { "title": "Interview & career support", "text": "Turn certificate and portfolio into interviews with resume, LinkedIn and placement support." }
+      ],
+      "learnHeading": "What certification includes",
+      "learn": [
+        "A recognised ONROL AI certificate on completion",
+        "A portfolio of real, deployed AI products you built",
+        "Applied skills: prompting, automation, RAG, agents, AI apps",
+        "Interview, resume and LinkedIn preparation",
+        "Placement support to convert certification into a role"
+      ],
+      "contextKicker": "Why this certification",
+      "contextHeading": "Beyond a certificate you can't prove",
+      "context": [
+        "The internet is full of AI certificates that mean little because they prove nothing you can do. ONROL takes the opposite approach: certification is earned by building. You leave with a recognised certificate and — the part that actually gets you hired — a portfolio of real AI products you designed, built and deployed.",
+        "The course covers the applied AI skills employers hire for today, requires no coding, and runs live online. Because it's project-first, your certificate is backed by demonstrable work, and you get interview, resume and placement support to turn it into an opportunity. Proof beats paper."
+      ],
+      "faqs": [
+        { "q": "Is an AI certificate worth it?", "a": "A certificate alone isn't — employers hire proof. ONROL's certification is worth it because it's earned by building: you finish with a recognised certificate and a portfolio of real, deployed AI products that actually demonstrates capability." },
+        { "q": "Do I need coding to get AI certified here?", "a": "No. The certification course is built for non-coders and uses no-code and AI-assisted tools, so you earn it by building real AI products without traditional programming." },
+        { "q": "What certificate do I receive?", "a": "A recognised ONROL AI certificate on completion — backed by the portfolio of real projects you build during the course, which is what carries weight in interviews." },
+        { "q": "Does certification help with jobs?", "a": "Combined with your portfolio, yes. You also get interview, resume and LinkedIn preparation plus placement support. We don't guarantee a job — we make you genuinely employable through proof of work." }
+      ],
+      "cta": "Reserve your seat",
+      "form": { "source": "AI Certification Course", "campaign": "course-certification", "program": "AI Certification Course" },
+      "breadcrumb": [ { "name": "Courses", "url": "https://onrol.in/programs" }, { "name": "AI Certification Course", "url": "https://onrol.in/ai-certification-course/" } ]
+    },
+    {
+      "type": "jobready",
+      "slug": "ai-course-with-placement-support",
+      "title": "AI Course with Placement Support — Portfolio-First | ONROL",
+      "description": "An AI course built around job-readiness: real shipped projects, a portfolio you keep, interview and resume prep, and placement support. We don't guarantee jobs — we make you employable through proof of work.",
+      "eyebrow": "Placement Support · Job-Ready AI",
+      "h1": "Get job-ready in AI with real",
+      "h1accent": "proof",
+      "lead": "The fastest way into an AI career isn't a certificate — it's proof you can build. ONROL is project-first: you ship real AI products, keep them as a portfolio, and get interview, resume and placement support to turn that work into a job.",
+      "meta": [
+        { "icon": "shield", "text": "Portfolio-first employability" },
+        { "icon": "screen", "text": "Interview & resume prep" },
+        { "icon": "clock", "text": "Placement support included" }
+      ],
+      "honest": "Straight answer: we do not guarantee a job. Any institute that guarantees one is usually hiding conditions in the fine print. What we do instead is make you genuinely employable — a portfolio of real shipped AI products, mock interviews, resume and LinkedIn review, and active placement support. Proof of work beats a promise.",
+      "outcomes": [
+        { "title": "A portfolio, not just a certificate", "text": "Finish with real AI products you built and deployed — the single most convincing thing in an interview." },
+        { "title": "Interview & resume prep", "text": "Mock interviews, resume rewrites and LinkedIn optimisation targeted at AI and tech roles." },
+        { "title": "Placement support", "text": "We share openings, make introductions where we can, and coach you through the process — active support, not a hollow guarantee." },
+        { "title": "Freelance-ready too", "text": "The same portfolio wins freelance clients — many learners earn before they're formally 'placed'." }
+      ],
+      "learnHeading": "How we build employability",
+      "learn": [
+        "Ship real AI products every week — automations, agents, apps — and keep them",
+        "Package your work into a portfolio, GitHub and demo that employers trust",
+        "Practise real AI-role interviews with structured feedback",
+        "Rewrite your resume and LinkedIn for AI and tech roles",
+        "Get active placement support and introductions through the ONROL network"
+      ],
+      "faqs": [
+        { "q": "Does ONROL guarantee a job?", "a": "No — and we're upfront about it. A guaranteed-job claim usually hides fine print about roles, salaries or clauses. Instead, ONROL makes you genuinely employable: a portfolio of real shipped AI products, interview and resume preparation, and active placement support. Proof of work is what actually gets you hired." },
+        { "q": "What is 'placement support' exactly?", "a": "It's active help getting hired: we share relevant openings, coach you through interviews, review your resume and LinkedIn, and make introductions within the ONROL network where we can. It is support, not a contractual guarantee." },
+        { "q": "Why is a portfolio better than a placement guarantee?", "a": "Employers hire evidence. A portfolio of AI products you actually built and deployed proves your capability far more than a certificate or a guarantee clause. That's the core of ONROL's project-first method: build the evidence, keep the proof." },
+        { "q": "Can this help me freelance instead of getting a job?", "a": "Yes. The same shipped portfolio wins freelance and consulting clients. Many ONROL learners start earning through freelance AI work before or instead of a traditional placement." }
+      ],
+      "cta": "Talk to us about your goals",
+      "form": { "source": "Job-Ready / Placement Support", "campaign": "placement-support", "program": "AI Course with Placement Support" },
+      "breadcrumb": [ { "name": "Programs", "url": "https://onrol.in/programs" }, { "name": "AI Course with Placement Support", "url": "https://onrol.in/ai-course-with-placement-support/" } ]
+    }
+  ]
+}

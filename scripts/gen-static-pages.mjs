@@ -342,6 +342,29 @@ body:has(.prog-hero) .actions{ margin-top:26px; }
 body:has(.prog-hero) .subpage .back{ margin-top:24px; }
 </style>`;
 
+/* Internal-links section for the Programs page → the programmatic SEO pages
+   (courses / geo / career), auto-built from data/seo-catalog.json so it stays
+   in sync as pages are added. Gives those pages a crawlable inbound link from a
+   frequently-crawled page — the fix for orphan pages that index slowly. */
+function seoLinksBlock() {
+  let cat;
+  try { cat = JSON.parse(readFileSync("data/seo-catalog.json", "utf8")).pages; }
+  catch { return ""; }
+  if (!cat || !cat.length) return "";
+  const label = (p) => (p.breadcrumb && p.breadcrumb.length ? p.breadcrumb[p.breadcrumb.length - 1].name : p.city || p.slug);
+  const li = (p) => `<li><a href="/${p.slug}/">${label(p).replace(/&/g, "&amp;")}</a></li>`;
+  const col = (title, items) => items.length ? `<div class="pgx-col"><h4>${title}</h4><ul>${items.map(li).join("")}</ul></div>` : "";
+  const cols = [
+    col("Courses", cat.filter((p) => p.type === "course")),
+    col("AI courses by city", cat.filter((p) => p.type === "geo")),
+    col("Career &amp; outcomes", cat.filter((p) => p.type === "jobready")),
+  ].filter(Boolean).join("");
+  if (!cols) return "";
+  return `<section class="pgx" aria-label="More AI courses and locations">
+<style>.pgx{border-top:1px solid rgba(0,0,0,.1);margin-top:8px;padding:40px 0 8px}.pgx-in{max-width:860px;margin:0 auto;padding:0 20px}.pgx-kick{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin:0 0 20px}.pgx-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}@media(max-width:640px){.pgx-cols{grid-template-columns:1fr;gap:20px}}.pgx-col h4{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#16181b;margin:0 0 12px}.pgx-col ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}.pgx-col a{color:#41454b;text-decoration:none;font-size:14.5px;border-bottom:1px solid transparent}.pgx-col a:hover{color:var(--orange);border-bottom-color:rgba(var(--orange-rgb),.4)}</style>
+<div class="pgx-in"><p class="pgx-kick">Explore AI courses &amp; locations</p><div class="pgx-cols">${cols}</div></div></section>`;
+}
+
 let n = 0;
 for (const [src, meta] of Object.entries(PAGES)) {
   let raw = readFileSync(meta.src || `${SRC}/${src}`, "utf8");
@@ -351,6 +374,7 @@ for (const [src, meta] of Object.entries(PAGES)) {
     raw = raw.replace(/\s*<p class="ph-sub">[\s\S]*?<\/p>/, "");
     raw = injectAicaCard(raw);
     raw = raw.replace(/>Four programs\./g, ">Five programs.");  // AICA added → 5 total
+    raw = raw.replace(/<\/main>/, seoLinksBlock() + "\n</main>");  // internal links → programmatic SEO pages
   }
   let html = fixNavActive(fixAbsolute(rewriteLinks(rewriteAssets(raw))));
   // Home SERP tuning (ooty.io audit): title ≤60 chars with a number; meta
