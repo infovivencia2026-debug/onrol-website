@@ -1819,6 +1819,661 @@
       "breadcrumb": [ { "name": "Programs", "url": "https://onrol.in/programs" }, { "name": "AI for Healthcare Professionals", "url": "https://onrol.in/ai-course-for-healthcare-professionals/" } ]
     },
     {
+      "type": "course",
+      "slug": "courses/data-science",
+      "title": "Data Science Course — AI-First, Practical | ONROL",
+      "description": "Learn data science the AI-first way — Python, statistics, data analysis, machine learning and visualisation, applied to real problems. Live online, project-first. Build real data science projects you keep.",
+      "eyebrow": "Data Science Course · AI-First",
+      "h1": "Data science, the",
+      "h1accent": "AI-first way",
+      "lead": "Learn data science as a complete, applied skill — Python, statistics, data analysis, machine learning and visual storytelling — with AI accelerating how fast you get fluent. Live online and project-first: you solve real problems end to end and build a genuine data science portfolio.",
+      "meta": [
+        { "icon": "clock", "text": "Live online · hands-on" },
+        { "icon": "screen", "text": "End-to-end real projects" },
+        { "icon": "shield", "text": "Practical, not theory-only" }
+      ],
+      "outcomes": [
+        { "title": "The full data science stack", "text": "Python, statistics, analysis, ML and visualisation — the whole pipeline, applied to real problems." },
+        { "title": "From question to answer", "text": "Frame a problem, gather and clean data, model it, and communicate the result." },
+        { "title": "Machine learning applied", "text": "Build and evaluate models that predict and classify on real datasets." },
+        { "title": "Tell the story", "text": "Turn analysis into clear visual narratives that drive decisions." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "A full data science project — problem to data to model to insight",
+        "Statistical analysis and hypothesis testing on real data",
+        "A machine learning model with proper evaluation",
+        "Data visualisations and a visual story",
+        "A portfolio of end-to-end data science work"
+      ],
+      "contextKicker": "Who it's for",
+      "contextHeading": "Data science without the years of grind",
+      "context": [
+        "Data science combines statistics, programming, machine learning and communication — a powerful but often intimidating mix. The AI-first approach makes it far more achievable: you learn the fundamentals properly while AI accelerates the parts that used to take months to get fluent in, and you focus on solving real problems end to end.",
+        "It suits analysts, engineers, graduates and professionals aiming for data science and data-heavy roles. ONROL is project-first, so you finish with a genuine data science portfolio — full projects from problem to insight — the demonstrable work that data roles hire for."
+      ],
+      "faqs": [
+        { "q": "What's the difference between data science, data analytics and machine learning here?", "a": "Data analytics focuses on querying, analysing and visualising data; machine learning focuses on building predictive models; data science is the broader field combining statistics, programming, ML and communication end to end. This course covers that full pipeline." },
+        { "q": "Do I need heavy maths?", "a": "Not the heavy theoretical kind. The course is applied and AI-first — you learn the fundamentals you need and focus on solving real problems, with AI helping you learn faster." },
+        { "q": "What will I have to show?", "a": "A genuine data science portfolio — full projects from problem framing through data, modelling and insight — that demonstrates capability for data science and data-heavy roles." },
+        { "q": "Is it live?", "a": "Yes — live online, hands-on, project-first, with recordings shared for revision." }
+      ],
+      "cta": "Reserve your seat",
+      "form": { "source": "Data Science Course", "campaign": "course-data-science", "program": "Data Science Course" },
+      "breadcrumb": [ { "name": "Courses", "url": "https://onrol.in/programs" }, { "name": "Data Science Course", "url": "https://onrol.in/courses/data-science/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-lucknow",
+      "city": "Lucknow",
+      "title": "AI Course in Lucknow — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for Lucknow learners. Build real AI products in Uttar Pradesh's capital — a government, education and growing IT city. Automation, agents, apps. No coding required, portfolio you keep.",
+      "eyebrow": "Live Online · Serving Lucknow",
+      "h1": "AI course in",
+      "h1accent": "Lucknow",
+      "lead": "Learn applied AI live online from anywhere in Lucknow — the capital of India's largest state and a growing government, education and IT city. ONROL teaches you to build and ship real AI products that fit an emerging market, and keep them as your portfolio.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "Capital-city opportunity", "text": "As UP's capital with growing IT investment, Lucknow's government and enterprise demand for AI skills is rising." },
+        { "title": "A large education base", "text": "With major universities and colleges, the city has real talent — a portfolio of AI products helps you stand out." },
+        { "title": "Serve India's biggest state", "text": "Lucknow anchors a vast market; AI skills open doors across Uttar Pradesh and remotely." },
+        { "title": "Build without relocating", "text": "Gain serious AI skills online without moving to Delhi NCR." }
+      ],
+      "learnHeading": "What Lucknow learners build",
+      "learn": [
+        "AI automations for business, government and operations work",
+        "AI agents and chatbots wired into real tools",
+        "AI-assisted apps and tools, built and deployed live",
+        "A portfolio of shipped AI products for local and remote roles"
+      ],
+      "contextKicker": "Why Lucknow",
+      "contextHeading": "AI, tuned to the capital of India's largest state",
+      "context": [
+        "Lucknow is the capital of Uttar Pradesh — India's most populous state — and a rising government, education and technology city. Its IT presence has grown around Vibhuti Khand and Gomti Nagar, with firms like HCL and TCS and the state's planned IT City, alongside a deep education base spanning Lucknow University, BBAU and Amity. Add a distinctive Nawabi heritage economy of chikankari and crafts, and a state government pursuing large-scale digital governance, and applied AI skills become valuable across a genuinely varied market.",
+        "Historically, ambitious graduates from Lucknow and across UP have moved to Delhi NCR for tech careers. Online-first, project-first AI training changes that — you build employable skills and a real portfolio from Lucknow itself, for local opportunities, the growing IT sector and remote work.",
+        "Delivery is 100% live online across Lucknow, with projects mapped to the city's real demand — business and government automation, plus the AI capability its expanding IT sector increasingly wants."
+      ],
+      "faqs": [
+        { "q": "Is the AI course in Lucknow online or offline?", "a": "100% live online, so learners across Lucknow join the same interactive, hands-on cohort without relocating to Delhi NCR. Every session is hands-on." },
+        { "q": "Is there AI opportunity in Lucknow?", "a": "Increasingly, yes. As UP's capital with growing IT investment and a large education base, Lucknow has rising demand for AI skills across government, enterprise and its emerging tech sector." },
+        { "q": "Can I build an AI career from Lucknow without moving?", "a": "Yes. Online-first, project-first training lets you gain employable AI skills and a real portfolio from Lucknow — for local, government, IT and remote opportunities." },
+        { "q": "When does the next Lucknow cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a suitable timing." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Lucknow", "campaign": "geo-lucknow", "program": "AI Course (Lucknow, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Lucknow", "url": "https://onrol.in/ai-course-in-lucknow/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-nagpur",
+      "city": "Nagpur",
+      "title": "AI Course in Nagpur — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for Nagpur learners. Build real AI products in central India's logistics and emerging-tech hub — automation, agents, apps. No coding required, portfolio you keep.",
+      "eyebrow": "Live Online · Serving Nagpur",
+      "h1": "AI course in",
+      "h1accent": "Nagpur",
+      "lead": "Learn applied AI live online from anywhere in Nagpur — the geographic heart of India and a growing logistics and technology hub anchored by MIHAN. ONROL teaches you to build and ship real AI products that fit an emerging market, and keep them as your portfolio.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "Central India's hub", "text": "Nagpur's logistics and MIHAN-driven growth is bringing new industries — and demand for AI skills." },
+        { "title": "AI for logistics & operations", "text": "A logistics and industrial base runs on process — prime ground for AI automation." },
+        { "title": "Growing education & IT", "text": "With strong colleges and expanding IT, standing out means proof — a portfolio of AI products." },
+        { "title": "Build without relocating", "text": "Gain serious AI skills online without moving to Mumbai or Pune." }
+      ],
+      "learnHeading": "What Nagpur learners build",
+      "learn": [
+        "AI automations for logistics, operations and business",
+        "AI agents and chatbots wired into real tools",
+        "AI-assisted apps and tools, built and deployed live",
+        "A portfolio of shipped AI products for local and remote roles"
+      ],
+      "contextKicker": "Why Nagpur",
+      "contextHeading": "AI, tuned to central India's growing hub",
+      "context": [
+        "Nagpur sits at the geographic centre of India and has built an identity as a logistics and connectivity hub, anchored by MIHAN — one of the country's largest multi-modal special economic zones. That connectivity is drawing industry, IT and services, and its strong education base supplies the talent. Applied AI skills fit both the logistics and industrial economy and the emerging tech sector.",
+        "Ambitious graduates from Nagpur have often moved to Mumbai or Pune for tech careers. Online-first, project-first AI training changes that — you build employable skills and a real portfolio from Nagpur itself, for local industry, its growing IT sector and remote work.",
+        "Delivery is 100% live online across Nagpur, with projects mapped to the city's real demand — logistics and operations automation, plus the AI capability its expanding economy increasingly wants."
+      ],
+      "faqs": [
+        { "q": "Is the AI course in Nagpur online or offline?", "a": "100% live online, so learners across Nagpur join the same interactive, hands-on cohort without relocating to Mumbai or Pune. Every session is hands-on." },
+        { "q": "Is there AI opportunity in Nagpur?", "a": "Increasingly, yes. MIHAN-driven growth is bringing industry and IT, and its logistics and industrial base benefits from AI automation. Applied AI positions you for local, IT and remote opportunities." },
+        { "q": "Can I build an AI career from Nagpur without moving?", "a": "Yes. Online-first, project-first training lets you gain employable AI skills and a real portfolio from Nagpur — for local industry, its growing IT sector and remote work." },
+        { "q": "When does the next Nagpur cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a suitable timing." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Nagpur", "campaign": "geo-nagpur", "program": "AI Course (Nagpur, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Nagpur", "url": "https://onrol.in/ai-course-in-nagpur/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-chandigarh",
+      "city": "Chandigarh",
+      "title": "AI Course in Chandigarh — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for Chandigarh, Mohali and Panchkula learners. Build real AI products in North India's planned tricity IT hub — automation, agents, apps. No coding required, portfolio you keep.",
+      "eyebrow": "Live Online · Serving Chandigarh",
+      "h1": "AI course in",
+      "h1accent": "Chandigarh",
+      "lead": "Learn applied AI live online from anywhere in the Chandigarh tricity — Chandigarh, Mohali and Panchkula. In North India's best-planned city with a solid IT base in Mohali, ONROL teaches you to build and ship real AI products you keep as a portfolio.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "A real IT base in Mohali", "text": "The Mohali IT park and tricity tech scene hire for AI skills — you learn to build them." },
+        { "title": "North India's education hub", "text": "With strong universities and colleges, standing out means proof — a portfolio of AI products." },
+        { "title": "Serve the whole tricity", "text": "Chandigarh, Mohali and Panchkula — one live online cohort across the region." },
+        { "title": "Gateway to the north", "text": "AI skills open doors across Punjab, Haryana and Himachal, plus remote work." }
+      ],
+      "learnHeading": "What Chandigarh learners build",
+      "learn": [
+        "AI automations for business and operations",
+        "AI agents and chatbots wired into real tools",
+        "AI-assisted apps and tools, built and deployed live",
+        "A portfolio of shipped AI products for local, IT and remote roles"
+      ],
+      "contextKicker": "Why Chandigarh",
+      "contextHeading": "AI, tuned to North India's planned city",
+      "context": [
+        "Chandigarh — India's famously well-planned city and the heart of a tricity with Mohali and Panchkula — combines a high quality of life with a genuine technology base, especially the Mohali IT park, and a strong education sector drawing students from across the north. That mix makes it fertile ground for applied AI skills, both for its IT firms and the wider regional economy.",
+        "Ambitious graduates from the tricity and the surrounding states have often moved to Delhi NCR or Bangalore for tech careers. Online-first, project-first AI training changes that — you build employable skills and a real portfolio from the Chandigarh region itself, for its IT sector, local businesses and remote work.",
+        "Delivery is 100% live online across the tricity — Chandigarh, Mohali and Panchkula — with projects mapped to the region's real demand: business automation and the AI capability its IT sector increasingly wants."
+      ],
+      "faqs": [
+        { "q": "Is the AI course in Chandigarh online or offline?", "a": "100% live online, so learners across the tricity — Chandigarh, Mohali, Panchkula — join the same interactive, hands-on cohort without relocating. Every session is hands-on." },
+        { "q": "Is there AI opportunity in the Chandigarh region?", "a": "Yes. The Mohali IT park and tricity tech scene hire for AI skills, and the wider regional economy benefits from AI automation. Applied AI positions you for local, IT and remote opportunities." },
+        { "q": "Can I build an AI career from Chandigarh without moving?", "a": "Yes. Online-first, project-first training lets you gain employable AI skills and a real portfolio from the tricity — for its IT sector, local business and remote work." },
+        { "q": "When does the next Chandigarh cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a suitable timing." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Chandigarh", "campaign": "geo-chandigarh", "program": "AI Course (Chandigarh, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Chandigarh", "url": "https://onrol.in/ai-course-in-chandigarh/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-surat",
+      "city": "Surat",
+      "title": "AI Course in Surat — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for Surat learners. Build real AI products in Gujarat's diamond and textile business city — automation, agents, apps. No coding required, portfolio you keep.",
+      "eyebrow": "Live Online · Serving Surat",
+      "h1": "AI course in",
+      "h1accent": "Surat",
+      "lead": "Learn applied AI live online from anywhere in Surat — the world's diamond-polishing capital and one of India's fastest-growing business cities. In a fiercely entrepreneurial market, ONROL teaches you to build and ship real AI products that serve businesses directly, and keep them as your portfolio.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "Built for a business city", "text": "Surat's diamond, textile and trading businesses adopt technology that pays off — AI automation fits perfectly." },
+        { "title": "AI for trade & manufacturing", "text": "A dense base of manufacturing and trade runs on process — prime ground for automation." },
+        { "title": "Entrepreneur-ready", "text": "Ship AI products you can turn into a business, service or freelance income — natural in Surat's enterprising culture." },
+        { "title": "Build without relocating", "text": "Gain serious AI skills online without moving to Ahmedabad or a metro." }
+      ],
+      "learnHeading": "What Surat learners build",
+      "learn": [
+        "AI automations for trade, manufacturing and back-office work",
+        "AI agents and chatbots for customer handling and sales",
+        "AI-assisted apps and internal tools, built and deployed live",
+        "A portfolio of shipped AI products aimed at businesses and entrepreneurs"
+      ],
+      "contextKicker": "Why Surat",
+      "contextHeading": "AI, tuned to a fast-growing business city",
+      "context": [
+        "Surat is one of India's fastest-growing cities and its economic character is unmistakable: the world's diamond-polishing capital, a massive textile industry, and a dense, fiercely entrepreneurial trading base. It's a city that embraces technology when it clearly pays off — and AI automation does exactly that, giving businesses and small teams outsized leverage over repetitive work.",
+        "Surat's entrepreneurial mindset makes it especially receptive to applied AI. Business owners and professionals learn to automate operations and customer handling; graduates and freshers build real AI products that appeal to local businesses and beyond. Because ONROL is project-first, many learners turn what they build into services, freelance work or a business of their own.",
+        "Delivery is 100% live online across Surat, with projects mapped to real local demand — diamond, textile and trade automation, customer-facing AI, and business operations."
+      ],
+      "faqs": [
+        { "q": "Is the AI course in Surat online or offline?", "a": "100% live online, so learners across Surat join the same interactive, hands-on cohort without relocating or commuting. Every session is hands-on." },
+        { "q": "I run a business in Surat — can AI help?", "a": "Absolutely. Surat's diamond, textile and trading businesses gain directly from AI automation — customer handling, operations and repetitive work. You build these automations yourself during the course." },
+        { "q": "Can I turn this into freelance or business income?", "a": "Yes, and it suits Surat's entrepreneurial culture. The AI products you build are usable and portfolio-first, so many learners convert them into services, freelance work or their own business." },
+        { "q": "When does the next Surat cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a suitable timing." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Surat", "campaign": "geo-surat", "program": "AI Course (Surat, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Surat", "url": "https://onrol.in/ai-course-in-surat/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-bhubaneswar",
+      "city": "Bhubaneswar",
+      "title": "AI Course in Bhubaneswar — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for Bhubaneswar learners. Build real AI products in Odisha's IT and education hub — automation, agents, apps. No coding required, portfolio you keep.",
+      "eyebrow": "Live Online · Serving Bhubaneswar",
+      "h1": "AI course in",
+      "h1accent": "Bhubaneswar",
+      "lead": "Learn applied AI live online from anywhere in Bhubaneswar — eastern India's temple city turned IT and education hub, home to Infocity and a dense cluster of universities. ONROL teaches you to build and ship real AI products you keep as a portfolio.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "Odisha's IT gateway", "text": "Bhubaneswar's Infocity and growing IT sector hire for AI skills — you learn to build them." },
+        { "title": "An education powerhouse", "text": "With KIIT and a cluster of universities, the city has real talent — a portfolio of AI products helps you stand out." },
+        { "title": "Eastern India opportunity", "text": "AI skills open doors across Odisha and the east, plus remote work." },
+        { "title": "Build without relocating", "text": "Gain serious AI skills online without moving to Hyderabad or Bangalore." }
+      ],
+      "learnHeading": "What Bhubaneswar learners build",
+      "learn": [
+        "AI automations for business and IT operations",
+        "AI agents and chatbots wired into real tools",
+        "AI-assisted apps and tools, built and deployed live",
+        "A portfolio of shipped AI products for local, IT and remote roles"
+      ],
+      "contextKicker": "Why Bhubaneswar",
+      "contextHeading": "AI, tuned to eastern India's education city",
+      "context": [
+        "Bhubaneswar has transformed from a temple city into one of eastern India's most important education and technology centres. Infocity anchors a growing IT sector, and universities like KIIT draw students from across the country, giving the city an unusually large, capable talent pool. That combination makes applied AI skills especially valuable — both for its IT firms and for the graduates competing in a national market.",
+        "Historically, Bhubaneswar's graduates have moved to metros for serious tech careers. Online-first, project-first AI training changes that — you build employable skills and a real portfolio from Bhubaneswar itself, for its IT sector, local opportunities and remote work.",
+        "Delivery is 100% live online across Bhubaneswar, with projects mapped to the city's real demand — business and IT automation, plus the AI capability its expanding tech sector increasingly wants."
+      ],
+      "faqs": [
+        { "q": "Is the AI course in Bhubaneswar online or offline?", "a": "100% live online, so learners across Bhubaneswar join the same interactive, hands-on cohort without relocating. Every session is hands-on." },
+        { "q": "Is there AI opportunity in Bhubaneswar?", "a": "Yes. Infocity and the growing IT sector hire for AI skills, and the city's strong education base means real talent. Applied AI positions you for local, IT and remote opportunities." },
+        { "q": "I study at a Bhubaneswar university — will this help placements?", "a": "In a major education city, a portfolio of real, deployed AI products is a genuine placement advantage. The course is project-first, so you finish with exactly that demonstrable work." },
+        { "q": "When does the next Bhubaneswar cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a suitable timing." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Bhubaneswar", "campaign": "geo-bhubaneswar", "program": "AI Course (Bhubaneswar, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Bhubaneswar", "url": "https://onrol.in/ai-course-in-bhubaneswar/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-bhopal",
+      "city": "Bhopal",
+      "title": "AI Course in Bhopal — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for Bhopal learners. Build real AI products in Madhya Pradesh's capital — a government, education and emerging-tech city. Automation, agents, apps. No coding required, portfolio you keep.",
+      "eyebrow": "Live Online · Serving Bhopal",
+      "h1": "AI course in",
+      "h1accent": "Bhopal",
+      "lead": "Learn applied AI live online from anywhere in Bhopal — the capital of Madhya Pradesh, a government and education city with a growing tech scene. ONROL teaches you to build and ship real AI products that fit an emerging market, and keep them as your portfolio.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "Capital-city demand", "text": "As MP's capital, Bhopal's government and enterprise appetite for AI-driven efficiency is rising." },
+        { "title": "A strong education base", "text": "Home to major institutes, the city has real talent — a portfolio of AI products helps you stand out." },
+        { "title": "Central India reach", "text": "AI skills open doors across Madhya Pradesh and remotely." },
+        { "title": "Build without relocating", "text": "Gain serious AI skills online without moving to Indore or a metro." }
+      ],
+      "learnHeading": "What Bhopal learners build",
+      "learn": [
+        "AI automations for business, government and operations work",
+        "AI agents and chatbots wired into real tools",
+        "AI-assisted apps and tools, built and deployed live",
+        "A portfolio of shipped AI products for local and remote roles"
+      ],
+      "contextKicker": "Why Bhopal",
+      "contextHeading": "AI, tuned to Madhya Pradesh's capital",
+      "context": [
+        "Bhopal, the capital of Madhya Pradesh, is the 'City of Lakes' — a government and education city with a distinctive industrial legacy in BHEL's vast township and a strong academic core in IISER Bhopal, MANIT and NIFT. Its state-secretariat base is increasingly interested in AI-driven governance and efficiency, and paired with nearby Indore it anchors a central-India corridor where applied AI skills are becoming genuinely valuable across public-sector, industrial and education settings.",
+        "Ambitious graduates from Bhopal have often left for metros to build tech careers. Online-first, project-first AI training changes that — you build employable skills and a real portfolio from Bhopal itself, for local government, business and remote work.",
+        "Delivery is 100% live online across Bhopal, with projects mapped to the city's real demand — business and government automation, plus the AI capability its emerging tech scene increasingly wants."
+      ],
+      "faqs": [
+        { "q": "Is the AI course in Bhopal online or offline?", "a": "100% live online, so learners across Bhopal join the same interactive, hands-on cohort without relocating. Every session is hands-on." },
+        { "q": "Is there AI opportunity in Bhopal?", "a": "Increasingly, yes. As MP's capital with a strong education base and growing tech interest, Bhopal has rising demand for AI skills across government, enterprise and its emerging tech scene." },
+        { "q": "Can I build an AI career from Bhopal without moving?", "a": "Yes. Online-first, project-first training lets you gain employable AI skills and a real portfolio from Bhopal — for local, government and remote opportunities." },
+        { "q": "When does the next Bhopal cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a suitable timing." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Bhopal", "campaign": "geo-bhopal", "program": "AI Course (Bhopal, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Bhopal", "url": "https://onrol.in/ai-course-in-bhopal/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-mysuru",
+      "city": "Mysuru",
+      "title": "AI Course in Mysuru (Mysore) — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for Mysuru learners. Build real AI products in Karnataka's heritage and IT city — automation, agents, apps. No coding required, portfolio you keep.",
+      "eyebrow": "Live Online · Serving Mysuru",
+      "h1": "AI course in",
+      "h1accent": "Mysuru",
+      "lead": "Learn applied AI live online from anywhere in Mysuru — Karnataka's heritage city and a quiet but real IT centre, home to major tech campuses and a strong education base. ONROL teaches you to build and ship real AI products you keep as a portfolio.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "A real IT presence", "text": "Mysuru hosts major tech campuses and a growing IT base — you learn the AI skills they increasingly want." },
+        { "title": "Bangalore's calmer neighbour", "text": "Close to Bengaluru's ecosystem but calmer — build AI skills without the metro grind." },
+        { "title": "Strong education base", "text": "With good universities and colleges, standing out means proof — a portfolio of AI products." },
+        { "title": "Build without relocating", "text": "Gain serious AI skills online without moving to Bengaluru." }
+      ],
+      "learnHeading": "What Mysuru learners build",
+      "learn": [
+        "AI automations for business and IT operations",
+        "AI agents and chatbots wired into real tools",
+        "AI-assisted apps and tools, built and deployed live",
+        "A portfolio of shipped AI products for local, IT and remote roles"
+      ],
+      "contextKicker": "Why Mysuru",
+      "contextHeading": "AI, tuned to Karnataka's heritage-and-tech city",
+      "context": [
+        "Mysuru blends heritage and technology in a way few Indian cities do. Beyond its palaces and cultural weight, it hosts major technology campuses and a growing IT base, sits within easy reach of Bengaluru's ecosystem, and has a strong education sector. That gives it genuine tech potential with a calmer pace than the metro — fertile ground for applied AI skills.",
+        "Many Mysuru graduates gravitate to Bengaluru for tech careers, but they don't have to. Online-first, project-first AI training lets you build employable skills and a real portfolio from Mysuru itself, tapping local IT, the wider Karnataka market and remote opportunities.",
+        "Delivery is 100% live online across Mysuru, with projects mapped to the city's real demand — business and IT automation, plus the AI capability its tech campuses and firms increasingly want."
+      ],
+      "faqs": [
+        { "q": "Is the AI course in Mysuru online or offline?", "a": "100% live online, so learners across Mysuru join the same interactive, hands-on cohort without relocating to Bengaluru. Every session is hands-on." },
+        { "q": "Is there real IT opportunity in Mysuru?", "a": "Yes. Mysuru hosts major tech campuses and a growing IT base, and its proximity to Bengaluru's ecosystem adds to the opportunity. Applied AI skills position you for local, IT and remote work." },
+        { "q": "Can I build an AI career from Mysuru without moving?", "a": "Yes. Online-first, project-first training lets you gain employable AI skills and a real portfolio from Mysuru — for local IT, the Karnataka market and remote opportunities." },
+        { "q": "When does the next Mysuru cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a suitable timing." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Mysuru", "campaign": "geo-mysuru", "program": "AI Course (Mysuru, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Mysuru", "url": "https://onrol.in/ai-course-in-mysuru/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-course-for-lawyers",
+      "title": "AI Course for Lawyers & Legal Professionals | ONROL",
+      "description": "An AI course for lawyers and legal professionals — use AI for legal research, drafting, document review and administration. Live online, project-first, no coding. Add AI to your legal practice.",
+      "eyebrow": "AI for Legal · Live Online",
+      "h1": "Add AI to your",
+      "h1accent": "legal practice",
+      "lead": "Legal work is full of research, drafting and document review — exactly where AI can save enormous time. This live online program shows lawyers and legal professionals how to use AI for research, drafting, document review and administration, responsibly and practically, with no coding.",
+      "meta": [
+        { "icon": "screen", "text": "For legal professionals" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding needed" }
+      ],
+      "outcomes": [
+        { "title": "Research faster", "text": "Use AI to research and summarise information quickly, with appropriate verification." },
+        { "title": "Draft and review", "text": "Speed up first-draft documents and review large volumes of text, then apply your judgement." },
+        { "title": "Automate admin", "text": "Reduce the repetitive administrative load around legal practice." },
+        { "title": "Use AI responsibly", "text": "Understand where AI helps and where care and verification are essential in legal work." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "AI-assisted legal research and summarisation workflows",
+        "A drafting-and-review process for documents",
+        "An administrative automation for repetitive tasks",
+        "A responsible-use framework for AI in legal practice",
+        "A practical AI toolkit for your professional work"
+      ],
+      "contextKicker": "Who it's for",
+      "contextHeading": "For legal professionals short on time",
+      "context": [
+        "Legal practice is document- and research-heavy — precisely the work AI can accelerate. Used carefully, AI can speed up research and summarisation, produce first drafts, and help review large volumes of text, while the lawyer stays fully responsible for judgement, accuracy and every decision.",
+        "This program is built for lawyers, legal associates and paralegals, no coding required, with a strong emphasis on responsible and verified use. ONROL is project-first, so you finish with practical AI workflows for research, drafting and admin — and a clear sense of where AI helps and where human legal judgement must lead."
+      ],
+      "faqs": [
+        { "q": "I'm a lawyer, not technical — is this suitable?", "a": "Yes. It's built for legal professionals, uses no-code AI tools, and focuses on practical, responsible use in real legal work — research, drafting, review, admin — with no programming." },
+        { "q": "Is it safe to use AI in legal work?", "a": "The course emphasises responsible, verified use — where AI genuinely helps (research, first drafts, review, admin) and where the lawyer's judgement and verification are essential. You learn to use it carefully, not blindly." },
+        { "q": "How does AI help legal professionals?", "a": "It accelerates research and summarisation, speeds up first-draft documents, helps review large text volumes, and reduces admin — freeing time for higher-value work, with you always in control of accuracy and decisions." },
+        { "q": "What will I have to show?", "a": "Practical AI workflows for legal research, drafting, review and admin, plus a responsible-use framework you can apply carefully in your practice." }
+      ],
+      "cta": "Talk to us about your goals",
+      "form": { "source": "Persona - Legal", "campaign": "persona-legal", "program": "AI for Legal Professionals" },
+      "breadcrumb": [ { "name": "Programs", "url": "https://onrol.in/programs" }, { "name": "AI for Legal Professionals", "url": "https://onrol.in/ai-course-for-lawyers/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "courses/ai-voice-agents",
+      "title": "AI Voice Agents Course — Build AI Calling Systems | ONROL",
+      "description": "Learn to build AI voice agents hands-on — voice AI, AI calling systems and workflow integrations for real business use cases. Live online, project-first, low-code. Build real voice agents you keep.",
+      "eyebrow": "AI Voice Agents Course · Live Online",
+      "h1": "Build AI",
+      "h1accent": "voice agents",
+      "lead": "Voice AI is moving fast — and businesses want agents that can call, answer and handle conversations. This live online course shows you how to build AI voice agents and calling systems, wired into real workflows and business use cases. Project-first: you build working voice agents.",
+      "meta": [
+        { "icon": "clock", "text": "Live online · hands-on" },
+        { "icon": "screen", "text": "Build real voice agents" },
+        { "icon": "shield", "text": "Low-code friendly" }
+      ],
+      "outcomes": [
+        { "title": "Build a voice agent", "text": "Create an AI agent that can hold a real spoken conversation for a defined use case." },
+        { "title": "AI calling systems", "text": "Set up AI-driven calling for support, qualification or outreach scenarios." },
+        { "title": "Integrate with workflows", "text": "Connect voice agents to your business tools and automations so they actually do things." },
+        { "title": "Design good conversations", "text": "Structure prompts and flows so the agent handles real calls reliably." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "A working AI voice agent for a real use case",
+        "An AI calling flow for support or qualification",
+        "Voice-agent integration with business tools",
+        "A conversation design that handles real interactions",
+        "A voice AI project for your portfolio"
+      ],
+      "contextKicker": "Who it's for",
+      "contextHeading": "The fast-emerging edge of applied AI",
+      "context": [
+        "Voice AI is one of the fastest-moving areas of applied AI — businesses increasingly want agents that can make and take calls, answer questions, qualify leads and handle routine conversations. Building these voice agents is a genuinely new, in-demand skill that sits at the intersection of AI agents, automation and telephony.",
+        "This course is practical and low-code: you build a working voice agent, an AI calling flow and workflow integrations. It suits AI builders, founders and technically-minded professionals who want to be early on a rising capability. ONROL is project-first, so you finish with a real voice AI project in a portfolio."
+      ],
+      "faqs": [
+        { "q": "What is an AI voice agents course?", "a": "It teaches you to build AI agents that can hold spoken conversations — make and take calls, answer questions, qualify leads — integrated with real business workflows. You build working voice agents, not just theory." },
+        { "q": "Do I need heavy coding?", "a": "No. The course is low-code friendly, using modern voice AI tools and integrations, so builders and technically-minded professionals can create real voice agents without deep programming." },
+        { "q": "What are voice agents used for?", "a": "Real business scenarios — customer support, lead qualification, outreach and routine call handling. You build a voice agent for a defined use case during the course." },
+        { "q": "What will I have to show?", "a": "A working AI voice agent and calling flow integrated with business tools — a real, portfolio-ready project on a fast-emerging, in-demand skill." }
+      ],
+      "cta": "Reserve your seat",
+      "form": { "source": "AI Voice Agents Course", "campaign": "course-voice-agents", "program": "AI Voice Agents Course" },
+      "breadcrumb": [ { "name": "Courses", "url": "https://onrol.in/programs" }, { "name": "AI Voice Agents Course", "url": "https://onrol.in/courses/ai-voice-agents/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "workshops/ai-resume-job-match",
+      "title": "AI Resume & Job Match Workshop — Land Interviews | ONROL",
+      "description": "A hands-on AI workshop to build a standout resume and match yourself to the right jobs — resume analysis, AI rewriting, LinkedIn and job matching. Live online, practical project. Walk out interview-ready.",
+      "eyebrow": "AI Resume & Job Match Workshop",
+      "h1": "Land more interviews with",
+      "h1accent": "AI",
+      "lead": "Your resume and job search are the first things AI can genuinely fix. In this focused live online workshop you use AI to analyse and rewrite your resume, optimise your LinkedIn, and match yourself to the right roles, so you stop getting filtered out and start getting interviews.",
+      "meta": [
+        { "icon": "bolt", "text": "Focused workshop format" },
+        { "icon": "screen", "text": "Live online · practical" },
+        { "icon": "shield", "text": "No coding needed" }
+      ],
+      "outcomes": [
+        { "title": "A resume that passes filters", "text": "Use AI to analyse and rewrite your resume so it clears ATS screening and reads sharp to humans." },
+        { "title": "A stronger LinkedIn", "text": "Optimise your profile with AI so recruiters actually find and shortlist you." },
+        { "title": "Match to the right jobs", "text": "Use AI to match your skills to roles and target applications that fit, instead of spraying and praying." },
+        { "title": "Interview preparation", "text": "Prepare for likely questions with AI-driven practice tailored to the roles you want." }
+      ],
+      "learnHeading": "What you'll walk out with",
+      "learn": [
+        "An AI-rewritten, ATS-ready resume",
+        "An optimised LinkedIn profile",
+        "A shortlist of well-matched target roles",
+        "AI-driven interview preparation for those roles",
+        "A repeatable AI job-search process you keep using"
+      ],
+      "faqs": [
+        { "q": "Is this a full course or a workshop?", "a": "A focused, practical workshop — short and outcome-driven. You walk out with a rewritten resume, an optimised LinkedIn and a job-matching process, not weeks of theory." },
+        { "q": "Do I need any technical skill?", "a": "No. It uses AI tools anyone can operate, guided step by step. It's built for job seekers of every background." },
+        { "q": "Will this actually help me get interviews?", "a": "It targets the exact points where candidates get filtered out — a weak resume, a passive LinkedIn, and poorly-matched applications. Fixing those with AI meaningfully improves your interview rate; we don't guarantee jobs, we make you far more competitive." },
+        { "q": "Is it live?", "a": "Yes — live online and hands-on, so you build your resume and job-search assets during the session." }
+      ],
+      "cta": "Reserve your spot",
+      "regHeading": "Get interview-ready with AI.",
+      "regSub": "Register for the next live workshop and walk out with a rewritten resume, an optimised LinkedIn and a job-matching process.",
+      "form": { "source": "Workshop - Resume Job Match", "campaign": "workshop-resume", "program": "AI Resume & Job Match Workshop" },
+      "breadcrumb": [ { "name": "Workshops", "url": "https://onrol.in/programs" }, { "name": "AI Resume & Job Match Workshop", "url": "https://onrol.in/workshops/ai-resume-job-match/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "workshops/5-day-ai-portfolio",
+      "title": "5-Day AI Portfolio Workshop — Ship Real AI Projects | ONROL",
+      "description": "A 5-day hands-on AI workshop where you build and ship real AI projects for your portfolio — automations, an assistant, an app. Live online, project-first. Walk out with proof, not just notes.",
+      "eyebrow": "5-Day AI Portfolio Workshop",
+      "h1": "Build a real AI portfolio in",
+      "h1accent": "5 days",
+      "lead": "The fastest way to prove you can do AI is to build something. In this intensive 5-day live online workshop you ship real AI projects — an automation, an AI assistant and a small app — and package them into a portfolio you can show employers and clients immediately.",
+      "meta": [
+        { "icon": "clock", "text": "5 days · intensive" },
+        { "icon": "screen", "text": "Ship real projects" },
+        { "icon": "shield", "text": "Beginner-friendly" }
+      ],
+      "outcomes": [
+        { "title": "Ship in five days", "text": "Move fast from zero to real, working AI projects in a focused, intensive format." },
+        { "title": "Three portfolio pieces", "text": "Build an automation, an AI assistant and a small app — variety that shows range." },
+        { "title": "Package it professionally", "text": "Turn your builds into a portfolio, demo and links you can share right away." },
+        { "title": "A launchpad", "text": "Leave with momentum and a clear path to keep building after the workshop." }
+      ],
+      "learnHeading": "What you'll walk out with",
+      "learn": [
+        "A working AI automation",
+        "A custom AI assistant",
+        "A small deployed AI app",
+        "A packaged portfolio with demos and links",
+        "The confidence and method to keep shipping"
+      ],
+      "faqs": [
+        { "q": "Can I really build AI projects in 5 days?", "a": "Yes — that's the design. The workshop is intensive and project-first, using AI tools that let beginners ship real automations, an assistant and a small app in five focused days." },
+        { "q": "Do I need experience?", "a": "No. It's beginner-friendly and uses no-code and AI-assisted tools, so you focus on building rather than syntax." },
+        { "q": "What do I walk out with?", "a": "Three real, working AI projects packaged into a portfolio with demos and links — proof you can show employers and clients immediately, plus the method to keep building." },
+        { "q": "How is this different from the full programs?", "a": "It's a short, intensive portfolio sprint rather than a full program — ideal if you want fast proof and momentum, or a taste of ONROL's project-first approach before a longer program." }
+      ],
+      "cta": "Reserve your spot",
+      "regHeading": "Build your AI portfolio in 5 days.",
+      "regSub": "Register for the next 5-day live workshop and walk out with three real AI projects packaged into a portfolio.",
+      "form": { "source": "Workshop - 5-Day Portfolio", "campaign": "workshop-portfolio", "program": "5-Day AI Portfolio Workshop" },
+      "breadcrumb": [ { "name": "Workshops", "url": "https://onrol.in/programs" }, { "name": "5-Day AI Portfolio Workshop", "url": "https://onrol.in/workshops/5-day-ai-portfolio/" } ]
+    },
+    {
+      "type": "course",
+      "slug": "courses/ai-presentations",
+      "title": "AI Presentations Course — Slides & Visual Storytelling | ONROL",
+      "description": "Learn to create stunning presentations and visual stories with AI — decks, pitch presentations and data storytelling using tools like Gamma and Canva. Live online, project-first, no design skills needed.",
+      "eyebrow": "AI Presentations Course · Live Online",
+      "h1": "Create standout presentations with",
+      "h1accent": "AI",
+      "lead": "Great slides used to take hours and design skills. Now AI can help you build beautiful, persuasive presentations and visual stories in minutes. This live online course shows you how to create decks, pitches and data storytelling with AI tools like Gamma and Canva, no design background needed.",
+      "meta": [
+        { "icon": "clock", "text": "Live online · hands-on" },
+        { "icon": "screen", "text": "Real decks & pitches" },
+        { "icon": "shield", "text": "No design skills needed" }
+      ],
+      "outcomes": [
+        { "title": "Build decks in minutes", "text": "Use AI to generate and design professional presentations far faster than doing it by hand." },
+        { "title": "Tell visual stories", "text": "Turn information and data into clear, persuasive visual narratives that land." },
+        { "title": "Pitch with impact", "text": "Create investor and business pitch decks that look sharp and communicate clearly." },
+        { "title": "Design without a designer", "text": "Produce polished visuals with AI design tools, even with zero design training." }
+      ],
+      "learnHeading": "What you'll build",
+      "learn": [
+        "A professional presentation built with AI",
+        "A data-driven visual story",
+        "An investor or business pitch deck",
+        "A set of AI-designed visuals and graphics",
+        "A reusable presentation workflow you keep"
+      ],
+      "faqs": [
+        { "q": "Do I need design skills for this course?", "a": "None. The course uses AI presentation and design tools like Gamma and Canva that handle the design for you — you focus on the message. It's built for people with no design background." },
+        { "q": "What will I be able to make?", "a": "Professional decks, data-driven visual stories and pitch presentations — quickly and repeatedly. You build several real presentations during the course." },
+        { "q": "Who is this useful for?", "a": "Anyone who presents — professionals, founders, students, marketers and consultants — who wants to create better presentations far faster with AI." },
+        { "q": "Is it live?", "a": "Yes — live online, hands-on, with recordings shared for revision." }
+      ],
+      "cta": "Reserve your seat",
+      "form": { "source": "AI Presentations Course", "campaign": "course-ai-presentations", "program": "AI Presentations Course" },
+      "breadcrumb": [ { "name": "Courses", "url": "https://onrol.in/programs" }, { "name": "AI Presentations Course", "url": "https://onrol.in/courses/ai-presentations/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-telangana",
+      "city": "Telangana",
+      "title": "AI Course in Telangana — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for learners across Telangana — Hyderabad, Warangal, Karimnagar and beyond. Build real AI products, no coding required, portfolio you keep. From a Telangana-founded school.",
+      "eyebrow": "Live Online · Serving Telangana",
+      "h1": "AI course in",
+      "h1accent": "Telangana",
+      "lead": "Learn applied AI live online from anywhere in Telangana — Hyderabad, Warangal, Karimnagar, Nizamabad or Khammam. As a Telangana-founded execution school, ONROL brings serious, project-first AI skills to the whole state, so you build and ship real AI products and keep them as your portfolio.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "Our home state", "text": "ONROL is Telangana-founded — our mentor network and employer connections are strongest right here." },
+        { "title": "Beyond Hyderabad", "text": "From Warangal to Karimnagar, learners across the state get the same skills without moving to the capital." },
+        { "title": "Built for the state's economy", "text": "Skills tuned to Telangana's IT strength in Hyderabad and its wider industrial and services base." },
+        { "title": "State-wide opportunity", "text": "A portfolio of AI products opens roles across Telangana, remotely, and in the Hyderabad tech hub." }
+      ],
+      "learnHeading": "What Telangana learners build",
+      "learn": [
+        "AI automations for business, industry and services work",
+        "AI agents and chatbots wired into real tools",
+        "AI-assisted apps and tools, built and deployed live",
+        "A portfolio of shipped AI products for state-wide and remote roles"
+      ],
+      "contextKicker": "Why Telangana",
+      "contextHeading": "AI for the whole state, from a Telangana school",
+      "context": [
+        "Telangana punches far above its weight in technology, driven overwhelmingly by Hyderabad's HITEC City, global capability centres and T-Hub startup ecosystem. But the state is more than its capital — Warangal is being built as a tier-2 IT hub, and cities like Karimnagar, Nizamabad and Khammam have large student populations and growing business bases. Applied AI skills are valuable right across this spread.",
+        "As a Telangana-founded execution school, ONROL is built for this state specifically. Our strongest mentor network and employer connections are here, and our project-first approach produces exactly what Telangana's employers — from Hyderabad's GCCs to the state's wider economy — hire for: people who can build and ship real AI.",
+        "Delivery is 100% live online across Telangana, so a learner in Warangal or Karimnagar gets the same hands-on cohort as one in Hyderabad, without relocating. The projects map to real demand across the state's IT, industrial and services sectors."
+      ],
+      "faqs": [
+        { "q": "Does ONROL serve all of Telangana or just Hyderabad?", "a": "The whole state. Delivery is 100% live online, so learners from Warangal, Karimnagar, Nizamabad, Khammam and beyond join the same hands-on cohort as those in Hyderabad. ONROL is Telangana-founded, so our network is strongest across the state." },
+        { "q": "Why choose a Telangana-based school?", "a": "Because our mentor network, employer connections and understanding of the local market are strongest here. That's a real advantage for learners across Telangana looking to build AI careers." },
+        { "q": "Can I learn from a smaller town in Telangana?", "a": "Yes — that's the point of online-first delivery. You gain serious, employable AI skills and a real portfolio from anywhere in the state, without moving to Hyderabad." },
+        { "q": "When does the next Telangana cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a suitable timing." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Telangana", "campaign": "geo-telangana", "program": "AI Course (Telangana, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Telangana", "url": "https://onrol.in/ai-course-in-telangana/" } ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-course-in-andhra-pradesh",
+      "city": "Andhra Pradesh",
+      "title": "AI Course in Andhra Pradesh — Live Online, Project-First | ONROL",
+      "description": "Live online AI course for learners across Andhra Pradesh — Visakhapatnam, Vijayawada, Guntur, Tirupati and beyond. Build real AI products, no coding required, portfolio you keep.",
+      "eyebrow": "Live Online · Serving Andhra Pradesh",
+      "h1": "AI course in",
+      "h1accent": "Andhra Pradesh",
+      "lead": "Learn applied AI live online from anywhere in Andhra Pradesh — Visakhapatnam, Vijayawada, Guntur, Tirupati or Nellore. ONROL brings serious, project-first AI skills across the state, so you build and ship real AI products and keep them as your portfolio, without relocating.",
+      "meta": [
+        { "icon": "screen", "text": "100% live online" },
+        { "icon": "clock", "text": "Evening & weekend cohorts" },
+        { "icon": "shield", "text": "No coding background needed" }
+      ],
+      "outcomes": [
+        { "title": "A multi-city state", "text": "AP's economy spreads across Vizag, Vijayawada, Guntur and Tirupati — online delivery reaches them all equally." },
+        { "title": "Industry to IT", "text": "From Vizag's port and industry to the developing capital region, applied AI fits a diversifying economy." },
+        { "title": "A vast talent pool", "text": "AP's large graduate population gains a real edge with a portfolio of shipped AI products." },
+        { "title": "No relocation needed", "text": "Gain serious AI skills from anywhere in the state, without moving to Hyderabad or Bangalore." }
+      ],
+      "learnHeading": "What Andhra learners build",
+      "learn": [
+        "AI automations for industry, business and services work",
+        "AI agents and chatbots wired into real tools",
+        "AI-assisted apps and tools, built and deployed live",
+        "A portfolio of shipped AI products for state-wide and remote roles"
+      ],
+      "contextKicker": "Why Andhra Pradesh",
+      "contextHeading": "AI across a diversifying, multi-city state",
+      "context": [
+        "Andhra Pradesh's economy is unusually spread out — there's no single dominant metro, but a network of strong cities: Visakhapatnam with its port, steel and emerging IT; Vijayawada as a commercial hub near the developing Amaravati capital region; and centres like Guntur, Tirupati and Nellore each with their own base. That distributed shape makes online-first AI training a natural fit — it reaches every corner of the state equally.",
+        "The state produces a very large pool of engineering and degree graduates, but serious tech careers have often meant leaving for Hyderabad or Bangalore. Project-first, online-first AI training changes that — learners across AP build genuinely employable skills and a real portfolio from home, for local industry, the growing capital region and remote work.",
+        "As a school rooted in the Telugu states, ONROL understands this region well. Delivery is 100% live online across Andhra Pradesh, with projects mapped to a diversifying economy that spans industry, commerce and emerging technology."
+      ],
+      "faqs": [
+        { "q": "Does ONROL serve all of Andhra Pradesh?", "a": "Yes — the whole state. Delivery is 100% live online, so learners from Visakhapatnam, Vijayawada, Guntur, Tirupati, Nellore and beyond join the same hands-on cohort, without relocating." },
+        { "q": "There's no single tech metro in AP — does that matter?", "a": "Not for online-first training. AP's strength is a spread of strong cities, and live online delivery reaches them all equally, so you gain the same skills whether you're in Vizag, Vijayawada or a smaller centre." },
+        { "q": "Can I build an AI career from Andhra Pradesh without moving?", "a": "Yes. Project-first, online-first training lets you gain employable AI skills and a real portfolio from anywhere in the state — for local industry, the capital region and remote opportunities." },
+        { "q": "When does the next Andhra Pradesh cohort start?", "a": "New live online cohorts open regularly. Register and our team will confirm the next start date and a suitable timing." }
+      ],
+      "cta": "Join the next cohort",
+      "form": { "source": "Geo - Andhra Pradesh", "campaign": "geo-andhra-pradesh", "program": "AI Course (Andhra Pradesh, online)" },
+      "breadcrumb": [ { "name": "AI Courses in India", "url": "https://onrol.in/best-ai-course-in-india" }, { "name": "AI Course in Andhra Pradesh", "url": "https://onrol.in/ai-course-in-andhra-pradesh/" } ]
+    },
+    {
       "type": "jobready",
       "slug": "ai-course-with-placement-support",
       "title": "AI Course with Placement Support — Portfolio-First | ONROL",
