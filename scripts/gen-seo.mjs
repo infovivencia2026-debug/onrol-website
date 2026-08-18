@@ -175,6 +175,15 @@ const CSS = `<style id="nav-login-fix">.nav .nav-login-btn,.nav.on-dark .nav-log
 .sx-rel-col ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
 .sx-rel-col a{color:var(--sx-ink);text-decoration:none;font-size:14.5px;border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
 .sx-rel-col a:hover{color:var(--orange);border-bottom-color:rgba(var(--orange-rgb),.4)}
+.sx-pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+@media(max-width:720px){.sx-pgrid{grid-template-columns:1fr}}
+.sx-pcard{display:flex;flex-direction:column;background:#fff!important;border:1px solid var(--sx-line);border-radius:6px;padding:20px;text-decoration:none;transition:border-color .2s,transform .2s,box-shadow .2s}
+.sx-pcard:hover{border-color:rgba(var(--orange-rgb),.5);transform:translateY(-2px);box-shadow:0 18px 40px -26px rgba(13,11,10,.4)}
+.sx-pcard h3{font-size:17px;font-weight:800;color:var(--sx-ink);margin:0 0 8px;letter-spacing:-.01em}
+.sx-pcard p{font-size:14px;line-height:1.55;color:var(--sx-body);margin:0 0 14px;flex:1}
+.sx-pgo{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.4px;color:var(--orange)}
+.sx-pall{margin-top:18px}
+.sx-pall a{font-family:var(--mono);font-size:13px;color:var(--orange);text-decoration:none;border-bottom:1px solid rgba(var(--orange-rgb),.4)}
 .sx-prose{margin-top:24px;max-width:760px}
 .sx-prose p{font-size:15.5px;line-height:1.75;color:var(--sx-body);margin:0 0 16px}
 .sx-prose p:last-child{margin-bottom:0}
@@ -250,6 +259,20 @@ function relatedLinks(page, all) {
   return `<section class="sx-sec sx-related"><p class="sx-kick">Explore more</p><h2 class="sx-h2">Keep exploring ONROL.</h2><div class="sx-rel">${cols}</div></section>`;
 }
 
+/* Recommended-programs block: real links to the actual program pages so every
+   page gives a clear next step. Defaults to the flagship trio; a page can
+   override with its own `programs` array (e.g. an economy-matched pick). */
+const FLAGSHIP = [
+  { name: "AI Generalist", url: "/programs/ai-generalist", why: "The 3-month flagship — build 5+ real AI systems and a portfolio, no coding required." },
+  { name: "AI Architect", url: "/programs/ai-architect", why: "The advanced track — AI architecture, agents, RAG and production-grade systems." },
+  { name: "AI Career Accelerator", url: "/programs/aica", why: "A 21-day career-focused entry — practical AI skills, real projects and job readiness." },
+];
+function programsSection(page) {
+  const progs = (page.programs && page.programs.length) ? page.programs : FLAGSHIP;
+  const cards = progs.map((p) => `<a class="sx-pcard" href="${p.url}"><h3>${esc(p.name)}</h3><p>${esc(p.why)}</p><span class="sx-pgo">Explore program ${"→"}</span></a>`).join("");
+  return `<section class="sx-sec sx-progs"><p class="sx-kick">Recommended programs</p><h2 class="sx-h2">Where to take this at ONROL.</h2><div class="sx-pgrid">${cards}</div><p class="sx-pall"><a href="/programs">See all ONROL programs &rarr;</a></p></section>`;
+}
+
 /* --------------------------- page renderer ----------------------------- */
 function render(page, all) {
   const url = canon(page.slug);
@@ -285,6 +308,7 @@ ${NAV}
     <h2>Build the evidence. Keep the proof.</h2>
     <p>ONROL is an execution school, not a lecture hall. Every session you ship something real — an automation, an agent, an app — and you keep it. You don't leave with a certificate alone; you leave with a portfolio of working AI products that proves what you can do.</p>
   </div></section>
+  ${programsSection(page)}
   <section class="sx-sec">
     <p class="sx-kick">Questions</p>
     <h2 class="sx-h2">Straight answers.</h2>
