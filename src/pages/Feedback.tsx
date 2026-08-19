@@ -35,8 +35,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-const WEBHOOK_URL =
-  "https://script.google.com/macros/s/AKfycby1GspWp28vWgc7tIBuuocJyZnCQtUZ2iGp--Jkm_POf4z3Swt2KUmfsd0tizQAcg3fWA/exec";
+import { submitFeedback } from "@/lib/feedbackIntake";
 
 type Choice = { value: string; icon: LucideIcon };
 type Step =
@@ -139,7 +138,7 @@ export default function Feedback() {
   const reduceMotion = useReducedMotion();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [contact, setContact] = useState({ name: "", branch: "", year: "", phone: "", email: "" });
+  const [contact, setContact] = useState({ name: "", branch: "", year: "", phone: "", email: "", website: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState("");
@@ -171,31 +170,29 @@ export default function Feedback() {
     setIsSubmitting(true);
     setError("");
     try {
-      await fetch(WEBHOOK_URL, {
-        method: "POST",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify({
-          type: "ai-journey-form",
-          name: contact.name,
-          branch: contact.branch,
-          year: contact.year,
-          mobile: contact.phone,
-          email: contact.email,
-          session_rating_text: answers.session || "",
-          rating: answers.rating || "",
-          ai_clear: answers.clarity || "",
-          confidence: answers.confidence || "",
-          liked: answers.liked || "",
-          ai_help: answers.help || "",
-          why: answers.why || "",
-          six_months: answers.sixMonths || "",
-          contact_method: answers.contactMethod || "",
-        }),
+      // Posts to the CRM (go.onrol.in) isolated feedback pipeline. See
+      // src/lib/feedbackIntake.ts for the field mapping.
+      await submitFeedback({
+        name: contact.name,
+        phone: contact.phone,
+        email: contact.email,
+        branch: contact.branch,
+        year: contact.year,
+        website: contact.website, // honeypot
+        session: answers.session,
+        rating: answers.rating,
+        clarity: answers.clarity,
+        confidence: answers.confidence,
+        liked: answers.liked,
+        help: answers.help,
+        why: answers.why,
+        sixMonths: answers.sixMonths,
+        contactMethod: answers.contactMethod,
       });
       setIsSuccess(true);
     } catch (err) {
-      console.error("Error submitting form:", err);
-      setError("Something went wrong. Please try again.");
+      console.error("Error submitting feedback:", err);
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -346,6 +343,17 @@ export default function Feedback() {
                 {/* ── Contact / details ───────────────────────────── */}
                 {current.kind === "contact" && (
                   <form onSubmit={handleSubmit} className="space-y-5">
+                    {/* Honeypot — bots fill hidden fields; humans never see it. */}
+                    <input
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      value={contact.website}
+                      onChange={(e) => setContact({ ...contact, website: e.target.value })}
+                      style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+                    />
                     <h2 className="text-lg sm:text-xl font-bold text-slate-900 mb-1">Almost done — how do we reach you?</h2>
                     <p className="text-sm text-slate-500 mb-4">Our team will call and help you take the first step.</p>
 
