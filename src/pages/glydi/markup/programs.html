@@ -72,6 +72,7 @@
     .pt-ic::after{ animation:none; }
   }
 
+  @media(min-width:721px){ .prog-grid-ai{ grid-template-columns:repeat(3,1fr); } }
   @media(max-width:720px){ .prog-grid{ grid-template-columns:1fr; } .ptab{ flex:1 1 100%; } }
 
   .actions{ display:flex; flex-wrap:wrap; align-items:center; gap:14px 20px; margin-top:38px; }
@@ -107,7 +108,7 @@
 <header class="pagehero prog-hero">
   <div class="pagehero-inner">
     <p class="ph-eyebrow">Programs</p>
-    <h1 class="ph-title">Two tracks. <span>Four programs.</span></h1>
+    <h1 class="ph-title">Two tracks. <span>Five programs.</span></h1>
     <p class="ph-sub">Pick the one that fits. Each is built around a single outcome, you walk out able to build, ship, and defend real systems, with a portfolio to prove it.</p>
   </div>
 </header>
@@ -119,7 +120,7 @@
   <div class="ptabs anim" role="tablist" aria-label="Choose a track">
     <button class="ptab is-on" type="button" data-track="ai" role="tab" aria-selected="true">
       <span class="pt-ic"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span>
-      <span class="pt-t">AI Track<small>2 Programs, 3, 6 months</small></span>
+      <span class="pt-t">AI Track<small>3 Programs, 21 days–6 months</small></span>
     </button>
     <button class="ptab" type="button" data-track="cy" role="tab" aria-selected="false">
       <span class="pt-ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg></span>
@@ -130,16 +131,23 @@
   <!-- AI panel -->
   <div class="ppanel is-on" data-track="ai" role="tabpanel">
     <p class="panel-sub">Build &amp; ship real AI, from your first project to production systems.</p>
-    <div class="prog-grid">
+    <div class="prog-grid prog-grid-ai">
+      <a class="pcard" href="/programs/aica">
+        <div class="pcard-top"><span class="pcard-num">01</span><span class="pcard-tag">New, 21 days</span></div>
+        <h4>AI Career Accelerator</h4>
+        <p>Twenty-one live sessions, one hour a day. Start at zero, finish with a shipped AI product.</p>
+        <div class="pcard-chips"><span>Zero coding</span><span>Deployed product</span></div>
+        <span class="pcard-go">Explore program <i>&rarr;</i></span>
+      </a>
       <a class="pcard" href="/programs/ai-generalist">
-        <div class="pcard-top"><span class="pcard-num">01</span><span class="pcard-tag">Flagship, 3 mo</span></div>
+        <div class="pcard-top"><span class="pcard-num">02</span><span class="pcard-tag">Flagship, 3 mo</span></div>
         <h4>AI Generalist</h4>
         <p>Beginner to AI Generalist, the complete path from learning to earning, no prior coding required.</p>
         <div class="pcard-chips"><span>Vibe coding</span><span>7+ projects</span><span>Portfolio</span></div>
         <span class="pcard-go">Explore program <i>&rarr;</i></span>
       </a>
       <a class="pcard" href="/programs/ai-architect">
-        <div class="pcard-top"><span class="pcard-num">02</span><span class="pcard-tag">Advanced, 6 mo</span></div>
+        <div class="pcard-top"><span class="pcard-num">03</span><span class="pcard-tag">Advanced, 6 mo</span></div>
         <h4>AI Architect</h4>
         <p>Design, deploy &amp; scale complete AI powered systems, apps, agents, automations, and RAG.</p>
         <div class="pcard-chips"><span>Multi agent</span><span>RAG</span><span>20+ projects</span></div>
