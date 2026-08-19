@@ -3,195 +3,197 @@
   body{ background:#fbfaf9; }
   body::before{
     content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
-    background:radial-gradient(60vw 40vw at 12% -6%, rgba(var(--orange-rgb),.06), transparent 58%),
-               radial-gradient(50vw 40vw at 100% 2%, rgba(var(--orange-rgb),.05), transparent 55%);
+    background:radial-gradient(60vw 42vw at 10% -8%, rgba(var(--orange-rgb),.08), transparent 58%),
+               radial-gradient(52vw 42vw at 100% 0%, rgba(var(--orange-rgb),.05), transparent 55%);
   }
-  .subpage{ position:relative; background:transparent; max-width:1000px; margin:0 auto; padding:150px 24px 90px; color:#16181b; }
-  .subpage h2{ font-size:clamp(24px,3vw,36px); font-weight:600; color:#16181b; letter-spacing:-.015em; margin:6px 0 4px; line-height:1.1; }
-  .subpage h2 span{ color:var(--orange); }
-  .subpage .kicker{ font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--orange); margin-top:70px; }
-  .subpage .kicker::before{ content:""; display:inline-block; width:24px; height:1px; background:var(--orange); vertical-align:middle; margin-right:9px; opacity:.7; }
-  .subpage .kicker + h2{ margin-top:6px; }
+  .subpage{ position:relative; background:transparent; max-width:1080px; margin:0 auto; padding:140px 24px 90px; color:#16181b; }
 
-  /* ===== BOX GRID (sharp cells, hairline lines, orange junction dots) ===== */
-  .bento{ display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:minmax(96px,auto); gap:1px; background:rgba(0,0,0,.16); border:1px solid rgba(0,0,0,.16); margin-top:26px; }
-  .t{ position:relative; overflow:hidden; background:#fff; padding:26px; opacity:0; transform:translateY(26px); transition:transform .34s ease, opacity .6s cubic-bezier(.2,.7,.2,1), background .25s ease, box-shadow .3s ease; }
-  .t.show{ opacity:1; transform:none; }
-  .t.show:hover{ transform:translateY(-5px); z-index:5; background:#fff7f2; box-shadow:0 24px 48px -18px rgba(0,0,0,.24); }   /* lift + warm tint */
-  .t::before,.t::after{ content:""; position:absolute; width:6px; height:6px; background:var(--orange); z-index:3; pointer-events:none; }
-  .t::before{ top:0; left:0; transform:translate(-50%,-50%); }
-  .t::after{ bottom:0; right:0; transform:translate(50%,50%); }
-  .s2{ grid-column:span 2; }
-  .s4{ grid-column:span 4; }
-  .r2{ grid-row:span 2; }
-  @media(max-width:760px){
-    .bento{ grid-template-columns:repeat(2,1fr); }
-    .s4{ grid-column:span 2; }
-    .r2{ grid-row:auto; }
-  }
-  @media(max-width:460px){
-    .bento{ grid-template-columns:1fr; }
-    .s2,.s4{ grid-column:auto; }
-  }
+  /* ---- section header atoms ---- */
+  section.ab{ margin-top:clamp(72px,11vh,128px); }
+  .ab-eyebrow{ display:inline-flex; align-items:center; gap:10px; font-size:12px; letter-spacing:2.4px; text-transform:uppercase; color:var(--orange); font-weight:700; }
+  .ab-eyebrow::before{ content:""; width:26px; height:2px; background:var(--orange); border-radius:2px; }
+  .ab-h2{ font-size:clamp(28px,4vw,44px); font-weight:800; letter-spacing:-.02em; line-height:1.08; margin:14px 0 0; }
+  .ab-h2 span{ color:var(--orange); }
+  .ab-lead{ font-size:clamp(16px,1.35vw,18px); line-height:1.65; color:#54585e; max-width:660px; margin:16px 0 0; }
 
-  /* tile atoms */
-  .t .t-k{ font-family:var(--mono); font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:var(--orange); margin-bottom:12px; }
-  .t h3{ font-size:19px; font-weight:600; color:#16181b; margin-bottom:9px; line-height:1.2; }
-  .t p{ font-family:var(--mono); font-size:13px; line-height:1.65; color:#5e554d; margin:0; }
+  /* ---- mission / intro ---- */
+  .ab-intro-h{ font-size:clamp(30px,5.2vw,60px); font-weight:800; letter-spacing:-.028em; line-height:1.04; margin:14px 0 0; max-width:16ch; }
+  .ab-intro-h span{ color:var(--orange); }
 
-  /* founder tile */
-  .t-founder{ display:flex; align-items:center; gap:clamp(18px,2.5vw,28px); }
-  .f-photo{ position:relative; flex:0 0 auto; width:clamp(112px,13vw,150px); aspect-ratio:1/1; height:auto; object-fit:cover; object-position:center 16%; border:1px solid rgba(0,0,0,.12); box-shadow:0 18px 36px -16px rgba(0,0,0,.5); }
-  .f-body{ position:relative; }
-  .f-k{ font-family:var(--mono); font-size:11px; letter-spacing:1.4px; text-transform:uppercase; color:var(--orange); }
-  .f-name{ font-size:23px; font-weight:700; color:#16181b; line-height:1.15; margin:6px 0 12px; }
-  .t-founder p{ font-size:13px; }
-  @media(max-width:460px){ .t-founder{ flex-direction:column; text-align:center; } }
+  /* ---- stats band (count-up) ---- */
+  .ab-stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(0,0,0,.12); border:1px solid rgba(0,0,0,.12); border-radius:18px; overflow:hidden; margin-top:40px;
+    opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .ab-stats.in{ opacity:1; transform:none; }
+  .ab-stat{ background:#fff; padding:clamp(24px,3vw,34px) 22px; text-align:center; }
+  .ab-stat .num{ font-size:clamp(32px,4.4vw,50px); font-weight:800; letter-spacing:-.02em; color:#16181b; line-height:1; }
+  .ab-stat .num .or{ color:var(--orange); }
+  .ab-stat .lbl{ font-size:12.5px; letter-spacing:.6px; text-transform:uppercase; color:#8a8f96; margin-top:11px; font-weight:600; }
+  @media(max-width:720px){ .ab-stats{ grid-template-columns:repeat(2,1fr); } }
 
-  /* stat tiles */
-  .t-stat{ display:flex; flex-direction:column; justify-content:center; text-align:center; padding:22px 14px; }
-  .t-stat .n{ font-size:clamp(26px,3.4vw,38px); font-weight:700; color:#16181b; letter-spacing:-.02em; line-height:1; }
-  .t-stat .n span{ color:var(--orange); }
-  .t-stat .l{ font-family:var(--mono); font-size:10.5px; letter-spacing:1.2px; text-transform:uppercase; color:#8a8f96; margin-top:9px; }
+  /* ---- perk marquee (infinite scroll badge row, inspired by reference) ---- */
+  .marquee{ margin-top:22px; overflow:hidden; border-block:1px solid rgba(0,0,0,.1); padding:16px 0;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); }
+  .marquee-track{ display:flex; gap:12px; width:max-content; animation:marq 30s linear infinite; }
+  .marquee:hover .marquee-track{ animation-play-state:paused; }
+  @keyframes marq{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .mq{ display:inline-flex; align-items:center; gap:9px; white-space:nowrap; font-size:14px; font-weight:600; color:#33363b; background:#fff; border:1px solid rgba(0,0,0,.1); border-radius:999px; padding:10px 18px; }
+  .mq::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--orange); flex:0 0 auto; }
+  @media (prefers-reduced-motion:reduce){ .marquee-track{ animation:none; flex-wrap:wrap; width:auto; justify-content:center; } }
 
-  /* accent (orange) tile */
-  .t-accent{ background:linear-gradient(150deg, var(--orange), #e8490f); color:#fff; border-color:transparent; display:flex; flex-direction:column; justify-content:center; }
-  .t-accent .t-k{ color:rgba(255,255,255,.85); }
-  .t-accent .big{ font-size:clamp(20px,2.2vw,26px); font-weight:700; line-height:1.15; }
-  .t-accent:hover{ background:linear-gradient(150deg, var(--orange), #e8490f); }   /* keep orange while it pops */
+  /* ---- career outcomes (role + salary cards, inspired by reference) ---- */
+  .roles{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:36px; }
+  .role-card{ background:#fff; border:1px solid rgba(0,0,0,.09); border-radius:18px; padding:26px 28px;
+    opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease, box-shadow .3s ease, border-color .3s ease; }
+  .roles.in .role-card{ opacity:1; transform:none; }
+  .roles.in .role-card:nth-child(2){ transition-delay:.08s; }
+  .roles.in .role-card:nth-child(3){ transition-delay:.16s; }
+  .roles.in .role-card:nth-child(4){ transition-delay:.24s; }
+  .role-card:hover{ transform:translateY(-5px); box-shadow:0 30px 58px -30px rgba(0,0,0,.28); border-color:rgba(var(--orange-rgb),.4); }
+  .role-top{ display:flex; align-items:baseline; justify-content:space-between; gap:14px; }
+  .role-name{ font-size:18.5px; font-weight:800; letter-spacing:-.01em; color:#16181b; }
+  .role-pay{ font-size:16px; font-weight:800; color:var(--orange); white-space:nowrap; }
+  .role-desc{ font-size:14.5px; line-height:1.55; color:#54585e; margin:8px 0 0; }
+  .roles-note{ font-size:12.5px; color:#9a9089; margin:16px 0 0; }
+  @media(max-width:720px){ .roles{ grid-template-columns:1fr; } }
 
-  /* numbered feature tile */
-  .t-feat .num{ font-family:var(--mono); font-size:clamp(26px,3vw,40px); font-weight:500; color:var(--orange); line-height:1; margin-bottom:16px; }
+  /* ---- roles by program: dropdown accordion ---- */
+  .roles-acc{ margin-top:36px; display:flex; flex-direction:column; gap:14px; }
+  .racc{ background:#fff; border:1px solid rgba(0,0,0,.1); border-radius:18px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease; }
+  .racc[open]{ border-color:rgba(var(--orange-rgb),.4); box-shadow:0 26px 52px -30px rgba(0,0,0,.28); }
+  .racc summary{ list-style:none; cursor:pointer; display:flex; align-items:center; gap:15px; padding:20px 24px; }
+  .racc summary::-webkit-details-marker{ display:none; }
+  .racc-ic{ width:46px; height:46px; border-radius:13px; background:rgba(var(--orange-rgb),.1); color:var(--orange); display:grid; place-items:center; flex:0 0 auto; transition:background .3s ease, color .3s ease, transform .3s ease; }
+  .racc[open] .racc-ic{ background:var(--orange); color:#fff; }
+  .racc summary:hover .racc-ic{ transform:translateY(-2px); }
+  .racc-ic svg{ width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .racc-name{ font-size:19px; font-weight:800; letter-spacing:-.01em; color:#16181b; }
+  .racc-meta{ margin-left:auto; font-size:12.5px; font-weight:700; color:#8a8f96; letter-spacing:.4px; text-transform:uppercase; white-space:nowrap; }
+  .racc-chev{ flex:0 0 auto; color:#a2a09c; transition:transform .3s ease, color .3s ease; }
+  .racc[open] .racc-chev{ transform:rotate(180deg); color:var(--orange); }
+  .racc-chev svg{ width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; display:block; }
+  .racc-body{ padding:2px 24px 20px; display:flex; flex-direction:column; }
+  .racc[open] .racc-body{ animation:raccIn .38s cubic-bezier(.2,.7,.2,1); }
+  @keyframes raccIn{ from{ opacity:0; transform:translateY(-8px); } to{ opacity:1; transform:none; } }
+  .racc-item{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 8px; border-top:1px solid rgba(0,0,0,.07); border-radius:10px; transition:background .2s ease; }
+  .racc-item:first-child{ border-top:0; }
+  .racc-item:hover{ background:rgba(var(--orange-rgb),.05); }
+  .racc-role{ font-size:15.5px; font-weight:600; color:#16181b; }
+  .racc-ctc{ font-size:15px; font-weight:800; color:var(--orange); white-space:nowrap; letter-spacing:-.01em; }
+  @media(max-width:560px){ .racc-name{ font-size:17px; } .racc-meta{ display:none; } .racc-role{ font-size:14.5px; } }
 
-  /* facts tile */
-  .t-fact{ display:flex; flex-direction:column; justify-content:center; padding:20px 22px; }
-  .t-fact .k{ font-family:var(--mono); font-size:10.5px; letter-spacing:1.2px; text-transform:uppercase; color:#9a9089; margin-bottom:6px; }
-  .t-fact .val{ font-size:15px; font-weight:600; color:#16181b; line-height:1.3; }
+  /* ---- founder ---- */
+  .ab-founder{ display:grid; grid-template-columns:280px 1fr; gap:clamp(28px,4vw,56px); align-items:center;
+    background:linear-gradient(140deg,#ffffff,#fff5ef); border:1px solid rgba(0,0,0,.08); border-radius:22px; padding:clamp(26px,3vw,46px); margin-top:32px; }
+  .ab-founder img{ width:100%; aspect-ratio:1/1; object-fit:cover; object-position:center 15%; border-radius:18px;
+    filter:grayscale(1) contrast(1.03); transition:filter .55s ease, transform .55s cubic-bezier(.2,.7,.2,1); box-shadow:0 22px 46px -18px rgba(0,0,0,.45); }
+  .ab-founder:hover img{ filter:none; transform:scale(1.03) rotate(-1deg); }
+  .fo-role{ font-size:12px; letter-spacing:1.6px; text-transform:uppercase; color:var(--orange); font-weight:700; margin:0; }
+  .fo-name{ font-size:clamp(24px,3vw,34px); font-weight:800; margin:8px 0 14px; letter-spacing:-.01em; }
+  .fo-bio{ font-size:16px; line-height:1.7; color:#54585e; margin:0; }
+  .fo-quote{ margin:18px 0 0; padding-left:18px; border-left:3px solid var(--orange); font-size:16px; font-style:italic; color:#33363b; line-height:1.55; }
+  @media(max-width:720px){ .ab-founder{ grid-template-columns:1fr; text-align:center; } .ab-founder img{ max-width:220px; margin:0 auto; } .fo-quote{ text-align:left; } }
 
-  /* chip panel */
-  .chips{ display:flex; flex-wrap:wrap; gap:9px; margin-top:16px; }
-  .chips span{ display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:12.5px; color:#33363b; background:rgba(var(--orange-rgb),.05); border:1px solid rgba(var(--orange-rgb),.22); padding:9px 15px; transition:background .2s ease, transform .2s ease; }
-  .chips span::before{ content:""; width:6px; height:6px; background:var(--orange); }
-  .chips span:hover{ background:rgba(var(--orange-rgb),.13); transform:translateY(-2px); }
+  /* ---- phases timeline ---- */
+  .phases{ position:relative; margin-top:44px; }
+  .phases::before{ content:""; position:absolute; left:31px; top:12px; bottom:12px; width:2px; background:rgba(var(--orange-rgb),.16); }
+  .phases::after{ content:""; position:absolute; left:31px; top:12px; width:2px; height:0; background:var(--orange); transition:height 1.3s cubic-bezier(.4,0,.2,1); }
+  .phases.in::after{ height:calc(100% - 24px); }
+  .phase{ position:relative; display:grid; grid-template-columns:64px 1fr; gap:24px; padding:16px 0;
+    opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
+  .phases.in .phase{ opacity:1; transform:none; }
+  .phases.in .phase:nth-child(2){ transition-delay:.12s; }
+  .phases.in .phase:nth-child(3){ transition-delay:.26s; }
+  .phases.in .phase:nth-child(4){ transition-delay:.40s; }
+  .ph-node{ position:relative; z-index:2; width:64px; height:64px; border-radius:18px; background:#fff; border:1px solid rgba(0,0,0,.1);
+    display:grid; place-items:center; color:var(--orange); box-shadow:0 14px 28px -14px rgba(0,0,0,.3);
+    transition:background .3s ease, color .3s ease, transform .3s ease; }
+  .phase:hover .ph-node{ background:var(--orange); color:#fff; transform:translateY(-3px) scale(1.04); }
+  .ph-node svg{ width:26px; height:26px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .ph-body{ padding-top:5px; }
+  .ph-step{ font-size:12px; letter-spacing:1.4px; text-transform:uppercase; color:var(--orange); font-weight:700; margin:0; }
+  .ph-title{ font-size:clamp(20px,2vw,25px); font-weight:800; margin:5px 0 7px; letter-spacing:-.01em; }
+  .ph-desc{ font-size:15.5px; line-height:1.62; color:#54585e; max-width:580px; margin:0; }
 
-  /* check panel */
-  .checks{ list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px 24px; margin:16px 0 0; padding:0; }
-  .checks li{ display:flex; align-items:center; gap:12px; font-family:var(--mono); font-size:13px; color:#33363b; }
-  .checks li .ck{ flex:0 0 auto; width:24px; height:24px; display:grid; place-items:center; background:rgba(var(--orange-rgb),.12); color:var(--orange); }
-  .checks li .ck svg{ width:13px; height:13px; stroke:currentColor; fill:none; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
+  /* ---- value cards ---- */
+  .values{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:36px; }
+  .val-card{ position:relative; background:#fff; border:1px solid rgba(0,0,0,.09); border-radius:20px; padding:clamp(24px,2.4vw,32px); overflow:hidden;
+    opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease, box-shadow .3s ease, border-color .3s ease; }
+  .values.in .val-card{ opacity:1; transform:none; }
+  .values.in .val-card:nth-child(2){ transition-delay:.09s; }
+  .values.in .val-card:nth-child(3){ transition-delay:.18s; }
+  .values.in .val-card:nth-child(4){ transition-delay:.27s; }
+  .val-card:hover{ transform:translateY(-6px); box-shadow:0 32px 60px -30px rgba(0,0,0,.3); border-color:rgba(var(--orange-rgb),.4); }
+  .val-num{ position:absolute; top:20px; right:26px; font-size:42px; font-weight:800; color:rgba(0,0,0,.05); line-height:1; }
+  .val-ic{ width:54px; height:54px; border-radius:15px; background:rgba(var(--orange-rgb),.1); color:var(--orange); display:grid; place-items:center; margin-bottom:18px; transition:background .3s ease, color .3s ease, transform .35s cubic-bezier(.2,.7,.2,1); }
+  .val-card:hover .val-ic{ background:var(--orange); color:#fff; transform:rotate(-6deg) scale(1.07); }
+  .val-ic svg{ width:26px; height:26px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .val-card h3{ font-size:20px; font-weight:800; margin:0 0 8px; letter-spacing:-.01em; }
+  .val-card p{ font-size:15px; line-height:1.6; color:#54585e; margin:0; }
+  @media(max-width:720px){ .values{ grid-template-columns:1fr; } }
 
-  /* CTA tile */
-  .t-cta{ text-align:center; padding:clamp(34px,4.5vw,52px); background:linear-gradient(155deg, rgba(var(--orange-rgb),.10), rgba(var(--orange-rgb),.02) 65%); border-color:rgba(var(--orange-rgb),.28); }
-  .t-cta h2{ margin:0 auto 10px; }
-  .t-cta .lead{ font-family:var(--mono); font-size:13.5px; line-height:1.7; color:#6a5f56; margin:0 auto; max-width:520px; }
-  .t-cta .tagline{ font-family:var(--mono); font-size:clamp(14px,1.7vw,17px); letter-spacing:2px; text-transform:uppercase; color:var(--orange); margin:20px auto 0; }
-  .t-cta:hover{ transform:none; background:linear-gradient(155deg, rgba(var(--orange-rgb),.10), rgba(var(--orange-rgb),.02) 65%); }
-  .actions{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:12px 16px; margin-top:26px; }
-  .cta{ display:inline-flex; align-items:center; gap:10px; padding:15px 30px; background:var(--orange); color:#fff; font-family:var(--mono); font-size:13px; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; box-shadow:0 14px 30px -12px rgba(var(--orange-rgb),.7); transition:transform .2s ease, background .2s ease; }
-  .cta:hover{ transform:translateY(-2px); background:var(--orange-lt); }
-  .cta.ghost{ background:#fff; color:#16181b; border:1px solid rgba(0,0,0,.16); box-shadow:0 10px 24px -16px rgba(0,0,0,.5); }
-  .cta.ghost:hover{ border-color:var(--orange); color:var(--orange); }
-  .cta .arw{ transition:transform .2s ease; }
-  .cta:hover .arw{ transform:translateX(4px); }
-  .back{ display:inline-block; margin-top:38px; font-family:var(--mono); font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:#9a9089; text-decoration:none; transition:color .2s ease; }
-  .back:hover{ color:#16181b; }
+  /* ---- learn + serve chips ---- */
+  .ab-two{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:36px; }
+  .chip-card{ background:#fff; border:1px solid rgba(0,0,0,.09); border-radius:20px; padding:clamp(24px,2.4vw,30px); }
+  .chip-card h3{ font-size:13px; letter-spacing:1.4px; text-transform:uppercase; color:var(--orange); font-weight:700; margin:0 0 16px; }
+  .chip-row{ display:flex; flex-wrap:wrap; gap:9px; }
+  .chip-row span{ font-size:14px; color:#33363b; background:rgba(var(--orange-rgb),.06); border:1px solid rgba(var(--orange-rgb),.2); border-radius:999px; padding:8px 15px; transition:background .2s ease, color .2s ease, transform .2s ease; }
+  .chip-row span:hover{ background:var(--orange); color:#fff; transform:translateY(-2px); }
+  @media(max-width:720px){ .ab-two{ grid-template-columns:1fr; } }
 
-  /* scroll reveal */
-  .subpage .reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+  /* ---- closing CTA ---- */
+  .ab-cta{ margin-top:clamp(72px,11vh,128px); text-align:center; background:linear-gradient(155deg,#221a15,#0b0908) !important; border:1px solid rgba(255,255,255,.08); border-radius:28px; padding:clamp(56px,7vw,92px) 28px; color:#fff; position:relative; overflow:hidden; box-shadow:0 44px 90px -44px rgba(0,0,0,.6); }
+  .ab-cta::before{ content:""; position:absolute; inset:0; background:radial-gradient(62% 72% at 50% -12%, rgba(var(--orange-rgb),.38), transparent 64%); pointer-events:none; }
+  .ab-cta::after{ content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px); background-size:46px 46px; -webkit-mask-image:radial-gradient(62% 60% at 50% 42%, #000, transparent 76%); mask-image:radial-gradient(62% 60% at 50% 42%, #000, transparent 76%); pointer-events:none; }
+  .ab-cta .cta-eye{ position:relative; display:inline-flex; align-items:center; gap:9px; font-size:12px; letter-spacing:2.2px; text-transform:uppercase; font-weight:700; color:var(--orange-lt); margin:0 0 16px; }
+  .ab-cta .cta-eye::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--orange); animation:ctaPulse 2.2s ease-out infinite; }
+  @keyframes ctaPulse{ 0%{ box-shadow:0 0 0 0 rgba(var(--orange-rgb),.55); } 70%{ box-shadow:0 0 0 11px rgba(var(--orange-rgb),0); } 100%{ box-shadow:0 0 0 0 rgba(var(--orange-rgb),0); } }
+  .ab-cta .cta-fine{ position:relative; margin:22px 0 0; font-size:13px; color:rgba(255,255,255,.5); letter-spacing:.3px; }
+  .ab-cta h2{ font-size:clamp(30px,4.6vw,50px); font-weight:800; letter-spacing:-.02em; margin:0; position:relative; line-height:1.05; }
+  .ab-cta h2 span{ color:var(--orange-lt); }
+  .ab-cta p{ font-size:16.5px; color:rgba(255,255,255,.72); max-width:540px; margin:16px auto 0; line-height:1.6; position:relative; }
+  .ab-actions{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:32px; position:relative; }
+  .ab-btn{ display:inline-flex; align-items:center; gap:9px; padding:15px 30px; border-radius:999px; font-size:15px; font-weight:600; text-decoration:none; cursor:pointer; transition:transform .2s ease, box-shadow .2s ease, background .2s ease; }
+  .ab-btn.primary{ background:linear-gradient(135deg,#ff9152,#f4671a); color:#fff; box-shadow:0 12px 30px -10px rgba(244,103,24,.7); }
+  .ab-btn.primary:hover{ transform:translateY(-2px); box-shadow:0 18px 40px -12px rgba(244,103,24,.85); }
+  .ab-btn.ghost{ background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.25); }
+  .ab-btn.ghost:hover{ background:rgba(255,255,255,.16); transform:translateY(-2px); }
+
+  .back{ display:inline-block; margin-top:44px; font-size:13px; letter-spacing:1px; text-transform:uppercase; color:#9a9089; text-decoration:none; font-weight:600; transition:color .2s ease; }
+  .back:hover{ color:var(--orange); }
+
+  /* ---- scroll reveal ---- */
+  .subpage .reveal{ opacity:0; transform:translateY(26px); transition:opacity .75s ease, transform .75s cubic-bezier(.2,.7,.2,1); }
   .subpage .reveal.in{ opacity:1; transform:none; }
-  /* the bento box itself shows immediately; its tiles cascade in (JS adds .show) */
-  .bento.reveal{ opacity:1; transform:none; }
-  .subpage .kicker.reveal, .subpage h2.reveal{ transition:opacity .6s ease, transform .6s ease; }
-
-  /* ===== ENHANCED MOTION & VISUAL DETAIL ===== */
-  /* keep the accent tile on-brand while it lifts */
-  .t-accent.show:hover{ background:linear-gradient(150deg, var(--orange), #e8490f); box-shadow:0 24px 48px -18px rgba(var(--orange-rgb),.5); }
-
-  /* feature tile — premium FLIP card (icon+title front, description on the dark back) */
-  .t-feat{ perspective:1300px; min-height:clamp(208px,24vh,250px); padding:0; overflow:visible; }
-  .t-feat.show:hover{ transform:none; background:transparent; z-index:6; box-shadow:0 26px 54px -20px rgba(0,0,0,.30); }
-  .ff{ position:absolute; inset:0; transform-style:preserve-3d; transition:transform .7s cubic-bezier(.3,.75,.2,1); }
-  .t-feat.show:hover .ff, .t-feat:focus-within .ff{ transform:rotateY(180deg); }
-  .ff-face{ position:absolute; inset:0; display:flex; flex-direction:column; padding:26px; box-sizing:border-box; -webkit-backface-visibility:hidden; backface-visibility:hidden; }
-  /* front — icon + big title, vertically centred (no empty gap) */
-  .ff-front{ background:#fff; justify-content:center; gap:22px; }
-  .ff-front .fi{ width:54px; height:54px; display:grid; place-items:center; background:rgba(var(--orange-rgb),.10); color:var(--orange); transition:transform .4s cubic-bezier(.2,.7,.2,1); }
-  .ff-front .fi svg{ width:27px; height:27px; stroke:currentColor; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
-  .t-feat.show:hover .ff-front .fi{ transform:rotate(-8deg) scale(1.05); }
-  .ff-front .num{ position:absolute; top:20px; right:22px; font-family:var(--mono); font-size:clamp(28px,3vw,42px); font-weight:500; color:rgba(0,0,0,.10); line-height:1; }
-  .ff-front h3{ font-size:clamp(22px,2.6vw,30px); font-weight:700; color:#16181b; margin:0; line-height:1.14; letter-spacing:-.01em; max-width:15ch; }
-  /* back — dark premium reveal */
-  .ff-back{ transform:rotateY(180deg); background:linear-gradient(150deg,#2c2521,#14100c); color:#fff; justify-content:center; box-shadow:inset 3px 0 0 var(--orange); }
-  .ff-back .ff-n{ font-family:var(--mono); font-size:11px; letter-spacing:1.4px; text-transform:uppercase; color:var(--orange-lt); margin-bottom:13px; }
-  .ff-back p{ font-family:var(--mono); font-size:13.5px; line-height:1.7; color:#e9e4df; margin:0; }
-  .ff-back .ff-more{ display:inline-flex; align-items:center; gap:8px; margin-top:18px; font-family:var(--mono); font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase; color:var(--orange); }
-  .ff-back .ff-more i{ font-style:normal; transition:transform .25s ease; }
-  .t-feat.show:hover .ff-more i{ transform:translateX(4px); }
-  .flip-hint{ font-family:var(--mono); font-size:11px; letter-spacing:1px; text-transform:uppercase; color:#9a9089; margin:14px 0 0; text-align:right; }
-
-  /* touch / reduced-motion: no flip — stack both faces so the text is always visible */
-  @media (hover:none), (prefers-reduced-motion:reduce){
-    .t-feat{ perspective:none; min-height:0; }
-    .ff{ position:static; transform:none !important; }
-    .ff-face{ position:static; backface-visibility:visible; transform:none !important; }
-    .ff-front{ padding-bottom:6px; }
-    .ff-front h3{ margin-top:14px; }
-    .ff-back{ background:none; color:inherit; box-shadow:none; padding-top:0; justify-content:flex-start; }
-    .ff-back .ff-n, .ff-back .ff-more{ display:none; }
-    .ff-back p{ color:#5e554d; }
+  @media (prefers-reduced-motion:reduce){
+    .subpage .reveal, .phase, .val-card, .ab-stats{ opacity:1 !important; transform:none !important; }
+    .phases::after{ transition:none; height:calc(100% - 24px); }
   }
 
-  /* founder tile — warm gradient + photo motion */
-  .t-founder{ background:linear-gradient(140deg,#ffffff, #fff5ef); }
-  .f-photo{ filter:grayscale(1) contrast(1.03); transition:transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease, filter .5s ease; }
-  .f-photo:hover{ filter:grayscale(0) contrast(1); }   /* colour up when the cursor is on the photo */
-  .t-founder.show:hover .f-photo{ transform:scale(1.04) rotate(-1deg); box-shadow:0 26px 46px -16px rgba(var(--orange-rgb),.55); }
-
-  /* accent tile — slow light sheen */
-  .t-accent{ position:relative; }
-  .t-accent::after{ content:""; position:absolute; top:0; left:-60%; width:45%; height:100%; background:linear-gradient(120deg, transparent, rgba(255,255,255,.30), transparent); transform:skewX(-18deg); animation:accSheen 6s ease-in-out infinite; pointer-events:none; }
-  @keyframes accSheen{ 0%,100%{ left:-60%; } 55%,72%{ left:135%; } }
-
-  /* checklist — ticks draw themselves when the panel appears */
-  .checks li{ transition:color .2s ease; }
-  .checks li:hover{ color:var(--orange); }
-  .checks li .ck{ transition:background .25s ease, color .25s ease, transform .3s ease; }
-  .checks li:hover .ck{ background:var(--orange); color:#fff; transform:scale(1.08); }
-  .checks li .ck svg path{ stroke-dasharray:26; stroke-dashoffset:26; }
-  .t.show .checks li .ck svg path{ animation:ckDraw .6s ease .2s forwards; }
-  @keyframes ckDraw{ to{ stroke-dashoffset:0; } }
-
-  /* mission / vision tile icon badges */
-  .t-ic{ width:42px; height:42px; display:grid; place-items:center; background:rgba(var(--orange-rgb),.10); color:var(--orange); margin-bottom:14px; transition:background .25s ease, color .25s ease, transform .35s cubic-bezier(.2,.7,.2,1); }
-  .t-ic svg{ width:21px; height:21px; stroke:currentColor; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
-  .t.show:hover .t-ic{ background:var(--orange); color:#fff; transform:scale(1.08) rotate(-5deg); }
-
-  /* quick-fact tile icon badges */
-  .t-fact{ align-items:flex-start; }
-  .fa-ic{ width:34px; height:34px; display:grid; place-items:center; background:rgba(var(--orange-rgb),.10); color:var(--orange); margin-bottom:12px; transition:background .25s ease, color .25s ease, transform .3s ease; }
-  .fa-ic svg{ width:17px; height:17px; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-  .t-fact.show:hover .fa-ic{ background:var(--orange); color:#fff; transform:rotate(-6deg) scale(1.1); }
-  /* accent tile: white icon chip */
-  .t-accent .fa-ic{ background:rgba(255,255,255,.22); color:#fff; }
-  .t-accent.show:hover .fa-ic{ background:#fff; color:var(--orange); transform:rotate(-6deg) scale(1.1); }
-
-  @media (prefers-reduced-motion: reduce){
-    .subpage .reveal{ opacity:1; transform:none; }
-    .t{ opacity:1 !important; transform:none !important; }
-    .t-accent::after{ animation:none; }
-    .checks li .ck svg path{ stroke-dashoffset:0 !important; animation:none !important; }
+  /* ===== MOBILE: keep animations working on touch + tidy alignment ===== */
+  /* desktop: photo stays black & white and turns colour on hover (cursor).
+     touch devices have no hover, so there it colours in as it scrolls into view. */
+  @media (hover:none){
+    section.reveal.in .ab-founder img{ filter:none; }
+    .val-card{ box-shadow:0 18px 40px -30px rgba(0,0,0,.22); }
   }
-
-  /* footer */
-  .sub-footer{ border-top:1px solid rgba(0,0,0,.09); }
-  .sub-footer-inner{ max-width:1000px; margin:0 auto; padding:34px 24px; display:flex; flex-wrap:wrap; gap:16px 28px; align-items:center; justify-content:space-between; }
-  .sub-footer .brand{ font-family:var(--mono); font-size:13px; letter-spacing:2px; text-transform:uppercase; color:#16181b; }
-  .sub-footer .brand span{ color:var(--orange); }
-  .sub-footer nav{ display:flex; flex-wrap:wrap; gap:22px; }
-  .sub-footer nav a{ font-family:var(--mono); font-size:12px; letter-spacing:1px; text-transform:uppercase; color:#8a8f96; text-decoration:none; transition:color .2s ease; }
-  .sub-footer nav a:hover{ color:var(--orange); }
-  .sub-footer .copy{ font-family:var(--mono); font-size:11px; letter-spacing:.5px; color:#a8adb4; width:100%; }
+  @media (max-width:600px){
+    .subpage{ padding:100px 18px 74px; }
+    section.ab{ margin-top:clamp(52px,8vh,84px); }
+    .ab-eyebrow{ font-size:11.5px; letter-spacing:2px; }
+    .ab-intro-h{ font-size:clamp(28px,8.6vw,40px); }
+    .ab-h2{ font-size:clamp(25px,7vw,34px); }
+    .ab-lead{ font-size:16px; }
+    .ab-founder{ padding:24px 20px; }
+    .fo-name{ font-size:26px; }
+    .fo-bio, .fo-quote{ font-size:15px; }
+    .ab-cta{ padding:46px 20px; border-radius:22px; }
+    .racc summary{ padding:18px; gap:13px; }
+    .racc-ic{ width:42px; height:42px; }
+    .racc-body{ padding:2px 18px 18px; }
+    .racc-item{ padding:13px 4px; }
+  }
 </style>
+
 
 <a class="site-logo" href="/" aria-label="ONROL, AI Execution School, home">
   <img src="/home-glydi/logo-mark.png" alt="ONROL, AI Execution School">
@@ -209,7 +211,7 @@
     <a href="/about">About</a>
     <span class="sep" aria-hidden="true"></span>
     <a href="/contact">Contact</a>
-  <a class="nav-apply" href="/programs/ai-generalist">Apply</a>
+  <a class="nav-apply js-apply" href="/programs/ai-generalist">Apply</a>
   </div>
 </nav>
 
@@ -217,159 +219,157 @@
   <div class="pagehero-inner">
     <p class="ph-eyebrow">About ONROL</p>
     <h1 class="ph-title">India's <span>AI Execution School</span></h1>
-    <p class="ph-sub">A premium, project based AI school with live mentorship, build real AI solutions, not just learn concepts.</p>
+    <p class="ph-sub">A premium, project based AI school with live mentorship, where you build real AI solutions instead of just learning concepts.</p>
   </div>
 </header>
 
 <main class="subpage has-hero">
 
-  <!-- BENTO: FOUNDER + MISSION/VISION -->
-  <div class="bento reveal">
-    <div class="t t-founder s2 r2">
-      <img class="f-photo" src="/home-glydi/mam-0001.png" alt="Dr. Neeraja Reddy">
-      <div class="f-body">
-        <span class="f-k">Founder &amp; CEO</span>
-        <div class="f-name">Dr. Neeraja Reddy</div>
-        <p>16+ years across healthcare, research, and education, she built ONROL to make AI learning practical, accessible, and outcome driven.</p>
-      </div>
-    </div>
-    <div class="t s2">
-      <span class="t-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span>
-      <p class="t-k">Our Mission</p>
-      <p>Bridge the gap between learning AI and applying it, practical, project based education for the future of work.</p>
-    </div>
-    <div class="t s2">
-      <span class="t-ic"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
-      <p class="t-k">Our Vision</p>
-      <p>India's most trusted AI ecosystem, where every learner can create, innovate, and succeed with AI.</p>
+  <!-- MISSION -->
+  <section class="ab reveal" style="margin-top:24px">
+    <p class="ab-eyebrow">Who we are</p>
+    <h2 class="ab-intro-h">We don't just teach AI. <span>We make you build it.</span></h2>
+    <p class="ab-lead">ONROL is India's AI Execution School, based in Hyderabad. We exist to close the gap between watching tutorials and actually shipping real AI products, with live mentorship, real projects, and a portfolio that proves what you can do.</p>
+  </section>
+
+  <!-- STATS -->
+  <div class="ab-stats">
+    <div class="ab-stat"><div class="num"><span class="cv" data-count="4">0</span></div><div class="lbl">Programs</div></div>
+    <div class="ab-stat"><div class="num"><span class="cv" data-count="20">0</span><span class="or">+</span></div><div class="lbl">Projects to build</div></div>
+    <div class="ab-stat"><div class="num"><span class="cv" data-count="3">0</span></div><div class="lbl">Languages taught</div></div>
+    <div class="ab-stat"><div class="num"><span class="cv" data-count="100">0</span><span class="or">%</span></div><div class="lbl">Hands on</div></div>
+  </div>
+
+  <!-- PERK MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="mq">Live mentor-led</span><span class="mq">Project based</span><span class="mq">Ship a real portfolio</span><span class="mq">3 languages</span><span class="mq">Certificate on completion</span><span class="mq">Beginner friendly</span><span class="mq">Real deployments</span><span class="mq">1:1 mentorship</span><span class="mq">Career support</span><span class="mq">No coding required</span>
+      <span class="mq">Live mentor-led</span><span class="mq">Project based</span><span class="mq">Ship a real portfolio</span><span class="mq">3 languages</span><span class="mq">Certificate on completion</span><span class="mq">Beginner friendly</span><span class="mq">Real deployments</span><span class="mq">1:1 mentorship</span><span class="mq">Career support</span><span class="mq">No coding required</span>
     </div>
   </div>
 
-  <!-- WHY CHOOSE -->
-  <p class="kicker reveal">Why Choose ONROL?</p>
-  <h2 class="reveal">Built to make you a <span>builder</span>.</h2>
-  <div class="bento reveal">
-    <div class="t t-feat s2" tabindex="0">
-      <div class="ff">
-        <div class="ff-face ff-front">
-          <span class="fi"><svg viewBox="0 0 24 24"><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg></span>
-          <span class="num">01</span>
-          <h3>Project Based Learning</h3>
-        </div>
-        <div class="ff-face ff-back">
-          <span class="ff-n">Project Based Learning</span>
-          <p>Build real AI applications, not just watch lectures.</p>
-          <span class="ff-more">Hands on <i>&rarr;</i></span>
-        </div>
+  <!-- FOUNDER -->
+  <section class="ab reveal">
+    <p class="ab-eyebrow">The founder</p>
+    <h2 class="ab-h2">Built by an educator, for real <span>outcomes</span>.</h2>
+    <div class="ab-founder">
+      <img src="/home-glydi/mam-0001.png" alt="Dr. Neeraja Reddy">
+      <div>
+        <p class="fo-role">Founder &amp; CEO</p>
+        <h3 class="fo-name">Dr. Neeraja Reddy</h3>
+        <p class="fo-bio">With over 16 years across healthcare, research, and education, Dr. Neeraja Reddy built ONROL to make AI learning practical, accessible, and outcome driven, so every learner leaves able to create, not just recite.</p>
+        <p class="fo-quote">"The future belongs to people who can build with AI. Our job is to get you there."</p>
       </div>
     </div>
-    <div class="t t-feat s2" tabindex="0">
-      <div class="ff">
-        <div class="ff-face ff-front">
-          <span class="fi"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-          <span class="num">02</span>
-          <h3>Expert Mentorship</h3>
-        </div>
-        <div class="ff-face ff-back">
-          <span class="ff-n">Expert Mentorship</span>
-          <p>Live sessions with experienced industry professionals.</p>
-          <span class="ff-more">Live 1:1 <i>&rarr;</i></span>
-        </div>
-      </div>
-    </div>
-    <div class="t t-feat s2" tabindex="0">
-      <div class="ff">
-        <div class="ff-face ff-front">
-          <span class="fi"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span>
-          <span class="num">03</span>
-          <h3>Industry Relevant Curriculum</h3>
-        </div>
-        <div class="ff-face ff-back">
-          <span class="ff-n">Industry Relevant Curriculum</span>
-          <p>Generative AI, AI agents, automation, and no code.</p>
-          <span class="ff-more">Always current <i>&rarr;</i></span>
-        </div>
-      </div>
-    </div>
-    <div class="t t-feat s2" tabindex="0">
-      <div class="ff">
-        <div class="ff-face ff-front">
-          <span class="fi"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
-          <span class="num">04</span>
-          <h3>Career Focused Approach</h3>
-        </div>
-        <div class="ff-face ff-back">
-          <span class="ff-n">Career Focused Approach</span>
-          <p>A portfolio that lands jobs, clients, and ventures.</p>
-          <span class="ff-more">Get hired <i>&rarr;</i></span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <p class="flip-hint reveal">Hover a card to flip it &rarr;</p>
+  </section>
 
-  <!-- QUICK FACTS -->
-  <p class="kicker reveal">Quick Facts</p>
-  <h2 class="reveal">ONROL at a glance.</h2>
-  <div class="bento reveal">
-    <div class="t t-fact"><span class="fa-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><span class="k">Founded</span><span class="val">2025</span></div>
-    <div class="t t-fact"><span class="fa-ic"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><span class="k">Founder</span><span class="val">Dr. Neeraja Reddy</span></div>
-    <div class="t t-fact"><span class="fa-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="k">Headquarters</span><span class="val">Hyderabad, Telangana</span></div>
-    <div class="t t-fact"><span class="fa-ic"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><span class="k">Learning Mode</span><span class="val">Live Online &amp; Offline</span></div>
-    <div class="t t-fact"><span class="fa-ic"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.6.6-5 4.4 1.5 6.5L12 17l-5.9 3.3 1.5-6.5-5-4.4 6.6-.6z"/></svg></span><span class="k">Flagship</span><span class="val">AI Generalist Program</span></div>
-    <div class="t t-fact"><span class="fa-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="k">Duration</span><span class="val">3 Months</span></div>
-    <div class="t t-fact"><span class="fa-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg></span><span class="k">Certificate</span><span class="val">ONROL Certificate</span></div>
-    <div class="t t-accent"><span class="fa-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg></span><p class="t-k">Support</p><div class="big">English, Hindi, Telugu</div></div>
-  </div>
-
-  <!-- LEARN + SERVE (paired panels) -->
-  <p class="kicker reveal">What You'll Learn &amp; Who We Serve</p>
-  <div class="bento reveal">
-    <div class="t s2">
-      <p class="t-k">What You'll Learn</p>
-      <div class="chips">
-        <span>AI Fundamentals</span>
-        <span>Generative AI</span>
-        <span>AI Agents</span>
-        <span>Prompt Engineering</span>
-        <span>Automation</span>
-        <span>AI Websites</span>
-        <span>No Code Tools</span>
-        <span>Business Automation</span>
-        <span>AI Productivity</span>
+  <!-- HOW IT WORKS / PHASES -->
+  <section class="ab reveal">
+    <p class="ab-eyebrow">How ONROL works</p>
+    <h2 class="ab-h2">Four phases, one <span>outcome</span>.</h2>
+    <p class="ab-lead">Every journey here follows the same path, from your first prompt to getting paid for what you build.</p>
+    <div class="phases">
+      <div class="phase">
+        <div class="ph-node"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 5.5V20.5"/><path d="M9 8h7M9 11h5"/></svg></div>
+        <div class="ph-body">
+          <p class="ph-step">Phase 01</p>
+          <h3 class="ph-title">Learn</h3>
+          <p class="ph-desc">Get comfortable with the AI tools that matter, writing good prompts, working with AI agents, and the workflow that takes you from idea to a working build fast.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="ph-node"><svg viewBox="0 0 24 24"><path d="M14.5 5.5l4 4L9 19l-4.5 1L5.5 15.5z"/><path d="M12 8l4 4"/><path d="M17 3l4 4-2 2-4-4z"/></svg></div>
+        <div class="ph-body">
+          <p class="ph-step">Phase 02</p>
+          <h3 class="ph-title">Build</h3>
+          <p class="ph-desc">Put it to work on real projects, not throwaway demos. You build features, fix what breaks, and make things people actually use.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="ph-node"><svg viewBox="0 0 24 24"><path d="M5 15c-1.5 1.2-2 4.5-2 4.5s3.3-.5 4.5-2"/><path d="M12 15l-3-3a20 20 0 0 1 2-4A11 11 0 0 1 21 3c0 3-1 7-6 10a20 20 0 0 1-3 2z"/><circle cx="15" cy="9" r="1.5"/></svg></div>
+        <div class="ph-body">
+          <p class="ph-step">Phase 03</p>
+          <h3 class="ph-title">Launch</h3>
+          <p class="ph-desc">Take it live. Your project goes on the web with a real link, and you walk away with something solid for your portfolio.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="ph-node"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18"/><path d="M16 15h2"/></svg></div>
+        <div class="ph-body">
+          <p class="ph-step">Phase 04</p>
+          <h3 class="ph-title">Earn</h3>
+          <p class="ph-desc">Use it to earn, freelance work, your own product, or a job. You learn how to package what you build and get paid for it.</p>
+        </div>
       </div>
     </div>
-    <div class="t s2">
-      <p class="t-k">Who We Serve</p>
-      <div class="chips">
-        <span>Students</span>
-        <span>Professionals</span>
-        <span>Entrepreneurs</span>
-        <span>Freelancers</span>
-        <span>Business Owners</span>
-        <span>Educators</span>
-        <span>Career Switchers</span>
-        <span>Creators</span>
+  </section>
+
+  <!-- VALUES / WHY -->
+  <section class="ab reveal">
+    <p class="ab-eyebrow">Why choose ONROL</p>
+    <h2 class="ab-h2">Built to make you a <span>builder</span>.</h2>
+    <div class="values">
+      <div class="val-card">
+        <span class="val-num">01</span>
+        <span class="val-ic"><svg viewBox="0 0 24 24"><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg></span>
+        <h3>Project based learning</h3>
+        <p>You build real AI applications from day one, not just watch lectures.</p>
+      </div>
+      <div class="val-card">
+        <span class="val-num">02</span>
+        <span class="val-ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <h3>Expert mentorship</h3>
+        <p>Live sessions with experienced professionals who have shipped real work.</p>
+      </div>
+      <div class="val-card">
+        <span class="val-num">03</span>
+        <span class="val-ic"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span>
+        <h3>Industry relevant curriculum</h3>
+        <p>Generative AI, agents, automation, and no code tools, kept current as the field moves.</p>
+      </div>
+      <div class="val-card">
+        <span class="val-num">04</span>
+        <span class="val-ic"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+        <h3>Career focused approach</h3>
+        <p>You finish with a portfolio built to land jobs, clients, and your own ventures.</p>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- LEARNING EXPERIENCE (wide panel) -->
-  <p class="kicker reveal">Learning Experience</p>
-  <div class="bento reveal">
-    <div class="t s4">
-      <p class="t-k">What every learner gets</p>
-      <ul class="checks">
-        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Live Interactive Classes</li>
-        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Mentor Guidance</li>
-        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Practical Assignments</li>
-        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Hands on Projects</li>
-        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Community Access</li>
-        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Career Support</li>
-        <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Certificate of Completion</li>
-      </ul>
+
+  <!-- LEARN + SERVE -->
+  <section class="ab reveal">
+    <p class="ab-eyebrow">The curriculum</p>
+    <h2 class="ab-h2">What you'll learn, and who it's for.</h2>
+    <div class="ab-two">
+      <div class="chip-card">
+        <h3>What you'll learn</h3>
+        <div class="chip-row">
+          <span>AI Fundamentals</span><span>Generative AI</span><span>AI Agents</span><span>Prompt Engineering</span>
+          <span>Automation</span><span>AI Websites</span><span>No Code Tools</span><span>Business Automation</span><span>AI Productivity</span>
+        </div>
+      </div>
+      <div class="chip-card">
+        <h3>Who we serve</h3>
+        <div class="chip-row">
+          <span>Students</span><span>Professionals</span><span>Entrepreneurs</span><span>Freelancers</span>
+          <span>Business Owners</span><span>Educators</span><span>Career Switchers</span><span>Creators</span>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ab-cta reveal">
+    <p class="cta-eye">Your next step</p>
+    <h2>Ready to build with <span>AI</span>?</h2>
+    <p>Join the next cohort and start from day one, with mentors in your corner instead of just another video to watch.</p>
+    <div class="ab-actions">
+      <a class="ab-btn primary js-apply" href="/programs/ai-generalist">Apply Now</a>
+      <a class="ab-btn ghost" href="/programs">Explore Programs</a>
+    </div>
+    <p class="cta-fine">Limited seats, next cohort starts soon.</p>
+  </section>
 
   <a class="back" href="/">&larr; Back to home</a>
 </main>
@@ -392,8 +392,8 @@
         <ul>
           <li><a href="/programs/ai-generalist">AI Generalist</a></li>
           <li><a href="/programs/ai-architect">AI Architect</a></li>
-          <li><a href="/soc-analyst">SOC Analyst</a></li>
-          <li><a href="/cybersecurity">Cyber Security</a></li>
+          <li><a href="/programs/soc-analyst">SOC Analyst</a></li>
+          <li><a href="/programs/cybersecurity">Cyber Security</a></li>
           <li><a href="/programs">All Programs</a></li>
           <li><a href="/masterclass">Free Masterclass</a></li>
         </ul>
@@ -432,25 +432,3 @@
   </div>
   <p class="f-news-msg" id="newsMsg" role="status" hidden>Thanks, you&rsquo;re on the list.</p>
 </footer>
-
-<div class="lead-modal" id="leadModal" hidden>
-  <div class="lead-card" role="dialog" aria-modal="true" aria-labelledby="leadTitle">
-    <button class="lead-x" id="leadClose" type="button" aria-label="Close">&times;</button>
-    <p class="lead-eyebrow">Apply to ONROL</p>
-    <h3 id="leadTitle">Start with a quick hello.</h3>
-    <p class="lead-sub">Drop your details and our team reaches out about the next cohort, takes 20 seconds.</p>
-    <form id="leadForm" class="lead-form">
-      <input type="text" id="leadName" name="name" placeholder="Full name" autocomplete="name" required>
-      <input type="email" id="leadEmail" name="email" placeholder="Email address" autocomplete="email" required>
-      <input type="tel" id="leadPhone" name="phone" placeholder="Phone / WhatsApp number" autocomplete="tel" required>
-      <button type="submit" class="lead-submit">Apply Now</button>
-    </form>
-    <p class="lead-fine">No spam. We&rsquo;ll only contact you about your application.</p>
-  </div>
-</div>
-
-
-
-
-
-

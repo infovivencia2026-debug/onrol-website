@@ -1055,6 +1055,8 @@
 
   </style>
 
+
+
 <a class="site-logo" href="/" aria-label="ONROL, AI Execution School, home">
   <img src="/home-glydi/logo-mark.png" alt="ONROL, AI Execution School">
 </a>
@@ -1097,31 +1099,12 @@
           </div>
 
           <aside class="form-card" id="register">
-            <h2>Register for the Cyber Security Program</h2>
-            <p>Reserve your seat, our team confirms your registration with fees, schedule, the full syllabus, and cohort guide on WhatsApp within 24 hours.</p>
+            <h2>Reserve your seat</h2>
+            <p>Drop your Mobile number, our team reaches out with the fees, schedule, syllabus, and full cohort guide within 24 hours.</p>
             <form id="leadForm" data-lead data-program="Cyber Security Program">
               <div class="field">
-                <label for="fullName">Full Name</label>
-                <input id="fullName" name="fullName" type="text" placeholder="Enter your name" required />
-              </div>
-              <div class="field">
-                <label for="phone">Phone WhatsApp</label>
-                <input id="phone" name="phone" type="tel" placeholder="Enter WhatsApp number" required />
-              </div>
-              <div class="field">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="Enter email address" required />
-              </div>
-              <div class="field">
-                <label for="role">I am a</label>
-                <select id="role" name="role" required>
-                  <option value="">Select one</option>
-                  <option>Student</option>
-                  <option>Job Seeker</option>
-                  <option>IT / Support Professional</option>
-                  <option>Career Changer</option>
-                  <option>Working Professional</option>
-                </select>
+                <label for="phone">Phone </label>
+                <input id="phone" name="phone" type="tel" placeholder="Enter Mobile number" required />
               </div>
               <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0">
               <button class="button orange" type="submit" style="width:100%;">Register Now</button>
@@ -1332,7 +1315,7 @@
                 <h3>Security Portfolio</h3>
                 <p>Real defense work, a configured network, hardened servers, a full pentest report, and live SIEM dashboards, built through hands on labs and reviewed on outcomes.</p>
               </div>
-              <div class="portfolio-media"><img src="portfolio-cyb.png" alt="Security portfolio showcase" loading="lazy" decoding="async" width="1000" height="600"></div>
+              <div class="portfolio-media"><img src="/home-glydi/portfolio-cyb.png" alt="Security portfolio showcase" loading="lazy" decoding="async" width="1000" height="600"></div>
               <div class="portfolio-stats">
                 <div><strong>5</strong><span>Builds</span></div>
                 <div><strong>8+</strong><span>Tools</span></div>
@@ -1340,6 +1323,26 @@
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <div class="tag">Where it takes you</div>
+              <h2 class="section-title" data-split>Roles you can target</h2>
+            </div>
+          </div>
+          <p class="section-desc">What you build here maps to real, in-demand work. These are the roles this program prepares you for.</p>
+          <div class="roles-list" data-reveal>
+            <div class="role-row"><span class="rr-name">Penetration Tester</span><span class="rr-ctc">&#8377;9 LPA</span></div>
+            <div class="role-row"><span class="rr-name">Network Security Engineer</span><span class="rr-ctc">&#8377;8 LPA</span></div>
+            <div class="role-row"><span class="rr-name">Ethical Hacker</span><span class="rr-ctc">&#8377;8 LPA</span></div>
+            <div class="role-row"><span class="rr-name">Security Analyst</span><span class="rr-ctc">&#8377;7 LPA</span></div>
+            <div class="role-row"><span class="rr-name">SOC Analyst</span><span class="rr-ctc">&#8377;6 LPA</span></div>
+          </div>
+          <p class="roles-note">Indicative roles for the Indian market. Actual outcomes vary by effort, experience, and role.</p>
         </div>
       </section>
 
@@ -1406,6 +1409,52 @@
           </div>
         </div>
       </section>
+
+
+      <style>
+        .lpath-sec .container{ text-align:center; }
+        .lpath{ display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:12px 8px; margin-top:34px; }
+        .lp-step{ display:flex; flex-direction:column; align-items:center; gap:10px; min-width:134px; padding:24px 20px; background:#fff; border:1px solid rgba(0,0,0,.1); border-radius:16px; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+        .lp-step:hover{ transform:translateY(-5px); border-color:var(--orange); box-shadow:0 24px 46px -24px rgba(0,0,0,.3); }
+        .lp-i{ width:36px; height:36px; display:grid; place-items:center; border-radius:50%; background:rgba(var(--orange-rgb),.12); color:var(--orange); font-weight:800; font-size:14px; }
+        .lp-t{ font-size:16.5px; font-weight:800; letter-spacing:.2px; color:#16181b; }
+        .lp-arrow{ color:var(--orange); display:grid; place-items:center; flex:0 0 auto; }
+        .lp-arrow svg{ width:24px; height:24px; }
+        .lp-quote{ margin:44px auto 0; max-width:760px; text-align:center; font-size:clamp(18px,2.2vw,25px); font-weight:600; line-height:1.5; color:#33363b; font-style:italic; }
+        .lp-quote span{ color:var(--orange); font-style:normal; }
+        .lp-close{ text-align:center; margin-top:46px; }
+        .lp-close h3{ font-size:clamp(24px,3.6vw,40px); font-weight:800; letter-spacing:-.02em; margin:0; }
+        .lp-close h3 span{ color:var(--orange); }
+        .lp-close p{ color:#54585e; font-size:16px; margin:12px 0 26px; }
+        @media(max-width:640px){ .lpath{ flex-direction:column; } .lp-arrow{ transform:rotate(90deg); } .lp-step{ width:min(280px,82%); flex-direction:row; justify-content:flex-start; gap:14px; } }
+      </style>
+      <section class="lpath-sec">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <div class="tag">The Learning Path</div>
+              <h2 class="section-title" data-split>Learn by defending, one step at a time.</h2>
+            </div>
+          </div>
+          <div class="lpath" data-reveal>
+            <div class="lp-step"><span class="lp-i">1</span><span class="lp-t">Learn</span></div>
+            <span class="lp-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+            <div class="lp-step"><span class="lp-i">2</span><span class="lp-t">Lab</span></div>
+            <span class="lp-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+            <div class="lp-step"><span class="lp-i">3</span><span class="lp-t">Attack</span></div>
+            <span class="lp-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+            <div class="lp-step"><span class="lp-i">4</span><span class="lp-t">Detect</span></div>
+            <span class="lp-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+            <div class="lp-step"><span class="lp-i">5</span><span class="lp-t">Defend</span></div>
+          </div>
+          <p class="lp-quote">Don't just earn a certificate. <span>Defend real systems</span> and build a portfolio that gets you hired.</p>
+          <div class="lp-close">
+            <h3>Defend. Detect. <span>Get Hired.</span></h3>
+            <p>Your roadmap to a future proof cyber career starts here.</p>
+            <a class="button orange" data-magnetic href="#register">Apply Now</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer" id="contact">
@@ -1426,8 +1475,8 @@
         <ul>
           <li><a href="/programs/ai-generalist">AI Generalist</a></li>
           <li><a href="/programs/ai-architect">AI Architect</a></li>
-          <li><a href="/soc-analyst">SOC Analyst</a></li>
-          <li><a href="/cybersecurity">Cyber Security</a></li>
+          <li><a href="/programs/soc-analyst">SOC Analyst</a></li>
+          <li><a href="/programs/cybersecurity">Cyber Security</a></li>
           <li><a href="/programs">All Programs</a></li>
           <li><a href="/masterclass">Free Masterclass</a></li>
         </ul>
@@ -1466,24 +1515,3 @@
   </div>
   <p class="f-news-msg" id="newsMsg" role="status" hidden>Thanks, you&rsquo;re on the list.</p>
 </footer>
-
-    <div class="toast" id="toast">Opening WhatsApp with your registration...</div>
-  </div>
-
-  
-
-
-
-
-  
-  
-  
-  
-  <!-- premium motion engine (deferred; degrades gracefully) -->
-  
-  
-  
-  
-
-
-
