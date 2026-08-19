@@ -110,6 +110,13 @@ const AppShell = () => {
     }
   }
 
+  // feedback.onrol.in is a single-purpose surface: the College Feedback wizard
+  // (posts to the CRM). Its root shows the /feedback page; deeper paths pass
+  // through so ?event=/?college= links keep working.
+  if (typeof window !== "undefined" && window.location.hostname === "feedback.onrol.in" && location.pathname === "/") {
+    return <Navigate to={`/feedback${location.search}${location.hash}`} replace />;
+  }
+
   const isCareerCatalystRoute =
     location.pathname.startsWith("/career-catalyst") ||
     location.pathname === "/webinar" ||
