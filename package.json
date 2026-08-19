@@ -3,20 +3,15 @@
   "private": true,
   "version": "0.0.2",
   "type": "module",
-  "main": "desktop/main.cjs",
   "scripts": {
     "dev": "vite",
     "dev:vite": "vite",
     "dev:api": "node api/dev-server.mjs",
     "dev:stack": "concurrently -k \"npm:dev:api\" \"npm:dev:vite\"",
-    "desktop:electron": "wait-on tcp:5173 && cross-env DEV_SERVER_URL=http://127.0.0.1:5173 electron ./desktop/main.cjs",
-    "desktop:dev": "concurrently -k \"npm:dev:vite\" \"npm:desktop:electron\"",
-    "desktop:start": "cross-env DEV_SERVER_URL=http://127.0.0.1:5173 electron ./desktop/main.cjs",
     "build": "vite build",
     "postbuild": "node scripts/sitemap.mjs && node scripts/prerender.mjs && node scripts/og-cards.mjs && node scripts/async-css.mjs && node scripts/generate-rss.mjs",
     "build:fast": "vite build && node scripts/og-cards.mjs",
     "seo:indexnow": "node scripts/indexnow.mjs",
-    "desktop:build": "cross-env BUILD_TARGET=desktop npm run build && electron-builder --win --publish never",
     "build:dev": "vite build --mode development",
     "lint": "eslint . --max-warnings 0",
     "preview": "vite preview",
@@ -25,24 +20,9 @@
     "deploy": "bash scripts/deploy.sh",
     "deploy:ssh-ps": "vite build && node scripts/prerender.mjs && node scripts/generate-rss.mjs && powershell -NoProfile -ExecutionPolicy Bypass -File deploy-ssh.ps1 && node scripts/indexnow.mjs",
     "deploy:ftp": "vite build && powershell -NoProfile -ExecutionPolicy Bypass -File deploy.ps1",
-    "deploy:full": "powershell -NoProfile -ExecutionPolicy Bypass -File deploy-full.ps1",
-    "android:build": "cross-env BUILD_TARGET=android vite build && npx cap sync android",
-    "android:open": "npx cap open android",
-    "android:run": "cross-env BUILD_TARGET=android vite build && npx cap sync android && npx cap run android",
-    "android:release": "cross-env BUILD_TARGET=android vite build && npx cap sync android && cd android && gradlew.bat assembleRelease",
-    "android:release:unix": "cross-env BUILD_TARGET=android vite build && npx cap sync android && cd android && ./gradlew assembleRelease",
-    "cap:sync": "npx cap sync",
-    "cap:copy": "npx cap copy android"
+    "deploy:full": "powershell -NoProfile -ExecutionPolicy Bypass -File deploy-full.ps1"
   },
   "dependencies": {
-    "@capacitor/android": "^8.3.0",
-    "@capacitor/app": "^8.1.0",
-    "@capacitor/camera": "^8.0.2",
-    "@capacitor/cli": "^8.3.0",
-    "@capacitor/core": "^8.3.0",
-    "@capacitor/geolocation": "^8.2.0",
-    "@capacitor/push-notifications": "^8.0.3",
-    "@capacitor/share": "^8.0.1",
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-alert-dialog": "^1.1.14",
@@ -80,8 +60,6 @@
     "cmdk": "^1.1.1",
     "date-fns": "^3.6.0",
     "dotenv": "^17.2.3",
-    "electron-store": "^10.1.0",
-    "electron-updater": "^6.3.9",
     "embla-carousel-react": "^8.6.0",
     "express": "^5.1.0",
     "framer-motion": "^12.35.2",
@@ -117,8 +95,6 @@
     "autoprefixer": "^10.4.21",
     "concurrently": "^9.2.1",
     "cross-env": "^7.0.3",
-    "electron": "^36.2.1",
-    "electron-builder": "^26.0.12",
     "eslint": "^9.32.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
@@ -136,55 +112,5 @@
     "vite": "^5.4.19",
     "vitest": "^3.2.4",
     "wait-on": "^8.0.3"
-  },
-  "build": {
-    "appId": "com.onrol.desktop",
-    "productName": "ONROL Desktop",
-    "copyright": "Copyright © 2025 ONROL",
-    "publish": [
-      {
-        "provider": "generic",
-        "url": "https://onrol.in/updates/"
-      }
-    ],
-    "directories": {
-      "buildResources": "public",
-      "output": "release"
-    },
-    "files": [
-      "dist/**/*",
-      "desktop/**/*",
-      "package.json"
-    ],
-    "win": {
-      "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64"
-          ]
-        },
-        {
-          "target": "portable",
-          "arch": [
-            "x64"
-          ]
-        }
-      ],
-      "icon": "public/icons/icon-512.png",
-      "requestedExecutionLevel": "asInvoker",
-      "legalTrademarks": "ONROL"
-    },
-    "nsis": {
-      "oneClick": false,
-      "perMachine": false,
-      "allowToChangeInstallationDirectory": true,
-      "deleteAppDataOnUninstall": true,
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true,
-      "shortcutName": "ONROL Desktop",
-      "warningsAsErrors": false,
-      "include": "build/installer.nsh"
-    }
   }
 }

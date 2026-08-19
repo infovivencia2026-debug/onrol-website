@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: (process.env.BUILD_TARGET === "desktop" || process.env.BUILD_TARGET === "android") ? "./" : "/",
+  base: "/",
   server: {
     host: true,
     port: 8080,

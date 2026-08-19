@@ -6,11 +6,7 @@ import "./styles/learn-ceiling-polish.css";
 // Ceiling SHELL treatment — ported from CRM /learn prototype the user signed off on.
 import "./styles/learn-ceiling-shell.css";
 import { registerServiceWorker } from "@/lib/pwa";
-import { isNative } from "@/lib/capacitorNative";
 
 createRoot(document.getElementById("root")!).render(<App />);
 
-// Skip service worker on native Android — Capacitor serves assets differently
-if (!isNative()) {
-  void registerServiceWorker();
-}
+void registerServiceWorker();
