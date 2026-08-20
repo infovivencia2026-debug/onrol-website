@@ -14,8 +14,14 @@ export interface FeedbackAnswers {
   name: string;
   phone: string;
   email: string;
-  branch?: string;
-  year?: string;
+  // audience + education (students) / attribution (general)
+  audience?: string;     // "student" | "general"
+  role?: string;         // "Student" | "Working professional" | "Founder / business owner" | "Just exploring AI"
+  institute?: string;    // college / institute name (students)
+  branch?: string;       // stream / department
+  degree?: string;       // degree / course being studied
+  year?: string;         // year of study
+  howFound?: string;     // "Google" | "Instagram" | "YouTube" | ... (general audience)
   // wizard answers (raw marketing labels)
   session?: string;      // "Loved it" | "Good" | ...
   rating?: string;       // "1".."5"
@@ -67,6 +73,9 @@ export async function submitFeedback(a: FeedbackAnswers): Promise<{ ok: true; in
 
   const { learningIntent, wants, interestArea } = deriveIntent(a);
   const comments = [
+    a.role && `Role: ${a.role}`,
+    a.howFound && `Found us via: ${a.howFound}`,
+    a.degree && `Studying: ${a.degree}`,
     a.session && `Session: ${a.session}`,
     a.clarity && `AI felt clear: ${a.clarity}`,
     a.confidence && `Confidence: ${a.confidence}`,
@@ -74,6 +83,7 @@ export async function submitFeedback(a: FeedbackAnswers): Promise<{ ok: true; in
     a.liked && `Liked: ${a.liked}`,
   ].filter(Boolean).join(" · ");
 
+  const ctx = eventContext();
   const rating = Number(a.rating);
   const res = await fetch(FEEDBACK_ENDPOINT, {
     method: "POST",
@@ -84,7 +94,9 @@ export async function submitFeedback(a: FeedbackAnswers): Promise<{ ok: true; in
       email: a.email?.trim().toLowerCase() || null,
       branch: a.branch?.trim() || null,
       yearOfStudy: a.year?.trim() || null,
-      ...eventContext(),
+      ...ctx,
+      // explicit institute (student path) wins over any ?college= URL context
+      collegeName: a.institute?.trim() || ctx.collegeName,
       ratingOverall: Number.isFinite(rating) ? rating : null,
       learningIntent,
       careerGoal: [a.why, a.sixMonths].filter(Boolean).join(" — ") || null,

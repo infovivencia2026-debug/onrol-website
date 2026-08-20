@@ -1,453 +1,347 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import {
-  Heart,
-  ThumbsUp,
-  Meh,
-  Frown,
-  Sparkles,
-  Compass,
-  MinusCircle,
-  Rocket,
-  TrendingUp,
-  HelpCircle,
-  Zap,
-  Bot,
-  Clapperboard,
-  Coins,
-  Target,
-  Gem,
-  Waves,
-  Award,
-  Eye,
-  MessageCircle,
-  Phone,
-  Mail,
-  User,
-  GraduationCap,
-  CalendarDays,
-  ArrowLeft,
-  ArrowRight,
-  Send,
-  Loader2,
-  CheckCircle2,
-  Star,
+  GraduationCap, Briefcase, Rocket, Sparkles,
+  Search, Instagram, Youtube, Linkedin, Users, MessageSquare,
+  Zap, Bot, Clapperboard, Coins, Target,
+  TrendingUp, Award, Compass, Eye,
+  Star, ArrowLeft, ArrowRight, Check, Loader2,
+  User, Phone, Mail, MessageCircle, PhoneCall,
+  Building2, BookOpen, CalendarDays, Send, PartyPopper,
   type LucideIcon,
 } from "lucide-react";
-
 import { submitFeedback } from "@/lib/feedbackIntake";
 
-type Choice = { value: string; icon: LucideIcon };
-type Step =
-  | { kind: "choice"; key: string; title: string; choices: Choice[] }
-  | { kind: "rating"; key: string; title: string }
-  | { kind: "text"; key: string; title: string; optional?: boolean; placeholder: string }
-  | { kind: "contact"; title: string };
+// ── Question data ─────────────────────────────────────────────────────────────
+type Pick = { label: string; icon: LucideIcon; audience?: "student" | "general"; hint?: string };
 
-const STEPS: Step[] = [
-  {
-    kind: "choice",
-    key: "session",
-    title: "How was the session for you?",
-    choices: [
-      { value: "Loved it", icon: Heart },
-      { value: "Good", icon: ThumbsUp },
-      { value: "Okay", icon: Meh },
-      { value: "Not great", icon: Frown },
-    ],
-  },
-  { kind: "rating", key: "rating", title: "Rate the session (1 = low, 5 = best)" },
-  {
-    kind: "choice",
-    key: "clarity",
-    title: "Did the session make AI feel clear and useful for you?",
-    choices: [
-      { value: "Yes, a lot", icon: Sparkles },
-      { value: "Somewhat", icon: Compass },
-      { value: "Not really", icon: MinusCircle },
-    ],
-  },
-  {
-    kind: "choice",
-    key: "confidence",
-    title: "After this session, how confident do you feel about using AI in your career?",
-    choices: [
-      { value: "Very confident", icon: Rocket },
-      { value: "Confident", icon: TrendingUp },
-      { value: "Neutral", icon: Meh },
-      { value: "Still unsure", icon: HelpCircle },
-    ],
-  },
-  {
-    kind: "text",
-    key: "liked",
-    title: "One thing you liked",
-    optional: true,
-    placeholder: "What stood out for you? (optional)",
-  },
-  {
-    kind: "choice",
-    key: "help",
-    title: "What do you want AI to help you do?",
-    choices: [
-      { value: "Make websites and apps", icon: Zap },
-      { value: "Do boring work automatically", icon: Bot },
-      { value: "Make videos, posts and designs", icon: Clapperboard },
-      { value: "Earn money with AI skills", icon: Coins },
-      { value: "Get a good job / placement", icon: Target },
-    ],
-  },
-  {
-    kind: "choice",
-    key: "why",
-    title: "Why do you want to learn this?",
-    choices: [
-      { value: "To make my family proud", icon: Heart },
-      { value: "To earn my own money", icon: Coins },
-      { value: "To build something of my own", icon: Gem },
-      { value: "To not fall behind others", icon: Waves },
-    ],
-  },
-  {
-    kind: "choice",
-    key: "sixMonths",
-    title: "Where do you want to be in 6 months?",
-    choices: [
-      { value: "Already earning with AI", icon: TrendingUp },
-      { value: "Ready for placements with good projects", icon: Award },
-      { value: "Learning AI, still deciding", icon: Compass },
-      { value: "Just want to know more", icon: Eye },
-    ],
-  },
-  {
-    kind: "choice",
-    key: "contactMethod",
-    title: "How should we contact you?",
-    choices: [
-      { value: "WhatsApp", icon: MessageCircle },
-      { value: "Phone call", icon: Phone },
-      { value: "Email", icon: Mail },
-    ],
-  },
-  { kind: "contact", title: "A little about you" },
+const AUDIENCE: Pick[] = [
+  { label: "Student", icon: GraduationCap, audience: "student", hint: "School / college / university" },
+  { label: "Working professional", icon: Briefcase, audience: "general", hint: "Job / career" },
+  { label: "Founder / business owner", icon: Rocket, audience: "general", hint: "Running or building a business" },
+  { label: "Just exploring AI", icon: Sparkles, audience: "general", hint: "Curious to learn" },
 ];
+const HOW_FOUND: Pick[] = [
+  { label: "Google search", icon: Search },
+  { label: "Instagram", icon: Instagram },
+  { label: "YouTube", icon: Youtube },
+  { label: "LinkedIn", icon: Linkedin },
+  { label: "Friend / referral", icon: Users },
+  { label: "Somewhere else", icon: MessageSquare },
+];
+const HELP: Pick[] = [
+  { label: "Build websites & apps", icon: Zap },
+  { label: "Automate boring work", icon: Bot },
+  { label: "Make videos, posts & designs", icon: Clapperboard },
+  { label: "Earn money with AI skills", icon: Coins },
+  { label: "Get a job / placement", icon: Target },
+];
+const SIX_MONTHS: Pick[] = [
+  { label: "Already earning with AI", icon: TrendingUp },
+  { label: "Placement-ready with real projects", icon: Award },
+  { label: "Learning AI, still deciding", icon: Compass },
+  { label: "Just want to explore more", icon: Eye },
+];
+const CONTACT_METHOD: Pick[] = [
+  { label: "WhatsApp", icon: MessageCircle },
+  { label: "Phone call", icon: PhoneCall },
+  { label: "Email", icon: Mail },
+];
+const DEGREES = ["B.Tech / B.E.", "B.Sc / BCA", "B.Com / BBA", "M.Tech / M.E.", "MBA / PGDM", "MCA / M.Sc", "Diploma", "Other"];
+const YEARS = ["1st year", "2nd year", "3rd year", "4th year", "Final year", "Graduated"];
+const CHEERS = ["Nice.", "Love that.", "Great pick.", "Got it.", "Awesome.", "Noted."];
 
-const QUESTION_COUNT = STEPS.length - 1; // last step is the contact form
+type StepDef =
+  | { id: "audience" | "howFound" | "help" | "sixMonths" | "contactMethod"; kind: "single"; q: string; accent: string; choices: Pick[] }
+  | { id: "rating"; kind: "rating"; q: string; accent: string }
+  | { id: "education"; kind: "education"; q: string; accent: string }
+  | { id: "contact"; kind: "contact"; q: string; accent: string };
 
 export default function Feedback() {
-  const reduceMotion = useReducedMotion();
+  const reduce = useReducedMotion();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [contact, setContact] = useState({ name: "", branch: "", year: "", phone: "", email: "", website: "" });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [contact, setContact] = useState({ name: "", phone: "", email: "", website: "" });
+  const [edu, setEdu] = useState({ institute: "", branch: "", degree: "", year: "" });
+  const [busy, setBusy] = useState(false);
+  const [ok, setOk] = useState<null | string>(null); // intent tier
   const [error, setError] = useState("");
 
-  const current = STEPS[step];
-  const progress = Math.round(((step + (isSuccess ? 1 : 0)) / STEPS.length) * 100);
+  const audience = answers.audience as "student" | "general" | undefined;
 
-  const answer = (key: string, value: string) => {
-    setAnswers((a) => ({ ...a, [key]: value }));
+  const steps = useMemo<StepDef[]>(() => {
+    const s: StepDef[] = [
+      { id: "audience", kind: "single", q: "Which sounds most like", accent: "you?", choices: AUDIENCE },
+    ];
+    if (audience === "student")
+      s.push({ id: "education", kind: "education", q: "Tell us about your", accent: "studies" });
+    else if (audience === "general")
+      s.push({ id: "howFound", kind: "single", q: "How did you find", accent: "ONROL?", choices: HOW_FOUND });
+    s.push(
+      { id: "rating", kind: "rating", q: "How's your experience with", accent: "ONROL?" },
+      { id: "help", kind: "single", q: "What do you want AI to", accent: "help you do?", choices: HELP },
+      { id: "sixMonths", kind: "single", q: "Where do you want to be in", accent: "6 months?", choices: SIX_MONTHS },
+      { id: "contactMethod", kind: "single", q: "Best way to", accent: "reach you?", choices: CONTACT_METHOD },
+      { id: "contact", kind: "contact", q: "Last step —", accent: "your details" },
+    );
+    return s;
+  }, [audience]);
+
+  const clamped = Math.min(step, steps.length - 1);
+  const current = steps[clamped];
+  const total = steps.length;
+  const progress = ok ? 100 : Math.round((clamped / total) * 100);
+  const cheer = CHEERS[clamped % CHEERS.length];
+
+  const advance = () => { setError(""); setStep((v) => Math.min(steps.length - 1, v + 1)); };
+  const back = () => { setError(""); setStep((v) => Math.max(0, v - 1)); };
+
+  // pick a choice → store + auto-advance (small delay lets the tap animate)
+  const choose = (stepId: string, pick: Pick) => {
+    setAnswers((a) => stepId === "audience"
+      ? { ...a, audience: pick.audience!, role: pick.label }
+      : { ...a, [stepId]: pick.label });
     setError("");
-    window.setTimeout(() => setStep((s) => Math.min(STEPS.length - 1, s + 1)), reduceMotion ? 0 : 220);
+    if (stepId === "audience") { setStep((v) => v + 1); return; } // branch: skip delay so path is instant
+    window.setTimeout(() => setStep((v) => Math.min(steps.length, v + 1)), reduce ? 0 : 240);
   };
 
-  const goNext = () => {
-    setError("");
-    setStep((s) => Math.min(STEPS.length - 1, s + 1));
-  };
-  const goBack = () => {
-    setError("");
-    setStep((s) => Math.max(0, s - 1));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!contact.name.trim() || !contact.phone.trim() || !contact.email.trim()) {
-      setError("Please add your name, phone, and email so our team can reach you.");
-      return;
-    }
-    setIsSubmitting(true);
-    setError("");
+  const submit = async () => {
+    if (!contact.name.trim() || !contact.phone.trim()) { setError("Please add your name and mobile number."); return; }
+    setBusy(true); setError("");
     try {
-      // Posts to the CRM (go.onrol.in) isolated feedback pipeline. See
-      // src/lib/feedbackIntake.ts for the field mapping.
-      await submitFeedback({
-        name: contact.name,
-        phone: contact.phone,
-        email: contact.email,
-        branch: contact.branch,
-        year: contact.year,
-        website: contact.website, // honeypot
-        session: answers.session,
+      const r = await submitFeedback({
+        name: contact.name, phone: contact.phone, email: contact.email, website: contact.website,
+        audience, role: answers.role,
+        institute: edu.institute, branch: edu.branch, degree: edu.degree, year: edu.year,
+        howFound: answers.howFound,
         rating: answers.rating,
-        clarity: answers.clarity,
-        confidence: answers.confidence,
-        liked: answers.liked,
-        help: answers.help,
-        why: answers.why,
-        sixMonths: answers.sixMonths,
+        help: answers.help, sixMonths: answers.sixMonths,
         contactMethod: answers.contactMethod,
       });
-      setIsSuccess(true);
-    } catch (err) {
-      console.error("Error submitting feedback:", err);
-      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
+      setOk(r.intentTier);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Something went wrong. Please try again.");
+    } finally { setBusy(false); }
   };
 
-  const slide = reduceMotion
-    ? {}
-    : {
-        initial: { opacity: 0, x: 40 },
-        animate: { opacity: 1, x: 0 },
-        exit: { opacity: 0, x: -40 },
-        transition: { duration: 0.28, ease: "easeOut" as const },
-      };
-
-  const inputClass =
-    "w-full appearance-none !bg-white border border-slate-200 rounded-xl !pl-12 !pr-4 !py-3.5 text-slate-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/25 transition-all placeholder-slate-400";
+  const slide = reduce ? {} : {
+    initial: { opacity: 0, x: 28 }, animate: { opacity: 1, x: 0 }, exit: { opacity: 0, x: -28 },
+    transition: { duration: 0.26, ease: [0.22, 1, 0.36, 1] as const },
+  };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-[#f7f8fc] to-[#eceef5] text-slate-900 overflow-hidden font-sans flex items-center justify-center p-4 sm:p-6 [color-scheme:light]">
-      {/* Ambient soft color washes */}
-      <div aria-hidden className="absolute top-[-12%] left-[-10%] w-[42vw] h-[42vw] bg-purple-300/35 rounded-full filter blur-[130px] animate-pulse" />
-      <div aria-hidden className="absolute bottom-[-12%] right-[-10%] w-[42vw] h-[42vw] bg-orange-300/35 rounded-full filter blur-[130px] animate-pulse delay-1000" />
-      <div aria-hidden className="absolute top-[22%] right-[12%] w-[30vw] h-[30vw] bg-emerald-300/25 rounded-full filter blur-[110px] animate-pulse delay-700" />
+    <div className="min-h-screen w-full bg-[hsl(28_100%_98%)] font-sans text-stone-900 flex items-center justify-center p-4 sm:p-6 [color-scheme:light]">
+      {/* atmospheric warm wash — brand orange, low opacity (no purple slop) */}
+      <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden">
+        <div className="absolute -top-[18%] -left-[12%] h-[46vw] w-[46vw] rounded-full bg-primary/15 blur-[120px]" />
+        <div className="absolute -bottom-[20%] -right-[10%] h-[42vw] w-[42vw] rounded-full bg-primary/10 blur-[130px]" />
+      </div>
 
       <motion.div
-        initial={reduceMotion ? false : { opacity: 0, y: 30 }}
+        initial={reduce ? false : { opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative w-full max-w-2xl rounded-[2rem] sm:rounded-[2.5rem] bg-white/80 backdrop-blur-2xl border border-black/[0.06] shadow-[0_24px_70px_-24px_rgba(15,23,42,0.22)] p-6 sm:p-10 md:p-12 overflow-hidden ring-1 ring-black/5"
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="relative w-full max-w-xl rounded-[28px] bg-white/95 backdrop-blur-xl border border-stone-900/[0.06] shadow-[0_30px_80px_-32px_rgba(28,25,23,0.28)] overflow-hidden"
       >
-        {!isSuccess && (
-          <>
-            {/* Title */}
-            <div className="mb-6 text-center">
-              <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
-                Start your AI <span className="text-orange-500">Journey</span>
-              </h1>
-              <p className="mt-2 text-sm text-slate-500">Please fill this before you leave — it takes about a minute.</p>
-            </div>
+        {/* progress spark */}
+        <div className="h-1.5 w-full bg-primary/10">
+          <motion.div className="h-full bg-primary rounded-r-full" animate={{ width: `${progress}%` }} transition={{ duration: reduce ? 0 : 0.4, ease: "easeOut" }} />
+        </div>
 
-            {/* Progress bar */}
-            <div className="mb-8" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress} aria-label="Form progress">
-              <div className="flex items-center justify-between mb-2 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-                <span>{current.kind === "contact" ? "Almost there" : `Question ${step + 1} of ${QUESTION_COUNT}`}</span>
-                <span>{progress}%</span>
-              </div>
-              <div className="h-1.5 w-full rounded-full bg-slate-200 overflow-hidden">
-                <motion.div
-                  className="h-full rounded-full bg-gradient-to-r from-purple-500 via-indigo-500 to-orange-400"
-                  animate={{ width: `${progress}%` }}
-                  transition={{ duration: reduceMotion ? 0 : 0.35, ease: "easeOut" }}
-                />
-              </div>
-            </div>
+        <div className="p-6 sm:p-9">
+          {/* header row */}
+          <div className="flex items-center justify-between mb-6">
+            <img src="/onrol-logo-dark.png" alt="ONROL" width={105} height={28} className="h-7 w-auto" />
+            {!ok && (
+              <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-400">
+                {current.kind === "contact" ? "Almost done" : `Step ${clamped + 1} of ${total}`}
+              </span>
+            )}
+          </div>
 
+          {ok ? <Done tier={ok} name={contact.name} reduce={!!reduce} /> : (
             <AnimatePresence mode="wait">
-              <motion.div key={`step-${step}`} {...slide}>
-                {/* ── Choice question ─────────────────────────────── */}
-                {current.kind === "choice" && (
-                  <fieldset>
-                    <legend className="text-lg sm:text-xl font-bold text-slate-900 mb-5 leading-snug">{current.title}</legend>
-                    <div className="space-y-3">
-                      {current.choices.map((choice, i) => {
-                        const Icon = choice.icon;
-                        const selected = answers[current.key] === choice.value;
-                        return (
-                          <motion.button
-                            key={choice.value}
-                            type="button"
-                            onClick={() => answer(current.key, choice.value)}
-                            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: reduceMotion ? 0 : i * 0.05, duration: 0.25 }}
-                            className={`group w-full min-h-[56px] flex items-center gap-4 rounded-2xl border px-4 py-3.5 text-left transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
-                              selected
-                                ? "border-purple-400 bg-purple-50 shadow-[0_10px_30px_-12px_rgba(147,51,234,0.4)]"
-                                : "border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50"
-                            }`}
-                          >
-                            <span className={`grid place-items-center w-10 h-10 shrink-0 rounded-xl transition-colors ${selected ? "bg-purple-100 text-purple-600" : "bg-slate-100 text-slate-500 group-hover:text-slate-700"}`}>
-                              <Icon className="w-5 h-5" />
-                            </span>
-                            <span className="flex-1 text-[15px] font-medium text-slate-800">{choice.value}</span>
-                            <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-slate-500 transition-colors" />
-                          </motion.button>
-                        );
-                      })}
-                    </div>
-                  </fieldset>
+              <motion.div key={current.id} {...slide}>
+                {/* cheer chip (not on the first screen) */}
+                {clamped > 0 && (
+                  <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-[#b45309]">
+                    <Sparkles className="h-3.5 w-3.5 text-primary" /> {cheer}
+                  </div>
                 )}
 
-                {/* ── Rating 1–5 ──────────────────────────────────── */}
+                <h1 className="font-display text-[26px] leading-[1.15] sm:text-[32px] font-extrabold tracking-tight text-stone-900 mb-6">
+                  {current.q}{" "}
+                  <span className="font-editorial italic font-medium text-primary">{current.accent}</span>
+                </h1>
+
+                {current.kind === "single" && (
+                  <div className="space-y-2.5" role="radiogroup" aria-label={`${current.q} ${current.accent}`}>
+                    {current.choices.map((c, i) => {
+                      const selected = current.id === "audience" ? answers.audience === c.audience : answers[current.id] === c.label;
+                      return (
+                        <motion.button
+                          key={c.label} type="button" role="radio" aria-checked={selected}
+                          onClick={() => choose(current.id, c)}
+                          initial={reduce ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: reduce ? 0 : i * 0.04, duration: 0.22 }}
+                          whileTap={reduce ? undefined : { scale: 0.985 }}
+                          className={`group flex w-full min-h-[60px] items-center gap-4 rounded-2xl border-2 px-4 py-3.5 text-left transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/25 ${
+                            selected ? "border-primary bg-primary/5" : "border-stone-200 hover:border-primary/40 hover:bg-stone-50"
+                          }`}
+                        >
+                          <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl transition-colors ${selected ? "bg-primary text-white" : "bg-primary/10 text-primary group-hover:bg-primary/15"}`}>
+                            <c.icon className="h-5 w-5" />
+                          </span>
+                          <span className="flex-1">
+                            <span className="block text-[15px] font-semibold text-stone-800">{c.label}</span>
+                            {c.hint && <span className="mt-0.5 block text-[13px] text-stone-500">{c.hint}</span>}
+                          </span>
+                          {selected
+                            ? <Check className="h-5 w-5 text-primary" />
+                            : <ArrowRight className="h-4 w-4 text-stone-300 transition-colors group-hover:text-primary/60" />}
+                        </motion.button>
+                      );
+                    })}
+                  </div>
+                )}
+
                 {current.kind === "rating" && (
-                  <fieldset>
-                    <legend className="text-lg sm:text-xl font-bold text-slate-900 mb-5 leading-snug">{current.title}</legend>
-                    <div className="flex gap-2 sm:gap-3">
-                      {[1, 2, 3, 4, 5].map((num) => {
-                        const selected = answers.rating === String(num);
+                  <div>
+                    <div className="flex gap-2 sm:gap-3" role="radiogroup" aria-label="Rate your experience 1 to 5">
+                      {[1, 2, 3, 4, 5].map((n) => {
+                        const sel = Number(answers.rating) >= n;
                         return (
                           <button
-                            key={num}
-                            type="button"
-                            aria-label={`Rate ${num} out of 5`}
-                            onClick={() => answer("rating", String(num))}
-                            className={`flex-1 h-16 rounded-2xl border flex flex-col items-center justify-center gap-1 font-bold text-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
-                              selected
-                                ? "border-purple-400 bg-purple-600 text-white shadow-[0_10px_30px_-10px_rgba(147,51,234,0.5)]"
-                                : "border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50"
-                            }`}
+                            key={n} type="button" role="radio" aria-checked={answers.rating === String(n)} aria-label={`${n} star${n > 1 ? "s" : ""}`}
+                            onClick={() => { setAnswers((a) => ({ ...a, rating: String(n) })); window.setTimeout(advance, reduce ? 0 : 260); }}
+                            className="flex h-16 flex-1 items-center justify-center rounded-2xl border-2 border-stone-200 transition-colors hover:border-primary/40 hover:bg-stone-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/25"
                           >
-                            <Star className={`w-4 h-4 ${selected ? "fill-white text-white" : "text-slate-300"}`} />
-                            {num}
+                            <Star className={`h-7 w-7 transition-colors ${sel ? "fill-primary text-primary" : "text-stone-300"}`} />
                           </button>
                         );
                       })}
                     </div>
-                    <p className="mt-3 flex justify-between text-[11px] font-medium uppercase tracking-wider text-slate-400">
-                      <span>Low</span>
-                      <span>Best</span>
-                    </p>
-                  </fieldset>
-                )}
-
-                {/* ── Optional text ───────────────────────────────── */}
-                {current.kind === "text" && (
-                  <div>
-                    <label htmlFor="q-text" className="block text-lg sm:text-xl font-bold text-slate-900 mb-4 leading-snug">
-                      {current.title} {current.optional && <span className="text-sm font-medium text-slate-400">(optional)</span>}
-                    </label>
-                    <textarea
-                      id="q-text"
-                      rows={3}
-                      value={answers[current.key] || ""}
-                      onChange={(e) => setAnswers((a) => ({ ...a, [current.key]: e.target.value }))}
-                      className="w-full appearance-none !bg-white border border-slate-200 rounded-2xl !px-4 !py-3.5 text-slate-900 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/25 transition-all placeholder-slate-400 resize-none"
-                      placeholder={current.placeholder}
-                    />
-                    <button
-                      type="button"
-                      onClick={goNext}
-                      className="mt-5 w-full py-3.5 rounded-xl bg-slate-900 text-white font-bold flex items-center justify-center gap-2 hover:bg-slate-800 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-                    >
-                      Continue <ArrowRight className="w-4 h-4" />
-                    </button>
+                    <div className="mt-3 flex justify-between text-[11px] font-semibold uppercase tracking-wider text-stone-400">
+                      <span>Poor</span><span>Loved it</span>
+                    </div>
                   </div>
                 )}
 
-                {/* ── Contact / details ───────────────────────────── */}
-                {current.kind === "contact" && (
-                  <form onSubmit={handleSubmit} className="space-y-5">
-                    {/* Honeypot — bots fill hidden fields; humans never see it. */}
-                    <input
-                      type="text"
-                      name="website"
-                      tabIndex={-1}
-                      autoComplete="off"
-                      aria-hidden="true"
-                      value={contact.website}
-                      onChange={(e) => setContact({ ...contact, website: e.target.value })}
-                      style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
-                    />
-                    <h2 className="text-lg sm:text-xl font-bold text-slate-900 mb-1">Almost done — how do we reach you?</h2>
-                    <p className="text-sm text-slate-500 mb-4">Our team will call and help you take the first step.</p>
-
-                    <div>
-                      <label htmlFor="c-name" className="text-xs font-semibold text-slate-500 mb-1.5 block uppercase tracking-wider">Name *</label>
-                      <div className="relative">
-                        <User aria-hidden className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                        <input id="c-name" type="text" autoComplete="name" required value={contact.name} onChange={(e) => setContact({ ...contact, name: e.target.value })} className={inputClass} placeholder="Your name" />
-                      </div>
+                {current.kind === "education" && (
+                  <div className="space-y-4">
+                    <Labeled id="edu-institute" label="College / Institute" icon={Building2}>
+                      <input id="edu-institute" value={edu.institute} onChange={(e) => setEdu({ ...edu, institute: e.target.value })}
+                        className={INPUT} placeholder="e.g. JNTUH College of Engineering" autoComplete="organization" />
+                    </Labeled>
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                      <Labeled id="edu-branch" label="Branch / Stream" icon={BookOpen}>
+                        <input id="edu-branch" value={edu.branch} onChange={(e) => setEdu({ ...edu, branch: e.target.value })}
+                          className={INPUT} placeholder="e.g. CSE, ECE, Commerce" />
+                      </Labeled>
+                      <Labeled id="edu-year" label="Year of study" icon={CalendarDays}>
+                        <select id="edu-year" value={edu.year} onChange={(e) => setEdu({ ...edu, year: e.target.value })} className={INPUT}>
+                          <option value="">Select…</option>
+                          {YEARS.map((y) => <option key={y} value={y}>{y}</option>)}
+                        </select>
+                      </Labeled>
                     </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="c-branch" className="text-xs font-semibold text-slate-500 mb-1.5 block uppercase tracking-wider">Branch</label>
-                        <div className="relative">
-                          <GraduationCap aria-hidden className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                          <input id="c-branch" type="text" value={contact.branch} onChange={(e) => setContact({ ...contact, branch: e.target.value })} className={inputClass} placeholder="e.g. CSE / IT" />
-                        </div>
-                      </div>
-                      <div>
-                        <label htmlFor="c-year" className="text-xs font-semibold text-slate-500 mb-1.5 block uppercase tracking-wider">Year</label>
-                        <div className="relative">
-                          <CalendarDays aria-hidden className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                          <input id="c-year" type="text" value={contact.year} onChange={(e) => setContact({ ...contact, year: e.target.value })} className={inputClass} placeholder="e.g. 2nd year" />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="c-phone" className="text-xs font-semibold text-slate-500 mb-1.5 block uppercase tracking-wider">Phone / WhatsApp *</label>
-                      <div className="relative">
-                        <Phone aria-hidden className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                        <input id="c-phone" type="tel" autoComplete="tel" inputMode="tel" required value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })} className={inputClass} placeholder="+91 98765 43210" />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="c-email" className="text-xs font-semibold text-slate-500 mb-1.5 block uppercase tracking-wider">Email *</label>
-                      <div className="relative">
-                        <Mail aria-hidden className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                        <input id="c-email" type="email" autoComplete="email" inputMode="email" required value={contact.email} onChange={(e) => setContact({ ...contact, email: e.target.value })} className={inputClass} placeholder="you@email.com" />
-                      </div>
-                    </div>
-
-                    {error && <p role="alert" className="text-sm text-red-600">{error}</p>}
-
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full py-4 rounded-xl bg-slate-900 text-white font-bold text-lg flex items-center justify-center gap-2 hover:bg-slate-800 transition-all disabled:opacity-70 disabled:cursor-not-allowed shadow-[0_14px_30px_-12px_rgba(15,23,42,0.5)] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-                    >
-                      {isSubmitting ? (
-                        <><Loader2 className="w-5 h-5 animate-spin" /> Submitting…</>
-                      ) : (
-                        <>Start my AI journey <Send className="w-5 h-5 ml-1" /></>
-                      )}
-                    </button>
-                  </form>
+                    <Labeled id="edu-degree" label="Degree / Course" icon={GraduationCap}>
+                      <select id="edu-degree" value={edu.degree} onChange={(e) => setEdu({ ...edu, degree: e.target.value })} className={INPUT}>
+                        <option value="">Select…</option>
+                        {DEGREES.map((d) => <option key={d} value={d}>{d}</option>)}
+                      </select>
+                    </Labeled>
+                    <PrimaryBtn onClick={advance} disabled={!edu.institute.trim()}>Continue <ArrowRight className="h-4 w-4" /></PrimaryBtn>
+                  </div>
                 )}
+
+                {current.kind === "contact" && (
+                  <div className="space-y-4">
+                    <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true"
+                      value={contact.website} onChange={(e) => setContact({ ...contact, website: e.target.value })}
+                      className="absolute -left-[9999px] h-px w-px opacity-0" />
+                    <Labeled id="c-name" label="Full name" icon={User} required>
+                      <input id="c-name" required value={contact.name} onChange={(e) => setContact({ ...contact, name: e.target.value })}
+                        className={INPUT} placeholder="Your name" autoComplete="name" />
+                    </Labeled>
+                    <Labeled id="c-phone" label="Mobile / WhatsApp" icon={Phone} required>
+                      <input id="c-phone" required inputMode="tel" value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })}
+                        className={INPUT} placeholder="10-digit number" autoComplete="tel" />
+                    </Labeled>
+                    <Labeled id="c-email" label="Email" icon={Mail}>
+                      <input id="c-email" type="email" value={contact.email} onChange={(e) => setContact({ ...contact, email: e.target.value })}
+                        className={INPUT} placeholder="you@email.com" autoComplete="email" />
+                    </Labeled>
+                    {error && <p role="alert" className="text-sm font-medium text-red-600">{error}</p>}
+                    <PrimaryBtn onClick={submit} disabled={busy}>
+                      {busy ? <><Loader2 className="h-5 w-5 animate-spin" /> Sending…</> : <>Submit <Send className="h-4 w-4" /></>}
+                    </PrimaryBtn>
+                    <p className="text-center text-xs text-stone-400">Your details stay private — we never sell them.</p>
+                  </div>
+                )}
+
+                {error && current.kind !== "contact" && <p role="alert" className="mt-4 text-sm font-medium text-red-600">{error}</p>}
               </motion.div>
             </AnimatePresence>
+          )}
 
-            {/* Back control */}
-            {step > 0 && (
-              <div className="mt-6">
-                <button
-                  type="button"
-                  onClick={goBack}
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 rounded-lg px-2 py-1"
-                >
-                  <ArrowLeft className="w-4 h-4" /> Back
-                </button>
-              </div>
-            )}
-          </>
-        )}
-
-        {isSuccess && (
-          <motion.div
-            key="success"
-            initial={reduceMotion ? false : { opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="flex flex-col items-center justify-center py-16 text-center"
-          >
-            <div className="w-24 h-24 rounded-full bg-emerald-100 flex items-center justify-center mb-6 shadow-[0_0_50px_rgba(16,185,129,0.25)]">
-              <CheckCircle2 className="w-12 h-12 text-emerald-600" />
-            </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-2">Done, {contact.name.split(" ")[0] || "welcome"}! 🎉</h2>
-            <p className="text-slate-500 max-w-md">
-              Our team will call you soon and help you take the first step in your AI career. Welcome aboard!
-            </p>
-          </motion.div>
-        )}
+          {/* back */}
+          {!ok && clamped > 0 && (
+            <button type="button" onClick={back}
+              className="mt-6 inline-flex items-center gap-1.5 rounded-lg px-2 py-1 text-sm font-medium text-stone-500 transition-colors hover:text-stone-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40">
+              <ArrowLeft className="h-4 w-4" /> Back
+            </button>
+          )}
+        </div>
       </motion.div>
     </div>
+  );
+}
+
+const INPUT = "w-full rounded-xl border-2 border-stone-200 bg-white px-3.5 py-3 text-[15px] text-stone-900 placeholder-stone-400 transition-colors focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15";
+
+function Labeled({ id, label, icon: Icon, required, children }: { id: string; label: string; icon: LucideIcon; required?: boolean; children: React.ReactNode }) {
+  return (
+    <div>
+      <label htmlFor={id} className="mb-1.5 flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-wider text-stone-500">
+        <Icon className="h-3.5 w-3.5 text-primary" /> {label}{required && <span className="text-primary">*</span>}
+      </label>
+      {children}
+    </div>
+  );
+}
+
+function PrimaryBtn({ onClick, disabled, children }: { onClick: () => void; disabled?: boolean; children: React.ReactNode }) {
+  return (
+    <button type="button" onClick={onClick} disabled={disabled}
+      className="flex min-h-[52px] w-full items-center justify-center gap-2 rounded-2xl bg-primary px-6 text-[16px] font-bold text-white shadow-[0_14px_30px_-12px_hsl(var(--primary)/0.6)] transition-all hover:brightness-105 active:translate-y-px disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary/30">
+      {children}
+    </button>
+  );
+}
+
+function Done({ tier, name, reduce }: { tier: string; name: string; reduce: boolean }) {
+  const first = name.trim().split(" ")[0] || "there";
+  const MSG: Record<string, string> = {
+    hot: "A counsellor will reach out on WhatsApp shortly with a plan tailored to your goals.",
+    warm: "We'll send your resources on WhatsApp — keep an eye out for your personalised next steps.",
+    nurture: "You're on the list — we'll share free resources and workshops that match your interests.",
+    community: "Your input helps us make every session better. You'll hear from us about what's next.",
+  };
+  return (
+    <motion.div initial={reduce ? false : { opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, ease: "easeOut" }}
+      className="flex flex-col items-center py-10 text-center">
+      <div className="mb-6 grid h-20 w-20 place-items-center rounded-full bg-primary text-white shadow-[0_16px_36px_-10px_hsl(var(--primary)/0.7)]">
+        <PartyPopper className="h-9 w-9" />
+      </div>
+      <h1 className="font-display text-2xl font-extrabold text-stone-900 sm:text-3xl">
+        Thank you, <span className="font-editorial italic font-medium text-primary">{first}!</span>
+      </h1>
+      <p className="mx-auto mt-3 max-w-sm text-[15px] leading-relaxed text-stone-500">{MSG[tier] ?? MSG.community}</p>
+      <a href="https://onrol.in" className="mt-7 inline-flex items-center gap-2 rounded-2xl bg-stone-900 px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-stone-800">
+        Explore ONROL programs <ArrowRight className="h-4 w-4" />
+      </a>
+    </motion.div>
   );
 }
