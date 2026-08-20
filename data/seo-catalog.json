@@ -9961,7 +9961,7 @@
       "slug": "power-bi-course-in-pune",
       "city": "Pune",
       "title": "Power BI Course in Pune — Live Online, Project-First | ONROL",
-      "description": "Live online Power BI course for Pune. Build DAX dashboards for the city's manufacturing ERP, IT MIS and finance shared-services roles. No coding needed, portfolio you keep. Join the next cohort.",
+      "description": "Live online Power BI course for Pune. Build DAX dashboards for manufacturing, IT MIS and finance-SSC roles. No coding — join the next cohort.",
       "eyebrow": "Live Online · Serving Pune",
       "h1": "Power BI course in",
       "h1accent": "Pune",
@@ -10317,6 +10317,1098 @@
         {
           "name": "AI Automation Course in Hyderabad",
           "url": "https://onrol.in/ai-automation-course-in-hyderabad/"
+        }
+      ]
+    },
+    {
+      "type": "geo",
+      "slug": "data-analytics-with-ai-course-in-chennai",
+      "city": "Chennai",
+      "title": "Data Analytics with AI Course in Chennai — Live Online | ONROL",
+      "description": "Live online data analytics with AI course for Chennai. Build BFSI, auto-manufacturing and SaaS analytics you keep as portfolio. No coding — join the next cohort.",
+      "eyebrow": "Live Online · Serving Chennai",
+      "h1": "Data Analytics with AI course in",
+      "h1accent": "Chennai",
+      "lead": "Learn data analytics with AI live online from anywhere in Chennai — OMR, Guindy or Ambattur. In a city that runs India's banking back-offices, a vast auto-manufacturing belt and a fast-rising SaaS scene, ONROL teaches you to turn operational and product data into decisions, and ship an analytics portfolio you keep.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online"
+        },
+        {
+          "icon": "clock",
+          "text": "Evening & weekend cohorts"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding background needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Analytics for banking back-offices",
+          "text": "Chennai processes a huge share of India's banking and insurance operations. You learn to analyse transaction, SLA and exception data the way BFSI ops teams here need."
+        },
+        {
+          "title": "Manufacturing quality data",
+          "text": "From Sriperumbudur to Oragadam, Chennai's auto and electronics plants run on yield and defect data. You practise turning production feeds into decisions."
+        },
+        {
+          "title": "SaaS product metrics",
+          "text": "The OMR SaaS belt lives on funnels and retention. You learn to define metrics, read cohorts and quantify what a release actually changed."
+        },
+        {
+          "title": "AI-accelerated workflow",
+          "text": "You use AI copilots to clean, query and visualise data — the way Chennai's analysts now move from question to answer in minutes."
+        }
+      ],
+      "learnHeading": "What Chennai learners build",
+      "learn": [
+        "An operations analysis on BFSI-style transaction, SLA or exception data",
+        "A manufacturing quality or yield dashboard on a real production scenario",
+        "A SaaS product-metrics read — funnel, retention, cohort — with a clear conclusion",
+        "A published analytics case study on a Chennai-relevant scenario, kept as portfolio"
+      ],
+      "contextKicker": "Why Data Analytics in Chennai",
+      "contextHeading": "The decision layer of banking ops, factories and SaaS",
+      "context": [
+        "Chennai's economy is a rare three-way mix. The city runs a large slice of India's banking and insurance back-office and BPO operations; the auto and electronics manufacturing belt around Sriperumbudur, Oragadam and Ambattur — often called the Detroit of India — produces yield, defect and throughput data every shift; and the OMR IT corridor now hosts a serious SaaS and product scene. Every one of those runs on someone being able to read data and decide.",
+        "That is why analytics lands specifically in Chennai. ONROL teaches you to define metrics, read exceptions and cohorts, and build reporting against exactly these scenarios — a banking-ops exception dashboard, a manufacturing yield report, a SaaS retention read — while using AI copilots to explore and visualise data the way Chennai teams already work. You learn the judgement, not just the chart.",
+        "You finish with a published analytics case study on a Chennai-relevant scenario — the proof a Guindy BFSI ops lead or an OMR product manager can open and understand in seconds."
+      ],
+      "faqs": [
+        {
+          "q": "Is the data analytics course in Chennai offline or online?",
+          "a": "100% live online. Learners from OMR, Guindy, Velachery, Ambattur and Sriperumbudur join the same interactive cohort — no city travel needed."
+        },
+        {
+          "q": "Do I need coding for data analytics with AI?",
+          "a": "No coding background is required. You learn analytical thinking and the tools step by step, using AI copilots to query, clean and visualise data as you go."
+        },
+        {
+          "q": "Which Chennai roles does this help with?",
+          "a": "BFSI and insurance ops-analytics roles, manufacturing quality and production analytics in the auto belt, and product/business analyst roles across the OMR SaaS corridor."
+        },
+        {
+          "q": "Will I have an analytics portfolio at the end?",
+          "a": "Yes. You publish a real analytics case study on a Chennai-relevant scenario — shareable proof for any employer, not just a certificate."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Cross - Data Analytics Chennai",
+        "campaign": "cross-analytics-chennai",
+        "program": "Data Analytics with AI (Chennai, online)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses in India",
+          "url": "https://onrol.in/best-ai-course-in-india"
+        },
+        {
+          "name": "Data Analytics with AI Course in Chennai",
+          "url": "https://onrol.in/data-analytics-with-ai-course-in-chennai/"
+        }
+      ]
+    },
+    {
+      "type": "geo",
+      "slug": "data-analytics-with-ai-course-in-hyderabad",
+      "city": "Hyderabad",
+      "title": "Data Analytics with AI Course in Hyderabad — Live Online | ONROL",
+      "description": "Live online data analytics with AI course for Hyderabad. Build pharma, IT-services and GCC analytics you keep as portfolio. No coding — join the next cohort.",
+      "eyebrow": "Live Online · Serving Hyderabad",
+      "h1": "Data Analytics with AI course in",
+      "h1accent": "Hyderabad",
+      "lead": "Learn data analytics with AI live online from anywhere in Hyderabad — HITEC City, Gachibowli or Kondapur. In a city of global pharma and life-sciences, large IT-services delivery centres and a booming GCC cluster, ONROL teaches you to turn scientific and operational data into decisions, and ship an analytics portfolio you keep.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online"
+        },
+        {
+          "icon": "clock",
+          "text": "Evening & weekend cohorts"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding background needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Analytics for life-sciences",
+          "text": "Hyderabad's pharma base generates batch, quality and trial data. You learn to analyse structured scientific and operational data the way life-sciences teams need."
+        },
+        {
+          "title": "IT-services delivery insight",
+          "text": "HITEC City firms report utilisation, delivery and margin constantly. You build the modelled, refreshable analytics that replace fragile spreadsheets."
+        },
+        {
+          "title": "GCC-scale reporting",
+          "text": "The city's global capability centres run analytics for the world. You practise the operational reporting those teams hire for."
+        },
+        {
+          "title": "AI-accelerated workflow",
+          "text": "You use AI copilots to clean, query and visualise data — the analyst workflow now standard across Gachibowli and Madhapur."
+        }
+      ],
+      "learnHeading": "What Hyderabad learners build",
+      "learn": [
+        "An analysis on pharma/life-sciences-style batch or quality data",
+        "An IT-services utilisation or delivery dashboard on a real scenario",
+        "A GCC-style operational report with clear, defensible conclusions",
+        "A published analytics case study on a Hyderabad-relevant scenario, kept as portfolio"
+      ],
+      "contextKicker": "Why Data Analytics in Hyderabad",
+      "contextHeading": "The decision layer of pharma, IT-services and GCCs",
+      "context": [
+        "Hyderabad's data economy has an unusual centre of gravity: life sciences. The city is one of the world's biggest pharma and vaccine hubs, generating batch, quality and trial data under strict scrutiny — data that has to be read correctly, not just stored. Around it sit the IT-services delivery centres of HITEC City and a fast-growing cluster of global capability centres running analytics for companies worldwide. Reading data well is a core skill across all three.",
+        "That mix is why analytics lands specifically in Hyderabad. ONROL teaches you to define metrics, read quality and operational data, and build reporting against exactly these scenarios — a life-sciences quality analysis, an IT-services utilisation dashboard, a GCC operational report — while using AI copilots to explore and visualise data the way Hyderabad teams already do. You learn the judgement, not just the tool.",
+        "You finish with a published analytics case study on a Hyderabad-relevant scenario — the proof a Genome Valley analytics lead or a Gachibowli GCC manager can open and immediately trust."
+      ],
+      "faqs": [
+        {
+          "q": "Is the data analytics course in Hyderabad offline or online?",
+          "a": "100% live online. Learners from HITEC City, Gachibowli, Kondapur, Madhapur and Kukatpally join the same interactive cohort — no city travel needed."
+        },
+        {
+          "q": "Do I need coding for data analytics with AI?",
+          "a": "No coding background is required. You learn analytical thinking and the tools step by step, using AI copilots to query, clean and visualise data as you go."
+        },
+        {
+          "q": "Which Hyderabad roles does this help with?",
+          "a": "Quality and operations analytics in the pharma/life-sciences base, delivery-analytics roles in HITEC City IT-services firms, and analytics roles across the city's GCCs."
+        },
+        {
+          "q": "Will I have an analytics portfolio at the end?",
+          "a": "Yes. You publish a real analytics case study on a Hyderabad-relevant scenario — shareable proof for any employer, not just a certificate."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Cross - Data Analytics Hyderabad",
+        "campaign": "cross-analytics-hyderabad",
+        "program": "Data Analytics with AI (Hyderabad, online)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses in India",
+          "url": "https://onrol.in/best-ai-course-in-india"
+        },
+        {
+          "name": "Data Analytics with AI Course in Hyderabad",
+          "url": "https://onrol.in/data-analytics-with-ai-course-in-hyderabad/"
+        }
+      ]
+    },
+    {
+      "type": "geo",
+      "slug": "generative-ai-course-in-delhi-ncr",
+      "city": "Delhi NCR",
+      "title": "Generative AI Course in Delhi NCR — Live Online | ONROL",
+      "description": "Live online generative AI course for Delhi NCR. Build content, document and knowledge AI for consulting, media and e-commerce. No coding — join the next cohort.",
+      "eyebrow": "Live Online · Serving Delhi NCR",
+      "h1": "Generative AI course in",
+      "h1accent": "Delhi NCR",
+      "lead": "Learn generative AI live online from anywhere in Delhi NCR — Gurugram, Noida or central Delhi. In a region that runs India's biggest consulting and corporate HQs, a large media and policy ecosystem and a giant e-commerce base, ONROL teaches you to build real generative-AI tools for content, documents and knowledge, and ship a portfolio you keep.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online"
+        },
+        {
+          "icon": "clock",
+          "text": "Evening & weekend cohorts"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding background needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "GenAI for consulting & corporates",
+          "text": "Gurugram's consulting firms and corporate HQs run on decks, reports and research. You build generative tools that draft, summarise and answer over that work."
+        },
+        {
+          "title": "Knowledge and document AI",
+          "text": "NCR corporates sit on vast internal documents. You learn to build grounded assistants that answer from a real knowledge base, not guesswork."
+        },
+        {
+          "title": "E-commerce content at scale",
+          "text": "The region's e-commerce base needs endless product and category content. You build generative workflows that produce it on-brand and fast."
+        },
+        {
+          "title": "Grounded, not hallucinated",
+          "text": "You learn retrieval and prompting discipline so your tools cite real sources — essential for consulting and corporate credibility."
+        }
+      ],
+      "learnHeading": "What Delhi NCR learners build",
+      "learn": [
+        "A document-grounded assistant over a consulting or corporate knowledge base",
+        "A brand-voice content generator for e-commerce or corporate comms",
+        "A retrieval-augmented tool that answers with cited, real sources",
+        "A published generative-AI project on an NCR-relevant scenario, kept as portfolio"
+      ],
+      "contextKicker": "Why Generative AI in Delhi NCR",
+      "contextHeading": "The knowledge and content engine of India's corporate capital",
+      "context": [
+        "Delhi NCR is where a lot of India's thinking gets written down. Gurugram concentrates consulting firms, corporate headquarters and shared-service centres that live on decks, reports and research; Delhi holds a dense media, think-tank and policy ecosystem built on documents and drafting; and the region anchors one of India's largest e-commerce and D2C bases that needs product and category content at volume. Generative AI touches all of it — as a drafting, summarising and answering layer over the region's language-heavy work.",
+        "That is why a generative-AI skill lands hard in NCR. ONROL teaches prompting, retrieval and grounding against these scenarios — a knowledge assistant over corporate documents, a brand-voice generator for e-commerce, a cited answer tool for a research desk. You learn where generative models help, where they hallucinate, and how to keep output credible enough for a consulting partner or a corporate comms head to use.",
+        "You finish with a published generative-AI project on an NCR-relevant scenario — proof a Gurugram engagement manager or a Noida e-commerce lead can open and judge on the spot."
+      ],
+      "faqs": [
+        {
+          "q": "Is the generative AI course in Delhi NCR offline or online?",
+          "a": "100% live online. Learners from Gurugram, Noida, Faridabad, Ghaziabad and Delhi join the same interactive cohort — no cross-NCR commute needed."
+        },
+        {
+          "q": "Do I need coding for the generative AI course?",
+          "a": "No. You learn to build with generative models through prompting, retrieval and no-/low-code tools, with any technical steps taught as you go."
+        },
+        {
+          "q": "Which Delhi NCR roles does generative AI help with?",
+          "a": "Knowledge and content roles in Gurugram consulting and corporates, research and editorial roles in Delhi media/policy, and content roles across the NCR e-commerce base."
+        },
+        {
+          "q": "Will I have a generative-AI portfolio at the end?",
+          "a": "Yes. You publish a real generative-AI tool on an NCR-relevant scenario — shareable proof for any employer, not just a certificate."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Cross - Generative AI Delhi NCR",
+        "campaign": "cross-genai-delhi-ncr",
+        "program": "Generative AI (Delhi NCR, online)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses in India",
+          "url": "https://onrol.in/best-ai-course-in-india"
+        },
+        {
+          "name": "Generative AI Course in Delhi NCR",
+          "url": "https://onrol.in/generative-ai-course-in-delhi-ncr/"
+        }
+      ]
+    },
+    {
+      "type": "geo",
+      "slug": "generative-ai-course-in-bangalore",
+      "city": "Bangalore",
+      "title": "Generative AI Course in Bangalore — Live Online | ONROL",
+      "description": "Live online generative AI course for Bangalore. Build product-grade GenAI features, dev tooling and SaaS content. No coding — join the next cohort.",
+      "eyebrow": "Live Online · Serving Bengaluru",
+      "h1": "Generative AI course in",
+      "h1accent": "Bangalore",
+      "lead": "Learn generative AI live online from anywhere in Bengaluru — Koramangala, Whitefield or HSR. In India's product and deep-tech capital, where GenAI features ship inside real software and startups race to build with it, ONROL teaches you to build production-minded generative-AI tools and ship a portfolio you keep.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online"
+        },
+        {
+          "icon": "clock",
+          "text": "Evening & weekend cohorts"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding background needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "GenAI as a product feature",
+          "text": "Bengaluru's product firms embed generative AI inside their software. You learn to build features — not demos — with prompting, retrieval and guardrails."
+        },
+        {
+          "title": "Dev and internal tooling",
+          "text": "The city's engineering teams build generative tools for themselves. You practise assistants that work over code, docs and internal knowledge."
+        },
+        {
+          "title": "SaaS content and support",
+          "text": "SaaS companies use GenAI for content, onboarding and support. You build workflows that hold brand voice and stay grounded."
+        },
+        {
+          "title": "Production discipline",
+          "text": "You learn evaluation, grounding and cost/latency trade-offs — the difference between a hackathon demo and something a product team ships."
+        }
+      ],
+      "learnHeading": "What Bengaluru learners build",
+      "learn": [
+        "A product-style generative feature with prompting, retrieval and guardrails",
+        "A grounded assistant over code, docs or internal knowledge",
+        "An evaluated generative workflow with quality and cost checks",
+        "A published generative-AI project on a Bengaluru-relevant product scenario, kept as portfolio"
+      ],
+      "contextKicker": "Why Generative AI in Bangalore",
+      "contextHeading": "Where generative AI ships inside real products",
+      "context": [
+        "Bengaluru treats generative AI differently from most cities: not as a novelty, but as something that ships inside software. The product companies of Koramangala and Indiranagar embed GenAI features into live apps; the deep-tech and developer-tooling scene builds generative assistants for engineers; and the SaaS belt uses it for content, onboarding and support at scale. In a city that builds products for the world, the bar is production quality, not a clever prompt.",
+        "That is why a generative-AI skill lands differently here than a generic course. ONROL teaches prompting, retrieval, grounding and evaluation against exactly these scenarios — a product feature with guardrails, a code/doc assistant, a support workflow — and the cost, latency and quality trade-offs that decide whether something actually ships. You learn to build like a product team, not a demo.",
+        "You finish with a published generative-AI project on a Bengaluru-relevant product scenario — proof a Koramangala product lead or a Whitefield engineering manager can open and take seriously."
+      ],
+      "faqs": [
+        {
+          "q": "Is the generative AI course in Bangalore offline or online?",
+          "a": "100% live online. Learners from Koramangala, Whitefield, Electronic City, HSR and Indiranagar join the same interactive cohort — no Bengaluru traffic, no commute."
+        },
+        {
+          "q": "Do I need coding for the generative AI course?",
+          "a": "No coding background is required to start. You build with prompting, retrieval and no-/low-code tools; any technical depth is taught as you go."
+        },
+        {
+          "q": "Which Bangalore roles does generative AI help with?",
+          "a": "Product and feature roles at Koramangala/Indiranagar product firms, tooling roles in the deep-tech scene, and content/support roles across the SaaS belt."
+        },
+        {
+          "q": "Will I have a generative-AI portfolio at the end?",
+          "a": "Yes. You publish a real, production-minded generative-AI project on a Bengaluru-relevant scenario — shareable proof, not just a certificate."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Cross - Generative AI Bangalore",
+        "campaign": "cross-genai-bangalore",
+        "program": "Generative AI (Bengaluru, online)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses in India",
+          "url": "https://onrol.in/best-ai-course-in-india"
+        },
+        {
+          "name": "Generative AI Course in Bangalore",
+          "url": "https://onrol.in/generative-ai-course-in-bangalore/"
+        }
+      ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-automation-course-in-chennai",
+      "city": "Chennai",
+      "title": "AI Automation Course in Chennai — Live Online | ONROL",
+      "description": "Live online AI automation course for Chennai. Build agents and workflows for manufacturing, banking and healthcare ops. No coding — join the next cohort.",
+      "eyebrow": "Live Online · Serving Chennai",
+      "h1": "AI Automation course in",
+      "h1accent": "Chennai",
+      "lead": "Learn AI automation live online from anywhere in Chennai — Sriperumbudur, Guindy or OMR. In a city of large auto-manufacturing plants, India's banking back-offices and a growing healthcare sector, ONROL teaches you to build the agents and workflows that take repetitive operations off people's plates — and keep the builds as portfolio.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online"
+        },
+        {
+          "icon": "clock",
+          "text": "Evening & weekend cohorts"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding background needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Automation for the auto belt",
+          "text": "Sriperumbudur and Oragadam plants run repeatable process and reporting work. You build workflows that automate the routine parts of manufacturing operations."
+        },
+        {
+          "title": "Banking back-office ops",
+          "text": "Chennai processes huge volumes of banking and insurance operations. You learn to automate the rules-shaped, high-volume tasks those teams run."
+        },
+        {
+          "title": "Healthcare admin workflows",
+          "text": "The city's hospitals and health firms carry heavy admin. You build automations for the structured, repetitive coordination work."
+        },
+        {
+          "title": "Agents connected to real systems",
+          "text": "You go beyond scripts — building AI agents that read data, call tools and act across the systems a Chennai ops team actually uses."
+        }
+      ],
+      "learnHeading": "What Chennai learners build",
+      "learn": [
+        "An AI agent that completes a multi-step manufacturing or ops task",
+        "An automated workflow that removes a repetitive banking back-office process",
+        "A document- or coordination-heavy automation relevant to healthcare admin",
+        "A published automation project on a Chennai-relevant scenario, kept as portfolio"
+      ],
+      "contextKicker": "Why AI Automation in Chennai",
+      "contextHeading": "The operations engine of factories, banks and hospitals",
+      "context": [
+        "Chennai is built on operations that repeat at scale. The auto and electronics belt around Sriperumbudur and Oragadam runs process, reporting and coordination work every shift; the city handles an enormous share of India's banking and insurance back-office operations, which are high-volume and rules-shaped by nature; and a growing healthcare sector carries heavy administrative load. Each is a natural target for AI automation — the discipline of handing a repetitive, structured process to an agent or workflow.",
+        "That is why an automation skill lands sharply in Chennai. ONROL teaches you to design agents and workflows against exactly these scenarios — a manufacturing-ops automation, a banking back-office workflow, a healthcare-admin flow — connecting AI to real systems and knowing where a human stays in the loop. You build things that remove real work, not toy demos.",
+        "You finish with a published automation project on a Chennai-relevant scenario — proof a Guindy operations lead or an OMR firm's process owner can open and see working."
+      ],
+      "faqs": [
+        {
+          "q": "Is the AI automation course in Chennai offline or online?",
+          "a": "100% live online. Learners from Sriperumbudur, Guindy, OMR, Ambattur and Velachery join the same interactive cohort — no city travel needed."
+        },
+        {
+          "q": "Do I need coding to build AI automations?",
+          "a": "No. You build agents and workflows with no-/low-code tools and AI copilots; any technical steps are taught as you go."
+        },
+        {
+          "q": "Which Chennai roles does AI automation help with?",
+          "a": "Manufacturing-ops roles in the auto belt, back-office and operations roles in the BFSI processing sector, and admin/coordination roles in healthcare."
+        },
+        {
+          "q": "Will I have an automation portfolio at the end?",
+          "a": "Yes. You publish a working automation on a Chennai-relevant scenario — shareable proof for any employer, not just a certificate."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Cross - AI Automation Chennai",
+        "campaign": "cross-automation-chennai",
+        "program": "AI Automation (Chennai, online)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses in India",
+          "url": "https://onrol.in/best-ai-course-in-india"
+        },
+        {
+          "name": "AI Automation Course in Chennai",
+          "url": "https://onrol.in/ai-automation-course-in-chennai/"
+        }
+      ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-automation-course-in-ahmedabad",
+      "city": "Ahmedabad",
+      "title": "AI Automation Course in Ahmedabad — Live Online | ONROL",
+      "description": "Live online AI automation course for Ahmedabad. Build agents and workflows for textile, chemical, pharma and GIFT City fintech. No coding — join now.",
+      "eyebrow": "Live Online · Serving Ahmedabad",
+      "h1": "AI Automation course in",
+      "h1accent": "Ahmedabad",
+      "lead": "Learn AI automation live online from anywhere in Ahmedabad — SG Highway, Prahlad Nagar or GIFT City. In a city of textile and chemical manufacturing, a large pharma base and a growing fintech hub at GIFT City, ONROL teaches you to build the agents and workflows that take repetitive business operations off people's plates — and keep the builds as portfolio.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online"
+        },
+        {
+          "icon": "clock",
+          "text": "Evening & weekend cohorts"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding background needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Automation for manufacturing SMEs",
+          "text": "Ahmedabad's textile and chemical units are largely owner-run SMEs with lean teams. You build automations that remove the manual admin those businesses drown in."
+        },
+        {
+          "title": "Pharma back-office ops",
+          "text": "Gujarat's pharma base runs document- and compliance-heavy processes. You learn to automate the structured, repeatable parts safely."
+        },
+        {
+          "title": "Fintech and trading workflows",
+          "text": "GIFT City fintech and the city's trading houses run repetitive data and reconciliation work. You build workflows that handle it reliably."
+        },
+        {
+          "title": "Agents connected to real systems",
+          "text": "You go beyond scripts — building AI agents that read data, call tools and act across the systems an Ahmedabad business actually uses."
+        }
+      ],
+      "learnHeading": "What Ahmedabad learners build",
+      "learn": [
+        "An AI agent that completes a multi-step SME operations task",
+        "An automated workflow that removes manual admin for a textile or chemical unit",
+        "A document- or reconciliation-heavy automation relevant to pharma or fintech",
+        "A published automation project on an Ahmedabad-relevant scenario, kept as portfolio"
+      ],
+      "contextKicker": "Why AI Automation in Ahmedabad",
+      "contextHeading": "The operations engine of Gujarat's SMEs, pharma and GIFT City",
+      "context": [
+        "Ahmedabad's economy is built on businesses that run lean. The textile and chemical manufacturing clusters are largely owner-driven SMEs where a small team handles orders, dispatch, accounts and follow-ups by hand; the state's large pharma base runs document- and compliance-heavy back-office processes; and GIFT City is turning the region into a serious fintech and trading hub with its own repetitive data and reconciliation work. For all of them, AI automation is the fastest way to reclaim hours without hiring.",
+        "That is why an automation skill lands sharply in Ahmedabad. ONROL teaches you to design agents and workflows against exactly these scenarios — an SME order/dispatch automation, a pharma document flow, a fintech reconciliation workflow — connecting AI to real systems and keeping a human in the loop where it matters. You build things that remove real work for real businesses.",
+        "You finish with a published automation project on an Ahmedabad-relevant scenario — proof an SG Highway business owner or a GIFT City ops lead can open and see working."
+      ],
+      "faqs": [
+        {
+          "q": "Is the AI automation course in Ahmedabad offline or online?",
+          "a": "100% live online. Learners from SG Highway, Prahlad Nagar, Maninagar, Gandhinagar and GIFT City join the same interactive cohort — no city travel needed."
+        },
+        {
+          "q": "Do I need coding to build AI automations?",
+          "a": "No. You build agents and workflows with no-/low-code tools and AI copilots; any technical steps are taught as you go."
+        },
+        {
+          "q": "Which Ahmedabad roles does AI automation help with?",
+          "a": "Operations and admin roles in textile/chemical SMEs, back-office roles in the pharma base, and process roles in GIFT City fintech and trading."
+        },
+        {
+          "q": "Will I have an automation portfolio at the end?",
+          "a": "Yes. You publish a working automation on an Ahmedabad-relevant scenario — shareable proof for any employer or your own business, not just a certificate."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Cross - AI Automation Ahmedabad",
+        "campaign": "cross-automation-ahmedabad",
+        "program": "AI Automation (Ahmedabad, online)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses in India",
+          "url": "https://onrol.in/best-ai-course-in-india"
+        },
+        {
+          "name": "AI Automation Course in Ahmedabad",
+          "url": "https://onrol.in/ai-automation-course-in-ahmedabad/"
+        }
+      ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-automation-course-in-coimbatore",
+      "city": "Coimbatore",
+      "title": "AI Automation Course in Coimbatore — Live Online | ONROL",
+      "description": "Live online AI automation course for Coimbatore. Build agents and workflows for pumps, textile and engineering SMEs. No coding — join now.",
+      "eyebrow": "Live Online · Serving Coimbatore",
+      "h1": "AI Automation course in",
+      "h1accent": "Coimbatore",
+      "lead": "Learn AI automation live online from anywhere in Coimbatore — Peelamedu, Saravanampatti or the industrial estates. In a city of pump and motor manufacturing, textile mills, foundries and export-focused engineering SMEs, ONROL teaches you to build the agents and workflows that take repetitive operations off small teams — and keep the builds as portfolio.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online"
+        },
+        {
+          "icon": "clock",
+          "text": "Evening & weekend cohorts"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding background needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Automation for engineering SMEs",
+          "text": "Coimbatore's pump, motor and foundry units run on quotes, orders and dispatch handled by small teams. You build automations that remove that manual load."
+        },
+        {
+          "title": "Textile mill operations",
+          "text": "The city's textile and spinning mills run repeatable production and reporting work. You learn to automate the routine coordination and follow-ups."
+        },
+        {
+          "title": "Export documentation flows",
+          "text": "Coimbatore's export-heavy SMEs carry document- and compliance-intensive processes. You build workflows that handle the repetitive paperwork."
+        },
+        {
+          "title": "Agents connected to real systems",
+          "text": "You go beyond scripts — building AI agents that read data, call tools and act across the systems a Coimbatore business actually uses."
+        }
+      ],
+      "learnHeading": "What Coimbatore learners build",
+      "learn": [
+        "An AI agent that completes a multi-step SME operations task",
+        "An automated workflow that removes manual quote/order/dispatch work",
+        "A document-heavy automation relevant to export or compliance processes",
+        "A published automation project on a Coimbatore-relevant scenario, kept as portfolio"
+      ],
+      "contextKicker": "Why AI Automation in Coimbatore",
+      "contextHeading": "The operations engine of the Pump City's engineering SMEs",
+      "context": [
+        "Coimbatore runs on small industrial businesses that punch far above their size. It is India's pump and motor capital, with dense clusters of foundries and engineering SMEs; it has a deep textile and spinning-mill base; and a large share of these units are export-focused, carrying heavy documentation and compliance work. Nearly all of them run lean, with a handful of people handling quotes, orders, dispatch and paperwork by hand — exactly the load AI automation is built to lift.",
+        "That is why an automation skill lands sharply in Coimbatore. ONROL teaches you to design agents and workflows against exactly these scenarios — a quote-to-dispatch automation for an engineering SME, a production-coordination flow for a mill, an export-document workflow — connecting AI to real systems and keeping a human in the loop where it matters. You build things that give small teams their hours back.",
+        "You finish with a published automation project on a Coimbatore-relevant scenario — proof a Peelamedu SME owner or a foundry ops lead can open and see working."
+      ],
+      "faqs": [
+        {
+          "q": "Is the AI automation course in Coimbatore offline or online?",
+          "a": "100% live online. Learners from Peelamedu, Saravanampatti, Gandhipuram and the industrial estates join the same interactive cohort — no travel needed."
+        },
+        {
+          "q": "Do I need coding to build AI automations?",
+          "a": "No. You build agents and workflows with no-/low-code tools and AI copilots; any technical steps are taught as you go."
+        },
+        {
+          "q": "Which Coimbatore roles does AI automation help with?",
+          "a": "Operations and admin roles in pump/motor and foundry SMEs, production coordination in textile mills, and export-documentation roles across the city's engineering base."
+        },
+        {
+          "q": "Will I have an automation portfolio at the end?",
+          "a": "Yes. You publish a working automation on a Coimbatore-relevant scenario — shareable proof for any employer or your own business, not just a certificate."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Cross - AI Automation Coimbatore",
+        "campaign": "cross-automation-coimbatore",
+        "program": "AI Automation (Coimbatore, online)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses in India",
+          "url": "https://onrol.in/best-ai-course-in-india"
+        },
+        {
+          "name": "AI Automation Course in Coimbatore",
+          "url": "https://onrol.in/ai-automation-course-in-coimbatore/"
+        }
+      ]
+    },
+    {
+      "type": "geo",
+      "slug": "power-bi-course-in-hyderabad",
+      "city": "Hyderabad",
+      "title": "Power BI Course in Hyderabad — Live Online | ONROL",
+      "description": "Live online Power BI course for Hyderabad. Build DAX dashboards for pharma compliance, IT MIS and government reporting. No coding — join the next cohort.",
+      "eyebrow": "Live Online · Serving Hyderabad",
+      "h1": "Power BI course in",
+      "h1accent": "Hyderabad",
+      "lead": "Learn Power BI live online from anywhere in Hyderabad — HITEC City, Gachibowli or Kondapur. In a city where pharma runs on batch and compliance reporting, IT firms live in MIS and the state pushes hard on data-driven governance, ONROL teaches you to model data and ship dashboards decision-makers actually open.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online"
+        },
+        {
+          "icon": "clock",
+          "text": "Evening & weekend cohorts"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding background needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Dashboards for pharma compliance",
+          "text": "Hyderabad's pharma base reports batch, quality and compliance metrics constantly. You learn to turn that structured data into DAX dashboards teams act on."
+        },
+        {
+          "title": "MIS reporting for IT services",
+          "text": "HITEC City firms report utilisation, delivery and margin weekly. You build the modelled, refreshable Power BI reports that replace fragile Excel."
+        },
+        {
+          "title": "Governance and public dashboards",
+          "text": "Telangana pushes hard on data-driven governance. You practise the clean, drill-through reporting public and civic-tech projects rely on."
+        },
+        {
+          "title": "AI-assisted, not just clicks",
+          "text": "You use AI to write DAX, clean Power Query steps and draft models faster — the modern analyst workflow, applied to real Hyderabad scenarios."
+        }
+      ],
+      "learnHeading": "What Hyderabad learners build",
+      "learn": [
+        "A cleaned, modelled dataset built with Power Query from a pharma or IT-services scenario",
+        "A compliance or utilisation dashboard with DAX measures and time intelligence",
+        "Interactive reports with slicers, drill-through and row-level security",
+        "A published Power BI dashboard on a real Hyderabad business case, kept as portfolio proof"
+      ],
+      "contextKicker": "Why Power BI in Hyderabad",
+      "contextHeading": "The reporting layer of pharma, IT and public data",
+      "context": [
+        "Hyderabad generates data that has to be reported cleanly and often. The pharma and life-sciences base runs batch, quality and compliance reporting under scrutiny; the IT-services firms of HITEC City and Gachibowli live in utilisation, delivery and margin MIS; and Telangana's strong push on data-driven governance means public dashboards and civic-tech reporting are a real, growing space. Power BI is the layer that turns all of it into something a compliance head, delivery manager or programme officer acts on the same day.",
+        "That is why a Power BI skill lands specifically in Hyderabad. ONROL teaches modelling, DAX and publishing against these scenarios — a pharma compliance dashboard, an IT utilisation report, a clean governance dashboard — while you use AI to accelerate the Power Query and DAX work the way working analysts now do. You build faster and understand what the model is doing.",
+        "You finish with a published, portfolio-ready Power BI project on a real Hyderabad business case — proof a Genome Valley reporting lead or a HITEC City delivery manager can open and trust in thirty seconds."
+      ],
+      "faqs": [
+        {
+          "q": "Is the Power BI course in Hyderabad offline or online?",
+          "a": "100% live online. Learners from HITEC City, Gachibowli, Kondapur, Madhapur and Kukatpally join the same interactive cohort — no city travel needed."
+        },
+        {
+          "q": "Do I need coding or SQL for this Power BI course?",
+          "a": "No. You start from Power Query and the Power BI interface. Any DAX and data-modelling you need is taught step by step, and you use AI to draft and explain formulas as you go."
+        },
+        {
+          "q": "Which Hyderabad roles does a Power BI skill help with?",
+          "a": "Compliance and quality reporting in the pharma base, MIS and delivery-reporting roles in HITEC City IT firms, and analytics roles in governance and civic-tech."
+        },
+        {
+          "q": "Will I have a Power BI portfolio at the end?",
+          "a": "Yes. You publish a real dashboard on a Hyderabad-relevant business scenario — shareable proof for any employer, not just a certificate."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Cross - Power BI Hyderabad",
+        "campaign": "cross-powerbi-hyderabad",
+        "program": "Power BI (Hyderabad, online)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses in India",
+          "url": "https://onrol.in/best-ai-course-in-india"
+        },
+        {
+          "name": "Power BI Course in Hyderabad",
+          "url": "https://onrol.in/power-bi-course-in-hyderabad/"
+        }
+      ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-digital-marketing-course-in-delhi-ncr",
+      "city": "Delhi NCR",
+      "title": "AI Digital Marketing Course in Delhi NCR — Live Online | ONROL",
+      "description": "Live online AI digital marketing course for Delhi NCR. Build growth for D2C, agencies and startups with AI. No coding — join the next cohort.",
+      "eyebrow": "Live Online · Serving Delhi NCR",
+      "h1": "AI Digital Marketing course in",
+      "h1accent": "Delhi NCR",
+      "lead": "Learn AI-powered digital marketing live online from anywhere in Delhi NCR — Gurugram, Noida or Delhi. In a region packed with performance agencies, one of India's biggest D2C and e-commerce bases and a dense startup scene, ONROL teaches you to run AI-accelerated campaigns and build a marketing portfolio you keep.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online"
+        },
+        {
+          "icon": "clock",
+          "text": "Evening & weekend cohorts"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding background needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Growth for the D2C capital",
+          "text": "NCR is a D2C powerhouse. You learn to plan, generate and optimise performance campaigns with AI the way growth teams here operate."
+        },
+        {
+          "title": "Agency-grade output",
+          "text": "Gurugram's agencies run many brands at once. You build AI workflows for copy, creative variants and reporting that scale across accounts."
+        },
+        {
+          "title": "Startup performance marketing",
+          "text": "NCR startups need efficient acquisition fast. You use AI to research, target and iterate on campaigns without a big team."
+        },
+        {
+          "title": "Measured, not vanity",
+          "text": "You learn to tie AI-generated marketing to funnels and CAC — output a founder or CMO can actually judge."
+        }
+      ],
+      "learnHeading": "What Delhi NCR learners build",
+      "learn": [
+        "An AI-assisted performance campaign for a D2C or e-commerce brand",
+        "A content-and-creative system producing on-brand variants at scale",
+        "A marketing analytics view tying spend to funnel and CAC",
+        "A published digital-marketing case study on an NCR-relevant brand, kept as portfolio"
+      ],
+      "contextKicker": "Why AI Digital Marketing in Delhi NCR",
+      "contextHeading": "The growth engine of India's D2C and agency capital",
+      "context": [
+        "Delhi NCR is one of the most competitive marketing markets in India. The region anchors a huge D2C and e-commerce base fighting for every rupee of acquisition; Gurugram concentrates performance agencies running dozens of brands at once; and a dense startup scene needs efficient growth without large teams. AI has become the multiplier across all three — for research, copy, creative variants, targeting and reporting — and marketers who wield it well pull ahead fast.",
+        "That is why an AI-marketing skill lands hard in NCR. ONROL teaches you to plan and run AI-accelerated campaigns against these scenarios — a D2C performance push, an agency multi-brand content system, a startup acquisition loop — while tying everything back to funnels and CAC so the output is measurable, not vanity. You learn judgement and speed together.",
+        "You finish with a published digital-marketing case study on an NCR-relevant brand — proof a Gurugram agency lead or a Noida D2C founder can open and take seriously."
+      ],
+      "faqs": [
+        {
+          "q": "Is the AI digital marketing course in Delhi NCR offline or online?",
+          "a": "100% live online. Learners from Gurugram, Noida, Faridabad, Ghaziabad and Delhi join the same interactive cohort — no cross-NCR commute needed."
+        },
+        {
+          "q": "Do I need coding for AI digital marketing?",
+          "a": "No. You use AI tools for research, copy, creative and analysis; any technical steps are taught as you go."
+        },
+        {
+          "q": "Which Delhi NCR roles does this help with?",
+          "a": "Performance and growth roles in D2C/e-commerce, content and account roles in Gurugram agencies, and marketing roles across NCR startups."
+        },
+        {
+          "q": "Will I have a marketing portfolio at the end?",
+          "a": "Yes. You publish a real campaign case study on an NCR-relevant brand — shareable proof for any employer, not just a certificate."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Cross - AI Digital Marketing Delhi NCR",
+        "campaign": "cross-aidm-delhi-ncr",
+        "program": "AI Digital Marketing (Delhi NCR, online)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses in India",
+          "url": "https://onrol.in/best-ai-course-in-india"
+        },
+        {
+          "name": "AI Digital Marketing Course in Delhi NCR",
+          "url": "https://onrol.in/ai-digital-marketing-course-in-delhi-ncr/"
+        }
+      ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-digital-marketing-course-in-mumbai",
+      "city": "Mumbai",
+      "title": "AI Digital Marketing Course in Mumbai — Live Online | ONROL",
+      "description": "Live online AI digital marketing course for Mumbai. Build campaigns for advertising, media and BFSI brands with AI. No coding — join the next cohort.",
+      "eyebrow": "Live Online · Serving Mumbai",
+      "h1": "AI Digital Marketing course in",
+      "h1accent": "Mumbai",
+      "lead": "Learn AI-powered digital marketing live online from anywhere in Mumbai — Andheri, BKC or Lower Parel. In India's advertising and media capital, where agencies set national campaigns and BFSI brands market at scale, ONROL teaches you to run AI-accelerated marketing and build a portfolio you keep.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online"
+        },
+        {
+          "icon": "clock",
+          "text": "Evening & weekend cohorts"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding background needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Advertising-capital craft",
+          "text": "Mumbai's agencies shape national campaigns. You learn to use AI for concepts, copy and creative variants that hold a brand's voice, not generic output."
+        },
+        {
+          "title": "Media and entertainment promo",
+          "text": "The city's media houses market shows, films and content constantly. You build AI workflows for promo content across formats and channels."
+        },
+        {
+          "title": "BFSI brand marketing",
+          "text": "Mumbai's banks and insurers market at scale under strict compliance. You learn AI-assisted marketing that stays on-brand and on-message."
+        },
+        {
+          "title": "Measured, not vanity",
+          "text": "You tie AI-generated marketing to funnels and performance — output a brand manager or agency lead can actually judge."
+        }
+      ],
+      "learnHeading": "What Mumbai learners build",
+      "learn": [
+        "An AI-assisted campaign concept-to-copy system for a brand",
+        "A multi-format promo workflow for media or entertainment content",
+        "A performance view tying spend to funnel and results",
+        "A published digital-marketing case study on a Mumbai-relevant brand, kept as portfolio"
+      ],
+      "contextKicker": "Why AI Digital Marketing in Mumbai",
+      "contextHeading": "The creative and brand engine of India's ad capital",
+      "context": [
+        "Mumbai is where a large share of India's brand-building happens. The advertising agencies of Lower Parel and Andheri set campaigns that run nationally; the media and entertainment houses market films, shows and content around the clock; and the BFSI giants headquartered here market financial products at scale under tight compliance. AI has become a core tool across all three — for concepts, copy, creative variants and performance — and marketers who use it well move faster without losing craft.",
+        "That is why an AI-marketing skill lands specifically in Mumbai. ONROL teaches you to run AI-accelerated marketing against these scenarios — an agency campaign system, a media promo workflow, a compliant BFSI brand push — while tying output to funnels and results so it stays measurable, not vanity. You learn craft and speed together.",
+        "You finish with a published digital-marketing case study on a Mumbai-relevant brand — proof a Lower Parel agency lead or a BKC brand manager can open and take seriously."
+      ],
+      "faqs": [
+        {
+          "q": "Is the AI digital marketing course in Mumbai offline or online?",
+          "a": "100% live online. Learners from Andheri, BKC, Lower Parel, Powai and Navi Mumbai join the same interactive cohort — no local-train commute needed."
+        },
+        {
+          "q": "Do I need coding for AI digital marketing?",
+          "a": "No. You use AI tools for concepts, copy, creative and analysis; any technical steps are taught as you go."
+        },
+        {
+          "q": "Which Mumbai roles does this help with?",
+          "a": "Creative and account roles in the city's agencies, promo and content roles in media/entertainment, and brand-marketing roles in BFSI."
+        },
+        {
+          "q": "Will I have a marketing portfolio at the end?",
+          "a": "Yes. You publish a real campaign case study on a Mumbai-relevant brand — shareable proof for any employer, not just a certificate."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Cross - AI Digital Marketing Mumbai",
+        "campaign": "cross-aidm-mumbai",
+        "program": "AI Digital Marketing (Mumbai, online)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses in India",
+          "url": "https://onrol.in/best-ai-course-in-india"
+        },
+        {
+          "name": "AI Digital Marketing Course in Mumbai",
+          "url": "https://onrol.in/ai-digital-marketing-course-in-mumbai/"
+        }
+      ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-agents-course-in-bangalore",
+      "city": "Bangalore",
+      "title": "AI Agents Course in Bangalore — Live Online | ONROL",
+      "description": "Live online AI agents course for Bangalore. Build tool-using agents for products, GCCs and internal automation. No coding — join the next cohort.",
+      "eyebrow": "Live Online · Serving Bengaluru",
+      "h1": "AI Agents course in",
+      "h1accent": "Bangalore",
+      "lead": "Learn to build AI agents live online from anywhere in Bengaluru — Koramangala, Whitefield or HSR. In India's product and deep-tech capital, where agents are moving from demos into real software and operations, ONROL teaches you to build tool-using agents that actually do work — and keep them as portfolio.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online"
+        },
+        {
+          "icon": "clock",
+          "text": "Evening & weekend cohorts"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding background needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Agents inside products",
+          "text": "Bengaluru's product firms are shipping agentic features. You learn to build agents that plan, call tools and act — reliably enough for real software."
+        },
+        {
+          "title": "GCC operations agents",
+          "text": "The city's global capability centres automate operations at scale. You build multi-step, tool-connected agents those teams increasingly hire for."
+        },
+        {
+          "title": "Internal automation",
+          "text": "Engineering and ops teams build agents for themselves. You practise agents that work across internal tools, data and systems."
+        },
+        {
+          "title": "Reliability and guardrails",
+          "text": "You learn evaluation, tool design and guardrails — the difference between an agent demo and one a team trusts in production."
+        }
+      ],
+      "learnHeading": "What Bengaluru learners build",
+      "learn": [
+        "A tool-using agent that completes a multi-step task end to end",
+        "An agent connected to real data and internal tools",
+        "An evaluated agent workflow with guardrails and failure handling",
+        "A published AI-agent project on a Bengaluru-relevant scenario, kept as portfolio"
+      ],
+      "contextKicker": "Why AI Agents in Bangalore",
+      "contextHeading": "Where agents move from demo to production",
+      "context": [
+        "Bengaluru is where agentic AI is being taken seriously as engineering, not spectacle. The product companies of Koramangala and Indiranagar are shipping agentic features into live software; the global capability centres in Whitefield and Bellandur are building agents to run operations at scale; and the deep-tech scene treats tool-using agents as core infrastructure. In a city that builds for the world, the question is not whether an agent demos well, but whether it works reliably.",
+        "That is why an agents skill lands specifically in Bengaluru. ONROL teaches you to design tool-using agents against exactly these scenarios — a product feature, a GCC operations agent, an internal-automation agent — with the evaluation, tool design and guardrails that decide whether it survives contact with production. You learn to build agents that do work, not just talk.",
+        "You finish with a published AI-agent project on a Bengaluru-relevant scenario — proof a Koramangala product lead or a Whitefield engineering manager can open and take seriously."
+      ],
+      "faqs": [
+        {
+          "q": "Is the AI agents course in Bangalore offline or online?",
+          "a": "100% live online. Learners from Koramangala, Whitefield, Electronic City, HSR and Indiranagar join the same interactive cohort — no Bengaluru traffic, no commute."
+        },
+        {
+          "q": "Do I need coding to build AI agents?",
+          "a": "You can start without a coding background — agents are built with no-/low-code tools and AI copilots first, and any deeper technical work is taught step by step."
+        },
+        {
+          "q": "Which Bangalore roles does building AI agents help with?",
+          "a": "Product and feature roles at Koramangala/Indiranagar product firms, automation roles in Whitefield and Bellandur GCCs, and internal-tooling roles across the deep-tech scene."
+        },
+        {
+          "q": "Will I have an AI-agent portfolio at the end?",
+          "a": "Yes. You publish a real, working agent project on a Bengaluru-relevant scenario — shareable proof, not just a certificate."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Cross - AI Agents Bangalore",
+        "campaign": "cross-agents-bangalore",
+        "program": "AI Agents (Bengaluru, online)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses in India",
+          "url": "https://onrol.in/best-ai-course-in-india"
+        },
+        {
+          "name": "AI Agents Course in Bangalore",
+          "url": "https://onrol.in/ai-agents-course-in-bangalore/"
+        }
+      ]
+    },
+    {
+      "type": "geo",
+      "slug": "ai-app-development-course-in-pune",
+      "city": "Pune",
+      "title": "AI App Development Course in Pune — Live Online | ONROL",
+      "description": "Live online AI app development course for Pune. Build and ship AI-powered apps for IT firms, startups and student projects. No coding — join the next cohort.",
+      "eyebrow": "Live Online · Serving Pune",
+      "h1": "AI App Development course in",
+      "h1accent": "Pune",
+      "lead": "Learn to build AI-powered apps live online from anywhere in Pune — Hinjewadi, Kharadi or Viman Nagar. In a city of IT product firms, a growing startup scene and one of India's largest student populations, ONROL teaches you to build and ship real AI apps you keep as a portfolio.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online"
+        },
+        {
+          "icon": "clock",
+          "text": "Evening & weekend cohorts"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding background needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Apps for Pune's IT product firms",
+          "text": "Hinjewadi and Kharadi product teams build software daily. You learn to build AI-powered app features the way those teams ship them."
+        },
+        {
+          "title": "Startup MVPs, fast",
+          "text": "Pune's startup scene rewards shipping. You use AI to build working app prototypes without a large engineering team."
+        },
+        {
+          "title": "Standout student projects",
+          "text": "With one of India's biggest student populations, proof beats certificates. You graduate with real, deployed AI apps, not slideware."
+        },
+        {
+          "title": "Ship, don't just prototype",
+          "text": "You learn to take an AI app from idea to a deployed, usable product — the skill that separates builders from tinkerers."
+        }
+      ],
+      "learnHeading": "What Pune learners build",
+      "learn": [
+        "An AI-powered app feature built and wired to a real model",
+        "A working app MVP taken from idea to deployment",
+        "An app that integrates AI with real data and user input",
+        "A published, deployed AI app on a Pune-relevant scenario, kept as portfolio"
+      ],
+      "contextKicker": "Why AI App Development in Pune",
+      "contextHeading": "Where IT product teams, startups and students build",
+      "context": [
+        "Pune is a city that builds software. The IT product and services firms of Hinjewadi and Kharadi ship features constantly and are increasingly baking AI into them; a growing startup scene rewards anyone who can turn an idea into a working app fast; and one of India's largest student populations is hunting for the kind of real, deployed projects that actually get noticed. AI app development sits right at that intersection — turning models into products people can use.",
+        "That is why an app-development skill lands specifically in Pune. ONROL teaches you to build and ship AI-powered apps against these scenarios — a product feature for an IT team, a startup MVP, a standout student project — taking an idea all the way to a deployed, usable app rather than a prototype that dies on a laptop. You learn to ship.",
+        "You finish with a published, deployed AI app on a Pune-relevant scenario — proof a Hinjewadi product lead or a startup founder can open, use and take seriously."
+      ],
+      "faqs": [
+        {
+          "q": "Is the AI app development course in Pune offline or online?",
+          "a": "100% live online. Learners from Hinjewadi, Kharadi, Baner, Viman Nagar and Pimpri-Chinchwad join the same interactive cohort — no cross-city travel needed."
+        },
+        {
+          "q": "Do I need coding for AI app development?",
+          "a": "No prior coding background is required to start. You build with AI-assisted, low-code approaches and learn the technical parts step by step as you ship."
+        },
+        {
+          "q": "Which Pune roles does AI app development help with?",
+          "a": "Product and developer roles in Hinjewadi/Kharadi IT firms, builder roles in the startup scene, and standout projects for the city's large student population."
+        },
+        {
+          "q": "Will I have an app portfolio at the end?",
+          "a": "Yes. You publish a real, deployed AI app on a Pune-relevant scenario — a usable product you can show any employer, not just a certificate."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Cross - AI App Development Pune",
+        "campaign": "cross-appdev-pune",
+        "program": "AI App Development (Pune, online)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses in India",
+          "url": "https://onrol.in/best-ai-course-in-india"
+        },
+        {
+          "name": "AI App Development Course in Pune",
+          "url": "https://onrol.in/ai-app-development-course-in-pune/"
         }
       ]
     }
