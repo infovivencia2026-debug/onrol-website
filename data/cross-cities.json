@@ -1,25 +1,1276 @@
 {
   "_comment": "Rich per-city data for the programmatic city×course engine (gen-cross.mjs). Each city carries genuine local economy data so generated pages are meaningfully distinct, not name-swaps. Add cities here to scale.",
   "cities": [
-    { "slug": "bangalore", "name": "Bangalore", "alt": "Bengaluru", "state": "Karnataka", "region": "South India", "tier": 1, "anchor": "India's technology and startup capital", "industries": ["global capability centres", "software product companies", "a relentless startup ecosystem"], "areas": ["Koramangala", "Whitefield", "Electronic City", "HSR Layout", "Indiranagar"], "demand": "AI and data roles are advertised faster here than anywhere else in India" },
-    { "slug": "hyderabad", "name": "Hyderabad", "state": "Telangana", "region": "South India", "tier": 1, "anchor": "a hub of IT services, global pharma and fast-growing GCCs", "industries": ["large IT-services delivery centres", "a world-leading pharma and life-sciences base", "a booming global capability centre cluster"], "areas": ["HITEC City", "Gachibowli", "Kondapur", "Madhapur", "Kukatpally"], "demand": "HITEC City firms and Genome Valley labs are hiring hard for applied AI" },
-    { "slug": "chennai", "name": "Chennai", "state": "Tamil Nadu", "region": "South India", "tier": 1, "anchor": "the banking back-office and auto-manufacturing capital of India", "industries": ["banking and insurance back-office operations", "a vast auto and electronics manufacturing belt", "a rising OMR SaaS corridor"], "areas": ["OMR", "Guindy", "Velachery", "Ambattur", "Sriperumbudur"], "demand": "BFSI processing and the SaaS belt both need people who can build with AI" },
-    { "slug": "pune", "name": "Pune", "state": "Maharashtra", "region": "West India", "tier": 1, "anchor": "a blend of IT services, an automotive belt and a huge student population", "industries": ["IT services and product firms", "an automotive and manufacturing belt", "one of India's largest student populations"], "areas": ["Hinjewadi", "Kharadi", "Baner", "Viman Nagar", "Pimpri-Chinchwad"], "demand": "Hinjewadi's IT firms and Chakan's plants are both leaning into automation" },
-    { "slug": "mumbai", "name": "Mumbai", "state": "Maharashtra", "region": "West India", "tier": 1, "anchor": "India's financial, media and advertising capital", "industries": ["banks, insurers and market firms", "a huge media and entertainment industry", "national advertising agencies"], "areas": ["BKC", "Andheri", "Lower Parel", "Powai", "Navi Mumbai"], "demand": "BFSI, media and agencies are all racing to put AI to work" },
-    { "slug": "delhi-ncr", "name": "Delhi NCR", "state": "Delhi", "region": "North India", "tier": 1, "anchor": "India's corporate, consulting and e-commerce capital", "industries": ["consulting firms and corporate HQs", "a giant e-commerce and D2C base", "a dense media and policy ecosystem"], "areas": ["Gurugram", "Noida", "Connaught Place", "Faridabad", "Ghaziabad"], "demand": "Gurugram consulting and NCR e-commerce are hiring for AI at pace" },
-    { "slug": "kolkata", "name": "Kolkata", "state": "West Bengal", "region": "East India", "tier": 1, "anchor": "eastern India's banking, government and industrial centre", "industries": ["old banking and finance houses", "large government and PSU operations", "engineering, jute and trade"], "areas": ["Salt Lake Sector V", "Rajarhat", "New Town", "Park Street", "Howrah"], "demand": "Salt Lake's IT parks and the finance houses are opening AI roles" },
-    { "slug": "ahmedabad", "name": "Ahmedabad", "state": "Gujarat", "region": "West India", "tier": 1, "anchor": "Gujarat's textile, pharma and fast-rising fintech hub", "industries": ["owner-run textile and chemical businesses", "a large pharma base", "a growing GIFT City fintech cluster"], "areas": ["SG Highway", "Prahlad Nagar", "Maninagar", "Gandhinagar", "GIFT City"], "demand": "SMEs and GIFT City fintech both want AI to reclaim hours" },
-    { "slug": "coimbatore", "name": "Coimbatore", "state": "Tamil Nadu", "region": "South India", "tier": 2, "anchor": "the pump, motor and textile engineering capital of the South", "industries": ["pump, motor and foundry SMEs", "textile and spinning mills", "export-focused engineering units"], "areas": ["Peelamedu", "Saravanampatti", "Gandhipuram", "Singanallur", "the industrial estates"], "demand": "the engineering SMEs need automation to punch above their size" },
-    { "slug": "kochi", "name": "Kochi", "state": "Kerala", "region": "South India", "tier": 2, "anchor": "Kerala's IT-park, export-trade and tourism hub", "industries": ["Infopark and SmartCity IT firms", "spices and marine-product exports", "tourism, hospitality and healthcare"], "areas": ["Infopark", "Kakkanad", "SmartCity", "Edapally", "Fort Kochi"], "demand": "Infopark firms and export houses are adopting AI fast" },
-    { "slug": "jaipur", "name": "Jaipur", "state": "Rajasthan", "region": "North India", "tier": 2, "anchor": "Rajasthan's tourism, handicraft-export and emerging IT hub", "industries": ["tourism and hospitality", "gems, jewellery and handicraft exports", "a growing IT and edtech scene"], "areas": ["Malviya Nagar", "Mansarovar", "Vaishali Nagar", "Sitapura", "C-Scheme"], "demand": "tourism, export and IT firms are all exploring AI" },
-    { "slug": "indore", "name": "Indore", "state": "Madhya Pradesh", "region": "Central India", "tier": 2, "anchor": "central India's cleanest, most enterprising commercial city", "industries": ["trading and FMCG distribution", "pharma and food processing", "a fast-growing startup and IT scene"], "areas": ["Vijay Nagar", "Rau", "Palasia", "Sapna Sangeeta", "the SEZ"], "demand": "Indore's traders and startups are quick to try new tech" },
-    { "slug": "lucknow", "name": "Lucknow", "state": "Uttar Pradesh", "region": "North India", "tier": 2, "anchor": "the administrative and rising IT capital of Uttar Pradesh", "industries": ["government and administrative services", "a growing IT and BPO base", "trade and education"], "areas": ["Gomti Nagar", "Hazratganj", "Vibhuti Khand", "Aliganj", "Indira Nagar"], "demand": "government digitisation and new IT parks are creating AI demand" },
-    { "slug": "chandigarh", "name": "Chandigarh", "state": "Chandigarh", "region": "North India", "tier": 2, "anchor": "the well-planned administrative and IT hub of the North", "industries": ["government and administration", "an IT and startup park", "education and healthcare"], "areas": ["IT Park", "Sector 17", "Mohali", "Panchkula", "Sector 34"], "demand": "the Tricity IT park and services firms are hiring for AI" },
-    { "slug": "nagpur", "name": "Nagpur", "state": "Maharashtra", "region": "Central India", "tier": 2, "anchor": "central India's logistics, MIHAN and orange-trade hub", "industries": ["logistics and the MIHAN SEZ", "IT and BPO operations", "trade and agro-processing"], "areas": ["MIHAN", "Civil Lines", "Wardha Road", "Dharampeth", "Sitabuldi"], "demand": "MIHAN's IT and logistics firms are adopting automation" },
-    { "slug": "visakhapatnam", "name": "Visakhapatnam", "alt": "Vizag", "state": "Andhra Pradesh", "region": "South India", "tier": 2, "anchor": "the port, steel and emerging IT capital of Andhra Pradesh", "industries": ["port, steel and heavy industry", "a growing IT and fintech scene", "pharma and logistics"], "areas": ["Rushikonda", "Madhurawada", "MVP Colony", "Gajuwaka", "the IT SEZ"], "demand": "Vizag's new IT and fintech push is opening tech roles" },
-    { "slug": "bhopal", "name": "Bhopal", "state": "Madhya Pradesh", "region": "Central India", "tier": 2, "anchor": "the administrative and education centre of Madhya Pradesh", "industries": ["government and administration", "education and research institutions", "a nascent IT and startup base"], "areas": ["MP Nagar", "Arera Colony", "Kolar Road", "Habibganj", "the IT Park"], "demand": "government and education digitisation are driving AI interest" },
-    { "slug": "surat", "name": "Surat", "state": "Gujarat", "region": "West India", "tier": 2, "anchor": "the world's diamond-polishing and textile capital", "industries": ["diamond cutting and polishing", "textiles and man-made fabrics", "trade and a rising IT scene"], "areas": ["Adajan", "Vesu", "Varachha", "Piplod", "the Diamond Bourse"], "demand": "diamond and textile businesses are digitising fast" },
-    { "slug": "vadodara", "name": "Vadodara", "alt": "Baroda", "state": "Gujarat", "region": "West India", "tier": 2, "anchor": "Gujarat's engineering, petrochemical and cultural hub", "industries": ["engineering and petrochemicals", "manufacturing and PSUs", "a growing IT scene"], "areas": ["Alkapuri", "Gotri", "Sayajigunj", "Manjalpur", "the GIDC estates"], "demand": "engineering and petrochem firms are exploring AI-driven ops" },
-    { "slug": "nashik", "name": "Nashik", "state": "Maharashtra", "region": "West India", "tier": 2, "anchor": "Maharashtra's wine, agri and manufacturing city", "industries": ["wine and agri-processing", "auto-component manufacturing", "trade and a young IT scene"], "areas": ["College Road", "Gangapur Road", "Ambad MIDC", "Satpur", "Indira Nagar"], "demand": "manufacturing and agri firms are adopting practical AI" }
+    {
+      "slug": "bangalore",
+      "name": "Bangalore",
+      "alt": "Bengaluru",
+      "state": "Karnataka",
+      "region": "South India",
+      "tier": 1,
+      "anchor": "India's technology and startup capital",
+      "industries": [
+        "global capability centres",
+        "software product companies",
+        "a relentless startup ecosystem"
+      ],
+      "areas": [
+        "Koramangala",
+        "Whitefield",
+        "Electronic City",
+        "HSR Layout",
+        "Indiranagar"
+      ],
+      "demand": "AI and data roles are advertised faster here than anywhere else in India"
+    },
+    {
+      "slug": "hyderabad",
+      "name": "Hyderabad",
+      "state": "Telangana",
+      "region": "South India",
+      "tier": 1,
+      "anchor": "a hub of IT services, global pharma and fast-growing GCCs",
+      "industries": [
+        "large IT-services delivery centres",
+        "a world-leading pharma and life-sciences base",
+        "a booming global capability centre cluster"
+      ],
+      "areas": [
+        "HITEC City",
+        "Gachibowli",
+        "Kondapur",
+        "Madhapur",
+        "Kukatpally"
+      ],
+      "demand": "HITEC City firms and Genome Valley labs are hiring hard for applied AI"
+    },
+    {
+      "slug": "chennai",
+      "name": "Chennai",
+      "state": "Tamil Nadu",
+      "region": "South India",
+      "tier": 1,
+      "anchor": "the banking back-office and auto-manufacturing capital of India",
+      "industries": [
+        "banking and insurance back-office operations",
+        "a vast auto and electronics manufacturing belt",
+        "a rising OMR SaaS corridor"
+      ],
+      "areas": [
+        "OMR",
+        "Guindy",
+        "Velachery",
+        "Ambattur",
+        "Sriperumbudur"
+      ],
+      "demand": "BFSI processing and the SaaS belt both need people who can build with AI"
+    },
+    {
+      "slug": "pune",
+      "name": "Pune",
+      "state": "Maharashtra",
+      "region": "West India",
+      "tier": 1,
+      "anchor": "a blend of IT services, an automotive belt and a huge student population",
+      "industries": [
+        "IT services and product firms",
+        "an automotive and manufacturing belt",
+        "one of India's largest student populations"
+      ],
+      "areas": [
+        "Hinjewadi",
+        "Kharadi",
+        "Baner",
+        "Viman Nagar",
+        "Pimpri-Chinchwad"
+      ],
+      "demand": "Hinjewadi's IT firms and Chakan's plants are both leaning into automation"
+    },
+    {
+      "slug": "mumbai",
+      "name": "Mumbai",
+      "state": "Maharashtra",
+      "region": "West India",
+      "tier": 1,
+      "anchor": "India's financial, media and advertising capital",
+      "industries": [
+        "banks, insurers and market firms",
+        "a huge media and entertainment industry",
+        "national advertising agencies"
+      ],
+      "areas": [
+        "BKC",
+        "Andheri",
+        "Lower Parel",
+        "Powai",
+        "Navi Mumbai"
+      ],
+      "demand": "BFSI, media and agencies are all racing to put AI to work"
+    },
+    {
+      "slug": "delhi-ncr",
+      "name": "Delhi NCR",
+      "state": "Delhi",
+      "region": "North India",
+      "tier": 1,
+      "anchor": "India's corporate, consulting and e-commerce capital",
+      "industries": [
+        "consulting firms and corporate HQs",
+        "a giant e-commerce and D2C base",
+        "a dense media and policy ecosystem"
+      ],
+      "areas": [
+        "Gurugram",
+        "Noida",
+        "Connaught Place",
+        "Faridabad",
+        "Ghaziabad"
+      ],
+      "demand": "Gurugram consulting and NCR e-commerce are hiring for AI at pace"
+    },
+    {
+      "slug": "kolkata",
+      "name": "Kolkata",
+      "state": "West Bengal",
+      "region": "East India",
+      "tier": 1,
+      "anchor": "eastern India's banking, government and industrial centre",
+      "industries": [
+        "old banking and finance houses",
+        "large government and PSU operations",
+        "engineering, jute and trade"
+      ],
+      "areas": [
+        "Salt Lake Sector V",
+        "Rajarhat",
+        "New Town",
+        "Park Street",
+        "Howrah"
+      ],
+      "demand": "Salt Lake's IT parks and the finance houses are opening AI roles"
+    },
+    {
+      "slug": "ahmedabad",
+      "name": "Ahmedabad",
+      "state": "Gujarat",
+      "region": "West India",
+      "tier": 1,
+      "anchor": "Gujarat's textile, pharma and fast-rising fintech hub",
+      "industries": [
+        "owner-run textile and chemical businesses",
+        "a large pharma base",
+        "a growing GIFT City fintech cluster"
+      ],
+      "areas": [
+        "SG Highway",
+        "Prahlad Nagar",
+        "Maninagar",
+        "Gandhinagar",
+        "GIFT City"
+      ],
+      "demand": "SMEs and GIFT City fintech both want AI to reclaim hours"
+    },
+    {
+      "slug": "coimbatore",
+      "name": "Coimbatore",
+      "state": "Tamil Nadu",
+      "region": "South India",
+      "tier": 2,
+      "anchor": "the pump, motor and textile engineering capital of the South",
+      "industries": [
+        "pump, motor and foundry SMEs",
+        "textile and spinning mills",
+        "export-focused engineering units"
+      ],
+      "areas": [
+        "Peelamedu",
+        "Saravanampatti",
+        "Gandhipuram",
+        "Singanallur",
+        "the industrial estates"
+      ],
+      "demand": "the engineering SMEs need automation to punch above their size"
+    },
+    {
+      "slug": "kochi",
+      "name": "Kochi",
+      "state": "Kerala",
+      "region": "South India",
+      "tier": 2,
+      "anchor": "Kerala's IT-park, export-trade and tourism hub",
+      "industries": [
+        "Infopark and SmartCity IT firms",
+        "spices and marine-product exports",
+        "tourism, hospitality and healthcare"
+      ],
+      "areas": [
+        "Infopark",
+        "Kakkanad",
+        "SmartCity",
+        "Edapally",
+        "Fort Kochi"
+      ],
+      "demand": "Infopark firms and export houses are adopting AI fast"
+    },
+    {
+      "slug": "jaipur",
+      "name": "Jaipur",
+      "state": "Rajasthan",
+      "region": "North India",
+      "tier": 2,
+      "anchor": "Rajasthan's tourism, handicraft-export and emerging IT hub",
+      "industries": [
+        "tourism and hospitality",
+        "gems, jewellery and handicraft exports",
+        "a growing IT and edtech scene"
+      ],
+      "areas": [
+        "Malviya Nagar",
+        "Mansarovar",
+        "Vaishali Nagar",
+        "Sitapura",
+        "C-Scheme"
+      ],
+      "demand": "tourism, export and IT firms are all exploring AI"
+    },
+    {
+      "slug": "indore",
+      "name": "Indore",
+      "state": "Madhya Pradesh",
+      "region": "Central India",
+      "tier": 2,
+      "anchor": "central India's cleanest, most enterprising commercial city",
+      "industries": [
+        "trading and FMCG distribution",
+        "pharma and food processing",
+        "a fast-growing startup and IT scene"
+      ],
+      "areas": [
+        "Vijay Nagar",
+        "Rau",
+        "Palasia",
+        "Sapna Sangeeta",
+        "the SEZ"
+      ],
+      "demand": "Indore's traders and startups are quick to try new tech"
+    },
+    {
+      "slug": "lucknow",
+      "name": "Lucknow",
+      "state": "Uttar Pradesh",
+      "region": "North India",
+      "tier": 2,
+      "anchor": "the administrative and rising IT capital of Uttar Pradesh",
+      "industries": [
+        "government and administrative services",
+        "a growing IT and BPO base",
+        "trade and education"
+      ],
+      "areas": [
+        "Gomti Nagar",
+        "Hazratganj",
+        "Vibhuti Khand",
+        "Aliganj",
+        "Indira Nagar"
+      ],
+      "demand": "government digitisation and new IT parks are creating AI demand"
+    },
+    {
+      "slug": "chandigarh",
+      "name": "Chandigarh",
+      "state": "Chandigarh",
+      "region": "North India",
+      "tier": 2,
+      "anchor": "the well-planned administrative and IT hub of the North",
+      "industries": [
+        "government and administration",
+        "an IT and startup park",
+        "education and healthcare"
+      ],
+      "areas": [
+        "IT Park",
+        "Sector 17",
+        "Mohali",
+        "Panchkula",
+        "Sector 34"
+      ],
+      "demand": "the Tricity IT park and services firms are hiring for AI"
+    },
+    {
+      "slug": "nagpur",
+      "name": "Nagpur",
+      "state": "Maharashtra",
+      "region": "Central India",
+      "tier": 2,
+      "anchor": "central India's logistics, MIHAN and orange-trade hub",
+      "industries": [
+        "logistics and the MIHAN SEZ",
+        "IT and BPO operations",
+        "trade and agro-processing"
+      ],
+      "areas": [
+        "MIHAN",
+        "Civil Lines",
+        "Wardha Road",
+        "Dharampeth",
+        "Sitabuldi"
+      ],
+      "demand": "MIHAN's IT and logistics firms are adopting automation"
+    },
+    {
+      "slug": "visakhapatnam",
+      "name": "Visakhapatnam",
+      "alt": "Vizag",
+      "state": "Andhra Pradesh",
+      "region": "South India",
+      "tier": 2,
+      "anchor": "the port, steel and emerging IT capital of Andhra Pradesh",
+      "industries": [
+        "port, steel and heavy industry",
+        "a growing IT and fintech scene",
+        "pharma and logistics"
+      ],
+      "areas": [
+        "Rushikonda",
+        "Madhurawada",
+        "MVP Colony",
+        "Gajuwaka",
+        "the IT SEZ"
+      ],
+      "demand": "Vizag's new IT and fintech push is opening tech roles"
+    },
+    {
+      "slug": "bhopal",
+      "name": "Bhopal",
+      "state": "Madhya Pradesh",
+      "region": "Central India",
+      "tier": 2,
+      "anchor": "the administrative and education centre of Madhya Pradesh",
+      "industries": [
+        "government and administration",
+        "education and research institutions",
+        "a nascent IT and startup base"
+      ],
+      "areas": [
+        "MP Nagar",
+        "Arera Colony",
+        "Kolar Road",
+        "Habibganj",
+        "the IT Park"
+      ],
+      "demand": "government and education digitisation are driving AI interest"
+    },
+    {
+      "slug": "surat",
+      "name": "Surat",
+      "state": "Gujarat",
+      "region": "West India",
+      "tier": 2,
+      "anchor": "the world's diamond-polishing and textile capital",
+      "industries": [
+        "diamond cutting and polishing",
+        "textiles and man-made fabrics",
+        "trade and a rising IT scene"
+      ],
+      "areas": [
+        "Adajan",
+        "Vesu",
+        "Varachha",
+        "Piplod",
+        "the Diamond Bourse"
+      ],
+      "demand": "diamond and textile businesses are digitising fast"
+    },
+    {
+      "slug": "vadodara",
+      "name": "Vadodara",
+      "alt": "Baroda",
+      "state": "Gujarat",
+      "region": "West India",
+      "tier": 2,
+      "anchor": "Gujarat's engineering, petrochemical and cultural hub",
+      "industries": [
+        "engineering and petrochemicals",
+        "manufacturing and PSUs",
+        "a growing IT scene"
+      ],
+      "areas": [
+        "Alkapuri",
+        "Gotri",
+        "Sayajigunj",
+        "Manjalpur",
+        "the GIDC estates"
+      ],
+      "demand": "engineering and petrochem firms are exploring AI-driven ops"
+    },
+    {
+      "slug": "nashik",
+      "name": "Nashik",
+      "state": "Maharashtra",
+      "region": "West India",
+      "tier": 2,
+      "anchor": "Maharashtra's wine, agri and manufacturing city",
+      "industries": [
+        "wine and agri-processing",
+        "auto-component manufacturing",
+        "trade and a young IT scene"
+      ],
+      "areas": [
+        "College Road",
+        "Gangapur Road",
+        "Ambad MIDC",
+        "Satpur",
+        "Indira Nagar"
+      ],
+      "demand": "manufacturing and agri firms are adopting practical AI"
+    },
+    {
+      "slug": "kanpur",
+      "name": "Kanpur",
+      "state": "Uttar Pradesh",
+      "region": "North India",
+      "tier": 2,
+      "anchor": "the industrial and leather capital of Uttar Pradesh",
+      "industries": [
+        "leather and tanning industry",
+        "textiles and defence manufacturing",
+        "wholesale trade and distribution"
+      ],
+      "areas": [
+        "Kakadeo",
+        "Swaroop Nagar",
+        "Panki",
+        "Civil Lines",
+        "Jajmau"
+      ],
+      "demand": "its factories and trading houses are digitising operations"
+    },
+    {
+      "slug": "agra",
+      "name": "Agra",
+      "state": "Uttar Pradesh",
+      "region": "North India",
+      "tier": 2,
+      "anchor": "the tourism and leather-footwear-export city of the Taj",
+      "industries": [
+        "leather footwear manufacturing and export",
+        "tourism and hospitality",
+        "marble handicraft and trade"
+      ],
+      "areas": [
+        "Sadar Bazar",
+        "Sanjay Place",
+        "Taj Ganj",
+        "Kamla Nagar",
+        "Dayalbagh"
+      ],
+      "demand": "export units and tourism firms are adopting AI tools"
+    },
+    {
+      "slug": "varanasi",
+      "name": "Varanasi",
+      "alt": "Banaras",
+      "state": "Uttar Pradesh",
+      "region": "North India",
+      "tier": 2,
+      "anchor": "India's spiritual capital and a Banarasi-silk weaving hub",
+      "industries": [
+        "Banarasi silk weaving and textiles",
+        "spiritual and cultural tourism",
+        "education and a large student base"
+      ],
+      "areas": [
+        "Lanka",
+        "Sigra",
+        "Bhelupur",
+        "Cantonment",
+        "Assi"
+      ],
+      "demand": "tourism, weaving clusters and BHU's students are turning to AI"
+    },
+    {
+      "slug": "jodhpur",
+      "name": "Jodhpur",
+      "state": "Rajasthan",
+      "region": "North India",
+      "tier": 2,
+      "anchor": "the handicraft-furniture-export and tourism gateway to west Rajasthan",
+      "industries": [
+        "handicraft and furniture exports",
+        "tourism and hospitality",
+        "guar gum and spice processing"
+      ],
+      "areas": [
+        "Ratanada",
+        "Sardarpura",
+        "Shastri Nagar",
+        "Basni",
+        "Paota"
+      ],
+      "demand": "export houses and hospitality firms are exploring AI"
+    },
+    {
+      "slug": "udaipur",
+      "name": "Udaipur",
+      "state": "Rajasthan",
+      "region": "North India",
+      "tier": 2,
+      "anchor": "the lake-city hub of destination tourism and mining",
+      "industries": [
+        "destination tourism and weddings",
+        "marble, zinc and mineral processing",
+        "handicrafts and trade"
+      ],
+      "areas": [
+        "Fatehpura",
+        "Hiran Magri",
+        "Sukhadia Circle",
+        "Ambamata",
+        "Madri"
+      ],
+      "demand": "hospitality and mining firms are digitising fast"
+    },
+    {
+      "slug": "kota",
+      "name": "Kota",
+      "state": "Rajasthan",
+      "region": "North India",
+      "tier": 2,
+      "anchor": "India's coaching-education capital on the Chambal",
+      "industries": [
+        "the coaching and test-prep industry",
+        "chemical and engineering units",
+        "stone and trade"
+      ],
+      "areas": [
+        "Talwandi",
+        "Vigyan Nagar",
+        "Rajeev Gandhi Nagar",
+        "Mahaveer Nagar",
+        "Dadabari"
+      ],
+      "demand": "edtech and industry both create real AI demand here"
+    },
+    {
+      "slug": "patna",
+      "name": "Patna",
+      "state": "Bihar",
+      "region": "East India",
+      "tier": 2,
+      "anchor": "the administrative and commercial capital of Bihar",
+      "industries": [
+        "government and administration",
+        "wholesale trade and distribution",
+        "education, healthcare and a large student base"
+      ],
+      "areas": [
+        "Boring Road",
+        "Kankarbagh",
+        "Patliputra",
+        "Bailey Road",
+        "Frazer Road"
+      ],
+      "demand": "government digitisation and a huge student population drive AI interest"
+    },
+    {
+      "slug": "ranchi",
+      "name": "Ranchi",
+      "state": "Jharkhand",
+      "region": "East India",
+      "tier": 2,
+      "anchor": "the capital and education hub of mineral-rich Jharkhand",
+      "industries": [
+        "heavy engineering and mining PSUs",
+        "government and administration",
+        "education and a growing IT base"
+      ],
+      "areas": [
+        "Lalpur",
+        "Kanke Road",
+        "Harmu",
+        "Doranda",
+        "Hinoo"
+      ],
+      "demand": "PSUs and new IT firms are opening tech roles"
+    },
+    {
+      "slug": "jamshedpur",
+      "name": "Jamshedpur",
+      "alt": "Tatanagar",
+      "state": "Jharkhand",
+      "region": "East India",
+      "tier": 2,
+      "anchor": "India's original planned steel and industrial city",
+      "industries": [
+        "steel and heavy engineering",
+        "auto and component manufacturing",
+        "a large organised industrial workforce"
+      ],
+      "areas": [
+        "Bistupur",
+        "Sakchi",
+        "Sonari",
+        "Kadma",
+        "Adityapur"
+      ],
+      "demand": "its steel and auto majors are automating operations"
+    },
+    {
+      "slug": "bhubaneswar",
+      "name": "Bhubaneswar",
+      "state": "Odisha",
+      "region": "East India",
+      "tier": 2,
+      "anchor": "the temple city and rising IT capital of Odisha",
+      "industries": [
+        "an IT and Infocity cluster",
+        "government and administration",
+        "education and research institutions"
+      ],
+      "areas": [
+        "Infocity",
+        "Patia",
+        "Chandrasekharpur",
+        "Saheed Nagar",
+        "Jayadev Vihar"
+      ],
+      "demand": "Infocity firms and e-governance projects are hiring for AI"
+    },
+    {
+      "slug": "guwahati",
+      "name": "Guwahati",
+      "state": "Assam",
+      "region": "Northeast India",
+      "tier": 2,
+      "anchor": "the commercial gateway to the North-East",
+      "industries": [
+        "trade and the tea economy",
+        "oil, gas and government services",
+        "healthcare, education and logistics"
+      ],
+      "areas": [
+        "Zoo Road",
+        "GS Road",
+        "Dispur",
+        "Beltola",
+        "Six Mile"
+      ],
+      "demand": "the North-East's business and government hub is adopting AI"
+    },
+    {
+      "slug": "ludhiana",
+      "name": "Ludhiana",
+      "state": "Punjab",
+      "region": "North India",
+      "tier": 2,
+      "anchor": "the Manchester of India — a hosiery and light-engineering powerhouse",
+      "industries": [
+        "hosiery and woollen textiles",
+        "bicycle, auto-parts and machine-tool manufacturing",
+        "agri-business and trade"
+      ],
+      "areas": [
+        "Model Town",
+        "Sarabha Nagar",
+        "Ferozepur Road",
+        "Focal Point",
+        "Dugri"
+      ],
+      "demand": "its dense SME base needs automation to compete"
+    },
+    {
+      "slug": "amritsar",
+      "name": "Amritsar",
+      "state": "Punjab",
+      "region": "North India",
+      "tier": 2,
+      "anchor": "the Golden-Temple tourism and trade city of Punjab",
+      "industries": [
+        "religious and cultural tourism",
+        "textile and trade",
+        "food processing and agri"
+      ],
+      "areas": [
+        "Ranjit Avenue",
+        "Lawrence Road",
+        "Mall Road",
+        "Hall Bazar",
+        "Majitha Road"
+      ],
+      "demand": "tourism and trade businesses are trying AI tools"
+    },
+    {
+      "slug": "jalandhar",
+      "name": "Jalandhar",
+      "state": "Punjab",
+      "region": "North India",
+      "tier": 2,
+      "anchor": "the world's sports-goods manufacturing hub",
+      "industries": [
+        "sports-goods and hand-tool manufacturing",
+        "leather and rubber goods",
+        "agri and trade"
+      ],
+      "areas": [
+        "Model Town",
+        "Urban Estate",
+        "Nakodar Road",
+        "Cool Road",
+        "Maqsudan"
+      ],
+      "demand": "export-focused manufacturers are digitising"
+    },
+    {
+      "slug": "madurai",
+      "name": "Madurai",
+      "state": "Tamil Nadu",
+      "region": "South India",
+      "tier": 2,
+      "anchor": "the temple city and southern trade hub of Tamil Nadu",
+      "industries": [
+        "temple and cultural tourism",
+        "textiles and auto components",
+        "healthcare and education"
+      ],
+      "areas": [
+        "Anna Nagar",
+        "KK Nagar",
+        "Simmakkal",
+        "Bypass Road",
+        "Villapuram"
+      ],
+      "demand": "healthcare and manufacturing firms are exploring AI"
+    },
+    {
+      "slug": "tiruchirappalli",
+      "name": "Tiruchirappalli",
+      "alt": "Trichy",
+      "state": "Tamil Nadu",
+      "region": "South India",
+      "tier": 2,
+      "anchor": "the heavy-engineering and education city of central Tamil Nadu",
+      "industries": [
+        "BHEL and heavy engineering",
+        "education and a large college base",
+        "gold, gem and trade"
+      ],
+      "areas": [
+        "Thillai Nagar",
+        "Srirangam",
+        "Cantonment",
+        "K.K. Nagar",
+        "Woraiyur"
+      ],
+      "demand": "its engineering and education base is turning to AI"
+    },
+    {
+      "slug": "salem",
+      "name": "Salem",
+      "state": "Tamil Nadu",
+      "region": "South India",
+      "tier": 2,
+      "anchor": "the steel and textile city of western Tamil Nadu",
+      "industries": [
+        "steel and stainless-steel manufacturing",
+        "textiles and handlooms",
+        "sago, poultry and agri-processing"
+      ],
+      "areas": [
+        "Fairlands",
+        "Hasthampatti",
+        "Alagapuram",
+        "Suramangalam",
+        "Ammapet"
+      ],
+      "demand": "its manufacturing SMEs are adopting automation"
+    },
+    {
+      "slug": "tirupur",
+      "name": "Tirupur",
+      "state": "Tamil Nadu",
+      "region": "South India",
+      "tier": 2,
+      "anchor": "India's knitwear and garment-export capital",
+      "industries": [
+        "knitwear and garment export",
+        "textile processing and dyeing",
+        "a dense manufacturing SME base"
+      ],
+      "areas": [
+        "Kumaran Road",
+        "Avinashi Road",
+        "Palladam Road",
+        "Anupparpalayam",
+        "Veerapandi"
+      ],
+      "demand": "garment exporters are automating orders and operations"
+    },
+    {
+      "slug": "mysuru",
+      "name": "Mysuru",
+      "alt": "Mysore",
+      "state": "Karnataka",
+      "region": "South India",
+      "tier": 2,
+      "anchor": "the palace city and rising IT hub of southern Karnataka",
+      "industries": [
+        "an IT and GCC cluster",
+        "tourism and heritage",
+        "silk, sandalwood and traditional industry"
+      ],
+      "areas": [
+        "Vijayanagar",
+        "Kuvempunagar",
+        "Hebbal",
+        "Gokulam",
+        "Nazarbad"
+      ],
+      "demand": "its growing IT parks are hiring for AI"
+    },
+    {
+      "slug": "mangalore",
+      "name": "Mangalore",
+      "alt": "Mangaluru",
+      "state": "Karnataka",
+      "region": "South India",
+      "tier": 2,
+      "anchor": "the port, refinery and banking-origin city of coastal Karnataka",
+      "industries": [
+        "port, petrochemical and refinery industry",
+        "the birthplace of several national banks",
+        "education and healthcare"
+      ],
+      "areas": [
+        "Hampankatta",
+        "Kadri",
+        "Bejai",
+        "Kottara",
+        "Surathkal"
+      ],
+      "demand": "its port, banking and education sectors are adopting AI"
+    },
+    {
+      "slug": "hubli-dharwad",
+      "name": "Hubli-Dharwad",
+      "state": "Karnataka",
+      "region": "South India",
+      "tier": 2,
+      "anchor": "the commercial and education twin-city of north Karnataka",
+      "industries": [
+        "trade and commerce",
+        "an emerging IT and startup scene",
+        "education and agri-business"
+      ],
+      "areas": [
+        "Vidyanagar",
+        "Gokul Road",
+        "Keshwapur",
+        "Deshpande Nagar",
+        "Navanagar"
+      ],
+      "demand": "north Karnataka's business hub is starting to hire for AI"
+    },
+    {
+      "slug": "vijayawada",
+      "name": "Vijayawada",
+      "state": "Andhra Pradesh",
+      "region": "South India",
+      "tier": 2,
+      "anchor": "the commercial and logistics heart of Andhra Pradesh",
+      "industries": [
+        "trade, commerce and logistics",
+        "education and coaching",
+        "media and printing"
+      ],
+      "areas": [
+        "Benz Circle",
+        "Governorpet",
+        "Labbipet",
+        "Auto Nagar",
+        "Gunadala"
+      ],
+      "demand": "its trading and education economy is adopting AI fast"
+    },
+    {
+      "slug": "guntur",
+      "name": "Guntur",
+      "state": "Andhra Pradesh",
+      "region": "South India",
+      "tier": 2,
+      "anchor": "India's chilli and agri-commodity trading capital",
+      "industries": [
+        "chilli, tobacco and cotton trade",
+        "agri-commodity processing",
+        "education and trade"
+      ],
+      "areas": [
+        "Brodipet",
+        "Arundelpet",
+        "Lakshmipuram",
+        "Kothapet",
+        "Nallapadu"
+      ],
+      "demand": "its agri-commodity businesses are digitising trade"
+    },
+    {
+      "slug": "tirupati",
+      "name": "Tirupati",
+      "state": "Andhra Pradesh",
+      "region": "South India",
+      "tier": 2,
+      "anchor": "the temple city and emerging electronics-manufacturing hub",
+      "industries": [
+        "temple tourism and pilgrimage",
+        "electronics manufacturing and Sri City industry",
+        "education and research"
+      ],
+      "areas": [
+        "Tirupati Town",
+        "Renigunta",
+        "Tiruchanur",
+        "Alipiri",
+        "Sri City corridor"
+      ],
+      "demand": "its manufacturing and education base is turning to AI"
+    },
+    {
+      "slug": "warangal",
+      "name": "Warangal",
+      "state": "Telangana",
+      "region": "South India",
+      "tier": 2,
+      "anchor": "the historic textile and education hub of north Telangana",
+      "industries": [
+        "textiles and handloom",
+        "education and a large college base",
+        "agri and an emerging IT push"
+      ],
+      "areas": [
+        "Hanamkonda",
+        "Kazipet",
+        "Subedari",
+        "Nakkalagutta",
+        "Warangal Fort area"
+      ],
+      "demand": "the state's second IT push is creating tech roles here"
+    },
+    {
+      "slug": "thiruvananthapuram",
+      "name": "Thiruvananthapuram",
+      "alt": "Trivandrum",
+      "state": "Kerala",
+      "region": "South India",
+      "tier": 2,
+      "anchor": "Kerala's capital, an IT and space-research hub",
+      "industries": [
+        "a Technopark IT cluster",
+        "space and defence research (ISRO/VSSC)",
+        "government and education"
+      ],
+      "areas": [
+        "Technopark",
+        "Kazhakootam",
+        "Pattom",
+        "Vazhuthacaud",
+        "Sreekaryam"
+      ],
+      "demand": "Technopark firms and research labs are hiring for AI"
+    },
+    {
+      "slug": "kozhikode",
+      "name": "Kozhikode",
+      "alt": "Calicut",
+      "state": "Kerala",
+      "region": "South India",
+      "tier": 2,
+      "anchor": "the historic spice-trade and rising IT city of north Kerala",
+      "industries": [
+        "trade, spices and timber",
+        "a Cyberpark IT cluster",
+        "healthcare and education"
+      ],
+      "areas": [
+        "Cyberpark",
+        "Mavoor Road",
+        "Nadakkavu",
+        "Kottooli",
+        "Palayam"
+      ],
+      "demand": "its trade and IT sectors are adopting AI"
+    },
+    {
+      "slug": "thrissur",
+      "name": "Thrissur",
+      "state": "Kerala",
+      "region": "South India",
+      "tier": 2,
+      "anchor": "the cultural capital and gold-and-banking hub of Kerala",
+      "industries": [
+        "gold and jewellery trade",
+        "the origin of several Kerala banks and NBFCs",
+        "cultural tourism and education"
+      ],
+      "areas": [
+        "Round area",
+        "Ollur",
+        "Punkunnam",
+        "East Fort",
+        "Ayyanthole"
+      ],
+      "demand": "its jewellery and finance businesses are digitising"
+    },
+    {
+      "slug": "aurangabad",
+      "name": "Aurangabad",
+      "alt": "Chhatrapati Sambhajinagar",
+      "state": "Maharashtra",
+      "region": "West India",
+      "tier": 2,
+      "anchor": "the auto, pharma and heritage-tourism hub of Marathwada",
+      "industries": [
+        "auto and component manufacturing",
+        "pharma and brewing industry",
+        "heritage tourism around Ajanta and Ellora"
+      ],
+      "areas": [
+        "CIDCO",
+        "Waluj MIDC",
+        "Garkheda",
+        "Nirala Bazar",
+        "Shendra MIDC"
+      ],
+      "demand": "its auto and pharma plants are automating operations"
+    },
+    {
+      "slug": "kolhapur",
+      "name": "Kolhapur",
+      "state": "Maharashtra",
+      "region": "West India",
+      "tier": 2,
+      "anchor": "the foundry, textile and agri hub of southern Maharashtra",
+      "industries": [
+        "foundry and engineering units",
+        "textiles and Kolhapuri footwear",
+        "sugar, jaggery and agri-processing"
+      ],
+      "areas": [
+        "Rajarampuri",
+        "Shahupuri",
+        "Tarabai Park",
+        "Kasba Bawada",
+        "Shiroli MIDC"
+      ],
+      "demand": "its foundry and agri SMEs are adopting automation"
+    },
+    {
+      "slug": "rajkot",
+      "name": "Rajkot",
+      "state": "Gujarat",
+      "region": "West India",
+      "tier": 2,
+      "anchor": "the engineering, casting and machine-tool hub of Saurashtra",
+      "industries": [
+        "casting, forging and engineering",
+        "machine tools and auto parts",
+        "jewellery and trade"
+      ],
+      "areas": [
+        "Kalawad Road",
+        "University Road",
+        "Aji GIDC",
+        "Gondal Road",
+        "Mavdi"
+      ],
+      "demand": "its dense engineering SME base needs automation"
+    },
+    {
+      "slug": "bhavnagar",
+      "name": "Bhavnagar",
+      "state": "Gujarat",
+      "region": "West India",
+      "tier": 3,
+      "anchor": "the ship-breaking and diamond-trade port of Saurashtra",
+      "industries": [
+        "ship-breaking at Alang",
+        "diamond cutting and plastics",
+        "salt and chemical industry"
+      ],
+      "areas": [
+        "Waghawadi Road",
+        "Kaliyabid",
+        "Ghogha Circle",
+        "Subhashnagar",
+        "Alang corridor"
+      ],
+      "demand": "its industrial and trade units are exploring AI"
+    },
+    {
+      "slug": "jamnagar",
+      "name": "Jamnagar",
+      "state": "Gujarat",
+      "region": "West India",
+      "tier": 3,
+      "anchor": "the brass-parts and oil-refining city of Gujarat",
+      "industries": [
+        "brass parts and components",
+        "oil refining and petrochemicals",
+        "salt and trade"
+      ],
+      "areas": [
+        "Ranjit Nagar",
+        "Patel Colony",
+        "Bedi",
+        "Digjam Circle",
+        "the refinery belt"
+      ],
+      "demand": "its refining and brass industry is digitising"
+    },
+    {
+      "slug": "siliguri",
+      "name": "Siliguri",
+      "state": "West Bengal",
+      "region": "East India",
+      "tier": 2,
+      "anchor": "the logistics gateway to the North-East and Himalayas",
+      "industries": [
+        "logistics and the tea trade",
+        "wholesale trade and distribution",
+        "healthcare and tourism gateway services"
+      ],
+      "areas": [
+        "Sevoke Road",
+        "Hakimpara",
+        "Pradhan Nagar",
+        "Matigara",
+        "Bidhan Market"
+      ],
+      "demand": "its logistics and trade economy is adopting AI"
+    },
+    {
+      "slug": "durgapur",
+      "name": "Durgapur",
+      "state": "West Bengal",
+      "region": "East India",
+      "tier": 3,
+      "anchor": "the steel and industrial township of western Bengal",
+      "industries": [
+        "steel and heavy industry",
+        "engineering and power",
+        "education and a growing service base"
+      ],
+      "areas": [
+        "City Centre",
+        "Bidhannagar",
+        "Benachity",
+        "Steel Township",
+        "Muchipara"
+      ],
+      "demand": "its steel and engineering firms are automating"
+    },
+    {
+      "slug": "raipur",
+      "name": "Raipur",
+      "state": "Chhattisgarh",
+      "region": "Central India",
+      "tier": 2,
+      "anchor": "the steel, power and rice-trade capital of Chhattisgarh",
+      "industries": [
+        "steel, sponge-iron and power",
+        "rice milling and agri-commodity trade",
+        "government and an emerging IT base"
+      ],
+      "areas": [
+        "Shankar Nagar",
+        "Pandri",
+        "Telibandha",
+        "Devendra Nagar",
+        "Urla industrial area"
+      ],
+      "demand": "its industrial and trading economy is turning to AI"
+    },
+    {
+      "slug": "dehradun",
+      "name": "Dehradun",
+      "state": "Uttarakhand",
+      "region": "North India",
+      "tier": 2,
+      "anchor": "the education, government and IT hub of Uttarakhand",
+      "industries": [
+        "education and a large institutional base",
+        "government and IT parks",
+        "tourism and services"
+      ],
+      "areas": [
+        "Rajpur Road",
+        "Sahastradhara Road",
+        "Clement Town",
+        "Ballupur",
+        "IT Park Sahastradhara"
+      ],
+      "demand": "its IT parks and education base are hiring for AI"
+    },
+    {
+      "slug": "jammu",
+      "name": "Jammu",
+      "state": "Jammu and Kashmir",
+      "region": "North India",
+      "tier": 2,
+      "anchor": "the winter capital and trade gateway of J&K",
+      "industries": [
+        "government and administration",
+        "trade and pilgrimage-gateway services",
+        "healthcare and education"
+      ],
+      "areas": [
+        "Gandhi Nagar",
+        "Trikuta Nagar",
+        "Channi Himmat",
+        "Bahu Plaza",
+        "Rehari"
+      ],
+      "demand": "government digitisation and trade are creating AI interest"
+    },
+    {
+      "slug": "nellore",
+      "name": "Nellore",
+      "state": "Andhra Pradesh",
+      "region": "South India",
+      "tier": 3,
+      "anchor": "the aquaculture and agri-trade city of coastal Andhra",
+      "industries": [
+        "shrimp aquaculture and seafood export",
+        "mica, minerals and solar power",
+        "agri-commodity trade"
+      ],
+      "areas": [
+        "Magunta Layout",
+        "Dargamitta",
+        "Vedayapalem",
+        "Ramamurthy Nagar",
+        "Podalakur Road"
+      ],
+      "demand": "its aquaculture and agri-export firms are digitising"
+    },
+    {
+      "slug": "bareilly",
+      "name": "Bareilly",
+      "state": "Uttar Pradesh",
+      "region": "North India",
+      "tier": 3,
+      "anchor": "the trade, furniture and manufacturing hub of Rohilkhand",
+      "industries": [
+        "furniture (zari-zardozi) and trade",
+        "manufacturing and agri-processing",
+        "government and education"
+      ],
+      "areas": [
+        "Civil Lines",
+        "Rajendra Nagar",
+        "Rampur Garden",
+        "Pilibhit Road",
+        "Deltehri"
+      ],
+      "demand": "its trade and manufacturing units are adopting AI tools"
+    }
   ]
 }
