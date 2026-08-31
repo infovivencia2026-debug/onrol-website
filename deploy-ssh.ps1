@@ -109,18 +109,31 @@ if ($code -ne 0) {
 
 # Extract in place. Atomic-ish: clear old, extract new.
 # We use 'find ... -delete' instead of 'rm -rf' to limit blast radius to the web root.
-$extractCmd = @"
-set -e
-mkdir -p $sshRemotePath
-# Clean everything inside the web root (but not the root itself).
-find $sshRemotePath -mindepth 1 -delete 2>/dev/null || true
-tar -xzf $remoteTmp -C $sshRemotePath
-rm -f $remoteTmp
+# Safe extract: unpack the tarball into a TEMP dir first. Only if that fully
+# succeeds do we clear the web root and swap the new files in — so a truncated
+# upload or bad tarball can never leave the site empty (as a wipe-then-extract
+# would). The whole script is base64-encoded and LF-normalized so no CRLF or
+# shell-quoting survives the single-arg SSH hop (the previous multi-line
+# here-string arrived mangled — "set -e" became "set -" on the remote, which
+# disarmed errexit and let the pre-extract wipe run against a failing tar).
+$remoteScript = @"
+set -eu
+staging=`$(mktemp -d)
+trap 'rm -rf "`$staging"' EXIT
+tar -xzf '$remoteTmp' -C "`$staging"
+# Verify the extract produced the SPA shell before touching the live root.
+if [ ! -f "`$staging/index.html" ]; then echo "extract missing index.html — aborting, web root untouched" >&2; exit 1; fi
+mkdir -p '$sshRemotePath'
+find '$sshRemotePath' -mindepth 1 -delete 2>/dev/null || true
+cp -a "`$staging/." '$sshRemotePath'/
+rm -f '$remoteTmp'
 echo "Extracted build to $sshRemotePath"
 "@
+$remoteScript = $remoteScript -replace "`r", ""
+$b64 = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($remoteScript))
 
-Write-Host "Extracting on VPS..." -ForegroundColor Cyan
-$code = Invoke-SshCommand -command $extractCmd
+Write-Host "Extracting on VPS (safe temp-swap)..." -ForegroundColor Cyan
+$code = Invoke-SshCommand -command "echo $b64 | base64 -d | bash"
 Remove-Item $tarballLocal -Force -ErrorAction SilentlyContinue
 if ($code -ne 0) {
     Write-Host "Remote extraction failed (exit $code)." -ForegroundColor Red
