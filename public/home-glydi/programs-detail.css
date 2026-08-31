@@ -1,0 +1,398 @@
+/* ==================================================================
+   PROGRAM PAGES — "the opened slat"
+   AI Generalist, AI Architect, Cyber Security and SOC Analyst, themed
+   as the continuation of the /programs wall: you picked a slat, it
+   opened, and this is what is inside.
+
+   So the hero repeats the wall's open state — the same photograph, the
+   same number, the same serif title over ink — and then the page turns
+   to paper for the reading. Sections are numbered in the margin, the
+   type is Instrument Serif over Manrope caps, and every edge is square.
+
+   The team does not want a dark site, so the ink is spent only on the
+   hero and the closing bar; the body is warm paper throughout.
+   ================================================================== */
+
+#home-glydi{
+  --d-paper:#F7F5F1;
+  --d-white:#FFFFFF;
+  --d-ink:#0E0D0C;
+  --d-body:#4A453E;
+  --d-muted:#8B857B;
+  --d-line:rgba(14,13,12,.14);
+  --d-line-hi:rgba(14,13,12,.26);
+  --d-accent:#F46718;
+  --d-accent-dk:#C2500B;
+  --d-edge:clamp(20px, 5vw, 76px);
+}
+
+html:has(#home-glydi .pgd),
+html:has(#home-glydi .pgd) body,
+html:has(#home-glydi .pgd) #root{ background:var(--d-paper) !important; }
+
+#home-glydi .pgd{
+  background:var(--d-paper) !important;
+  color:var(--d-body);
+  font-family:'Manrope', system-ui, sans-serif;
+  width:auto !important;
+  max-width:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  counter-reset:sec;
+}
+#home-glydi .pgd .container{
+  width:min(1240px, 100%) !important;
+  margin-inline:auto !important;
+  padding-inline:var(--d-edge) !important;
+}
+#home-glydi .pgd > section{ padding-block:clamp(52px, 6.5vw, 96px) !important; }
+#home-glydi .pgd > section:nth-of-type(even){ background:var(--d-white) !important; }
+
+/* ==================================================================
+   HERO — the slat, opened
+   ================================================================== */
+#home-glydi .pgd .hero{
+  position:relative;
+  background:var(--d-ink) !important;
+  padding-block:clamp(112px, 13vh, 168px) clamp(52px, 6vw, 88px) !important;
+  overflow:hidden !important;
+  isolation:isolate;
+}
+#home-glydi .pgd .hero::before{
+  content:"" !important;
+  display:block !important;
+  position:absolute; inset:0 !important; z-index:0;
+  width:auto !important; height:auto !important;
+  background:var(--d-ink) center / cover no-repeat !important;
+  background-image:var(--d-shot, none) !important;
+  filter:grayscale(.35) contrast(1.06) brightness(1.08);
+}
+#home-glydi .pgd .hero::after{
+  content:"" !important;
+  display:block !important;
+  position:absolute; inset:0 !important; z-index:1;
+  width:auto !important; height:auto !important;
+  background:
+    linear-gradient(100deg, rgba(14,13,12,.92) 0%, rgba(14,13,12,.74) 32%, rgba(14,13,12,.3) 62%, rgba(14,13,12,.42) 100%),
+    linear-gradient(180deg, rgba(14,13,12,.2), rgba(14,13,12,.55)) !important;
+}
+#home-glydi .pgd .hero > *{ position:relative; z-index:2; }
+/* the wall's index, carried through */
+#home-glydi .pgd .hero-grid::before{
+  content:attr(data-index);
+  display:block;
+  grid-column:1 / -1;
+  margin-bottom:clamp(12px, 1.6vh, 20px);
+  font-family:'Instrument Serif', Georgia, serif;
+  font-size:clamp(26px, 2.4vw, 42px);
+  line-height:1;
+  color:rgba(255,255,255,.9);
+}
+#home-glydi .pgd .hero h1{
+  font-family:'Instrument Serif', Georgia, serif !important;
+  font-weight:400 !important; font-style:normal !important;
+  font-size:clamp(38px, 5vw, 74px) !important;
+  line-height:.99 !important; letter-spacing:-.015em !important;
+  color:#FFFFFF !important;
+  max-width:17ch;
+}
+#home-glydi .pgd .hero h1 .gradient-text,
+#home-glydi .pgd .gradient-text{
+  font-family:'Instrument Serif', Georgia, serif !important;
+  font-style:italic !important; font-weight:400 !important;
+  color:var(--d-accent) !important;
+  background:none !important;
+  -webkit-text-fill-color:var(--d-accent) !important;
+}
+/* the facts rail, exactly as the open slat shows them */
+#home-glydi .pgd .hero-stats{ border-top:1px solid rgba(255,255,255,.2); padding-top:clamp(14px, 2vh, 22px); }
+#home-glydi .pgd .hero-stats .stat{
+  border:0 !important; border-radius:0 !important;
+  background:transparent !important;
+  padding:0 clamp(16px, 2vw, 34px) 0 0 !important;
+}
+#home-glydi .pgd .hero-stats .stat strong{
+  font-family:'Instrument Serif', Georgia, serif !important;
+  font-weight:400 !important;
+  font-size:clamp(22px, 2.2vw, 34px) !important;
+  color:#FFFFFF !important;
+}
+#home-glydi .pgd .hero-stats .stat span{
+  font-size:9.5px !important; font-weight:800 !important;
+  letter-spacing:.18em !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,.58) !important;
+}
+/* the seat form sits on paper against the ink */
+#home-glydi .pgd .form-card{
+  border-radius:0 !important;
+  border:0 !important;
+  border-top:3px solid var(--d-accent) !important;
+  background:var(--d-white) !important;
+  box-shadow:none !important;
+}
+#home-glydi .pgd .form-card h2{
+  font-family:'Instrument Serif', Georgia, serif !important;
+  font-weight:400 !important; font-style:normal !important;
+  font-size:clamp(21px, 1.9vw, 28px) !important;
+  letter-spacing:-.01em !important;
+  color:var(--d-ink) !important;
+}
+#home-glydi .pgd .field input,
+#home-glydi .pgd input[type="tel"],
+#home-glydi .pgd input[type="text"],
+#home-glydi .pgd input[type="email"]{
+  border-radius:0 !important;
+  border:1px solid var(--d-line-hi) !important;
+}
+#home-glydi .pgd input:focus{ border-color:var(--d-accent) !important; outline:none !important; }
+
+/* per-page photography, taken from the wall */
+#home-glydi .pgd-aig{  --d-shot:url("/home-glydi/about-hero.jpg"); }
+#home-glydi .pgd-arch{ --d-shot:url("/home-glydi/module-2.jpg"); }
+#home-glydi .pgd-cyb{  --d-shot:url("/home-glydi/programs-cy.jpg"); }
+#home-glydi .pgd-soc{  --d-shot:url("/home-glydi/hero-stage.jpg"); }
+
+/* ==================================================================
+   SECTIONS — numbered in the margin, serif title, hairline rule
+   ================================================================== */
+#home-glydi .pgd .section-head{
+  counter-increment:sec;
+  position:relative;
+  border-top:1px solid var(--d-line);
+  padding-top:clamp(20px, 2.6vw, 34px);
+  margin-bottom:clamp(28px, 3.4vw, 46px);
+}
+#home-glydi .pgd .section-head::before{
+  content:counter(sec, decimal-leading-zero);
+  position:absolute; top:clamp(20px, 2.6vw, 34px); right:0;
+  font-family:'Instrument Serif', Georgia, serif;
+  font-size:clamp(20px, 1.8vw, 30px);
+  line-height:1;
+  color:var(--d-line-hi);
+}
+#home-glydi .pgd .tag{
+  display:inline-flex; align-items:center; gap:9px;
+  padding:0 !important; margin-bottom:10px !important;
+  background:transparent !important; border:0 !important; border-radius:0 !important;
+  font-size:10px !important; font-weight:800 !important;
+  letter-spacing:.24em !important; text-transform:uppercase !important;
+  color:var(--d-accent-dk) !important;
+}
+#home-glydi .pgd .tag::before{ content:""; width:20px; height:1px; background:var(--d-accent); }
+#home-glydi .pgd .section-title{
+  font-family:'Instrument Serif', Georgia, serif !important;
+  font-weight:400 !important; font-style:normal !important;
+  font-size:clamp(28px, 3.6vw, 52px) !important;
+  line-height:1.03 !important; letter-spacing:-.012em !important;
+  color:var(--d-ink) !important;
+  text-align:left !important;
+  max-width:20ch;
+}
+#home-glydi .pgd .section-desc{
+  color:var(--d-body) !important;
+  font-size:clamp(14.5px, 1.1vw, 16.5px) !important;
+  line-height:1.75 !important;
+  text-align:left !important;
+  max-width:52ch;
+}
+
+/* ==================================================================
+   WHAT YOU BUILD — paper cards, ghost numerals
+   ================================================================== */
+#home-glydi .pgd .build-card{
+  position:relative;
+  border-radius:0 !important;
+  border:1px solid var(--d-line) !important;
+  background:var(--d-white) !important;
+  padding:clamp(22px, 2.2vw, 32px) !important;
+  box-shadow:none !important;
+  transition:border-color .3s ease, transform .4s cubic-bezier(.22,.72,.24,1);
+}
+#home-glydi .pgd .build-card:hover{ border-color:var(--d-accent) !important; transform:translateY(-4px); }
+#home-glydi .pgd .bc-num{
+  font-family:'Instrument Serif', Georgia, serif !important;
+  font-size:clamp(24px, 2.2vw, 36px) !important;
+  font-weight:400 !important;
+  color:var(--d-line-hi) !important;
+  transition:color .3s ease;
+}
+#home-glydi .pgd .build-card:hover .bc-num{ color:var(--d-accent) !important; }
+#home-glydi .pgd .bc-ic{
+  background:transparent !important;
+  border:0 !important;
+  width:34px; height:34px;
+}
+#home-glydi .pgd .bc-ic svg{ stroke:var(--d-accent) !important; fill:none; }
+#home-glydi .pgd .build-card h3{
+  font-family:'Instrument Serif', Georgia, serif !important;
+  font-weight:400 !important;
+  font-size:clamp(19px, 1.7vw, 25px) !important;
+  letter-spacing:-.01em !important;
+  color:var(--d-ink) !important;
+}
+#home-glydi .pgd .tools span{
+  border-radius:0 !important;
+  border:1px solid var(--d-line) !important;
+  background:transparent !important;
+  font-size:9.5px !important; font-weight:800 !important;
+  letter-spacing:.12em !important; text-transform:uppercase !important;
+  color:var(--d-muted) !important;
+  padding:4px 9px !important;
+}
+
+/* ==================================================================
+   CURRICULUM — a ledger, not a stack of dark banners
+   ================================================================== */
+#home-glydi .pgd .curr-mod{
+  border-radius:0 !important;
+  border:0 !important;
+  border-top:1px solid var(--d-line) !important;
+  background:transparent !important;
+  padding-block:clamp(18px, 2vw, 26px) !important;
+}
+#home-glydi .pgd .curr-mod-banner,
+#home-glydi .pgd .curr-mod-banner--photo{
+  border-radius:0 !important;
+  min-height:clamp(120px, 14vw, 180px) !important;
+  filter:grayscale(.4) contrast(1.03);
+  transition:filter .5s ease;
+}
+#home-glydi .pgd .curr-mod:hover .curr-mod-banner,
+#home-glydi .pgd .curr-mod:hover .curr-mod-banner--photo{ filter:grayscale(0) contrast(1.02); }
+#home-glydi .pgd .curr-nav-item{
+  border-radius:0 !important;
+  border:0 !important;
+  border-left:2px solid transparent !important;
+  background:transparent !important;
+  padding:10px 0 10px 14px !important;
+  transition:border-color .3s ease, color .3s ease;
+}
+#home-glydi .pgd .curr-nav-item:hover,
+#home-glydi .pgd .curr-nav-item.is-active{
+  border-left-color:var(--d-accent) !important;
+  background:transparent !important;
+}
+#home-glydi .pgd .cn-num{
+  font-family:'Instrument Serif', Georgia, serif !important;
+  font-weight:400 !important;
+  color:var(--d-accent-dk) !important;
+  background:transparent !important;
+  border:0 !important;
+}
+#home-glydi .pgd .curr-checks li{ color:var(--d-body) !important; }
+
+/* ==================================================================
+   AUDIENCE / OUTCOMES / ROLES — hairline blocks
+   ================================================================== */
+#home-glydi .pgd .audience-card,
+#home-glydi .pgd .outcome-item,
+#home-glydi .pgd .role-row,
+#home-glydi .pgd .pf-step{
+  border-radius:0 !important;
+  border:0 !important;
+  border-top:1px solid var(--d-line) !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+#home-glydi .pgd .audience-card h3,
+#home-glydi .pgd .outcome-item h3,
+#home-glydi .pgd .pf-step h3{
+  font-family:'Instrument Serif', Georgia, serif !important;
+  font-weight:400 !important;
+  font-size:clamp(18px, 1.6vw, 23px) !important;
+  color:var(--d-ink) !important;
+}
+#home-glydi .pgd .rr-name{
+  font-family:'Instrument Serif', Georgia, serif !important;
+  font-weight:400 !important;
+  color:var(--d-ink) !important;
+}
+#home-glydi .pgd .rr-ctc{
+  font-size:11px !important; font-weight:800 !important;
+  letter-spacing:.14em !important; text-transform:uppercase !important;
+  color:var(--d-accent-dk) !important;
+}
+
+/* the portfolio proof block keeps its ink panel — it is the one place a
+   dark surface earns its keep, showing deployed work */
+#home-glydi .pgd .portfolio-media{
+  border-radius:0 !important;
+  border:1px solid var(--d-line) !important;
+}
+#home-glydi .pgd .portfolio-stats .stat{
+  border-radius:0 !important;
+  border:0 !important;
+  border-top:1px solid rgba(255,255,255,.18) !important;
+  background:transparent !important;
+}
+
+/* ==================================================================
+   CONTROLS + STICKY BAR
+   ================================================================== */
+#home-glydi .pgd .button,
+#home-glydi .pgd .btn{
+  border-radius:0 !important;
+  padding:14px 26px !important;
+  font-size:11.5px !important; font-weight:800 !important;
+  letter-spacing:.14em !important; text-transform:uppercase !important;
+  border:1px solid var(--d-ink) !important;
+  background-image:none !important;
+  box-shadow:none !important;
+  transition:background .25s ease, color .25s ease, border-color .25s ease;
+}
+#home-glydi .pgd .button.orange,
+#home-glydi .pgd .btn.primary{
+  background:var(--d-accent) !important; color:var(--d-ink) !important; border-color:var(--d-accent) !important;
+}
+#home-glydi .pgd .button.orange:hover,
+#home-glydi .pgd .btn.primary:hover{
+  background:var(--d-ink) !important; border-color:var(--d-ink) !important; color:#FFFFFF !important;
+}
+#home-glydi .pgd .button.light,
+#home-glydi .pgd .btn.secondary,
+#home-glydi .pgd .btn.ghost{
+  background:transparent !important; color:var(--d-ink) !important; border-color:var(--d-line-hi) !important;
+}
+#home-glydi .pgd .button.light:hover,
+#home-glydi .pgd .btn.secondary:hover,
+#home-glydi .pgd .btn.ghost:hover{
+  background:var(--d-ink) !important; border-color:var(--d-ink) !important; color:#FFFFFF !important;
+}
+/* the hero's buttons sit on ink */
+#home-glydi .pgd .hero .button.light{ color:#FFFFFF !important; border-color:rgba(255,255,255,.34) !important; }
+#home-glydi .pgd .hero .button.light:hover{ background:#FFFFFF !important; color:var(--d-ink) !important; border-color:#FFFFFF !important; }
+
+@media (prefers-reduced-motion:reduce){
+  #home-glydi .pgd .build-card:hover{ transform:none !important; }
+}
+
+/* ==================================================================
+   HERO COPY + NARROW SCREENS
+   The pages set their hero copy dark for a white hero; on ink it has to
+   invert. And the scrim is a horizontal wipe, which covers nothing once
+   the hero is one column — so it turns vertical below 900px.
+   ================================================================== */
+#home-glydi .pgd .hero p,
+#home-glydi .pgd .hero .hero-copy,
+#home-glydi .pgd .hero li{ color:rgba(255,255,255,.82) !important; }
+#home-glydi .pgd .hero .form-card p,
+#home-glydi .pgd .hero .form-card label,
+#home-glydi .pgd .hero .form-card .form-note{ color:var(--d-body) !important; }
+#home-glydi .pgd .hero .form-card h2{ color:var(--d-ink) !important; }
+/* the eyebrow chip above the title */
+#home-glydi .pgd .hero .pill,
+#home-glydi .pgd .hero .hero-pill,
+#home-glydi .pgd .hero .kicker{
+  background:transparent !important;
+  border:1px solid rgba(255,255,255,.28) !important;
+  border-radius:0 !important;
+  color:rgba(255,255,255,.8) !important;
+}
+
+@media (max-width:900px){
+  #home-glydi .pgd .hero::after{
+    background:linear-gradient(180deg, rgba(14,13,12,.88) 0%, rgba(14,13,12,.72) 42%, rgba(14,13,12,.92) 100%) !important;
+  }
+  #home-glydi .pgd .hero-grid::before{ font-size:clamp(22px, 7vw, 30px); }
+  #home-glydi .pgd .section-head::before{ font-size:clamp(16px, 5vw, 22px); }
+}

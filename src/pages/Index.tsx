@@ -14,6 +14,8 @@ import HomeVideoSection from "@/components/home/HomeVideoSection";
 import HomePersonas from "@/components/home/HomePersonas";
 import HomeCommunity from "@/components/home/HomeCommunity";
 import HomeTestimonials from "@/components/home/HomeTestimonials";
+import HomeCurriculum from "@/components/home/HomeCurriculum";
+import HomeDifferenceTable from "@/components/home/HomeDifferenceTable";
 // Merged-away (Wave 8 — duplicates collapsed per audit):
 //   HomeFlowRibbon     → folded into HomeBrandIntro (same "what ONROL does" story)
 //   HomeProgramsPreview → folded into HomeCurriculum (single-card → program detail)
@@ -71,6 +73,8 @@ const Index = () => {
           {/* Founder video right under the hero. */}
           <HomeVideoSection />
           <HomeBrandIntro />
+          <HomeCurriculum />
+          <HomeDifferenceTable />
           <HomePersonas />
           <HomeTestimonials />
           <HomeCommunity />

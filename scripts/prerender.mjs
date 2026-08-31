@@ -56,7 +56,7 @@ const allRoutes = JSON.parse(
 // blog/glossary sub-pages) get prerendered into crawlable HTML.
 const STATIC_ROUTES = new Set([
   "/", "/about", "/programs", "/programs/ai", "/programs/cyber",
-  "/programs/ai-generalist", "/programs/ai-architect", "/programs/cybersecurity",
+  "/programs/aica", "/programs/ai-generalist", "/programs/ai-architect", "/programs/cybersecurity",
   "/programs/soc-analyst", "/contact", "/mentors", "/questions", "/glossary",
   "/blog", "/tools/ai-skills-quiz", "/masterclass", "/why-now",
   "/ai-course-in-hyderabad", "/best-ai-institute-in-hyderabad",

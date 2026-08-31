@@ -1,1067 +1,8 @@
-<style>
-    :root {
-      /* brand orange — single source of truth (matches index theme) */
-      --orange-rgb: 244, 103, 24;
-      --orange: rgb(var(--orange-rgb));     /* #F46718 */
-      --orange-lt: #ff8a4a;                 /* lighter accent / hover */
-      --bg: #0c0c0c;                        /* dark hero / pricing / footer base */
-      --ink: #16181b;                       /* primary dark text on light */
-      --muted: #5a5e64;                     /* secondary text */
-      --line: rgba(0, 0, 0, 0.16);          /* thin grid lines on light */
-      --panel: #ffffff;
-      --soft: #fff7f2;                       /* faint warm tint */
-      --mono: 'Manrope', sans-serif;
-      --sans: 'Manrope', sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--sans);
-      color: var(--ink);
-      background: #fff;
-      line-height: 1.5;
-      overflow-x: clip;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      width: 100%;
-      overflow-x: clip;
-    }
-
-    .container {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    /* NAV — dark frosted floating pill (matches index.html) */
-    .nav {
-      position: fixed;
-      top: 26px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 50;
-      display: flex;
-      align-items: stretch;
-      padding: 3px 24px;
-      background: rgba(10, 10, 12, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
-      backdrop-filter: blur(20px) saturate(140%);
-      -webkit-backdrop-filter: blur(20px) saturate(140%);
-    }
-
-    .nav a {
-      display: flex;
-      align-items: center;
-      color: #fff;
-      text-decoration: none;
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      padding: 2px 42px;
-      white-space: nowrap;
-      transition: opacity 0.2s;
-    }
-
-    .nav a:hover {
-      opacity: 0.6;
-    }
-
-    .nav .sep {
-      width: 1px;
-      background: rgba(255, 255, 255, 0.3);
-    }
-
-    /* desktop: links inline, hamburger hidden */
-    .nav-links {
-      display: flex;
-      align-items: stretch;
-    }
-
-    .nav-toggle {
-      display: none;
-    }
-
-    /* BUTTONS — mono uppercase, sharp corners */
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 30px;
-      border: 1px solid var(--ink);
-      background: var(--ink);
-      color: #fff;
-      font-family: var(--mono);
-      font-size: 13px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-      cursor: pointer;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
-
-    .button.orange {
-      border-color: var(--orange);
-      background: var(--orange);
-      color: #fff;
-    }
-
-    .button.orange:hover {
-      background: var(--orange-lt);
-      border-color: var(--orange-lt);
-      opacity: 1;
-    }
-
-    .button.light {
-      background: transparent;
-      color: var(--ink);
-      border-color: rgba(0, 0, 0, 0.35);
-    }
-
-    /* HERO — pure white, orange glow, orange form card */
-    .hero {
-      padding: 96px 0 64px;
-      position: relative;
-      background: #fff;
-      color: var(--ink);
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: -160px -20% auto auto;
-      width: 620px;
-      height: 620px;
-      background: radial-gradient(circle, rgba(var(--orange-rgb), 0.28), transparent 64%);
-      pointer-events: none;
-    }
-
-    /* 3D asterisk graphic — bottom-left corner, behind the hero content (like index .panel-aster) */
-    .hero-aster {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      transform: translate(-32%, 26%);
-      height: 56vh;
-      width: auto;
-      max-width: none;
-      z-index: 0;
-      opacity: 0.5;
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1.08fr) 430px;
-      gap: 42px;
-      align-items: start;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      gap: 10px;
-      align-items: center;
-      font-family: var(--mono);
-      background: rgba(var(--orange-rgb), 0.06);
-      border: 1px solid rgba(0, 0, 0, 0.18);
-      padding: 10px 14px;
-      font-size: 12px;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--orange);
-      margin-bottom: 30px;
-    }
-
-    h1 {
-      font-family: var(--sans);
-      font-size: clamp(38px, 5.4vw, 68px);
-      line-height: 0.96;
-      letter-spacing: -0.02em;
-      font-weight: 600;
-      max-width: 820px;
-    }
-
-    .gradient-text {
-      color: var(--orange);
-    }
-
-    .hero-copy {
-      font-size: clamp(15px, 1.3vw, 17px);
-      max-width: 640px;
-      color: #41454b;
-      margin-top: 26px;
-      font-weight: 400;
-      line-height: 1.6;
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-      margin-top: 36px;
-      max-width: 830px;
-    }
-
-    .stat {
-      background: #fff;
-      padding: 20px 16px;
-      min-height: 104px;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 28px;
-      letter-spacing: -0.03em;
-      line-height: 1;
-      color: var(--orange);
-    }
-
-    .stat span {
-      display: block;
-      margin-top: 10px;
-      font-family: var(--mono);
-      color: var(--muted);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 36px;
-    }
-
-    /* FORM CARD — orange block over the white hero */
-    .form-card {
-      background: linear-gradient(165deg, #ff824a 0%, #f96225 100%);
-      color: #fff;
-      border: 1px solid #f96225;
-      box-shadow: 0 24px 54px rgba(var(--orange-rgb), 0.20);
-      padding: 30px;
-      position: sticky;
-      top: 100px;
-    }
-
-    .form-card h2 {
-      font-family: var(--sans);
-      font-size: 26px;
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: #fff;
-    }
-
-    .form-card p {
-      font-family: var(--mono);
-      color: rgba(255, 255, 255, 0.88);
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
-
-    .field {
-      display: grid;
-      gap: 8px;
-      margin-bottom: 14px;
-    }
-
-    label {
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.92);
-    }
-
-    input, select {
-      width: 100%;
-      min-height: 48px;
-      border: 1px solid rgba(0, 0, 0, 0.28);
-      background: #fff;
-      padding: 0 14px;
-      font-family: var(--sans);
-      font-size: 15px;
-      font-weight: 500;
-      border-radius: 0;
-      outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    input:focus, select:focus {
-      border-color: var(--ink);
-      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25);
-    }
-
-    /* submit button sits on the orange card — make it dark for contrast */
-    .form-card .button.orange {
-      background: var(--ink);
-      border-color: var(--ink);
-      color: #fff;
-    }
-
-    .form-card .button.orange:hover {
-      background: #000;
-      border-color: #000;
-    }
-
-    .form-note {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.85);
-      margin-top: 14px;
-    }
-
-    /* SECTIONS — light, thin lines */
-    section {
-      padding: clamp(64px, 10vh, 110px) 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: 0.8fr 1fr;
-      gap: 36px;
-      align-items: end;
-      margin-bottom: 40px;
-    }
-
-    .tag {
-      font-family: var(--mono);
-      color: var(--orange);
-      text-transform: uppercase;
-      font-weight: 500;
-      letter-spacing: 2px;
-      font-size: 12px;
-      margin-bottom: 14px;
-    }
-
-    h2.section-title {
-      font-family: var(--sans);
-      font-size: clamp(26px, 3.4vw, 44px);
-      line-height: 1.02;
-      letter-spacing: -0.01em;
-      font-weight: 600;
-    }
-
-    .section-desc {
-      font-family: var(--mono);
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.7;
-      max-width: 620px;
-    }
-
-    /* WHAT YOU BUILD — premium numbered cards with icons + tool chips */
-    .build-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(214px, 1fr));
-      gap: 16px;
-    }
-
-    .build-card {
-      position: relative;
-      overflow: hidden;
-      padding: 26px 22px 24px;
-      min-height: 268px;
-      background: #fff;
-      border: 1px solid var(--line);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.32s cubic-bezier(.2,.7,.2,1), box-shadow 0.32s ease, border-color 0.32s ease;
-    }
-    .build-card::after {
-      content: "";
-      position: absolute;
-      left: 0; top: 0; height: 3px; width: 0;
-      background: var(--orange);
-      transition: width 0.35s cubic-bezier(.2,.7,.2,1);
-    }
-    .build-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 26px 52px -22px rgba(0, 0, 0, 0.28);
-      border-color: rgba(var(--orange-rgb), 0.42);
-    }
-    .build-card:hover::after { width: 100%; }
-
-    .bc-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
-    .bc-ic {
-      width: 48px; height: 48px; flex: 0 0 auto;
-      display: grid; place-items: center;
-      background: rgba(var(--orange-rgb), 0.10); color: var(--orange);
-      transition: background 0.25s ease, color 0.25s ease, transform 0.4s cubic-bezier(.2,.7,.2,1);
-    }
-    .bc-ic svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-    .build-card:hover .bc-ic { background: var(--orange); color: #fff; transform: rotate(-6deg) scale(1.06); }
-    .bc-num {
-      font-family: var(--sans); font-weight: 700; font-size: 42px; line-height: 1;
-      letter-spacing: -0.02em; color: rgba(0, 0, 0, 0.08);
-      transition: color 0.3s ease;
-    }
-    .build-card:hover .bc-num { color: rgba(var(--orange-rgb), 0.24); }
-
-    .build-card h3 {
-      font-family: var(--sans); font-size: 19px; font-weight: 600;
-      line-height: 1.14; letter-spacing: -0.01em; margin: 0 0 10px; color: var(--ink);
-    }
-    .build-card p {
-      font-family: var(--mono); color: var(--muted); font-size: 12.5px; line-height: 1.6; margin: 0 0 18px;
-    }
-    .tools { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; }
-    .tools span {
-      font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.3px; color: var(--ink);
-      background: var(--soft); border: 1px solid rgba(var(--orange-rgb), 0.20); padding: 5px 9px;
-      transition: background 0.25s ease;
-    }
-    .build-card:hover .tools span { background: rgba(var(--orange-rgb), 0.10); }
-
-    /* CURRICULUM */
-    .journey {
-      display: grid;
-      gap: 16px;
-    }
-
-    .module {
-      display: grid;
-      grid-template-columns: 220px 1fr 200px;
-      gap: 0;
-      background: #fff;
-      border: 1px solid var(--line);
-      padding: 0;
-      overflow: hidden;
-      align-items: stretch;
-      transition: border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .module:hover {
-      border-color: rgba(var(--orange-rgb), 0.5);
-      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.10);
-    }
-
-    /* left column is now a topic image tile (image set inline via --mi) */
-    .module-index {
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      min-height: 150px;
-      padding: 18px 16px;
-      font-family: var(--mono);
-      font-weight: 500;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: 12px;
-      background-color: #14100c;
-      background-image: var(--mi);            /* jpg = poster / fallback */
-      background-size: cover;
-      background-position: center;
-      overflow: hidden;
-    }
-    .module-vid { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
-    .module-index::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(150deg, rgba(16,11,7,.18) 0%, rgba(16,11,7,.84) 100%); }
-    .mi-label { position: relative; z-index: 2; }
-    .module-index::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; z-index: 3; background: var(--orange); }
-    @media (prefers-reduced-motion: reduce) { .module-vid { display: none; } }
-    .module > div:nth-child(2) { padding: 24px 26px; }
-    .module-meta { align-self: center; margin: 22px 22px 22px 0; }
-
-    .module h3 {
-      font-family: var(--sans);
-      font-size: 23px;
-      line-height: 1.04;
-      letter-spacing: -0.01em;
-      font-weight: 600;
-      margin-bottom: 14px;
-    }
-
-    .module ul {
-      list-style: none;
-      display: grid;
-      gap: 8px;
-      font-family: var(--mono);
-      font-size: 13px;
-      line-height: 1.5;
-      color: #41454b;
-    }
-
-    .module li::before {
-      content: "→ ";
-      color: var(--orange);
-      font-weight: 500;
-    }
-
-    .module-meta {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-    }
-
-    .module-meta div {
-      padding: 14px;
-      background: #fff;
-    }
-
-    .module-meta strong {
-      display: block;
-      font-size: 28px;
-      letter-spacing: -0.03em;
-      line-height: 1;
-      color: var(--orange);
-    }
-
-    .module-meta span {
-      font-family: var(--mono);
-      color: var(--muted);
-      text-transform: uppercase;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 1px;
-    }
-
-    /* WHO IT'S FOR */
-    .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-    }
-
-    .audience-card {
-      background: #fff;
-      padding: 26px 22px;
-      min-height: 170px;
-      transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .audience-card:hover {
-      background: var(--soft);
-      transform: scale(1.03);
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
-    }
-
-    .audience-card h3 {
-      font-family: var(--sans);
-      font-size: 21px;
-      letter-spacing: -0.01em;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .audience-card p {
-      font-family: var(--mono);
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    /* OUTCOMES */
-    .outcomes-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .outcome-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-    }
-
-    .outcome-item {
-      background: #fff;
-      padding: 22px;
-      min-height: 132px;
-    }
-
-    .outcome-item strong {
-      font-family: var(--sans);
-      font-size: 18px;
-      letter-spacing: -0.01em;
-      font-weight: 600;
-    }
-
-    .outcome-item p {
-      margin-top: 8px;
-      font-family: var(--mono);
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.55;
-    }
-
-    /* PORTFOLIO CARD — dark accent block */
-    .portfolio-card {
-      background: var(--bg);
-      color: #fff;
-      padding: 36px;
-      min-height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border: 1px solid rgba(var(--orange-rgb), 0.3);
-    }
-
-    .portfolio-card h3 {
-      font-family: var(--sans);
-      font-size: clamp(28px, 3.6vw, 46px);
-      line-height: 0.96;
-      letter-spacing: -0.01em;
-      font-weight: 600;
-    }
-
-    .portfolio-card p {
-      font-family: var(--mono);
-      color: rgba(255, 255, 255, 0.78);
-      font-size: 14px;
-      line-height: 1.7;
-      margin-top: 18px;
-      max-width: 460px;
-    }
-
-    .portfolio-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(255, 255, 255, 0.14);
-      margin-top: 40px;
-    }
-
-    .portfolio-stats div {
-      background: var(--bg);
-      padding: 18px;
-    }
-
-    .portfolio-stats strong {
-      display: block;
-      color: var(--orange-lt);
-      font-size: 28px;
-      line-height: 1;
-      letter-spacing: -0.03em;
-    }
-
-    .portfolio-stats span {
-      display: block;
-      margin-top: 8px;
-      font-family: var(--mono);
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* COMPARISON */
-    .comparison {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-    }
-
-    .compare-col {
-      padding: 34px;
-      background: #fff;
-    }
-
-    .compare-col:last-child {
-      background: var(--soft);
-    }
-
-    .compare-col h3 {
-      font-family: var(--sans);
-      font-size: 30px;
-      letter-spacing: -0.01em;
-      line-height: 1.04;
-      font-weight: 600;
-      margin-bottom: 22px;
-    }
-
-    .compare-col ul {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-      font-family: var(--mono);
-      font-size: 14px;
-      line-height: 1.5;
-      color: #41454b;
-    }
-
-    .compare-col li {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
-
-    .compare-col li span {
-      color: var(--orange);
-      font-weight: 500;
-    }
-
-    /* PRICING — dark */
-    .pricing {
-      background: var(--bg);
-      color: #fff;
-      padding: clamp(64px, 10vh, 110px) 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pricing::before {
-      content: "";
-      position: absolute;
-      inset: auto auto -160px -10%;
-      width: 620px;
-      height: 620px;
-      background: radial-gradient(circle, rgba(var(--orange-rgb), 0.22), transparent 64%);
-      pointer-events: none;
-    }
-
-    .pricing-grid {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 36px;
-      align-items: stretch;
-    }
-
-    .pricing h2 {
-      font-family: var(--sans);
-      font-size: clamp(32px, 4.4vw, 58px);
-      line-height: 0.98;
-      letter-spacing: -0.01em;
-      font-weight: 600;
-      max-width: 820px;
-    }
-
-    .pricing p {
-      font-family: var(--mono);
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 15px;
-      line-height: 1.7;
-      margin-top: 22px;
-      max-width: 680px;
-    }
-
-    .pricing .hero-actions {
-      margin-top: 30px;
-    }
-
-    .pricing .button.light {
-      color: #fff;
-      border-color: rgba(255, 255, 255, 0.45);
-    }
-
-    .pricing .button.light:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .cohort-card {
-      background: #fff;
-      color: var(--ink);
-      padding: 30px;
-      display: grid;
-      gap: 18px;
-    }
-
-    .cohort-card .date {
-      font-family: var(--sans);
-      font-size: 52px;
-      line-height: 0.92;
-      letter-spacing: -0.03em;
-      font-weight: 700;
-      color: var(--orange);
-    }
-
-    .cohort-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 14px 0;
-      border-top: 1px solid rgba(0, 0, 0, 0.12);
-      font-weight: 600;
-    }
-
-    .cohort-row span {
-      font-family: var(--mono);
-      color: var(--muted);
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 13px;
-    }
-
-    /* FAQ */
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    details {
-      background: #fff;
-      border: 1px solid var(--line);
-      padding: 22px;
-      transition: border-color 0.2s ease;
-    }
-
-    details[open] {
-      border-color: rgba(var(--orange-rgb), 0.5);
-    }
-
-    summary {
-      cursor: pointer;
-      font-family: var(--sans);
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-    }
-
-    details p {
-      margin-top: 12px;
-      font-family: var(--mono);
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.65;
-    }
-
-    /* FOOTER — dark gradient like index */
-    
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      font-family: var(--mono);
-      color: rgba(255, 255, 255, 0.85);
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* TOAST */
-    .toast {
-      position: fixed;
-      left: 50%;
-      bottom: 24px;
-      transform: translateX(-50%) translateY(120px);
-      background: var(--bg);
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 14px 18px;
-      font-family: var(--mono);
-      font-size: 13px;
-      letter-spacing: 0.5px;
-      z-index: 100;
-      transition: 0.3s ease;
-    }
-
-    .toast.show {
-      transform: translateX(-50%) translateY(0);
-    }
-
-    @media (max-width: 980px) {
-      /* nav: hamburger pill pinned to the top-right corner */
-      .nav { top: 14px; left: auto; right: 14px; transform: none; padding: 6px 10px; }
-      .nav-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 4px;
-        width: 34px;
-        height: 30px;
-        padding: 0;
-        background: transparent;
-        border: 0;
-        cursor: pointer;
-      }
-      .nav-toggle span {
-        display: block;
-        width: 21px;
-        height: 2px;
-        margin: 0 auto;
-        background: #fff;
-        transition: transform 0.25s ease, opacity 0.2s ease;
-      }
-      .nav.open .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-      .nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
-      .nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: calc(100% + 12px);
-        right: 0;
-        left: auto;
-        transform: none;
-        flex-direction: column;
-        align-items: stretch;
-        min-width: 190px;
-        padding: 8px;
-        background: rgba(10, 10, 12, 0.92);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
-        backdrop-filter: blur(20px) saturate(140%);
-        -webkit-backdrop-filter: blur(20px) saturate(140%);
-      }
-      .nav.open .nav-links { display: flex; }
-      .nav-links a { padding: 12px 16px; font-size: 12px; letter-spacing: 1px; justify-content: center; }
-      .nav-links .sep { display: none; }
-
-      .hero-grid,
-      .section-head,
-      .pricing-grid,
-      .outcomes-wrap {
-        grid-template-columns: 1fr;
-      }
-
-      .form-card {
-        position: static;
-      }
-
-      .hero-stats,
-      .build-grid,
-      .audience-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .module {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .container {
-        width: min(100% - 40px, 1180px);
-      }
-
-      .hero {
-        padding-top: 56px;
-      }
-
-      .hero-stats,
-      .build-grid,
-      .audience-grid,
-      .outcome-list,
-      .comparison,
-      .faq-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .build-card {
-        min-height: auto;
-      }
-
-      .footer-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .button {
-        width: 100%;
-      }
-    }
-      /* site logo — same size/place/animation as home (styles.css isn't linked here) */
-    .site-logo{ position:fixed; top:20px; left:24px; z-index:60; display:block; line-height:0; transition:transform .2s ease; }
-    .site-logo:hover{ transform:translateY(-1px); }
-    .site-logo img{ height:44px; width:auto; display:block; transition:filter .5s ease; }
-    .site-logo.on-dark img{ filter:brightness(0) invert(1); }
-    @media(max-width:900px){ .site-logo{ top:14px; left:16px; } .site-logo img{ height:36px; } }
-      /* ---------- FOOTER — identical to the home page ---------- */
-    .footer{ background:linear-gradient(180deg,#18110b 0%,#120c08 100%); color:#fff; border-top:1px solid rgba(var(--orange-rgb),.32); padding:clamp(60px,9vh,110px) 8vw clamp(34px,4vh,50px); font-family:var(--mono); font-weight:300; text-transform:uppercase; }
-    .footer-grid{ display:grid; grid-template-columns:1.9fr 1fr 1.3fr 1fr 1.4fr; gap:clamp(28px,3vw,52px); }
-    .f-brand h3{ font-family:var(--sans); font-size:24px; font-weight:500; margin-bottom:12px; }
-    .f-tag{ font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--orange); margin-bottom:14px; }
-    .f-desc{ font-size:13px; line-height:1.65; color:#fff; max-width:36ch; margin-bottom:18px; }
-    .f-contact a{ display:block; color:#fff; text-decoration:none; font-size:13px; margin-bottom:5px; }
-    .f-contact a:hover{ color:var(--orange); }
-    .f-col h4, .f-news h4{ font-size:14px; letter-spacing:2px; text-transform:uppercase; color:var(--orange-lt); margin-bottom:16px; }
-    .f-col ul{ list-style:none; }
-    .f-col li{ margin-bottom:11px; }
-    .f-col a{ color:#fff; text-decoration:none; font-size:13px; transition:color .2s; }
-    .f-col a:hover{ color:var(--orange-lt); }
-    .f-news p{ font-size:13px; line-height:1.65; color:#fff; margin-bottom:16px; }
-    .f-form{ display:flex; }
-    .f-form input{ flex:1; min-width:0; padding:11px 12px; font-family:var(--mono); font-size:12px; color:#fff; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.2); }
-    .f-form input::placeholder{ color:rgba(255,255,255,.4); }
-    .f-form button{ padding:11px 16px; font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#fff; background:var(--orange); border:none; cursor:pointer; transition:background .2s; }
-    .f-form button:hover{ background:var(--orange-lt); }
-    .footer .dec{ color:var(--orange-lt); }
-    .f-news-msg{ margin-top:12px; font-family:var(--mono); font-size:12px; letter-spacing:.5px; color:var(--orange-lt); }
-    .footer-bottom{ margin-top:clamp(40px,6vh,72px); padding-top:24px; border-top:1px solid rgba(255,255,255,.1); font-size:12px; color:rgba(255,255,255,.85); text-align:center; }
-    .visually-hidden{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
-    @media(max-width:900px){ .footer{ padding-left:7vw; padding-right:7vw; } .footer-grid{ grid-template-columns:1fr 1fr; gap:32px 24px; } .f-brand, .f-news{ grid-column:1 / -1; } }
-    @media(max-width:460px){ .footer-grid{ grid-template-columns:1fr; } }
-      /* nav: hide on scroll down / show on scroll up (same as home) */
-    .nav{ transition:transform .35s ease, opacity .35s ease; }
-    .nav.nav-hidden{ transform:translateX(-50%) translateY(-190%); opacity:0; }
-    @media(max-width:980px){ .nav.nav-hidden{ transform:translateY(-190%); } }
-
-    /* ===== scroll-linked curriculum (sticky module list + scrolling panels) ===== */
-    .curr{ display:grid; grid-template-columns:320px 1fr; gap:clamp(30px,4vw,64px); align-items:start; margin-top:34px; }
-    .curr-nav{ position:sticky; top:104px; display:flex; flex-direction:column; gap:20px; }
-    .curr-nav-item{ display:flex; gap:14px; align-items:baseline; text-decoration:none; font-family:var(--mono); font-size:14px; letter-spacing:.6px; text-transform:uppercase; line-height:1.35; color:#a2a09c; transition:color .25s ease; }
-    .curr-nav-item .cn-num{ flex:0 0 auto; font-variant-numeric:tabular-nums; }
-    .curr-nav-item:hover{ color:#5a5e64; }
-    .curr-nav-item.is-active{ color:#16181b; font-weight:600; }
-    .curr-body{ display:flex; flex-direction:column; gap:clamp(30px,5vh,56px); }
-    .curr-mod{ scroll-margin-top:100px; }
-    .curr-mod-banner{ position:relative; min-height:190px; border-radius:6px; overflow:hidden; background-size:cover; background-position:center; display:flex; flex-direction:column; justify-content:flex-end; padding:24px; isolation:isolate; }
-    .curr-mod-banner::after{ content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(160deg, rgba(10,8,6,.15) 0%, rgba(10,8,6,.82) 100%); }
-    .curr-mod-banner .cm-label{ font-family:var(--mono); font-size:12px; letter-spacing:1.6px; text-transform:uppercase; color:rgba(255,255,255,.82); margin-bottom:8px; }
-    .curr-mod-banner h3{ font-family:var(--sans); font-size:clamp(20px,2.3vw,28px); font-weight:700; line-height:1.1; color:#fff; letter-spacing:-.01em; }
-    .curr-checks{ list-style:none; margin:22px 0 0; padding:0; display:flex; flex-direction:column; gap:15px; }
-    .curr-checks li{ position:relative; padding-left:32px; font-family:var(--mono); font-size:14.5px; line-height:1.55; color:#41454b; }
-    .curr-checks li::before{ content:""; position:absolute; left:6px; top:3px; width:7px; height:12px; border:solid var(--orange); border-width:0 2px 2px 0; transform:rotate(45deg); }
-    @media (max-width:900px){
-      .curr{ grid-template-columns:1fr; gap:26px; }
-      .curr-nav{ position:static; flex-direction:row; flex-wrap:wrap; gap:10px 18px; padding-bottom:6px; }
-      .curr-nav-item{ font-size:12px; }
-    }
-
-  </style>
-
-
-
 <a class="site-logo" href="/" aria-label="ONROL, AI Execution School, home">
   <img src="/home-glydi/logo-mark.png" alt="ONROL, AI Execution School">
 </a>
   <div class="page">
-    <nav class="nav">
+    <nav class="nav topbar">
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
@@ -1077,387 +18,191 @@
       </div>
     </nav>
 
-    <main id="top">
-      <header class="hero">
-        <div class="container hero-grid">
-          <div>
-            <div class="eyebrow">Cyber Security Program, 100% online, India</div>
-            <h1>From Zero to <span class="gradient-text">Job Ready Defender</span></h1>
-            <p class="hero-copy">Become the person companies trust to protect their systems. A 6-month, 70%+ hands on program where you secure, attack, and defend real systems, and finish with a portfolio that proves it.</p>
+<main class="subpage px pg track-cyber">
 
-            <div class="hero-stats" aria-label="Program highlights">
-              <div class="stat"><strong>6</strong><span>Months</span></div>
-              <div class="stat"><strong>120+</strong><span>Live hours</span></div>
-              <div class="stat"><strong>70%+</strong><span>Hands on</span></div>
-              <div class="stat"><strong>Zero</strong><span>Prerequisites</span></div>
-            </div>
+  <div class="px-shell">
 
-            <div class="hero-actions">
-              <a class="button orange" data-magnetic href="#register">Register Now</a>
-              <a class="button light" href="#build">View What You Build</a>
-            </div>
-          </div>
-
-          <aside class="form-card" id="register">
-            <h2>Reserve your seat</h2>
-            <p>Drop your Mobile number, our team reaches out with the fees, schedule, syllabus, and full cohort guide within 24 hours.</p>
-            <form id="leadForm" data-lead data-program="Cyber Security Program">
-              <div class="field">
-                <label for="phone">Phone </label>
-                <input id="phone" name="phone" type="tel" placeholder="Enter Mobile number" required />
-              </div>
-              <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0">
-              <button class="button orange" type="submit" style="width:100%;">Register Now</button>
-              <div class="form-note">No spam. Used only to confirm your seat.</div>
-            </form>
-          </aside>
-        </div>
-      </header>
-
-      <section>
-        <div class="container section-head" data-reveal>
-          <div>
-            <div class="tag">Why ONROL</div>
-            <h2 class="section-title" data-split>Certificates aren't enough, proof is</h2>
-          </div>
-          <p class="section-desc">Companies get attacked every day, yet most courses send people off with a certificate and little real practice. This one is over 70% hands on: you secure, attack, and defend real systems the way someone doing the job actually does.</p>
-        </div>
-      </section>
-
-      <section id="build">
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <div>
-              <div class="tag">What You Will Build</div>
-              <h2 class="section-title" data-split>5 portfolio ready security builds</h2>
-            </div>
-            <p class="section-desc">Every module ends with real defense work you can talk about in interviews, post on LinkedIn, and keep to show employers.</p>
-          </div>
-
-          <div class="build-grid" data-reveal>
-            <article class="build-card" data-tilt="6">
-              <div class="bc-top">
-                <span class="bc-ic"><svg viewBox="0 0 24 24"><path d="M4 6h9"/><path d="M4 18h9"/><path d="M4 12h16"/><circle cx="17" cy="6" r="2.4"/><circle cx="17" cy="18" r="2.4"/><circle cx="20" cy="12" r="1.6"/></svg></span>
-                <span class="bc-num">01</span>
-              </div>
-              <h3>Enterprise Network</h3>
-              <p>A segmented network with subnetting, VLANs, NAT, and firewall ACLs.</p>
-              <div class="tools"><span>Cisco</span><span>pfSense</span><span>Wireshark</span></div>
-            </article>
-            <article class="build-card" data-tilt="6">
-              <div class="bc-top">
-                <span class="bc-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8.5h18"/><path d="M6.5 6.3h.01M9 6.3h.01"/></svg></span>
-                <span class="bc-num">02</span>
-              </div>
-              <h3>Hardened Servers</h3>
-              <p>Secured, patched, and audited Linux and Windows servers.</p>
-              <div class="tools"><span>Linux</span><span>Windows Server</span><span>AD</span></div>
-            </article>
-            <article class="build-card" data-tilt="6">
-              <div class="bc-top">
-                <span class="bc-ic"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1.4"/><path d="M9 14h.01M15 14h.01"/><path d="M2 13v3M22 13v3"/></svg></span>
-                <span class="bc-num">03</span>
-              </div>
-              <h3>Web Pentest Report</h3>
-              <p>A full web app penetration test with a professional findings report.</p>
-              <div class="tools"><span>Nmap</span><span>Burp Suite</span><span>OWASP ZAP</span></div>
-            </article>
-            <article class="build-card" data-tilt="6">
-              <div class="bc-top">
-                <span class="bc-ic"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 9l5 3-5 3z"/></svg></span>
-                <span class="bc-num">04</span>
-              </div>
-              <h3>Live SIEM Dashboards</h3>
-              <p>Detection dashboards and alerts built on real log data.</p>
-              <div class="tools"><span>Splunk</span><span>ELK</span><span>SPL</span></div>
-            </article>
-            <article class="build-card" data-tilt="6">
-              <div class="bc-top">
-                <span class="bc-ic"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg></span>
-                <span class="bc-num">05</span>
-              </div>
-              <h3>Capstone Defense</h3>
-              <p>End to end detection and response on a simulated enterprise.</p>
-              <div class="tools"><span>MITRE ATT&CK</span><span>IR</span><span>Threat Hunting</span></div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="journey">
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <div>
-              <div class="tag">Curriculum</div>
-              <h2 class="section-title" data-split>Your 6-month Cyber Security journey</h2>
-            </div>
-            <p class="section-desc">Five hands on modules that take you from network basics to running a full SOC, with labs the whole way through.</p>
-          </div>
-
-          <div class="curr">
-      <aside class="curr-nav" aria-label="Curriculum modules">
-        <a class="curr-nav-item is-active" href="#cm-1" data-target="cm-1"><span class="cn-num">01</span><span>Networking Fundamentals</span></a>
-        <a class="curr-nav-item" href="#cm-2" data-target="cm-2"><span class="cn-num">02</span><span>Linux Administration & Security</span></a>
-        <a class="curr-nav-item" href="#cm-3" data-target="cm-3"><span class="cn-num">03</span><span>Windows Server Fundamentals</span></a>
-        <a class="curr-nav-item" href="#cm-4" data-target="cm-4"><span class="cn-num">04</span><span>Ethical Hacking & Web Pentesting</span></a>
-        <a class="curr-nav-item" href="#cm-5" data-target="cm-5"><span class="cn-num">05</span><span>Security Operations Center (SOC)</span></a>
-      </aside>
-      <div class="curr-body">
-        <article class="curr-mod" id="cm-1">
-          <div class="curr-mod-banner" style="background-image:url('cyb-1.jpg')">
-            <span class="cm-label">Module 1, Networking</span>
-            <h3>Networking Fundamentals</h3>
-          </div>
-          <ul class="curr-checks">
-            <li>OSI &amp; TCP/IP, IP addressing, and subnetting</li>
-            <li>Routing, switching, VLANs, and NAT</li>
-            <li>Firewalls, ACLs, and network troubleshooting</li>
-            <li>Packet analysis with Wireshark</li>
-          </ul>
-        </article>
-        <article class="curr-mod" id="cm-2">
-          <div class="curr-mod-banner" style="background-image:url('cyb-2.jpg')">
-            <span class="cm-label">Module 2, Linux</span>
-            <h3>Linux Administration & Security</h3>
-          </div>
-          <ul class="curr-checks">
-            <li>Linux file system, users, and permissions</li>
-            <li>Services, SSH hardening, and host firewalls</li>
-            <li>SELinux, NFS, and web server setup</li>
-            <li>Patch management and server hardening</li>
-          </ul>
-        </article>
-        <article class="curr-mod" id="cm-3">
-          <div class="curr-mod-banner" style="background-image:url('cyb-3.jpg')">
-            <span class="cm-label">Module 3, Windows</span>
-            <h3>Windows Server Fundamentals</h3>
-          </div>
-          <ul class="curr-checks">
-            <li>Windows Server and NTFS permissions</li>
-            <li>Active Directory, OUs, and GPOs</li>
-            <li>Domain Controllers, IIS, and PowerShell</li>
-            <li>Windows security and patch management</li>
-          </ul>
-        </article>
-        <article class="curr-mod" id="cm-4">
-          <div class="curr-mod-banner" style="background-image:url('cyb-4.jpg')">
-            <span class="cm-label">Module 4, Offensive</span>
-            <h3>Ethical Hacking & Web Pentesting</h3>
-          </div>
-          <ul class="curr-checks">
-            <li>OSINT, footprinting, and Nmap</li>
-            <li>Vulnerability assessment and password attacks</li>
-            <li>OWASP Top 10, SQL injection, and XSS</li>
-            <li>Burp Suite, OWASP ZAP, and pentest reporting</li>
-          </ul>
-        </article>
-        <article class="curr-mod" id="cm-5">
-          <div class="curr-mod-banner" style="background-image:url('cyb-5.jpg')">
-            <span class="cm-label">Module 5, Defense</span>
-            <h3>Security Operations Center (SOC)</h3>
-          </div>
-          <ul class="curr-checks">
-            <li>SOC architecture and SIEM with Splunk &amp; ELK</li>
-            <li>Log analysis, SPL queries, and dashboards</li>
-            <li>Incident response and the MITRE ATT&CK framework</li>
-            <li>Threat hunting and security reporting</li>
-          </ul>
-        </article>
+    <aside class="px-rail">
+      <p class="px-badge">Cyber Track · Program 04</p>
+      <h1><em>Cyber</em> Security</h1>
+      <p class="px-rail-sub">The fundamentals every security role is built on: networks, systems and threats, taught through hands-on labs from the first week rather than as theory.</p>
+      <div class="px-spec">
+        <div><span>Months</span><b>6</b></div>
+        <div><span>Live hours</span><b>120+</b></div>
+        <div><span>Hands on</span><b>70%+</b></div>
+        <div><span>Prerequisites</span><b>Zero</b></div>
       </div>
+      <nav class="px-toc">
+        <p>Contents</p>
+        <a href="#build"><b>01</b>Certificates aren't enough, proof is</a>
+        <a href="#path"><b>02</b>5 portfolio ready security builds</a>
+        <a href="#outcomes"><b>03</b>Built for people who want a security career</a>
+        <a href="#roles"><b>04</b>You’ll defend real systems, not just pass an exam</a>
+        <a href="#faq"><b>05</b>Roles you can target</a>
+      </nav>
+      <div class="px-rail-cta">
+        <a class="px-btn" href="#enrol">Reserve a seat</a>
+        <a class="px-btn ghost js-apply" href="/contact">Talk to us</a>
+        <p class="px-fine">Free 90-minute masterclass before any paid commitment.</p>
+      </div>
+    </aside>
+
+    <div class="px-pane">
+
+      <section class="px-block reveal" id="build">
+      <div class="px-block-head">
+        <b>01</b>
+        <h2>Certificates aren't enough, proof is</h2>
+        <span>5 systems</span>
+      </div>
+      <p class="px-intro">Companies get attacked every day, yet most courses send people off with a certificate and little real practice. This one is over 70% hands on: you secure, attack, and defend real systems the way someone doing the job actually does.</p>
+        <div class="px-rows">
+          <div class="px-row">
+            <span class="px-row-n">01</span>
+            <div><h3>Enterprise Network</h3><p>A segmented network with subnetting, VLANs, NAT, and firewall ACLs.</p></div>
+            <span class="px-chips"><i>Cisco</i><i>pfSense</i><i>Wireshark</i></span>
+          </div>
+          <div class="px-row">
+            <span class="px-row-n">02</span>
+            <div><h3>Hardened Servers</h3><p>Secured, patched, and audited Linux and Windows servers.</p></div>
+            <span class="px-chips"><i>Linux</i><i>Windows Server</i><i>AD</i></span>
+          </div>
+          <div class="px-row">
+            <span class="px-row-n">03</span>
+            <div><h3>Web Pentest Report</h3><p>A full web app penetration test with a professional findings report.</p></div>
+            <span class="px-chips"><i>Nmap</i><i>Burp Suite</i><i>OWASP ZAP</i></span>
+          </div>
+          <div class="px-row">
+            <span class="px-row-n">04</span>
+            <div><h3>Live SIEM Dashboards</h3><p>Detection dashboards and alerts built on real log data.</p></div>
+            <span class="px-chips"><i>Splunk</i><i>ELK</i><i>SPL</i></span>
+          </div>
+          <div class="px-row">
+            <span class="px-row-n">05</span>
+            <div><h3>Capstone Defense</h3><p>End to end detection and response on a simulated enterprise.</p></div>
+            <span class="px-chips"><i>MITRE ATT&amp;CK</i><i>IR</i><i>Threat Hunting</i></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-block reveal" id="path">
+      <div class="px-block-head">
+        <b>02</b>
+        <h2>5 portfolio ready security builds</h2>
+        <span>5 modules</span>
+      </div>
+      <p class="px-intro">Every module ends with real defense work you can talk about in interviews, post on LinkedIn, and keep to show employers.</p>
+        <div class="px-mods">
+          <details class="px-mod" id="mod-01" open>
+            <summary><b>01</b><strong>Networking Fundamentals</strong></summary>
+            <ul><li>OSI &amp; TCP/IP, IP addressing, and subnetting</li><li>Routing, switching, VLANs, and NAT</li><li>Firewalls, ACLs, and network troubleshooting</li><li>Packet analysis with Wireshark</li></ul>
+          </details>
+          <details class="px-mod" id="mod-02">
+            <summary><b>02</b><strong>Linux Administration &amp; Security</strong></summary>
+            <ul><li>Linux file system, users, and permissions</li><li>Services, SSH hardening, and host firewalls</li><li>SELinux, NFS, and web server setup</li><li>Patch management and server hardening</li></ul>
+          </details>
+          <details class="px-mod" id="mod-03">
+            <summary><b>03</b><strong>Windows Server Fundamentals</strong></summary>
+            <ul><li>Windows Server and NTFS permissions</li><li>Active Directory, OUs, and GPOs</li><li>Domain Controllers, IIS, and PowerShell</li><li>Windows security and patch management</li></ul>
+          </details>
+          <details class="px-mod" id="mod-04">
+            <summary><b>04</b><strong>Ethical Hacking &amp; Web Pentesting</strong></summary>
+            <ul><li>OSINT, footprinting, and Nmap</li><li>Vulnerability assessment and password attacks</li><li>OWASP Top 10, SQL injection, and XSS</li><li>Burp Suite, OWASP ZAP, and pentest reporting</li></ul>
+          </details>
+          <details class="px-mod" id="mod-05">
+            <summary><b>05</b><strong>Security Operations Center (SOC)</strong></summary>
+            <ul><li>SOC architecture and SIEM with Splunk &amp; ELK</li><li>Log analysis, SPL queries, and dashboards</li><li>Incident response and the MITRE ATT&amp;CK framework</li><li>Threat hunting and security reporting</li></ul>
+          </details>
+        </div>
+      </section>
+
+      <section class="px-block reveal" id="outcomes">
+      <div class="px-block-head">
+        <b>03</b>
+        <h2>Built for people who want a security career</h2>
+        <span>8 outcomes</span>
+      </div>
+      <p class="px-intro">Fully online, made for beginners, and focused on getting you job ready. No background in the field is needed to start.</p>
+        <div class="px-grid">
+          <div><strong>Job Ready Portfolio</strong><p>Real security work that proves you can do the job.</p></div>
+          <div><strong>5 Portfolio Builds</strong><p>Network, servers, pentest, SIEM, and a capstone.</p></div>
+          <div><strong>Hands On Labs</strong><p>70%+ practical with TryHackMe and live ranges.</p></div>
+          <div><strong>Web Pentest Report</strong><p>A professional findings report from a full test.</p></div>
+          <div><strong>Live SIEM Dashboards</strong><p>Detection and alerts on real log data.</p></div>
+          <div><strong>Incident Response</strong><p>Detect, investigate, and respond using MITRE ATT&amp;CK.</p></div>
+          <div><strong>ONROL Certificate</strong><p>Aligned to the OWASP Top 10 and industry needs.</p></div>
+          <div><strong>Career Roadmap</strong><p>A clear path to SOC and security analyst roles.</p></div>
+        </div>
+      </section>
+
+      <section class="px-block reveal" id="roles">
+      <div class="px-block-head">
+        <b>04</b>
+        <h2>You’ll defend real systems, not just pass an exam</h2>
+        <span>5 roles</span>
+      </div>
+      <p class="px-intro">The whole thing is built around a portfolio you can put in front of employers and hiring managers.</p>
+        <div class="px-table">
+          <div class="px-tr"><b>01</b><span>Penetration Tester</span><em>&#8377;9 LPA</em></div>
+          <div class="px-tr"><b>02</b><span>Network Security Engineer</span><em>&#8377;8 LPA</em></div>
+          <div class="px-tr"><b>03</b><span>Ethical Hacker</span><em>&#8377;8 LPA</em></div>
+          <div class="px-tr"><b>04</b><span>Security Analyst</span><em>&#8377;7 LPA</em></div>
+          <div class="px-tr"><b>05</b><span>SOC Analyst</span><em>&#8377;6 LPA</em></div>
+        </div>
+        <p class="px-note">Indicative roles for the Indian market. Actual outcomes vary by effort, experience, and role.</p>
+      </section>
+
+      <section class="px-block reveal" id="faq">
+      <div class="px-block-head">
+        <b>05</b>
+        <h2>Roles you can target</h2>
+        <span>4 questions</span>
+      </div>
+      <p class="px-intro">What you build here maps to real, in-demand work. These are the roles this program prepares you for.</p>
+        <div class="px-faq">
+          <details open>
+            <summary>Do I need prior experience?</summary>
+            <p>No. The program starts from networking fundamentals and builds up to advanced defense, so complete beginners can join.</p>
+          </details>
+          <details>
+            <summary>How hands on is it really?</summary>
+            <p>70%+ of the program is practical, labs, simulations, and real tools throughout, including TryHackMe ranges and simulated enterprise environments.</p>
+          </details>
+          <details>
+            <summary>Will I get a certificate?</summary>
+            <p>Yes, the ONROL Cyber Security Program Certificate, aligned to the OWASP Top 10 and current industry requirements.</p>
+          </details>
+          <details>
+            <summary>What roles does it prepare me for?</summary>
+            <p>Entry level security roles: SOC Analyst, Security Analyst, Network Security Engineer, System Administrator, and Junior Penetration Tester.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="px-block px-enrol reveal" id="enrol">
+        <div>
+          <h2>Your seat in the next <em>Cyber Security</em> cohort.</h2>
+          <p>Drop your number and the team comes back within 24 hours with fees, the schedule and the full cohort guide.</p>
+        </div>
+        <div class="px-form">
+          <h3>Reserve your seat</h3>
+          <p>Drop your number and the team comes back within 24 hours with fees, the schedule and the full cohort guide.</p>
+          <form id="leadForm" data-lead data-program="Cyber Security Program">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="Enter mobile number" required>
+            <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0">
+            <button class="px-btn" type="submit">Register now</button>
+            <p class="px-fine">No spam. Used only to confirm your seat.</p>
+          </form>
+        </div>
+      </section>
+
     </div>
   </div>
-</section>
 
-      <section>
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <div>
-              <div class="tag">Who Is This For?</div>
-              <h2 class="section-title" data-split>Built for people who want a security career</h2>
-            </div>
-            <p class="section-desc">Fully online, made for beginners, and focused on getting you job ready. No background in the field is needed to start.</p>
-          </div>
+</main>
 
-          <div class="audience-grid" data-reveal>
-            <div class="audience-card"><h3>Beginners</h3><p>No prior knowledge needed, start from the fundamentals.</p></div>
-            <div class="audience-card"><h3>Students & Graduates</h3><p>Target your first role in cyber security.</p></div>
-            <div class="audience-card"><h3>IT & Support Pros</h3><p>Move into security from an IT background.</p></div>
-            <div class="audience-card"><h3>Career Changers</h3><p>Switch into a future proof security career.</p></div>
-            <div class="audience-card"><h3>Aspiring Defenders</h3><p>Anyone who wants real defense skills and proof.</p></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="outcomes">
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <div>
-              <div class="tag">By Month 3</div>
-              <h2 class="section-title" data-split>You’ll defend real systems, not just pass an exam</h2>
-            </div>
-            <p class="section-desc">The whole thing is built around a portfolio you can put in front of employers and hiring managers.</p>
-          </div>
-
-          <div class="outcomes-wrap" data-reveal>
-            <div class="outcome-list">
-              <div class="outcome-item"><strong>Job Ready Portfolio</strong><p>Real security work that proves you can do the job.</p></div>
-              <div class="outcome-item"><strong>5 Portfolio Builds</strong><p>Network, servers, pentest, SIEM, and a capstone.</p></div>
-              <div class="outcome-item"><strong>Hands On Labs</strong><p>70%+ practical with TryHackMe and live ranges.</p></div>
-              <div class="outcome-item"><strong>Web Pentest Report</strong><p>A professional findings report from a full test.</p></div>
-              <div class="outcome-item"><strong>Live SIEM Dashboards</strong><p>Detection and alerts on real log data.</p></div>
-              <div class="outcome-item"><strong>Incident Response</strong><p>Detect, investigate, and respond using MITRE ATT&CK.</p></div>
-              <div class="outcome-item"><strong>ONROL Certificate</strong><p>Aligned to the OWASP Top 10 and industry needs.</p></div>
-              <div class="outcome-item"><strong>Career Roadmap</strong><p>A clear path to SOC and security analyst roles.</p></div>
-            </div>
-
-            <div class="portfolio-card">
-              <div>
-                <h3>Security Portfolio</h3>
-                <p>Real defense work, a configured network, hardened servers, a full pentest report, and live SIEM dashboards, built through hands on labs and reviewed on outcomes.</p>
-              </div>
-              <div class="portfolio-media"><img src="/home-glydi/portfolio-cyb.png" alt="Security portfolio showcase" loading="lazy" decoding="async" width="1000" height="600"></div>
-              <div class="portfolio-stats">
-                <div><strong>5</strong><span>Builds</span></div>
-                <div><strong>8+</strong><span>Tools</span></div>
-                <div><strong>70%+</strong><span>Hands on</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <div>
-              <div class="tag">Where it takes you</div>
-              <h2 class="section-title" data-split>Roles you can target</h2>
-            </div>
-          </div>
-          <p class="section-desc">What you build here maps to real, in-demand work. These are the roles this program prepares you for.</p>
-          <div class="roles-list" data-reveal>
-            <div class="role-row"><span class="rr-name">Penetration Tester</span><span class="rr-ctc">&#8377;9 LPA</span></div>
-            <div class="role-row"><span class="rr-name">Network Security Engineer</span><span class="rr-ctc">&#8377;8 LPA</span></div>
-            <div class="role-row"><span class="rr-name">Ethical Hacker</span><span class="rr-ctc">&#8377;8 LPA</span></div>
-            <div class="role-row"><span class="rr-name">Security Analyst</span><span class="rr-ctc">&#8377;7 LPA</span></div>
-            <div class="role-row"><span class="rr-name">SOC Analyst</span><span class="rr-ctc">&#8377;6 LPA</span></div>
-          </div>
-          <p class="roles-note">Indicative roles for the Indian market. Actual outcomes vary by effort, experience, and role.</p>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <div>
-              <div class="tag">Difference</div>
-              <h2 class="section-title" data-split>Certificate courses vs ONROL</h2>
-            </div>
-            <p class="section-desc">Most hand you a piece of paper. Here you get real defense experience and a portfolio that proves it.</p>
-          </div>
-
-          <div class="comparison" data-reveal>
-            <div class="compare-col">
-              <h3>Certificate Only Courses</h3>
-              <ul>
-                <li><span>×</span> Theory and slides with little hands on</li>
-                <li><span>×</span> Memorise concepts for an exam</li>
-                <li><span>×</span> A certificate, but no real experience</li>
-                <li><span>×</span> You finish with notes, not a portfolio</li>
-              </ul>
-            </div>
-            <div class="compare-col">
-              <h3>ONROL Cyber Security</h3>
-              <ul>
-                <li><span>✓</span> 70%+ practical labs from day one</li>
-                <li><span>✓</span> Secure, attack, and defend real systems</li>
-                <li><span>✓</span> Industry tools, Nmap, Burp, Splunk, ELK, and more</li>
-                <li><span>✓</span> You finish with a job ready security portfolio</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <div>
-              <div class="tag">FAQ</div>
-              <h2 class="section-title" data-split>Questions students ask before joining</h2>
-            </div>
-            <p class="section-desc">What you need to start, how it runs, and the career it leads to.</p>
-          </div>
-
-          <div class="faq-grid" data-reveal>
-            <details>
-              <summary>Do I need prior experience?</summary>
-              <p>No. The program starts from networking fundamentals and builds up to advanced defense, so complete beginners can join.</p>
-            </details>
-            <details>
-              <summary>How hands on is it really?</summary>
-              <p>70%+ of the program is practical, labs, simulations, and real tools throughout, including TryHackMe ranges and simulated enterprise environments.</p>
-            </details>
-            <details>
-              <summary>Will I get a certificate?</summary>
-              <p>Yes, the ONROL Cyber Security Program Certificate, aligned to the OWASP Top 10 and current industry requirements.</p>
-            </details>
-            <details>
-              <summary>What roles does it prepare me for?</summary>
-              <p>Entry level security roles: SOC Analyst, Security Analyst, Network Security Engineer, System Administrator, and Junior Penetration Tester.</p>
-            </details>
-          </div>
-        </div>
-      </section>
-
-
-      <style>
-        .lpath-sec .container{ text-align:center; }
-        .lpath{ display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:12px 8px; margin-top:34px; }
-        .lp-step{ display:flex; flex-direction:column; align-items:center; gap:10px; min-width:134px; padding:24px 20px; background:#fff; border:1px solid rgba(0,0,0,.1); border-radius:16px; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-        .lp-step:hover{ transform:translateY(-5px); border-color:var(--orange); box-shadow:0 24px 46px -24px rgba(0,0,0,.3); }
-        .lp-i{ width:36px; height:36px; display:grid; place-items:center; border-radius:50%; background:rgba(var(--orange-rgb),.12); color:var(--orange); font-weight:800; font-size:14px; }
-        .lp-t{ font-size:16.5px; font-weight:800; letter-spacing:.2px; color:#16181b; }
-        .lp-arrow{ color:var(--orange); display:grid; place-items:center; flex:0 0 auto; }
-        .lp-arrow svg{ width:24px; height:24px; }
-        .lp-quote{ margin:44px auto 0; max-width:760px; text-align:center; font-size:clamp(18px,2.2vw,25px); font-weight:600; line-height:1.5; color:#33363b; font-style:italic; }
-        .lp-quote span{ color:var(--orange); font-style:normal; }
-        .lp-close{ text-align:center; margin-top:46px; }
-        .lp-close h3{ font-size:clamp(24px,3.6vw,40px); font-weight:800; letter-spacing:-.02em; margin:0; }
-        .lp-close h3 span{ color:var(--orange); }
-        .lp-close p{ color:#54585e; font-size:16px; margin:12px 0 26px; }
-        @media(max-width:640px){ .lpath{ flex-direction:column; } .lp-arrow{ transform:rotate(90deg); } .lp-step{ width:min(280px,82%); flex-direction:row; justify-content:flex-start; gap:14px; } }
-      </style>
-      <section class="lpath-sec">
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <div>
-              <div class="tag">The Learning Path</div>
-              <h2 class="section-title" data-split>Learn by defending, one step at a time.</h2>
-            </div>
-          </div>
-          <div class="lpath" data-reveal>
-            <div class="lp-step"><span class="lp-i">1</span><span class="lp-t">Learn</span></div>
-            <span class="lp-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
-            <div class="lp-step"><span class="lp-i">2</span><span class="lp-t">Lab</span></div>
-            <span class="lp-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
-            <div class="lp-step"><span class="lp-i">3</span><span class="lp-t">Attack</span></div>
-            <span class="lp-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
-            <div class="lp-step"><span class="lp-i">4</span><span class="lp-t">Detect</span></div>
-            <span class="lp-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
-            <div class="lp-step"><span class="lp-i">5</span><span class="lp-t">Defend</span></div>
-          </div>
-          <p class="lp-quote">Don't just earn a certificate. <span>Defend real systems</span> and build a portfolio that gets you hired.</p>
-          <div class="lp-close">
-            <h3>Defend. Detect. <span>Get Hired.</span></h3>
-            <p>Your roadmap to a future proof cyber career starts here.</p>
-            <a class="button orange" data-magnetic href="#register">Apply Now</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer" id="contact">
+<footer class="footer" id="contact">
   <div class="footer-top">
     <div class="f-brand">
       <a class="f-logo" href="/">ONROL</a>
@@ -1473,6 +218,7 @@
       <div class="f-col">
         <h4>Programs</h4>
         <ul>
+          <li><a href="/programs/aica">AI Career Accelerator</a></li>
           <li><a href="/programs/ai-generalist">AI Generalist</a></li>
           <li><a href="/programs/ai-architect">AI Architect</a></li>
           <li><a href="/programs/soc-analyst">SOC Analyst</a></li>

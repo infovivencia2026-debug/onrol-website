@@ -1,43 +1,8 @@
-<style>\n  .wrap, .subpage{ font-family:'Manrope', sans-serif; }
-  .subpage{ max-width:960px; margin:0 auto; padding:160px 0 100px; color:#eaeaea; }
-  .subpage .eyebrow{ font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--orange-lt); margin-bottom:14px; }
-  .subpage h1{ font-size:clamp(34px,6vw,60px); font-weight:700; letter-spacing:-.02em; line-height:1.05; color:#fff; margin-bottom:18px; }
-  .subpage .lead{ font-size:18px; line-height:1.7; color:#bdbdbd; max-width:640px; margin-bottom:14px; }
-  .prog-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin-top:40px; }
-  .prog{ border:1px solid rgba(255,255,255,.14); padding:30px; display:flex; flex-direction:column; }
-  .prog.feature{ border-color:rgba(var(--orange-rgb),.55); background:rgba(var(--orange-rgb),.06); }
-  .prog .tag{ font-family:var(--mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--orange-lt); margin-bottom:14px; }
-  .prog h2{ font-size:24px; font-weight:700; color:#fff; line-height:1.1; margin-bottom:10px; }
-  .prog p{ font-size:15px; line-height:1.65; color:#bdbdbd; margin-bottom:16px; }
-  .prog ul{ list-style:none; margin:0 0 22px; padding:0; }
-  .prog ul li{ font-size:14px; color:#cfcfcf; line-height:1.6; padding-left:20px; position:relative; margin-bottom:7px; }
-  .prog ul li::before{ content:"\2192"; position:absolute; left:0; color:var(--orange-lt); }
-  .prog .go{ margin-top:auto; display:inline-flex; align-items:center; gap:8px; align-self:flex-start; padding:12px 24px; font-family:var(--mono); font-size:12px; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; }
-  .prog .go.solid{ background:var(--orange); color:#fff; }
-  .prog .go.outline{ border:1px solid rgba(255,255,255,.3); color:#fff; }
-  .subpage h3.section{ font-size:clamp(22px,3vw,30px); font-weight:700; color:#fff; margin:60px 0 10px; }
-  .subpage .note{ font-size:16px; line-height:1.7; color:#bdbdbd; max-width:680px; }
-  .subpage .note a{ color:var(--orange-lt); }
-  .subpage .back{ display:inline-block; margin-top:50px; font-family:var(--mono); font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:#888; text-decoration:none; }
-  .subpage .back:hover{ color:#fff; }
-/* light theme (default — no dark backgrounds unless requested) */
-  body{ background:#fff; }
-  .subpage{ background:#fff; }
-  .subpage{ color:#16181b; }
-  .subpage h1, .subpage h2, .subpage h3, .subpage h3.section, .subpage .prog h2, .card-grid .card h3{ color:#16181b; }
-  .subpage p, .subpage .lead, .subpage .note, .subpage ul li, .subpage ul.list li, .card-grid .card p, .prog p{ color:#5a5e64; }
-  .prog ul li{ color:#41454b; }
-  .subpage .muted, .subpage .updated{ color:#8a8f96; }
-  .subpage .back{ color:#8a8f96; }
-  .subpage .back:hover{ color:#16181b; }
-  .card-grid .card, .prog{ border-color:rgba(0,0,0,.14); }
-  .prog .go.outline{ border-color:rgba(0,0,0,.3); color:#16181b; }</style>
-
 <a class="site-logo" href="/" aria-label="ONROL, AI Execution School, home">
   <img src="/home-glydi/logo-mark.png" alt="ONROL, AI Execution School">
 </a>
 
-<nav class="nav">
+<nav class="nav topbar">
   <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
     <span></span><span></span><span></span>
   </button>
@@ -53,47 +18,109 @@
   </div>
 </nav>
 
-<header class="pagehero">
-    <div class="pagehero-inner">
-      <p class="ph-eyebrow">Cyber Security Track</p>
-      <h1 class="ph-title">Cyber Security <span>Programs</span></h1>
-      <p class="ph-sub">From zero to job ready defender, then specialize on the SOC floor with a focused blue team program.</p>
+<main class="subpage gp pg">
+
+  <header class="gp-hero">
+    <div class="gp-hero-shot" style="background-image:url('/home-glydi/hero-stage.jpg')"></div>
+    <div class="gp-wrap">
+      <p class="gp-badge">Cyber Security Track</p>
+      <h1>Defend <em>what matters.</em></h1>
+      <p class="gp-hero-sub">Two programs for the other half of the job: securing the systems everyone else is busy building. Hands-on labs from week one.</p>
+      <div class="gp-hero-facts">
+        <div><b>2</b><span>Programs</span></div>
+        <div><b>100<i>%</i></b><span>Hands on</span></div>
+        <div><b>Live</b><span>Mentor-led</span></div>
+        <div><b>0</b><span>Prior needed</span></div>
+      </div>
     </div>
   </header>
 
-  <main class="subpage has-hero">
+  <section class="gp-track reveal" id="track-1">
+    <div class="gp-wrap">
+      <h2 class="gp-h t">Two ways in</h2>
+      <div class="gp-rule t"></div>
+      <p class="gp-sub t">Begin with the fundamentals, or train directly for the seat you want to sit in.</p>
+      <div class="gp-grid">
+        <a class="gp-card t" href="/programs/cybersecurity">
+          <span class="gp-shot">
+            <i style="background-image:url('/home-glydi/cards/cyber.jpg')"></i>
+            <span class="gp-num">01<em>/02</em></span>
+            <span class="gp-tagline"><span>Foundation</span></span>
+          </span>
+          <span class="gp-body">
+            <h3>Cyber Security</h3>
+            <p>The fundamentals every security role is built on: networks, systems and threats, taught through hands-on labs from week one.</p>
+            <ul class="gp-points"><li>Labs from the first week</li><li>Networks, systems and threats</li><li>No prior security background</li></ul>
+            <span class="gp-meta">
+              <div><b>6 months</b><span>Length</span></div>
+              <div><b>No prior</b><span>Starts from</span></div>
+              <span class="gp-cta">View <em>&rarr;</em></span>
+            </span>
+          </span>
+        </a>
 
-  <div class="boxgrid c2">
-    <div class="box">
-      <span class="b-k">Foundation, 6 Months</span>
-      <h3>Cyber Security</h3>
-      <p>From zero to job ready defender. Networking, Linux, Windows, ethical hacking, and SOC, 70%+ hands on.</p>
-      <ul>
-        <li>Networking, Linux &amp; Windows fundamentals</li>
-        <li>Ethical hacking &amp; web penetration testing</li>
-        <li>SOC, SIEM, and threat detection</li>
-        <li>Portfolio: network, servers, pentest, SIEM</li>
-      </ul>
-      <a class="b-go" href="/cybersecurity">Explore program <span>&rarr;</span></a>
+        <a class="gp-card t" href="/programs/soc-analyst">
+          <span class="gp-shot">
+            <i style="background-image:url('/home-glydi/cards/soc.jpg')"></i>
+            <span class="gp-num">02<em>/02</em></span>
+            <span class="gp-tagline"><span>Career track</span></span>
+          </span>
+          <span class="gp-body">
+            <h3>SOC Analyst</h3>
+            <p>Train for the seat itself: detection, triage and response on the same SIEM workflows a real operations centre runs on.</p>
+            <ul class="gp-points"><li>Detection, triage and response</li><li>Real SIEM tooling and alerts</li><li>Structured around the job</li></ul>
+            <span class="gp-meta">
+              <div><b>3 months</b><span>Length</span></div>
+              <div><b>Job-ready</b><span>Starts from</span></div>
+              <span class="gp-cta">View <em>&rarr;</em></span>
+            </span>
+          </span>
+        </a>
+      </div>
     </div>
+  </section>
 
-    <div class="box">
-      <span class="b-k">Specialist, 3 Months</span>
-      <h3>SOC Analyst</h3>
-      <p>Detect, investigate, and respond to real threats. The focused blue team next step, Splunk, ELK, MITRE ATT&amp;CK, and NIST IR.</p>
-      <ul>
-        <li>Splunk, ELK &amp; real SIEM operations</li>
-        <li>Threat detection &amp; incident response</li>
-        <li>A full enterprise attack simulation</li>
-        <li>Placement prep, resume, interviews, shift sim</li>
-      </ul>
-      <a class="b-go" href="/soc-analyst">Explore program <span>&rarr;</span></a>
+  <section class="gp-how reveal">
+    <div class="gp-wrap">
+      <h2 class="gp-h t">How every program runs</h2>
+      <div class="gp-rule t"></div>
+      <div class="gp-how-grid">
+        <article class="gp-feat t">
+          <span class="gp-feat-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <h3>Live, not recorded</h3>
+          <p>A mentor is in the room, so questions get answered the day you have them.</p>
+        </article>
+        <article class="gp-feat t">
+          <span class="gp-feat-ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5.5A2.5 2.5 0 0 1 10.5 3h3A2.5 2.5 0 0 1 16 5.5V7"/></svg></span>
+          <h3>Project-first</h3>
+          <p>The curriculum is a sequence of things you ship, not chapters you read.</p>
+        </article>
+        <article class="gp-feat t">
+          <span class="gp-feat-ic"><svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 15l5-5 4 3 7-7"/></svg></span>
+          <h3>A portfolio with links</h3>
+          <p>You finish with deployed work hiring teams and clients can actually click.</p>
+        </article>
+        <article class="gp-feat t">
+          <span class="gp-feat-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.3 12.4l2.4 2.4 4.9-5.4"/></svg></span>
+          <h3>Start from zero</h3>
+          <p>No coding background needed; the tools do the lifting while you learn the judgement.</p>
+        </article>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <p class="note">New to security? Start with the Cyber Security foundation, then specialize with SOC Analyst. <a href="/programs/ai">Looking for AI? &rarr;</a></p>
+  <section class="gp-band reveal">
+    <div class="gp-wrap">
+      <h2 class="t">Both start from zero.</h2>
+      <p class="t">The free masterclass is the fastest way to see how the labs actually run before you commit to anything.</p>
+      <div class="gp-band-cta t">
+        <a class="gp-btn js-apply" href="/contact">Apply now</a>
+        <a class="gp-btn line" href="/tools/ai-skills-quiz">Take the 60-second quiz</a>
+      </div>
+      <p class="gp-fine t">Free 90-minute masterclass before any paid commitment.</p>
+    </div>
+  </section>
 
-  <a class="back" href="/programs">&larr; Back to programs</a>
 </main>
 
 <footer class="footer" id="contact">
@@ -112,6 +139,7 @@
       <div class="f-col">
         <h4>Programs</h4>
         <ul>
+          <li><a href="/programs/aica">AI Career Accelerator</a></li>
           <li><a href="/programs/ai-generalist">AI Generalist</a></li>
           <li><a href="/programs/ai-architect">AI Architect</a></li>
           <li><a href="/soc-analyst">SOC Analyst</a></li>
@@ -161,10 +189,11 @@
     <p class="lead-eyebrow">Apply to ONROL</p>
     <h3 id="leadTitle">Start with a quick hello.</h3>
     <p class="lead-sub">Drop your details and our team reaches out about the next cohort, takes 20 seconds.</p>
+    <div class="lead-steps"><span>20 seconds</span><span>No payment</span><span>We call you back</span></div>
     <form id="leadForm" class="lead-form">
-      <input type="text" id="leadName" name="name" placeholder="Full name" autocomplete="name" required>
-      <input type="email" id="leadEmail" name="email" placeholder="Email address" autocomplete="email" required>
-      <input type="tel" id="leadPhone" name="phone" placeholder="Phone / WhatsApp number" autocomplete="tel" required>
+      <div><label for="leadName">Full name</label><input type="text" id="leadName" name="name" placeholder="Your name" autocomplete="name" required></div>
+      <div><label for="leadEmail">Email</label><input type="email" id="leadEmail" name="email" placeholder="you@email.com" autocomplete="email" required></div>
+      <div><label for="leadPhone">Phone / WhatsApp</label><input type="tel" id="leadPhone" name="phone" placeholder="+91 …" autocomplete="tel" required></div>
       <button type="submit" class="lead-submit">Apply Now</button>
     </form>
     <p class="lead-fine">No spam. We&rsquo;ll only contact you about your application.</p>

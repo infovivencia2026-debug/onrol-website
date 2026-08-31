@@ -1,9 +1,8 @@
 import { FormEvent, useEffect, useState } from "react";
 import { ArrowRight, Check, ShieldCheck, X } from "lucide-react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { submitBrochureRequest } from "@/lib/intake";
 import { syncMasterclassSubmissionToSheet } from "@/lib/masterclassSheetSync";
-import { Frame, OrangeButton, Shell } from "@/components/system/grid";
 
 const INTER_STACK = `"Fira Sans", Figtree, system-ui, -apple-system, "Segoe UI", sans-serif`;
 // LCP-critical copy uses a pure system stack so the headline paints instantly
@@ -13,9 +12,9 @@ const SYSTEM_STACK = `"Fira Sans", Figtree, system-ui, -apple-system, "Segoe UI"
 
 // Structured meta row (outskill-style discipline) — NO pricing.
 const HERO_META = [
-  ["Next cohort", "Rolling admissions"],
-  ["Format", "Live · online"],
-  ["Level", "No coding needed"],
+  ["12 weeks", "Live cohort"],
+  ["3 projects", "Deployed by you"],
+  ["1 year", "Builder community"],
 ];
 
 const HomeHero = () => {
@@ -80,57 +79,69 @@ const HomeHero = () => {
 
   return (
     <>
-      <section id="home" className="relative flex min-h-[calc(100svh-4rem)] items-center overflow-hidden border-b border-black/10 bg-white sm:min-h-[calc(100svh-72px)]">
-        {/* Hero image fills the entire hero viewport */}
-        <div aria-hidden className="absolute inset-0">
-          <picture>
-            <source srcSet="/hero-bg-home-v2.avif" type="image/avif" />
-            <source srcSet="/hero-bg-home-v2.webp" type="image/webp" />
-            <img src="/hero-bg-home-v2.jpg" alt="" loading="eager" decoding="async" fetchPriority="high" className="h-full w-full object-cover object-[75%_bottom]" />
-          </picture>
-        </div>
-        {/* Mobile-only readability scrim — the full-bleed cube image is too busy
-            behind stacked content on phones (the logo bleeds through the copy).
-            Desktop keeps the image clear since the copy sits on its white side. */}
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-white/94 via-white/90 to-white/72 md:hidden" />
+      <section id="home" className="relative isolate flex min-h-[calc(100svh-4rem)] items-end overflow-hidden border-b border-white/10 bg-[#080808] text-white sm:min-h-[calc(100svh-72px)]">
+        {/* Terra One-inspired geometric backdrop: quiet left field, warm nested frames. */}
+        <picture className="absolute inset-0 -z-20">
+          <source srcSet="/onrol-hero-builder-dawn.avif" type="image/avif" />
+          <source srcSet="/onrol-hero-builder-dawn.webp" type="image/webp" />
+          <img
+            src="/onrol-hero-builder-dawn.png"
+            alt="A young Indian AI builder looking across the city at dawn after completing a project"
+            width={1680}
+            height={945}
+            fetchPriority="high"
+            className="h-full w-full object-cover object-[64%_center] sm:object-center"
+          />
+        </picture>
+        <div aria-hidden className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(5,7,10,.98)_0%,rgba(5,7,10,.91)_31%,rgba(5,7,10,.48)_58%,rgba(5,7,10,.08)_100%)]" />
+        <div aria-hidden className="absolute inset-0 -z-10 bg-[linear-gradient(0deg,rgba(5,5,5,.82)_0%,transparent_46%,rgba(0,0,0,.15)_100%)]" />
         {/* Copy overlay */}
-        <div className="relative w-full max-w-2xl px-5 py-12 sm:px-8 md:px-12 lg:px-14 xl:pl-24 2xl:pl-44">
+        <div className="relative w-full px-5 pb-7 pt-28 sm:px-8 sm:pb-10 md:px-12 lg:px-14 lg:pb-12 xl:px-20 2xl:px-24">
+          <div className="max-w-[780px]">
+            <div className="mb-6 inline-flex items-center gap-2 border border-white/20 bg-black/20 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-white/80 backdrop-blur-md sm:text-[11px]">
+              <span className="h-2 w-2 rounded-full bg-[#f46718] shadow-[0_0_18px_rgba(244,103,24,.9)]" />
+              India&apos;s AI Execution School
+            </div>
               <h1
-                className="max-w-xl text-[#0A0A0A]"
-                style={{ fontFamily: DISPLAY_STACK, fontSize: "clamp(2.3rem, 4.8vw, 4.1rem)", lineHeight: 1.0, letterSpacing: "-0.03em", fontWeight: 700 }}
+                className="max-w-[760px] text-balance"
+                style={{ fontFamily: DISPLAY_STACK, fontSize: "clamp(3rem, 6.6vw, 7.2rem)", lineHeight: 0.91, letterSpacing: "-0.055em", fontWeight: 760 }}
               >
-                India&apos;s AI <span className="text-[#f46718]">Execution</span> School.
+                Don&apos;t just learn AI. <span className="text-[#ff7a2f]">Build your next chapter.</span>
               </h1>
-              <p className="mt-5 max-w-md text-[15px] leading-relaxed text-black/70" style={{ fontFamily: SYSTEM_STACK }}>
-                ONROL turns AI curiosity into shipped work &mdash; useful automations, deployable web apps, AI agents, and a portfolio that proves execution.
+              <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-white/72 sm:text-[17px]" style={{ fontFamily: SYSTEM_STACK }}>
+                Go from curious to capable with live mentorship, real build sprints, and three deployed AI projects that prove what you can do.
               </p>
 
               {/* Structured meta row — hairline cells, no price. Solid bg so the
                   hero image never bleeds through the cells on mobile. */}
-              <div className="mt-7 flex max-w-md flex-wrap border border-black/10 bg-white/90 text-[12px]">
+              <div className="mt-10 grid max-w-2xl grid-cols-3 border-y border-white/16 bg-black/10 backdrop-blur-sm">
                 {HERO_META.map(([k, v], i) => (
-                  <div key={k} className={`flex-1 px-4 py-3 ${i < HERO_META.length - 1 ? "border-r border-black/10" : ""}`}>
-                    <p className="font-bold uppercase tracking-[0.14em] text-black/55">{k}</p>
-                    <p className="mt-1 font-semibold text-[#0A0A0A]">{v}</p>
+                  <div key={k} className={`py-4 pr-3 sm:py-5 sm:pr-6 ${i > 0 ? "border-l border-white/16 pl-3 sm:pl-6" : ""}`}>
+                    <p className="text-[15px] font-extrabold tracking-[-0.02em] text-white sm:text-[20px]">{k}</p>
+                    <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.13em] text-white/50 sm:text-[10px] sm:tracking-[0.18em]">{v}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-7">
-                <OrangeButton to="/programs/">
-                  Register Now <ArrowRight className="h-4 w-4" />
-                </OrangeButton>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <button
+                  type="button"
+                  onClick={() => setIsFormOpen(true)}
+                  className="group inline-flex min-h-12 items-center justify-center gap-3 bg-[#f46718] px-6 text-[12px] font-extrabold uppercase tracking-[0.16em] text-[#0A0A0A] transition hover:bg-[#ff8442] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f46718]"
+                >
+                  Join the free masterclass <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </button>
+                <Link
+                  to="/programs/"
+                  className="inline-flex min-h-12 items-center justify-center border border-white/25 bg-white/[0.06] px-6 text-[12px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-sm transition hover:border-white/50 hover:bg-white/[0.12]"
+                >
+                  Explore programs
+                </Link>
               </div>
 
               {/* Social proof — plain, hairline-separated */}
-              <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-black/65">
-                <span><strong className="text-[#0A0A0A]">4.95/5</strong> rating</span>
-                <span aria-hidden className="h-3 w-px bg-black/15" />
-                <span><strong className="text-[#0A0A0A]">2,400+</strong> alumni</span>
-                <span aria-hidden className="h-3 w-px bg-black/15" />
-                <span><strong className="text-[#0A0A0A]">10,000+</strong> builders</span>
-              </div>
             </div>
+          </div>
       </section>
 
       {/* Free Masterclass registration modal (unchanged logic) */}

@@ -1,0 +1,325 @@
+<style>\n  .wrap, .subpage{ font-family:'Manrope', sans-serif; }
+  .subpage{ max-width:960px; margin:0 auto; padding:160px 0 100px; color:#eaeaea; }
+  .subpage .eyebrow{ font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--orange-lt); margin-bottom:14px; }
+  .subpage h1{ font-size:clamp(34px,6vw,60px); font-weight:700; letter-spacing:-.02em; line-height:1.05; color:#fff; margin-bottom:18px; }
+  .subpage .lead{ font-size:18px; line-height:1.7; color:#bdbdbd; max-width:640px; margin-bottom:14px; }
+  .prog-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin-top:40px; }
+  .prog{ border:1px solid rgba(255,255,255,.14); padding:30px; display:flex; flex-direction:column; }
+  .prog.feature{ border-color:rgba(var(--orange-rgb),.55); background:rgba(var(--orange-rgb),.06); }
+  .prog .tag{ font-family:var(--mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--orange-lt); margin-bottom:14px; }
+  .prog h2{ font-size:24px; font-weight:700; color:#fff; line-height:1.1; margin-bottom:10px; }
+  .prog p{ font-size:15px; line-height:1.65; color:#bdbdbd; margin-bottom:16px; }
+  .prog ul{ list-style:none; margin:0 0 22px; padding:0; }
+  .prog ul li{ font-size:14px; color:#cfcfcf; line-height:1.6; padding-left:20px; position:relative; margin-bottom:7px; }
+  .prog ul li::before{ content:"\2192"; position:absolute; left:0; color:var(--orange-lt); }
+  .prog .go{ margin-top:auto; display:inline-flex; align-items:center; gap:8px; align-self:flex-start; padding:12px 24px; font-family:var(--mono); font-size:12px; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; }
+  .prog .go.solid{ background:var(--orange); color:#fff; }
+  .prog .go.outline{ border:1px solid rgba(255,255,255,.3); color:#fff; }
+  .subpage h3.section{ font-size:clamp(22px,3vw,30px); font-weight:700; color:#fff; margin:60px 0 10px; }
+  .subpage .note{ font-size:16px; line-height:1.7; color:#bdbdbd; max-width:680px; }
+  .subpage .note a{ color:var(--orange-lt); }
+  .subpage .back{ display:inline-block; margin-top:50px; font-family:var(--mono); font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:#888; text-decoration:none; }
+  .subpage .back:hover{ color:#fff; }
+/* light theme (default — no dark backgrounds unless requested) */
+  body{ background:#fff; }
+  .subpage{ background:#fff; }
+  .subpage{ color:#16181b; }
+  .subpage h1, .subpage h2, .subpage h3, .subpage h3.section, .subpage .prog h2, .card-grid .card h3{ color:#16181b; }
+  .subpage p, .subpage .lead, .subpage .note, .subpage ul li, .subpage ul.list li, .card-grid .card p, .prog p{ color:#5a5e64; }
+  .prog ul li{ color:#41454b; }
+  .subpage .muted, .subpage .updated{ color:#8a8f96; }
+  .subpage .back{ color:#8a8f96; }
+  .subpage .back:hover{ color:#16181b; }
+  .card-grid .card, .prog{ border-color:rgba(0,0,0,.14); }
+  .prog .go.outline{ border-color:rgba(0,0,0,.3); color:#16181b; }</style>
+
+<a class="site-logo" href="/" aria-label="ONROL, AI Execution School, home">
+  <img src="/home-glydi/logo-mark.png" alt="ONROL, AI Execution School">
+</a>
+
+<nav class="nav topbar">
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true"></span>
+    <a href="/programs">Programs</a>
+    <span class="sep" aria-hidden="true"></span>
+    <a href="/about">About</a>
+    <span class="sep" aria-hidden="true"></span>
+    <a href="/contact">Contact</a>
+  <a class="nav-apply" href="/programs/ai-generalist">Apply</a>
+  </div>
+</nav>
+
+<main class="subpage px pg track-ai">
+
+  <div class="px-shell">
+
+    <aside class="px-rail">
+      <p class="px-badge">AI Track &middot; Program 01</p>
+      <h1>AI Career <em>Accelerator</em></h1>
+      <p class="px-rail-sub">Twenty-one live sessions, an hour a day. Start at zero and finish with a career project, a portfolio and a ninety-day plan of your own.</p>
+      <div class="px-spec">
+        <div><span>Days</span><b>21</b></div>
+        <div><span>Live sessions</span><b>21</b></div>
+        <div><span>A day</span><b>1 hr</b></div>
+        <div><span>Prerequisites</span><b>Zero</b></div>
+      </div>
+      <nav class="px-toc">
+        <p>Contents</p>
+        <a href="#outcomes"><b>01</b>What you walk away with</a>
+        <a href="#path"><b>02</b>The twenty-one days, day by day</a>
+        <a href="#who"><b>03</b>Who it is for</a>
+        <a href="#track"><b>04</b>Where it sits in the AI track</a>
+        <a href="#faq"><b>05</b>Questions students ask before joining</a>
+      </nav>
+      <div class="px-rail-cta">
+        <a class="px-btn" href="#enrol">Reserve a seat</a>
+        <a class="px-btn ghost js-apply" href="/contact">Talk to us</a>
+        <p class="px-fine">Free masterclass before any paid commitment.</p>
+      </div>
+    </aside>
+
+    <div class="px-pane">
+
+      <section class="px-block reveal" id="outcomes">
+        <div class="px-block-head">
+          <b>01</b>
+          <h2>What you walk away with</h2>
+          <span>21 days</span>
+        </div>
+        <p class="px-intro">Three weeks, an hour a day, and every one of them ends in something you keep &mdash; a tool, a document, a project or a plan.</p>
+        <div class="px-grid">
+          <div><strong>A personal AI assistant</strong><p>Built around your own career and study goals, not a demo.</p></div>
+          <div><strong>A finished career project</strong><p>One practical, role-oriented build you can show and explain.</p></div>
+          <div><strong>A prompt library</strong><p>Your own reusable prompts for research, writing, analysis and study.</p></div>
+          <div><strong>A resume that passes ATS</strong><p>Tailored to real postings, with the matching worked out.</p></div>
+          <div><strong>A public profile</strong><p>LinkedIn, portfolio and a personal brand that shows the work.</p></div>
+          <div><strong>A ninety-day roadmap</strong><p>What you do next, week by week, after the cohort ends.</p></div>
+        </div>
+      </section>
+
+      <section class="px-block reveal" id="path">
+        <div class="px-block-head">
+          <b>02</b>
+          <h2>The twenty-one days, day by day</h2>
+          <span>4 stages</span>
+        </div>
+        <p class="px-intro">Every session is live and an hour long. The four stages move from understanding the ground, to working with the tools, to your own career, to launch.</p>
+
+        <div class="px-mods">
+          <details class="px-mod" id="mod-01" open>
+            <summary><b>01</b><strong>Days 1&ndash;6 &middot; The ground and the tools</strong></summary>
+            <ul>
+              <li><b>Day 1 &middot; The AI-Driven Career World</b> &mdash; understand how AI is changing jobs, industries and entry-level careers</li>
+              <li><b>Day 2 &middot; Discover Your Career Direction</b> &mdash; identify suitable career paths based on interests, skills and education</li>
+              <li><b>Day 3 &middot; AI Tools Every Student Should Know</b> &mdash; when to use ChatGPT, Gemini, Claude, Perplexity and NotebookLM</li>
+              <li><b>Day 4 &middot; Prompting as a Professional Skill</b> &mdash; build a reusable personal prompt library</li>
+              <li><b>Day 5 &middot; Research Smarter with AI</b> &mdash; research companies, industries, topics and academic subjects effectively</li>
+              <li><b>Day 6 &middot; Learn Faster with AI</b> &mdash; notes, summaries, study plans, concept explanations and knowledge building</li>
+            </ul>
+          </details>
+
+          <details class="px-mod" id="mod-02">
+            <summary><b>02</b><strong>Days 7&ndash;11 &middot; Working like a professional</strong></summary>
+            <ul>
+              <li><b>Day 7 &middot; Documents, Reports &amp; Professional Writing</b> &mdash; create professional reports, proposals and documentation</li>
+              <li><b>Day 8 &middot; Excel, Data &amp; Analytical Thinking with AI</b> &mdash; analyse simple datasets, formulas, insights and charts</li>
+              <li><b>Day 9 &middot; Presentations &amp; Storytelling with AI</b> &mdash; build a professional presentation from research to final deck</li>
+              <li><b>Day 10 &middot; Communication for the Workplace</b> &mdash; emails, meeting notes, professional messages and workplace communication</li>
+              <li><b>Day 11 &middot; Creative AI for Students</b> &mdash; create images, simple videos and professional visual content</li>
+            </ul>
+          </details>
+
+          <details class="px-mod" id="mod-03">
+            <summary><b>03</b><strong>Days 12&ndash;17 &middot; Your field, your build</strong></summary>
+            <ul>
+              <li><b>Day 12 &middot; AI for Coding &amp; Technology Careers</b> &mdash; experience how developers and technical teams use AI</li>
+              <li><b>Day 13 &middot; AI for Business, Marketing &amp; Management Careers</b> &mdash; experience AI workflows in business roles</li>
+              <li><b>Day 14 &middot; AI for HR, Operations, Finance &amp; Other Careers</b> &mdash; explore AI applications across non-technical careers</li>
+              <li><b>Day 15 &middot; Find Your AI + Career Combination</b> &mdash; select a primary direction and identify the AI skills it needs</li>
+              <li><b>Day 16 &middot; Build Your Personal AI Assistant</b> &mdash; an assistant customised to your own career and learning goals</li>
+              <li><b>Day 17 &middot; Build Your First Career Project</b> &mdash; complete one practical, role-oriented AI project</li>
+            </ul>
+          </details>
+
+          <details class="px-mod" id="mod-04">
+            <summary><b>04</b><strong>Days 18&ndash;21 &middot; Getting seen, getting hired</strong></summary>
+            <ul>
+              <li><b>Day 18 &middot; Resume + ATS + Job Matching with AI</b> &mdash; create a strong resume and learn to tailor it to jobs</li>
+              <li><b>Day 19 &middot; LinkedIn + Portfolio + Personal Brand</b> &mdash; build a professional digital presence and showcase the work</li>
+              <li><b>Day 20 &middot; Internships, Interviews &amp; Earning Opportunities</b> &mdash; job and internship search, interviews, freelancing and entry-level earning paths</li>
+              <li><b>Day 21 &middot; Career Launch Day</b> &mdash; present your project and portfolio, and leave with a ninety-day career roadmap</li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <section class="px-block reveal" id="who">
+        <div class="px-block-head">
+          <b>03</b>
+          <h2>Who it is for</h2>
+          <span>Beginners welcome</span>
+        </div>
+        <p class="px-intro">Anyone who wants a fast, guided first run at building with AI &mdash; students, working professionals and career switchers who would rather spend three weeks shipping one real thing than three months collecting tutorials.</p>
+        <div class="px-chips">
+          <i>Students</i><i>Final-year and postgrad</i><i>Working professionals</i><i>Career switchers</i><i>Job-seekers</i><i>No coding background</i>
+        </div>
+      </section>
+
+      <section class="px-block reveal" id="track">
+        <div class="px-block-head">
+          <b>04</b>
+          <h2>Where it sits in the AI track</h2>
+          <span>Program 01 of 3</span>
+        </div>
+        <p class="px-intro">The Accelerator is the shortest way in. Finish it and you already have a project, a portfolio and the working habits the longer programs build on.</p>
+        <div class="px-rows">
+          <a class="px-row" href="/programs/ai-generalist">
+            <span class="px-row-n">02</span>
+            <div><h3>AI Generalist &middot; 3 months</h3><p>Five AI systems, seven or more projects, and a portfolio that gets you hired or clients.</p></div>
+          </a>
+          <a class="px-row" href="/programs/ai-architect">
+            <span class="px-row-n">03</span>
+            <div><h3>AI Architect &middot; 6 + 6 months</h3><p>Design, deploy and scale production systems &mdash; multi-agent, RAG, automation, deployment.</p></div>
+          </a>
+        </div>
+      </section>
+
+      <section class="px-block reveal" id="faq">
+        <div class="px-block-head">
+          <b>05</b>
+          <h2>Questions students ask before joining</h2>
+          <span>5 answers</span>
+        </div>
+        <div class="px-faq">
+          <details open>
+            <summary>Do I need any coding or AI background?</summary>
+            <p>None. Day 1 assumes you have never used these tools seriously, and every session is built to be followed live with a mentor watching.</p>
+          </details>
+          <details>
+            <summary>How much time does it really take?</summary>
+            <p>One hour a day for twenty-one days, live. Most people spend another twenty to thirty minutes finishing the day's build, and everything is recorded if you miss one.</p>
+          </details>
+          <details>
+            <summary>What if I am still deciding on my career direction?</summary>
+            <p>That is what days 2, 15 and 21 are for. You pick a direction with help, then spend the rest of the program building towards it rather than guessing.</p>
+          </details>
+          <details>
+            <summary>Is the project mine to keep and show?</summary>
+            <p>Yes. The assistant, the project, the prompt library, the resume and the portfolio are all yours, under your own name, with links you can send to anyone.</p>
+          </details>
+          <details>
+            <summary>What happens after the twenty-one days?</summary>
+            <p>You leave with a ninety-day roadmap. If you want to go further, the AI Generalist program picks up where this one ends.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="px-block px-enrol reveal" id="enrol">
+        <div>
+          <h2>Your seat in the next <em>Accelerator</em> cohort.</h2>
+          <p>Seats are limited each cohort so the sessions stay small enough to get your questions answered.</p>
+        </div>
+        <div class="px-form">
+          <h3>Reserve your seat</h3>
+          <p>Drop your number and the team comes back within 24 hours with dates, fees and the full session plan.</p>
+          <form id="leadForm" data-lead data-program="AI Career Accelerator">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="Enter mobile number" required>
+            <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0">
+            <button class="px-btn" type="submit">Register now</button>
+            <p class="px-fine">No spam. Used only to confirm your seat.</p>
+          </form>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer" id="contact">
+  <div class="footer-top">
+    <div class="f-brand">
+      <a class="f-logo" href="/">ONROL</a>
+      <p class="f-copy">&copy; 2026 ONROL, AI Execution School, Hyderabad. All rights reserved.</p>
+      <div class="f-socials">
+        <a href="https://instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1"/></svg></a>
+        <a href="https://linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10.5v6M7 7.5v.01M11.5 16.5v-3.2a2 2 0 0 1 4 0v3.2M11.5 16.5v-6"/></svg></a>
+        <a href="https://youtube.com/" target="_blank" rel="noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M11 9.6l4 2.4-4 2.4z"/></svg></a>
+        <a href="mailto:info@onrol.in" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7.5l8 5.5 8-5.5"/></svg></a>
+      </div>
+    </div>
+    <nav class="f-cols" aria-label="Footer links">
+      <div class="f-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="/programs/aica">AI Career Accelerator</a></li>
+          <li><a href="/programs/ai-generalist">AI Generalist</a></li>
+          <li><a href="/programs/ai-architect">AI Architect</a></li>
+          <li><a href="/soc-analyst">SOC Analyst</a></li>
+          <li><a href="/cybersecurity">Cyber Security</a></li>
+          <li><a href="/programs">All Programs</a></li>
+          <li><a href="/masterclass">Free Masterclass</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/glossary">Glossary</a></li>
+          <li><a href="/questions">FAQs</a></li>
+          <li><a href="/tools/ai-skills-quiz">AI Skills Quiz</a></li>
+          <li><a href="/why-now">Why AI matters now</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About ONROL</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-and-conditions">Terms</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-news">
+    <div class="f-news-text">
+      <h4>Join our newsletter</h4>
+      <p>Useful AI tips for India, straight to your inbox. No spam.</p>
+    </div>
+    <form class="f-form" id="newsletterForm">
+      <label for="newsletterEmail" class="visually-hidden">Email address</label>
+      <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" autocomplete="email" aria-label="Email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <p class="f-news-msg" id="newsMsg" role="status" hidden>Thanks, you&rsquo;re on the list.</p>
+</footer>
+
+<div class="lead-modal" id="leadModal" hidden>
+  <div class="lead-card" role="dialog" aria-modal="true" aria-labelledby="leadTitle">
+    <button class="lead-x" id="leadClose" type="button" aria-label="Close">&times;</button>
+    <p class="lead-eyebrow">Apply to ONROL</p>
+    <h3 id="leadTitle">Start with a quick hello.</h3>
+    <p class="lead-sub">Drop your details and our team reaches out about the next cohort, takes 20 seconds.</p>
+    <div class="lead-steps"><span>20 seconds</span><span>No payment</span><span>We call you back</span></div>
+    <form id="leadForm" class="lead-form">
+      <div><label for="leadName">Full name</label><input type="text" id="leadName" name="name" placeholder="Your name" autocomplete="name" required></div>
+      <div><label for="leadEmail">Email</label><input type="email" id="leadEmail" name="email" placeholder="you@email.com" autocomplete="email" required></div>
+      <div><label for="leadPhone">Phone / WhatsApp</label><input type="tel" id="leadPhone" name="phone" placeholder="+91 …" autocomplete="tel" required></div>
+      <button type="submit" class="lead-submit">Apply Now</button>
+    </form>
+    <p class="lead-fine">No spam. We&rsquo;ll only contact you about your application.</p>
+  </div>
+</div>
+
+
+
+
+
+

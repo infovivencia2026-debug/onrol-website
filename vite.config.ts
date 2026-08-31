@@ -9,6 +9,12 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: true,
     port: 8080,
+    watch: {
+      // images/ is a scratch folder for source artwork, not app input. Dropping
+      // a file in there while it is still being written crashed the dev server
+      // with EBUSY on Windows (chokidar cannot watch a locked file).
+      ignored: ["**/images/**"],
+    },
     hmr: {
       overlay: false,
     },

@@ -1,0 +1,1361 @@
+/* ==================================================================
+   HOME THEME — "paper & ember" (light)
+   Warm paper ground, near-black display type, ONROL orange as the only
+   accent, hairline rules and square edges. Two deliberate inversions —
+   the closing CTA and the footer — give the page a dark base to land on
+   so the light canvas never reads as unfinished.
+
+   Colour discipline:
+     - orange FILLS carry ink text (#14120F), never white — white on
+       #F46718 sits at ~2.9:1 and fails.
+     - orange TEXT on paper uses --t-accent-ink (#C2500B, ~4.6:1). Pure
+       #F46718 is reserved for fills, rules, icons and large display.
+   Scoped to #home-glydi; the file is injected after styles.css so
+   equal-specificity overrides land.
+   ================================================================== */
+
+#home-glydi{
+  --t-paper:#FBF9F5;        /* page ground — warm, not white */
+  --t-surface:#FFFFFF;
+  --t-white:#FFFFFF;      /* cards, panels */
+  --t-surface-2:#F4F0E8;    /* hover / recessed */
+  --t-ink:#14120F;          /* headings + inverted blocks */
+  --t-body:#4C473F;         /* body copy */
+  --t-muted:#8A8378;        /* labels, fine print */
+  --t-line:rgba(20,18,15,.13);
+  --t-line-hi:rgba(20,18,15,.26);
+  --t-accent:#F46718;       /* fills, rules, icons */
+  --t-accent-ink:#C2500B;   /* accent as TEXT on paper */
+  --t-accent-lt:#FFF1E7;    /* faintest orange wash */
+}
+
+/* ---- ground ---- */
+#home-glydi .panel,
+#home-glydi .build,
+#home-glydi .who{
+  background:var(--t-paper) !important;
+  color:var(--t-body) !important;
+}
+/* the two inverted blocks */
+#home-glydi .cta-section,
+#home-glydi .footer{
+  background:var(--t-ink) !important;
+  color:rgba(251,249,245,.72) !important;
+}
+#home-glydi .cta-section::before{ display:none !important; }  /* photo wash */
+
+/* styles.css ends with a blanket "every surface -> #fff !important" block.
+   The page ground is warmed a shade; :has() keeps it to the home document. */
+html:has(#home-glydi),
+html:has(#home-glydi) body,
+html:has(#home-glydi) main,
+html:has(#home-glydi) #root{ background:var(--t-paper, #FBF9F5) !important; }
+#home-glydi .who-head,
+#home-glydi .who-show,
+#home-glydi .panel-right,
+#home-glydi section,
+#home-glydi article{ background:transparent !important; }
+#home-glydi .footer-inner{ background:transparent !important; }
+
+/* section margin rules */
+#home-glydi .panel::before,
+#home-glydi .panel::after{ border-left:1px solid var(--t-line) !important; }
+
+/* ==================================================================
+   TYPE — big, tight, near-black; accents in orange
+   ================================================================== */
+#home-glydi .hero .hero-title,
+#home-glydi header.hero h1{
+  font-family:var(--font-display) !important;
+  font-weight:800 !important;
+  font-style:normal !important;
+  letter-spacing:-.038em !important;
+  line-height:.94 !important;
+  font-size:clamp(40px, 6.6vw, 108px) !important;
+}
+/* the hero sits on a dark photograph — it keeps light type */
+#home-glydi .hero .hero-title{ color:#FBF9F5 !important; }
+#home-glydi .hero-title i,
+#home-glydi .hero-title i.accent{ font-style:normal !important; }
+#home-glydi .hero-title i.accent{ color:var(--t-accent) !important; }
+
+#home-glydi .panel-head h1,
+#home-glydi .build-title,
+#home-glydi .who-title,
+#home-glydi .cta-title,
+#home-glydi .build-banner .bb-title{
+  font-family:var(--font-display) !important;
+  font-weight:800 !important;
+  font-style:normal !important;
+  letter-spacing:-.035em !important;
+  line-height:.98 !important;
+  color:var(--t-ink) !important;
+  text-transform:none;
+  text-wrap:balance;
+}
+#home-glydi .cta-title{ color:#FBF9F5 !important; }   /* on the inverted block */
+
+#home-glydi .panel-head h1{ font-size:clamp(38px, 6.2vw, 104px) !important; max-width:18ch; }
+#home-glydi .cta-title{ font-size:clamp(40px, 7.4vw, 124px) !important; }
+#home-glydi .who-title{ font-size:clamp(34px, 5.2vw, 82px) !important; }
+#home-glydi .build-title{ font-size:clamp(30px, 3.6vw, 54px) !important; }
+#home-glydi .build-banner .bb-title{ font-size:clamp(28px, 3.4vw, 52px) !important; }
+
+/* accents: the masked-rise effect wraps heading text in .ru-mask >
+   .ru-ink, so a genuine accent span lives one level deeper — matching a
+   plain "h1 span" would paint the whole heading. */
+#home-glydi .ru-mask,
+#home-glydi .ru-ink{ color:inherit !important; font-style:inherit !important; }
+#home-glydi .panel-head h1 .ru-ink span,
+#home-glydi .who-title .ru-ink span,
+#home-glydi .build-title .ru-ink span,
+#home-glydi .build-banner .bb-title span{
+  color:var(--t-accent-ink) !important;
+  font-style:normal !important;
+}
+/* on the inverted block the accent can stay at full brightness */
+#home-glydi .cta-title .ru-ink span{ color:var(--t-accent) !important; font-style:normal !important; }
+
+#home-glydi .panel-head > p,
+#home-glydi .who-sub,
+#home-glydi .build-desc,
+#home-glydi .build-banner p{
+  color:var(--t-body) !important;
+  font-size:clamp(14px, 1.15vw, 17px) !important;
+  line-height:1.7 !important;
+}
+#home-glydi .cta-sub{
+  color:rgba(251,249,245,.72) !important;
+  font-size:clamp(14px, 1.15vw, 17px) !important;
+  line-height:1.7 !important;
+}
+#home-glydi .who,
+#home-glydi .who-title,
+#home-glydi .who-sub{ color:var(--t-body) !important; }
+#home-glydi .who-title{ color:var(--t-ink) !important; }
+
+/* eyebrows: caps, tracked out, orange tick */
+#home-glydi .pipe-eyebrow,
+#home-glydi .cta-eyebrow,
+#home-glydi .lead-eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--font-display) !important;
+  font-size:11px !important;
+  font-weight:700 !important;
+  letter-spacing:.28em !important;
+  text-transform:uppercase !important;
+  color:var(--t-muted) !important;
+}
+#home-glydi .pipe-eyebrow::before,
+#home-glydi .cta-eyebrow::before{ content:""; width:26px; height:1px; background:var(--t-accent); }
+#home-glydi .build-text .pipe-eyebrow{ color:var(--t-muted) !important; }
+#home-glydi .cta-eyebrow{ color:rgba(251,249,245,.6) !important; }
+#home-glydi .cohort-note{ color:var(--t-body) !important; }
+#home-glydi .cohort-note b{ color:var(--t-ink) !important; }
+
+/* ==================================================================
+   BUTTONS — square, tracked caps, ink text on the orange fill
+   ================================================================== */
+#home-glydi .btn{
+  border-radius:0 !important;
+  font-family:var(--font-display) !important;
+  font-size:12.5px !important;
+  font-weight:700 !important;
+  letter-spacing:.16em !important;
+  text-transform:uppercase !important;
+  padding:16px 26px !important;
+  box-shadow:none !important;
+  transition:background .28s ease, color .28s ease, border-color .28s ease;
+}
+#home-glydi .btn.primary{
+  background:var(--t-accent) !important;
+  color:var(--t-ink) !important;
+  border:1px solid var(--t-accent) !important;
+}
+#home-glydi .btn.primary:hover{
+  background:var(--t-ink) !important;
+  border-color:var(--t-ink) !important;
+  color:#FBF9F5 !important;
+  opacity:1 !important;
+}
+#home-glydi .btn.secondary,
+#home-glydi .btn.ghost{
+  background:transparent !important;
+  color:var(--t-ink) !important;
+  border:1px solid var(--t-line-hi) !important;
+}
+#home-glydi .btn.secondary:hover,
+#home-glydi .btn.ghost:hover{
+  border-color:var(--t-accent) !important;
+  color:var(--t-accent-ink) !important;
+  background:transparent !important;
+  opacity:1 !important;
+}
+/* the closing CTA sits on ink — its ghost button flips */
+#home-glydi .cta-section .btn.ghost,
+#home-glydi .cta-section .btn.secondary{
+  color:#FBF9F5 !important;
+  border-color:rgba(251,249,245,.3) !important;
+}
+#home-glydi .btn:hover{ transform:none !important; }
+
+/* ==================================================================
+   STEPS BOARD — four phases as one hairline stair on white, ghost
+   numerals in orange. Stagger + scroll reveal left intact.
+   ================================================================== */
+#home-glydi .step-col--learn,
+#home-glydi .step-col--build,
+#home-glydi .step-col--launch,
+#home-glydi .step-col--earn{ --c:var(--t-surface); --c-ink:var(--t-paper); }
+
+#home-glydi .sc-card{
+  background:var(--t-surface) !important;
+  border:1px solid var(--t-line) !important;
+  border-bottom:2px solid var(--t-accent) !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  align-items:flex-start !important;
+  text-align:left !important;
+  padding:clamp(24px, 2.4vw, 40px) clamp(20px, 1.8vw, 30px) clamp(30px, 3vw, 48px) !important;
+}
+#home-glydi .sc-card::before{
+  background:var(--t-surface) !important;
+  border-left:1px solid var(--t-line);
+  border-right:1px solid var(--t-line);
+  border-top:1px solid var(--t-line);
+}
+#home-glydi .sc-num{
+  color:transparent !important;
+  -webkit-text-stroke:1.5px var(--t-accent);
+  filter:none !important;
+  font-weight:800 !important;
+  opacity:1;
+}
+#home-glydi .sc-ic svg{ stroke:var(--t-accent) !important; stroke-width:1.25 !important; }
+#home-glydi .sc-title{ color:var(--t-ink) !important; letter-spacing:.14em !important; }
+#home-glydi .sc-title span{ color:var(--t-muted) !important; }
+#home-glydi .sc-text{ color:var(--t-body) !important; max-width:34ch; }
+#home-glydi .step-col:hover .sc-card{
+  background:var(--t-accent-lt) !important;
+  border-color:var(--t-line-hi) !important;
+}
+
+/* ---- trust strip ---- */
+#home-glydi .panel .panel-trust{ border-top:1px solid var(--t-line) !important; }
+#home-glydi .pt-ic{
+  background:var(--t-surface) !important;
+  border:1px solid var(--t-line-hi) !important;
+  border-radius:0 !important;
+  color:var(--t-accent-ink) !important;
+}
+#home-glydi .pt-item:hover .pt-ic{
+  background:var(--t-accent) !important;
+  border-color:var(--t-accent) !important;
+  color:var(--t-ink) !important;
+  transform:none !important;
+}
+#home-glydi .pt-tx strong{ color:var(--t-ink) !important; }
+#home-glydi .pt-tx span{ color:var(--t-muted) !important; }
+
+/* ==================================================================
+   ABOUT / BANNER
+   ================================================================== */
+#home-glydi .boxframe{
+  background:var(--t-surface) !important;
+  border:1px solid var(--t-line) !important;
+  border-radius:0 !important;
+}
+#home-glydi .build-text{ background:transparent !important; }
+#home-glydi .build-lead .build-text{ border-left:1px solid var(--t-line) !important; }
+#home-glydi .build-desc{ color:var(--t-body) !important; }
+#home-glydi .vc-ring{
+  border-radius:0 !important;
+  border:1px solid #FBF9F5 !important;
+  background:rgba(20,18,15,.35) !important;
+}
+#home-glydi .vc-label{ color:#FBF9F5 !important; letter-spacing:.22em !important; }
+#home-glydi .vid-btn{
+  border-radius:0 !important;
+  background:rgba(20,18,15,.7) !important;
+  border:1px solid rgba(251,249,245,.28) !important;
+  color:#FBF9F5 !important;
+}
+#home-glydi .build-banner:hover{ background:var(--t-accent-lt) !important; }
+#home-glydi .build-banner .bb-right{ border-left:1px solid var(--t-line) !important; }
+#home-glydi .bb-cta{
+  background:var(--t-accent) !important;
+  color:var(--t-ink) !important;
+  border-radius:0 !important;
+  letter-spacing:.16em !important;
+  text-transform:uppercase !important;
+}
+#home-glydi .build-banner:hover .bb-cta{
+  background:var(--t-ink) !important;
+  color:#FBF9F5 !important;
+}
+
+/* ==================================================================
+   WHO IT'S FOR — square frames on paper, orange edge on hover
+   ================================================================== */
+#home-glydi .who-card{
+  border-radius:0 !important;
+  border:1px solid var(--t-line) !important;
+  background:var(--t-surface) !important;
+  box-shadow:none !important;
+  transition:border-color .3s ease;
+}
+#home-glydi .who-card:hover{ border-color:var(--t-accent) !important; }
+#home-glydi .who-card-img{ border-radius:0 !important; }
+
+/* ==================================================================
+   CLOSING CTA — inverted ink block, gridded, one orange bloom
+   ================================================================== */
+#home-glydi .cta-section::after{
+  background:
+    radial-gradient(52% 46% at 50% 44%, rgba(244,103,24,.22), rgba(244,103,24,0) 70%),
+    linear-gradient(rgba(251,249,245,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(251,249,245,.045) 1px, transparent 1px) !important;
+  background-size:auto, 58px 58px, 58px 58px !important;
+  background-position:center !important;
+}
+
+/* ==================================================================
+   FOOTER + LEAD MODAL — footer stays inverted; modal is paper
+   ================================================================== */
+/* the footer itself is defined once, site-wide, in footer-shared.css —
+   the boxes that used to live here fought it and put the home footer on a
+   different measure from every other page */
+#home-glydi .f-col a{ color:rgba(251,249,245,.78) !important; }
+#home-glydi .f-col a:hover{ color:var(--t-accent) !important; }
+#home-glydi .f-logo{
+  color:#FBF9F5 !important;
+  letter-spacing:.2em !important;
+  font-weight:800 !important;
+}
+#home-glydi .f-copy{ color:rgba(251,249,245,.5) !important; }
+#home-glydi .footer-news h4{ color:#FBF9F5 !important; }
+#home-glydi .footer-news p{ color:rgba(251,249,245,.6) !important; }
+#home-glydi .f-socials a{
+  border-radius:0 !important;
+  border:1px solid rgba(251,249,245,.2) !important;
+  color:rgba(251,249,245,.78) !important;
+}
+#home-glydi .f-socials a:hover{ border-color:var(--t-accent) !important; color:var(--t-accent) !important; }
+#home-glydi .f-form input{
+  border-radius:0 !important;
+  background:rgba(251,249,245,.06) !important;
+  border:1px solid rgba(251,249,245,.2) !important;
+  color:#FBF9F5 !important;
+}
+#home-glydi .lead-form input{
+  border-radius:0 !important;
+  background:var(--t-surface) !important;
+  border:1px solid var(--t-line-hi) !important;
+  color:var(--t-ink) !important;
+}
+#home-glydi .f-form input:focus,
+#home-glydi .lead-form input:focus{ border-color:var(--t-accent) !important; outline:none !important; }
+#home-glydi .f-form button,
+#home-glydi .lead-submit{
+  border-radius:0 !important;
+  background:var(--t-accent) !important;
+  color:var(--t-ink) !important;
+  font-weight:700 !important;
+  letter-spacing:.16em !important;
+  text-transform:uppercase !important;
+}
+#home-glydi .f-form button:hover,
+#home-glydi .lead-submit:hover{ background:#FBF9F5 !important; color:var(--t-ink) !important; }
+
+#home-glydi .lead-card{
+  border-radius:0 !important;
+  background:var(--t-paper) !important;
+  border:1px solid var(--t-line-hi) !important;
+  color:var(--t-body) !important;
+}
+#home-glydi .lead-card h3{ color:var(--t-ink) !important; }
+#home-glydi .lead-sub,
+#home-glydi .lead-fine{ color:var(--t-muted) !important; }
+#home-glydi .lead-x{ color:var(--t-body) !important; }
+
+/* the global 4px softening rule from styles.css — squared off here */
+#home-glydi :is(.compare-col,.faq-item,.quote,.stat,.panel,.ptab,.pt-ic){ border-radius:0 !important; }
+
+/* ---- mobile ---- */
+@media (max-width:900px){
+  /* stacked cards put the numeral and the icon in the same corner —
+     send the numeral to the opposite edge so neither is obscured */
+  #home-glydi .sc-num{
+    left:auto !important;
+    right:clamp(14px, 4vw, 24px) !important;
+    font-size:clamp(58px, 17vw, 96px) !important;
+  }
+  #home-glydi .build-lead .build-text{ border-left:0 !important; border-top:1px solid var(--t-line) !important; }
+  #home-glydi .build-banner .bb-right{ border-left:0 !important; border-top:1px solid var(--t-line) !important; }
+}
+
+/* ==================================================================
+   HOME HERO — built to the supplied reference
+   A cinematic dark frame; a huge condensed uppercase headline stacked
+   in the centre; a tracked sub-line beneath it; a shaft of light rising
+   through the middle with the figures flanking it; and a quiet cue at
+   the foot.
+
+   Archivo carries a real width axis (wdth 78), which is what gives the
+   reference its compressed headline — Manrope has no condensed cut.
+   Swap the photograph in .hero .hero-bg below.
+   ================================================================== */
+#home-glydi .hero{
+  position:relative;
+  /* full screen. svh rather than the vh styles.css uses, so a phone browser
+     chrome bar cannot push the cue out of the frame */
+  height:auto !important;
+  min-height:100svh !important;
+  display:flex !important;
+  flex-direction:column; align-items:flex-start; justify-content:center;
+  padding:calc(76px + clamp(28px, 4vh, 56px)) var(--page-edge) clamp(28px, 4vh, 52px) !important;
+  text-align:left;
+  background:#0B0A0A !important;
+  overflow:hidden;
+  isolation:isolate;
+}
+/* ==================================================================
+   THE HERO SLIDER
+   One picture per <i class="hero-slide">, each carrying its own --img.
+   A slide enters from the right, holds, and leaves to the left while the
+   next one arrives — and the slow drift and the travelling rays keep
+   running underneath, so the frame never looks like a static slideshow.
+
+   TO ADD A PICTURE: drop another <i class="hero-slide" style="--img:url(…)">
+   into .hero-bg in the markup. That is the whole job — the cycle counts
+   the slides it finds, so no timing here has to be touched.
+   ================================================================== */
+#home-glydi .hero .hero-bg{
+  --hold:6500ms;    /* how long each picture is held (read by the script) */
+  position:absolute; inset:0; z-index:0;
+  display:block !important;
+  background:#0B0A0A !important;
+  overflow:hidden;
+}
+#home-glydi .hero .hero-slide{
+  position:absolute; inset:0;
+  display:block;
+  opacity:0;
+  transform:translate3d(4%, 0, 0);
+  transition:opacity 1.15s ease, transform 1.5s cubic-bezier(.22,.72,.24,1);
+  will-change:opacity, transform;
+}
+/* the first picture shows even if the script never runs — reduced motion, a
+   JS failure or an old browser must never leave the hero blank. Once the
+   cycle takes over it marks the stage, and the classes below drive it. */
+#home-glydi .hero .hero-bg:not([data-slider="on"]) .hero-slide:first-child{ opacity:1; transform:none; }
+#home-glydi .hero .hero-slide.is-on{ opacity:1; transform:none; }
+#home-glydi .hero .hero-slide.is-out{ opacity:0; transform:translate3d(-4%, 0, 0); }
+#home-glydi .hero .hero-slide.from-left{ opacity:0; transform:translate3d(4%, 0, 0); }
+/* the picture itself sits on an inner layer, so the slide can carry the
+   travelling transform while this one carries the slow drift */
+#home-glydi .hero .hero-slide::before{
+  content:"";
+  position:absolute; inset:0;
+  /* --pos lets a slide name its own focal point: a tall picture on a wide
+     frame is cropped hard, and the subject is rarely at dead centre */
+  background:#0B0A0A var(--pos, center 54%) / var(--fit, cover) no-repeat;
+  background-image:var(--img);
+  filter:var(--image-filter, brightness(.58) contrast(1.06) saturate(1.02));
+  animation:heroDrift 46s ease-in-out infinite alternate;
+  will-change:transform;
+}
+
+/* The supplied portal and cleft frames are final artwork. Preserve their
+   complete 16:9 composition and original colour instead of cropping/dimming. */
+#home-glydi .hero .hero-slide[style*="-full.png"]::before{
+  filter:none;
+}
+
+
+/* one picture, no travel, for anyone who asked for less motion */
+@media (prefers-reduced-motion:reduce){
+  #home-glydi .hero .hero-slide{ transition:none !important; }
+  #home-glydi .hero .hero-slide::before{ animation:none !important; }
+}
+
+/* ------------------------------------------------------------------
+   THE FRAME MOVES
+   The picture is all streaks — the ridge is drawn in them and the lava
+   runs along them — so the motion follows the grain: the whole frame
+   breathes very slowly, and two warm bands drift sideways along the
+   flow, which makes the rays read as moving light rather than a
+   photograph sliding about. Nothing moves fast enough to notice while
+   you are reading the headline.
+   ------------------------------------------------------------------ */
+@keyframes heroDrift{
+  from{ transform:scale(1.015) translate3d(0, 0, 0); }
+  to  { transform:scale(1.05) translate3d(-.9%, -.45%, 0); }
+}
+
+/* the light travelling along the streaks */
+#home-glydi .hero .hero-bg::after{
+  content:"";
+  position:absolute; inset:-10% -40%;
+  z-index:1;
+  pointer-events:none;
+  background:
+    linear-gradient(100deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,190,120,.1) 22%,
+      rgba(255,120,40,.16) 34%,
+      rgba(255,190,120,.07) 46%,
+      rgba(255,255,255,0) 64%);
+  /* held to the band where the flow actually is */
+  -webkit-mask-image:linear-gradient(180deg, transparent 26%, #000 48%, #000 78%, transparent 96%);
+          mask-image:linear-gradient(180deg, transparent 26%, #000 48%, #000 78%, transparent 96%);
+  mix-blend-mode:screen;
+  animation:heroRays 26s linear infinite;
+  will-change:transform;
+}
+@keyframes heroRays{
+  from{ transform:translate3d(-34%, 0, 0); }
+  to  { transform:translate3d(34%, 0, 0); }
+}
+
+@media (prefers-reduced-motion:reduce){
+  #home-glydi .hero .hero-bg,
+  #home-glydi .hero .hero-bg::after{ animation:none !important; }
+}
+
+/* the frame: dark at the edges, open in the middle */
+#home-glydi .hero .hero-glow{
+  position:absolute; inset:0; z-index:1;
+  display:block !important;
+  background:
+    /* a soft ink pool behind the type, so the headline holds against the mist */
+    radial-gradient(66% 60% at 26% 46%, rgba(11,10,10,.72) 0%, rgba(11,10,10,.44) 50%, rgba(11,10,10,0) 82%),
+    linear-gradient(90deg, rgba(11,10,10,.6) 0%, rgba(11,10,10,.28) 42%, rgba(11,10,10,0) 72%),
+    radial-gradient(128% 84% at 42% 46%, rgba(11,10,10,0) 36%, rgba(11,10,10,.3) 78%, rgba(11,10,10,.78) 100%),
+    /* the foot of the frame is the brightest band in the picture and the row
+       of facts sits on it */
+    linear-gradient(180deg, rgba(11,10,10,.72) 0%, rgba(11,10,10,.28) 28%, rgba(11,10,10,.46) 62%, rgba(11,10,10,.72) 82%, rgba(11,10,10,.9) 100%) !important;
+  filter:none !important;
+  animation:none !important;
+}
+/* the shaft of light, rising from below the type */
+/* no drawn shaft: this photograph brings its own column of light, and a
+   second one only muddled the centre */
+#home-glydi .hero .hero-inner{
+  position:relative; z-index:3;
+  display:flex; flex-direction:column; align-items:flex-start;
+  width:min(1100px, 100%);
+  margin:auto 0 !important;   /* share the free height with the cue below */
+  text-align:left !important;
+}
+
+#home-glydi .hero .hero-kicker{
+  margin:0 0 clamp(14px, 2vh, 22px) !important;
+  font-size:9.5px !important; font-weight:800 !important;
+  letter-spacing:.26em !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,.62) !important;
+}
+#home-glydi .hero .hero-kicker span{ display:none !important; }
+
+#home-glydi .hero .hero-title{
+  margin:0 !important;
+  font-family:var(--font-display) !important;
+  font-weight:800 !important; font-style:normal !important;
+  font-variation-settings:"wdth" 78;
+  font-size:clamp(34px, 5.2vw, 76px) !important;
+  line-height:.96 !important;
+  letter-spacing:-.012em !important;
+  text-transform:uppercase !important;
+  color:#FFFFFF !important;
+  max-width:13ch;
+  text-shadow:0 4px 40px rgba(11,10,10,.5);
+}
+#home-glydi .hero .hero-title .hw,
+#home-glydi .hero .hero-title .hw i{ color:#FFFFFF !important; font-style:normal !important; }
+#home-glydi .hero .hero-title .hw i.accent{ color:var(--t-accent) !important; font-style:normal !important; }
+
+#home-glydi .hero .hero-sub{
+  margin:clamp(16px, 2.4vh, 26px) 0 0 !important;
+  max-width:52ch !important;
+  font-size:clamp(14px, 1.15vw, 17px) !important;
+  font-weight:400 !important;
+  line-height:1.6 !important;
+  letter-spacing:0 !important;
+  text-transform:none !important;
+  color:rgba(255,255,255,.78) !important;
+}
+
+/* the figures flank the shaft */
+#home-glydi .hero .hero-meta{
+  display:grid !important;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  align-items:stretch;
+  gap:0 clamp(18px, 3vw, 48px) !important;
+  width:min(880px, 100%);
+  margin:clamp(26px, 4.5vh, 54px) auto 0 !important;
+  padding-top:clamp(18px, 2.6vh, 28px) !important;
+  border-top:1px solid rgba(255,255,255,.22) !important;
+  border-left:0 !important; border-right:0 !important; border-bottom:0 !important;
+}
+#home-glydi .hero .hero-meta .hm-item{
+  display:flex; flex-direction:column; align-items:center; justify-content:space-between;
+  height:100%;
+  text-align:center;
+  border:0 !important; padding:0 !important; margin:0 !important;
+  background:none !important;      /* styles.css draws the rule as a gradient */
+}
+#home-glydi .hero .hero-meta dt{
+  order:2; margin-top:auto !important; padding-top:8px;
+  font-size:9.5px !important; font-weight:800 !important;
+  letter-spacing:.2em !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,.56) !important;
+}
+#home-glydi .hero .hero-meta dd{
+  order:1; margin:0 !important;
+  font-family:var(--font-display) !important;
+  font-variation-settings:"wdth" 80;
+  font-size:clamp(19px, 2.2vw, 32px) !important;
+  font-weight:800 !important; letter-spacing:-.02em !important;
+  line-height:1.05 !important;
+  color:rgba(255,255,255,.94) !important;
+}
+
+#home-glydi .hero .hero-actions{
+  margin-top:clamp(28px, 4.4vh, 52px) !important;
+  justify-content:flex-start !important;
+}
+#home-glydi .hero .hero-actions .btn.primary{
+  background:var(--t-accent) !important;
+  border:1px solid var(--t-accent) !important;
+  color:var(--t-ink) !important;
+  padding:17px 30px !important;
+}
+#home-glydi .hero .hero-actions .btn.primary:hover{
+  background:#FFFFFF !important;
+  border-color:#FFFFFF !important;
+  color:var(--t-ink) !important;
+}
+
+/* Manual carousel controls: generous hit targets, restrained glass treatment. */
+
+/* the cue sits centred at the foot */
+#home-glydi .hero .hero-cue{
+  position:relative !important;
+  z-index:3;
+  left:auto !important; right:auto !important; bottom:auto !important;
+  z-index:2;
+  margin:auto 0 0 !important;
+  padding-top:clamp(24px, 4vh, 48px);
+  display:flex !important; flex-direction:column; align-items:flex-start; gap:10px;
+  transform:none !important;
+}
+#home-glydi .hero .cue-label{
+  font-size:9.5px !important; font-weight:800 !important;
+  letter-spacing:.24em !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,.72) !important;
+}
+#home-glydi .hero .cue-rail{
+  width:1px !important; height:clamp(20px, 4vh, 40px) !important;
+  background:linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,0)) !important;
+}
+#home-glydi .hero .cue-rail i{ display:none !important; }
+
+@media (max-width:760px){
+  #home-glydi .hero{ min-height:100svh !important; }   /* full screen on a phone too */
+  #home-glydi .hero .hero-sub{ letter-spacing:.16em !important; }
+      }
+
+/* ==================================================================
+   ABOUT BLOCK + PROGRAMS BANNER — rebuilt
+   Both were flat white boxes divided by a hairline: a film with a square
+   play button beside a paragraph, and a heading beside a sentence. They
+   are the two things on the home page that carry the most weight, so
+   they now say more and look like it.
+   ================================================================== */
+
+/* ---- the film ---- */
+#home-glydi .build-lead{
+  grid-template-columns:minmax(0, 1.08fr) minmax(0, .92fr) !important;
+  align-items:stretch;
+  background:var(--t-white) !important;
+  border:1px solid var(--t-line) !important;
+  overflow:hidden;
+}
+#home-glydi .build-lead > *{ min-width:0; }
+#home-glydi .build-video{
+  position:relative;
+  width:100%; min-width:0;
+  aspect-ratio:4 / 3;
+  overflow:hidden;
+  background:var(--t-ink) !important;
+}
+#home-glydi .build-video video{ width:100%; height:100%; object-fit:cover; display:block; }
+
+/* the play affordance: a real ring that opens on hover, not a square */
+#home-glydi .vid-cover{
+  background:linear-gradient(180deg, rgba(14,13,12,.16) 0%, rgba(14,13,12,.5) 100%) !important;
+  transition:background .45s ease;
+}
+#home-glydi .build-lead:hover .vid-cover{ background:linear-gradient(180deg, rgba(14,13,12,.1) 0%, rgba(14,13,12,.42) 100%) !important; }
+#home-glydi .vc-ring{
+  position:relative;
+  width:clamp(64px, 6vw, 84px) !important;
+  height:clamp(64px, 6vw, 84px) !important;
+  border-radius:50% !important;
+  border:0 !important;
+  background:var(--t-accent) !important;
+  display:grid !important; place-items:center;
+  transition:transform .45s cubic-bezier(.22,.72,.24,1), background .3s ease;
+}
+#home-glydi .vc-ring::after{
+  content:"";
+  position:absolute; inset:-12px;
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:50%;
+  transition:inset .45s cubic-bezier(.22,.72,.24,1), opacity .45s ease;
+}
+#home-glydi .vid-cover:hover .vc-ring{ transform:scale(1.06) !important; background:#FFFFFF !important; }
+#home-glydi .vid-cover:hover .vc-ring::after{ inset:-20px; opacity:.75; }
+#home-glydi .vc-ring svg{ width:24px; height:24px; fill:var(--t-ink) !important; margin-left:3px; }
+#home-glydi .vc-label{
+  margin-top:16px;
+  font-size:10px !important; font-weight:800 !important;
+  letter-spacing:.26em !important; text-transform:uppercase !important;
+  color:#FFFFFF !important;
+}
+/* the film's own caption, bottom-left, so the panel is not silent */
+#home-glydi .build-video::after{
+  content:"2 min film";
+  position:absolute; left:16px; bottom:16px; z-index:3;
+  padding:5px 10px;
+  background:rgba(14,13,12,.62);
+  backdrop-filter:blur(6px);
+  font-size:9.5px; font-weight:800; letter-spacing:.16em; text-transform:uppercase;
+  color:rgba(255,255,255,.86);
+  pointer-events:none;
+}
+#home-glydi .build-video.is-playing::after,
+#home-glydi .build-video.started::after{ opacity:0; }
+
+#home-glydi .build-text{
+  display:flex; flex-direction:column;
+  padding:clamp(26px, 3vw, 52px) !important;
+  border-left:1px solid var(--t-line) !important;
+}
+#home-glydi .build-desc{ margin-bottom:0 !important; }
+
+/* the proof list: three facts on hairlines, the reason to believe the copy */
+#home-glydi .build-proof{
+  list-style:none;
+  margin:clamp(20px, 2.4vw, 30px) 0 0 !important;
+  padding:0 !important;
+  border-top:1px solid var(--t-line);
+}
+#home-glydi .build-proof li{
+  display:grid;
+  grid-template-columns:clamp(74px, 8vw, 104px) minmax(0, 1fr);
+  gap:14px;
+  align-items:baseline;
+  padding:11px 0;
+  border-bottom:1px solid var(--t-line);
+}
+#home-glydi .build-proof b{
+  font-size:11px; font-weight:800; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--t-accent-ink);
+}
+#home-glydi .build-proof span{
+  font-size:14px; line-height:1.5;
+  color:var(--t-body);
+}
+#home-glydi .build-link{
+  display:inline-flex; align-items:center; gap:9px;
+  margin-top:clamp(18px, 2.2vw, 26px);
+  font-size:11px; font-weight:800; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--t-ink);
+  transition:color .28s ease;
+}
+#home-glydi .build-link em{ font-style:normal; transition:transform .4s cubic-bezier(.22,.72,.24,1); }
+#home-glydi .build-link:hover{ color:var(--t-accent-ink); }
+#home-glydi .build-link:hover em{ transform:translateX(5px); }
+
+/* ==================================================================
+   THE PROGRAMS BANNER — an ink block that names the programs
+   ================================================================== */
+#home-glydi .build-banner{
+  display:grid !important;
+  grid-template-columns:minmax(0, .92fr) minmax(0, 1.08fr) !important;
+  gap:clamp(24px, 4vw, 68px) !important;
+  align-items:center;
+  padding:clamp(28px, 3.4vw, 56px) !important;
+  background:var(--t-ink) !important;
+  border:1px solid var(--t-ink) !important;
+}
+#home-glydi .build-banner:hover{ background:var(--t-ink) !important; }
+#home-glydi .bb-eyebrow{
+  display:flex; align-items:center; gap:10px;
+  margin:0 0 clamp(12px, 1.6vw, 18px) !important;
+  font-size:10px !important; font-weight:800 !important;
+  letter-spacing:.26em !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,.6) !important;
+}
+#home-glydi .bb-eyebrow::before{ content:""; width:22px; height:1px; background:var(--t-accent); }
+#home-glydi .build-banner .bb-title{
+  margin:0 !important;
+  font-size:clamp(28px, 3.2vw, 46px) !important;
+  line-height:1.02 !important;
+  letter-spacing:-.035em !important;
+  color:#FFFFFF !important;
+}
+#home-glydi .build-banner .bb-title span{ color:var(--t-accent) !important; }
+#home-glydi .build-banner .bb-lede{
+  margin:clamp(14px, 1.8vw, 20px) 0 0 !important;
+  max-width:44ch;
+  font-size:14.5px !important; line-height:1.65 !important;
+  color:rgba(255,255,255,.72) !important;
+}
+#home-glydi .build-banner .bb-cta{
+  display:inline-flex; align-items:center; gap:10px;
+  margin-top:clamp(18px, 2.2vw, 26px);
+  padding:13px 24px !important;
+  border-radius:0 !important;
+  background:var(--t-accent) !important;
+  color:var(--t-ink) !important;
+  font-size:11px !important; font-weight:800 !important;
+  letter-spacing:.14em !important; text-transform:uppercase !important;
+  transition:background .28s ease, color .28s ease;
+}
+#home-glydi .build-banner .bb-cta:hover{ background:#FFFFFF !important; }
+#home-glydi .build-banner .bb-cta span{ transition:transform .4s cubic-bezier(.22,.72,.24,1); }
+#home-glydi .build-banner .bb-cta:hover span{ transform:translateX(5px); }
+
+/* the five programs, listed */
+#home-glydi .bb-list{ list-style:none; margin:0; padding:0; border-top:1px solid rgba(255,255,255,.16); }
+#home-glydi .bb-list li{ border-bottom:1px solid rgba(255,255,255,.16); }
+#home-glydi .bb-list a{
+  display:grid;
+  grid-template-columns:34px minmax(0, 1fr) auto;
+  gap:16px;
+  align-items:center;
+  padding:13px 0 13px 4px;
+  text-decoration:none;
+  transition:padding-left .3s ease, background .3s ease;
+}
+#home-glydi .bb-list a:hover{ padding-left:14px; background:rgba(255,255,255,.04); }
+#home-glydi .bb-list b{
+  font-size:10px; font-weight:800; letter-spacing:.12em;
+  color:rgba(255,255,255,.44);
+  font-variant-numeric:tabular-nums;
+  transition:color .28s ease;
+}
+#home-glydi .bb-list span{
+  font-size:clamp(15px, 1.4vw, 19px); font-weight:800; letter-spacing:-.02em;
+  color:#FFFFFF;
+}
+#home-glydi .bb-list i{
+  font-style:normal;
+  font-size:10px; font-weight:800; letter-spacing:.16em; text-transform:uppercase;
+  color:rgba(255,255,255,.5);
+  white-space:nowrap;
+  transition:color .28s ease;
+}
+#home-glydi .bb-list a:hover b,
+#home-glydi .bb-list a:hover i{ color:var(--t-accent); }
+
+@media (max-width:900px){
+  #home-glydi .build-lead{ grid-template-columns:minmax(0,1fr) !important; }
+  #home-glydi .build-text{ border-left:0 !important; border-top:1px solid var(--t-line) !important; }
+  #home-glydi .build-banner{ grid-template-columns:minmax(0,1fr) !important; }
+  #home-glydi .build-proof li{ grid-template-columns:66px minmax(0,1fr); }
+}
+@media (prefers-reduced-motion:reduce){
+  #home-glydi .vid-cover:hover .vc-ring{ transform:none !important; }
+  #home-glydi .bb-list a:hover{ padding-left:4px; }
+}
+
+/* ==================================================================
+   HOME — THE TYPE PASS (every section below the hero)
+
+   The page was set in four unrelated sizes and two unrelated faces:
+
+     · the section headings ran 52 / 75 / 89 / 107px with no ratio
+       between them, so nothing read as the same level of heading
+     · every orange phrase inside a heading — "ONROL teaches
+       execution.", "Start Building." — was falling through to
+       Instrument Sans in a SYNTHESISED italic, because the type
+       system maps <span> to the body face. Half of each headline was
+       literally a different typeface, slanted by the browser
+     · body copy ran 16.5px in one section and 19px in the next
+     · sentence-case lines carried uppercase letter-spacing (the
+       cohort note tracked at 1.4px), and the step cards stacked two
+       tracked uppercase lines on top of each other
+
+   One scale now runs the page:
+
+     lead      clamp(40px, 5vw, 68px)   the opening statement
+     section   clamp(34px, 3.8vw, 54px) every section heading
+     lede      17px / 1.65              the line under a heading
+     body      15.5px / 1.7             everything else
+     label     10.5px / .2em uppercase  eyebrows, keys, buttons
+
+   Display face for anything above 20px, body face below it, and the
+   accent phrases stay in the display face — upright, coloured, not
+   slanted.
+   ================================================================== */
+
+/* ---- the accent inside a heading: same face, upright ---- */
+#home-glydi .panel-head h1 span,
+#home-glydi .build-title span,
+#home-glydi .who-title span,
+#home-glydi .cta-title span,
+#home-glydi .cta-title em,
+#home-glydi .cta-title i,
+#home-glydi .bb-title span,
+#home-glydi .pipe-title span{
+  font-family:var(--font-display) !important;
+  font-style:normal !important;      /* it was a browser-slanted body face */
+  font-weight:inherit !important;
+  font-variation-settings:inherit;
+  letter-spacing:inherit !important;
+  color:var(--t-accent-ink) !important;
+}
+#home-glydi .cta-title span,
+#home-glydi .cta-title em,
+#home-glydi .cta-title i,
+#home-glydi .bb-title span{ color:var(--t-accent) !important; }
+
+/* ---- the opening statement ---- */
+#home-glydi .panel-head h1{
+  font-size:clamp(40px, 5vw, 68px) !important;
+  line-height:1.02 !important;
+  letter-spacing:-.035em !important;
+  max-width:17ch;
+}
+
+/* ---- every section heading, one size ---- */
+#home-glydi .build-title,
+#home-glydi .who-title,
+#home-glydi .cta-title{
+  font-size:clamp(34px, 3.8vw, 54px) !important;
+  line-height:1.04 !important;
+  letter-spacing:-.032em !important;
+}
+#home-glydi .who-title{ max-width:19ch; }
+#home-glydi .cta-title{ max-width:16ch; }
+#home-glydi .build-title{ max-width:15ch; }
+
+/* ---- the line under a heading ---- */
+#home-glydi .panel-head > p:first-of-type,
+#home-glydi .who-sub,
+#home-glydi .cta-sub,
+#home-glydi .build-desc{
+  font-size:17px !important;
+  line-height:1.65 !important;
+  letter-spacing:0 !important;
+  max-width:60ch;
+}
+
+/* ---- body ---- */
+#home-glydi .sc-text{
+  font-size:15.5px !important;
+  line-height:1.7 !important;
+  letter-spacing:0 !important;
+}
+/* the block above matches it as .panel-head > p, so this needs the same reach */
+#home-glydi .panel-head > p.cohort-note,
+#home-glydi .cohort-note{
+  font-size:14px !important;
+  letter-spacing:0 !important;    /* it was tracked like a label */
+}
+#home-glydi .cohort-note b{ font-weight:700 !important; }
+
+/* ---- labels: one definition for every tracked line ---- */
+#home-glydi .pipe-eyebrow,
+#home-glydi .cta-eyebrow,
+#home-glydi .bb-eyebrow,
+#home-glydi .build-proof b,
+#home-glydi .sc-title span,
+#home-glydi .pt-tx span{
+  font-family:var(--font-body) !important;
+  font-size:10.5px !important;
+  font-weight:800 !important;
+  letter-spacing:.2em !important;
+  text-transform:uppercase !important;
+  line-height:1.4 !important;
+}
+
+/* ---- the four step cards ---- */
+#home-glydi .sc-title{
+  display:flex; flex-direction:column; gap:7px;
+  font-family:var(--font-display) !important;
+  font-size:21px !important;
+  font-weight:800 !important;
+  /* it was uppercase and tracked, with a second tracked line under it:
+     two label styles stacked, and neither read as a heading */
+  letter-spacing:-.02em !important;
+  text-transform:none !important;
+  line-height:1.1 !important;
+}
+#home-glydi .sc-title span{ color:var(--t-muted) !important; }
+
+/* ---- the trust row ---- */
+#home-glydi .pt-tx strong{
+  font-family:var(--font-body) !important;
+  font-size:15px !important; font-weight:700 !important;
+  letter-spacing:-.005em !important;
+  line-height:1.35 !important;
+}
+#home-glydi .pt-tx span{
+  font-size:10px !important;
+  color:var(--t-muted) !important;
+}
+
+/* ---- the programs list in the banner ---- */
+#home-glydi .bb-list span{
+  font-family:var(--font-display) !important;
+  font-size:clamp(15px, 1.35vw, 18px) !important;
+  letter-spacing:-.022em !important;
+}
+#home-glydi .build-banner .bb-lede{
+  font-size:15px !important;
+  line-height:1.65 !important;
+  max-width:46ch;
+}
+
+/* ---- controls carry the label style ---- */
+#home-glydi .btn.primary,
+#home-glydi .btn.secondary,
+#home-glydi .build-link,
+#home-glydi .bb-cta{
+  font-family:var(--font-body) !important;
+  font-size:11.5px !important;
+  font-weight:800 !important;
+  letter-spacing:.14em !important;
+  text-transform:uppercase !important;
+}
+
+@media (max-width:760px){
+  #home-glydi .panel-head h1{ max-width:none; }
+  #home-glydi .who-title,
+  #home-glydi .cta-title,
+  #home-glydi .build-title{ max-width:none; }
+  #home-glydi .sc-title{ font-size:19px !important; }
+}
+
+/* ==================================================================
+   THE HERO — headline, promise, action, facts
+
+   It was a kicker, a headline and a lone button on a lot of empty
+   frame. This gives the block the shape a landing hero needs: what you
+   get, how long it takes, what to press, and the three facts a visitor
+   checks before pressing it — all on the page edge, one measure, one
+   scale.
+   ================================================================== */
+#home-glydi .hero .hero-title{
+  /* 15ch broke the line four ways and pushed the facts onto the busiest
+     part of the picture */
+  max-width:19ch;
+  font-size:clamp(32px, 4.6vw, 66px) !important;
+  line-height:.98 !important;
+}
+#home-glydi .hero .hero-sub{
+  margin:clamp(16px, 2.2vh, 24px) 0 0 !important;
+  max-width:52ch;
+  font-family:var(--font-body) !important;
+  font-size:clamp(15px, 1.25vw, 18px) !important;
+  font-weight:400 !important;
+  line-height:1.65 !important;
+  letter-spacing:0 !important;
+  text-transform:none !important;
+  color:rgba(255,255,255,.82) !important;
+}
+
+#home-glydi .hero .hero-actions{
+  display:flex !important; flex-wrap:wrap; align-items:center;
+  gap:16px 28px;
+  margin-top:clamp(24px, 3.4vh, 40px) !important;
+  justify-content:flex-start !important;
+}
+#home-glydi .hero .hero-alt{
+  display:inline-flex; align-items:center; gap:9px;
+  font-family:var(--font-body) !important;
+  font-size:11.5px !important; font-weight:800 !important;
+  letter-spacing:.14em !important; text-transform:uppercase !important;
+  color:#FFFFFF !important;
+  text-decoration:none !important;
+  transition:color .25s ease;
+}
+#home-glydi .hero .hero-alt em{ font-style:normal; transition:transform .4s cubic-bezier(.22,.72,.24,1); }
+#home-glydi .hero .hero-alt:hover{ color:var(--t-accent) !important; }
+#home-glydi .hero .hero-alt:hover em{ transform:translateX(5px); }
+
+/* the three facts: a hairline rule, then label over value, all on one
+   baseline so they read as a row rather than three loose pairs */
+#home-glydi .hero .hero-facts{
+  display:flex !important; flex-wrap:wrap;
+  gap:0 clamp(24px, 4vw, 64px) !important;
+  margin:clamp(26px, 3.4vh, 40px) 0 0 !important;
+  padding-top:clamp(15px, 2vh, 22px) !important;
+  border-top:1px solid rgba(255,255,255,.2) !important;
+  border-left:0 !important; border-right:0 !important; border-bottom:0 !important;
+}
+#home-glydi .hero .hero-facts > div{
+  display:flex; flex-direction:column; gap:6px;
+  border:0 !important; padding:0 !important; margin:0 !important;
+  background:none !important;
+}
+#home-glydi .hero .hero-facts dt{
+  order:1;
+  font-family:var(--font-body) !important;
+  font-size:9.5px !important; font-weight:800 !important;
+  letter-spacing:.22em !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,.55) !important;
+}
+#home-glydi .hero .hero-facts dd{
+  order:2; margin:0 !important;
+  font-family:var(--font-display) !important;
+  font-variation-settings:"wdth" 88;
+  font-size:clamp(15px, 1.5vw, 19px) !important;
+  font-weight:800 !important;
+  letter-spacing:-.02em !important;
+  line-height:1.15 !important;
+  color:#FFFFFF !important;
+}
+
+@media (max-width:640px){
+  #home-glydi .hero .hero-facts{ gap:18px 0 !important; flex-direction:column; }
+  #home-glydi .hero .hero-actions{ gap:14px 20px; }
+}
+
+/* ==================================================================
+   THE HERO DECK — glass frames turning through 3D space
+
+   The ground is the orange fan, so the words need their own dark side
+   of the frame and the deck gets the light side. Five frosted frames
+   travel one behind the other on a circle: each one rises out of the
+   depth on the right, turns square-on as it reaches the front, then
+   slides away to the left and falls back into the stack. Real 3D —
+   perspective on the stage, rotateY on the frames — not a fade.
+   ================================================================== */
+
+/* the picture: no dimming, this one is meant to be bright */
+#home-glydi .hero .hero-slide::before{
+  filter:saturate(1.04) contrast(1.02) !important;
+  animation:none !important;                 /* the deck carries the motion now */
+}
+/* the words keep a dark quarter to sit on */
+#home-glydi .hero .hero-glow{
+  background:
+    linear-gradient(90deg, rgba(12,7,4,.86) 0%, rgba(12,7,4,.66) 34%, rgba(12,7,4,.16) 62%, rgba(12,7,4,0) 82%),
+    linear-gradient(180deg, rgba(12,7,4,.44) 0%, rgba(12,7,4,0) 30%, rgba(12,7,4,.5) 100%) !important;
+}
+
+#home-glydi .hero .hero-deck{
+  position:absolute;
+  z-index:2;
+  right:clamp(24px, 4vw, 78px);
+  top:50%;
+  width:min(40vw, 520px);
+  height:clamp(280px, 38vh, 360px);
+  margin-top:-5vh;
+  transform:translateY(-50%);
+  perspective:1200px;                 /* the stage */
+  perspective-origin:50% 50%;
+  pointer-events:none;
+  /* the frames dissolve at the edges of the stage instead of sliding out
+     across the headline */
+  -webkit-mask-image:radial-gradient(120% 120% at 50% 50%, #000 58%, rgba(0,0,0,.35) 80%, transparent 100%);
+          mask-image:radial-gradient(120% 120% at 50% 50%, #000 58%, rgba(0,0,0,.35) 80%, transparent 100%);
+}
+
+#home-glydi .hero .gfx{
+  --span:5;                            /* frames on the circle */
+  --hold:3.4s;                         /* time in front, per frame */
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  gap:8px;
+  padding:clamp(20px, 2.4vw, 30px);
+  border-radius:18px;
+
+  /* the glass itself */
+  background:
+    linear-gradient(150deg, rgba(255,255,255,.46) 0%, rgba(255,255,255,.16) 48%, rgba(255,255,255,.24) 100%);
+  border:1px solid rgba(255,255,255,.42);
+  box-shadow:
+    0 30px 70px -30px rgba(60,16,0,.6),
+    inset 0 1px 0 rgba(255,255,255,.5),
+    inset 0 -1px 0 rgba(255,255,255,.14);
+  -webkit-backdrop-filter:blur(18px) saturate(1.5);
+          backdrop-filter:blur(18px) saturate(1.5);
+
+  transform-style:preserve-3d;
+  animation:gfxTurn calc(var(--hold) * var(--span)) cubic-bezier(.5,.05,.25,1) infinite;
+  /* a NEGATIVE delay runs the circle backwards — 01 was followed by 05.
+     A positive one with backwards fill keeps them in order and parked
+     out of sight until their turn. */
+  animation-delay:calc(var(--hold) * var(--n));
+  animation-fill-mode:backwards;
+  will-change:transform, opacity;
+}
+/* the specular edge that sells it as glass */
+#home-glydi .hero .gfx::before{
+  content:"";
+  position:absolute; inset:0;
+  border-radius:inherit;
+  background:linear-gradient(120deg, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 34%);
+  opacity:.7;
+  pointer-events:none;
+}
+
+#home-glydi .hero .gfx-k{
+  font-family:var(--font-body) !important;
+  font-size:10px; font-weight:800;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:rgba(255,255,255,.9);
+}
+#home-glydi .hero .gfx h2{
+  margin:0 !important;
+  font-family:var(--font-display) !important;
+  font-size:clamp(20px, 2.2vw, 30px) !important;
+  font-weight:800 !important;
+  letter-spacing:-.03em !important; line-height:1.05 !important;
+  color:#FFFFFF !important;
+  text-shadow:0 2px 20px rgba(60,16,0,.4);
+}
+#home-glydi .hero .gfx p{
+  margin:0 !important;
+  max-width:32ch;
+  font-size:13.5px !important; line-height:1.55 !important;
+  color:rgba(255,255,255,.86) !important;
+}
+
+/* one turn of the circle: back right → front → away left → back */
+/* One frame is in front at a time: with five on the circle, each one owns
+   a fifth of the cycle — in, hold, away — and is parked out of sight for
+   the rest. A longer window than that and three of them pile up in the
+   middle, which is exactly what it was doing. */
+@keyframes gfxTurn{
+  0%    { opacity:0; transform:translate3d(30%, 6%, -400px) rotateY(-32deg) rotateX(5deg) scale(.9); }
+  3%    { opacity:1; transform:translate3d(14%, 3%, -180px) rotateY(-18deg) rotateX(3deg) scale(.96); }
+  7%    { opacity:1; transform:translate3d(0, 0, 0) rotateY(-7deg) rotateX(2deg) scale(1); }
+  15%   { opacity:1; transform:translate3d(0, 0, 0) rotateY(-7deg) rotateX(2deg) scale(1); }
+  21%   { opacity:0; transform:translate3d(-12%, -4%, 130px) rotateY(12deg) rotateX(-3deg) scale(1.03); }
+  21.01%,
+  100%  { opacity:0; transform:translate3d(30%, 6%, -400px) rotateY(-32deg) rotateX(5deg) scale(.9); }
+}
+
+/* the deck is decoration. Below 1180 there is no room for it beside the
+   words — it was sitting under the buttons and the facts row — so it
+   stands down and the type gets the whole frame. */
+@media (max-width:1180px){
+  #home-glydi .hero .hero-deck{ display:none; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  #home-glydi .hero .gfx{ animation:none; opacity:0; }
+  #home-glydi .hero .gfx:first-child{ opacity:1; transform:none; }
+}
+
+/* ==================================================================
+   THE HERO, SECOND PASS
+
+   Five things were holding it back:
+
+     1. the accent line was orange type on an orange ground — the one
+        phrase meant to carry the promise had the least contrast on the
+        page. It goes to ink, which on this orange is the strongest
+        pairing available and still brand-correct.
+     2. the glass frame floated alone in a large void. Two ghost panes
+        now sit behind it, so the deck reads as a stack with depth even
+        at the moment a frame is turning away.
+     3. the fan was dead still. A very slow drift moves the rays through
+        the frame — the light changes, nothing else does.
+     4. a flat vector gradient bands badly on real screens; a fine grain
+        over the top kills the banding and gives the ground a surface.
+     5. the facts sat mid-frame with a third of the hero empty beneath
+        them. They become the floor of the section: a full-width bar on
+        a hairline, which also gives the scroll cue something to sit on.
+   ================================================================== */
+
+/* ---- 1. the promise line, in ink ----
+   A ported script splits the headline into <span class="hw"><i> per word
+   and tags the accent words i.accent, so the colour has to be set there;
+   a rule on the span never reaches them. */
+#home-glydi .hero .hero-title i.accent,
+#home-glydi .hero .hero-title .hw i.accent{
+  color:#1A0A02 !important;
+  text-shadow:0 1px 0 rgba(255,255,255,.16);
+}
+
+/* ---- 3. the ground drifts ---- */
+#home-glydi .hero .hero-slide::before{
+  animation:fanDrift 34s ease-in-out infinite alternate !important;
+  transform-origin:72% 40%;
+}
+@keyframes fanDrift{
+  from{ transform:scale(1.04) rotate(0deg); }
+  to  { transform:scale(1.1) rotate(-1.1deg); }
+}
+
+/* ---- 4. the grain ---- */
+#home-glydi .hero::after{
+  content:"";
+  position:absolute; inset:0; z-index:2;
+  pointer-events:none;
+  opacity:.5;
+  mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='.42'/></svg>");
+  background-size:160px 160px;
+}
+
+/* ---- 2. one frame at a time ----
+   The two ghost panes behind the deck are gone: the single frame turning
+   through the space on its own is the animation that was wanted. */
+#home-glydi .hero .hero-deck::before,
+#home-glydi .hero .hero-deck::after{ content:none !important; }
+#home-glydi .hero .gfx{ z-index:1; }
+
+/* ---- 5. the facts become the floor of the hero ---- */
+#home-glydi .hero{ padding-bottom:0 !important; }
+#home-glydi .hero .hero-inner{ padding-bottom:clamp(24px, 4vh, 44px); }
+#home-glydi .hero .hero-facts{
+  position:absolute;
+  left:0; right:0; bottom:0;
+  z-index:3;
+  display:grid !important;
+  grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+  gap:0 !important;
+  margin:0 !important;
+  padding:clamp(16px, 2.2vh, 24px) var(--page-edge) clamp(18px, 2.4vh, 26px) !important;
+  border-top:1px solid rgba(255,255,255,.22) !important;
+  background:linear-gradient(180deg, rgba(12,7,4,0) 0%, rgba(12,7,4,.42) 100%);
+  -webkit-backdrop-filter:blur(2px);
+          backdrop-filter:blur(2px);
+}
+#home-glydi .hero .hero-facts > div{ padding-right:clamp(12px, 2vw, 28px); }
+
+/* the cue moves out of the bar's way and onto the right of it */
+#home-glydi .hero .hero-cue{
+  position:absolute !important;
+  right:var(--page-edge) !important; left:auto !important;
+  bottom:clamp(84px, 12vh, 118px) !important;
+  margin:0 !important; padding:0 !important;
+  flex-direction:row !important; align-items:center !important; gap:12px;
+}
+#home-glydi .hero .cue-rail{ width:clamp(26px, 4vw, 46px) !important; height:1px !important; }
+
+@media (max-width:1180px){
+  #home-glydi .hero .hero-cue{ display:none !important; }
+}
+@media (max-width:640px){
+  #home-glydi .hero .hero-facts{
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:12px 0 !important;
+    padding-block:14px 18px !important;
+  }
+  #home-glydi .hero .hero-facts > div{ flex-direction:row; align-items:baseline; gap:10px; }
+  #home-glydi .hero .hero-facts dt{ order:1; min-width:96px; }
+  #home-glydi .hero .hero-facts dd{ order:2; font-size:14px !important; }
+}
+@media (prefers-reduced-motion:reduce){
+  #home-glydi .hero .hero-slide::before{ animation:none !important; }
+}

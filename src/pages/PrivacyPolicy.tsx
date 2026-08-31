@@ -241,7 +241,7 @@ const PrivacyPolicy = () => {
                     info@onrol.in
                   </a>
                   <br />
-                  Phone: +91 96093 12345
+                  Phone: +91 99665 77659
                 </p>
               </section>
             </div>

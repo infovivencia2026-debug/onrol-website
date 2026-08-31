@@ -15,12 +15,11 @@ export const BRAND_THESIS =
   "IITs teach you what AI is. ONROL teaches you what to do with AI.";
 
 // ── Contact ──────────────────────────────────────────────────────────────
-// TODO(verify): user to confirm/replace placeholder phone before launch.
 // Display value drops the +91 country code for a cleaner look. The
 // tel:-link / WhatsApp link variant below keeps the full international
 // digits so dialling works correctly from outside India.
-export const CONTACT_PHONE = "96093 12345";
-export const CONTACT_PHONE_DIGITS = "91" + "96093 12345".replace(/\D/g, "");
+export const CONTACT_PHONE = "99665 77659";
+export const CONTACT_PHONE_DIGITS = "91" + CONTACT_PHONE.replace(/\D/g, "");
 export const CONTACT_EMAIL = "info@onrol.in";
 
 // Full physical address (used in LocalBusiness schema, Footer, Contact page).

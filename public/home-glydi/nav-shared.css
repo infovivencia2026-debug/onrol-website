@@ -1,0 +1,123 @@
+/* ==================================================================
+   NAV — one bar, every page.
+   Each page theme used to restyle the nav for itself, so the bar looked
+   different on the home, About and Programs. This is the single
+   definition: it is loaded by mountGlydiChrome for every ported page,
+   AFTER styles.css, and the page themes no longer touch the nav.
+
+   If you are theming a page, do not add nav rules there. Change them
+   here, once.
+   ================================================================== */
+
+#home-glydi{
+  --nav-bg:#FFFFFF;
+  --nav-ink:#14120F;
+  --nav-body:#4A453E;
+  --nav-line:rgba(18,17,16,.13);
+  --nav-accent:#F46718;
+  --nav-accent-dk:#C2500B;
+}
+
+/* the bar */
+#home-glydi .nav,
+#home-glydi .nav.topbar{
+  background:var(--nav-bg) !important;
+  border-bottom:1px solid var(--nav-line) !important;
+  backdrop-filter:none !important;
+  box-shadow:none !important;
+}
+
+/* links */
+#home-glydi .nav .nav-links a,
+#home-glydi .nav.topbar .nav-links a{
+  color:var(--nav-body) !important;
+  font-family:var(--font-display) !important;
+  font-size:12px !important;
+  font-weight:700 !important;
+  letter-spacing:.1em !important;
+  text-transform:uppercase !important;
+}
+#home-glydi .nav .nav-links a:hover,
+#home-glydi .nav.topbar .nav-links a:hover,
+#home-glydi .nav .nav-links a.is-active,
+#home-glydi .nav.topbar .nav-links a.is-active{ color:var(--nav-accent-dk) !important; }
+
+/* the whole bar layout is defined here, not just its colours: the flagship
+   program pages laid their links out right-aligned in a 460px group, while
+   every other page ran them left after the mark. Pinning the flex model
+   means the bar cannot drift page to page. */
+#home-glydi .nav,
+#home-glydi .nav.topbar{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  padding-inline:var(--page-edge, 75px) !important;
+  border-top:0 !important;
+  border-left:0 !important;
+  border-right:0 !important;
+}
+@media (min-width:901px){
+  #home-glydi .nav .nav-links,
+  #home-glydi .nav.topbar .nav-links{
+    flex:1 1 auto !important;
+    width:auto !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    gap:14px !important;
+    padding-left:70px !important;   /* clearance for the fixed ONROL mark */
+    margin:0 !important;
+  }
+}
+#home-glydi .nav .nav-links a.nav-apply,
+#home-glydi .nav.topbar .nav-links a.nav-apply{ margin-left:auto !important; }
+
+/* the link box itself is pinned, not just its type: the flagship program
+   pages carried their own padding, which made the bar a pixel taller there
+   than everywhere else. */
+#home-glydi .nav .nav-links a:not(.nav-apply),
+#home-glydi .nav.topbar .nav-links a:not(.nav-apply){
+  display:inline-flex !important;
+  align-items:center !important;
+  box-sizing:border-box !important;
+  height:36px !important;
+  padding:0 10px !important;
+  line-height:18px !important;
+  border:0 !important;
+}
+#home-glydi .nav,
+#home-glydi .nav.topbar{
+  min-height:72px !important;
+  align-items:center !important;
+}
+
+/* the apply button */
+#home-glydi .nav .nav-links a.nav-apply,
+#home-glydi .nav.topbar .nav-links a.nav-apply{
+  background:var(--nav-ink) !important;
+  color:#FFFFFF !important;
+  border:1px solid var(--nav-ink) !important;
+  border-radius:0 !important;
+  padding:9px 20px !important;
+}
+#home-glydi .nav .nav-links a.nav-apply:hover,
+#home-glydi .nav.topbar .nav-links a.nav-apply:hover{
+  background:var(--nav-accent) !important;
+  border-color:var(--nav-accent) !important;
+  color:var(--nav-ink) !important;
+}
+
+/* the mark and the hamburger */
+#home-glydi .site-logo img{ filter:none !important; }
+#home-glydi .nav .nav-toggle span,
+#home-glydi .nav.topbar .nav-toggle span{ background:var(--nav-ink) !important; }
+
+@media (max-width:900px){
+  #home-glydi .nav.open .nav-links{
+    background:var(--nav-bg) !important;
+    border:1px solid var(--nav-line) !important;
+    border-radius:0 !important;
+  }
+  #home-glydi .nav.open .nav-links a{ color:var(--nav-ink) !important; }
+  #home-glydi .nav.open .nav-links a.nav-apply{ background:var(--nav-ink) !important; color:#FFFFFF !important; }
+}

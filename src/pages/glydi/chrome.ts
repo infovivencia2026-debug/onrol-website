@@ -9,14 +9,16 @@
  */
 // Cache-buster: styles.css keeps the same filename but its contents change with
 // each design update. Bump this whenever styles.css is updated.
-const ASSET_V = "manrope2";
+const ASSET_V = "classic1";
 const STYLES_HREF = `/home-glydi/styles.css?v=${ASSET_V}`;
 
 // Manrope is self-hosted via @font-face in styles.css; this stack matches it and
 // (critically) does NOT include Fira Sans — the app's global marketing heading
 // font that would otherwise leak into these pages.
 const GLYDI_FONT =
-  "'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif";
+  "var(--font-body, 'Instrument Sans', system-ui, -apple-system, sans-serif)";
+const GLYDI_DISPLAY =
+  "var(--font-display, 'Archivo', system-ui, -apple-system, sans-serif)";
 
 // Google Sheet mirror (legacy program forms). Kept for initLeadForm/contact.
 const SHEET_WEBHOOK_URL = import.meta.env.VITE_APPS_SCRIPT_CAREER_CATALYST_URL as string | undefined;
@@ -30,6 +32,35 @@ export function mountGlydiChrome(): () => void {
   styles.setAttribute("data-home-glydi", "");
   document.head.appendChild(styles);
 
+  // One nav for every page. Loaded after styles.css so it wins, and page
+  // themes no longer style the bar themselves (see nav-shared.css).
+  const navCss = document.createElement("link");
+  navCss.rel = "stylesheet";
+  navCss.href = `/home-glydi/nav-shared.css?v=${ASSET_V}`;
+  navCss.setAttribute("data-home-glydi", "");
+  document.head.appendChild(navCss);
+
+  // The footer, one definition for every page (see footer-shared.css).
+  const footCss = document.createElement("link");
+  footCss.rel = "stylesheet";
+  footCss.href = `/home-glydi/footer-shared.css?v=${ASSET_V}`;
+  footCss.setAttribute("data-home-glydi", "");
+  document.head.appendChild(footCss);
+
+  // The type pairing, loaded last so it settles the cascade for every page.
+  const typeCss = document.createElement("link");
+  typeCss.rel = "stylesheet";
+  typeCss.href = `/home-glydi/type-system.css?v=${ASSET_V}`;
+  typeCss.setAttribute("data-home-glydi", "");
+  // The apply dialog and form controls, shared by every page.
+  const formCss = document.createElement("link");
+  formCss.rel = "stylesheet";
+  formCss.href = `/home-glydi/forms-modal.css?v=${ASSET_V}`;
+  formCss.setAttribute("data-home-glydi", "");
+  document.head.appendChild(formCss);
+
+  document.head.appendChild(typeCss);
+
   // Single native scroller: <html> scrolls, <body> clips-x but isn't itself a
   // scroller (a double html+body scroller silently disables the mouse wheel).
   const scrollFix = document.createElement("style");
@@ -40,7 +71,7 @@ export function mountGlydiChrome(): () => void {
     "#root{height:auto!important;min-height:0!important;overflow:visible!important;}" +
     // Stop the app's global heading font (Fira Sans) leaking into these pages.
     `#home-glydi{font-family:${GLYDI_FONT};}` +
-    `#home-glydi :is(h1,h2,h3,h4,h5,h6){font-family:${GLYDI_FONT}!important;}` +
+    `#home-glydi :is(h1,h2,h3,h4,h5,h6){font-family:${GLYDI_DISPLAY}!important;}` +
     // Neutralise any stray empty app <section> that renders before #home-glydi
     // (widgets.js used to tag it #main-content and it picked up padding → gap).
     "#root>section:not(#home-glydi){padding:0!important;min-height:0!important;margin:0!important;height:auto!important;}" +
@@ -49,11 +80,133 @@ export function mountGlydiChrome(): () => void {
     "#home-glydi .build-grid{grid-template-columns:repeat(auto-fit,minmax(198px,1fr))!important;}";
   document.head.appendChild(scrollFix);
 
+  const stopMotion = mountGlydiMotion();
+
   return () => {
+    stopMotion();
     styles.remove();
+    navCss.remove();
+    formCss.remove();
+    typeCss.remove();
     scrollFix.remove();
     document.body.classList.remove("loading");
   };
+}
+
+/**
+ * Smooth scroll + the hero guide-rule handoff.
+ * Lenis was already a dependency (SmoothScroll.tsx existed but was never
+ * referenced by any route). Both effects no-op under prefers-reduced-motion;
+ * the observer additionally exists because body::before/::after are
+ * position:fixed and therefore cannot be restyled per section.
+ */
+function mountGlydiMotion(): () => void {
+  const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+  const cleanups: Array<() => void> = [];
+
+  if (!reduce) {
+    let raf = 0;
+    let lenis: { raf: (t: number) => void; destroy: () => void } | null = null;
+    let killed = false;
+    void import("@studio-freight/lenis").then(({ default: Lenis }) => {
+      if (killed) return;
+      lenis = new Lenis({ duration: 1.05, smoothWheel: true });
+      const tick = (time: number) => {
+        lenis?.raf(time);
+        raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+    });
+    cleanups.push(() => {
+      killed = true;
+      if (raf) cancelAnimationFrame(raf);
+      lenis?.destroy();
+    });
+  }
+
+  // Nav state: the rail is transparent over the top of the page and picks up
+  // a backdrop once you leave it. Driven from scroll position rather than an
+  // observer so it behaves the same on the home hero and on the sub-page
+  // heroes, which have different heights.
+  {
+    let ticking = false;
+    const sync = () => {
+      ticking = false;
+      document.body.classList.toggle("nav-scrolled", window.scrollY > 48);
+    };
+    const onScroll = () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(sync); }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    sync();
+    cleanups.push(() => {
+      window.removeEventListener("scroll", onScroll);
+      document.body.classList.remove("nav-scrolled");
+    });
+  }
+
+  // Stat counters. The markup carries `.cv[data-count]` spans whose text is
+  // "0" until something counts them up — and nothing ever did: no script in
+  // the codebase read data-count. On /about that rendered as "0 Programs,
+  // 0+ Projects to build", which only went unnoticed because the block it
+  // lives in was never revealed either. This lives in mountGlydiMotion
+  // because GlydiRoute calls mountGlydiChrome but NOT initGlydiCommon, so
+  // anything the sub-pages need has to hang off this path.
+  {
+    const cells = Array.from(document.querySelectorAll<HTMLElement>(".cv[data-count]"));
+    const settle = (el: HTMLElement) => {
+      const target = Number(el.getAttribute("data-count"));
+      if (Number.isFinite(target)) el.textContent = String(target);
+    };
+    const run = (el: HTMLElement & { _counted?: boolean }) => {
+      if (el._counted) return;
+      el._counted = true;
+      const target = Number(el.getAttribute("data-count"));
+      if (!Number.isFinite(target)) return;
+      let t0 = 0;
+      const tick = (now: number) => {
+        if (!t0) t0 = now;
+        const p = Math.min(1, (now - t0) / 1150);
+        el.textContent = String(Math.round(target * (1 - Math.pow(1 - p, 3))));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    if (cells.length) {
+      if (reduce || !("IntersectionObserver" in window)) {
+        cells.forEach(settle);
+      } else {
+        const cio = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (!e.isIntersecting) return;
+            run(e.target as HTMLElement);
+            cio.unobserve(e.target);
+          });
+        }, { threshold: 0.5 });
+        cells.forEach((el) => cio.observe(el));
+        cleanups.push(() => cio.disconnect());
+      }
+    }
+  }
+
+  const hero = document.querySelector(".hero");
+  if (hero && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          document.body.classList.toggle("over-hero", e.intersectionRatio > 0.55);
+        }
+      },
+      { threshold: [0, 0.25, 0.55, 0.75, 1] },
+    );
+    io.observe(hero);
+    cleanups.push(() => {
+      io.disconnect();
+      document.body.classList.remove("over-hero");
+    });
+  }
+
+  return () => cleanups.forEach((fn) => fn());
 }
 
 type GlydiScript = { src?: string; code?: string };
@@ -171,6 +324,137 @@ export function initGlydiCrmCapture(sourceLabel?: string): () => void {
  * hide-nav-on-scroll. Safe to run on every sub-page (each block guards on its
  * own elements). Returns a cleanup that removes all listeners/observers.
  */
+/** The Apply dialog, injected into any page whose markup does not carry it. */
+const LEAD_MODAL_HTML = [
+  '<div class="lead-modal" id="leadModal" hidden>',
+  '<div class="lead-card" role="dialog" aria-modal="true" aria-labelledby="leadTitle">',
+  '<button class="lead-x" id="leadClose" type="button" aria-label="Close">&times;</button>',
+  '<p class="lead-eyebrow">Apply to ONROL</p>',
+  '<h3 id="leadTitle">Start with a quick hello.</h3>',
+  '<p class="lead-sub">Drop your details and our team reaches out about the next cohort, takes 20 seconds.</p>',
+  '<div class="lead-steps"><span>20 seconds</span><span>No payment</span><span>We call you back</span></div>',
+  '<form id="leadForm" class="lead-form">',
+  '<div><label for="leadName">Full name</label><input type="text" id="leadName" name="name" placeholder="Your name" autocomplete="name" required></div>',
+  '<div><label for="leadEmail">Email</label><input type="email" id="leadEmail" name="email" placeholder="you@email.com" autocomplete="email" required></div>',
+  '<div><label for="leadPhone">Phone / WhatsApp</label><input type="tel" id="leadPhone" name="phone" placeholder="+91 …" autocomplete="tel" required></div>',
+  '<button type="submit" class="lead-submit">Apply Now</button>',
+  '</form>',
+  '<p class="lead-fine">No spam. We&rsquo;ll only contact you about your application.</p>',
+  '</div></div>',
+].join("");
+
+/**
+ * The Apply dialog, wired for every page.
+ *
+ * Two things had drifted across the twenty-two ported pages: eleven carried a
+ * nav Apply button without the .js-apply hook, so the click simply followed
+ * its href to /programs/ai-generalist; and six carried the hook but no
+ * #leadModal in their markup, so the handler bailed out and nothing opened.
+ * Only the home page worked. Both are guaranteed here — the hook is applied to
+ * every .nav-apply, and the dialog is injected when the page lacks it — so a
+ * page cannot drift out of it again. Called by GlydiRoute for every sub-page.
+ */
+/**
+ * In-app navigation for the ported markup.
+ *
+ * Every link in these pages is a plain <a href="/...">, so each one tore the
+ * whole document down and rebuilt it: ~3s of white screen between pages, the
+ * fonts and stylesheets re-fetched every time, and the scroll position lost.
+ * The app is a single-page router — this hands those clicks to it instead, so
+ * a page change is instant and only the markup swaps.
+ *
+ * Anything that is not a plain left-click on a same-origin page is left well
+ * alone: new tabs, modified clicks, downloads, hashes, tel:/mailto:, and the
+ * .js-apply buttons that open the dialog.
+ */
+export function initSpaLinks(): () => void {
+  const onClick = (event: MouseEvent) => {
+    if (event.defaultPrevented || event.button !== 0) return;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+    const link = (event.target as HTMLElement | null)?.closest?.("a");
+    if (!link) return;
+    if (link.target && link.target !== "_self") return;
+    if (link.hasAttribute("download") || link.classList.contains("js-apply")) return;
+
+    const href = link.getAttribute("href");
+    if (!href || href.startsWith("#") || /^[a-z]+:/i.test(href) && !href.startsWith("http")) return;
+
+    const url = new URL(link.href, window.location.origin);
+    if (url.origin !== window.location.origin) return;      // someone else's site
+    if (url.pathname === window.location.pathname && url.hash) return;  // in-page anchor
+    if (url.pathname === window.location.pathname && url.search === window.location.search) {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });      // already here
+      return;
+    }
+
+    event.preventDefault();
+    window.history.pushState({}, "", url.pathname + url.search + url.hash);
+    // BrowserRouter listens for popstate; this is what makes it re-render
+    window.dispatchEvent(new PopStateEvent("popstate"));
+  };
+
+  document.addEventListener("click", onClick);
+  return () => document.removeEventListener("click", onClick);
+}
+
+export function initApplyModal(): () => void {
+  const disposers: Array<() => void> = [];
+  const on = (
+    t: Window | Document | HTMLElement | Element,
+    type: string,
+    fn: EventListenerOrEventListenerObject,
+    opts?: boolean | AddEventListenerOptions,
+  ) => { t.addEventListener(type, fn, opts); disposers.push(() => t.removeEventListener(type, fn, opts)); };
+  let injected: HTMLElement | null = null;
+  document.querySelectorAll<HTMLElement>(".nav-apply").forEach((a) => a.classList.add("js-apply"));
+
+  let modal = document.getElementById("leadModal");
+  if (!modal) {
+    const host = document.getElementById("home-glydi") || document.body;
+    const holder = document.createElement("div");
+    holder.innerHTML = LEAD_MODAL_HTML;
+    modal = holder.firstElementChild as HTMLElement;
+    host.appendChild(modal); injected = modal;
+  }
+  if (!modal) return () => {};
+  const form = document.getElementById("leadForm") as HTMLFormElement | null;
+  const closeBtn = document.getElementById("leadClose");
+  let lastFocus: HTMLElement | null = null;
+  const open = (e?: Event) => {
+    if (e) e.preventDefault();
+    lastFocus = document.activeElement as HTMLElement;
+    modal.hidden = false;
+    document.documentElement.style.overflow = "hidden";
+    (document.getElementById("leadName") as HTMLInputElement)?.focus();
+  };
+  const close = () => { modal.hidden = true; document.documentElement.style.overflow = ""; lastFocus?.focus(); };
+  document.querySelectorAll<HTMLElement>(".js-apply").forEach((a) => on(a, "click", open));
+  if (closeBtn) on(closeBtn, "click", close);
+  on(modal, "click", (e) => { if (e.target === modal) close(); });
+  on(document, "keydown", (e) => { if ((e as KeyboardEvent).key === "Escape" && !modal.hidden) close(); });
+  if (form) on(form, "submit", (e) => {
+    e.preventDefault();
+    const name = (document.getElementById("leadName") as HTMLInputElement)?.value.trim();
+    const email = (document.getElementById("leadEmail") as HTMLInputElement)?.value.trim();
+    const phone = (document.getElementById("leadPhone") as HTMLInputElement)?.value.trim();
+    if (!name || !email || !phone) return;
+    try {
+      fetch("https://go.onrol.in/api/public/leads", {
+        method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ name, phone, email, source: "Apply modal", campaign: "apply" }), keepalive: true,
+      }).catch(() => {});
+    } catch { /* never block */ }
+    const text = "Hi ONROL, I’d like to apply for the next cohort.%0A%0AName: " + encodeURIComponent(name) +
+      "%0AEmail: " + encodeURIComponent(email) + "%0APhone: " + encodeURIComponent(phone);
+    window.open("https://wa.me/918121306701?text=" + text, "_blank", "noopener,noreferrer");
+    close(); form.reset();
+  });
+
+  return () => { disposers.forEach((d) => d()); injected?.remove(); document.documentElement.style.overflow = ""; };
+}
+
 export function initGlydiCommon(): () => void {
   const disposers: Array<() => void> = [];
   const on = (
@@ -192,43 +476,8 @@ export function initGlydiCommon(): () => void {
       on(a, "click", () => { nav.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); }));
   })();
 
-  /* Apply Now lead modal → WhatsApp + CRM */
-  (function () {
-    const modal = document.getElementById("leadModal");
-    if (!modal) return;
-    const form = document.getElementById("leadForm") as HTMLFormElement | null;
-    const closeBtn = document.getElementById("leadClose");
-    let lastFocus: HTMLElement | null = null;
-    const open = (e?: Event) => {
-      if (e) e.preventDefault();
-      lastFocus = document.activeElement as HTMLElement;
-      modal.hidden = false;
-      document.documentElement.style.overflow = "hidden";
-      (document.getElementById("leadName") as HTMLInputElement)?.focus();
-    };
-    const close = () => { modal.hidden = true; document.documentElement.style.overflow = ""; lastFocus?.focus(); };
-    document.querySelectorAll<HTMLElement>(".js-apply").forEach((a) => on(a, "click", open));
-    if (closeBtn) on(closeBtn, "click", close);
-    on(modal, "click", (e) => { if (e.target === modal) close(); });
-    on(document, "keydown", (e) => { if ((e as KeyboardEvent).key === "Escape" && !modal.hidden) close(); });
-    if (form) on(form, "submit", (e) => {
-      e.preventDefault();
-      const name = (document.getElementById("leadName") as HTMLInputElement)?.value.trim();
-      const email = (document.getElementById("leadEmail") as HTMLInputElement)?.value.trim();
-      const phone = (document.getElementById("leadPhone") as HTMLInputElement)?.value.trim();
-      if (!name || !email || !phone) return;
-      try {
-        fetch("https://go.onrol.in/api/public/leads", {
-          method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({ name, phone, email, source: "Apply modal", campaign: "apply" }), keepalive: true,
-        }).catch(() => {});
-      } catch { /* never block */ }
-      const text = "Hi ONROL, I’d like to apply for the next cohort.%0A%0AName: " + encodeURIComponent(name) +
-        "%0AEmail: " + encodeURIComponent(email) + "%0APhone: " + encodeURIComponent(phone);
-      window.open("https://wa.me/918121306701?text=" + text, "_blank", "noopener,noreferrer");
-      close(); form.reset();
-    });
-  })();
+  /* Apply Now lead modal → WhatsApp + CRM (shared implementation) */
+  disposers.push(initApplyModal());
 
   /* newsletter */
   (function () {
@@ -279,40 +528,12 @@ export function initGlydiCommon(): () => void {
     disposers.push(() => { document.body.classList.remove("anim-ready"); timers.forEach((t) => clearTimeout(t)); });
   })();
 
-  /* footer scramble */
-  (function () {
-    const footer = document.querySelector(".footer");
-    if (!footer || reduce) return;
-    const CH = "!<>-_\\/[]{}=+*^?#@%$&";
-    const targets = footer.querySelectorAll<HTMLElement>("h3, h4, .f-tag");
-    const decode = (el: HTMLElement & { _dec?: boolean }, delay: number) => {
-      if (el._dec) return; el._dec = true;
-      const finalText = el.getAttribute("data-text") || el.textContent || "";
-      el.setAttribute("data-text", finalText);
-      const queue: Array<{ to: string; start: number; end: number; ch?: string }> = [];
-      let frame = 0;
-      for (let i = 0; i < finalText.length; i++) {
-        const c = finalText[i];
-        if (c === " ") { queue.push({ to: " ", start: 0, end: 0 }); continue; }
-        const start = delay + Math.floor(Math.random() * 16);
-        queue.push({ to: c, start, end: start + 14 + Math.floor(Math.random() * 24), ch: "" });
-      }
-      (function step() {
-        let out = "", done = 0;
-        for (const q of queue) {
-          if (frame >= q.end) { done++; out += q.to; }
-          else if (frame >= q.start) { if (!q.ch || Math.random() < 0.3) q.ch = CH[Math.floor(Math.random() * CH.length)]; out += '<span class="dec">' + q.ch + "</span>"; }
-        }
-        el.innerHTML = out; frame++;
-        if (done < queue.length) requestAnimationFrame(step); else { el.textContent = finalText; el._dec = false; }
-      })();
-    };
-    footer.querySelectorAll<HTMLElement>("a, h3, h4, .f-tag").forEach((el) => on(el, "mouseenter", () => decode(el, 0)));
-    const io = observe(new IntersectionObserver((entries) => {
-      entries.forEach((e) => { if (e.isIntersecting) { targets.forEach((el, i) => decode(el, i * 5)); io.disconnect(); } });
-    }, { threshold: 0.2 }));
-    io.observe(footer);
-  })();
+  /* footer scramble — retired.
+     Every heading and link in the footer was replaced character by
+     character with symbols on scroll-in and again on hover, so the
+     column heads read "PROGRA_S" and "COM_ANY" for as long as the
+     effect ran, and a link garbled itself the moment you pointed at it.
+     A footer is wayfinding: it has to be readable at rest. */
 
   /* logo colour adapts to section behind it */
   (function () {

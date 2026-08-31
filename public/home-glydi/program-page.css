@@ -1,0 +1,612 @@
+/* ==================================================================
+   PROGRAM PAGE — rebuilt, not restyled
+   AI Generalist, AI Architect, Cyber Security, SOC Analyst.
+
+   The old pages were a stack of centred marketing sections. This is a
+   document: a masthead, then a spine of numbered chapters down the left
+   with the content set against it, and an enrolment panel that travels
+   with you. Fraunces for the reading voice, Manrope caps for
+   labels, hairlines instead of boxes, one orange accent.
+
+   Structure (each `.pp-chapter` is numbered automatically):
+     masthead → what you build → the path → who it is for →
+     what you leave with → where it takes you → questions → enrol
+   ================================================================== */
+
+#home-glydi{
+  --pp-paper:#FBFAF8;
+  --pp-white:#FFFFFF;
+  --pp-ink:#0E0D0C;
+  --pp-body:#4A453E;
+  --pp-muted:#8B857B;
+  --pp-line:rgba(14,13,12,.14);
+  --pp-line-hi:rgba(14,13,12,.28);
+  --pp-accent:#F46718;
+  --pp-accent-dk:#C2500B;
+  --pp-edge:clamp(20px, 5vw, 80px);
+  /* Fraunces carries real optical sizing plus SOFT/WONK axes, so the display
+     keeps its character at 88px and still reads at 17px. Instrument Serif was
+     too high-contrast to do both jobs. */
+  --pp-serif:"Fraunces", var(--font-display);
+  --pp-nav:72px;
+}
+
+html:has(#home-glydi .pp),
+html:has(#home-glydi .pp) body,
+html:has(#home-glydi .pp) #root{ background:var(--pp-paper) !important; }
+
+#home-glydi .pp{
+  display:block !important;
+  width:auto !important; max-width:none !important;
+  margin:0 !important; padding:0 !important;
+  background:var(--pp-paper) !important;
+  color:var(--pp-body);
+  font-family:var(--font-body);
+  counter-reset:chapter;
+}
+#home-glydi .pp > *{ margin-bottom:0 !important; }
+#home-glydi .pp-wrap{
+  width:min(var(--page-max, 1560px), 100%);
+  margin-inline:auto;
+  padding-inline:var(--page-edge);
+}
+
+/* ==================================================================
+   MASTHEAD
+   ================================================================== */
+#home-glydi .pp-mast{
+  position:relative;
+  padding:calc(var(--pp-nav) + clamp(40px, 6vh, 78px)) 0 clamp(38px, 5vw, 66px);
+  background:var(--pp-ink) !important;
+  overflow:hidden;
+  isolation:isolate;
+}
+#home-glydi .pp-mast-shot{
+  position:absolute; inset:0; z-index:0;
+  background:var(--pp-ink) center 38% / cover no-repeat;
+  filter:grayscale(.4) contrast(1.05);
+}
+#home-glydi .pp-mast::after{
+  content:"";
+  position:absolute; inset:0; z-index:1;
+  background:
+    linear-gradient(96deg, rgba(14,13,12,.94) 0%, rgba(14,13,12,.8) 38%, rgba(14,13,12,.34) 70%, rgba(14,13,12,.5) 100%),
+    linear-gradient(180deg, rgba(14,13,12,.3), rgba(14,13,12,.6));
+}
+#home-glydi .pp-mast .pp-wrap{ position:relative; z-index:2; }
+#home-glydi .pp-track{
+  display:flex; align-items:center; gap:12px;
+  margin:0 0 clamp(16px, 2.4vh, 26px) !important;
+  font-size:10px !important; font-weight:800 !important;
+  letter-spacing:.26em !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,.62) !important;
+}
+#home-glydi .pp-track b{ color:var(--pp-accent); font-weight:800; }
+#home-glydi .pp-track::after{ content:""; flex:1; height:1px; background:rgba(255,255,255,.2); max-width:220px; }
+
+#home-glydi .pp-mast h1{
+  margin:0 !important;
+  font-family:var(--font-display) !important;
+  font-weight:500 !important; font-style:normal !important;
+  font-variation-settings:"SOFT" 28, "WONK" 1, "opsz" 120;
+  font-size:clamp(40px, 5.6vw, 88px) !important;
+  line-height:.96 !important; letter-spacing:-.016em !important;
+  color:#FFFFFF !important;
+  max-width:17ch;
+}
+#home-glydi .pp-mast h1 em{ font-style:italic; color:var(--pp-accent); }
+#home-glydi .pp .pp-lede{
+  margin:clamp(16px, 2.2vh, 24px) 0 0 !important;
+  max-width:56ch;
+  font-size:clamp(15px, 1.2vw, 18px) !important;
+  line-height:1.62 !important;
+  color:rgba(255,255,255,.8) !important;
+}
+#home-glydi .pp-figures{
+  display:flex; flex-wrap:wrap; gap:0 clamp(22px, 3vw, 52px);
+  margin-top:clamp(24px, 3.4vh, 40px);
+  padding-top:clamp(16px, 2.2vh, 24px);
+  border-top:1px solid rgba(255,255,255,.22);
+}
+#home-glydi .pp .pp-figures b{
+  display:block;
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(26px, 2.6vw, 42px);
+  line-height:1;
+  color:#FFFFFF;
+}
+#home-glydi .pp .pp-figures span{
+  display:block; margin-top:6px;
+  font-size:9.5px; font-weight:800; letter-spacing:.18em; text-transform:uppercase;
+  color:rgba(255,255,255,.56);
+}
+#home-glydi .pp-mast-cta{ display:flex; flex-wrap:wrap; gap:12px; margin-top:clamp(22px, 3vh, 34px); }
+
+/* ==================================================================
+   CHAPTERS — a numbered spine down the left
+   ================================================================== */
+#home-glydi .pp-chapter{
+  counter-increment:chapter;
+  border-top:1px solid var(--pp-line);
+  padding-block:clamp(44px, 6vw, 88px);
+}
+#home-glydi .pp-chapter:nth-of-type(even){ background:var(--pp-white); }
+#home-glydi .pp-head{
+  display:grid;
+  grid-template-columns:minmax(0, .9fr) minmax(0, 1.1fr);
+  gap:clamp(20px, 4vw, 64px);
+  align-items:start;
+  margin-bottom:clamp(28px, 4vw, 52px);
+}
+#home-glydi .pp-head h2{
+  position:relative;
+  margin:0 !important;
+  padding-left:clamp(46px, 4.4vw, 72px);
+  font-family:var(--font-display) !important;
+  font-weight:500 !important; font-style:normal !important;
+  font-variation-settings:"SOFT" 24, "WONK" 1, "opsz" 72;
+  font-size:clamp(28px, 3.5vw, 50px) !important;
+  line-height:1.02 !important; letter-spacing:-.014em !important;
+  color:var(--pp-ink) !important;
+}
+/* the chapter number sits in the margin, like a folio */
+#home-glydi .pp-head h2::before{
+  content:counter(chapter, decimal-leading-zero);
+  position:absolute; left:0; top:.24em;
+  font-size:clamp(13px, 1.05vw, 16px);
+  font-family:var(--font-display);
+  font-weight:800;
+  letter-spacing:.1em;
+  color:var(--pp-accent);
+}
+#home-glydi .pp .pp-head p{
+  margin:0 !important;
+  font-size:clamp(15px, 1.15vw, 17px) !important;
+  line-height:1.8 !important;
+  color:var(--pp-body) !important;
+  max-width:52ch;
+}
+
+/* ---- the build ledger ---- */
+#home-glydi .pp-ledger{ border-top:1px solid var(--pp-line); }
+#home-glydi .pp-row{
+  display:grid;
+  grid-template-columns:auto minmax(0, 1fr) minmax(0, .8fr);
+  gap:clamp(14px, 2.4vw, 40px);
+  align-items:baseline;
+  padding:clamp(18px, 2.2vw, 28px) 0;
+  border-bottom:1px solid var(--pp-line);
+  transition:background .3s ease;
+}
+#home-glydi .pp-row:hover{ background:rgba(244,103,24,.045); }
+#home-glydi .pp-row-n{
+  font-family:var(--font-display);
+  font-size:clamp(17px, 1.5vw, 22px);
+  color:var(--pp-accent-dk);
+  min-width:2.4ch;
+}
+#home-glydi .pp .pp-row h3{
+  margin:0 0 6px !important;
+  font-family:var(--font-display) !important;
+  font-weight:500 !important;
+  font-variation-settings:"SOFT" 20, "opsz" 36;
+  font-size:clamp(19px, 1.8vw, 27px) !important;
+  letter-spacing:-.01em !important;
+  color:var(--pp-ink) !important;
+}
+#home-glydi .pp .pp-row p{
+  margin:0 !important;
+  font-size:14.5px !important; line-height:1.6 !important;
+  color:var(--pp-body) !important;
+  max-width:46ch;
+}
+#home-glydi .pp-tools{ display:flex; flex-wrap:wrap; gap:6px; }
+#home-glydi .pp-tools i{
+  font-style:normal;
+  padding:4px 9px;
+  border:1px solid var(--pp-line);
+  font-size:9.5px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--pp-muted);
+  white-space:nowrap;
+}
+
+/* ---- the path: sticky module index + module bodies ---- */
+#home-glydi .pp-path{
+  display:grid;
+  grid-template-columns:minmax(0, .62fr) minmax(0, 1.38fr);
+  gap:clamp(20px, 4vw, 60px);
+  align-items:start;
+}
+#home-glydi .pp-index{ position:sticky; top:calc(var(--pp-nav) + 24px); }
+#home-glydi .pp-index a{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:12px;
+  padding:11px 0 11px 14px;
+  border-left:2px solid var(--pp-line);
+  text-decoration:none;
+  transition:border-color .3s ease, color .3s ease;
+}
+#home-glydi .pp-index a:hover,
+#home-glydi .pp-index a.is-here{ border-left-color:var(--pp-accent); }
+#home-glydi .pp-index b{
+  font-family:var(--font-display);
+  font-size:10px; font-weight:800; letter-spacing:.14em;
+  color:var(--pp-accent-dk);
+}
+#home-glydi .pp-index span{
+  font-family:var(--font-display);
+  font-size:clamp(14px, 1.15vw, 17px);
+  line-height:1.25;
+  color:var(--pp-ink);
+}
+#home-glydi .pp-mod{
+  display:grid;
+  grid-template-columns:minmax(0, 1fr);
+  gap:clamp(16px, 2.4vw, 34px);
+  padding-bottom:clamp(28px, 3.6vw, 52px);
+  margin-bottom:clamp(28px, 3.6vw, 52px);
+  border-bottom:1px solid var(--pp-line);
+  scroll-margin-top:calc(var(--pp-nav) + 24px);
+}
+#home-glydi .pp-mod:last-child{ border-bottom:0; margin-bottom:0; padding-bottom:0; }
+#home-glydi .pp-mod-shot{
+  aspect-ratio:4 / 3;
+  background:var(--pp-ink) center / cover no-repeat;
+  filter:grayscale(.35) contrast(1.03);
+  transition:filter .5s ease;
+}
+#home-glydi .pp-mod:hover .pp-mod-shot{ filter:grayscale(0) contrast(1.02); }
+#home-glydi .pp-mod-k{
+  margin:0 0 6px !important;
+  font-size:10px !important; font-weight:800 !important;
+  letter-spacing:.2em !important; text-transform:uppercase !important;
+  color:var(--pp-accent-dk) !important;
+}
+#home-glydi .pp .pp-mod h3{
+  margin:0 0 clamp(12px, 1.6vw, 18px) !important;
+  font-family:var(--font-display) !important;
+  font-weight:500 !important;
+  font-variation-settings:"SOFT" 20, "opsz" 36;
+  font-size:clamp(20px, 1.9vw, 28px) !important;
+  letter-spacing:-.01em !important;
+  color:var(--pp-ink) !important;
+}
+#home-glydi .pp-mod ul{ list-style:none; margin:0; padding:0; }
+#home-glydi .pp-mod li{
+  position:relative;
+  padding:8px 0 8px 20px;
+  border-top:1px solid var(--pp-line);
+  font-size:14px; line-height:1.55;
+  color:var(--pp-body);
+}
+#home-glydi .pp-mod li::before{
+  content:"";
+  position:absolute; left:0; top:15px;
+  width:6px; height:1px; background:var(--pp-accent);
+}
+
+/* ---- plain two-column lists (audience, outcomes) ---- */
+#home-glydi .pp-cols{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  gap:0 clamp(20px, 3vw, 48px);
+  border-top:1px solid var(--pp-line);
+}
+#home-glydi .pp-cols div{
+  padding:clamp(16px, 2vw, 24px) 0;
+  border-bottom:1px solid var(--pp-line);
+}
+#home-glydi .pp .pp-cols strong{
+  display:block; margin-bottom:5px;
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(17px, 1.5vw, 22px);
+  color:var(--pp-ink);
+}
+#home-glydi .pp .pp-cols p{
+  margin:0 !important;
+  font-size:14px !important; line-height:1.6 !important;
+  color:var(--pp-body) !important;
+}
+
+/* ---- roles table ---- */
+#home-glydi .pp-roles{ border-top:1px solid var(--pp-line); }
+#home-glydi .pp-role{
+  display:flex; align-items:baseline; gap:16px;
+  padding:clamp(13px, 1.6vw, 20px) 0;
+  border-bottom:1px solid var(--pp-line);
+}
+#home-glydi .pp-role span:first-child{
+  font-family:var(--font-display);
+  font-variation-settings:"SOFT" 20, "opsz" 32;
+  font-size:clamp(17px, 1.6vw, 24px);
+  color:var(--pp-ink);
+}
+#home-glydi .pp-role span:first-child::after{
+  content:"";
+  display:inline-block; width:0;
+}
+#home-glydi .pp-role i{
+  flex:1; height:1px; background:var(--pp-line);
+  margin:0 4px;
+}
+#home-glydi .pp-role b{
+  font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--pp-accent-dk);
+  white-space:nowrap;
+}
+#home-glydi .pp .pp-note{
+  margin:clamp(14px, 2vw, 20px) 0 0 !important;
+  font-size:12px !important; line-height:1.6 !important;
+  color:var(--pp-muted) !important;
+  max-width:70ch;
+}
+
+/* ---- questions: native accordion ---- */
+#home-glydi .pp-faq{ border-top:1px solid var(--pp-line); }
+#home-glydi .pp-faq details{ border-bottom:1px solid var(--pp-line); }
+#home-glydi .pp-faq summary{
+  list-style:none;
+  cursor:pointer;
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+  padding:clamp(16px, 2vw, 24px) 0;
+  font-family:var(--font-display);
+  font-weight:500;
+  font-variation-settings:"SOFT" 20, "opsz" 32;
+  font-size:clamp(17px, 1.6vw, 24px);
+  color:var(--pp-ink);
+  transition:color .25s ease;
+}
+#home-glydi .pp-faq summary::-webkit-details-marker{ display:none; }
+#home-glydi .pp-faq summary::after{
+  content:"+";
+  font-family:var(--font-display);
+  font-size:18px; font-weight:700;
+  color:var(--pp-accent);
+  transition:transform .35s cubic-bezier(.22,.72,.24,1);
+}
+#home-glydi .pp-faq details[open] summary::after{ transform:rotate(45deg); }
+#home-glydi .pp-faq summary:hover{ color:var(--pp-accent-dk); }
+#home-glydi .pp .pp-faq p{
+  margin:0 0 clamp(16px, 2vw, 24px) !important;
+  max-width:70ch;
+  font-size:14.5px !important; line-height:1.7 !important;
+  color:var(--pp-body) !important;
+}
+
+/* ==================================================================
+   ENROL — the closing block
+   ================================================================== */
+#home-glydi .pp-enrol{
+  background:var(--pp-ink) !important;
+  padding-block:clamp(48px, 6.5vw, 92px);
+}
+#home-glydi .pp-enrol-grid{
+  display:grid;
+  grid-template-columns:minmax(0, 1.1fr) minmax(0, .9fr);
+  gap:clamp(24px, 4vw, 60px);
+  align-items:center;
+}
+#home-glydi .pp-enrol h2{
+  margin:0 !important;
+  font-family:var(--font-display) !important;
+  font-weight:500 !important;
+  font-variation-settings:"SOFT" 24, "WONK" 1, "opsz" 72;
+  font-size:clamp(30px, 3.6vw, 54px) !important;
+  line-height:1.02 !important; letter-spacing:-.014em !important;
+  color:#FFFFFF !important;
+  max-width:18ch;
+}
+#home-glydi .pp-enrol h2 em{ font-style:italic; color:var(--pp-accent); }
+#home-glydi .pp .pp-enrol p{
+  margin:clamp(12px, 1.6vw, 18px) 0 0 !important;
+  max-width:52ch;
+  font-size:15px !important; line-height:1.65 !important;
+  color:rgba(255,255,255,.76) !important;
+}
+#home-glydi .pp-form{
+  background:var(--pp-white);
+  border-top:3px solid var(--pp-accent);
+  padding:clamp(22px, 2.6vw, 34px);
+}
+#home-glydi .pp-form h3{
+  margin:0 0 8px !important;
+  font-family:var(--font-display) !important;
+  font-weight:400 !important;
+  font-size:clamp(20px, 1.8vw, 26px) !important;
+  color:var(--pp-ink) !important;
+}
+#home-glydi .pp .pp-form p{
+  margin:0 0 16px !important;
+  font-size:13.5px !important; line-height:1.6 !important;
+  color:var(--pp-body) !important;
+}
+#home-glydi .pp-form label{
+  display:block; margin-bottom:6px;
+  font-size:10px; font-weight:800; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--pp-muted);
+}
+#home-glydi .pp-form input{
+  width:100%;
+  padding:13px 14px;
+  border:1px solid var(--pp-line-hi);
+  border-radius:0;
+  background:var(--pp-white);
+  font-family:var(--font-display);
+  font-size:14px;
+  color:var(--pp-ink);
+}
+#home-glydi .pp-form input:focus{ border-color:var(--pp-accent); outline:none; }
+#home-glydi .pp-form .pp-fine{
+  margin:12px 0 0 !important;
+  font-size:11px !important;
+  color:var(--pp-muted) !important;
+}
+
+/* ==================================================================
+   CONTROLS
+   ================================================================== */
+#home-glydi .pp .pp-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  padding:14px 26px !important;
+  width:auto;
+  border-radius:0 !important;
+  border:1px solid var(--pp-accent) !important;
+  background:var(--pp-accent) !important;
+  color:var(--pp-ink) !important;
+  font-family:var(--font-display) !important;
+  font-size:11.5px !important; font-weight:800 !important;
+  letter-spacing:.14em !important; text-transform:uppercase !important;
+  box-shadow:none !important;
+  cursor:pointer;
+  transition:background .25s ease, color .25s ease, border-color .25s ease;
+}
+#home-glydi .pp .pp-btn:hover{ background:#FFFFFF !important; border-color:#FFFFFF !important; }
+#home-glydi .pp .pp-btn.line{
+  background:transparent !important; color:#FFFFFF !important;
+  border-color:rgba(255,255,255,.36) !important;
+}
+#home-glydi .pp .pp-btn.line:hover{ background:#FFFFFF !important; color:var(--pp-ink) !important; border-color:#FFFFFF !important; }
+#home-glydi .pp .pp-btn.wide{ width:100%; }
+#home-glydi .pp .pp-back{
+  display:inline-block;
+  margin:clamp(24px, 3vw, 36px) 0 clamp(48px, 6vw, 72px);
+  font-size:10.5px; font-weight:800; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--pp-muted);
+}
+#home-glydi .pp .pp-back:hover{ color:var(--pp-accent-dk); }
+
+/* ==================================================================
+   MOTION — reveal on entry, supplied by programsMotion.ts
+   ================================================================== */
+/* styles.css hides .reveal on every ported page; without a matching
+   observer that would blank the document, so visible is the default here */
+#home-glydi .pp .reveal{ opacity:1 !important; transform:none !important; }
+#home-glydi .pp[data-motion="on"] .reveal{
+  opacity:0 !important; transform:translate3d(0, 20px, 0) !important;
+  transition:opacity .6s cubic-bezier(.22,.72,.24,1), transform .7s cubic-bezier(.22,.72,.24,1);
+}
+#home-glydi .pp[data-motion="on"] .reveal.in{ opacity:1 !important; transform:none !important; }
+@media (prefers-reduced-motion:reduce){
+  #home-glydi .pp[data-motion="on"] .reveal{ opacity:1 !important; transform:none !important; transition:none !important; }
+}
+
+/* ==================================================================
+   RESPONSIVE
+   ================================================================== */
+@media (max-width:960px){
+  #home-glydi .pp-head,
+  #home-glydi .pp-path,
+  #home-glydi .pp-enrol-grid{ grid-template-columns:minmax(0,1fr); }
+  #home-glydi .pp-index{ position:static; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:0 18px; }
+  #home-glydi .pp-mod{ grid-template-columns:minmax(0,1fr); }
+  #home-glydi .pp-mast::after{
+    background:linear-gradient(180deg, rgba(14,13,12,.86) 0%, rgba(14,13,12,.68) 44%, rgba(14,13,12,.92) 100%);
+  }
+}
+@media (max-width:620px){
+  #home-glydi .pp-row{ grid-template-columns:auto minmax(0,1fr); }
+  #home-glydi .pp-tools{ grid-column:2; }
+  #home-glydi .pp-figures{ gap:0 24px; }
+}
+
+/* ==================================================================
+   REFINEMENTS
+   The first pass laid the document out; this tightens it.
+   ================================================================== */
+
+/* ---- reading progress: a hairline under the nav ---- */
+#home-glydi .pp-progress{
+  position:fixed; top:var(--pp-nav); left:0; right:0; z-index:60;
+  height:2px;
+  background:var(--pp-accent);
+  transform:scaleX(0); transform-origin:left center;
+  will-change:transform;
+  pointer-events:none;
+}
+
+/* ---- the curriculum index knows where you are ---- */
+#home-glydi .pp-index a{ position:relative; }
+#home-glydi .pp-index a.is-here{
+  border-left-color:var(--pp-accent);
+}
+#home-glydi .pp-index a.is-here b{ color:var(--pp-accent); }
+#home-glydi .pp-index a.is-here span{ color:var(--pp-ink); }
+#home-glydi .pp-index a:not(.is-here) span{ color:var(--pp-muted); transition:color .3s ease; }
+#home-glydi .pp-index a:hover span{ color:var(--pp-ink); }
+/* a caption above the index so the rail reads as a table of contents */
+#home-glydi .pp-index::before{
+  content:"Modules";
+  display:block;
+  margin:0 0 14px 14px;
+  font-size:9.5px; font-weight:800; letter-spacing:.24em; text-transform:uppercase;
+  color:var(--pp-muted);
+}
+
+/* ---- chapter heads: the description sat in a half-empty column ---- */
+#home-glydi .pp-head{
+  grid-template-columns:minmax(0, 1.05fr) minmax(0, .95fr);
+  align-items:end;
+  padding-bottom:clamp(18px, 2.2vw, 28px);
+  border-bottom:1px solid var(--pp-line);
+}
+#home-glydi .pp .pp-head p{ padding-bottom:.35em; }
+
+/* ---- the build ledger: fix the tools column so rows line up ---- */
+#home-glydi .pp-row{
+  grid-template-columns:auto minmax(0, 1fr) clamp(180px, 22vw, 300px);
+  align-items:center;
+}
+#home-glydi .pp-tools{ justify-content:flex-end; }
+#home-glydi .pp-row-n{
+  font-variation-settings:"opsz" 24;
+  color:var(--pp-line-hi);
+  transition:color .3s ease;
+}
+#home-glydi .pp-row:hover .pp-row-n{ color:var(--pp-accent); }
+
+/* ---- module bullets: hang the rule in the margin ---- */
+#home-glydi .pp-mod li{ padding-left:26px; }
+#home-glydi .pp-mod li::before{ width:12px; top:17px; background:var(--pp-line-hi); transition:background .3s ease, width .3s ease; }
+#home-glydi .pp-mod li:hover::before{ background:var(--pp-accent); width:18px; }
+
+/* ---- roles: tabular figures so the salaries align ---- */
+#home-glydi .pp-role b{
+  font-variant-numeric:tabular-nums lining-nums;
+  font-size:13px;
+  min-width:7ch; text-align:right;
+}
+#home-glydi .pp-role{ transition:padding-left .3s ease; }
+#home-glydi .pp-role:hover{ padding-left:8px; }
+#home-glydi .pp-role:hover span:first-child{ color:var(--pp-accent-dk); }
+#home-glydi .pp-role span:first-child{ transition:color .3s ease; }
+
+/* ---- masthead: let the photograph carry the right third ---- */
+#home-glydi .pp-mast::after{
+  background:
+    linear-gradient(96deg, rgba(14,13,12,.95) 0%, rgba(14,13,12,.86) 34%, rgba(14,13,12,.42) 62%, rgba(14,13,12,.24) 100%),
+    linear-gradient(180deg, rgba(14,13,12,.24), rgba(14,13,12,.52)) !important;
+}
+#home-glydi .pp-mast-shot{ filter:grayscale(.28) contrast(1.06); }
+
+/* ---- outcomes: number them, so the column reads as a list ---- */
+#home-glydi .pp-cols{ counter-reset:outcome; }
+#home-glydi .pp-cols div{ counter-increment:outcome; position:relative; padding-left:34px; }
+#home-glydi .pp-cols div::before{
+  content:counter(outcome, decimal-leading-zero);
+  position:absolute; left:0; top:clamp(16px, 2vw, 24px);
+  font-size:10px; font-weight:800; letter-spacing:.1em;
+  color:var(--pp-accent);
+}
+
+@media (max-width:960px){
+  #home-glydi .pp-index::before{ margin-left:0; }
+  #home-glydi .pp-row{ grid-template-columns:auto minmax(0,1fr); }
+  #home-glydi .pp-tools{ justify-content:flex-start; }
+}
+@media (prefers-reduced-motion:reduce){
+  #home-glydi .pp-progress{ display:none; }
+  #home-glydi .pp-role:hover{ padding-left:0; }
+}

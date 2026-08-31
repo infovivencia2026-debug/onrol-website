@@ -499,7 +499,7 @@
       "Hyderabad-based premium AI education ecosystem focused on execution, outcomes, and monetization pathways.",
     contact: {
       email: "info@onrol.in",
-      phone: "+91 96093 12345",
+      phone: "+91 99665 77659",
       website: "https://onrol.in",
       location: "Hyderabad, Telangana, India",
     },
@@ -507,7 +507,7 @@
       linkedin: "https://in.linkedin.com/company/onrol",
       instagram: "https://www.instagram.com/onrol.in/",
       youtube: "https://www.youtube.com/@onrolofficial",
-      whatsapp: "https://wa.me/919609312345?text=Hi%2C%20I%20want%20to%20know%20more%20about%20this%20program",
+      whatsapp: "https://wa.me/919966577659?text=Hi%2C%20I%20want%20to%20know%20more%20about%20this%20program",
     },
   },
 } as const;

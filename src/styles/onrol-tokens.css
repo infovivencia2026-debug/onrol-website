@@ -10,29 +10,32 @@
  *   --onrol-text-1 (primary), --onrol-text-2 (secondary), --onrol-text-3 (muted)
  *   --onrol-space-1 (4px) ... --onrol-space-10 (96px)
  *
- * Dark mode is the default. Light mode flips under [data-theme="light"].
+ * Light is the default (every surface token here is a light value). The
+ * [data-theme="light"] block re-states it explicitly for hosts that set it.
  */
 
 :root {
   /* Brand */
-  --onrol-brand:           #ff6a3d;     /* orange — primary CTA */
-  --onrol-brand-soft:      #ff8a64;
-  --onrol-brand-deep:      #d94a1f;
+  --onrol-brand:           #f46718;     /* orange — primary CTA (brand value) */
+  --onrol-brand-soft:      #ff9152;
+  --onrol-brand-deep:      #c04a08;     /* AA-safe orange for text on white */
   --onrol-accent:          #22d3ee;     /* cyan — secondary highlight */
   --onrol-accent-soft:     #67e8f9;
 
-  /* Surface (dark) */
+  /* Surface (these are LIGHT values — the declared color-scheme below
+     used to say `dark` while every surface here painted near-white) */
   --onrol-bg-base:         #f3f5f8;
   --onrol-bg-elevated:     #f3f5f8;
   --onrol-bg-input:        #f3f5f8;
-  --onrol-border:          rgba(255,255,255,0.08);
-  --onrol-border-strong:   rgba(255,255,255,0.16);
+  --onrol-border:          rgba(0,0,0,0.08);
+  --onrol-border-strong:   rgba(0,0,0,0.16);
 
-  /* Text (dark) */
-  --onrol-text-1:          #f3f4f6;
-  --onrol-text-2:          #cbd5e1;
-  --onrol-text-3:          #94a3b8;
-  --onrol-text-inverse:    #f3f5f8;
+  /* Text — ink on the light canvas above. These were near-white (#f3f4f6
+     on a #f3f5f8 canvas), i.e. invisible text in the default theme. */
+  --onrol-text-1:          #16181b;
+  --onrol-text-2:          #404853;
+  --onrol-text-3:          #6b7480;
+  --onrol-text-inverse:    #ffffff;
 
   /* State */
   --onrol-success:         #22c55e;
@@ -102,7 +105,7 @@
   --onrol-z-modal:     1000;
   --onrol-z-toast:     1100;
 
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 [data-theme="light"] {
@@ -112,7 +115,7 @@
   --onrol-border:          rgba(0,0,0,0.08);
   --onrol-border-strong:   rgba(0,0,0,0.16);
 
-  --onrol-text-1:          #f3f5f8;
+  --onrol-text-1:          #16181b;
   --onrol-text-2:          #404040;
   --onrol-text-3:          #64748b;
   --onrol-text-inverse:    #ffffff;

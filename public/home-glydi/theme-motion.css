@@ -1,0 +1,160 @@
+/* ==================================================================
+   HOME MOTION — the choreography for everything below the hero.
+   Paired with src/pages/home-glydi/motion.ts, which tags elements with
+   data-rv + --d and sets [data-motion="on"] on #home-glydi.
+
+   The hidden states are gated behind [data-motion="on"] on purpose: if
+   the script never runs, or the visitor asks for reduced motion, the
+   page renders fully visible instead of blank.
+
+   Only transform and opacity are animated — no layout thrash.
+   ================================================================== */
+
+/* ---- entry states ---------------------------------------------------- */
+#home-glydi[data-motion="on"] [data-rv]{
+  transition:
+    opacity .72s cubic-bezier(.22,.68,.24,1) var(--d, 0ms),
+    transform .82s cubic-bezier(.22,.68,.24,1) var(--d, 0ms),
+    clip-path .9s cubic-bezier(.22,.68,.24,1) var(--d, 0ms);
+  will-change:opacity, transform;
+}
+#home-glydi[data-motion="on"] [data-rv]:not(.rv-in){ opacity:0; }
+
+/* a measured rise — the workhorse for copy, labels and buttons */
+#home-glydi[data-motion="on"] [data-rv="up"]:not(.rv-in){
+  transform:translate3d(0, 26px, 0);
+}
+/* images and film wipe open from the bottom edge rather than fading */
+#home-glydi[data-motion="on"] [data-rv="mask"]:not(.rv-in){
+  clip-path:inset(0 0 100% 0);
+  transform:scale(1.04);
+}
+#home-glydi[data-motion="on"] [data-rv="mask"]{ clip-path:inset(0 0 0 0); }
+/* cards settle in from slightly under-size, so the grid "lands" */
+#home-glydi[data-motion="on"] [data-rv="scale"]:not(.rv-in){
+  transform:translate3d(0, 22px, 0) scale(.965);
+}
+#home-glydi[data-motion="on"] [data-rv]:not([data-rv="mask"]).rv-in{
+  transform:translate3d(0, 0, 0) scale(1);
+}
+/* hairlines draw themselves left to right */
+#home-glydi[data-motion="on"] [data-rv="line"]:not(.rv-in){ transform:scaleX(0); }
+#home-glydi[data-motion="on"] [data-rv="line"]{ transform-origin:left center; }
+
+/* the who-grid parallax owns .who-card's transform, so its reveal rides on
+   an inner element instead of fighting the script */
+#home-glydi[data-motion="on"] .who-grid .who-card.rv-in{ transition-property:opacity; }
+
+/* the eyebrow rule draws itself in alongside its label */
+#home-glydi[data-motion="on"] [data-rv].rv-in .pipe-eyebrow::before,
+#home-glydi[data-motion="on"] [data-rv].rv-in.pipe-eyebrow::before,
+#home-glydi[data-motion="on"] [data-rv].rv-in.cta-eyebrow::before{
+  animation:rvRule .7s cubic-bezier(.22,.68,.24,1) both;
+  animation-delay:calc(var(--d, 0ms) + 120ms);
+}
+@keyframes rvRule{ from{ transform:scaleX(0); transform-origin:left center; } to{ transform:scaleX(1); } }
+
+/* ==================================================================
+   02 — STEPS BOARD
+   The board already has its own scripted stagger; this adds the resting
+   micro-interaction: the card lifts a hair, its base rule thickens and
+   the ghost numeral fills in.
+   ================================================================== */
+#home-glydi .step-col .sc-card{
+  transition:
+    transform .45s cubic-bezier(.22,.68,.24,1),
+    background .35s ease,
+    border-color .35s ease !important;
+}
+#home-glydi .step-col:hover .sc-card{ transform:translateY(-4px) !important; }
+#home-glydi .sc-num{
+  transition:color .45s ease, -webkit-text-stroke-color .45s ease, transform .5s cubic-bezier(.22,.68,.24,1);
+}
+#home-glydi .step-col:hover .sc-num{
+  color:var(--t-accent) !important;
+  transform:translateY(-4px);
+}
+#home-glydi .sc-ic{ transition:transform .5s cubic-bezier(.22,.68,.24,1); }
+#home-glydi .step-col:hover .sc-ic{ transform:translateY(-3px) scale(1.06); }
+
+/* the trust row's square chips flip on hover (theme sets the colours) */
+#home-glydi .pt-ic{ transition:background .3s ease, border-color .3s ease, color .3s ease, transform .45s cubic-bezier(.22,.68,.24,1) !important; }
+#home-glydi .pt-item:hover .pt-ic{ transform:rotate(-4deg) !important; }
+
+/* ==================================================================
+   03 — ABOUT + PROGRAMS BANNER
+   ================================================================== */
+#home-glydi .build-video video,
+#home-glydi .build-video .vid-poster{
+  transition:transform 1.1s cubic-bezier(.22,.68,.24,1);
+}
+#home-glydi .build-lead:hover .build-video video{ transform:scale(1.03); }
+#home-glydi .vid-cover:hover .vc-ring{ transform:scale(1.06) !important; }
+
+/* the banner: a soft orange bloom tracks the pointer (coords from motion.ts) */
+#home-glydi .build-banner{ position:relative; overflow:hidden; }
+#home-glydi .build-banner::after{
+  content:"";
+  position:absolute; inset:0;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .45s ease;
+  background:radial-gradient(circle 260px at var(--mx, 50%) var(--my, 50%), rgba(244,103,24,.13), rgba(244,103,24,0) 70%);
+}
+#home-glydi .build-banner:hover::after{ opacity:1; }
+#home-glydi .build-banner > *{ position:relative; z-index:1; }
+#home-glydi .bb-cta{ transition:background .3s ease, color .3s ease, letter-spacing .35s ease !important; }
+#home-glydi .build-banner:hover .bb-cta{ letter-spacing:.2em !important; }
+#home-glydi .bb-cta span{ transition:transform .4s cubic-bezier(.22,.68,.24,1); }
+#home-glydi .build-banner:hover .bb-cta span{ transform:translateX(6px); }
+
+/* ==================================================================
+   04 — WHO IT'S FOR
+   Greyscale to colour is the theme's job; this is the frame + zoom.
+   ================================================================== */
+#home-glydi .who-card{
+  transition:border-color .35s ease, box-shadow .45s ease !important;
+}
+#home-glydi .who-card:hover{ box-shadow:0 18px 40px -28px rgba(20,18,15,.45) !important; }
+#home-glydi .who-card-img{ transition:transform .9s cubic-bezier(.22,.68,.24,1) !important; }
+#home-glydi .who-card:hover .who-card-img{ transform:scale(1.06) !important; }
+#home-glydi .who-card-txt{ transition:transform .5s cubic-bezier(.22,.68,.24,1); }
+#home-glydi .who-card:hover .who-card-txt{ transform:translateY(-3px); }
+
+/* ==================================================================
+   05 — CLOSING CTA
+   The bloom behind the type breathes; the grid stays perfectly still so
+   the movement reads as light, not as a wobbling background.
+   ================================================================== */
+
+
+/* ==================================================================
+   06 — FOOTER
+   ================================================================== */
+#home-glydi .f-col a{
+  display:inline-block;
+  transition:color .28s ease, transform .34s cubic-bezier(.22,.68,.24,1) !important;
+}
+#home-glydi .f-col a:hover{ transform:translateX(4px) !important; }
+#home-glydi .f-socials a{
+  transition:border-color .3s ease, color .3s ease, transform .4s cubic-bezier(.22,.68,.24,1) !important;
+}
+#home-glydi .f-socials a:hover{ transform:translateY(-3px) !important; }
+#home-glydi .f-form input{ transition:border-color .3s ease, background .3s ease !important; }
+
+/* ==================================================================
+   Reduced motion: every entry state is inert and every loop stops.
+   ================================================================== */
+@media (prefers-reduced-motion:reduce){
+  #home-glydi[data-motion="on"] [data-rv],
+  #home-glydi[data-motion="on"] [data-rv]:not(.rv-in){
+    opacity:1 !important;
+    transform:none !important;
+    clip-path:none !important;
+    transition:none !important;
+  }
+  #home-glydi .step-col:hover .sc-card,
+  #home-glydi .who-card:hover .who-card-img,
+  #home-glydi .f-col a:hover,
+  #home-glydi .f-socials a:hover{ transform:none !important; }
+}

@@ -55,6 +55,7 @@ const lastmodOverrides = new Set([
   // Touch these to force "edited today" for genuinely-fresh pages.
   "/",
   "/career-catalyst",
+  "/programs/aica",
   "/programs/ai-generalist",
   "/programs/ai-architect",
   "/ai-institute-hyderabad",

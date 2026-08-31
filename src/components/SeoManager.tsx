@@ -310,7 +310,7 @@ export default function SeoManager() {
         "@type": "ContactPoint",
         contactType: "customer support",
         email: "info@onrol.in",
-        telephone: "+91-9609312345",
+        telephone: "+91-9966577659",
         areaServed: "IN",
       },
       address: {

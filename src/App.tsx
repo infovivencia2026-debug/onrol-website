@@ -7,6 +7,7 @@ const Toaster = lazy(() => import("@/components/ui/toaster").then((m) => ({ defa
 import { AuthProvider } from "@/contexts/AuthContext";
 import { LmsAuthProvider } from "@/contexts/LmsAuthContext";
 import Navbar from "@/components/Navbar";
+import SitePreloader from "@/components/SitePreloader";
 import PageViewBeacon from "@/components/PageViewBeacon";
 import ScrollToHash from "@/components/ScrollToHash";
 import SeoManager from "@/components/SeoManager";
@@ -130,7 +131,7 @@ const AppShell = () => {
   // nav + footer, so the global app chrome is suppressed on them.
   const glydiPaths = new Set([
     "/", "/programs", "/programs/ai", "/programs/cyber",
-    "/programs/ai-generalist", "/programs/ai-architect",
+    "/programs/aica", "/programs/ai-generalist", "/programs/ai-architect",
     "/about", "/mentors", "/questions", "/glossary", "/blog",
     "/tools/ai-skills-quiz", "/masterclass", "/why-now",
     "/ai-course-in-hyderabad", "/best-ai-institute-in-hyderabad",
@@ -273,6 +274,7 @@ const AppShell = () => {
           <Route path="/programs" element={<GlydiRoute page="programs" />} />
           <Route path="/programs/ai" element={<GlydiRoute page="ai-programs" />} />
           <Route path="/programs/cyber" element={<GlydiRoute page="cyber-programs" />} />
+          <Route path="/programs/aica" element={<GlydiRoute page="aica" />} />
           <Route path="/programs/ai-generalist" element={<GlydiRoute page="ai-generalist" />} />
           <Route path="/programs/ai-architect" element={<GlydiRoute page="ai-architect" />} />
           <Route path="/masterclass" element={<GlydiRoute page="masterclass" />} />
@@ -325,6 +327,7 @@ const AppShell = () => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <SitePreloader />
       <Suspense fallback={null}>
         <Toaster />
         <Sonner />

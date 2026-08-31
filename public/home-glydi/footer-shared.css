@@ -1,0 +1,212 @@
+/* ==================================================================
+   THE FOOTER — one definition for all 22 pages.
+
+   It had drifted into two rounded boxes floating on black: the content
+   inside them sat 45px in from the site's page edge, so nothing in the
+   footer lined up with anything above it; the brand column carried a
+   near-invisible wordmark and a 120px hole between the copyright and
+   the social row; and the newsletter put its button beside the field at
+   every width, so on a phone the word "Subscribe" was cut in half.
+
+   This is the same footer, rebuilt on the site's own spine:
+
+     · everything starts on --page-edge, the measure every other block
+       on the site uses (75px at 1440)
+     · the boxes give way to hairlines, which is what actually separates
+       the three bands: links, newsletter, legal
+     · the newsletter stacks its button under the field below 640px
+     · the brand column closes up, so the social row sits with the
+       address rather than a screen away from it
+
+   Loaded by mountGlydiChrome for every page, home included.
+   ================================================================== */
+
+#home-glydi .footer{
+  --ft-ink:#0B0A09;
+  --ft-line:rgba(255,255,255,.13);
+  --ft-text:rgba(255,255,255,.74);
+  --ft-mute:rgba(255,255,255,.46);
+  --ft-accent:#F46718;
+
+  padding:clamp(56px, 7vw, 88px) var(--page-edge) clamp(24px, 3vw, 34px) !important;
+  background:var(--t-ink, var(--ft-ink)) !important;  /* the home page ground, where it sets one */
+  border-top:1px solid var(--ft-line);
+}
+
+/* ---- band 1: brand + links ---- */
+#home-glydi .footer .footer-top{
+  display:grid !important;
+  grid-template-columns:minmax(0, 1.15fr) repeat(3, minmax(0, 1fr)) !important;
+  gap:clamp(24px, 3vw, 52px) !important;
+  align-items:start !important;
+  margin:0 !important;
+  padding:0 0 clamp(36px, 4.4vw, 56px) !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+}
+
+#home-glydi .footer .f-brand{
+  display:flex; flex-direction:column;
+  align-items:flex-start;
+  gap:0 !important;
+  padding:0 !important;
+  border:0 !important;
+}
+#home-glydi .footer .f-logo{
+  font-family:var(--font-display, inherit) !important;
+  font-size:17px !important; font-weight:800 !important;
+  letter-spacing:.16em !important; text-transform:uppercase !important;
+  color:#FFFFFF !important;          /* it was grey on black, all but gone */
+  opacity:1 !important;
+  text-decoration:none !important;
+}
+#home-glydi .footer .f-copy{
+  margin:14px 0 0 !important;
+  max-width:34ch;
+  font-size:12.5px !important; line-height:1.65 !important;
+  color:var(--ft-mute) !important;
+}
+#home-glydi .footer .f-socials{
+  display:flex !important; flex-wrap:wrap; gap:10px !important;
+  margin:clamp(20px, 2.4vw, 28px) 0 0 !important;  /* it sat at the foot of a 120px hole */
+}
+#home-glydi .footer .f-socials a{
+  width:38px !important; height:38px !important;
+  display:grid !important; place-items:center;
+  border:1px solid var(--ft-line) !important;
+  border-radius:3px !important;
+  color:var(--ft-text) !important;
+  transition:border-color .25s ease, color .25s ease, background .25s ease;
+}
+#home-glydi .footer .f-socials a:hover{
+  border-color:var(--ft-accent) !important;
+  background:rgba(244,103,24,.12) !important;
+  color:#FFFFFF !important;
+}
+#home-glydi .footer .f-socials svg{
+  width:17px; height:17px;
+  stroke:currentColor; fill:none; stroke-width:1.7;
+  stroke-linecap:round; stroke-linejoin:round;
+}
+
+#home-glydi .footer .f-cols{
+  display:contents !important;   /* the three columns join the footer grid */
+}
+#home-glydi .footer .f-col{ min-width:0; }
+#home-glydi .footer .f-col h4{
+  margin:0 0 clamp(14px, 1.6vw, 18px) !important;
+  font-size:10px !important; font-weight:800 !important;
+  letter-spacing:.2em !important; text-transform:uppercase !important;
+  color:var(--ft-mute) !important;
+}
+#home-glydi .footer .f-col ul{ list-style:none !important; margin:0 !important; padding:0 !important; }
+#home-glydi .footer .f-col li{ margin:0 !important; }
+#home-glydi .footer .f-col li + li{ margin-top:9px !important; }
+#home-glydi .footer .f-col a{
+  display:inline-block;
+  font-size:14px !important; line-height:1.45 !important;
+  color:var(--ft-text) !important;
+  text-decoration:none !important;
+  transition:color .22s ease, transform .28s cubic-bezier(.22,.72,.24,1);
+}
+#home-glydi .footer .f-col a:hover{ color:#FFFFFF !important; transform:translateX(3px); }
+
+/* ---- band 2: newsletter ---- */
+#home-glydi .footer .footer-news{
+  display:grid !important;
+  grid-template-columns:minmax(0, 1fr) minmax(0, 520px) !important;
+  gap:clamp(18px, 3vw, 48px) !important;
+  align-items:center !important;
+  margin:0 !important;
+  padding:clamp(26px, 3vw, 36px) 0 !important;
+  border:0 !important;
+  border-top:1px solid var(--ft-line) !important;
+  border-bottom:1px solid var(--ft-line) !important;
+  border-radius:0 !important;
+  background:transparent !important;
+}
+#home-glydi .footer .f-news-text h4{
+  margin:0 !important;
+  font-size:clamp(17px, 1.7vw, 21px) !important;
+  font-weight:800 !important; letter-spacing:-.02em !important;
+  color:#FFFFFF !important;
+}
+#home-glydi .footer .f-news-text p{
+  margin:6px 0 0 !important;
+  font-size:13.5px !important; line-height:1.6 !important;
+  color:var(--ft-mute) !important;
+}
+#home-glydi .footer .f-form{
+  display:flex !important;
+  gap:10px !important;
+  width:100%;
+  margin:0 !important;
+}
+#home-glydi .footer .f-form input{
+  flex:1 1 auto; min-width:0;      /* the button used to push out of the row */
+  height:52px !important;
+  padding:0 16px !important;
+  border:1px solid var(--ft-line) !important;
+  border-radius:3px !important;
+  background:rgba(255,255,255,.04) !important;
+  font-size:14.5px !important;
+  color:#FFFFFF !important;
+}
+#home-glydi .footer .f-form input::placeholder{ color:rgba(255,255,255,.42) !important; }
+#home-glydi .footer .f-form input:focus{
+  outline:none !important;
+  border-color:var(--ft-accent) !important;
+  background:rgba(255,255,255,.06) !important;
+}
+#home-glydi .footer .f-form button{
+  flex:0 0 auto;
+  height:52px !important;
+  padding:0 26px !important;
+  border:0 !important; border-radius:3px !important;
+  background:var(--ft-accent) !important;
+  color:#14120F !important;
+  font-size:11.5px !important; font-weight:800 !important;
+  letter-spacing:.14em !important; text-transform:uppercase !important;
+  cursor:pointer;
+  transition:background .25s ease, color .25s ease;
+}
+#home-glydi .footer .f-form button:hover{ background:#FFFFFF !important; }
+#home-glydi .footer .f-news-msg{
+  margin:12px 0 0 !important;
+  font-size:13px !important;
+  color:var(--ft-accent) !important;
+}
+
+/* ---- band 3: the legal line ---- */
+#home-glydi .footer::after{
+  content:"ONROL · AI Execution School · Hyderabad, India";
+  display:block;
+  padding-top:clamp(18px, 2vw, 24px);
+  font-size:11px; font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:rgba(255,255,255,.3);
+}
+
+/* ---- narrow ---- */
+@media (max-width:1000px){
+  #home-glydi .footer .footer-top{
+    grid-template-columns:minmax(0, 1fr) minmax(0, 1fr) !important;
+    row-gap:clamp(28px, 5vw, 40px) !important;
+  }
+  #home-glydi .footer .f-brand{ grid-column:1 / -1; }
+}
+@media (max-width:640px){
+  #home-glydi .footer .footer-news{ grid-template-columns:minmax(0,1fr) !important; }
+  #home-glydi .footer .f-form{ flex-direction:column !important; }   /* "Subscribe" was cut in half */
+  #home-glydi .footer .f-form button{ width:100%; }
+  #home-glydi .footer .f-col a{ font-size:14.5px !important; }
+  #home-glydi .footer::after{ letter-spacing:.1em; font-size:10px; }
+}
+@media (max-width:420px){
+  #home-glydi .footer .footer-top{ grid-template-columns:minmax(0,1fr) !important; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  #home-glydi .footer .f-col a:hover{ transform:none; }
+}

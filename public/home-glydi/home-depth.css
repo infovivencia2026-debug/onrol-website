@@ -1,0 +1,298 @@
+/* ==================================================================
+   HOME — DEPTH
+
+   The page below the hero was one flat sheet of paper: every block sat
+   on the same #FBF9F5, separated by hairlines, with 200px+ of empty
+   paper between them. Nothing came forward, nothing sat back, and the
+   eye had no reason to travel.
+
+   This gives the page a floor plan. Four things do the work:
+
+     1. GROUNDS — the sections alternate paper / raised field / ink, so
+        each one is a place rather than more of the same page.
+     2. ELEVATION — one shadow ramp (rest → hover), applied to every
+        card, so "raised" means the same thing everywhere.
+     3. JOINS — a section no longer just stops; the ground changes and a
+        soft warm wash carries the eye over the seam.
+     4. RHYTHM — the empty paper between blocks is cut back to a
+        consistent measure, so the page reads as continuous.
+
+   Loaded last for the home page only.
+   ================================================================== */
+
+#home-glydi{
+  /* one elevation ramp for the whole page */
+  --lift-1:0 1px 2px rgba(20,18,15,.05), 0 2px 6px -4px rgba(20,18,15,.12);
+  --lift-2:0 1px 2px rgba(20,18,15,.05), 0 18px 36px -26px rgba(20,18,15,.5);
+  --lift-3:0 2px 4px rgba(20,18,15,.06), 0 34px 60px -34px rgba(20,18,15,.62);
+  --edge:rgba(20,18,15,.1);
+  --edge-hi:rgba(20,18,15,.18);
+  --field:#FFFFFF;
+  --paper:#FBF9F5;
+  --paper-deep:#F4F1EA;
+}
+
+/* ==================================================================
+   1 — GROUNDS AND JOINS
+   ================================================================== */
+#home-glydi .panel,
+#home-glydi .build,
+#home-glydi .who{
+  position:relative;
+  isolation:isolate;
+}
+
+/* the opening section keeps the paper, but the paper is no longer flat:
+   a warm wash sits under the headline and fades out before the cards */
+#home-glydi .panel::before{
+  content:"";
+  position:absolute; inset:0 0 auto; height:70%;
+  z-index:-1;
+  background:
+    radial-gradient(90% 70% at 12% 0%, rgba(244,103,24,.07), transparent 62%),
+    linear-gradient(180deg, #FFFFFF 0%, var(--paper) 52%, var(--paper) 100%);
+  pointer-events:none;
+}
+
+/* the "who it's for" section sits on the deeper paper, so the block of
+   photographs reads as a field rather than more of the same sheet */
+#home-glydi .who{ background:var(--paper-deep) !important; }
+#home-glydi .who::before,
+#home-glydi .build::before{
+  content:"";
+  position:absolute; left:0; right:0; top:-1px; height:1px;
+  background:linear-gradient(90deg, transparent, var(--edge) 18%, var(--edge) 82%, transparent);
+  z-index:-1;
+}
+
+/* the rhythm: the page had 200–250px of dead paper at some joins */
+#home-glydi .panel{ padding-block:clamp(56px, 7vw, 104px) clamp(48px, 6vw, 88px) !important; }
+#home-glydi .build{ padding-block:clamp(48px, 6vw, 88px) !important; }
+#home-glydi .who{ padding-block:clamp(56px, 7vw, 100px) !important; }
+#home-glydi .cta-section{ padding-block:clamp(56px, 7vw, 104px) !important; }
+#home-glydi .panel-trust{ margin-top:clamp(34px, 4vw, 56px) !important; }
+#home-glydi .build-inner{ display:grid; gap:clamp(28px, 3.4vw, 48px); }
+
+/* ==================================================================
+   2 — THE STEP BOARD
+   Four columns divided by hairlines, with the numerals floating loose
+   above them. They are cards now: raised, indexed, and connected by a
+   rail that shows the four are one sequence.
+   ================================================================== */
+#home-glydi .steps-board{
+  display:grid !important;
+  grid-template-columns:repeat(4, minmax(0, 1fr)) !important;
+  gap:clamp(14px, 1.6vw, 22px) !important;
+  /* the index row was landing on the buttons above it */
+  margin:clamp(44px, 5vw, 76px) 0 0 !important;
+  padding:0 !important;
+  border:0 !important;
+  background:transparent !important;
+  counter-reset:step;
+}
+#home-glydi .steps-board::before,
+#home-glydi .steps-board::after{ display:none !important; }
+
+#home-glydi .step-col{
+  position:relative;
+  border:0 !important;
+  padding:0 !important;
+  background:transparent !important;
+}
+/* the rail that ties the four together */
+#home-glydi .step-col::before{
+  content:"";
+  position:absolute; top:26px; left:0; right:0;
+  height:1px;
+  background:var(--edge);
+  z-index:0;
+}
+#home-glydi .step-col:first-child::before{ left:26px; }
+#home-glydi .step-col:last-child::before{ right:26px; }
+
+/* the loose outline numeral goes; the index becomes a real chip on the rail */
+/* styles.css pins the numeral with position:absolute and right/left offsets
+   so the old outline numerals could overlap each other; the chip belongs in
+   the flow, at the head of its own column */
+#home-glydi .steps-board .step-col .sc-num,
+#home-glydi .steps-board .step-col:first-child .sc-num{
+  position:relative !important;
+  inset:auto !important;
+  top:auto !important; left:auto !important; right:auto !important; bottom:auto !important;
+  z-index:1;
+  display:grid !important; place-items:center;
+  width:52px !important; height:52px !important;
+  margin:0 0 clamp(16px, 1.8vw, 22px) !important;
+  border-radius:50% !important;
+  border:1px solid var(--edge-hi) !important;
+  background:var(--field) !important;
+  box-shadow:var(--lift-1);
+  font-family:var(--font-display) !important;
+  font-size:17px !important; font-weight:800 !important;
+  letter-spacing:-.02em !important;
+  color:var(--t-ink) !important;
+  -webkit-text-fill-color:currentColor !important;   /* it was an outline face */
+  -webkit-text-stroke:0 !important;
+  opacity:1 !important;
+  transition:background .3s ease, color .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+#home-glydi .step-col .sc-card{
+  position:relative; z-index:1;
+  display:flex; flex-direction:column;
+  height:100%;
+  padding:clamp(20px, 2.2vw, 28px) !important;
+  border:1px solid var(--edge) !important;
+  border-radius:4px;
+  background:var(--field) !important;
+  box-shadow:var(--lift-1);
+  transition:transform .42s cubic-bezier(.22,.72,.24,1), box-shadow .42s ease, border-color .3s ease;
+}
+#home-glydi .step-col:hover .sc-card{
+  transform:translateY(-6px);
+  box-shadow:var(--lift-2);
+  border-color:var(--edge-hi) !important;
+}
+#home-glydi .step-col:hover .sc-num{
+  background:var(--t-accent) !important;
+  border-color:var(--t-accent) !important;
+  color:#14120F !important;
+  box-shadow:0 8px 20px -10px rgba(244,103,24,.7);
+}
+#home-glydi .step-col .sc-ic{
+  display:grid !important; place-items:center;
+  width:38px !important; height:38px !important;
+  margin:0 0 14px !important;
+  border-radius:3px !important;
+  background:#FFF3EB !important;
+  color:var(--t-accent-ink) !important;
+}
+#home-glydi .step-col .sc-ic svg{ width:19px; height:19px; }
+#home-glydi .step-col .sc-text{ margin-bottom:0 !important; color:var(--t-body) !important; }
+
+/* ==================================================================
+   3 — THE TRUST ROW
+   Three loose icon+label pairs floating on paper. It becomes one solid
+   bar, which also gives the section a floor to stop on.
+   ================================================================== */
+#home-glydi .panel-trust{
+  display:grid !important;
+  grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+  gap:0 !important;
+  padding:0 !important;
+  border:1px solid var(--edge) !important;
+  border-radius:4px;
+  background:var(--field) !important;
+  box-shadow:var(--lift-1);
+  overflow:hidden;
+}
+#home-glydi .panel-trust .pt-item{
+  display:flex; align-items:center; gap:14px;
+  padding:clamp(18px, 2vw, 24px) clamp(18px, 2vw, 26px) !important;
+  border:0 !important;
+  border-left:1px solid var(--edge) !important;
+  background:transparent !important;
+  transition:background .3s ease;
+}
+#home-glydi .panel-trust .pt-item:first-child{ border-left:0 !important; }
+#home-glydi .panel-trust .pt-item:hover{ background:#FFF9F5 !important; }
+#home-glydi .panel-trust .pt-ic{
+  flex:0 0 auto;
+  display:grid !important; place-items:center;
+  width:40px !important; height:40px !important;
+  border:0 !important;
+  border-radius:3px !important;
+  background:#FFF3EB !important;
+  color:var(--t-accent-ink) !important;
+}
+
+/* ==================================================================
+   4 — THE FILM BLOCK
+   ================================================================== */
+#home-glydi .build-lead{
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:var(--lift-2);
+  border-color:var(--edge) !important;
+  transition:box-shadow .45s ease;
+}
+#home-glydi .build-lead:hover{ box-shadow:var(--lift-3); }
+#home-glydi .build-proof li{ border-color:var(--edge) !important; }
+
+/* the programs banner: the ink block gets a lit floor and a real edge */
+#home-glydi .build-banner{
+  position:relative;
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:0 30px 60px -40px rgba(20,18,15,.8);
+}
+#home-glydi .build-banner::after{
+  content:"";
+  position:absolute; inset:0;
+  pointer-events:none;
+  background:radial-gradient(70% 90% at 78% 110%, rgba(244,103,24,.22), transparent 60%);
+  z-index:0;
+}
+#home-glydi .build-banner > *{ position:relative; z-index:1; }
+
+/* ==================================================================
+   5 — THE "WHO IT'S FOR" TILES
+   ================================================================== */
+#home-glydi .who-grid{ align-items:stretch; }
+#home-glydi .who-card{
+  /* the twelve pictures carry different ratios, so the rows were ending on
+     four different baselines — one frame, and the picture fills it */
+  position:relative;
+  aspect-ratio:16 / 10;
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:var(--lift-1);
+  transition:transform .45s cubic-bezier(.22,.72,.24,1), box-shadow .45s ease;
+}
+#home-glydi .who-card .who-card-img{
+  position:absolute; inset:0;
+  width:100% !important; height:100% !important;
+  background-size:cover !important;
+  background-position:center !important;
+  transition:transform .8s cubic-bezier(.22,.72,.24,1);
+}
+#home-glydi .who-card:hover .who-card-img{ transform:scale(1.05); }
+#home-glydi .who-card:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--lift-2);
+}
+
+/* ==================================================================
+   6 — THE CLOSING BLOCK
+   ================================================================== */
+#home-glydi .cta-section{
+  position:relative;
+  overflow:hidden;
+}
+#home-glydi .cta-section::after{
+  content:"";
+  position:absolute; inset:auto 0 -30% 0; height:70%;
+  pointer-events:none; z-index:0;
+  background:radial-gradient(50% 100% at 20% 100%, rgba(244,103,24,.18), transparent 70%);
+}
+#home-glydi .cta-section > *{ position:relative; z-index:1; }
+
+/* ==================================================================
+   NARROW
+   ================================================================== */
+@media (max-width:1000px){
+  #home-glydi .steps-board{ grid-template-columns:repeat(2, minmax(0,1fr)) !important; }
+  #home-glydi .step-col::before{ display:none; }
+  #home-glydi .panel-trust{ grid-template-columns:minmax(0,1fr) !important; }
+  #home-glydi .panel-trust .pt-item{ border-left:0 !important; border-top:1px solid var(--edge) !important; }
+  #home-glydi .panel-trust .pt-item:first-child{ border-top:0 !important; }
+}
+@media (max-width:620px){
+  #home-glydi .steps-board{ grid-template-columns:minmax(0,1fr) !important; }
+  /* two columns of 136px make a 16:10 tile 85px tall, and the label baked
+     into each picture stops being readable */
+  #home-glydi .who-card{ aspect-ratio:4 / 3; }
+}
+@media (prefers-reduced-motion:reduce){
+  #home-glydi .step-col:hover .sc-card,
+  #home-glydi .who-card:hover{ transform:none; }
+}

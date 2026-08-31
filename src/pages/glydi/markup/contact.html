@@ -33,9 +33,8 @@
   .wa-btn:hover{ transform:translateY(-2px); background:#1faf57; }
   .wa-btn svg{ width:18px; height:18px; fill:currentColor; }
   .resp-note{ display:flex; align-items:center; gap:9px; margin-top:16px; font-family:var(--mono); font-size:12px; color:#6a5f56; }
-  .resp-note .dot{ flex:0 0 auto; width:8px; height:8px; border-radius:50%; background:#22c55e; box-shadow:0 0 0 0 rgba(34,197,94,.5); animation:respPulse 1.9s ease-out infinite; }
-  @keyframes respPulse{ 0%{ box-shadow:0 0 0 0 rgba(34,197,94,.5); } 70%{ box-shadow:0 0 0 9px rgba(34,197,94,0); } 100%{ box-shadow:0 0 0 0 rgba(34,197,94,0); } }
-  @media (prefers-reduced-motion:reduce){ .resp-note .dot{ animation:none; } }
+  .resp-note .dot{ flex:0 0 auto; width:7px; height:7px; border-radius:50%; background:#22c55e; }
+  .resp-note .dot{ flex:0 0 auto; width:7px; height:7px; border-radius:50%; background:#22c55e; }
 
   /* ---- right: form card ---- */
   .cform{ position:relative; background:#fff; border:1px solid rgba(0,0,0,.16); padding:clamp(24px,3vw,38px); }
@@ -60,13 +59,245 @@
   .toast{ position:fixed; left:50%; bottom:28px; transform:translateX(-50%) translateY(140%); background:#16181b; color:#fff; padding:14px 22px; font-family:var(--mono); font-size:13px; letter-spacing:.5px; z-index:100; transition:.3s ease; }
   .toast.show{ transform:translateX(-50%) translateY(0); }
   @media (max-width:760px){ .contact-grid{ grid-template-columns:1fr; gap:30px; } .row2{ grid-template-columns:1fr; gap:0; } }
+
+/* ==================================================================
+   CONTACT — rebuilt
+   It was two thin columns of hairlines on a lot of white: a list with
+   no weight, a form with tiny labels, and orange crop marks that meant
+   nothing. This gives the page a proper head, turns each way of getting
+   in touch into a real target, and makes the form look like something
+   worth filling in.
+   ================================================================== */
+
+#home-glydi .subpage{ --ct-ink:#14120F; --ct-body:#4C473F; --ct-muted:#8A8378;
+  --ct-line:rgba(20,18,15,.12); --ct-accent:#F46718; --ct-accent-dk:#B8480A; --ct-wash:#FFF3EB; }
+
+/* ---- head ---- */
+#home-glydi .pagehero{
+  background:#FBFAF8 !important;
+  border-bottom:1px solid var(--ct-line);
+  padding-block:clamp(104px, 13vh, 150px) clamp(40px, 5vw, 64px) !important;
+}
+#home-glydi .pagehero .ph-title span{ color:var(--ct-accent-dk) !important; font-style:normal !important; }
+
+/* ---- the grid ---- */
+#home-glydi .contact-grid{
+  display:grid !important;
+  grid-template-columns:minmax(0, .82fr) minmax(0, 1.18fr) !important;
+  gap:clamp(20px, 3vw, 46px) !important;
+  align-items:start;
+}
+
+/* ---- ways to reach us: each one a real target ---- */
+#home-glydi .contact-info{ border:0 !important; padding:0 !important; }
+#home-glydi .contact-info::before,
+#home-glydi .contact-info::after,
+#home-glydi .cform::before,
+#home-glydi .cform::after{ display:none !important; }  /* the stray crop marks */
+
+#home-glydi .cinfo{
+  display:grid; gap:10px;
+  background:transparent !important;   /* the old grey showed through the gaps */
+  border:0 !important;
+}
+#home-glydi .cinfo::before,
+#home-glydi .cinfo::after{ display:none !important; }   /* the crop marks */
+#home-glydi .ci{
+  display:grid !important;
+  grid-template-columns:44px minmax(0,1fr);
+  gap:14px; align-items:center;
+  padding:16px 18px !important;
+  border:1px solid var(--ct-line) !important;
+  border-radius:3px;
+  background:#FFFFFF !important;
+  transition:border-color .25s ease, transform .3s cubic-bezier(.22,.72,.24,1), box-shadow .3s ease;
+}
+#home-glydi .ci:hover{
+  border-color:rgba(244,103,24,.45) !important;
+  transform:translateY(-2px);
+  box-shadow:0 14px 30px -22px rgba(20,18,15,.4);
+}
+#home-glydi .ci-ic{
+  width:44px !important; height:44px !important;
+  display:grid !important; place-items:center;
+  border-radius:3px !important;
+  background:var(--ct-wash) !important;
+  color:var(--ct-accent-dk) !important;
+}
+#home-glydi .ci-ic svg{ width:19px; height:19px; }
+#home-glydi .ci-k{
+  font-size:9.5px !important; font-weight:800 !important;
+  letter-spacing:.2em !important; text-transform:uppercase !important;
+  color:var(--ct-muted) !important;
+}
+#home-glydi .ci-v{
+  margin-top:3px !important;
+  font-size:15px !important; font-weight:700 !important;
+  letter-spacing:-.01em !important;
+  color:var(--ct-ink) !important;
+}
+
+/* the WhatsApp action carries the weight of a primary */
+#home-glydi .contact-info .btn,
+#home-glydi .contact-info a[href*="wa.me"],
+#home-glydi .contact-info .wa{
+  display:flex !important; align-items:center; justify-content:center; gap:10px;
+  margin-top:14px !important;
+  padding:16px 22px !important;
+  border-radius:3px !important;
+  background:#0E0D0C !important;
+  color:#FFFFFF !important;
+  font-size:11.5px !important; font-weight:800 !important;
+  letter-spacing:.14em !important; text-transform:uppercase !important;
+  transition:background .25s ease, color .25s ease;
+}
+#home-glydi .contact-info .btn:hover,
+#home-glydi .contact-info a[href*="wa.me"]:hover{ background:var(--ct-accent) !important; color:var(--ct-ink) !important; }
+#home-glydi .resp-note{
+  justify-content:center;
+  margin-top:12px !important;
+  font-size:12px !important;
+  color:var(--ct-muted) !important;
+}
+
+/* ---- the form ---- */
+#home-glydi .cform{
+  border:1px solid var(--ct-line) !important;
+  border-top:3px solid var(--ct-accent) !important;
+  border-radius:3px;
+  background:#FFFFFF !important;
+  padding:clamp(24px, 3vw, 40px) !important;
+  box-shadow:0 1px 2px rgba(20,18,15,.04);
+}
+#home-glydi .cform h2,
+#home-glydi .cform .fh-t{
+  font-size:clamp(21px, 2.2vw, 30px) !important;
+  font-weight:800 !important;
+  letter-spacing:-.03em !important;
+  color:var(--ct-ink) !important;
+}
+#home-glydi .cform .fh-sub{
+  margin-top:6px !important;
+  font-size:13.5px !important; line-height:1.6 !important;
+  color:var(--ct-body) !important;
+}
+#home-glydi .cform .field label,
+#home-glydi .cform label{
+  font-size:9.5px !important; font-weight:800 !important;
+  letter-spacing:.2em !important; text-transform:uppercase !important;
+  color:var(--ct-muted) !important;
+}
+#home-glydi .cform input,
+#home-glydi .cform textarea{
+  border:1px solid var(--ct-line) !important;
+  border-radius:3px !important;
+  padding:14px !important;
+  font-size:14.5px !important;
+  color:var(--ct-ink) !important;
+  background:#FFFFFF !important;
+  transition:border-color .2s ease, box-shadow .2s ease;
+}
+#home-glydi .cform input:focus,
+#home-glydi .cform textarea:focus{
+  border-color:var(--ct-accent) !important;
+  box-shadow:0 0 0 3px var(--ct-wash) !important;
+  outline:none !important;
+}
+#home-glydi .cform button[type="submit"]{
+  width:100%;
+  padding:17px 22px !important;
+  border:0 !important; border-radius:3px !important;
+  background:var(--ct-accent) !important;
+  color:var(--ct-ink) !important;
+  font-size:12px !important; font-weight:800 !important;
+  letter-spacing:.14em !important; text-transform:uppercase !important;
+  transition:background .25s ease, color .25s ease;
+}
+#home-glydi .cform button[type="submit"]:hover{ background:#0E0D0C !important; color:#FFFFFF !important; }
+
+@media (max-width:900px){
+  #home-glydi .contact-grid{ grid-template-columns:minmax(0,1fr) !important; }
+}
+
+/* ------------------------------------------------------------------
+   ALIGNMENT PASS
+   The two columns started together and ended 220px apart: the form ran
+   long while the contact list stopped dead, leaving a hole down the
+   left of the page. The list is now a panel of the same height, with
+   the WhatsApp action anchored to its foot so both columns close on the
+   same line.
+   ------------------------------------------------------------------ */
+
+#home-glydi .contact-sec{
+  padding-block:clamp(48px, 6vw, 84px) clamp(56px, 7vw, 96px) !important;
+}
+
+#home-glydi .contact-grid{
+  align-items:stretch !important;          /* both columns to the taller one */
+  gap:clamp(20px, 2.6vw, 40px) !important;
+}
+/* scoped, so it cannot outrank the stack rule below 760px */
+@media (min-width:761px){
+  #home-glydi .contact-grid{ grid-template-columns:minmax(0, .86fr) minmax(0, 1.14fr) !important; }
+}
+@media (max-width:760px){
+  #home-glydi .contact-grid{ grid-template-columns:minmax(0,1fr) !important; }
+}
+
+/* the left column becomes a panel, matched to the form card */
+#home-glydi .contact-info{
+  display:flex !important;
+  flex-direction:column;
+  padding:clamp(24px, 3vw, 38px) !important;
+  border:1px solid var(--ct-line) !important;
+  border-top:3px solid var(--ct-ink) !important;
+  border-radius:3px;
+  background:#FDFCFB !important;
+  box-shadow:0 1px 2px rgba(20,18,15,.04);
+}
+#home-glydi .contact-info .ci-lede{
+  margin:0 0 clamp(16px, 2vw, 22px) !important;
+  font-size:13.5px !important; line-height:1.6 !important;
+  color:var(--ct-body) !important;
+}
+/* the free height goes into the three rows rather than pooling as one
+   hole above the button */
+#home-glydi .cinfo{ flex:1 1 auto; grid-auto-rows:minmax(76px, 1fr); }
+#home-glydi .contact-info .ci{ padding:15px 16px !important; }
+
+/* the action closes the panel on the form's bottom line */
+/* the rows above absorb the free height, so the action just needs its
+   own breathing room (the primary rule matches on [href*="wa.me"], so
+   this needs the same reach to beat it) */
+#home-glydi .contact-info a.wa-btn[href*="wa.me"]{ margin-top:18px !important; }
+#home-glydi .contact-info .resp-note{ margin-bottom:0 !important; }
+
+/* the form fills its column rather than floating in it */
+#home-glydi .cform{ display:flex !important; flex-direction:column; }
+#home-glydi .cform form{ display:flex; flex-direction:column; flex:1; }
+#home-glydi .cform .field{ margin-bottom:14px !important; }
+#home-glydi .cform .field:has(textarea){ flex:1; display:flex; flex-direction:column; }
+#home-glydi .cform textarea{ flex:1; }
+
+#home-glydi .subpage .back{ margin-top:clamp(28px, 3.4vw, 44px) !important; }
+
+/* the toast is a submit confirmation; it must not sit on the page at rest */
+#home-glydi .toast{ opacity:0; visibility:hidden;
+  transition:transform .3s ease, opacity .3s ease, visibility .3s; }
+#home-glydi .toast.show{ opacity:1; visibility:visible; }
+
+@media (max-width:760px){
+  #home-glydi .contact-info{ padding:22px !important; }
+  #home-glydi .contact-info a.wa-btn[href*="wa.me"]{ margin-top:18px !important; }
+}
+
 </style>
 
 <a class="site-logo" href="/" aria-label="ONROL, AI Execution School, home">
   <img src="/home-glydi/logo-mark.png" alt="ONROL, AI Execution School">
 </a>
 
-<nav class="nav">
+<nav class="nav topbar">
   <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
     <span></span><span></span><span></span>
   </button>
@@ -84,8 +315,7 @@
 
 <header class="pagehero">
   <div class="pagehero-inner">
-    <p class="ph-eyebrow">Contact</p>
-    <h1 class="ph-title">Let's <span>talk.</span></h1>
+    <h1 class="ph-title">Let's <span>connect.</span></h1>
     <p class="ph-sub">Questions about a program, enrollment, or anything else? Reach out and the ONROL team will get back to you.</p>
   </div>
 </header>
@@ -94,9 +324,8 @@
   <div class="contact-grid">
 
     <div class="contact-info rv">
-      <h2 class="ci-head">Get in touch</h2>
-      <p class="ci-sub">Questions about a program, enrollment, or anything else, pick whatever's easiest.</p>
-      <div class="cinfo">
+      <p class="ci-lede">Whichever way you reach us, the same team answers.</p>
+        <div class="cinfo">
         <a class="ci" href="mailto:info@onrol.in">
           <span class="ci-ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
           <span class="ci-t"><span class="ci-k">Email</span><span class="ci-v">info@onrol.in</span></span>
@@ -108,10 +337,6 @@
         <a class="ci" href="https://maps.google.com/?q=Hyderabad" target="_blank" rel="noopener">
           <span class="ci-ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
           <span class="ci-t"><span class="ci-k">Location</span><span class="ci-v">Hyderabad, India</span></span>
-        </a>
-        <a class="ci" href="/programs">
-          <span class="ci-ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
-          <span class="ci-t"><span class="ci-k">Programs</span><span class="ci-v">See all programs &rarr;</span></span>
         </a>
       </div>
       <a class="wa-btn" href="https://wa.me/918121306701" target="_blank" rel="noopener">
@@ -168,6 +393,7 @@
       <div class="f-col">
         <h4>Programs</h4>
         <ul>
+          <li><a href="/programs/aica">AI Career Accelerator</a></li>
           <li><a href="/programs/ai-generalist">AI Generalist</a></li>
           <li><a href="/programs/ai-architect">AI Architect</a></li>
           <li><a href="/soc-analyst">SOC Analyst</a></li>
@@ -217,10 +443,11 @@
     <p class="lead-eyebrow">Apply to ONROL</p>
     <h3 id="leadTitle">Start with a quick hello.</h3>
     <p class="lead-sub">Drop your details and our team reaches out about the next cohort, takes 20 seconds.</p>
+    <div class="lead-steps"><span>20 seconds</span><span>No payment</span><span>We call you back</span></div>
     <form id="leadForm" class="lead-form">
-      <input type="text" id="leadName" name="name" placeholder="Full name" autocomplete="name" required>
-      <input type="email" id="leadEmail" name="email" placeholder="Email address" autocomplete="email" required>
-      <input type="tel" id="leadPhone" name="phone" placeholder="Phone / WhatsApp number" autocomplete="tel" required>
+      <div><label for="leadName">Full name</label><input type="text" id="leadName" name="name" placeholder="Your name" autocomplete="name" required></div>
+      <div><label for="leadEmail">Email</label><input type="email" id="leadEmail" name="email" placeholder="you@email.com" autocomplete="email" required></div>
+      <div><label for="leadPhone">Phone / WhatsApp</label><input type="tel" id="leadPhone" name="phone" placeholder="+91 …" autocomplete="tel" required></div>
       <button type="submit" class="lead-submit">Apply Now</button>
     </form>
     <p class="lead-fine">No spam. We&rsquo;ll only contact you about your application.</p>

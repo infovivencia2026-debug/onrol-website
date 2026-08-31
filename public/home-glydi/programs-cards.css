@@ -1,0 +1,405 @@
+/* ==================================================================
+   PROGRAMS — program cards
+   Rich, photographic and light. Each program is a real card: an image
+   header with its number, the title, what it is, three things you walk
+   out with, the facts, and its own way in. Tracks are introduced with a
+   centred heading over a rule, the way the About page does it, so the
+   two pages read as one site — but the layout here is its own.
+   ================================================================== */
+
+#home-glydi{
+  --g-paper:#FBFAF8;
+  --g-white:#FFFFFF;
+  --g-ink:#14120F;
+  --g-ink-2:#1E1B17;
+  --g-body:#4C473F;
+  --g-muted:#8A8378;
+  --g-line:rgba(20,18,15,.12);
+  --g-line-hi:rgba(20,18,15,.24);
+  --g-accent:#F46718;
+  --g-accent-dk:#C2500B;
+  --g-wash:#FFF2EA;
+  --g-round:18px;
+  --g-edge:clamp(20px, 5vw, 76px);
+  --g-nav:72px;
+}
+
+html:has(#home-glydi .gp),
+html:has(#home-glydi .gp) body,
+html:has(#home-glydi .gp) #root{ background:var(--g-paper) !important; }
+
+#home-glydi .gp{
+  display:block !important;
+  width:auto !important; max-width:none !important;
+  margin:0 !important; padding:0 !important;
+  background:var(--g-paper) !important;
+  color:var(--g-body);
+  font-family:var(--font-body);
+}
+#home-glydi .gp > *{ margin-bottom:0 !important; }
+/* the shared site measure, so this page starts where every other one does */
+#home-glydi .gp-wrap{
+  width:min(var(--page-max, 1560px), 100%);
+  margin-inline:auto;
+  padding-inline:var(--page-edge);
+}
+
+/* ---- shared: centred heading over a rule ---- */
+#home-glydi .gp .gp-h{
+  margin:0 auto;
+  text-align:center;
+  font-family:var(--font-display) !important;
+  font-weight:800 !important; font-style:normal !important;
+  font-size:clamp(26px, 3.4vw, 44px) !important;
+  line-height:1.1 !important; letter-spacing:-.03em !important;
+  color:var(--g-accent-dk) !important;
+  max-width:24ch;
+}
+#home-glydi .gp .gp-rule{
+  width:150px; height:2px;
+  margin:18px auto clamp(14px, 2vw, 22px);
+  background:var(--g-ink);
+}
+#home-glydi .gp .gp-sub{
+  max-width:62ch; margin:0 auto clamp(30px, 4vw, 48px);
+  text-align:center;
+  font-size:clamp(14.5px, 1.15vw, 16.5px) !important;
+  line-height:1.7 !important;
+  color:var(--g-body) !important;
+}
+
+/* ==================================================================
+   HERO
+   ================================================================== */
+#home-glydi .gp-hero{
+  position:relative;
+  padding:calc(var(--g-nav) + clamp(72px, 12vh, 132px)) 0 clamp(72px, 11vh, 128px);
+  min-height:clamp(480px, 66vh, 660px);
+  display:flex; align-items:center;
+  background:#0B0A09 !important;
+  overflow:hidden;
+  isolation:isolate;
+}
+
+/* The artwork holds the right of the frame — the fork in the road, with the
+   two tracks named on it. Its own ground is near-black, so a mask on its
+   left edge lets it dissolve into the hero rather than sit in a box. */
+#home-glydi .gp-hero-shot{
+  position:absolute; z-index:0;
+  top:0; right:0; bottom:0;
+  left:auto;
+  width:min(58%, 1000px);
+  background:transparent center right / cover no-repeat;
+  filter:none;
+  /* a long fade: the artwork ground is a shade lighter than the hero ink, so
+     a short mask leaves a visible seam down the middle of the frame */
+  -webkit-mask-image:linear-gradient(90deg, transparent 0%, transparent 12%, rgba(0,0,0,.3) 32%, rgba(0,0,0,.85) 56%, #000 72%);
+          mask-image:linear-gradient(90deg, transparent 0%, transparent 12%, rgba(0,0,0,.3) 32%, rgba(0,0,0,.85) 56%, #000 72%);
+}
+/* a soft warm lift under the fork, so the panel reads as lit rather than pasted */
+#home-glydi .gp-hero::before{
+  content:"";
+  position:absolute; z-index:1;
+  right:0; bottom:-20%;
+  width:62%; height:90%;
+  background:radial-gradient(60% 60% at 60% 60%, rgba(244,103,24,.16), transparent 70%);
+  pointer-events:none;
+}
+/* the words keep their own ground on the left */
+#home-glydi .gp-hero::after{
+  content:"";
+  position:absolute; inset:0; z-index:1;
+  background:linear-gradient(90deg, rgba(11,10,9,.94) 0%, rgba(11,10,9,.86) 30%, rgba(11,10,9,.24) 52%, rgba(11,10,9,0) 68%);
+}
+#home-glydi .gp-hero .gp-wrap{ position:relative; z-index:2; }
+
+#home-glydi .gp-hero h1{
+  margin:0 !important;
+  font-family:var(--font-display) !important;
+  font-weight:800 !important; font-style:normal !important;
+  font-size:clamp(34px, 4.6vw, 66px) !important;
+  line-height:1.02 !important; letter-spacing:-.035em !important;
+  color:#FFFFFF !important;
+  max-width:14ch;
+}
+#home-glydi .gp-hero h1 em{ font-style:normal; color:var(--g-accent); }
+#home-glydi .gp .gp-hero-sub{
+  margin:clamp(18px, 2.4vh, 26px) 0 0 !important;
+  padding-top:clamp(16px, 2vh, 22px);
+  max-width:44ch;
+  border-top:1px solid rgba(255,255,255,.22);
+  font-size:clamp(14.5px, 1.2vw, 16.5px) !important;
+  line-height:1.7 !important;
+  color:rgba(255,255,255,.78) !important;
+}
+
+/* narrow: the artwork moves behind the words, framed from its centre so the
+   fork and the figure stay in shot */
+@media (max-width:900px){
+  #home-glydi .gp-hero{ min-height:clamp(420px, 56vh, 540px); }
+  #home-glydi .gp-hero-shot{
+    left:0; width:100%;
+    /* framed on the fork itself: the labels baked into the top of the artwork
+       would otherwise sit under the headline */
+    background-position:50% 96%;
+    background-size:auto 190%;   /* zoom past the labels to the fork itself */
+    -webkit-mask-image:none; mask-image:none;
+    opacity:.6;
+  }
+  #home-glydi .gp-hero::before{ display:none; }
+  #home-glydi .gp-hero::after{
+    background:linear-gradient(180deg, rgba(11,10,9,.9) 0%, rgba(11,10,9,.72) 44%, rgba(11,10,9,.86) 100%);
+  }
+  #home-glydi .gp-hero h1{ max-width:none; }
+}
+
+/* ==================================================================
+   TRACK SECTIONS + CARD GRID
+   ================================================================== */
+#home-glydi .gp-track{ padding:clamp(52px, 7vw, 92px) 0 clamp(20px, 3vw, 36px); }
+#home-glydi .gp > section.gp-track.alt,
+#home-glydi .gp-track.alt{ background:var(--g-white) !important; }
+#home-glydi .gp-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+  gap:clamp(18px, 2vw, 30px);
+  padding-bottom:clamp(40px, 5vw, 70px);
+}
+
+#home-glydi .gp-card{
+  display:flex; flex-direction:column;
+  background:var(--g-white);
+  border:1px solid var(--g-line);
+  border-radius:var(--g-round);
+  overflow:hidden;
+  text-decoration:none;
+  transition:transform .45s cubic-bezier(.22,.72,.24,1), box-shadow .45s ease, border-color .35s ease;
+}
+#home-glydi .gp-track.alt .gp-card{ background:var(--g-paper); }
+#home-glydi .gp-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(244,103,24,.45);
+  box-shadow:0 26px 48px -30px rgba(20,18,15,.35);
+}
+
+/* the card's picture header */
+#home-glydi .gp-shot{
+  position:relative;
+  aspect-ratio:16 / 9;
+  overflow:hidden;
+  background:var(--g-ink);
+}
+#home-glydi .gp-shot i{
+  position:absolute; inset:0;
+  background:center / cover no-repeat;
+  filter:grayscale(.35) contrast(1.04);
+  transition:transform .9s cubic-bezier(.22,.72,.24,1), filter .55s ease;
+}
+#home-glydi .gp-card:hover .gp-shot i{ transform:scale(1.06); filter:grayscale(0) contrast(1.02); }
+#home-glydi .gp-shot::after{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(20,18,15,.5) 0%, rgba(20,18,15,.08) 46%, rgba(20,18,15,.62) 100%);
+}
+#home-glydi .gp-num{
+  position:absolute; top:14px; left:16px; z-index:2;
+  font-size:11px; font-weight:800; letter-spacing:.16em;
+  color:#FFFFFF;
+}
+#home-glydi .gp-num em{ font-style:normal; color:var(--g-accent); }
+#home-glydi .gp-tagline{
+  position:absolute; left:16px; right:16px; bottom:13px; z-index:2;
+  display:flex; flex-wrap:wrap; gap:8px;
+}
+#home-glydi .gp-tagline span{
+  padding:4px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.94);
+  font-size:9.5px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--g-ink);
+}
+#home-glydi .gp-tagline span.hot{ background:var(--g-accent); }
+
+/* the card body */
+#home-glydi .gp-body{ padding:clamp(20px, 2.2vw, 30px); display:flex; flex-direction:column; flex:1; }
+#home-glydi .gp .gp-card h3{
+  margin:0 0 8px !important;
+  font-family:var(--font-display) !important;
+  font-weight:800 !important;
+  font-size:clamp(20px, 1.8vw, 25px) !important;
+  letter-spacing:-.028em !important;
+  color:var(--g-ink) !important;
+}
+#home-glydi .gp .gp-card > .gp-body > p{
+  margin:0 0 clamp(16px, 1.8vw, 22px) !important;
+  font-size:14px !important; line-height:1.6 !important;
+  color:var(--g-body) !important;
+}
+#home-glydi .gp-points{ list-style:none; margin:0 0 clamp(16px, 1.8vw, 22px); padding:0; }
+#home-glydi .gp-points li{
+  position:relative;
+  padding:8px 0 8px 26px;
+  border-top:1px solid var(--g-line);
+  font-size:13.5px; line-height:1.5;
+  color:var(--g-body);
+}
+#home-glydi .gp-points li::before{
+  content:"";
+  position:absolute; left:2px; top:14px;
+  width:11px; height:6px;
+  border-left:2px solid var(--g-accent);
+  border-bottom:2px solid var(--g-accent);
+  transform:rotate(-45deg);
+}
+#home-glydi .gp-meta{
+  display:flex; align-items:center; gap:0 16px;
+  margin-top:auto;
+  padding-top:clamp(14px, 1.6vw, 18px);
+  border-top:1px solid var(--g-line);
+}
+#home-glydi .gp-meta div{ display:flex; flex-direction:column; }
+#home-glydi .gp .gp-meta b{
+  font-size:14px; font-weight:800; letter-spacing:-.01em; color:var(--g-ink);
+  font-variant-numeric:tabular-nums;
+}
+#home-glydi .gp .gp-meta span{
+  margin-top:2px;
+  font-size:9px; font-weight:800; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--g-muted);
+}
+#home-glydi .gp-cta{
+  margin-left:auto;
+  display:inline-flex; align-items:center; gap:9px;
+  padding:11px 18px;
+  border-radius:999px;
+  background:var(--g-ink);
+  font-size:10.5px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+  color:#FFFFFF;
+  white-space:nowrap;
+  transition:background .28s ease, color .28s ease;
+}
+#home-glydi .gp-cta em{ font-style:normal; transition:transform .4s cubic-bezier(.22,.72,.24,1); }
+#home-glydi .gp-card:hover .gp-cta{ background:var(--g-accent); color:var(--g-ink); }
+#home-glydi .gp-card:hover .gp-cta em{ transform:translateX(4px); }
+
+/* ==================================================================
+   HOW IT RUNS — dark feature cards
+   ================================================================== */
+#home-glydi .gp > section.gp-how,
+#home-glydi .gp-how{ padding:clamp(52px, 7vw, 88px) 0 clamp(56px, 7vw, 96px); background:var(--g-paper) !important; }
+#home-glydi .gp-how-grid{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:clamp(14px, 1.6vw, 22px);
+}
+#home-glydi .gp-feat{
+  position:relative;
+  min-height:clamp(200px, 17vw, 240px);
+  padding:clamp(20px, 2vw, 28px);
+  border-radius:var(--g-round);
+  background:var(--g-ink-2) !important;
+  overflow:hidden;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  transition:transform .45s cubic-bezier(.22,.72,.24,1);
+}
+#home-glydi .gp-feat:nth-child(even){
+  background:linear-gradient(150deg, #1E1B17 0%, #2A211A 60%, #3A2416 100%) !important;
+}
+#home-glydi .gp-feat:hover{ transform:translateY(-5px); }
+#home-glydi .gp-feat-ic{ width:34px; height:34px; margin-bottom:auto; }
+#home-glydi .gp-feat-ic svg{
+  width:100%; height:100%; fill:none; stroke:var(--g-accent);
+  stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;
+}
+#home-glydi .gp .gp-feat h3{
+  margin:clamp(16px, 1.8vw, 22px) 0 6px !important;
+  font-size:clamp(16px, 1.4vw, 19px) !important; font-weight:800 !important;
+  letter-spacing:-.02em !important;
+  color:#FFFFFF !important;
+}
+#home-glydi .gp .gp-feat p{
+  margin:0 !important;
+  font-size:13px !important; line-height:1.55 !important;
+  color:rgba(255,255,255,.72) !important;
+}
+
+/* ==================================================================
+   CLOSING BAND
+   ================================================================== */
+#home-glydi .gp > section.gp-band,
+#home-glydi .gp-band{
+  padding:clamp(48px, 6vw, 80px) 0;
+  background:var(--g-accent) !important;
+  text-align:center;
+}
+#home-glydi .gp .gp-band h2{
+  margin:0 auto 12px !important;
+  font-family:var(--font-display) !important;
+  font-style:normal !important;
+  font-size:clamp(24px, 3vw, 38px) !important; font-weight:800 !important;
+  letter-spacing:-.03em !important;
+  color:var(--g-ink) !important;
+  max-width:20ch;
+}
+#home-glydi .gp .gp-band p{
+  margin:0 auto clamp(22px, 3vw, 32px) !important;
+  max-width:56ch;
+  font-size:14.5px !important; line-height:1.65 !important;
+  color:rgba(20,18,15,.78) !important;
+}
+#home-glydi .gp-band-cta{ display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
+#home-glydi .gp .gp-btn{
+  display:inline-flex; align-items:center; gap:9px;
+  padding:14px 30px !important;
+  border-radius:999px !important;
+  border:2px solid var(--g-ink) !important;
+  background:var(--g-ink) !important;
+  color:#FFFFFF !important;
+  font-size:11.5px !important; font-weight:800 !important;
+  letter-spacing:.12em !important; text-transform:uppercase !important;
+  box-shadow:none !important;
+  transition:background .28s ease, color .28s ease, transform .35s cubic-bezier(.22,.72,.24,1);
+}
+#home-glydi .gp .gp-btn:hover{ background:#FFFFFF !important; color:var(--g-ink) !important; border-color:#FFFFFF !important; transform:translateY(-2px); }
+#home-glydi .gp .gp-btn.line{ background:transparent !important; color:var(--g-ink) !important; }
+#home-glydi .gp .gp-btn.line:hover{ background:var(--g-ink) !important; color:#FFFFFF !important; }
+#home-glydi .gp .gp-fine{
+  margin:clamp(18px, 2.4vw, 26px) 0 0 !important;
+  font-size:12px !important;
+  color:rgba(20,18,15,.62) !important;
+}
+
+/* ==================================================================
+   MOTION
+   ================================================================== */
+#home-glydi .gp .reveal{ opacity:1 !important; transform:none !important; }
+#home-glydi .gp[data-motion="on"] .reveal{
+  opacity:0 !important; transform:translate3d(0,22px,0) !important;
+  transition:opacity .6s cubic-bezier(.22,.72,.24,1), transform .7s cubic-bezier(.22,.72,.24,1);
+}
+#home-glydi .gp[data-motion="on"] .reveal.in{ opacity:1 !important; transform:none !important; }
+#home-glydi .gp[data-motion="on"] .t{ opacity:0; transform:translate3d(0,18px,0);
+  transition:opacity .55s cubic-bezier(.22,.72,.24,1), transform .65s cubic-bezier(.22,.72,.24,1); }
+#home-glydi .gp[data-motion="on"] .t.show{ opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce){
+  #home-glydi .gp[data-motion="on"] .reveal,
+  #home-glydi .gp[data-motion="on"] .t{ opacity:1 !important; transform:none !important; transition:none !important; }
+  #home-glydi .gp-card:hover,
+  #home-glydi .gp-feat:hover{ transform:none !important; }
+}
+
+/* ==================================================================
+   RESPONSIVE
+   ================================================================== */
+@media (max-width:1100px){
+  #home-glydi .gp-how-grid{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+}
+@media (max-width:640px){
+  #home-glydi .gp-how-grid{ grid-template-columns:minmax(0,1fr); }
+  #home-glydi .gp-feat{ min-height:0; }
+  #home-glydi .gp-hero::after{
+    background:linear-gradient(180deg, rgba(20,18,15,.84) 0%, rgba(20,18,15,.66) 46%, rgba(20,18,15,.9) 100%);
+  }
+  #home-glydi .gp-meta{ flex-wrap:wrap; gap:12px; }
+  #home-glydi .gp-cta{ margin-left:0; width:100%; justify-content:center; }
+}

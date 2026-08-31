@@ -120,7 +120,7 @@ const RefundPolicy = () => {
                 <p className="mt-2">
                   Our team responds within <strong className="text-white">24 working hours</strong> with confirmation
                   and next steps. For urgent matters, call{" "}
-                  <a href="tel:+919609312345" className="text-orange-200 underline underline-offset-2">96093 12345</a>.
+                  <a href="tel:+919966577659" className="text-orange-200 underline underline-offset-2">99665 77659</a>.
                 </p>
               </section>
 

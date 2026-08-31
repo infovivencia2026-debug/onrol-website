@@ -1,0 +1,158 @@
+/* ==================================================================
+   THE APPLY DIALOG + FORM CONTROLS
+   The dialog was a plain white sheet with three unlabelled boxes and no
+   reason to trust it. It is the last step before someone hands over
+   their number, so it now says who it is from, what happens next, and
+   how long it takes — and the fields carry labels rather than
+   placeholders that vanish as soon as you type.
+
+   Loaded site-wide by mountGlydiChrome.
+   ================================================================== */
+
+#home-glydi{
+  --fm-ink:#14120F;
+  --fm-body:#4C473F;
+  --fm-muted:#8A8378;
+  --fm-line:rgba(20,18,15,.16);
+  --fm-accent:#F46718;
+  --fm-accent-dk:#B8480A;
+  --fm-wash:#FFF3EB;
+}
+
+/* the scrim */
+#home-glydi .lead-modal{
+  background:rgba(14,13,12,.62) !important;
+  backdrop-filter:blur(6px);
+  padding:20px !important;
+}
+
+/* the card */
+#home-glydi .lead-card{
+  position:relative;
+  width:min(460px, 100%) !important;
+  max-width:min(460px, 100%) !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:4px !important;
+  background:#FFFFFF !important;
+  overflow:hidden;
+  box-shadow:0 40px 80px -32px rgba(14,13,12,.5) !important;
+  animation:fmRise .42s cubic-bezier(.22,.72,.24,1) both;
+}
+@keyframes fmRise{ from{ opacity:0; transform:translateY(14px) scale(.985); } to{ opacity:1; transform:none; } }
+@media (prefers-reduced-motion:reduce){ #home-glydi .lead-card{ animation:none; } }
+
+/* a coloured head, so the dialog belongs to the brand */
+#home-glydi .lead-card::before{
+  content:"";
+  display:block;
+  height:5px;
+  background:linear-gradient(90deg, var(--fm-accent) 0%, #FF9254 100%);
+}
+#home-glydi .lead-eyebrow{
+  display:flex; align-items:center; gap:9px;
+  margin:clamp(22px, 3vw, 30px) clamp(22px, 3vw, 32px) 0 !important;
+  font-size:10px !important; font-weight:800 !important;
+  letter-spacing:.22em !important; text-transform:uppercase !important;
+  color:var(--fm-accent-dk) !important;
+}
+#home-glydi .lead-eyebrow::before{ content:""; width:18px; height:2px; background:var(--fm-accent); }
+#home-glydi .lead-card h3{
+  margin:10px clamp(22px, 3vw, 32px) 0 !important;
+  font-size:clamp(21px, 2vw, 26px) !important;
+  font-weight:800 !important;
+  letter-spacing:-.03em !important;
+  line-height:1.15 !important;
+  color:var(--fm-ink) !important;
+}
+#home-glydi .lead-sub{
+  margin:8px clamp(22px, 3vw, 32px) 0 !important;
+  font-size:13.5px !important; line-height:1.6 !important;
+  color:var(--fm-body) !important;
+}
+
+/* what actually happens next — the reason to fill it in */
+#home-glydi .lead-card .lead-steps{
+  display:flex; flex-wrap:wrap; gap:0 14px;
+  margin:14px clamp(22px, 3vw, 32px) 0;
+  padding:10px 12px;
+  background:var(--fm-wash);
+  border-radius:3px;
+}
+#home-glydi .lead-card .lead-steps span{
+  display:inline-flex; align-items:center; gap:7px;
+  font-size:10.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--fm-accent-dk);
+}
+#home-glydi .lead-card .lead-steps span::before{
+  content:""; width:5px; height:5px; border-radius:50%; background:var(--fm-accent);
+}
+
+/* the form */
+#home-glydi .lead-form{
+  display:grid; gap:12px;
+  padding:clamp(18px, 2.4vw, 24px) clamp(22px, 3vw, 32px) 0 !important;
+}
+#home-glydi .lead-form label{
+  display:block; margin-bottom:5px;
+  font-size:10px; font-weight:800; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--fm-muted);
+}
+#home-glydi .lead-form input{
+  width:100%;
+  padding:14px 14px !important;
+  border:1px solid var(--fm-line) !important;
+  border-radius:3px !important;
+  background:#FFFFFF !important;
+  font-size:14.5px !important;
+  color:var(--fm-ink) !important;
+  transition:border-color .2s ease, box-shadow .2s ease;
+}
+#home-glydi .lead-form input::placeholder{ color:#B4AFA6; }
+#home-glydi .lead-form input:focus{
+  border-color:var(--fm-accent) !important;
+  box-shadow:0 0 0 3px var(--fm-wash) !important;
+  outline:none !important;
+}
+#home-glydi .lead-submit{
+  width:100%;
+  margin-top:4px;
+  padding:16px 20px !important;
+  border:0 !important; border-radius:3px !important;
+  background:var(--fm-accent) !important;
+  color:var(--fm-ink) !important;
+  font-size:12px !important; font-weight:800 !important;
+  letter-spacing:.14em !important; text-transform:uppercase !important;
+  cursor:pointer;
+  transition:background .22s ease, color .22s ease, transform .2s ease;
+}
+#home-glydi .lead-submit:hover{ background:var(--fm-ink) !important; color:#FFFFFF !important; }
+#home-glydi .lead-submit:active{ transform:translateY(1px); }
+
+#home-glydi .lead-fine{
+  margin:0 !important;
+  padding:12px clamp(22px, 3vw, 32px) clamp(20px, 2.6vw, 26px) !important;
+  font-size:11.5px !important; line-height:1.5 !important;
+  color:var(--fm-muted) !important;
+  text-align:center;
+}
+
+/* the close control, as a real target */
+#home-glydi .lead-x{
+  position:absolute !important;
+  top:14px !important; right:12px !important;
+  width:34px; height:34px;
+  display:grid; place-items:center;
+  border:0 !important; border-radius:50% !important;
+  background:transparent !important;
+  font-size:20px; line-height:1;
+  color:var(--fm-muted) !important;
+  cursor:pointer;
+  transition:background .2s ease, color .2s ease;
+}
+#home-glydi .lead-x:hover{ background:rgba(20,18,15,.07) !important; color:var(--fm-ink) !important; }
+
+@media (max-width:520px){
+  #home-glydi .lead-card{ width:100% !important; }
+  #home-glydi .lead-card .lead-steps{ gap:6px 12px; }
+}

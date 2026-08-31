@@ -220,20 +220,12 @@ export function initHomeGlydi(): () => void {
     };
   }
 
-  /* ---- footer scramble ---- */
-  (function () {
-    const footer = document.querySelector(".footer");
-    if (!footer || reduce) return;
-    const targets = footer.querySelectorAll<HTMLElement>("h3, h4, .f-tag");
-    const decode = makeDecoder();
-    footer.querySelectorAll<HTMLElement>("a, h3, h4, .f-tag").forEach((el) => {
-      on(el, "mouseenter", () => decode(el, 0));
-    });
-    const io = observe(new IntersectionObserver((entries) => {
-      entries.forEach((e) => { if (e.isIntersecting) { targets.forEach((el, i) => decode(el, i * 5)); io.disconnect(); } });
-    }, { threshold: 0.2 }));
-    io.observe(footer);
-  })();
+  /* ---- footer scramble — retired ----
+     Every heading and link in the footer was rewritten character by
+     character with symbols on scroll-in, and again on hover: the column
+     heads read "PROGRA_S" and "COM_ANY" for as long as the effect ran,
+     and a link garbled itself the moment you pointed at it. A footer is
+     wayfinding — it has to be readable at rest. */
 
   /* ---- section headings scramble ---- */
   (function () {

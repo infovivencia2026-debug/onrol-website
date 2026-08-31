@@ -27,7 +27,7 @@
   <img src="/home-glydi/logo-mark.png" alt="ONROL, AI Execution School">
 </a>
 
-<nav class="nav">
+<nav class="nav topbar">
   <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
     <span></span><span></span><span></span>
   </button>
@@ -99,6 +99,7 @@
       <div class="f-col">
         <h4>Programs</h4>
         <ul>
+          <li><a href="/programs/aica">AI Career Accelerator</a></li>
           <li><a href="/programs/ai-generalist">AI Generalist</a></li>
           <li><a href="/programs/ai-architect">AI Architect</a></li>
           <li><a href="/soc-analyst">SOC Analyst</a></li>
@@ -148,10 +149,11 @@
     <p class="lead-eyebrow">Apply to ONROL</p>
     <h3 id="leadTitle">Start with a quick hello.</h3>
     <p class="lead-sub">Drop your details and our team reaches out about the next cohort, takes 20 seconds.</p>
+    <div class="lead-steps"><span>20 seconds</span><span>No payment</span><span>We call you back</span></div>
     <form id="leadForm" class="lead-form">
-      <input type="text" id="leadName" name="name" placeholder="Full name" autocomplete="name" required>
-      <input type="email" id="leadEmail" name="email" placeholder="Email address" autocomplete="email" required>
-      <input type="tel" id="leadPhone" name="phone" placeholder="Phone / WhatsApp number" autocomplete="tel" required>
+      <div><label for="leadName">Full name</label><input type="text" id="leadName" name="name" placeholder="Your name" autocomplete="name" required></div>
+      <div><label for="leadEmail">Email</label><input type="email" id="leadEmail" name="email" placeholder="you@email.com" autocomplete="email" required></div>
+      <div><label for="leadPhone">Phone / WhatsApp</label><input type="tel" id="leadPhone" name="phone" placeholder="+91 …" autocomplete="tel" required></div>
       <button type="submit" class="lead-submit">Apply Now</button>
     </form>
     <p class="lead-fine">No spam. We&rsquo;ll only contact you about your application.</p>

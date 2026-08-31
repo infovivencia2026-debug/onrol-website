@@ -1,205 +1,763 @@
 <style>
-  .subpage{ font-family:'Manrope', sans-serif; }
-  body{ background:#fbfaf9; }
-  body::before{
-    content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
-    background:radial-gradient(60vw 42vw at 10% -8%, rgba(var(--orange-rgb),.08), transparent 58%),
-               radial-gradient(52vw 42vw at 100% 0%, rgba(var(--orange-rgb),.05), transparent 55%);
+/* ==================================================================
+   ABOUT — laid out to the reference structure the client supplied
+   (vitalsynthetics.in/about): image hero + wave divider, centred
+   section headings with a short rule, dark rounded feature cards, a
+   brand-colour values card over a photo band, progress rings on a
+   rising stair, a photo/content split, a full-bleed colour band, and
+   a centred pill CTA.
+
+   Same skeleton, ONROL's palette and content: orange #F46718 in place
+   of the reference's red, warm neutrals in place of its cool greys.
+   Rounded corners and pill buttons here are deliberate — they are the
+   reference's box language, not the squared home theme's.
+
+   Self-contained (every ported sub-page ships its own style block).
+   Selectors carry #home-glydi so they outrank styles.css.
+   ================================================================== */
+
+#home-glydi{
+  --v-white:#FFFFFF;
+  --v-paper:#FAF9F7;        /* the reference's light grey band, warmed */
+  --v-ink:#14120F;
+  --v-ink-2:#1E1B17;        /* the dark cards */
+  --v-body:#4C473F;
+  --v-muted:#8A8378;
+  --v-line:rgba(20,18,15,.12);
+  --v-accent:#F46718;
+  --v-accent-ink:#C2500B;   /* orange as text on light: 4.6:1 */
+  --v-edge:clamp(20px, 5vw, 80px);
+  --v-round:18px;
+}
+
+/* the shared .subpage frame adds page padding + inter-section gaps; this
+   layout is full-bleed and spaces itself */
+#home-glydi .vs{
+  padding:0 !important;
+  margin:0 !important;
+  max-width:none !important;
+  background:var(--v-white) !important;
+  color:var(--v-body);
+  font-family:var(--font-body);
+  overflow-x:clip;
+}
+#home-glydi .vs > section,
+#home-glydi .vs > header{ margin-bottom:0 !important; background:transparent; }
+html:has(#home-glydi .vs),
+html:has(#home-glydi .vs) body,
+html:has(#home-glydi .vs) #root{ background:var(--v-white) !important; }
+
+/* every page in the site aligns to --page-edge (styles.css): the container
+   padding on narrow screens, and the viewport-to-text distance once the
+   max-width kicks in. Local measures made each page start somewhere else. */
+#home-glydi .vs-wrap{
+  width:min(var(--page-max, 1560px), 100%);
+  margin-inline:auto;
+  padding-inline:var(--page-edge);
+}
+
+/* ---- shared: centred heading + short rule ---- */
+#home-glydi .vs .vs-h{
+  margin:0 auto;
+  text-align:center;
+  font-family:var(--font-display) !important;
+  font-weight:800 !important;
+  font-style:normal !important;
+  font-size:clamp(28px, 3.8vw, 50px) !important;
+  line-height:1.12 !important;
+  letter-spacing:-.02em !important;
+  color:var(--v-accent-ink) !important;
+  max-width:22ch;
+}
+#home-glydi .vs .vs-h.on-dark{ color:#FFFFFF !important; }
+#home-glydi .vs .vs-rule{
+  width:170px; height:2px;
+  margin:22px auto clamp(34px, 4vw, 56px);
+  background:var(--v-ink);
+}
+#home-glydi .vs .vs-rule.on-dark{ background:rgba(255,255,255,.5); }
+#home-glydi .vs p{ color:var(--v-body); }
+
+/* ==================================================================
+   01 — IMAGE HERO + WAVE
+   ================================================================== */
+#home-glydi .vs-hero{
+  position:relative;
+  min-height:clamp(460px, 68vh, 660px);
+  display:flex; align-items:center;
+  padding:clamp(96px, 11vh, 140px) 0 clamp(110px, 12vw, 168px);
+  background:#0B0A09 !important;
+  isolation:isolate;
+  overflow:hidden;
+}
+/* the photograph rides on its own layer so it can drift without moving the
+   scrim or the copy with it */
+#home-glydi .vs-hero-img{
+  position:absolute; inset:-2.5%;
+  z-index:0;
+  pointer-events:none;
+  background:#0B0A09 url('/home-glydi/about-hero.jpg') center 38% / cover no-repeat;
+}
+
+#home-glydi .vs-hero::before{
+  content:"";
+  position:absolute; inset:0; z-index:1;
+  background:
+    radial-gradient(120% 100% at 12% 50%, rgba(11,10,9,.72), rgba(11,10,9,0) 62%),
+    linear-gradient(90deg, rgba(11,10,9,.92) 0%, rgba(11,10,9,.84) 26%, rgba(11,10,9,.62) 46%, rgba(11,10,9,.24) 72%, rgba(11,10,9,.4) 100%),
+    linear-gradient(180deg, rgba(11,10,9,.34), rgba(11,10,9,.12) 42%, rgba(11,10,9,.5));
+}
+
+@supports (background-image:url("data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=")){
+  #home-glydi .vs-hero{ background-image:url('/home-glydi/about-hero.webp') !important; }
+}
+#home-glydi .vs-hero .vs-wrap{ position:relative; z-index:3; }
+#home-glydi .vs-hero h1{
+  margin:0;
+  font-family:var(--font-display) !important;
+  font-weight:800 !important;
+  font-size:clamp(42px, 5.4vw, 76px) !important;
+  line-height:.98 !important;
+  letter-spacing:-.035em !important;
+  color:#FFFFFF !important;
+  max-width:13ch;
+  text-shadow:0 2px 30px rgba(11,10,9,.45);
+}
+#home-glydi .vs-hero h1 span{ color:var(--v-accent) !important; }
+
+
+#home-glydi .vs .vs-hero-sub{
+  margin:clamp(18px, 2.2vw, 26px) 0 0;
+  max-width:38ch;
+  font-size:clamp(15px, 1.25vw, 18px) !important;
+  line-height:1.6 !important;
+  color:rgba(255,255,255,.82) !important;
+}
+/* the fact rail sits on the hero floor, above the wave */
+#home-glydi .vs-hero-facts{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0, auto));
+  justify-content:start;
+  gap:0 clamp(18px, 2.4vw, 38px);
+  margin:clamp(26px, 3.2vw, 40px) 0 0;
+  padding-top:clamp(20px, 2.4vw, 28px);
+  border-top:1px solid rgba(255,255,255,.2);
+  max-width:600px;
+}
+#home-glydi .vs-hero-facts div{ min-width:0; }
+#home-glydi .vs .vs-hero-facts strong{
+  display:block;
+  font-size:clamp(19px, 2vw, 27px); font-weight:800; letter-spacing:-.025em;
+  color:#FFFFFF;
+}
+#home-glydi .vs .vs-hero-facts strong em{ font-style:normal; color:var(--v-accent); }
+#home-glydi .vs .vs-hero-facts span{
+  display:block; margin-top:5px;
+  font-size:10.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  color:rgba(255,255,255,.6);
+}
+/* the intro: each block rises as the page opens */
+#home-glydi .vs-hero .vs-rise{
+  opacity:0; transform:translate3d(0,22px,0);
+  animation:vsRise .85s cubic-bezier(.22,.68,.24,1) forwards;
+}
+#home-glydi .vs-hero .vs-rise:nth-child(1){ animation-delay:.05s; }
+#home-glydi .vs-hero .vs-rise:nth-child(2){ animation-delay:.16s; }
+#home-glydi .vs-hero .vs-rise:nth-child(3){ animation-delay:.27s; }
+#home-glydi .vs-hero .vs-rise:nth-child(4){ animation-delay:.38s; }
+@keyframes vsRise{ to{ opacity:1; transform:none; } }
+@media (prefers-reduced-motion:reduce){
+  #home-glydi .vs-hero .vs-rise{ opacity:1; transform:none; animation:none; }
+}
+/* the wave: orange band with a curved top edge, exactly the reference's
+   transition device */
+/* The reference divider is not a static shape: it is a two-layer animated
+   wave (a solid brand-colour crest and a translucent one behind it, each
+   drifting at its own speed and amplitude). Reproduced here by tiling each
+   crest twice across a 2880-wide viewBox and translating the layer by
+   exactly half its width, so the loop is seamless. */
+#home-glydi .vs-wave{
+  position:absolute; left:0; right:0; bottom:0; z-index:4;
+  height:clamp(78px, 9vw, 132px);
+  line-height:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+#home-glydi .vs-wave-layer{
+  position:absolute; left:0; bottom:0;
+  width:200%; height:100%;
+  will-change:transform;
+}
+#home-glydi .vs-wave-layer svg{ width:100%; height:100%; display:block; }
+#home-glydi .vs-wave-layer path{ fill:var(--v-accent); }
+
+/* back crest: taller, slower, a lighter tint of the brand orange */
+#home-glydi .vs-wave-back{
+  height:100%;
+  opacity:.85;
+  animation:vsWaveBack 19s linear infinite;
+}
+#home-glydi .vs-wave-back path{ fill:#FF9254; }
+/* front crest: solid, quicker, and it carries the band into the section */
+#home-glydi .vs-wave-front{
+  animation:vsWaveFront 13s linear infinite;
+}
+@keyframes vsWaveBack{  from{ transform:translate3d(0,0,0); }    to{ transform:translate3d(-50%,0,0); } }
+@keyframes vsWaveFront{ from{ transform:translate3d(-50%,0,0); } to{ transform:translate3d(0,0,0); } }
+/* the solid strip the crests sit on, so the wave meets the next section cleanly */
+#home-glydi .vs-wave-base{
+  position:absolute; left:0; right:0; bottom:0;
+  height:26%;
+  background:var(--v-accent);
+}
+@media (prefers-reduced-motion:reduce){
+  #home-glydi .vs-wave-back,
+  #home-glydi .vs-wave-front{ animation:none !important; transform:translate3d(-25%,0,0); }
+}
+
+/* ==================================================================
+   02 — OVERVIEW (centred, white)
+   ================================================================== */
+#home-glydi .vs-over{ padding:clamp(56px, 7vw, 96px) 0 clamp(48px, 6vw, 86px); }
+#home-glydi .vs-over .vs-copy{
+  max-width:900px; margin:0 auto;
+  text-align:justify;
+  text-align-last:center;
+}
+#home-glydi .vs .vs-copy p{
+  margin:0 0 20px;
+  font-size:clamp(15px, 1.2vw, 17px) !important;
+  line-height:1.75 !important;
+}
+#home-glydi .vs .vs-copy p:last-child{ margin-bottom:0; }
+#home-glydi .vs .vs-copy b{ color:var(--v-ink); font-weight:800; }
+
+/* ==================================================================
+   03 — WHY US: four dark rounded cards
+   ================================================================== */
+#home-glydi .vs-why{
+  padding:clamp(56px, 7vw, 92px) 0 clamp(60px, 8vw, 104px);
+  background:var(--v-paper) !important;
+}
+#home-glydi .vs-cards{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:clamp(14px, 1.6vw, 22px);
+}
+/* Each card is a flip card: the claim on the front, the detail on the
+   back. The scene owns the perspective, an inner shell does the rotation,
+   and both faces are absolutely positioned so the card keeps one height
+   whichever way it is facing. Flipping on hover AND on focus keeps it
+   reachable from the keyboard; touch devices get both faces stacked,
+   since they cannot hover. */
+#home-glydi .vs-card{
+  position:relative;
+  min-height:clamp(260px, 21vw, 300px);
+  border-radius:var(--v-round);
+  background:transparent !important;
+  padding:0 !important;
+  perspective:1400px;
+  overflow:visible;
+}
+#home-glydi .vs-card-inner{
+  position:relative;
+  width:100%; height:100%;
+  min-height:inherit;
+  transform-style:preserve-3d;
+  transition:transform .78s cubic-bezier(.2,.72,.24,1);
+  will-change:transform;
+}
+#home-glydi .vs-card:hover .vs-card-inner,
+#home-glydi .vs-card:focus-within .vs-card-inner{ transform:rotateY(180deg); }
+
+#home-glydi .vs-card-face{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column;
+  padding:clamp(22px, 2.2vw, 32px);
+  border-radius:var(--v-round);
+  overflow:hidden;
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+  background:var(--v-ink-2);
+}
+#home-glydi .vs-card:nth-child(even) .vs-card-face{
+  background:linear-gradient(150deg, #1E1B17 0%, #2A211A 60%, #3A2416 100%);
+}
+#home-glydi .vs-card-front{ justify-content:flex-end; }
+#home-glydi .vs-card-back{
+  transform:rotateY(180deg);
+  justify-content:center;
+  background:linear-gradient(150deg, #241C16 0%, #34231A 55%, #4A2A14 100%) !important;
+}
+
+
+#home-glydi .vs-card-ic{
+  width:42px; height:42px;
+  margin:0 0 clamp(16px, 1.6vw, 22px);
+  position:relative; z-index:1;
+}
+#home-glydi .vs-card-ic svg{
+  width:100%; height:100%;
+  fill:none; stroke:#FFFFFF; stroke-width:1.4;
+  stroke-linecap:round; stroke-linejoin:round;
+}
+#home-glydi .vs .vs-card h3{
+  position:relative; z-index:1;
+  margin:0;
+  font-family:var(--font-display) !important;
+  font-weight:800 !important;
+  font-size:clamp(17px, 1.5vw, 21px) !important;
+  line-height:1.22 !important;
+  letter-spacing:-.015em !important;
+  color:#FFFFFF !important;
+}
+#home-glydi .vs .vs-card h3 span{ color:var(--v-accent) !important; }
+
+/* the back: a short label, the detail, and a hairline */
+#home-glydi .vs .vs-card-back p{
+  position:relative; z-index:1;
+  margin:0 !important;
+  font-size:clamp(13px, 1.02vw, 15px) !important;
+  line-height:1.62 !important;
+  color:rgba(255,255,255,.82) !important;
+}
+#home-glydi .vs .vs-card-k{
+  position:relative; z-index:1;
+  margin:0 0 12px !important;
+  padding-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,.2);
+  font-size:10px !important; font-weight:800 !important;
+  letter-spacing:.24em !important; text-transform:uppercase !important;
+  color:var(--v-accent) !important;
+}
+/* a quiet cue that there is a back to see */
+#home-glydi .vs-card-flip{
+  position:absolute; right:clamp(18px, 1.8vw, 26px); top:clamp(18px, 1.8vw, 26px);
+  z-index:2;
+  width:26px; height:26px;
+  display:grid; place-items:center;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:50%;
+  font-size:11px; color:rgba(255,255,255,.7);
+  transition:border-color .3s ease, color .3s ease, transform .5s ease;
+}
+#home-glydi .vs-card:hover .vs-card-flip{
+  border-color:var(--v-accent); color:var(--v-accent); transform:rotate(180deg);
+}
+
+@media (hover:none){
+  /* no hover on touch: show both faces stacked instead of hiding half the
+     content behind a gesture that does not exist */
+  #home-glydi .vs-card{ perspective:none; min-height:0; }
+  #home-glydi .vs-card-inner{ transform:none !important; transform-style:flat; }
+  #home-glydi .vs-card-face{ position:static; transform:none !important; backface-visibility:visible; }
+  #home-glydi .vs-card-front{ border-radius:var(--v-round) var(--v-round) 0 0; }
+  #home-glydi .vs-card-back{ border-radius:0 0 var(--v-round) var(--v-round); padding-top:0 !important; }
+  #home-glydi .vs-card-flip{ display:none; }
+}
+@media (prefers-reduced-motion:reduce){
+  #home-glydi .vs-card-inner{ transition:none !important; }
+}
+
+/* ==================================================================
+   04 — VISION / MISSION over a photo, with the values card
+   ================================================================== */
+#home-glydi .vs-vm{
+  position:relative;
+  padding:clamp(64px, 8vw, 116px) 0;
+  background:#0F1417 url('/home-glydi/hero-stage.jpg') center / cover no-repeat !important;
+  isolation:isolate;
+}
+#home-glydi .vs-vm::before{
+  content:"";
+  position:absolute; inset:0; z-index:0;
+  background:linear-gradient(90deg, rgba(10,12,14,.9), rgba(10,12,14,.72));
+}
+#home-glydi .vs-vm .vs-wrap{ position:relative; z-index:1; }
+#home-glydi .vs-vm-grid{
+  display:grid;
+  grid-template-columns:minmax(0, .82fr) minmax(0, 1.18fr);
+  gap:clamp(28px, 4vw, 64px);
+  align-items:center;
+}
+#home-glydi .vs .vs-vm h2{
+  margin:0 0 16px;
+  font-family:var(--font-display) !important;
+  font-weight:800 !important;
+  font-size:clamp(20px, 1.9vw, 26px) !important;
+  color:#FFFFFF !important;
+  letter-spacing:-.015em !important;
+}
+#home-glydi .vs .vs-vm-text p{
+  margin:0 0 16px;
+  font-size:clamp(15px, 1.2vw, 17px) !important;
+  line-height:1.7 !important;
+  color:rgba(255,255,255,.84) !important;
+  max-width:46ch;
+}
+#home-glydi .vs .vs-vm-text p:last-child{ margin-bottom:0; }
+#home-glydi .vs-values{
+  padding:clamp(26px, 3vw, 40px) clamp(24px, 3vw, 42px);
+  border-radius:var(--v-round);
+  background:var(--v-accent);
+}
+#home-glydi .vs .vs-values h2{ color:var(--v-ink) !important; margin-bottom:20px; }
+#home-glydi .vs-values-list{
+  display:flex; flex-wrap:wrap; align-items:center;
+  gap:0 0;
+}
+#home-glydi .vs-values-list span{
+  padding:6px 20px;
+  border-right:1px solid rgba(20,18,15,.28);
+  font-size:clamp(14px, 1.1vw, 16px);
+  font-weight:700;
+  color:var(--v-ink);
+}
+#home-glydi .vs-values-list span:first-child{ padding-left:0; }
+#home-glydi .vs-values-list span:last-child{ border-right:0; }
+
+/* ==================================================================
+   05 — RINGS ON A RISING STAIR
+   ================================================================== */
+#home-glydi .vs-growth{
+  padding:clamp(56px, 7vw, 96px) 0 clamp(64px, 8vw, 110px);
+  background:var(--v-paper) !important;
+}
+#home-glydi .vs-rings{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:clamp(12px, 2vw, 30px);
+  align-items:end;
+}
+#home-glydi .vs-ring{
+  --step:3;                             /* 3..0, the rising stair */
+  display:flex; flex-direction:column; align-items:center;
+  padding-bottom:calc(var(--step) * clamp(16px, 2.4vw, 40px));
+}
+#home-glydi .vs-ring-lbl{
+  margin:0 0 10px;
+  font-size:clamp(13px, 1.1vw, 16px); font-weight:800; letter-spacing:.02em;
+  color:var(--v-accent-ink);
+  text-align:center;
+}
+#home-glydi .vs-ring-arrow{
+  width:2px; height:clamp(34px, 4vw, 58px);
+  background:var(--v-accent);
+  position:relative;
+  margin-bottom:16px;
+}
+#home-glydi .vs-ring-arrow::before{
+  content:"";
+  position:absolute; top:0; left:50%; transform:translate(-50%,-1px);
+  border-left:6px solid transparent; border-right:6px solid transparent;
+  border-bottom:9px solid var(--v-accent);
+}
+#home-glydi .vs-ring-dial{
+  position:relative;
+  width:clamp(112px, 11vw, 150px); aspect-ratio:1;
+  display:grid; place-items:center;
+}
+#home-glydi .vs-ring-dial svg{
+  position:absolute; inset:0; width:100%; height:100%;
+  transform:rotate(-90deg);
+}
+#home-glydi .vs-ring-dial .track{ fill:var(--v-white); stroke:rgba(20,18,15,.10); stroke-width:7; }
+#home-glydi .vs-ring-dial .arc{
+  fill:none; stroke:var(--v-accent); stroke-width:7; stroke-linecap:round;
+  stroke-dasharray:283;                 /* 2πr, r=45 */
+  stroke-dashoffset:283;                /* drawn in on reveal */
+  transition:stroke-dashoffset 1.5s cubic-bezier(.22,.68,.24,1) .15s;
+}
+#home-glydi .vs-ring.show .arc,
+#home-glydi .vs-ring.t.show .arc{ stroke-dashoffset:var(--off, 100); }
+#home-glydi .vs-ring-val{
+  position:relative; z-index:1;
+  font-size:clamp(21px, 2.1vw, 30px); font-weight:800; letter-spacing:-.03em;
+  color:var(--v-ink);
+}
+#home-glydi .vs-ring-val .or{ color:var(--v-accent); }
+#home-glydi .vs-ring-cap{
+  margin:16px 0 0;
+  font-size:11.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--v-muted) !important;
+  text-align:center;
+}
+
+/* ==================================================================
+   06 — SPLIT: portrait left, method right
+   ================================================================== */
+/* The founder band. The portrait is a sticky panel rather than the section
+   background: the copy column is long, and a background would have scaled
+   with it and cropped her to a sliver. Sticky keeps the frame composed at
+   any content length and gives the column a quiet parallax as it scrolls. */
+/* ==================================================================
+   06 — FOUNDER
+   Structured like every other section on the page: a centred heading and
+   rule lead it, then the content sits inside the shared measure. The
+   portrait is a framed card in the left column (with an orange offset
+   plate behind it) rather than a full-bleed slab, so the section keeps
+   the page alignment spine instead of running to the viewport edge.
+   ================================================================== */
+#home-glydi .vs-split{
+  padding:clamp(56px, 7vw, 96px) 0 clamp(64px, 8vw, 110px);
+  background:var(--v-white) !important;
+}
+#home-glydi .vs-founder-grid{
+  display:grid;
+  grid-template-columns:minmax(0, .78fr) minmax(0, 1.22fr);
+  gap:clamp(30px, 4.5vw, 76px);
+  align-items:start;
+}
+/* left column: the portrait, then her credentials */
+#home-glydi .vs-portrait-col{ position:sticky; top:clamp(88px, 11vh, 108px); }
+#home-glydi .vs-portrait{
+  position:relative;
+  border-radius:var(--v-round);
+  overflow:hidden;
+  aspect-ratio:5 / 6;
+  background:#0C0B0A url('/home-glydi/founder-neeraja.jpg') 54% 14% / cover no-repeat;
+  filter:grayscale(1) contrast(1.04);
+  transition:filter .55s ease;
+}
+/* the portrait comes to colour under the cursor */
+#home-glydi .vs-portrait-frame:hover .vs-portrait{ filter:grayscale(0) contrast(1.02); }
+/* touch devices never hover, so they get the photograph in colour outright */
+@media (hover:none){
+  #home-glydi .vs-portrait{ filter:grayscale(0) contrast(1.02); }
+}
+@media (prefers-reduced-motion:reduce){
+  #home-glydi .vs-portrait{ transition:none; }
+}
+@supports (background-image:url("data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=")){
+  #home-glydi .vs-portrait{ background-image:url('/home-glydi/founder-neeraja.webp'); }
+}
+/* the offset plate: brand orange, set back behind the frame */
+#home-glydi .vs-portrait-frame::before{
+  content:"";
+  position:absolute; z-index:0;
+  left:clamp(-14px, -1.6vw, -24px);
+  bottom:clamp(-14px, -1.6vw, -24px);
+  width:clamp(84px, 9vw, 124px);
+  aspect-ratio:1;
+  border-radius:var(--v-round);
+  background:var(--v-accent);
+}
+#home-glydi .vs-portrait-frame{ position:relative; }
+#home-glydi .vs-portrait{ position:relative; z-index:1; }
+#home-glydi .vs-credentials{ position:relative; z-index:1; }
+#home-glydi .vs-credentials{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:0;
+  margin-top:clamp(18px, 2vw, 26px);
+  border-top:1px solid var(--v-line);
+  padding-top:clamp(16px, 1.8vw, 22px);
+}
+#home-glydi .vs-credentials div{ padding-right:12px; }
+#home-glydi .vs .vs-credentials strong{
+  display:block;
+  font-size:clamp(18px, 1.8vw, 24px); font-weight:800; letter-spacing:-.025em;
+  color:var(--v-ink);
+}
+#home-glydi .vs .vs-credentials span{
+  display:block; margin-top:4px;
+  font-size:10px; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--v-muted);
+}
+#home-glydi .vs-founder-body{ padding-top:clamp(2px, .6vw, 8px); }
+#home-glydi .vs .vs-founder-name{
+  margin:0 0 3px !important;
+  font-family:var(--font-display) !important;   /* the site pairing, not Manrope */
+  font-weight:800 !important;
+  font-size:clamp(21px, 2.1vw, 30px) !important;
+  line-height:1.1 !important;
+  letter-spacing:-.025em !important;
+  color:var(--v-ink) !important;
+}
+#home-glydi .vs .vs-founder-role{
+  margin:0 0 clamp(20px, 2.2vw, 28px) !important;
+  font-size:11px !important; font-weight:700 !important;
+  letter-spacing:.2em !important; text-transform:uppercase !important;
+  color:var(--v-accent-ink) !important;
+}
+
+/* the founder column: bio, a numbered career journey, then her line */
+#home-glydi .vs .vs-founder-bio{
+  margin:0 0 clamp(24px, 2.8vw, 34px);
+  font-size:clamp(15px, 1.2vw, 17px) !important;
+  line-height:1.7 !important;
+  max-width:52ch;
+}
+#home-glydi .vs-journey{ list-style:none; margin:0; padding:0; }
+#home-glydi .vs-journey li{
+  position:relative;
+  padding:0 0 clamp(20px, 2.2vw, 26px) clamp(38px, 3.4vw, 48px);
+}
+/* the rail: a hairline down the column with a dot at each stop */
+#home-glydi .vs-journey li::before{
+  content:"";
+  position:absolute; left:9px; top:16px; bottom:0;
+  width:1px; background:var(--v-line);
+}
+#home-glydi .vs-journey li:last-child{ padding-bottom:0; }
+#home-glydi .vs-journey li:last-child::before{ display:none; }
+#home-glydi .vs-journey li::after{
+  content:"";
+  position:absolute; left:5px; top:7px;
+  width:9px; height:9px; border-radius:50%;
+  background:var(--v-accent);
+  box-shadow:0 0 0 4px rgba(244,103,24,.16);
+}
+#home-glydi .vs .vs-journey h3{
+  margin:0 0 4px;
+  font-family:var(--font-display) !important;   /* the site pairing, not Manrope */
+  font-weight:800 !important;
+  font-size:clamp(15.5px, 1.35vw, 18px) !important;
+  color:var(--v-ink) !important;
+  letter-spacing:-.012em !important;
+}
+#home-glydi .vs .vs-journey-where{
+  margin:0 0 7px !important;
+  font-size:11px !important;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--v-accent-ink) !important;
+}
+#home-glydi .vs .vs-journey p{ margin:0; font-size:14.5px !important; line-height:1.65 !important; max-width:50ch; }
+
+#home-glydi .vs .vs-founder-quote{
+  margin:clamp(26px, 3vw, 36px) 0 0;
+  padding:clamp(20px, 2.2vw, 26px) 0 0;
+  border-top:1px solid var(--v-line);
+  font-size:clamp(17px, 1.7vw, 23px) !important;
+  line-height:1.4 !important;
+  font-weight:800;
+  letter-spacing:-.02em;
+  color:var(--v-ink) !important;
+  font-style:normal;
+  max-width:30ch;
+}
+#home-glydi .vs .vs-founder-quote::before{ content:"\201C"; color:var(--v-accent); }
+#home-glydi .vs .vs-founder-quote::after{ content:"\201D"; color:var(--v-accent); }
+
+/* ==================================================================
+   07 — WHO WE SERVE: full-bleed colour band
+   ================================================================== */
+#home-glydi .vs-serve{
+  padding:clamp(56px, 7vw, 92px) 0 clamp(60px, 7vw, 96px);
+  background:var(--v-accent) !important;
+}
+#home-glydi .vs .vs-serve .vs-h{ color:var(--v-ink) !important; }
+#home-glydi .vs .vs-serve .vs-rule{ background:rgba(20,18,15,.4); }
+#home-glydi .vs-serve-row{
+  display:flex; flex-wrap:wrap; justify-content:center;
+  gap:12px;
+  max-width:1000px; margin:0 auto;
+}
+#home-glydi .vs-serve-row span{
+  padding:11px 22px;
+  border-radius:999px;
+  background:rgba(255,255,255,.92);
+  font-size:13.5px; font-weight:700; letter-spacing:.02em;
+  color:var(--v-ink);
+  transition:background .28s ease, color .28s ease, transform .35s cubic-bezier(.22,.68,.24,1);
+}
+#home-glydi .vs-serve-row span:hover{
+  background:var(--v-ink); color:#FFFFFF; transform:translateY(-3px);
+}
+
+/* ==================================================================
+   08 — CONNECT: centred pill
+   ================================================================== */
+#home-glydi .vs-connect{
+  padding:clamp(56px, 7vw, 96px) 0 clamp(64px, 8vw, 104px);
+  text-align:center;
+  background:var(--v-white) !important;
+}
+#home-glydi .vs-connect .vs-h{ margin-bottom:18px; }
+#home-glydi .vs .vs-connect > .vs-wrap > p{
+  max-width:56ch; margin:0 auto clamp(28px, 3vw, 40px);
+  font-size:clamp(15px, 1.2vw, 17px) !important; line-height:1.7 !important;
+}
+#home-glydi .vs-actions{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; }
+#home-glydi .vs .vs-btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:16px 40px !important;
+  border-radius:999px !important;
+  font-size:13px !important; font-weight:800 !important;
+  letter-spacing:.1em !important; text-transform:uppercase !important;
+  border:2px solid transparent !important;
+  transition:background .28s ease, color .28s ease, border-color .28s ease, transform .35s cubic-bezier(.22,.68,.24,1);
+}
+#home-glydi .vs .vs-btn.primary{ background:var(--v-accent) !important; color:var(--v-ink) !important; border-color:var(--v-accent) !important; }
+#home-glydi .vs .vs-btn.primary:hover{ background:var(--v-ink) !important; border-color:var(--v-ink) !important; color:#FFFFFF !important; transform:translateY(-2px); }
+#home-glydi .vs .vs-btn.ghost{ background:transparent !important; color:var(--v-ink) !important; border-color:rgba(20,18,15,.25) !important; }
+#home-glydi .vs .vs-btn.ghost:hover{ border-color:var(--v-accent) !important; color:var(--v-accent-ink) !important; transform:translateY(-2px); }
+#home-glydi .vs .vs-fine{
+  margin:clamp(20px, 2.4vw, 28px) 0 0;
+  font-size:12.5px; color:var(--v-muted) !important;
+}
+
+/* ==================================================================
+   MOTION — rides the page script's own hooks: .reveal -> .in on the
+   section, .t children -> .show in an 80ms cascade. Scoped to .vs so
+   a script failure can never blank another page.
+   ================================================================== */
+#home-glydi .vs .reveal{
+  opacity:0; transform:translate3d(0, 26px, 0);
+  transition:opacity .7s cubic-bezier(.22,.68,.24,1), transform .8s cubic-bezier(.22,.68,.24,1);
+}
+#home-glydi .vs .reveal.in{ opacity:1; transform:none; }
+#home-glydi .vs .t{
+  opacity:0; transform:translate3d(0, 20px, 0);
+  transition:opacity .64s cubic-bezier(.22,.68,.24,1), transform .72s cubic-bezier(.22,.68,.24,1);
+}
+#home-glydi .vs .t.show{ opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce){
+  #home-glydi .vs .reveal,
+  #home-glydi .vs .t{ opacity:1 !important; transform:none !important; transition:none !important; }
+  #home-glydi .vs-ring-dial .arc{ transition:none !important; stroke-dashoffset:var(--off, 100) !important; }
+  #home-glydi .vs-card:hover,
+  #home-glydi .vs-serve-row span:hover{ transform:none !important; }
+}
+
+/* ==================================================================
+   RESPONSIVE
+   ================================================================== */
+@media (max-width:1100px){
+  #home-glydi .vs-cards{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+  #home-glydi .vs-rings{ grid-template-columns:repeat(2, minmax(0,1fr)); row-gap:34px; }
+  #home-glydi .vs-ring{ padding-bottom:0; }
+}
+@media (max-width:900px){
+  #home-glydi .vs-hero::before{
+    background:
+      linear-gradient(180deg, rgba(11,10,9,.8) 0%, rgba(11,10,9,.62) 48%, rgba(11,10,9,.76) 100%);
   }
-  .subpage{ position:relative; background:transparent; max-width:1080px; margin:0 auto; padding:140px 24px 90px; color:#16181b; }
-
-  /* ---- section header atoms ---- */
-  section.ab{ margin-top:clamp(72px,11vh,128px); }
-  .ab-eyebrow{ display:inline-flex; align-items:center; gap:10px; font-size:12px; letter-spacing:2.4px; text-transform:uppercase; color:var(--orange); font-weight:700; }
-  .ab-eyebrow::before{ content:""; width:26px; height:2px; background:var(--orange); border-radius:2px; }
-  .ab-h2{ font-size:clamp(28px,4vw,44px); font-weight:800; letter-spacing:-.02em; line-height:1.08; margin:14px 0 0; }
-  .ab-h2 span{ color:var(--orange); }
-  .ab-lead{ font-size:clamp(16px,1.35vw,18px); line-height:1.65; color:#54585e; max-width:660px; margin:16px 0 0; }
-
-  /* ---- mission / intro ---- */
-  .ab-intro-h{ font-size:clamp(30px,5.2vw,60px); font-weight:800; letter-spacing:-.028em; line-height:1.04; margin:14px 0 0; max-width:16ch; }
-  .ab-intro-h span{ color:var(--orange); }
-
-  /* ---- stats band (count-up) ---- */
-  .ab-stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(0,0,0,.12); border:1px solid rgba(0,0,0,.12); border-radius:18px; overflow:hidden; margin-top:40px;
-    opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
-  .ab-stats.in{ opacity:1; transform:none; }
-  .ab-stat{ background:#fff; padding:clamp(24px,3vw,34px) 22px; text-align:center; }
-  .ab-stat .num{ font-size:clamp(32px,4.4vw,50px); font-weight:800; letter-spacing:-.02em; color:#16181b; line-height:1; }
-  .ab-stat .num .or{ color:var(--orange); }
-  .ab-stat .lbl{ font-size:12.5px; letter-spacing:.6px; text-transform:uppercase; color:#8a8f96; margin-top:11px; font-weight:600; }
-  @media(max-width:720px){ .ab-stats{ grid-template-columns:repeat(2,1fr); } }
-
-  /* ---- perk marquee (infinite scroll badge row, inspired by reference) ---- */
-  .marquee{ margin-top:22px; overflow:hidden; border-block:1px solid rgba(0,0,0,.1); padding:16px 0;
-    -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); }
-  .marquee-track{ display:flex; gap:12px; width:max-content; animation:marq 30s linear infinite; }
-  .marquee:hover .marquee-track{ animation-play-state:paused; }
-  @keyframes marq{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-  .mq{ display:inline-flex; align-items:center; gap:9px; white-space:nowrap; font-size:14px; font-weight:600; color:#33363b; background:#fff; border:1px solid rgba(0,0,0,.1); border-radius:999px; padding:10px 18px; }
-  .mq::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--orange); flex:0 0 auto; }
-  @media (prefers-reduced-motion:reduce){ .marquee-track{ animation:none; flex-wrap:wrap; width:auto; justify-content:center; } }
-
-  /* ---- career outcomes (role + salary cards, inspired by reference) ---- */
-  .roles{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:36px; }
-  .role-card{ background:#fff; border:1px solid rgba(0,0,0,.09); border-radius:18px; padding:26px 28px;
-    opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease, box-shadow .3s ease, border-color .3s ease; }
-  .roles.in .role-card{ opacity:1; transform:none; }
-  .roles.in .role-card:nth-child(2){ transition-delay:.08s; }
-  .roles.in .role-card:nth-child(3){ transition-delay:.16s; }
-  .roles.in .role-card:nth-child(4){ transition-delay:.24s; }
-  .role-card:hover{ transform:translateY(-5px); box-shadow:0 30px 58px -30px rgba(0,0,0,.28); border-color:rgba(var(--orange-rgb),.4); }
-  .role-top{ display:flex; align-items:baseline; justify-content:space-between; gap:14px; }
-  .role-name{ font-size:18.5px; font-weight:800; letter-spacing:-.01em; color:#16181b; }
-  .role-pay{ font-size:16px; font-weight:800; color:var(--orange); white-space:nowrap; }
-  .role-desc{ font-size:14.5px; line-height:1.55; color:#54585e; margin:8px 0 0; }
-  .roles-note{ font-size:12.5px; color:#9a9089; margin:16px 0 0; }
-  @media(max-width:720px){ .roles{ grid-template-columns:1fr; } }
-
-  /* ---- roles by program: dropdown accordion ---- */
-  .roles-acc{ margin-top:36px; display:flex; flex-direction:column; gap:14px; }
-  .racc{ background:#fff; border:1px solid rgba(0,0,0,.1); border-radius:18px; overflow:hidden; transition:box-shadow .3s ease, border-color .3s ease; }
-  .racc[open]{ border-color:rgba(var(--orange-rgb),.4); box-shadow:0 26px 52px -30px rgba(0,0,0,.28); }
-  .racc summary{ list-style:none; cursor:pointer; display:flex; align-items:center; gap:15px; padding:20px 24px; }
-  .racc summary::-webkit-details-marker{ display:none; }
-  .racc-ic{ width:46px; height:46px; border-radius:13px; background:rgba(var(--orange-rgb),.1); color:var(--orange); display:grid; place-items:center; flex:0 0 auto; transition:background .3s ease, color .3s ease, transform .3s ease; }
-  .racc[open] .racc-ic{ background:var(--orange); color:#fff; }
-  .racc summary:hover .racc-ic{ transform:translateY(-2px); }
-  .racc-ic svg{ width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
-  .racc-name{ font-size:19px; font-weight:800; letter-spacing:-.01em; color:#16181b; }
-  .racc-meta{ margin-left:auto; font-size:12.5px; font-weight:700; color:#8a8f96; letter-spacing:.4px; text-transform:uppercase; white-space:nowrap; }
-  .racc-chev{ flex:0 0 auto; color:#a2a09c; transition:transform .3s ease, color .3s ease; }
-  .racc[open] .racc-chev{ transform:rotate(180deg); color:var(--orange); }
-  .racc-chev svg{ width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; display:block; }
-  .racc-body{ padding:2px 24px 20px; display:flex; flex-direction:column; }
-  .racc[open] .racc-body{ animation:raccIn .38s cubic-bezier(.2,.7,.2,1); }
-  @keyframes raccIn{ from{ opacity:0; transform:translateY(-8px); } to{ opacity:1; transform:none; } }
-  .racc-item{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 8px; border-top:1px solid rgba(0,0,0,.07); border-radius:10px; transition:background .2s ease; }
-  .racc-item:first-child{ border-top:0; }
-  .racc-item:hover{ background:rgba(var(--orange-rgb),.05); }
-  .racc-role{ font-size:15.5px; font-weight:600; color:#16181b; }
-  .racc-ctc{ font-size:15px; font-weight:800; color:var(--orange); white-space:nowrap; letter-spacing:-.01em; }
-  @media(max-width:560px){ .racc-name{ font-size:17px; } .racc-meta{ display:none; } .racc-role{ font-size:14.5px; } }
-
-  /* ---- founder ---- */
-  .ab-founder{ display:grid; grid-template-columns:280px 1fr; gap:clamp(28px,4vw,56px); align-items:center;
-    background:linear-gradient(140deg,#ffffff,#fff5ef); border:1px solid rgba(0,0,0,.08); border-radius:22px; padding:clamp(26px,3vw,46px); margin-top:32px; }
-  .ab-founder img{ width:100%; aspect-ratio:1/1; object-fit:cover; object-position:center 15%; border-radius:18px;
-    filter:grayscale(1) contrast(1.03); transition:filter .55s ease, transform .55s cubic-bezier(.2,.7,.2,1); box-shadow:0 22px 46px -18px rgba(0,0,0,.45); }
-  .ab-founder:hover img{ filter:none; transform:scale(1.03) rotate(-1deg); }
-  .fo-role{ font-size:12px; letter-spacing:1.6px; text-transform:uppercase; color:var(--orange); font-weight:700; margin:0; }
-  .fo-name{ font-size:clamp(24px,3vw,34px); font-weight:800; margin:8px 0 14px; letter-spacing:-.01em; }
-  .fo-bio{ font-size:16px; line-height:1.7; color:#54585e; margin:0; }
-  .fo-quote{ margin:18px 0 0; padding-left:18px; border-left:3px solid var(--orange); font-size:16px; font-style:italic; color:#33363b; line-height:1.55; }
-  @media(max-width:720px){ .ab-founder{ grid-template-columns:1fr; text-align:center; } .ab-founder img{ max-width:220px; margin:0 auto; } .fo-quote{ text-align:left; } }
-
-  /* ---- phases timeline ---- */
-  .phases{ position:relative; margin-top:44px; }
-  .phases::before{ content:""; position:absolute; left:31px; top:12px; bottom:12px; width:2px; background:rgba(var(--orange-rgb),.16); }
-  .phases::after{ content:""; position:absolute; left:31px; top:12px; width:2px; height:0; background:var(--orange); transition:height 1.3s cubic-bezier(.4,0,.2,1); }
-  .phases.in::after{ height:calc(100% - 24px); }
-  .phase{ position:relative; display:grid; grid-template-columns:64px 1fr; gap:24px; padding:16px 0;
-    opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
-  .phases.in .phase{ opacity:1; transform:none; }
-  .phases.in .phase:nth-child(2){ transition-delay:.12s; }
-  .phases.in .phase:nth-child(3){ transition-delay:.26s; }
-  .phases.in .phase:nth-child(4){ transition-delay:.40s; }
-  .ph-node{ position:relative; z-index:2; width:64px; height:64px; border-radius:18px; background:#fff; border:1px solid rgba(0,0,0,.1);
-    display:grid; place-items:center; color:var(--orange); box-shadow:0 14px 28px -14px rgba(0,0,0,.3);
-    transition:background .3s ease, color .3s ease, transform .3s ease; }
-  .phase:hover .ph-node{ background:var(--orange); color:#fff; transform:translateY(-3px) scale(1.04); }
-  .ph-node svg{ width:26px; height:26px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
-  .ph-body{ padding-top:5px; }
-  .ph-step{ font-size:12px; letter-spacing:1.4px; text-transform:uppercase; color:var(--orange); font-weight:700; margin:0; }
-  .ph-title{ font-size:clamp(20px,2vw,25px); font-weight:800; margin:5px 0 7px; letter-spacing:-.01em; }
-  .ph-desc{ font-size:15.5px; line-height:1.62; color:#54585e; max-width:580px; margin:0; }
-
-  /* ---- value cards ---- */
-  .values{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:36px; }
-  .val-card{ position:relative; background:#fff; border:1px solid rgba(0,0,0,.09); border-radius:20px; padding:clamp(24px,2.4vw,32px); overflow:hidden;
-    opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease, box-shadow .3s ease, border-color .3s ease; }
-  .values.in .val-card{ opacity:1; transform:none; }
-  .values.in .val-card:nth-child(2){ transition-delay:.09s; }
-  .values.in .val-card:nth-child(3){ transition-delay:.18s; }
-  .values.in .val-card:nth-child(4){ transition-delay:.27s; }
-  .val-card:hover{ transform:translateY(-6px); box-shadow:0 32px 60px -30px rgba(0,0,0,.3); border-color:rgba(var(--orange-rgb),.4); }
-  .val-num{ position:absolute; top:20px; right:26px; font-size:42px; font-weight:800; color:rgba(0,0,0,.05); line-height:1; }
-  .val-ic{ width:54px; height:54px; border-radius:15px; background:rgba(var(--orange-rgb),.1); color:var(--orange); display:grid; place-items:center; margin-bottom:18px; transition:background .3s ease, color .3s ease, transform .35s cubic-bezier(.2,.7,.2,1); }
-  .val-card:hover .val-ic{ background:var(--orange); color:#fff; transform:rotate(-6deg) scale(1.07); }
-  .val-ic svg{ width:26px; height:26px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
-  .val-card h3{ font-size:20px; font-weight:800; margin:0 0 8px; letter-spacing:-.01em; }
-  .val-card p{ font-size:15px; line-height:1.6; color:#54585e; margin:0; }
-  @media(max-width:720px){ .values{ grid-template-columns:1fr; } }
-
-  /* ---- learn + serve chips ---- */
-  .ab-two{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:36px; }
-  .chip-card{ background:#fff; border:1px solid rgba(0,0,0,.09); border-radius:20px; padding:clamp(24px,2.4vw,30px); }
-  .chip-card h3{ font-size:13px; letter-spacing:1.4px; text-transform:uppercase; color:var(--orange); font-weight:700; margin:0 0 16px; }
-  .chip-row{ display:flex; flex-wrap:wrap; gap:9px; }
-  .chip-row span{ font-size:14px; color:#33363b; background:rgba(var(--orange-rgb),.06); border:1px solid rgba(var(--orange-rgb),.2); border-radius:999px; padding:8px 15px; transition:background .2s ease, color .2s ease, transform .2s ease; }
-  .chip-row span:hover{ background:var(--orange); color:#fff; transform:translateY(-2px); }
-  @media(max-width:720px){ .ab-two{ grid-template-columns:1fr; } }
-
-  /* ---- closing CTA ---- */
-  .ab-cta{ margin-top:clamp(72px,11vh,128px); text-align:center; background:linear-gradient(155deg,#221a15,#0b0908) !important; border:1px solid rgba(255,255,255,.08); border-radius:28px; padding:clamp(56px,7vw,92px) 28px; color:#fff; position:relative; overflow:hidden; box-shadow:0 44px 90px -44px rgba(0,0,0,.6); }
-  .ab-cta::before{ content:""; position:absolute; inset:0; background:radial-gradient(62% 72% at 50% -12%, rgba(var(--orange-rgb),.38), transparent 64%); pointer-events:none; }
-  .ab-cta::after{ content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px); background-size:46px 46px; -webkit-mask-image:radial-gradient(62% 60% at 50% 42%, #000, transparent 76%); mask-image:radial-gradient(62% 60% at 50% 42%, #000, transparent 76%); pointer-events:none; }
-  .ab-cta .cta-eye{ position:relative; display:inline-flex; align-items:center; gap:9px; font-size:12px; letter-spacing:2.2px; text-transform:uppercase; font-weight:700; color:var(--orange-lt); margin:0 0 16px; }
-  .ab-cta .cta-eye::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--orange); animation:ctaPulse 2.2s ease-out infinite; }
-  @keyframes ctaPulse{ 0%{ box-shadow:0 0 0 0 rgba(var(--orange-rgb),.55); } 70%{ box-shadow:0 0 0 11px rgba(var(--orange-rgb),0); } 100%{ box-shadow:0 0 0 0 rgba(var(--orange-rgb),0); } }
-  .ab-cta .cta-fine{ position:relative; margin:22px 0 0; font-size:13px; color:rgba(255,255,255,.5); letter-spacing:.3px; }
-  .ab-cta h2{ font-size:clamp(30px,4.6vw,50px); font-weight:800; letter-spacing:-.02em; margin:0; position:relative; line-height:1.05; }
-  .ab-cta h2 span{ color:var(--orange-lt); }
-  .ab-cta p{ font-size:16.5px; color:rgba(255,255,255,.72); max-width:540px; margin:16px auto 0; line-height:1.6; position:relative; }
-  .ab-actions{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:32px; position:relative; }
-  .ab-btn{ display:inline-flex; align-items:center; gap:9px; padding:15px 30px; border-radius:999px; font-size:15px; font-weight:600; text-decoration:none; cursor:pointer; transition:transform .2s ease, box-shadow .2s ease, background .2s ease; }
-  .ab-btn.primary{ background:linear-gradient(135deg,#ff9152,#f4671a); color:#fff; box-shadow:0 12px 30px -10px rgba(244,103,24,.7); }
-  .ab-btn.primary:hover{ transform:translateY(-2px); box-shadow:0 18px 40px -12px rgba(244,103,24,.85); }
-  .ab-btn.ghost{ background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.25); }
-  .ab-btn.ghost:hover{ background:rgba(255,255,255,.16); transform:translateY(-2px); }
-
-  .back{ display:inline-block; margin-top:44px; font-size:13px; letter-spacing:1px; text-transform:uppercase; color:#9a9089; text-decoration:none; font-weight:600; transition:color .2s ease; }
-  .back:hover{ color:var(--orange); }
-
-  /* ---- scroll reveal ---- */
-  .subpage .reveal{ opacity:0; transform:translateY(26px); transition:opacity .75s ease, transform .75s cubic-bezier(.2,.7,.2,1); }
-  .subpage .reveal.in{ opacity:1; transform:none; }
-  @media (prefers-reduced-motion:reduce){
-    .subpage .reveal, .phase, .val-card, .ab-stats{ opacity:1 !important; transform:none !important; }
-    .phases::after{ transition:none; height:calc(100% - 24px); }
-  }
-
-  /* ===== MOBILE: keep animations working on touch + tidy alignment ===== */
-  /* desktop: photo stays black & white and turns colour on hover (cursor).
-     touch devices have no hover, so there it colours in as it scrolls into view. */
-  @media (hover:none){
-    section.reveal.in .ab-founder img{ filter:none; }
-    .val-card{ box-shadow:0 18px 40px -30px rgba(0,0,0,.22); }
-  }
-  @media (max-width:600px){
-    .subpage{ padding:100px 18px 74px; }
-    section.ab{ margin-top:clamp(52px,8vh,84px); }
-    .ab-eyebrow{ font-size:11.5px; letter-spacing:2px; }
-    .ab-intro-h{ font-size:clamp(28px,8.6vw,40px); }
-    .ab-h2{ font-size:clamp(25px,7vw,34px); }
-    .ab-lead{ font-size:16px; }
-    .ab-founder{ padding:24px 20px; }
-    .fo-name{ font-size:26px; }
-    .fo-bio, .fo-quote{ font-size:15px; }
-    .ab-cta{ padding:46px 20px; border-radius:22px; }
-    .racc summary{ padding:18px; gap:13px; }
-    .racc-ic{ width:42px; height:42px; }
-    .racc-body{ padding:2px 18px 18px; }
-    .racc-item{ padding:13px 4px; }
-  }
+  #home-glydi .vs-hero::after{ -webkit-mask-image:none; mask-image:none; opacity:.6; }
+  #home-glydi .vs-hero-facts{ max-width:none; gap:0 clamp(12px, 4vw, 24px); }
+  #home-glydi .vs-vm-grid{ grid-template-columns:minmax(0,1fr); }
+  /* stacked: the portrait becomes a band at the top of the section and
+     stops being sticky, so it cannot outrun the copy on a phone */
+  #home-glydi .vs-founder-grid{ grid-template-columns:minmax(0,1fr); }
+  #home-glydi .vs-portrait-col{ position:static; max-width:460px; }
+  #home-glydi .vs-portrait{ aspect-ratio:4 / 3.4; background-position:center 10%; }
+  #home-glydi .vs-over .vs-copy{ text-align:left; text-align-last:left; }
+}
+@media (max-width:620px){
+  #home-glydi .vs-cards{ grid-template-columns:minmax(0,1fr); }
+  #home-glydi .vs-card{ min-height:0; }
+  #home-glydi .vs-rings{ grid-template-columns:minmax(0,1fr); }
+  #home-glydi .vs-values-list span{ padding:6px 14px; }
+}
 </style>
-
 
 <a class="site-logo" href="/" aria-label="ONROL, AI Execution School, home">
   <img src="/home-glydi/logo-mark.png" alt="ONROL, AI Execution School">
 </a>
 
-<nav class="nav">
+<nav class="nav topbar">
   <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
     <span></span><span></span><span></span>
   </button>
@@ -215,163 +773,283 @@
   </div>
 </nav>
 
-<header class="pagehero">
-  <div class="pagehero-inner">
-    <p class="ph-eyebrow">About ONROL</p>
-    <h1 class="ph-title">India's <span>AI Execution School</span></h1>
-    <p class="ph-sub">A premium, project based AI school with live mentorship, where you build real AI solutions instead of just learning concepts.</p>
-  </div>
-</header>
+<main class="subpage vs">
 
-<main class="subpage has-hero">
-
-  <!-- MISSION -->
-  <section class="ab reveal" style="margin-top:24px">
-    <p class="ab-eyebrow">Who we are</p>
-    <h2 class="ab-intro-h">We don't just teach AI. <span>We make you build it.</span></h2>
-    <p class="ab-lead">ONROL is India's AI Execution School, based in Hyderabad. We exist to close the gap between watching tutorials and actually shipping real AI products, with live mentorship, real projects, and a portfolio that proves what you can do.</p>
-  </section>
-
-  <!-- STATS -->
-  <div class="ab-stats">
-    <div class="ab-stat"><div class="num"><span class="cv" data-count="4">0</span></div><div class="lbl">Programs</div></div>
-    <div class="ab-stat"><div class="num"><span class="cv" data-count="20">0</span><span class="or">+</span></div><div class="lbl">Projects to build</div></div>
-    <div class="ab-stat"><div class="num"><span class="cv" data-count="3">0</span></div><div class="lbl">Languages taught</div></div>
-    <div class="ab-stat"><div class="num"><span class="cv" data-count="100">0</span><span class="or">%</span></div><div class="lbl">Hands on</div></div>
-  </div>
-
-  <!-- PERK MARQUEE -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span class="mq">Live mentor-led</span><span class="mq">Project based</span><span class="mq">Ship a real portfolio</span><span class="mq">3 languages</span><span class="mq">Certificate on completion</span><span class="mq">Beginner friendly</span><span class="mq">Real deployments</span><span class="mq">1:1 mentorship</span><span class="mq">Career support</span><span class="mq">No coding required</span>
-      <span class="mq">Live mentor-led</span><span class="mq">Project based</span><span class="mq">Ship a real portfolio</span><span class="mq">3 languages</span><span class="mq">Certificate on completion</span><span class="mq">Beginner friendly</span><span class="mq">Real deployments</span><span class="mq">1:1 mentorship</span><span class="mq">Career support</span><span class="mq">No coding required</span>
+  <!-- 01 — IMAGE HERO + WAVE -->
+  <header class="vs-hero">
+    <div class="vs-hero-img" aria-hidden="true"></div>
+    <div class="vs-wrap">
+      <h1 class="vs-rise">India&rsquo;s AI<br><span>Execution School</span></h1>
+      <p class="vs-hero-sub vs-rise">Live, mentor-led and project-first. Hyderabad based, teaching people to build with AI instead of just learning about it.</p>
+      <div class="vs-hero-facts vs-rise">
+        <div><strong>5</strong><span>Programs</span></div>
+        <div><strong>20<em>+</em></strong><span>Projects</span></div>
+        <div><strong>3</strong><span>Languages</span></div>
+        <div><strong>100<em>%</em></strong><span>Hands on</span></div>
+      </div>
     </div>
-  </div>
+    <div class="vs-wave" aria-hidden="true">
+      <span class="vs-wave-layer vs-wave-back">
+        <svg viewBox="0 0 2880 120" preserveAspectRatio="none">
+          <path d="M0,46 C240,6 480,86 720,46 C960,6 1200,86 1440,46 C1680,6 1920,86 2160,46 C2400,6 2640,86 2880,46 L2880,120 L0,120 Z"></path>
+        </svg>
+      </span>
+      <span class="vs-wave-layer vs-wave-front">
+        <svg viewBox="0 0 2880 120" preserveAspectRatio="none">
+          <path d="M0,84 C180,112 360,54 720,68 C1080,82 1260,112 1440,84 C1620,112 1800,54 2160,68 C2520,82 2700,112 2880,84 L2880,120 L0,120 Z"></path>
+        </svg>
+      </span>
+      <span class="vs-wave-base"></span>
+    </div>
+  </header>
 
-  <!-- FOUNDER -->
-  <section class="ab reveal">
-    <p class="ab-eyebrow">The founder</p>
-    <h2 class="ab-h2">Built by an educator, for real <span>outcomes</span>.</h2>
-    <div class="ab-founder">
-      <img src="/home-glydi/mam-0001.png" alt="Dr. Neeraja Reddy">
-      <div>
-        <p class="fo-role">Founder &amp; CEO</p>
-        <h3 class="fo-name">Dr. Neeraja Reddy</h3>
-        <p class="fo-bio">With over 16 years across healthcare, research, and education, Dr. Neeraja Reddy built ONROL to make AI learning practical, accessible, and outcome driven, so every learner leaves able to create, not just recite.</p>
-        <p class="fo-quote">"The future belongs to people who can build with AI. Our job is to get you there."</p>
+  <!-- 02 — OVERVIEW -->
+  <section class="vs-over reveal">
+    <div class="vs-wrap">
+      <h2 class="vs-h t">ONROL Overview</h2>
+      <div class="vs-rule t"></div>
+      <div class="vs-copy">
+        <p class="t">ONROL is India&rsquo;s AI Execution School, based in Hyderabad. We are a premium, project based AI school with live mentorship, where learners build real AI solutions instead of collecting certificates for concepts they never use.</p>
+        <p class="t">Across <b>4 programs</b> in AI and Cyber Security, students work through <b>20+ real projects</b>, taught live in <b>3 languages</b> and structured so that every week ends with something finished, deployed, and worth showing.</p>
+        <p class="t">Our mentors are practitioners who have shipped real work. They sit in every session, review what you build, and stay with you from your first prompt to the moment your project goes live on the web with a link of its own.</p>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS / PHASES -->
-  <section class="ab reveal">
-    <p class="ab-eyebrow">How ONROL works</p>
-    <h2 class="ab-h2">Four phases, one <span>outcome</span>.</h2>
-    <p class="ab-lead">Every journey here follows the same path, from your first prompt to getting paid for what you build.</p>
-    <div class="phases">
-      <div class="phase">
-        <div class="ph-node"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 5.5V20.5"/><path d="M9 8h7M9 11h5"/></svg></div>
-        <div class="ph-body">
-          <p class="ph-step">Phase 01</p>
-          <h3 class="ph-title">Learn</h3>
-          <p class="ph-desc">Get comfortable with the AI tools that matter, writing good prompts, working with AI agents, and the workflow that takes you from idea to a working build fast.</p>
-        </div>
-      </div>
-      <div class="phase">
-        <div class="ph-node"><svg viewBox="0 0 24 24"><path d="M14.5 5.5l4 4L9 19l-4.5 1L5.5 15.5z"/><path d="M12 8l4 4"/><path d="M17 3l4 4-2 2-4-4z"/></svg></div>
-        <div class="ph-body">
-          <p class="ph-step">Phase 02</p>
-          <h3 class="ph-title">Build</h3>
-          <p class="ph-desc">Put it to work on real projects, not throwaway demos. You build features, fix what breaks, and make things people actually use.</p>
-        </div>
-      </div>
-      <div class="phase">
-        <div class="ph-node"><svg viewBox="0 0 24 24"><path d="M5 15c-1.5 1.2-2 4.5-2 4.5s3.3-.5 4.5-2"/><path d="M12 15l-3-3a20 20 0 0 1 2-4A11 11 0 0 1 21 3c0 3-1 7-6 10a20 20 0 0 1-3 2z"/><circle cx="15" cy="9" r="1.5"/></svg></div>
-        <div class="ph-body">
-          <p class="ph-step">Phase 03</p>
-          <h3 class="ph-title">Launch</h3>
-          <p class="ph-desc">Take it live. Your project goes on the web with a real link, and you walk away with something solid for your portfolio.</p>
-        </div>
-      </div>
-      <div class="phase">
-        <div class="ph-node"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18"/><path d="M16 15h2"/></svg></div>
-        <div class="ph-body">
-          <p class="ph-step">Phase 04</p>
-          <h3 class="ph-title">Earn</h3>
-          <p class="ph-desc">Use it to earn, freelance work, your own product, or a job. You learn how to package what you build and get paid for it.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VALUES / WHY -->
-  <section class="ab reveal">
-    <p class="ab-eyebrow">Why choose ONROL</p>
-    <h2 class="ab-h2">Built to make you a <span>builder</span>.</h2>
-    <div class="values">
-      <div class="val-card">
-        <span class="val-num">01</span>
-        <span class="val-ic"><svg viewBox="0 0 24 24"><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg></span>
-        <h3>Project based learning</h3>
-        <p>You build real AI applications from day one, not just watch lectures.</p>
-      </div>
-      <div class="val-card">
-        <span class="val-num">02</span>
-        <span class="val-ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-        <h3>Expert mentorship</h3>
-        <p>Live sessions with experienced professionals who have shipped real work.</p>
-      </div>
-      <div class="val-card">
-        <span class="val-num">03</span>
-        <span class="val-ic"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span>
-        <h3>Industry relevant curriculum</h3>
-        <p>Generative AI, agents, automation, and no code tools, kept current as the field moves.</p>
-      </div>
-      <div class="val-card">
-        <span class="val-num">04</span>
-        <span class="val-ic"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
-        <h3>Career focused approach</h3>
-        <p>You finish with a portfolio built to land jobs, clients, and your own ventures.</p>
+  <!-- 03 — WHY US -->
+  <section class="vs-why reveal">
+    <div class="vs-wrap">
+      <h2 class="vs-h t">Why Us</h2>
+      <div class="vs-rule t"></div>
+      <div class="vs-cards">
+        <article class="vs-card t" tabindex="0">
+          <div class="vs-card-inner">
+            <div class="vs-card-face vs-card-front">
+              <span class="vs-card-ic"><svg viewBox="0 0 24 24"><path d="M8 6l-5 6 5 6"/><path d="M16 6l5 6-5 6"/></svg></span>
+              <h3><span>Project based</span> from day one</h3>
+              <span class="vs-card-flip" aria-hidden="true">&#8635;</span>
+            </div>
+            <div class="vs-card-face vs-card-back">
+              <p class="vs-card-k">What it means</p>
+              <p>Every week ends with something built and deployed, not a quiz score. You leave each module with an artefact, and the curriculum is the sequence of things you ship.</p>
+            </div>
+          </div>
+        </article>
+        <article class="vs-card t" tabindex="0">
+          <div class="vs-card-inner">
+            <div class="vs-card-face vs-card-front">
+              <span class="vs-card-ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+              <h3><span>Live mentors,</span> never recordings</h3>
+              <span class="vs-card-flip" aria-hidden="true">&#8635;</span>
+            </div>
+            <div class="vs-card-face vs-card-back">
+              <p class="vs-card-k">How it runs</p>
+              <p>Sessions are live with a practitioner in the room, so questions get answered the day you have them. Nothing is a recording you fall behind on.</p>
+            </div>
+          </div>
+        </article>
+        <article class="vs-card t" tabindex="0">
+          <div class="vs-card-inner">
+            <div class="vs-card-face vs-card-front">
+              <span class="vs-card-ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 4.5-8 4.5-8-4.5L12 3z"/><path d="M4 12l8 4.5 8-4.5"/><path d="M4 16.5L12 21l8-4.5"/></svg></span>
+              <h3><span>Industry relevant</span> curriculum</h3>
+              <span class="vs-card-flip" aria-hidden="true">&#8635;</span>
+            </div>
+            <div class="vs-card-face vs-card-back">
+              <p class="vs-card-k">What you cover</p>
+              <p>Generative AI, agents, automation and no-code tooling, revised as the field moves. What you learn is what teams are actually paying for now.</p>
+            </div>
+          </div>
+        </article>
+        <article class="vs-card t" tabindex="0">
+          <div class="vs-card-inner">
+            <div class="vs-card-face vs-card-front">
+              <span class="vs-card-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.3 12.4l2.4 2.4 4.9-5.4"/></svg></span>
+              <h3><span>Beginner friendly,</span> no coding needed</h3>
+              <span class="vs-card-flip" aria-hidden="true">&#8635;</span>
+            </div>
+            <div class="vs-card-face vs-card-back">
+              <p class="vs-card-k">Where you start</p>
+              <p>No coding background needed. The tools do the heavy lifting while you learn the judgement, so a complete beginner and a working engineer both have somewhere to begin.</p>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-
-  <!-- LEARN + SERVE -->
-  <section class="ab reveal">
-    <p class="ab-eyebrow">The curriculum</p>
-    <h2 class="ab-h2">What you'll learn, and who it's for.</h2>
-    <div class="ab-two">
-      <div class="chip-card">
-        <h3>What you'll learn</h3>
-        <div class="chip-row">
-          <span>AI Fundamentals</span><span>Generative AI</span><span>AI Agents</span><span>Prompt Engineering</span>
-          <span>Automation</span><span>AI Websites</span><span>No Code Tools</span><span>Business Automation</span><span>AI Productivity</span>
+  <!-- 04 — VISION / MISSION + CORE VALUES -->
+  <section class="vs-vm reveal">
+    <div class="vs-wrap">
+      <div class="vs-vm-grid">
+        <div class="vs-vm-text t">
+          <h2>Our Vision &amp; Mission</h2>
+          <p>To make India a country of AI builders, not AI spectators.</p>
+          <p>We exist to close the gap between watching tutorials and actually shipping real AI products, so every learner leaves able to create, not just recite.</p>
         </div>
-      </div>
-      <div class="chip-card">
-        <h3>Who we serve</h3>
-        <div class="chip-row">
-          <span>Students</span><span>Professionals</span><span>Entrepreneurs</span><span>Freelancers</span>
-          <span>Business Owners</span><span>Educators</span><span>Career Switchers</span><span>Creators</span>
+        <div class="vs-values t">
+          <h2>Our Core Values</h2>
+          <div class="vs-values-list">
+            <span>Execution</span>
+            <span>Mentorship</span>
+            <span>Accessibility</span>
+            <span>Accountability</span>
+            <span>Craft</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="ab-cta reveal">
-    <p class="cta-eye">Your next step</p>
-    <h2>Ready to build with <span>AI</span>?</h2>
-    <p>Join the next cohort and start from day one, with mentors in your corner instead of just another video to watch.</p>
-    <div class="ab-actions">
-      <a class="ab-btn primary js-apply" href="/programs/ai-generalist">Apply Now</a>
-      <a class="ab-btn ghost" href="/programs">Explore Programs</a>
+  <!-- 05 — WHAT EVERY LEARNER LEAVES WITH -->
+  <section class="vs-growth reveal">
+    <div class="vs-wrap">
+      <h2 class="vs-h t">What Every Learner Leaves With</h2>
+      <div class="vs-rule t"></div>
+      <div class="vs-rings">
+        <div class="vs-ring t" style="--step:0">
+          <p class="vs-ring-lbl">Programs</p>
+          <span class="vs-ring-arrow" aria-hidden="true"></span>
+          <div class="vs-ring-dial">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle class="track" cx="50" cy="50" r="45"></circle>
+              <circle class="arc" cx="50" cy="50" r="45" style="--off:170"></circle>
+            </svg>
+            <span class="vs-ring-val"><span class="cv" data-count="5">0</span></span>
+          </div>
+          <p class="vs-ring-cap">AI &amp; Cyber tracks</p>
+        </div>
+        <div class="vs-ring t" style="--step:1">
+          <p class="vs-ring-lbl">Projects</p>
+          <span class="vs-ring-arrow" aria-hidden="true"></span>
+          <div class="vs-ring-dial">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle class="track" cx="50" cy="50" r="45"></circle>
+              <circle class="arc" cx="50" cy="50" r="45" style="--off:113"></circle>
+            </svg>
+            <span class="vs-ring-val"><span class="cv" data-count="20">0</span><span class="or">+</span></span>
+          </div>
+          <p class="vs-ring-cap">Built and deployed</p>
+        </div>
+        <div class="vs-ring t" style="--step:2">
+          <p class="vs-ring-lbl">Languages</p>
+          <span class="vs-ring-arrow" aria-hidden="true"></span>
+          <div class="vs-ring-dial">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle class="track" cx="50" cy="50" r="45"></circle>
+              <circle class="arc" cx="50" cy="50" r="45" style="--off:156"></circle>
+            </svg>
+            <span class="vs-ring-val"><span class="cv" data-count="3">0</span></span>
+          </div>
+          <p class="vs-ring-cap">Taught live</p>
+        </div>
+        <div class="vs-ring t" style="--step:3">
+          <p class="vs-ring-lbl">Hands on</p>
+          <span class="vs-ring-arrow" aria-hidden="true"></span>
+          <div class="vs-ring-dial">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle class="track" cx="50" cy="50" r="45"></circle>
+              <circle class="arc" cx="50" cy="50" r="45" style="--off:0"></circle>
+            </svg>
+            <span class="vs-ring-val"><span class="cv" data-count="100">0</span><span class="or">%</span></span>
+          </div>
+          <p class="vs-ring-cap">Every session</p>
+        </div>
+      </div>
     </div>
-    <p class="cta-fine">Limited seats, next cohort starts soon.</p>
   </section>
 
-  <a class="back" href="/">&larr; Back to home</a>
+  <!-- 06 — FOUNDER + METHOD SPLIT -->
+  <section class="vs-split reveal">
+    <div class="vs-wrap">
+      <h2 class="vs-h t">Built by an educator, for real outcomes</h2>
+      <div class="vs-rule t"></div>
+      <div class="vs-founder-grid">
+        <div class="vs-portrait-col t">
+          <div class="vs-portrait-frame">
+            <div class="vs-portrait" role="img" aria-label="Dr. Neeraja Reddy, founder and CEO of ONROL"></div>
+          </div>
+          <div class="vs-credentials">
+            <div><strong>16+</strong><span>Years</span></div>
+            <div><strong>3</strong><span>Countries</span></div>
+            <div><strong>2</strong><span>Ventures</span></div>
+          </div>
+        </div>
+        <div class="vs-founder-body">
+      <p class="vs-founder-name t">Dr. Neeraja Reddy</p>
+      <p class="vs-founder-role t">Founder &amp; CEO, ONROL</p>
+      <p class="vs-founder-bio t">Sixteen years across healthcare, clinical research and education in the USA, the UK and India, and two schools founded along the way. Dr. Neeraja Reddy built ONROL to close the same gap she kept seeing in every classroom: people who had learned the theory and still could not build the thing.</p>
+      <ol class="vs-journey">
+        <li class="t">
+          <div>
+            <h3>Global healthcare leadership</h3>
+            <p class="vs-journey-where">Santa Clara Hospital, USA &middot; Clinical Research, UK</p>
+            <p>16+ years of international experience in healthcare, clinical research and statistical analysis, across clinical trials, data-driven decisions and operational excellence.</p>
+          </div>
+        </li>
+        <li class="t">
+          <div>
+            <h3>Founder, Yajur Public School</h3>
+            <p class="vs-journey-where">Warangal, Telangana</p>
+            <p>Established the school with a mission to build future-ready learners, pioneering curricula that combine traditional values with 21st-century competencies.</p>
+          </div>
+        </li>
+        <li class="t">
+          <div>
+            <h3>Co-Founder, Vivencia Educational Services</h3>
+            <p class="vs-journey-where">India</p>
+            <p>Built programs in entrepreneurship, design thinking, financial literacy and future skills for students from Grade 3 through undergraduate, reaching thousands of learners across India.</p>
+          </div>
+        </li>
+        <li class="t">
+          <div>
+            <h3>Founder, ONROL</h3>
+            <p class="vs-journey-where">India&rsquo;s AI Execution School</p>
+            <p>Created ONROL to bridge AI learning and real-world impact: a live cohort where every learner ships three deployed AI projects and leaves able to create, not just recite.</p>
+          </div>
+        </li>
+      </ol>
+      <blockquote class="vs-founder-quote t">The future belongs to people who can build with AI. Our job is to get you there.</blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 — WHO WE SERVE -->
+  <section class="vs-serve reveal">
+    <div class="vs-wrap">
+      <h2 class="vs-h t">Who We Serve</h2>
+      <div class="vs-rule t"></div>
+      <div class="vs-serve-row">
+        <span class="t">Students</span>
+        <span class="t">Working Professionals</span>
+        <span class="t">Entrepreneurs</span>
+        <span class="t">Freelancers</span>
+        <span class="t">Business Owners</span>
+        <span class="t">Educators</span>
+        <span class="t">Career Switchers</span>
+        <span class="t">Creators</span>
+        <span class="t">Engineers</span>
+        <span class="t">Job Seekers</span>
+        <span class="t">Real-Estate Agents</span>
+        <span class="t">Returning to Work</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 — CONNECT -->
+  <section class="vs-connect reveal">
+    <div class="vs-wrap">
+      <h2 class="vs-h t">Connect With Us</h2>
+      <p class="t">Join the next ONROL cohort and start building from day one, with mentors in your corner instead of just another video to watch.</p>
+      <div class="vs-actions t">
+        <a class="vs-btn primary js-apply" href="/programs/ai-generalist">Apply Now</a>
+        <a class="vs-btn ghost" href="/programs">Explore Programs</a>
+      </div>
+      <p class="vs-fine t">Limited seats, next cohort starts soon.</p>
+    </div>
+  </section>
+
 </main>
 
 <footer class="footer" id="contact">
@@ -390,6 +1068,7 @@
       <div class="f-col">
         <h4>Programs</h4>
         <ul>
+          <li><a href="/programs/aica">AI Career Accelerator</a></li>
           <li><a href="/programs/ai-generalist">AI Generalist</a></li>
           <li><a href="/programs/ai-architect">AI Architect</a></li>
           <li><a href="/programs/soc-analyst">SOC Analyst</a></li>

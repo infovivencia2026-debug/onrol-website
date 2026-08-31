@@ -1,0 +1,95 @@
+/* Staircase curtain preloader: warm-paper backdrop, ink panels rise in a
+   stagger, logo settles, then the curtain scrolls up to reveal the page. */
+.spre {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #FBF9F5;
+  overflow: hidden;
+  transform: translateY(0);
+  will-change: transform;
+}
+
+.spre.is-leaving {
+  transform: translateY(-100%);
+  transition: transform 900ms cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* the rising panels */
+.spre__panels {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+
+.spre__panel {
+  flex: 1 1 0;
+  background: #0D0B0A;
+  transform: translateY(100%);
+  animation: spre-rise 780ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  border-right: 1px solid rgba(244, 103, 24, 0.16);
+}
+
+.spre__panel:last-child { border-right: 0; }
+
+@keyframes spre-rise {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* centered brand lockup */
+.spre__brand {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.spre__logo {
+  width: clamp(150px, 24vw, 260px);
+  height: auto;
+  opacity: 0;
+  transform: translateY(14px) scale(0.98);
+  animation: spre-logo 620ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes spre-logo {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.spre__bar {
+  position: relative;
+  width: clamp(120px, 18vw, 190px);
+  height: 2px;
+  background: rgba(246, 239, 228, 0.14);
+  overflow: hidden;
+  opacity: 0;
+  animation: spre-logo 500ms 120ms ease forwards;
+}
+
+.spre__bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #F46718, #FF8A4A);
+  transform: translateX(-100%);
+  animation: spre-sweep 900ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes spre-sweep {
+  to { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spre__panel,
+  .spre__logo,
+  .spre__bar,
+  .spre__bar::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+  }
+  .spre.is-leaving { transition-duration: 200ms; }
+}

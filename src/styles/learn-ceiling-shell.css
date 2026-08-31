@@ -26,14 +26,21 @@
  *       .learn-rail (optional)
  *     .learn-bottomnav (mobile only)
  * ================================================================= */
-html, body, #root {
+/* SCOPED: this file is imported globally from main.tsx, so these three rules
+   used to lock EVERY page on the site to viewport height with scrolling
+   disabled — the glydi pages carried !important overrides purely to undo it.
+   They now apply only to pages that actually render .learn-shell. */
+html:has(.learn-shell),
+body:has(.learn-shell),
+body:has(.learn-shell) #root {
   height: 100% !important;
   margin: 0 !important;
 }
-html, body {
+html:has(.learn-shell),
+body:has(.learn-shell) {
   overflow: hidden !important;
 }
-body {
+body:has(.learn-shell) {
   overscroll-behavior: none;
 }
 .learn-shell {

@@ -9,7 +9,7 @@
   <img src="/home-glydi/logo-mark.png" alt="ONROL, AI Execution School">
 </a>
 
-<nav class="nav">
+<nav class="nav topbar">
   <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
     <span></span><span></span><span></span>
   </button>
@@ -27,196 +27,322 @@
 
 <section class="hero" id="top">
 
-<div class="hero-bg"></div>
-
-<div class="logo" role="img" aria-label="O N R O L">
-
-  <!-- top band row -->
-  <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-  <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-  <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-
-  <!-- letter row: O _ N _ R _ O _ L -->
-  <div class="cell"><svg class="glyph" aria-hidden="true"><text>O</text></svg></div>
-  <div class="cell"></div>
-  <div class="cell"><svg class="glyph" aria-hidden="true"><text>N</text></svg></div>
-  <div class="cell"></div>
-  <div class="cell"><svg class="glyph" aria-hidden="true"><text>R</text></svg></div>
-  <div class="cell"></div>
-  <div class="cell"><svg class="glyph" aria-hidden="true"><text>O</text></svg></div>
-  <div class="cell"></div>
-  <div class="cell"><svg class="glyph" aria-hidden="true"><text>L</text></svg></div>
-
-  <!-- bottom band row -->
-  <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-  <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-  <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-
-  <!-- vertical grid box: 5 spaces UP + 5 DOWN, spanning junction 3 -> 6 -->
-  <div class="tower up">
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-    <div class="cell"></div><div class="cell"></div>
-    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
-    <div class="cell"></div><div class="cell"></div>
+  <div class="hero-bg" aria-hidden="true">
+    <i class="hero-slide" style="--img:image-set(url('/home-glydi/hero-fan.webp') type('image/webp'), url('/home-glydi/hero-fan.jpg') type('image/jpeg'))"></i>
   </div>
-  <div class="tower down">
-    <div class="cell"></div><div class="cell"></div>
-    <div class="cell"></div><div class="cell"></div>
-    <div class="tagline">AI EXECUTION SCHOOL</div>
+  <div class="hero-glow" aria-hidden="true"></div>
+
+
+  <!-- the glass deck: five frames circling through 3D space behind the words -->
+  <div class="hero-deck" aria-hidden="true">
+    <article class="gfx" style="--n:0">
+      <span class="gfx-k">01 &middot; 21 days</span>
+      <h2>AI Career Accelerator</h2>
+      <p>Zero to a shipped AI product, an hour a day.</p>
+    </article>
+    <article class="gfx" style="--n:1">
+      <span class="gfx-k">02 &middot; 3 months</span>
+      <h2>AI Generalist</h2>
+      <p>5 AI systems, 7+ projects, one portfolio.</p>
+    </article>
+    <article class="gfx" style="--n:2">
+      <span class="gfx-k">03 &middot; 6 + 6 months</span>
+      <h2>AI Architect</h2>
+      <p>Design and lead systems that run in production.</p>
+    </article>
+    <article class="gfx" style="--n:3">
+      <span class="gfx-k">04 &middot; 6 months</span>
+      <h2>Cyber Security</h2>
+      <p>How attacks work, and how you stop them.</p>
+    </article>
+    <article class="gfx" style="--n:4">
+      <span class="gfx-k">05 &middot; 3 months</span>
+      <h2>SOC Analyst</h2>
+      <p>Run a real security operations centre, end to end.</p>
+    </article>
   </div>
 
-</div>
+  <div class="hero-inner">
+    <p class="hero-kicker"><span aria-hidden="true"></span>India&rsquo;s AI Execution School</p>
+    <h1 class="hero-title">Build your first AI product <span>in 21 days.</span></h1>
+    <p class="hero-sub">Live, mentor-led sessions &mdash; an hour a day. Start from zero and finish with something deployed under your own name.</p>
+
+    <div class="hero-actions">
+      <a class="btn primary js-apply" href="/programs/ai-generalist">
+        <span>Begin with the free masterclass</span>
+        <svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+      </a>
+      <a class="hero-alt" href="/programs">See all five programs <em>&rarr;</em></a>
+    </div>
+
+ </div>
+
+  <dl class="hero-facts">
+    <div><dt>Format</dt><dd>Live &amp; mentor-led</dd></div>
+    <div><dt>Commitment</dt><dd>1 hour a day</dd></div>
+    <div><dt>Prerequisites</dt><dd>None &mdash; start at zero</dd></div>
+  </dl>
+
+  <div class="hero-cue" aria-hidden="true">
+    <span class="cue-rail"><i></i></span>
+    <span class="cue-label">Scroll</span>
+  </div>
 
 </section>
 
-<section class="panel reveal">
-  <div class="panel-content">
-    <h1>Most AI courses teach tools. <span>ONROL teaches execution.</span></h1>
-    <p>You&rsquo;ve watched enough tutorials. Come build instead. At ONROL you learn AI hands on and finish real projects you&rsquo;ll actually want to show people.</p>
-    <p class="cohort-note"><span class="pulse-dot" aria-hidden="true"></span>Next cohort starts soon, <b>limited seats</b></p>
-    <div class="cta">
+<!-- ==================================================================
+     02 — THE LEDGER
+     A sticky statement on the left; the four phases run down the right as
+     a ledger of numbered rows rather than a row of four cards.
+     ================================================================== -->
+<section class="panel reveal hv" id="how">
+  <div class="hv-ledger">
+
+    <div class="hv-say">
+      <p class="hv-eyebrow">The difference</p>
+      <h2 class="hv-h1">Most AI courses teach tools. <span>ONROL teaches execution.</span></h2>
+      <p class="hv-lede">You&rsquo;ve watched enough tutorials. Come build instead. At ONROL you learn AI hands on and finish real projects you&rsquo;ll actually want to show people.</p>
+      <div class="hv-actions">
+        <a class="btn primary js-apply" href="/programs/ai-generalist">Apply Now</a>
+        <a class="hv-ghost" href="/programs">Explore the programs <em>&rarr;</em></a>
+      </div>
+      <p class="hv-note">Next cohort starts soon &mdash; <b>limited seats</b></p>
+
+      <a class="hv-aside" href="/tools/ai-skills-quiz">
+        <span class="hv-aside-k">Not sure where to start?</span>
+        <span class="hv-aside-v">Take the two-minute skills quiz <em>&rarr;</em></span>
+      </a>
+    </div>
+
+    <div class="hv-path">
+      <p class="hv-eyebrow hv-eyebrow--plain">The path</p>
+      <ol class="hv-phases">
+        <li class="hv-phase">
+          <span class="hv-ix">01</span>
+          <div class="hv-pc">
+            <h3>Learn<em>Master the AI tools</em></h3>
+            <p>Get comfortable with the tools that matter &mdash; writing good prompts, working with AI agents, and a workflow that takes you from idea to a working build fast.</p>
+          </div>
+        </li>
+        <li class="hv-phase">
+          <span class="hv-ix">02</span>
+          <div class="hv-pc">
+            <h3>Build<em>Real projects, not demos</em></h3>
+            <p>Then you put it to work on real projects, not throwaway demos. You&rsquo;ll build features, fix what breaks, and make things people actually use.</p>
+          </div>
+        </li>
+        <li class="hv-phase">
+          <span class="hv-ix">03</span>
+          <div class="hv-pc">
+            <h3>Launch<em>Ship it to the web</em></h3>
+            <p>Then you take it live. Your project goes on the web with a real link, and you walk away with something solid for your portfolio.</p>
+          </div>
+        </li>
+        <li class="hv-phase">
+          <span class="hv-ix">04</span>
+          <div class="hv-pc">
+            <h3>Earn<em>Get paid for the skill</em></h3>
+            <p>Now you use it to earn. Freelance work, your own product, or a job &mdash; whichever fits. Learn to package what you build and get paid for it.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================================================================
+     04 — THE FILM
+     A full-bleed ink band. The film is the width of the page and the
+     claim sits beside it, with the three facts on a rail underneath.
+     ================================================================== -->
+<section class="build reveal hv hv-dark" id="about">
+  <div class="hv-film">
+
+    <div class="hv-film-say">
+      <p class="hv-eyebrow hv-eyebrow--on">Real mentors. Real builds.</p>
+      <h2 class="hv-h2">Learn by building <span>real AI products.</span></h2>
+      <p class="hv-lede">ONROL is a live school with real mentors, not pre-recorded videos. Every week you finish something you can actually use &mdash; and by the end you have a portfolio that shows you can build, not just talk about it.</p>
+      <a class="hv-ghost hv-ghost--on" href="/about">Read the full story <em>&rarr;</em></a>
+    </div>
+
+    <div class="hv-film-frame">
+      <div class="build-video is-muted">
+        <video id="aboutVid" playsinline muted loop preload="none" poster="/home-glydi/about-poster.jpg"
+               data-src="/home-glydi/about_onrol.mp4"></video>
+        <button class="vid-cover" id="vidCover" type="button" aria-label="Play the ONROL film">
+          <span class="vc-ring"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <ul class="hv-facts">
+    <li><b>Live</b><span>Mentors in the room, never recordings</span></li>
+    <li><b>Weekly</b><span>Something finished and deployed</span></li>
+    <li><b>Portfolio</b><span>Links you can send to anyone</span></li>
+  </ul>
+</section>
+
+<!-- ==================================================================
+     05 — WHO IT'S FOR
+     The twelve starting points move past in two rows, opposite ways.
+     ================================================================== -->
+<section class="hv hv-who reveal">
+  <div class="hv-head hv-head--wide">
+    <p class="hv-eyebrow">Who it&rsquo;s for</p>
+    <h2 class="hv-h2">Wherever you&rsquo;re starting, <span>you&rsquo;ll leave with something built.</span></h2>
+    <p class="hv-lede">Twelve different places to begin. Find yours, and finish with real AI projects made for the work you actually do.</p>
+  </div>
+
+  <ul class="hv-who-grid">
+      <li class="hv-who-card">
+        <span class="hv-who-shot" style="--img:url('/home-glydi/who/clean/01.jpg')"></span>
+        <span class="hv-who-tx">
+          <b>Engineers</b>
+          <i>CSE / ECE / Mech / Civil / Chem</i>
+        </span>
+      </li>
+      <li class="hv-who-card">
+        <span class="hv-who-shot" style="--img:url('/home-glydi/who/clean/02.jpg')"></span>
+        <span class="hv-who-tx">
+          <b>Students</b>
+          <i>School, undergrad and postgrad</i>
+        </span>
+      </li>
+      <li class="hv-who-card">
+        <span class="hv-who-shot" style="--img:url('/home-glydi/who/clean/03.jpg')"></span>
+        <span class="hv-who-tx">
+          <b>Teachers &amp; Educators</b>
+          <i>Lesson plans, quizzes, parent updates</i>
+        </span>
+      </li>
+      <li class="hv-who-card">
+        <span class="hv-who-shot" style="--img:url('/home-glydi/who/clean/04.jpg')"></span>
+        <span class="hv-who-tx">
+          <b>Sales &amp; Marketing</b>
+          <i>Campaigns, outreach and content</i>
+        </span>
+      </li>
+      <li class="hv-who-card">
+        <span class="hv-who-shot" style="--img:url('/home-glydi/who/clean/05.jpg')"></span>
+        <span class="hv-who-tx">
+          <b>Real-Estate Agents</b>
+          <i>Agents, brokers and their follow-ups</i>
+        </span>
+      </li>
+      <li class="hv-who-card">
+        <span class="hv-who-shot" style="--img:url('/home-glydi/who/clean/06.jpg')"></span>
+        <span class="hv-who-tx">
+          <b>Startup Founders</b>
+          <i>Founders and first-time builders</i>
+        </span>
+      </li>
+      <li class="hv-who-card">
+        <span class="hv-who-shot" style="--img:url('/home-glydi/who/clean/07.jpg')"></span>
+        <span class="hv-who-tx">
+          <b>Working Professionals</b>
+          <i>Any field, any function</i>
+        </span>
+      </li>
+      <li class="hv-who-card">
+        <span class="hv-who-shot" style="--img:url('/home-glydi/who/clean/08.jpg')"></span>
+        <span class="hv-who-tx">
+          <b>Job-Seekers</b>
+          <i>Graduates and career switchers</i>
+        </span>
+      </li>
+      <li class="hv-who-card">
+        <span class="hv-who-shot" style="--img:url('/home-glydi/who/clean/09.jpg')"></span>
+        <span class="hv-who-tx">
+          <b>Freelancers</b>
+          <i>Freelancers and consultants</i>
+        </span>
+      </li>
+      <li class="hv-who-card">
+        <span class="hv-who-shot" style="--img:url('/home-glydi/who/clean/10.jpg')"></span>
+        <span class="hv-who-tx">
+          <b>Content Creators</b>
+          <i>YouTube / Instagram / LinkedIn / X</i>
+        </span>
+      </li>
+      <li class="hv-who-card">
+        <span class="hv-who-shot" style="--img:url('/home-glydi/who/clean/11.jpg')"></span>
+        <span class="hv-who-tx">
+          <b>Small Business Owners</b>
+          <i>Shops, services and local trade</i>
+        </span>
+      </li>
+      <li class="hv-who-card">
+        <span class="hv-who-shot" style="--img:url('/home-glydi/who/clean/12.jpg')"></span>
+        <span class="hv-who-tx">
+          <b>Returning to Work</b>
+          <i>Career breaks and homemakers</i>
+        </span>
+      </li>
+  </ul>
+
+</section>
+
+<!-- ==================================================================
+     06 — THE QUESTIONS
+     The five things people actually write to us about, answered on the
+     page rather than one click away. Native <details>, so it works with
+     no JavaScript at all and the answers stay in the page for search.
+     ================================================================== -->
+<section class="hv hv-faq reveal">
+  <div class="hv-faq-grid">
+    <div class="hv-faq-say">
+      <p class="hv-eyebrow">Before you apply</p>
+      <h2 class="hv-h2">The questions <span>we get asked most.</span></h2>
+      <p class="hv-lede">If yours isn&rsquo;t here, ask us directly &mdash; a person answers, usually within a few hours.</p>
+      <div class="hv-actions">
+        <a class="hv-ghost" href="/contact">Ask us anything <em>&rarr;</em></a>
+      </div>
+    </div>
+
+    <div class="hv-faq-list">
+      <details class="hv-q" name="hv-faq" open>
+        <summary><span>Do I need to know how to code?</span></summary>
+        <p>No, and that isn&rsquo;t a marketing line. Every program starts from zero and 70&ndash;75% of the time is hands on, with a mentor in the room while you build. If you can use a laptop and follow instructions, you can do this.</p>
+      </details>
+      <details class="hv-q" name="hv-faq">
+        <summary><span>Are the sessions live, or recordings?</span></summary>
+        <p>Live. Mentors are in the room with you, cohorts stay small enough that your questions get answered, and every session is recorded afterwards so you can go back over anything you missed.</p>
+      </details>
+      <details class="hv-q" name="hv-faq">
+        <summary><span>How much time does it take each week?</span></summary>
+        <p>It depends on the program. The AI Career Accelerator is an hour a day for 21 days. The AI Generalist runs three months at 50+ live hours; SOC Analyst is three months at 60+. Most people do it alongside a job or college.</p>
+      </details>
+      <details class="hv-q" name="hv-faq">
+        <summary><span>What do I actually walk away with?</span></summary>
+        <p>Deployed work under your own name &mdash; AI systems, automations, agents, chatbots or security builds, depending on the track &mdash; with live links you can send to an employer or a client. Proof, not a certificate.</p>
+      </details>
+      <details class="hv-q" name="hv-faq">
+        <summary><span>Which program should I start with?</span></summary>
+        <p>If you have never built anything with AI, start with the 21-day AI Career Accelerator. If you want a career change, the AI Generalist or the SOC Analyst track. If you already build and want to lead systems, the AI Architect. Take the two-minute quiz if you would rather be pointed.</p>
+      </details>
+      <details class="hv-q" name="hv-faq">
+        <summary><span>How do I join, and what does it cost?</span></summary>
+        <p>Apply on any program page and our team calls you back to talk through the fit, the next cohort date and the fee for that program. There is no payment at the application step.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================
+     06 — THE CLOSE
+     ================================================================== -->
+<section class="cta-section reveal hv">
+  <div class="hv-close">
+    <p class="hv-eyebrow hv-eyebrow--on">Ready when you are</p>
+    <h2 class="hv-h1 hv-h1--on">Stop watching. <span>Start building.</span></h2>
+    <p class="hv-lede hv-lede--on">Join the next ONROL cohort and start building from day one, with mentors in your corner instead of just another video to watch.</p>
+    <div class="hv-actions">
       <a class="btn primary js-apply" href="/programs/ai-generalist">Apply Now</a>
-      <a class="btn secondary" href="/programs">Explore the Programs</a>
+      <a class="hv-ghost hv-ghost--on" href="/masterclass">Sit in on the free masterclass <em>&rarr;</em></a>
     </div>
-    <div class="panel-trust">
-      <div class="pt-item">
-        <span class="pt-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 19v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 4 17.5V19"/><circle cx="10" cy="8" r="3.5"/><path d="M20 19v-1.5a3.5 3.5 0 0 0-2.6-3.4"/><path d="M15.5 5a3.5 3.5 0 0 1 0 6.8"/></svg></span>
-        <div class="pt-tx"><strong>Live &amp; mentor-led</strong><span>Real cohorts, not recordings</span></div>
-      </div>
-      <div class="pt-item">
-        <span class="pt-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5.5A2.5 2.5 0 0 1 10.5 3h3A2.5 2.5 0 0 1 16 5.5V7"/><path d="M3 12.5h18"/></svg></span>
-        <div class="pt-tx"><strong>Ship a real portfolio</strong><span>Projects you deploy live</span></div>
-      </div>
-      <div class="pt-item">
-        <span class="pt-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.3 12.4l2.4 2.4 4.9-5.4"/></svg></span>
-        <div class="pt-tx"><strong>Beginner friendly</strong><span>No prior coding needed</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="panel-right">
-    <h2 class="pipe-title">From learning to <span>earning.</span></h2>
-    <ol class="pipeline">
-      <li class="is-open">
-        <div class="step-head">
-          <span class="step-num">1</span>
-          <div class="step-text"><h3>Learn</h3><p>Master AI tools</p></div>
-          <button class="step-btn open" type="button" aria-label="Learn, toggle phase details" aria-expanded="true" aria-controls="phase-1"><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-        </div>
-        <div class="step-detail open" id="phase-1">
-          <div class="sd-inner">
-            <p class="sd-eyebrow">Step 01</p>
-            <p class="sd-text">Get comfortable with the tools that matter: writing good prompts, working with AI agents, and a workflow that takes you from idea to a working build fast.</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="step-head">
-          <span class="step-num">2</span>
-          <div class="step-text"><h3>Build</h3><p>Create real projects</p></div>
-          <button class="step-btn" type="button" aria-label="Build, toggle phase details" aria-expanded="false" aria-controls="phase-2"><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-        </div>
-        <div class="step-detail" id="phase-2">
-          <div class="sd-inner">
-            <p class="sd-eyebrow">Step 02</p>
-            <p class="sd-text">Then you put it to work on real projects, not throwaway demos. You&rsquo;ll build features, fix what breaks, and make things people actually use.</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="step-head">
-          <span class="step-num">3</span>
-          <div class="step-text"><h3>Launch</h3><p>Ship to the web</p></div>
-          <button class="step-btn" type="button" aria-label="Launch, toggle phase details" aria-expanded="false" aria-controls="phase-3"><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-        </div>
-        <div class="step-detail" id="phase-3">
-          <div class="sd-inner">
-            <p class="sd-eyebrow">Step 03</p>
-            <p class="sd-text">Then you take it live. Your project goes on the web with a real link, and you walk away with something solid for your portfolio.</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="step-head">
-          <span class="step-num">4</span>
-          <div class="step-text"><h3>Earn</h3><p>Monetize your skills</p></div>
-          <button class="step-btn" type="button" aria-label="Earn, toggle phase details" aria-expanded="false" aria-controls="phase-4"><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-        </div>
-        <div class="step-detail" id="phase-4">
-          <div class="sd-inner">
-            <p class="sd-eyebrow">Step 04</p>
-            <p class="sd-text">Now you use it to earn. Freelance work, your own product, or a job, whichever fits. You&rsquo;ll learn how to package what you build and get paid for it.</p>
-          </div>
-        </div>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section class="build reveal" id="about">
-  <div class="build-inner">
-
-    <div class="build-lead boxframe">
-      <div class="build-video is-muted started">
-        <video id="aboutVid" playsinline muted loop preload="none">
-          <source src="/home-glydi/about_onrol.mp4" type="video/mp4">
-        </video>
-        <div class="vid-controls">
-          <button class="vid-btn" id="vidPlay" type="button" aria-label="Play / pause">
-            <svg class="ic ic-play"  viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            <svg class="ic ic-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
-          </button>
-          <button class="vid-btn" id="vidMute" type="button" aria-label="Mute / unmute">
-            <svg class="ic ic-muted" viewBox="0 0 24 24" fill="currentColor"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 9l5 6M21 9l-5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            <svg class="ic ic-sound" viewBox="0 0 24 24" fill="currentColor"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 8.5c1.7 1.9 1.7 5.1 0 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
-        </div>
-      </div>
-      <div class="build-text">
-        <p class="pipe-eyebrow">About ONROL</p>
-        <h2 class="build-title">Learn by building real AI products.</h2>
-        <p class="build-desc">ONROL is a live school with real mentors, not pre recorded videos. Every week you finish something you can actually use: an AI website one week, an automation the next, your own AI agent after that. By the end you have a portfolio that shows you can build, not just talk about it.</p>
-      </div>
-    </div>
-
-    <a class="build-banner boxframe" href="/programs">
-      <h3>FOUR PROGRAMS.<br>TWO TRACKS.<br>ONE OUTCOME.</h3>
-      <div class="bb-right">
-        <p>Four programs across AI and Cyber Security, from your very first project to systems that hold up in the real world. Pick the one that fits where you want to go.</p>
-        <span class="bb-cta">Explore programs <span>&rarr;</span></span>
-      </div>
-    </a>
-
-  </div>
-</section>
-
-<section class="who reveal" id="programs">
-  <div class="who-head">
-    <p class="pipe-eyebrow">Who it&rsquo;s for</p>
-    <h2 class="who-title">Wherever you&rsquo;re starting, you&rsquo;ll leave with something built.</h2>
-    <p class="who-sub">Twelve different places to begin. Find yours, and finish with real AI projects made for the work you actually do.</p>
-  </div>
-      <div class="who-grid">
-    <div class="who-card who-card--bare"><span class="who-card-img" style="background-image:url('/home-glydi/who/01.jpg.jpeg')"></span></div>
-    <div class="who-card who-card--bare"><span class="who-card-img" style="background-image:url('/home-glydi/who/02.jpg.jpeg')"></span></div>
-    <div class="who-card who-card--bare"><span class="who-card-img" style="background-image:url('/home-glydi/who/03.jpg.jpeg')"></span></div>
-    <div class="who-card who-card--bare"><span class="who-card-img" style="background-image:url('/home-glydi/who/04.jpg.jpeg')"></span></div>
-    <div class="who-card who-card--bare"><span class="who-card-img" style="background-image:url('/home-glydi/who/05.jpg.jpeg')"></span></div>
-    <div class="who-card who-card--bare"><span class="who-card-img" style="background-image:url('/home-glydi/who/06.jpg.jpeg')"></span></div>
-    <div class="who-card who-card--bare"><span class="who-card-img" style="background-image:url('/home-glydi/who/07.jpg.jpeg')"></span></div>
-    <div class="who-card who-card--bare"><span class="who-card-img" style="background-image:url('/home-glydi/who/08.jpg.jpeg')"></span></div>
-    <div class="who-card who-card--bare"><span class="who-card-img" style="background-image:url('/home-glydi/who/09.jpg.jpeg')"></span></div>
-    <div class="who-card who-card--bare"><span class="who-card-img" style="background-image:url('/home-glydi/who/10.jpg.jpeg')"></span></div>
-    <div class="who-card who-card--bare"><span class="who-card-img" style="background-image:url('/home-glydi/who/11.jpg.jpeg')"></span></div>
-    <div class="who-card who-card--bare"><span class="who-card-img" style="background-image:url('/home-glydi/who/12.jpg.jpeg')"></span></div>
-  </div>
-</section>
-
-<section class="cta-section reveal">
-  <p class="cta-eyebrow">Ready when you are</p>
-  <h2 class="cta-title">Stop watching. <span>Start Building.</span></h2>
-  <p class="cta-sub">Join the next ONROL cohort and start building from day one, with mentors in your corner instead of just another video to watch.</p>
-  <div class="cta-actions">
-    <a class="btn primary js-apply" href="/programs/ai-generalist">Apply Now</a>
   </div>
 </section>
 
@@ -236,6 +362,7 @@
       <div class="f-col">
         <h4>Programs</h4>
         <ul>
+          <li><a href="/programs/aica">AI Career Accelerator</a></li>
           <li><a href="/programs/ai-generalist">AI Generalist</a></li>
           <li><a href="/programs/ai-architect">AI Architect</a></li>
           <li><a href="/soc-analyst">SOC Analyst</a></li>
@@ -286,10 +413,11 @@
     <p class="lead-eyebrow">Apply to ONROL</p>
     <h3 id="leadTitle">Start with a quick hello.</h3>
     <p class="lead-sub">Leave your details and we&rsquo;ll reach out about the next cohort. Takes about 20 seconds.</p>
+    <div class="lead-steps"><span>20 seconds</span><span>No payment</span><span>We call you back</span></div>
     <form id="leadForm" class="lead-form">
-      <input type="text" id="leadName" name="name" placeholder="Full name" autocomplete="name" required>
-      <input type="email" id="leadEmail" name="email" placeholder="Email address" autocomplete="email" required>
-      <input type="tel" id="leadPhone" name="phone" placeholder="Phone / WhatsApp number" autocomplete="tel" required>
+      <div><label for="leadName">Full name</label><input type="text" id="leadName" name="name" placeholder="Your name" autocomplete="name" required></div>
+      <div><label for="leadEmail">Email</label><input type="email" id="leadEmail" name="email" placeholder="you@email.com" autocomplete="email" required></div>
+      <div><label for="leadPhone">Phone / WhatsApp</label><input type="tel" id="leadPhone" name="phone" placeholder="+91 …" autocomplete="tel" required></div>
       <button type="submit" class="lead-submit">Apply Now</button>
     </form>
     <p class="lead-fine">No spam. We&rsquo;ll only contact you about your application.</p>

@@ -3,6 +3,7 @@
 import programs from "./markup/programs.html?raw";
 import aiPrograms from "./markup/ai-programs.html?raw";
 import cyberPrograms from "./markup/cyber-programs.html?raw";
+import aica from "./markup/aica.html?raw";
 import aiGeneralist from "./markup/ai-generalist.html?raw";
 import aiArchitect from "./markup/ai-architect.html?raw";
 import about from "./markup/about.html?raw";
@@ -46,7 +47,8 @@ export function glydiScripts(key: string): GlydiScript[] {
 export const GLYDI_PAGES: Record<string, GlydiPageDef> = {
   programs: { path: "/programs", markup: programs, title: "Programs · ONROL", description: "Explore ONROL's two tracks — AI Programs and Cyber Security Programs at India's AI Execution School." },
   "ai-programs": { path: "/programs/ai", markup: aiPrograms, title: "AI Programs · ONROL", description: "ONROL's AI track — the AI Generalist and AI Architect programs." },
-  "cyber-programs": { path: "/programs/cyber", markup: cyberPrograms, title: "Cyber Security Programs · ONROL", description: "ONROL's Cyber Security track — the Cyber Security and SOC Analyst programs." },
+  "cyber-programs": { path: "/programs/cyber", markup: cyberPrograms, title: "Cyber Security Programs · ONROL", description: "ONROL's Cyber Security track — the Cyber Security and SOC Analyst programs." },  aica: { path: "/programs/aica", markup: aica, title: "AI Career Accelerator — 21 Days, Live | ONROL", description: "The 21-day ONROL AI Career Accelerator: 21 live sessions, an hour a day — the full day-by-day plan, from your first AI tools to a career project, portfolio and 90-day roadmap.", leadForm: true, course: "AI Career Accelerator" },
+
   "ai-generalist": { path: "/programs/ai-generalist", markup: aiGeneralist, title: "ONROL AI Generalist Program", description: "Become an AI Generalist in 3 months. Build 5 AI systems and 7+ real projects with a portfolio that gets you hired, clients, or freelance income.", leadForm: true, course: "AI Generalist Program" },
   "ai-architect": { path: "/programs/ai-architect", markup: aiArchitect, title: "AI Architect Program — Build & Lead AI Systems | ONROL", description: "The ONROL AI Architect program — go beyond using AI to design, build, and lead production-grade AI systems.", leadForm: true, course: "AI Architect Program" },
   about: { path: "/about", markup: about, title: "About · ONROL", description: "ONROL is India's AI Execution School — stop watching tutorials and start shipping real AI products." },

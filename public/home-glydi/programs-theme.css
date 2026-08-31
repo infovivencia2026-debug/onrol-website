@@ -1,0 +1,285 @@
+/* ==================================================================
+   PROGRAM PAGES — editorial
+   The inside pages (AICA, AI Generalist, AI Architect, Cyber Security,
+   SOC Analyst, Masterclass) in the same language as the /programs
+   mosaic: photography-led heroes, Instrument Serif display type over
+   Manrope caps for labels, generous whitespace, hairline rules and
+   square controls. These pages carry real content, so they scroll.
+
+   Pages opt in with `pg pg-legacy` on <main>. Injected after styles.css
+   so equal-specificity overrides land; selectors carry #home-glydi for
+   the same reason.
+   ================================================================== */
+
+#home-glydi{
+  --e-paper:#FBFAF8;
+  --e-white:#FFFFFF;
+  --e-ink:#101010;
+  --e-body:#4A453E;
+  --e-muted:#8B857B;
+  --e-line:rgba(16,16,16,.12);
+  --e-line-hi:rgba(16,16,16,.24);
+  --e-accent:#F46718;
+  --e-accent-dk:#C2500B;
+  --e-edge:clamp(20px, 5vw, 76px);
+}
+
+html:has(#home-glydi .pg-legacy),
+html:has(#home-glydi .pg-legacy) body,
+html:has(#home-glydi .pg-legacy) #root{ background:var(--e-paper) !important; }
+
+#home-glydi .pg-legacy{
+  /* the shared site measure (styles.css --page-edge) */
+  width:min(var(--page-max, 1560px), 100%);
+  margin-inline:auto !important;
+  padding-inline:var(--page-edge) !important;
+  background:var(--e-paper) !important;
+  color:var(--e-body);
+  font-family:var(--font-body);
+}
+#home-glydi .pg-legacy .container{ padding-inline:0 !important; }
+
+/* ==================================================================
+   HERO — a photographic block with the title set over it
+   ================================================================== */
+#home-glydi .pagehero.pg-hero-legacy{
+  position:relative;
+  background:var(--e-ink) !important;
+  padding-block:clamp(128px, 16vh, 190px) clamp(56px, 7vw, 92px) !important;
+  padding-inline:var(--page-edge) !important;
+  overflow:hidden;
+  isolation:isolate;
+}
+#home-glydi .pagehero.pg-hero-legacy::before{
+  content:"";
+  position:absolute; inset:0; z-index:0;
+  background:#101010 center 38% / cover no-repeat;
+  background-image:url("/home-glydi/about-hero.jpg");
+  filter:grayscale(.5) contrast(1.05);
+}
+#home-glydi .pagehero.pg-hero-legacy::after{
+  content:"";
+  position:absolute; inset:0; z-index:1;
+  background:linear-gradient(180deg, rgba(16,16,16,.72) 0%, rgba(16,16,16,.42) 42%, rgba(16,16,16,.88) 100%);
+}
+#home-glydi .pagehero.pg-hero-legacy .pagehero-inner{
+  position:relative; z-index:2;
+  width:min(var(--page-max, 1560px), 100%); margin-inline:auto;
+}
+#home-glydi .pagehero.pg-hero-legacy .ph-eyebrow{
+  display:flex; align-items:center; gap:12px;
+  margin:0 0 clamp(14px, 2vw, 22px) !important;
+  font-size:10.5px !important; font-weight:800 !important;
+  letter-spacing:.26em !important; text-transform:uppercase !important;
+  color:rgba(255,255,255,.62) !important;
+  max-width:520px;
+}
+#home-glydi .pagehero.pg-hero-legacy .ph-eyebrow::after{
+  content:""; flex:1; height:1px; background:rgba(255,255,255,.24);
+}
+#home-glydi .pagehero.pg-hero-legacy .ph-title{
+  font-family:var(--font-display) !important;
+  font-weight:400 !important; font-style:normal !important;
+  font-size:clamp(40px, 5.6vw, 86px) !important;
+  line-height:.98 !important; letter-spacing:-.015em !important;
+  color:var(--e-white) !important;
+  max-width:16ch;
+}
+#home-glydi .pagehero.pg-hero-legacy .ph-title span{ color:var(--e-accent) !important; font-style:italic !important; }
+#home-glydi .pagehero.pg-hero-legacy .ph-sub{
+  color:rgba(255,255,255,.78) !important;
+  font-size:clamp(15px, 1.25vw, 18px) !important;
+  line-height:1.62 !important;
+  max-width:52ch;
+}
+
+/* per-page photography */
+#home-glydi .pg-hero-aica::before{ background-image:url("/home-glydi/hero-builder-dawn.jpg") !important; }
+#home-glydi .pg-hero-aig::before{  background-image:url("/home-glydi/about-hero.jpg") !important; }
+#home-glydi .pg-hero-arch::before{ background-image:url("/home-glydi/module-2.jpg") !important; }
+#home-glydi .pg-hero-cyb::before{  background-image:url("/home-glydi/programs-cy.jpg") !important; }
+#home-glydi .pg-hero-soc::before{  background-image:url("/home-glydi/hero-stage.jpg") !important; }
+#home-glydi .pg-hero-mc::before{   background-image:url("/home-glydi/programs-ai.jpg") !important; }
+
+/* ==================================================================
+   SECTION HEADS — serif display, left aligned, on a hairline
+   ================================================================== */
+#home-glydi .pg-legacy .section-head{
+  border-top:1px solid var(--e-line);
+  padding-top:clamp(20px, 2.4vw, 32px);
+}
+#home-glydi .pg-legacy .tag{
+  display:inline-flex; align-items:center; gap:9px;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important; border-radius:0 !important;
+  font-size:10px !important; font-weight:800 !important;
+  letter-spacing:.24em !important; text-transform:uppercase !important;
+  color:var(--e-accent-dk) !important;
+}
+#home-glydi .pg-legacy .tag::before{ content:""; width:20px; height:1px; background:var(--e-accent); }
+#home-glydi .pg-legacy .section-title,
+#home-glydi .pg-legacy h3.section{
+  font-family:var(--font-display) !important;
+  font-weight:400 !important; font-style:normal !important;
+  font-size:clamp(30px, 3.8vw, 54px) !important;
+  line-height:1.02 !important; letter-spacing:-.012em !important;
+  color:var(--e-ink) !important;
+  text-align:left !important;
+}
+#home-glydi .pg-legacy .section-title em,
+#home-glydi .pg-legacy .section-title i{ font-style:italic; color:var(--e-accent-dk); }
+#home-glydi .pg-legacy .section-desc{
+  color:var(--e-body) !important;
+  font-size:clamp(14.5px, 1.15vw, 17px) !important;
+  line-height:1.75 !important;
+  text-align:left !important;
+}
+
+/* ==================================================================
+   CARDS — paper blocks, hairline, serif headings
+   ================================================================== */
+#home-glydi .pg-legacy .box{
+  border-radius:0 !important;
+  border:1px solid var(--e-line) !important;
+  background:var(--e-white) !important;
+  padding:clamp(24px, 2.4vw, 36px) !important;
+  box-shadow:none !important;
+  transition:border-color .3s ease, transform .4s cubic-bezier(.22,.68,.24,1);
+}
+#home-glydi .pg-legacy .box:hover{ border-color:var(--e-line-hi) !important; transform:translateY(-3px); }
+#home-glydi .pg-legacy .b-k{
+  color:var(--e-accent-dk) !important;
+  font-size:10px !important; font-weight:800 !important;
+  letter-spacing:.2em !important; text-transform:uppercase !important;
+}
+#home-glydi .pg-legacy .box h3{
+  font-family:var(--font-display) !important;
+  font-weight:400 !important;
+  font-size:clamp(21px, 1.9vw, 28px) !important;
+  letter-spacing:-.01em !important;
+  color:var(--e-ink) !important;
+}
+#home-glydi .pg-legacy .b-go{
+  display:inline-flex; align-items:center; gap:9px;
+  font-size:10.5px !important; font-weight:800 !important;
+  letter-spacing:.16em !important; text-transform:uppercase !important;
+  color:var(--e-ink) !important;
+}
+#home-glydi .pg-legacy .b-go span{ transition:transform .35s cubic-bezier(.22,.68,.24,1); }
+#home-glydi .pg-legacy .box:hover .b-go{ color:var(--e-accent-dk) !important; }
+#home-glydi .pg-legacy .box:hover .b-go span{ transform:translateX(5px); }
+
+/* the flagship pages' stat tiles + form card */
+#home-glydi .pg-legacy .hero-stats .stat{
+  border-radius:0 !important;
+  border:0 !important;
+  border-left:1px solid var(--e-line) !important;
+  background:transparent !important;
+}
+#home-glydi .pg-legacy .hero-stats .stat strong{
+  font-family:var(--font-display) !important;
+  font-weight:400 !important;
+  color:var(--e-ink) !important;
+  letter-spacing:-.01em;
+}
+#home-glydi .pg-legacy .hero-stats .stat span{
+  font-size:9.5px !important; font-weight:800 !important;
+  letter-spacing:.18em !important; text-transform:uppercase !important;
+  color:var(--e-muted) !important;
+}
+#home-glydi .pg-legacy .form-card{
+  border-radius:0 !important;
+  border:1px solid var(--e-line) !important;
+  box-shadow:none !important;
+  background:var(--e-white) !important;
+}
+#home-glydi .pg-legacy .form-card h2{
+  font-family:var(--font-display) !important;
+  font-weight:400 !important; font-style:normal !important;
+  letter-spacing:-.01em !important;
+  color:var(--e-ink) !important;
+}
+#home-glydi .pg-legacy .field input,
+#home-glydi .pg-legacy input[type="tel"],
+#home-glydi .pg-legacy input[type="text"],
+#home-glydi .pg-legacy input[type="email"]{
+  border-radius:0 !important;
+  border:1px solid var(--e-line-hi) !important;
+}
+#home-glydi .pg-legacy input:focus{ border-color:var(--e-accent) !important; outline:none !important; }
+
+#home-glydi .pg-legacy .hero h1{
+  font-family:var(--font-display) !important;
+  font-weight:400 !important; font-style:normal !important;
+  font-size:clamp(38px, 5vw, 72px) !important;
+  line-height:1 !important; letter-spacing:-.015em !important;
+  color:var(--e-ink) !important;
+}
+#home-glydi .pg-legacy .hero h1 .gradient-text,
+#home-glydi .pg-legacy .gradient-text{
+  font-family:var(--font-display) !important;
+  font-style:italic !important; font-weight:400 !important;
+  color:var(--e-accent-dk) !important;
+  background:none !important;
+  -webkit-text-fill-color:var(--e-accent-dk) !important;
+}
+
+/* ==================================================================
+   CONTROLS — square, tracked caps
+   ================================================================== */
+#home-glydi .pg-legacy .btn,
+#home-glydi .pg-legacy .button{
+  border-radius:0 !important;
+  padding:14px 26px !important;
+  font-size:11.5px !important; font-weight:800 !important;
+  letter-spacing:.14em !important; text-transform:uppercase !important;
+  border:1px solid var(--e-ink) !important;
+  box-shadow:none !important;
+  background-image:none !important;
+  transition:background .25s ease, color .25s ease, border-color .25s ease;
+}
+#home-glydi .pg-legacy .btn.primary,
+#home-glydi .pg-legacy .button.orange{
+  background:var(--e-accent) !important; color:var(--e-ink) !important; border-color:var(--e-accent) !important;
+}
+#home-glydi .pg-legacy .btn.primary:hover,
+#home-glydi .pg-legacy .button.orange:hover{
+  background:var(--e-ink) !important; border-color:var(--e-ink) !important; color:var(--e-white) !important;
+}
+#home-glydi .pg-legacy .btn.secondary,
+#home-glydi .pg-legacy .btn.ghost,
+#home-glydi .pg-legacy .button.light{
+  background:transparent !important; color:var(--e-ink) !important; border-color:var(--e-line-hi) !important;
+}
+#home-glydi .pg-legacy .btn.secondary:hover,
+#home-glydi .pg-legacy .btn.ghost:hover,
+#home-glydi .pg-legacy .button.light:hover{
+  background:var(--e-ink) !important; border-color:var(--e-ink) !important; color:var(--e-white) !important;
+}
+#home-glydi .pg-legacy .back{
+  font-size:10.5px !important; font-weight:800 !important;
+  letter-spacing:.2em !important; text-transform:uppercase !important;
+  color:var(--e-muted) !important;
+}
+#home-glydi .pg-legacy .back:hover{ color:var(--e-accent-dk) !important; }
+
+/* ==================================================================
+   MOTION — supplied by programsMotion.ts; hidden states are gated
+   behind [data-motion="on"] so a script failure cannot blank a page.
+   ================================================================== */
+#home-glydi .pg[data-motion="on"] .reveal{
+  opacity:0; transform:translate3d(0, 22px, 0);
+  transition:opacity .65s cubic-bezier(.22,.68,.24,1), transform .75s cubic-bezier(.22,.68,.24,1);
+}
+#home-glydi .pg[data-motion="on"] .reveal.in{ opacity:1; transform:none; }
+#home-glydi .pg[data-motion="on"] .t{
+  opacity:0; transform:translate3d(0, 16px, 0);
+  transition:opacity .6s cubic-bezier(.22,.68,.24,1), transform .68s cubic-bezier(.22,.68,.24,1);
+}
+#home-glydi .pg[data-motion="on"] .t.show{ opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce){
+  #home-glydi .pg[data-motion="on"] .reveal,
+  #home-glydi .pg[data-motion="on"] .t{ opacity:1 !important; transform:none !important; transition:none !important; }
+  #home-glydi .pg-legacy .box:hover{ transform:none !important; }
+}

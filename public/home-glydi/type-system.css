@@ -1,0 +1,82 @@
+/* ==================================================================
+   TYPE — one pairing for the whole site.
+
+   Display  : Archivo, variable on the width axis. It sets headlines,
+              figures and anything that has to carry size.
+   Body     : Instrument Sans. A humanist companion with a larger
+              x-height and open apertures, so long copy reads easily at
+              14–17px where a display grotesque would tighten up.
+
+   The site had drifted to four faces — Manrope for UI, Archivo in the
+   hero, Instrument Serif on About, Fraunces on the program pages — with
+   no relationship between them. This is the single source; page themes
+   should use var(--font-display) / var(--font-body) rather than naming
+   a family. Loaded last by mountGlydiChrome so it settles the cascade.
+   ================================================================== */
+
+#home-glydi{
+  --font-display:"Archivo", "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:"Instrument Sans", "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* body copy and everything interface-shaped */
+#home-glydi,
+#home-glydi :is(p, li, dd, dt, span, a, small, label, input, textarea, select, button, td, th, blockquote, figcaption){
+  font-family:var(--font-body) !important;
+}
+
+/* display: headings, and the elements that behave like headings */
+#home-glydi :is(h1, h2, h3, h4, h5, h6),
+#home-glydi :is(.hero-title, .build-title, .who-title, .cta-title, .bb-title, .vs-h, .gp-h, .pg-h,
+                .section-title, .ph-title, .kt-head h1, .px-rail h1, .px-block-head h2){
+  font-family:var(--font-display) !important;
+  font-variation-settings:"wdth" 100;
+}
+
+/* the two places a narrower cut earns its keep */
+#home-glydi .hero .hero-title{ font-variation-settings:"wdth" 78 !important; }
+#home-glydi .hero .hero-meta dd{ font-family:var(--font-display) !important; font-variation-settings:"wdth" 84 !important; }
+
+/* figures read better in the display face: tabular, tight, consistent */
+#home-glydi :is(.gp-hero-facts b, .vs-hero-facts strong, .pp-figures b, .px-spec b, .kt-figures b,
+                .ab-stats .num, .stat strong, .hm-item dd){
+  font-family:var(--font-display) !important;
+  font-variant-numeric:tabular-nums lining-nums;
+}
+
+/* small tracked labels sit in the body face, which holds up at 9–11px */
+#home-glydi :is(.pipe-eyebrow, .cta-eyebrow, .gp-badge, .px-badge, .kt-badge, .bb-eyebrow,
+                .pp-track, .tag, .b-k, .sc-title span){
+  font-family:var(--font-body) !important;
+}
+
+
+/* ------------------------------------------------------------------
+   Pages ported from the old build still name families on elements that
+   carry a class (links inside .pg-legacy, headings in the sub-page
+   stylesheet). A class in the selector outranks those element rules
+   without needing !important escalation elsewhere.
+   ------------------------------------------------------------------ */
+#home-glydi :is(h1,h2,h3,h4,h5,h6)[class]{ font-family:var(--font-display) !important; }
+#home-glydi :is(a,p,li,span,dd,dt,button,label,input,small,b,strong,em,i)[class]{ font-family:var(--font-body) !important; }
+#home-glydi [class] :is(a,p,li,dd,dt,button,label,input){ font-family:var(--font-body) !important; }
+/* the display face keeps the figures and the hero */
+#home-glydi .hero .hero-title[class]{ font-family:var(--font-display) !important; }
+#home-glydi .hero .hero-meta dd[class],
+#home-glydi .hero .hero-meta dd{ font-family:var(--font-display) !important; }
+
+
+/* styles.css pins a few ported headings with two-class selectors
+   (#home-glydi .pagehero .ph-title and friends); those need matching weight */
+#home-glydi .pagehero .ph-title,
+#home-glydi header.hero h1,
+#home-glydi .subpage h2,
+#home-glydi .subpage h3,
+#home-glydi .panel-head h1,
+#home-glydi .who-title,
+#home-glydi .cta-title,
+#home-glydi .build-title,
+#home-glydi .pipe-title{
+  font-family:var(--font-display) !important;
+  font-style:normal !important;
+}

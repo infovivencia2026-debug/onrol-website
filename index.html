@@ -42,7 +42,7 @@
          its inline style so it doesn't visually shift when Manrope swaps. -->
     <script>
       (function () {
-        // Figtree (body/UI) + Fira Sans (headings) — Google Fonts, off the
+        // Figtree (body/UI) + Fira Sans (headings) + Sora / Instrument Serif (glydi hero) — Google Fonts, off the
         // critical path (media=print → all onload). display=swap, no CLS.
         var preconnect1 = document.createElement('link');
         preconnect1.rel = 'preconnect';
@@ -55,7 +55,7 @@
         document.head.appendChild(preconnect2);
         var fonts = document.createElement('link');
         fonts.rel = 'stylesheet';
-        fonts.href = 'https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&family=Fira+Sans:wght@400;500;600;700;800;900&display=swap';
+        fonts.href = 'https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&family=Fira+Sans:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Archivo:wdth,wght@62..125,400..900&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&display=swap';
         fonts.media = 'print';
         fonts.onload = function () { this.media = 'all'; };
         document.head.appendChild(fonts);
