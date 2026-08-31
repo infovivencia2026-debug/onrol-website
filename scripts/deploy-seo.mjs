@@ -35,7 +35,9 @@ const deployed = existsSync(deployedPath) ? JSON.parse(readFileSync(deployedPath
 const changed = Object.keys(manifest).filter((slug) => manifest[slug] !== deployed[slug]);
 const catalog = JSON.parse(readFileSync(resolve(ROOT, "data/seo-catalog.json"), "utf8"));
 let allPages = catalog.pages;
-try { const gen = JSON.parse(readFileSync(resolve(ROOT, "data/cross-generated.json"), "utf8")).pages; if (Array.isArray(gen)) allPages = allPages.concat(gen); } catch {}
+for (const gf of ["data/cross-generated.json", "data/cross-personas-gen.json"]) {
+  try { const gen = JSON.parse(readFileSync(resolve(ROOT, gf), "utf8")).pages; if (Array.isArray(gen)) allPages = allPages.concat(gen); } catch {}
+}
 const allUrls = allPages.map((p) => `${ORIGIN}/${p.slug}/`);
 
 if (!changed.length) {

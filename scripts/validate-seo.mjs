@@ -35,9 +35,11 @@ const MIN_DIFF_GEN = 42;
 const TITLE_MAX = 65, DESC_MIN = 70, DESC_MAX = 165;
 
 const catalog = (() => {
-  const base = JSON.parse(readFileSync(resolve(ROOT, "data/seo-catalog.json"), "utf8")).pages;
-  try { const gen = JSON.parse(readFileSync(resolve(ROOT, "data/cross-generated.json"), "utf8")).pages; return Array.isArray(gen) ? base.concat(gen) : base; }
-  catch { return base; }
+  let all = JSON.parse(readFileSync(resolve(ROOT, "data/seo-catalog.json"), "utf8")).pages;
+  for (const gf of ["data/cross-generated.json", "data/cross-personas-gen.json"]) {
+    try { const gen = JSON.parse(readFileSync(resolve(ROOT, gf), "utf8")).pages; if (Array.isArray(gen)) all = all.concat(gen); } catch { /* absent */ }
+  }
+  return all;
 })();
 const visible = (html) => html.replace(/<script[\s\S]*?<\/script>/g, "").replace(/<style[\s\S]*?<\/style>/g, "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 const tokenSet = (txt) => new Set(txt.toLowerCase().split(" ").filter((w) => w.length > 2));
