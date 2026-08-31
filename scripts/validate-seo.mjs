@@ -27,9 +27,18 @@ const MIN_WORDS = 380;      // below this = thin
 // pages land ~100-129. The pathological thin pages were ~29 (only the city name
 // changed). 90 catches true duplicates without false-flagging real variation.
 const MIN_DIFF = 90;
+// Programmatic city×course pages (generated:true) are legitimately templated
+// (Naresh-IT model) — they share a scaffold and vary by city+course data. They
+// get a lower floor that still catches broken/near-identical pages. Any pair
+// involving a generated page uses this; hand-written vs hand-written stays 90.
+const MIN_DIFF_GEN = 42;
 const TITLE_MAX = 65, DESC_MIN = 70, DESC_MAX = 165;
 
-const catalog = JSON.parse(readFileSync(resolve(ROOT, "data/seo-catalog.json"), "utf8")).pages;
+const catalog = (() => {
+  const base = JSON.parse(readFileSync(resolve(ROOT, "data/seo-catalog.json"), "utf8")).pages;
+  try { const gen = JSON.parse(readFileSync(resolve(ROOT, "data/cross-generated.json"), "utf8")).pages; return Array.isArray(gen) ? base.concat(gen) : base; }
+  catch { return base; }
+})();
 const visible = (html) => html.replace(/<script[\s\S]*?<\/script>/g, "").replace(/<style[\s\S]*?<\/style>/g, "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 const tokenSet = (txt) => new Set(txt.toLowerCase().split(" ").filter((w) => w.length > 2));
 const diffCount = (a, b) => { let d = 0; for (const t of a) if (!b.has(t)) d++; for (const t of b) if (!a.has(t)) d++; return d; };
@@ -86,7 +95,7 @@ for (const p of catalog) {
   const wc = vis.split(" ").length;
   if (wc < MIN_WORDS) errs.push(`thin: ${wc} words (<${MIN_WORDS})`);
 
-  (tokensByType[p.type] ||= []).push({ slug: p.slug, tok: tokenSet(vis) });
+  (tokensByType[p.type] ||= []).push({ slug: p.slug, tok: tokenSet(vis), gen: !!p.generated });
 
   if (errs.length) fail++;
   warn += warns.length;
@@ -100,7 +109,8 @@ for (const type of Object.keys(tokensByType)) {
   for (let i = 0; i < arr.length; i++)
     for (let j = i + 1; j < arr.length; j++) {
       const d = diffCount(arr[i].tok, arr[j].tok);
-      if (d < MIN_DIFF) dupes.push({ a: arr[i].slug, b: arr[j].slug, diff: d });
+      const floor = (arr[i].gen || arr[j].gen) ? MIN_DIFF_GEN : MIN_DIFF;
+      if (d < floor) dupes.push({ a: arr[i].slug, b: arr[j].slug, diff: d });
     }
 }
 

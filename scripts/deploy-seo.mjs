@@ -10,7 +10,7 @@
    Run:  node scripts/deploy-seo.mjs
    Env:  SEO_SSH (default "onrol"), SEO_WEBROOT (default /home/onrol.in/public_html)
    ========================================================================= */
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync, rmSync } from "node:fs";
 import { execSync } from "node:child_process";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -34,7 +34,9 @@ const deployedPath = resolve(ROOT, "data/.seo-deployed.json");
 const deployed = existsSync(deployedPath) ? JSON.parse(readFileSync(deployedPath, "utf8")) : {};
 const changed = Object.keys(manifest).filter((slug) => manifest[slug] !== deployed[slug]);
 const catalog = JSON.parse(readFileSync(resolve(ROOT, "data/seo-catalog.json"), "utf8"));
-const allUrls = catalog.pages.map((p) => `${ORIGIN}/${p.slug}/`);
+let allPages = catalog.pages;
+try { const gen = JSON.parse(readFileSync(resolve(ROOT, "data/cross-generated.json"), "utf8")).pages; if (Array.isArray(gen)) allPages = allPages.concat(gen); } catch {}
+const allUrls = allPages.map((p) => `${ORIGIN}/${p.slug}/`);
 
 if (!changed.length) {
   console.log("deploy-seo: nothing changed — 0 files uploaded.");
@@ -42,13 +44,25 @@ if (!changed.length) {
 }
 console.log(`deploy-seo: ${changed.length} changed page(s): ${changed.join(", ")}`);
 
-/* 3. upload ONLY changed files (mkdir remote dirs in one call, then scp each) */
-const mkdirs = [...new Set(changed.map((s) => `${WEBROOT}/${s}`))].map((d) => `mkdir -p '${d}'`).join("; ");
-sh(`ssh ${SSH} "${mkdirs}"`);
+/* 3. upload ONLY changed files via a single tarball (robust for large waves —
+   many files as scp/ssh args blow the Windows ~8KB command-line limit). Stage
+   the changed <slug>/index.html files, tar once, extract remotely. */
+const stage = resolve(ROOT, ".deploy-seo-tmp");
+rmSync(stage, { recursive: true, force: true });
 for (const slug of changed) {
-  sh(`scp -O "public/${slug}/index.html" ${SSH}:"${WEBROOT}/${slug}/index.html"`);
-  console.log(`  ↑ /${slug}/`);
+  const dst = resolve(stage, slug);
+  mkdirSync(dst, { recursive: true });
+  copyFileSync(resolve(ROOT, "public", slug, "index.html"), resolve(dst, "index.html"));
 }
+// Relative paths only in shell commands — Git Bash's GNU tar reads a "C:\" as a
+// remote host:path. sh() runs from the project root.
+sh(`tar -czf .deploy-seo.tgz -C .deploy-seo-tmp .`);
+const remoteTgz = `/tmp/onrol-seo-${Date.now()}.tgz`;
+sh(`scp -O .deploy-seo.tgz ${SSH}:"${remoteTgz}"`);
+sh(`ssh ${SSH} "mkdir -p '${WEBROOT}' && tar -xzf ${remoteTgz} -C '${WEBROOT}' && rm -f ${remoteTgz}"`);
+rmSync(stage, { recursive: true, force: true });
+rmSync(resolve(ROOT, ".deploy-seo.tgz"), { force: true });
+for (const slug of changed) console.log(`  ↑ /${slug}/`);
 
 /* 4. merge changed URLs into public/sitemap.xml + upload */
 let sm = readFileSync(resolve(ROOT, "public/sitemap.xml"), "utf8");

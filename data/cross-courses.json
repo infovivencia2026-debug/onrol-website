@@ -1,0 +1,187 @@
+{
+  "_comment": "Course definitions for the city×course engine. `label` is the course name in the H1/title; `build` are 'what you build' items; `applied` phrases how the course applies to a city's industries.",
+  "courses": [
+    {
+      "slug": "courses/data-analytics-with-ai",
+      "key": "data-analytics-with-ai",
+      "label": "Data Analytics with AI",
+      "noun": "data analytics",
+      "build": [
+        "a cleaned, modelled dataset from a real business scenario",
+        "a metrics analysis — funnel, cohort or operations — with a clear conclusion",
+        "an AI-assisted workflow that queries, cleans and visualises data",
+        "a published analytics case study you keep as portfolio"
+      ],
+      "applied": "turn operational and business data into decisions",
+      "roles": "analyst and business-intelligence roles",
+      "distinct": "reading messy data all the way to a business decision"
+    },
+    {
+      "slug": "courses/power-bi",
+      "key": "power-bi",
+      "label": "Power BI",
+      "noun": "Power BI",
+      "build": [
+        "a modelled dataset built with Power Query",
+        "a dashboard with DAX measures and time intelligence",
+        "interactive reports with slicers, drill-through and row-level security",
+        "a published Power BI dashboard you keep as portfolio"
+      ],
+      "applied": "turn business data into dashboards leaders actually open",
+      "roles": "reporting and MIS analyst roles",
+      "distinct": "the self-refreshing dashboard a leader opens every morning"
+    },
+    {
+      "slug": "courses/generative-ai",
+      "key": "generative-ai",
+      "label": "Generative AI",
+      "noun": "generative AI",
+      "build": [
+        "a document-grounded generative assistant over a real corpus",
+        "a brand-voice content generator producing on-identity variants",
+        "a retrieval-augmented tool that answers with cited sources",
+        "a published generative-AI project you keep as portfolio"
+      ],
+      "applied": "build generative tools for content, documents and knowledge",
+      "roles": "content, knowledge and AI-product roles",
+      "distinct": "grounded generative tools that draft, summarise and cite real sources"
+    },
+    {
+      "slug": "courses/ai-automation",
+      "key": "ai-automation",
+      "label": "AI Automation",
+      "noun": "AI automation",
+      "build": [
+        "an AI agent that completes a multi-step task end to end",
+        "an automated workflow that removes a repetitive process",
+        "an agent connected to real data and tools",
+        "a published automation project you keep as portfolio"
+      ],
+      "applied": "take repetitive operations off people's plates with agents and workflows",
+      "roles": "operations and automation roles",
+      "distinct": "lifting a repetitive, rules-shaped process off a team entirely"
+    },
+    {
+      "slug": "courses/ai-digital-marketing",
+      "key": "ai-digital-marketing",
+      "label": "AI Digital Marketing",
+      "noun": "AI-powered digital marketing",
+      "build": [
+        "an AI-assisted performance campaign for a real brand",
+        "a content-and-creative system producing on-brand variants at scale",
+        "a marketing analytics view tying spend to funnel and results",
+        "a published digital-marketing case study you keep as portfolio"
+      ],
+      "applied": "run AI-accelerated campaigns tied to real results",
+      "roles": "growth, performance and content-marketing roles",
+      "distinct": "campaigns whose every rupee is tied back to funnel and CAC"
+    },
+    {
+      "slug": "courses/prompt-engineering",
+      "key": "prompt-engineering",
+      "label": "Prompt Engineering",
+      "noun": "prompt engineering",
+      "build": [
+        "a production-style prompt with structure, constraints and examples",
+        "a prompt test-and-evaluation set that measures quality",
+        "a prompt-versioned mini-tool for a real scenario",
+        "a published prompt-engineering project you keep as portfolio"
+      ],
+      "applied": "design, test and harden prompts that hold up in production",
+      "roles": "AI-product and prompt-engineering roles",
+      "distinct": "prompts built as tested, versioned, production artifacts"
+    },
+    {
+      "slug": "courses/python-for-ai",
+      "key": "python-for-ai",
+      "label": "Python for AI",
+      "noun": "Python for AI",
+      "build": [
+        "working Python scripts that read, clean and transform data",
+        "a first AI/ML script using standard Python libraries",
+        "an AI-assisted workflow that writes and debugs Python with you",
+        "a published Python-for-AI project you keep as portfolio"
+      ],
+      "applied": "learn the language under modern AI, from first steps to working scripts",
+      "roles": "developer and data roles",
+      "distinct": "the programming language that sits under almost all modern AI"
+    },
+    {
+      "slug": "courses/sql",
+      "key": "sql",
+      "label": "SQL",
+      "noun": "SQL",
+      "build": [
+        "real queries with joins, aggregations and window functions",
+        "a query-driven analysis of a real business dataset",
+        "an AI-assisted workflow that drafts and optimises SQL",
+        "a published SQL project you keep as portfolio"
+      ],
+      "applied": "query and shape the data under every analytics and engineering job",
+      "roles": "data and analytics-engineering roles",
+      "distinct": "querying the database directly to pull the exact data you need"
+    },
+    {
+      "slug": "courses/data-science",
+      "key": "data-science",
+      "label": "Data Science",
+      "noun": "data science",
+      "build": [
+        "a framed, validated ML model with honest evaluation",
+        "a data product that turns a model into something usable",
+        "an experiment-and-metrics analysis with a defensible conclusion",
+        "a published data-science project you keep as portfolio"
+      ],
+      "applied": "build and ship models and data products, not notebooks",
+      "roles": "data-science and ML roles",
+      "distinct": "framing and validating a model that actually ships, not a notebook"
+    },
+    {
+      "slug": "courses/ai-agents",
+      "key": "ai-agents",
+      "label": "AI Agents",
+      "noun": "AI agents",
+      "build": [
+        "a tool-using agent that completes a multi-step task",
+        "an agent connected to real data and internal tools",
+        "an evaluated agent workflow with guardrails and failure handling",
+        "a published AI-agent project you keep as portfolio"
+      ],
+      "applied": "build tool-using agents that reliably do real work",
+      "roles": "AI-engineering and automation roles",
+      "distinct": "tool-using agents that plan, call tools and act reliably",
+      "bulk": false
+    },
+    {
+      "slug": "courses/ai-app-development",
+      "key": "ai-app-development",
+      "label": "AI App Development",
+      "noun": "AI app development",
+      "build": [
+        "an AI-powered app feature wired to a real model",
+        "a working app MVP taken from idea to deployment",
+        "an app that integrates AI with real data and user input",
+        "a published, deployed AI app you keep as portfolio"
+      ],
+      "applied": "build and ship real AI-powered apps, not prototypes",
+      "roles": "product and developer roles",
+      "distinct": "taking an AI app from idea to a deployed, usable product"
+    },
+    {
+      "slug": "courses/ai-content-creation",
+      "key": "ai-content-creation",
+      "label": "AI Content Creation",
+      "noun": "AI content creation",
+      "build": [
+        "an AI-assisted content pipeline from idea to finished piece",
+        "a multi-format set — video, social, thumbnail — for one brand",
+        "a brand-voice content system producing on-identity variants",
+        "a published content-creation project you keep as portfolio"
+      ],
+      "applied": "use AI across video, social and brand content with real craft",
+      "roles": "content, social and creator roles",
+      "distinct": "directing AI across video, social and brand content with real craft",
+      "bulk": false
+    }
+  ]
+}

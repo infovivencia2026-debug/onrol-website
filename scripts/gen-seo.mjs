@@ -368,6 +368,12 @@ ${body}
 
 /* ------------------------------- main ---------------------------------- */
 const catalog = JSON.parse(readFileSync(resolve(ROOT, "data/seo-catalog.json"), "utf8"));
+// Merge programmatic city×course pages (gen-cross.mjs) if present. Hand-written
+// catalog pages already win (gen-cross skips their slugs).
+try {
+  const gen = JSON.parse(readFileSync(resolve(ROOT, "data/cross-generated.json"), "utf8")).pages;
+  if (Array.isArray(gen) && gen.length) catalog.pages = catalog.pages.concat(gen);
+} catch { /* no generated file yet */ }
 const manifest = {};
 let n = 0;
 for (const page of catalog.pages) {
