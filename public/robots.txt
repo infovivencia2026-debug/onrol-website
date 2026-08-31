@@ -141,7 +141,7 @@ Sitemap: https://onrol.in/sitemap.xml
 
 # ── LLMs / answer-engine context ──────────────────────────────────
 # Structured brand + program context for AI answer engines (llms.txt spec).
-# Non-standard directives (ignored by robots parsers) that surface the
-# llms.txt pointer for crawlers/tools that look for it.
-LLM-Content: https://onrol.in/llms.txt
-LLM-Content-Full: https://onrol.in/llms-full.txt
+# llms.txt pointers for AI tools (kept as comments — non-standard directives
+# make robots.txt fail Google's validator; the files are also in the sitemap):
+#   LLM-Content: https://onrol.in/llms.txt
+#   LLM-Content-Full: https://onrol.in/llms-full.txt

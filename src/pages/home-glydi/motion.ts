@@ -217,6 +217,9 @@ export function initHomeMotion(): () => void {
     const cover = document.getElementById("vidCover");
     if (shell && video) {
       const start = () => {
+        // The <video> ships with data-src only (preload="none") — set the real
+        // src on first press so it can actually load and play.
+        if (!video.getAttribute("src") && video.dataset.src) video.src = video.dataset.src;
         video.muted = false;          // it is a film with a voice in it
         video.loop = false;
         shell.classList.add("is-playing");
