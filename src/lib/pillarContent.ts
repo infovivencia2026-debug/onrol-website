@@ -905,9 +905,9 @@ export const pillarPages: PillarPage[] = [
   // ────────────────────────────────────────────────────────────────────────
   {
     slug: "ai-automation-course",
-    title: "AI Automation Course India — n8n, Zapier, Make + AI Agents | ONROL",
+    title: "AI Automation Course India — n8n, Zapier & AI Agents | ONROL",
     metaDescription:
-      "AI automation course India. Learn n8n, Zapier, Make + AI agents to automate workflows for yourself, your job, your business, or paying clients. ONROL's hands-on bootcamp.",
+      "AI automation course in India, live online. Build n8n, Zapier & Make workflows and AI agents you can ship for your job, business or clients. No coding — join the cohort.",
     eyebrow: "— AI automation",
     h1: "AI automation course",
     hook: "Workflows that run while you sleep — across email, CRM, ops, content, support.",
