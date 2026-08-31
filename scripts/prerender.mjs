@@ -60,9 +60,10 @@ const allRoutes = JSON.parse(
 // design as crawlable HTML — the prerendered <route>/index.html shadows any
 // sibling static .html (LiteSpeed resolves the dir first), which is now the
 // desired behaviour since the offline static pages carry the older design.
-const STATIC_ROUTES = new Set([
-  "/",
-]);
+// Nothing is skipped anymore. "/" IS prerendered, but written to home-static.html
+// (the file the OLS vhost serves for "/") instead of index.html — so the SPA shell
+// at index.html stays intact for the client-side fallback. See renderRoute.
+const STATIC_ROUTES = new Set([]);
 // Marketing routes whose clean URL the OLS vhost resolves to a sibling <route>.html
 // (not <route>/index.html). For these we ALSO overwrite dist/<route>.html with the
 // prerendered new-design HTML, so it wins over the older gen-static-pages output on
@@ -138,13 +139,18 @@ async function renderRoute(page, route) {
     const html = await page.content();
 
     // Write to <route>/index.html (or root index.html for "/")
-    const outDir = route === "/" ? DIST : resolve(DIST, route.replace(/^\//, ""));
-    if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true });
-    writeFileSync(resolve(outDir, "index.html"), html, "utf-8");
-    // For vhost-.html marketing routes, also overwrite the sibling static file
-    // so the new design survives a full deploy (see MARKETING_HTML above).
-    if (MARKETING_HTML.has(route.replace(/\/+$/, "") || "/")) {
-      writeFileSync(resolve(DIST, `${route.replace(/^\//, "")}.html`), html, "utf-8");
+    if (route === "/") {
+      // "/" is served by home-static.html; index.html stays the untouched SPA shell.
+      writeFileSync(resolve(DIST, "home-static.html"), html, "utf-8");
+    } else {
+      const outDir = resolve(DIST, route.replace(/^\//, ""));
+      if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true });
+      writeFileSync(resolve(outDir, "index.html"), html, "utf-8");
+      // For vhost-.html marketing routes, also overwrite the sibling static file
+      // so the new design survives a full deploy (see MARKETING_HTML above).
+      if (MARKETING_HTML.has(route.replace(/\/+$/, "") || "/")) {
+        writeFileSync(resolve(DIST, `${route.replace(/^\//, "")}.html`), html, "utf-8");
+      }
     }
     return { route, ok: true };
   } catch (err) {
