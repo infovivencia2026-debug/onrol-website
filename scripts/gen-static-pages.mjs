@@ -259,6 +259,7 @@ function seoHead(src, meta, html) {
   const robots = meta.noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
   const OG_IMAGE = ogImageFor(meta.url);
   let out = "\n";
+  out += `<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-99WX704505"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-99WX704505');</script>\n`;
   out += `<meta name="robots" content="${robots}">\n`;
   // Canonical fallback — source pages usually carry one, but inject it when
   // absent so no page ever ships without a self-referential canonical.

@@ -27,6 +27,7 @@ h = h.replace(/<\/head>/i, [
   '<meta name="description" content="Explore ONROL programs — AI Generalist, AI Architect, AI Accelerator, Cyber Security and SOC Analyst. Register with your mobile number and our team will reach out.">',
   '<meta name="robots" content="noindex, follow">',
   metaPixel(),
+  '<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-99WX704505"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag(\'js\',new Date());gtag(\'config\',\'G-99WX704505\');</script>',
   css(),
   "</head>",
 ].join("\n"));
