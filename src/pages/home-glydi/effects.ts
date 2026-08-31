@@ -243,22 +243,28 @@ export function initHomeGlydi(): () => void {
     const bv = document.querySelector(".build-video");
     const vid = document.getElementById("aboutVid") as HTMLVideoElement | null;
     if (!bv || !vid) return;
-    const playBtn = document.getElementById("vidPlay");
+    // The cover play button in the markup is #vidCover (fallback #vidPlay).
+    const playBtn = document.getElementById("vidCover") || document.getElementById("vidPlay");
     const muteBtn = document.getElementById("vidMute");
-    let userPaused = false;
-    const play = () => { const p = vid.play(); if (p && p.catch) p.catch(() => {}); };
-    const toggle = () => { if (vid.paused) { userPaused = false; play(); } else { userPaused = true; vid.pause(); } };
-    if (playBtn) on(playBtn, "click", toggle);
+    // The <video> ships with data-src only (preload="none") — set the real src on
+    // first play so nothing downloads until the visitor actually clicks.
+    const ensureSrc = () => { if (!vid.getAttribute("src") && vid.dataset.src) vid.src = vid.dataset.src; };
+    const play = () => { ensureSrc(); const p = vid.play(); if (p && p.catch) p.catch(() => {}); };
+    const toggle = () => { if (vid.paused) play(); else vid.pause(); };
+    // Explicit "Play the film" cover → start WITH sound (it's a talking-head film).
+    const coverPlay = () => { ensureSrc(); vid.muted = false; bv.classList.remove("is-muted"); play(); };
+    if (playBtn) on(playBtn, "click", coverPlay);
     on(vid, "click", toggle);
     on(vid, "play", () => bv.classList.add("is-playing", "started"));
     on(vid, "pause", () => bv.classList.remove("is-playing"));
     if (muteBtn) on(muteBtn, "click", () => { vid.muted = !vid.muted; bv.classList.toggle("is-muted", vid.muted); });
+    // Poster + play-button design: play only on click; just pause when scrolled away.
     if ("IntersectionObserver" in window) {
       const io = observe(new IntersectionObserver((entries) => {
-        entries.forEach((e) => { if (e.isIntersecting) { if (!userPaused) play(); } else { vid.pause(); } });
+        entries.forEach((e) => { if (!e.isIntersecting && !vid.paused) vid.pause(); });
       }, { threshold: 0.35 }));
       io.observe(bv);
-    } else { play(); }
+    }
     disposers.push(() => { try { vid.pause(); } catch { /* ignore */ } });
   })();
 
