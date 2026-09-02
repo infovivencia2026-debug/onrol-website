@@ -12,6 +12,9 @@
       gtag('js', new Date());
       gtag('config', 'G-99WX704505');
     </script>
+    <!-- First-touch attribution: remember utm/ref from the landing URL for the whole session
+         (SPA navigation strips ?utm_… from the URL before the visitor reaches a form). -->
+    <script>(function(){try{var K="onrol_attribution";if(sessionStorage.getItem(K))return;var q=new URLSearchParams(location.search),F=["utm_source","utm_medium","utm_campaign","utm_term","utm_content","ref","coupon","gclid","fbclid"],a={};F.forEach(function(k){var v=q.get(k);if(v)a[k]=v;});if(Object.keys(a).length){a._landing=location.pathname;a._referrer=document.referrer||"";a._ts=new Date().toISOString();sessionStorage.setItem(K,JSON.stringify(a));}}catch(e){}})();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#353535" />
     <title>ONROL - India's AI Execution School</title>

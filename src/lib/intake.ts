@@ -20,17 +20,21 @@ interface BaseIntakeFields {
 
 function readClientContext(): { pagePath: string; referrer: string | null; utm: Record<string, string>; ref: string | null } {
   if (typeof window === "undefined") return { pagePath: "", referrer: null, utm: {}, ref: null };
+  // First-touch fallback: SPA navigation strips ?utm_… from the URL, so read the
+  // live URL first and fall back to the attribution captured on the landing page.
+  let stored: Record<string, string> = {};
+  try { stored = JSON.parse(sessionStorage.getItem("onrol_attribution") || "{}"); } catch { /* ignore */ }
   const p = new URLSearchParams(window.location.search);
   const utm: Record<string, string> = {};
   for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"]) {
-    const v = p.get(k);
+    const v = p.get(k) || stored[k];
     if (v) utm[k] = v;
   }
   return {
     pagePath: window.location.pathname,
     referrer: document.referrer || null,
     utm,
-    ref: p.get("ref") || null,
+    ref: p.get("ref") || stored.ref || null,
   };
 }
 

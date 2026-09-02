@@ -846,10 +846,11 @@ src="https://www.facebook.com/tr?id=1520493643156247&ev=PageView&noscript=1"
       form.querySelector('.rbtn').textContent = 'Registered ✓';
       /* Lead capture: ONROL CRM upserts by mobile number + Google Sheet mirror. */
       try {
+        var stored={}; try{ stored=JSON.parse(sessionStorage.getItem('onrol_attribution')||'{}'); }catch(x){}
         var q = new URLSearchParams(location.search);
-        var ref = q.get("ref") || "";
+        var ref = q.get("ref") || stored.ref || "";
         var utm = {};
-        ["utm_source","utm_medium","utm_campaign","utm_term","utm_content"].forEach(function(k){ var v=q.get(k); if(v) utm[k]=v; });
+        ["utm_source","utm_medium","utm_campaign","utm_term","utm_content"].forEach(function(k){ var v=q.get(k)||stored[k]; if(v) utm[k]=v; });
         var campaign = ref ? ("afprograms-" + ref) : "afprograms";
         fetch("https://go.onrol.in/api/public/leads", {
           method: "POST",
