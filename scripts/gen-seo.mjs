@@ -392,9 +392,33 @@ for (const gf of ["data/cross-generated.json", "data/cross-personas-gen.json"]) 
     if (Array.isArray(gen) && gen.length) catalog.pages = catalog.pages.concat(gen);
   } catch { /* file not present */ }
 }
+/* PAA (People-Also-Ask) FAQ enrichment — answer-first Q&A generated once per
+   category by scripts/gen-onrol-faqs.py (paa-tree). Appended to geo pages with
+   {city} interpolated, so all city/course×city/persona×city pages gain fresh
+   AEO-friendly FAQs with no per-page LLM calls. Optional: absent file = no-op. */
+let PAA_FAQS = {};
+try { PAA_FAQS = JSON.parse(readFileSync(resolve(ROOT, "data/paa-faqs.json"), "utf8")); } catch { /* not generated yet */ }
+const PAA_PERSONAS = ["it-professionals", "finance-professionals", "hr-professionals", "sales-professionals", "marketing-professionals", "healthcare-professionals", "business-owners", "freshers"];
+function paaCategory(slug) {
+  const m = slug.match(/^(.+)-course-in-/);
+  if (m && PAA_FAQS["course:" + m[1]]) return "course:" + m[1];
+  if (slug.startsWith("ai-course-for-")) for (const p of PAA_PERSONAS) if (slug.startsWith("ai-course-for-" + p + "-in-")) return "persona:" + p;
+  if (slug.startsWith("ai-course-in-")) return "geo-city";
+  return null;
+}
+function enrichFaqs(page) {
+  if (page.type !== "geo" || !page.city) return;
+  const cat = paaCategory(page.slug);
+  const extra = cat && PAA_FAQS[cat];
+  if (!extra || !extra.length) return;
+  const city = page.city;
+  page.faqs = (page.faqs || []).concat(extra.map((x) => ({ q: x.q.replace(/\{city\}/g, city), a: x.a.replace(/\{city\}/g, city) })));
+}
+
 const manifest = {};
 let n = 0;
 for (const page of catalog.pages) {
+  enrichFaqs(page);
   const html = render(page, catalog.pages);
   const dir = resolve(OUT, PREFIX, page.slug);
   mkdirSync(dir, { recursive: true });

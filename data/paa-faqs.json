@@ -1,0 +1,296 @@
+{
+  "geo-city": [
+    {
+      "q": "How can someone in {city} learn AI effectively without needing to code?",
+      "a": "Residents in {city} can learn AI without coding through ONROL's live online \"execution school.\" This build-first program focuses on creating a strong portfolio, making AI accessible and practical for anyone interested, regardless of their technical background or location within {city}."
+    },
+    {
+      "q": "What kind of practical, hands-on AI courses are available for people in {city}?",
+      "a": "For those in {city} seeking practical AI skills, ONROL offers a live online \"execution school\" focused on building a robust project portfolio. The program emphasizes hands-on application over pure theory, with convenient evening/weekend batches designed for busy schedules in {city}."
+    },
+    {
+      "q": "If I'm in {city}, can I join a live online AI course that helps improve my career prospects?",
+      "a": "Yes, if you're in {city}, you can join ONROL's live online AI course, which is designed to enhance employability through a strong project portfolio. This build-first program is taught in English, requires no coding, and prepares you with practical, in-demand AI skills."
+    }
+  ],
+  "course:data-analytics-with-ai": [
+    {
+      "q": "How can I find a practical Data Analytics with AI course in {city} that doesn't require coding?",
+      "a": "To find a practical Data Analytics with AI course in {city} without coding, look for live online \"execution schools\" that emphasize building a portfolio over theory. These cohorts, often with evening/weekend batches, are accessible from {city} and prioritize hands-on projects for real-world skills."
+    },
+    {
+      "q": "What are the career benefits of a portfolio-focused Data Analytics with AI course in {city}?",
+      "a": "A portfolio-focused Data Analytics with AI course in {city} significantly enhances employability by showcasing tangible projects. This build-first approach demonstrates practical skills to potential employers, proving your ability to apply AI tools in data analysis without needing traditional coding expertise, directly from your location."
+    },
+    {
+      "q": "Can I take a Data Analytics with AI course in {city} if I'm new to the field and don't want to code?",
+      "a": "Yes, you can take an applied Data Analytics with AI course from {city} even without prior coding experience. Many live online programs, designed as \"execution schools,\" focus on practical, build-first learning, enabling you to develop a strong portfolio using AI tools for data analysis without writing code."
+    }
+  ],
+  "course:power-bi": [
+    {
+      "q": "Where can I find an applied Power BI with AI course in {city}?",
+      "a": "For an applied Power BI course integrating AI, ONROL offers live, online cohorts accessible from {city}, focusing on building practical projects without coding. This build-first approach emphasizes a strong portfolio over just theory, taught in English during convenient evening/weekend batches."
+    },
+    {
+      "q": "What are the benefits of an online Power BI with AI course over an in-person one for someone in {city}?",
+      "a": "An online Power BI with AI course, like ONROL's live cohorts, offers flexibility for learners in {city} by eliminating commute time and providing access to expert instructors from anywhere. It allows for convenient evening/weekend learning, focusing on practical, portfolio-building skills without geographical limitations."
+    },
+    {
+      "q": "How does an applied, portfolio-focused Power BI with AI course help with job prospects in {city} without coding?",
+      "a": "An applied, portfolio-focused Power BI with AI course, such as ONROL's, significantly boosts employability in {city} by equipping you with tangible projects demonstrating real-world skills. This build-first approach, requiring no coding, creates a strong portfolio that showcases your practical abilities to potential employers."
+    }
+  ],
+  "course:generative-ai": [
+    {
+      "q": "Are there in-person Generative AI courses available in {city} that focus on practical application?",
+      "a": "While most applied Generative AI courses are online, you can access live, build-first cohorts from {city} that prioritize practical application and portfolio development without requiring coding. These programs offer flexible evening/weekend schedules."
+    },
+    {
+      "q": "What kind of practical Generative AI skills can I expect to gain from a no-code course in {city}?",
+      "a": "You will gain hands-on experience building AI applications and developing a robust portfolio of Generative AI projects, focusing on practical execution over theoretical concepts. This approach ensures you acquire job-relevant skills applicable from {city}."
+    },
+    {
+      "q": "How does a portfolio-centric Generative AI course in {city} help with career opportunities?",
+      "a": "A portfolio-centric Generative AI course significantly boosts employability by showcasing your practical build-first skills through tangible projects, which employers value more than theoretical knowledge. This approach helps you stand out in the job market from {city}."
+    }
+  ],
+  "course:ai-automation": [
+    {
+      "q": "Where can I find an applied AI automation course with a physical campus in {city}?",
+      "a": "While ONROL doesn't have a physical campus in {city}, its live online AI Automation course is fully accessible from there. It offers practical, build-first training with evening/weekend cohorts, providing a flexible and effective learning experience."
+    },
+    {
+      "q": "Can I learn practical AI automation in {city} without any prior coding experience?",
+      "a": "Yes, ONROL's live online AI Automation course, available from {city}, requires no coding. You'll build a practical portfolio using AI tools and automation workflows, gaining valuable, applied skills for the modern job market."
+    },
+    {
+      "q": "How will an AI automation course help me secure a job or advance my career in {city}?",
+      "a": "ONROL's build-first approach helps you create a strong portfolio of executed AI projects, directly showcasing your capabilities. This practical experience is crucial for demonstrating value to potential employers and advancing your career in {city}."
+    }
+  ],
+  "course:ai-digital-marketing": [
+    {
+      "q": "Where can I find an applied AI Digital Marketing course with AI tools in {city} that offers hands-on experience?",
+      "a": "While physical options in {city} may vary, ONROL offers a live, online, build-first AI Digital Marketing course accessible from {city}. It focuses on practical application, using AI tools to create a strong portfolio, and is taught in English with evening/weekend batches."
+    },
+    {
+      "q": "What are the practical benefits of an applied AI Digital Marketing course for career growth in {city}, especially if I'm not a coder?",
+      "a": "No coding is required for ONROL's live online AI Digital Marketing course, accessible from {city}. It focuses on building a practical portfolio using AI tools for strategy, content, and analytics, significantly enhancing your employability and career prospects in digital marketing."
+    },
+    {
+      "q": "How does a build-first, applied AI Digital Marketing course in {city} prepare me for real-world roles compared to theory-heavy programs?",
+      "a": "ONROL's live online course, accessible from {city}, prioritizes building a robust portfolio through hands-on projects using AI tools, unlike theory-heavy programs. This practical, build-first approach directly prepares you for real-world digital marketing challenges, enhancing your employability."
+    }
+  ],
+  "course:prompt-engineering": [
+    {
+      "q": "Where can I find an applied Prompt Engineering course in {city} that doesn't require coding?",
+      "a": "You can access live, online Prompt Engineering cohorts from {city} that are build-first and require no coding. ONROL offers an applied AI execution school focused on creating a strong portfolio, available in evening/weekend batches."
+    },
+    {
+      "q": "How can a Prompt Engineering course in {city} help me build a practical portfolio for AI roles?",
+      "a": "A build-first Prompt Engineering course, like ONROL's live online program accessible from {city}, prioritizes practical application over theory. You'll develop a robust portfolio of AI projects, demonstrating real-world execution skills for enhanced employability."
+    },
+    {
+      "q": "Do I need to know how to code to take a Prompt Engineering course available in {city}?",
+      "a": "No, you do not need any coding experience for an applied Prompt Engineering course like ONROL's live online cohorts, accessible from {city}. The program is taught in English with a build-first approach, focusing on AI execution and portfolio development without requiring code."
+    }
+  ],
+  "course:python-for-ai": [
+    {
+      "q": "Where can I find an applied Python for AI course in {city} that fits a busy schedule?",
+      "a": "Applied Python for AI courses are widely available live online, accessible from {city} with flexible evening and weekend batches. These build-first programs prioritize practical project development over theory, enabling you to create a strong portfolio for real-world application."
+    },
+    {
+      "q": "Do I need prior coding experience to enroll in an applied AI course using Python?",
+      "a": "No, prior coding experience is not required for many applied AI courses, especially build-first programs. You'll learn Python and AI concepts through hands-on project development from scratch, building a strong portfolio. This approach allows practical skill acquisition without needing prior coding knowledge."
+    },
+    {
+      "q": "How does an applied Python for AI course help me become employable in {city}'s job market?",
+      "a": "An applied Python for AI course significantly boosts employability in {city} by focusing on building a robust project portfolio. This practical, execution-first approach demonstrates your real-world AI capabilities to potential employers, making you a competitive candidate in the evolving tech landscape."
+    }
+  ],
+  "course:sql": [
+    {
+      "q": "Where can I find an applied SQL for Data & AI course with AI integration in {city}?",
+      "a": "You can access live, online SQL for Data & AI courses with AI integration from {city}. These build-first programs, taught in English, focus on practical application and portfolio development, offering flexible evening/weekend batches for convenient learning."
+    },
+    {
+      "q": "Are there SQL for Data & AI courses in {city} that are applied, incorporate AI, and don't require prior coding experience?",
+      "a": "Yes, there are applied SQL for Data & AI courses available online from {city} that integrate AI and require no prior coding. These build-first programs prioritize practical skills and portfolio creation over theory, making them accessible for beginners."
+    },
+    {
+      "q": "How can a SQL for Data & AI course in {city} help me build a strong portfolio for career opportunities?",
+      "a": "A build-first SQL for Data & AI course, accessible online from {city}, emphasizes practical projects and real-world applications to create a robust portfolio. This hands-on approach demonstrates your skills to potential employers, enhancing your employability in data and AI roles."
+    }
+  ],
+  "course:data-science": [
+    {
+      "q": "What are the best applied Data Science and AI courses available in {city}?",
+      "a": "While specific physical options in {city} vary, ONROL offers a live, online AI execution school focused on applied data science, accessible from {city} with evening/weekend batches. It's a build-first program emphasizing portfolio creation over theory, requiring no coding."
+    },
+    {
+      "q": "Can I learn applied Data Science and AI without any prior coding experience in {city}?",
+      "a": "Yes, you absolutely can learn applied Data Science and AI without coding, even if you're in {city}. ONROL's live online AI execution school is specifically designed for non-coders, focusing on practical, build-first projects to create a strong portfolio."
+    },
+    {
+      "q": "How can an applied, portfolio-focused Data Science and AI course in {city} help me secure a job?",
+      "a": "An applied, portfolio-driven Data Science and AI course, like ONROL's live online program available in {city}, significantly boosts employability by showcasing tangible projects. This build-first approach demonstrates practical skills and problem-solving abilities to potential employers, making you a strong candidate."
+    }
+  ],
+  "course:ai-agents": [
+    {
+      "q": "Where can I find an applied AI Agents course in {city} that focuses on practical skills?",
+      "a": "You can access live, online AI Agents courses from {city} that prioritize hands-on building and portfolio development over theoretical learning. These cohorts are designed for practical application, making them accessible regardless of your physical location."
+    },
+    {
+      "q": "Are there AI Agents courses available in {city} for individuals with no prior coding experience?",
+      "a": "Yes, applied AI Agents courses are available live online from {city} that require no coding, focusing instead on practical execution and building real-world projects. These programs are designed for accessibility, enabling anyone to develop a strong AI portfolio."
+    },
+    {
+      "q": "How can an AI Agents course in {city} help me build a strong portfolio for career opportunities?",
+      "a": "An applied AI Agents course, accessible live online from {city}, emphasizes building a robust project portfolio through hands-on execution rather than just theory. This practical approach demonstrates your capabilities to potential employers, enhancing your employability in the AI field."
+    }
+  ],
+  "course:ai-app-development": [
+    {
+      "q": "Are there AI app development courses in {city} that are practical and don't require coding experience?",
+      "a": "Yes, ONROL offers live online AI app development cohorts accessible from {city}, focusing on hands-on project building without requiring prior coding. This build-first approach helps you create a strong portfolio of real applications."
+    },
+    {
+      "q": "How can an online AI app development course from {city} help me build a strong portfolio for job opportunities?",
+      "a": "An applied, build-first online course like ONROL's helps you create a robust portfolio of AI applications by focusing on practical execution over theory. This demonstrable work significantly enhances your employability for AI roles."
+    },
+    {
+      "q": "What are the advantages of taking a live online AI app development course compared to a traditional classroom setting in {city}?",
+      "a": "Live online AI app development courses, like ONROL's, offer flexibility with evening/weekend batches accessible from {city}, eliminating commute time while providing direct instructor interaction. This format prioritizes practical, portfolio-driven learning effectively."
+    }
+  ],
+  "course:ai-content-creation": [
+    {
+      "q": "Where can I find an applied AI content creation course in {city} that doesn't require coding?",
+      "a": "You can enroll in live, online AI content creation courses available from {city} that are specifically designed for practical application without coding. These build-first programs focus on developing a strong portfolio through hands-on projects, taught in English during evening or weekend batches."
+    },
+    {
+      "q": "How can an online AI content creation course available in {city} help me build a portfolio for career opportunities?",
+      "a": "An online AI content creation course available from {city} helps you build a robust portfolio by emphasizing hands-on, project-based learning. You'll complete real-world AI content projects, showcasing practical skills to potential employers and enhancing your employability in the evolving AI landscape."
+    },
+    {
+      "q": "What kind of learning experience can I expect from a practical AI content creation course offered to residents of {city}?",
+      "a": "You can expect a build-first, execution-focused learning experience in an AI content creation course available from {city}. These live online cohorts prioritize practical application over theory, enabling you to develop a strong portfolio through hands-on projects during flexible evening or weekend batches."
+    }
+  ],
+  "persona:it-professionals": [
+    {
+      "q": "What kind of AI course is available for IT professionals in {city} who want to learn practical skills?",
+      "a": "For IT professionals in {city}, ONROL offers a live online AI \"execution school\" focused on building practical AI solutions. This portfolio-driven course emphasizes hands-on application over theory, designed for immediate professional relevance in an online cohort."
+    },
+    {
+      "q": "Do IT professionals in {city} need coding skills to enroll in a live online AI course?",
+      "a": "No, IT professionals in {city} do not need prior coding skills to enroll in ONROL's live online AI course. The curriculum is specifically designed to be accessible without coding, focusing on practical AI execution and solution building in English."
+    },
+    {
+      "q": "How can an online AI course help IT professionals in {city} build a strong portfolio for career advancement?",
+      "a": "An online AI course like ONROL's helps IT professionals in {city} build a strong portfolio by emphasizing a \"build-first\" approach. You create tangible AI projects and solutions, demonstrating practical skills and real-world application to potential employers from your location."
+    }
+  ],
+  "persona:finance-professionals": [
+    {
+      "q": "How can finance professionals in {city} access a live AI course specifically designed for their industry?",
+      "a": "Finance professionals in {city} can access ONROL's live online AI execution school, which offers convenient evening and weekend batches. This build-first program is fully online, making it accessible from anywhere in {city} and focusing on practical application and portfolio development."
+    },
+    {
+      "q": "What makes ONROL's AI course suitable for finance professionals in {city} who have no prior coding experience?",
+      "a": "ONROL's AI course is ideal for finance professionals in {city} because it requires no coding, focusing on practical AI execution and building a robust portfolio. The curriculum prioritizes real-world application over theoretical concepts, directly relevant to finance roles and immediate impact."
+    },
+    {
+      "q": "How does completing this AI course help finance professionals in {city} advance their careers?",
+      "a": "Completing ONROL's AI course helps finance professionals in {city} enhance career prospects by building a strong, practical AI portfolio. This demonstrates tangible skills and execution capabilities, making them highly competitive for roles requiring applied AI knowledge in finance."
+    }
+  ],
+  "persona:hr-professionals": [
+    {
+      "q": "How can HR professionals in {city} benefit from an AI course that's specifically designed for their field?",
+      "a": "ONROL offers a live online AI \"execution school\" for HR professionals in {city}, focusing on building practical AI portfolios without coding, directly applicable to HR challenges like talent acquisition, employee engagement, and data-driven decision-making. This enhances employability."
+    },
+    {
+      "q": "Is a background in coding or advanced tech necessary for HR professionals in {city} to succeed in an AI course like ONROL's?",
+      "a": "No, ONROL's live online AI course for HR professionals in {city} requires no prior coding experience, emphasizing hands-on project building and a practical portfolio over theoretical knowledge. This approach ensures HR professionals can immediately apply AI tools to their work."
+    },
+    {
+      "q": "What is the learning format and schedule for HR professionals in {city} interested in ONROL's live online AI course?",
+      "a": "ONROL delivers its AI course for HR professionals in {city} through 100% live online cohorts, featuring convenient evening and weekend batches taught in English. This flexible schedule allows busy professionals to build a practical AI portfolio without disrupting their current work commitments."
+    }
+  ],
+  "persona:sales-professionals": [
+    {
+      "q": "How can an AI course specifically benefit a sales professional in {city}?",
+      "a": "An AI course specifically benefits sales professionals in {city} by equipping them with practical tools to automate tasks, personalize customer interactions, and analyze sales data for better decision-making, directly enhancing their productivity and closing rates."
+    },
+    {
+      "q": "Is there a hands-on AI training program in {city} suitable for sales professionals without a technical background?",
+      "a": "Yes, ONROL offers a live, online AI execution school for sales professionals available from {city}, specifically designed for those without coding experience. It's a build-first program focused on creating a practical portfolio, not just theory."
+    },
+    {
+      "q": "What kind of practical skills will I gain from an AI course for sales, and how will it help my career in {city}?",
+      "a": "You will gain practical skills in applying AI tools to optimize lead qualification, craft personalized outreach, and predict sales trends, building a portfolio of real-world projects. This enhances your employability and career advancement opportunities in {city}'s competitive market."
+    }
+  ],
+  "persona:marketing-professionals": [
+    {
+      "q": "Are there live online AI courses for marketing professionals available from {city} that don't require coding?",
+      "a": "Yes, ONROL offers live online AI execution courses tailored for marketing professionals in {city}, focusing on practical application and portfolio building without requiring any coding skills. These evening/weekend cohorts are accessible from anywhere."
+    },
+    {
+      "q": "How can an AI course for marketing professionals in {city} help me build a strong portfolio and improve my career prospects?",
+      "a": "An AI course like ONROL's helps marketing professionals in {city} build a robust portfolio through hands-on projects, demonstrating practical AI application. This build-first approach enhances employability by showcasing real-world skills to potential employers."
+    },
+    {
+      "q": "I'm a marketing professional in {city} looking for an AI course; are there local classroom options, or are online courses more suitable?",
+      "a": "While ONROL's AI courses for marketing professionals are 100% live online, they are fully accessible from {city} with convenient evening/weekend batches. This online format allows you to learn cutting-edge AI skills without a physical commute."
+    }
+  ],
+  "persona:healthcare-professionals": [
+    {
+      "q": "Where can healthcare professionals in {city} find a live online AI course tailored to their needs?",
+      "a": "Healthcare professionals in {city} can access a specialized live online AI course through ONROL's execution school, designed for convenient participation from anywhere. These cohorts are 100% online with evening and weekend batches, making it accessible regardless of your specific location in {city}."
+    },
+    {
+      "q": "What practical AI skills will healthcare professionals in {city} gain from a no-coding online course?",
+      "a": "Healthcare professionals in {city} will gain practical AI execution skills, focusing on building real-world projects and developing a strong portfolio without needing any coding experience. The curriculum prioritizes applying AI concepts directly to healthcare challenges, emphasizing tangible outcomes over theoretical knowledge."
+    },
+    {
+      "q": "How does completing a portfolio-driven online AI course benefit healthcare professionals in {city} looking to enhance their career?",
+      "a": "Completing a portfolio-driven online AI course significantly enhances employability for healthcare professionals in {city} by showcasing tangible AI project experience. This build-first approach equips them with practical skills and a strong portfolio, demonstrating their ability to apply AI solutions effectively within healthcare settings."
+    }
+  ],
+  "persona:business-owners": [
+    {
+      "q": "How does ONROL's live online AI course cater specifically to business owners in {city}?",
+      "a": "ONROL provides business owners in {city} with a practical, build-first AI education, accessible live online from their location. The program focuses on creating a tangible AI portfolio without coding, directly applicable to enhancing business operations and strategy."
+    },
+    {
+      "q": "Can business owners in {city} with no technical background effectively learn AI through ONROL?",
+      "a": "Absolutely, ONROL's AI \"execution school\" is designed for business owners in {city} with no coding required. It emphasizes hands-on building and a portfolio-over-theory approach, ensuring practical AI skills are developed for immediate business application."
+    },
+    {
+      "q": "What practical outcomes can business owners in {city} expect from ONROL's portfolio-focused AI training?",
+      "a": "Business owners in {city} will build a practical AI portfolio demonstrating real-world capabilities, directly enhancing their ability to implement AI solutions. This build-first approach ensures tangible skills for strategic decision-making and operational improvements within their businesses."
+    }
+  ],
+  "persona:freshers": [
+    {
+      "q": "Are there AI courses in {city} suitable for beginners with no coding experience?",
+      "a": "Yes, ONROL offers a live online AI execution school specifically designed for freshers and students in {city} with no prior coding experience. This build-first program focuses on practical application and portfolio development, taught entirely in English during evening and weekend batches."
+    },
+    {
+      "q": "How can students in {city} gain practical AI skills and build a portfolio for career readiness?",
+      "a": "Students in {city} can gain practical AI skills and build a robust portfolio through ONROL's live online AI execution school. This build-first program prioritizes hands-on projects over theory, ensuring you develop a strong portfolio to demonstrate capabilities and enhance employability, without requiring coding."
+    },
+    {
+      "q": "Are there flexible, live AI training options available for freshers and students in {city}?",
+      "a": "Yes, ONROL offers flexible, live online AI training for freshers and students in {city} through its execution school. Cohorts are 100% online with convenient evening and weekend batches, making it accessible from anywhere in {city}. This build-first program is taught in English and requires no coding."
+    }
+  ]
+}
