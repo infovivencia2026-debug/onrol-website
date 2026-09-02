@@ -398,21 +398,36 @@ for (const gf of ["data/cross-generated.json", "data/cross-personas-gen.json"]) 
    AEO-friendly FAQs with no per-page LLM calls. Optional: absent file = no-op. */
 let PAA_FAQS = {};
 try { PAA_FAQS = JSON.parse(readFileSync(resolve(ROOT, "data/paa-faqs.json"), "utf8")); } catch { /* not generated yet */ }
+let PAA_CITY = {};
+try { PAA_CITY = Object.fromEntries(JSON.parse(readFileSync(resolve(ROOT, "data/cross-cities.json"), "utf8")).cities.map((c) => [c.slug, c])); } catch { /* absent */ }
 const PAA_PERSONAS = ["it-professionals", "finance-professionals", "hr-professionals", "sales-professionals", "marketing-professionals", "healthcare-professionals", "business-owners", "freshers"];
-function paaCategory(slug) {
-  const m = slug.match(/^(.+)-course-in-/);
-  if (m && PAA_FAQS["course:" + m[1]]) return "course:" + m[1];
-  if (slug.startsWith("ai-course-for-")) for (const p of PAA_PERSONAS) if (slug.startsWith("ai-course-for-" + p + "-in-")) return "persona:" + p;
-  if (slug.startsWith("ai-course-in-")) return "geo-city";
+// Resolve a page's PAA category and the city slug embedded in its URL.
+function paaResolve(slug) {
+  const cross = slug.match(/^(.+)-course-in-(.+)$/);
+  if (cross && (PAA_FAQS["course:" + cross[1]] || PAA_FAQS["course:" + cross[1] + "|t1"])) return { cat: "course:" + cross[1], citySlug: cross[2] };
+  if (slug.startsWith("ai-course-for-")) for (const p of PAA_PERSONAS) { const pre = "ai-course-for-" + p + "-in-"; if (slug.startsWith(pre)) return { cat: "persona:" + p, citySlug: slug.slice(pre.length) }; }
+  if (slug.startsWith("ai-course-in-")) return { cat: "geo-city", citySlug: slug.slice("ai-course-in-".length) };
   return null;
 }
+// {industry} entries are list-clauses ("an automotive and manufacturing belt"); strip a leading
+// article so they read naturally after a possessive ("{city}'s {industry}").
+const cleanIndustry = (s) => String(s || "").replace(/^(an?\s+|one of (india's|the)\s+)/i, "").trim();
 function enrichFaqs(page) {
   if (page.type !== "geo" || !page.city) return;
-  const cat = paaCategory(page.slug);
-  const extra = cat && PAA_FAQS[cat];
-  if (!extra || !extra.length) return;
-  const city = page.city;
-  page.faqs = (page.faqs || []).concat(extra.map((x) => ({ q: x.q.replace(/\{city\}/g, city), a: x.a.replace(/\{city\}/g, city) })));
+  const r = paaResolve(page.slug);
+  if (!r) return;
+  const c = PAA_CITY[r.citySlug] || {};
+  const tier = c.tier || 1;
+  const set = PAA_FAQS[`${r.cat}|t${tier}`] || PAA_FAQS[`${r.cat}|t1`] || PAA_FAQS[r.cat];
+  if (!set || !set.length) return;
+  const vals = {
+    city: page.city,
+    industry: cleanIndustry((c.industries || [])[0]) || "its growing industries",
+    industry2: cleanIndustry((c.industries || [])[1]) || "local business",
+    area: (c.areas || [])[0] || page.city,
+  };
+  const fill = (t) => String(t).replace(/\{(city|industry2|industry|area)\}/g, (_, k) => vals[k]);
+  page.faqs = (page.faqs || []).concat(set.map((x) => ({ q: fill(x.q), a: fill(x.a) })));
 }
 
 const manifest = {};
