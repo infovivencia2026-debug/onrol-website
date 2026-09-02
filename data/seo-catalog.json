@@ -13322,6 +13322,670 @@
           "url": "https://onrol.in/ai-digital-marketing-course-in-chennai/"
         }
       ]
+    },
+    {
+      "type": "course",
+      "slug": "learn-ai-online",
+      "title": "Learn AI Online — Live, Project-First | ONROL",
+      "description": "Learn AI online with live mentors from anywhere in the world. Build and ship real AI projects in English — no coding needed. Join a global cohort at ONROL.",
+      "eyebrow": "Live Online · Worldwide",
+      "h1": "Learn AI online,",
+      "h1accent": "and actually build",
+      "lead": "Most AI courses have you watch videos. ONROL has you build. Learn AI online in live cohorts with real mentors, from anywhere in the world, in English — and finish with real AI projects you deploy and keep, not just a certificate.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online, worldwide"
+        },
+        {
+          "icon": "clock",
+          "text": "Cohorts across time zones"
+        },
+        {
+          "icon": "shield",
+          "text": "Taught in English · no coding needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Build, don't just watch",
+          "text": "Every week you ship something real — an automation, an agent, an app — instead of collecting another completion badge."
+        },
+        {
+          "title": "Live mentors, global cohort",
+          "text": "Learn alongside people worldwide with mentors in the room, not a pre-recorded playlist you watch alone."
+        },
+        {
+          "title": "No coding background needed",
+          "text": "Start from zero. You build with AI copilots and no-/low-code tools, and pick up the technical parts as you go."
+        },
+        {
+          "title": "A portfolio, not just a certificate",
+          "text": "You leave with deployed AI projects you can show any employer or client, anywhere."
+        }
+      ],
+      "learnHeading": "What you build",
+      "learn": [
+        "Real AI automations and agents connected to live tools",
+        "AI-assisted apps taken from idea to deployment",
+        "A retrieval or generative-AI project grounded in real data",
+        "A published portfolio of AI work you keep"
+      ],
+      "faqs": [
+        {
+          "q": "Can I learn AI online from outside India?",
+          "a": "Yes. ONROL is 100% live online and taught in English, with cohorts scheduled across time zones. Learners join from India, the Gulf, Africa, South-East Asia, Europe and North America."
+        },
+        {
+          "q": "Do I need coding experience to learn AI?",
+          "a": "No. The course is built for beginners and professionals from any background — you build with AI copilots and no-/low-code tools, and learn the technical parts step by step."
+        },
+        {
+          "q": "Is it live or self-paced?",
+          "a": "Live. You learn in a real cohort with mentors, not a pre-recorded course — that's what makes people actually finish and build."
+        },
+        {
+          "q": "What will I have at the end?",
+          "a": "Real, deployed AI projects and a portfolio — proof you can build with AI, which matters far more globally than a certificate alone."
+        }
+      ],
+      "cta": "Join the next global cohort",
+      "form": {
+        "source": "Global - Learn AI Online",
+        "campaign": "global-learn-ai-online",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses",
+          "url": "https://onrol.in/programs"
+        },
+        {
+          "name": "Learn AI Online",
+          "url": "https://onrol.in/learn-ai-online/"
+        }
+      ]
+    },
+    {
+      "type": "course",
+      "slug": "online-ai-course",
+      "title": "Online AI Course — Live Cohort, Build Real AI | ONROL",
+      "description": "An online AI course that's live, not pre-recorded. Build and deploy real AI projects with mentors, in English, from anywhere. No coding required — join ONROL.",
+      "eyebrow": "Live Online · Worldwide",
+      "h1": "An online AI course",
+      "h1accent": "that ships real work",
+      "lead": "An online AI course should do more than stream videos at you. ONROL's is a live, project-first cohort — you build real AI with mentors, from anywhere in the world, and walk away able to ship, not just recite.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online, worldwide"
+        },
+        {
+          "icon": "clock",
+          "text": "Cohorts across time zones"
+        },
+        {
+          "icon": "shield",
+          "text": "Taught in English · no coding needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Live cohort, not a playlist",
+          "text": "Real sessions, real mentors, real deadlines — the format that gets people to actually finish and build."
+        },
+        {
+          "title": "Global and flexible",
+          "text": "Join online from any country, in English, with batches that work across time zones and around a job."
+        },
+        {
+          "title": "Applied from day one",
+          "text": "You work on real AI scenarios, not toy exercises — automations, agents, apps and data tools."
+        },
+        {
+          "title": "Outcome you can show",
+          "text": "Finish with deployed projects and a portfolio that proves capability to any global employer."
+        }
+      ],
+      "learnHeading": "What the course covers",
+      "learn": [
+        "Applied AI foundations without the maths overload",
+        "Building automations and AI agents that do real work",
+        "Shipping an AI-powered app end to end",
+        "A portfolio project on a scenario that matters to you"
+      ],
+      "faqs": [
+        {
+          "q": "Is this online AI course live or recorded?",
+          "a": "Live. You join real cohort sessions with mentors — recordings are a backup, not the course."
+        },
+        {
+          "q": "Can I take it while working full-time?",
+          "a": "Yes. Evening and weekend batches across time zones are built for working professionals worldwide."
+        },
+        {
+          "q": "Is it beginner-friendly?",
+          "a": "Yes — no coding background is required. You build with AI tools and learn the technical depth as you go."
+        },
+        {
+          "q": "Does it work outside India?",
+          "a": "Yes. It's fully online, in English, and learners join from around the world."
+        }
+      ],
+      "cta": "Join the next global cohort",
+      "form": {
+        "source": "Global - Online AI Course",
+        "campaign": "global-online-ai-course",
+        "program": "Online AI course (worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses",
+          "url": "https://onrol.in/programs"
+        },
+        {
+          "name": "Online AI Course",
+          "url": "https://onrol.in/online-ai-course/"
+        }
+      ]
+    },
+    {
+      "type": "course",
+      "slug": "best-online-ai-course",
+      "title": "Best Online AI Course (2026) — How to Choose | ONROL",
+      "description": "How to choose the best online AI course in 2026 — live vs recorded, projects vs theory, certificate vs portfolio. Plus a live, build-first option from ONROL.",
+      "eyebrow": "2026 Guide · Worldwide",
+      "h1": "The best online AI course",
+      "h1accent": "is one you build in",
+      "lead": "Searching for the best online AI course in 2026? The honest answer isn't a brand — it's a format. The courses that actually change your career are live, project-first and portfolio-driven. Here's how to judge them, and where ONROL fits.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online, worldwide"
+        },
+        {
+          "icon": "clock",
+          "text": "Cohorts across time zones"
+        },
+        {
+          "icon": "shield",
+          "text": "Taught in English · no coding needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Live beats recorded",
+          "text": "Completion rates for self-paced video courses are notoriously low. Live cohorts with mentors are what get people to the finish line."
+        },
+        {
+          "title": "Projects beat theory",
+          "text": "Employers hire for what you can build. Choose a course that has you ship real AI, not memorise definitions."
+        },
+        {
+          "title": "Portfolio beats certificate",
+          "text": "A certificate says you attended; a deployed project proves you can do the work. Pick the course that leaves you with the latter."
+        },
+        {
+          "title": "Applied beats academic",
+          "text": "For most careers, applied, build-first AI matters more than heavy maths and research theory."
+        }
+      ],
+      "learnHeading": "What to look for (and what ONROL does)",
+      "learn": [
+        "Live mentorship, not just recorded lectures",
+        "Real, deployed projects every learner keeps",
+        "A build-first, applied curriculum",
+        "Global, English, flexible scheduling"
+      ],
+      "faqs": [
+        {
+          "q": "What makes an online AI course the best in 2026?",
+          "a": "Live mentorship, a build-first curriculum, and a real portfolio outcome — not just video length or a big brand name. Judge on what you'll ship, not what you'll watch."
+        },
+        {
+          "q": "Are free AI courses good enough?",
+          "a": "Free courses are great for exposure, but they rarely get you to a shipped project or accountability. A live, project-first course is what turns knowledge into capability."
+        },
+        {
+          "q": "Is ONROL's course available worldwide?",
+          "a": "Yes — 100% online, in English, with cohorts across time zones. Learners join from many countries."
+        },
+        {
+          "q": "Do I need coding to start?",
+          "a": "No. It's designed for beginners and professionals from any background."
+        }
+      ],
+      "cta": "See ONROL's live cohort",
+      "form": {
+        "source": "Global - Best Online AI Course",
+        "campaign": "global-best-online-ai-course",
+        "program": "Online AI course (worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses",
+          "url": "https://onrol.in/programs"
+        },
+        {
+          "name": "Best Online AI Course 2026",
+          "url": "https://onrol.in/best-online-ai-course/"
+        }
+      ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-course-with-certificate",
+      "title": "AI Course with Certificate — Online & Portfolio-Backed | ONROL",
+      "description": "An online AI course with a certificate that's actually backed by real, deployed projects. Build a portfolio employers trust — in English, worldwide. Join ONROL.",
+      "eyebrow": "Certificate + Portfolio · Worldwide",
+      "h1": "An AI course with a certificate",
+      "h1accent": "and proof behind it",
+      "lead": "A certificate is only worth what's behind it. ONROL's online AI course gives you a completion certificate and — more importantly — a portfolio of deployed AI projects that proves the certificate means something. In English, worldwide.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online, worldwide"
+        },
+        {
+          "icon": "clock",
+          "text": "Cohorts across time zones"
+        },
+        {
+          "icon": "shield",
+          "text": "Taught in English · no coding needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Certificate + real proof",
+          "text": "You earn a certificate, but you also leave with shipped AI projects — the thing employers actually check."
+        },
+        {
+          "title": "Portfolio-first",
+          "text": "Every module ends in something you built and can show, not just a quiz you passed."
+        },
+        {
+          "title": "Recognised by outcomes",
+          "text": "What gets you hired globally is demonstrable capability. The course is built to produce exactly that."
+        },
+        {
+          "title": "Global and flexible",
+          "text": "Online, in English, cohorts across time zones — earn it from anywhere, around your schedule."
+        }
+      ],
+      "learnHeading": "What you earn and build",
+      "learn": [
+        "A completion certificate from ONROL",
+        "A portfolio of deployed AI projects",
+        "Applied skills across automation, agents and AI apps",
+        "A shareable body of work for employers or clients"
+      ],
+      "faqs": [
+        {
+          "q": "Is the AI certificate recognised?",
+          "a": "What matters most to employers is the portfolio behind it. ONROL backs the certificate with real, deployed projects — proof of capability, which is what recognition ultimately rests on."
+        },
+        {
+          "q": "Do I get the certificate just for attending?",
+          "a": "You earn it by building. The course is project-first, so the certificate reflects work you actually shipped."
+        },
+        {
+          "q": "Is it available internationally?",
+          "a": "Yes — fully online, in English, with global cohorts."
+        },
+        {
+          "q": "Do I need a technical background?",
+          "a": "No. It's built for beginners and professionals from any field."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Global - AI Course with Certificate",
+        "campaign": "global-ai-course-certificate",
+        "program": "AI course with certificate (online)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses",
+          "url": "https://onrol.in/programs"
+        },
+        {
+          "name": "AI Course with Certificate",
+          "url": "https://onrol.in/ai-course-with-certificate/"
+        }
+      ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-engineer-course",
+      "title": "AI Engineer Course — Online, Build-First | ONROL",
+      "description": "Become an AI engineer with a live, online, build-first course. Ship agents, RAG and AI apps in English from anywhere. Portfolio over theory — join ONROL.",
+      "eyebrow": "Career Track · Worldwide",
+      "h1": "AI Engineer course,",
+      "h1accent": "built around shipping",
+      "lead": "Becoming an AI engineer isn't about memorising theory — it's about building systems that work. ONROL's online AI engineer track has you ship agents, RAG pipelines and AI-powered apps, live with mentors, in English, from anywhere in the world.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online, worldwide"
+        },
+        {
+          "icon": "clock",
+          "text": "Cohorts across time zones"
+        },
+        {
+          "icon": "shield",
+          "text": "Taught in English · no coding needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Engineer real AI systems",
+          "text": "Build tool-using agents, retrieval pipelines and AI apps — the systems AI-engineering roles actually require."
+        },
+        {
+          "title": "Production mindset",
+          "text": "Learn evaluation, grounding and reliability, not just prompts that demo well once."
+        },
+        {
+          "title": "Portfolio that hires you",
+          "text": "Finish with deployed, reviewable systems — what an AI-engineering hiring manager wants to see."
+        },
+        {
+          "title": "Global and live",
+          "text": "Online, in English, mentor-led cohorts across time zones — become an AI engineer from anywhere."
+        }
+      ],
+      "learnHeading": "What you build",
+      "learn": [
+        "A tool-using AI agent with guardrails and evaluation",
+        "A retrieval-augmented (RAG) system over real data",
+        "An AI-powered application deployed end to end",
+        "A portfolio of production-minded AI systems"
+      ],
+      "faqs": [
+        {
+          "q": "Can I become an AI engineer without a CS degree?",
+          "a": "Yes. What AI-engineering roles increasingly want is demonstrable building ability. This course is built to give you exactly that — a portfolio of real systems."
+        },
+        {
+          "q": "Do I need to know how to code first?",
+          "a": "You can start without deep coding experience; the course builds the technical depth progressively using AI copilots and real projects."
+        },
+        {
+          "q": "Is it available worldwide?",
+          "a": "Yes — fully online, in English, with cohorts across time zones."
+        },
+        {
+          "q": "What roles does it prepare me for?",
+          "a": "Applied AI-engineering and AI-developer roles — building agents, RAG systems and AI features into real products."
+        }
+      ],
+      "cta": "Join the AI Engineer track",
+      "form": {
+        "source": "Global - AI Engineer Course",
+        "campaign": "global-ai-engineer-course",
+        "program": "AI Engineer course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses",
+          "url": "https://onrol.in/programs"
+        },
+        {
+          "name": "AI Engineer Course",
+          "url": "https://onrol.in/ai-engineer-course/"
+        }
+      ]
+    },
+    {
+      "type": "course",
+      "slug": "generative-ai-course-online",
+      "title": "Generative AI Course Online — Live & Applied | ONROL",
+      "description": "A live online generative AI course — build grounded assistants, content generators and RAG tools in English, worldwide. No coding needed. Join ONROL.",
+      "eyebrow": "Live Online · Worldwide",
+      "h1": "Generative AI course online,",
+      "h1accent": "grounded and applied",
+      "lead": "Generative AI is the skill everyone wants — but demos aren't the same as building. ONROL's online generative-AI course has you build grounded assistants, content generators and retrieval tools that actually hold up, live with mentors, in English, from anywhere.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online, worldwide"
+        },
+        {
+          "icon": "clock",
+          "text": "Cohorts across time zones"
+        },
+        {
+          "icon": "shield",
+          "text": "Taught in English · no coding needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Build grounded, not hallucinated",
+          "text": "Learn retrieval and prompting discipline so your generative tools cite real sources and stay credible."
+        },
+        {
+          "title": "Real generative tools",
+          "text": "Ship a document assistant, a brand-voice content generator and a cited answer tool — not one-off prompts."
+        },
+        {
+          "title": "No coding to start",
+          "text": "Build with no-/low-code tools and AI copilots; pick up technical depth as you go."
+        },
+        {
+          "title": "Global, live, in English",
+          "text": "Online cohorts across time zones — learn generative AI from anywhere in the world."
+        }
+      ],
+      "learnHeading": "What you build",
+      "learn": [
+        "A document-grounded generative assistant over real content",
+        "A brand-voice content generator producing on-identity output",
+        "A retrieval-augmented tool that answers with cited sources",
+        "A published generative-AI portfolio project"
+      ],
+      "faqs": [
+        {
+          "q": "What's the difference between using and building generative AI?",
+          "a": "Anyone can prompt ChatGPT. This course teaches you to build grounded, reliable generative tools others use — the skill that's actually in demand."
+        },
+        {
+          "q": "Do I need coding for a generative AI course?",
+          "a": "No. You build with prompting, retrieval and no-/low-code tools, with any technical steps taught step by step."
+        },
+        {
+          "q": "Is it live and global?",
+          "a": "Yes — live online cohorts in English, scheduled across time zones for a worldwide audience."
+        },
+        {
+          "q": "What will I have at the end?",
+          "a": "Real, deployed generative-AI tools and a portfolio you can show employers or clients anywhere."
+        }
+      ],
+      "cta": "Join the next global cohort",
+      "form": {
+        "source": "Global - Generative AI Course Online",
+        "campaign": "global-genai-course-online",
+        "program": "Generative AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses",
+          "url": "https://onrol.in/programs"
+        },
+        {
+          "name": "Generative AI Course Online",
+          "url": "https://onrol.in/generative-ai-course-online/"
+        }
+      ]
+    },
+    {
+      "type": "course",
+      "slug": "prompt-engineering-course-online",
+      "title": "Prompt Engineering Course Online — Production-Grade | ONROL",
+      "description": "A live online prompt engineering course — design, test and ship production prompts, in English, worldwide. Prompts as engineering, not guesswork. Join ONROL.",
+      "eyebrow": "Live Online · Worldwide",
+      "h1": "Prompt engineering course online,",
+      "h1accent": "done as engineering",
+      "lead": "Prompt engineering is more than clever phrasing — it's designing, testing and versioning prompts that hold up in real products. ONROL's online course treats it as engineering, live with mentors, in English, from anywhere in the world.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online, worldwide"
+        },
+        {
+          "icon": "clock",
+          "text": "Cohorts across time zones"
+        },
+        {
+          "icon": "shield",
+          "text": "Taught in English · no coding needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Prompts that hold up",
+          "text": "Design structured, constrained prompts that behave reliably across thousands of runs — not lucky one-offs."
+        },
+        {
+          "title": "Test and evaluate",
+          "text": "Build evaluation sets that measure prompt quality objectively, the way production teams do."
+        },
+        {
+          "title": "Ship a prompt-driven tool",
+          "text": "Version and deploy a real mini-tool whose logic lives in well-engineered prompts."
+        },
+        {
+          "title": "Global and live",
+          "text": "Online cohorts in English across time zones — learn from anywhere."
+        }
+      ],
+      "learnHeading": "What you build",
+      "learn": [
+        "A production-style prompt with structure, constraints and examples",
+        "A prompt test-and-evaluation set that measures quality",
+        "A prompt-versioned mini-tool for a real scenario",
+        "A published prompt-engineering portfolio project"
+      ],
+      "faqs": [
+        {
+          "q": "Is prompt engineering still a real skill in 2026?",
+          "a": "Yes — as AI is embedded in more products, designing prompts that behave reliably (with testing and versioning) is a genuine engineering skill teams hire for."
+        },
+        {
+          "q": "Do I need coding for prompt engineering?",
+          "a": "No coding background is required to start; the course teaches structured prompting and evaluation, with technical depth added as you go."
+        },
+        {
+          "q": "Is it available worldwide?",
+          "a": "Yes — live online, in English, with cohorts across time zones."
+        },
+        {
+          "q": "What will I finish with?",
+          "a": "A tested, versioned prompt-engineering project and a portfolio you can show anywhere."
+        }
+      ],
+      "cta": "Join the next global cohort",
+      "form": {
+        "source": "Global - Prompt Engineering Course Online",
+        "campaign": "global-prompt-course-online",
+        "program": "Prompt Engineering course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses",
+          "url": "https://onrol.in/programs"
+        },
+        {
+          "name": "Prompt Engineering Course Online",
+          "url": "https://onrol.in/prompt-engineering-course-online/"
+        }
+      ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-course-for-working-professionals-online",
+      "title": "AI Course for Working Professionals — Online | ONROL",
+      "description": "An online AI course for working professionals worldwide — build AI into your actual job, live and around your schedule, in English. No coding needed. Join ONROL.",
+      "eyebrow": "For Professionals · Worldwide",
+      "h1": "An AI course for working professionals,",
+      "h1accent": "built around your job",
+      "lead": "You don't have time to go back to school — and you don't need to. ONROL's online AI course for working professionals fits around your job, in live evening and weekend cohorts across time zones, and teaches you to put AI to work in the role you already have.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "100% live online, worldwide"
+        },
+        {
+          "icon": "clock",
+          "text": "Cohorts across time zones"
+        },
+        {
+          "icon": "shield",
+          "text": "Taught in English · no coding needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "AI in your actual role",
+          "text": "Apply AI to the work you already do — reporting, ops, content, analysis — and get hours back immediately."
+        },
+        {
+          "title": "Around your schedule",
+          "text": "Live evening and weekend cohorts across time zones, built for people with full-time jobs."
+        },
+        {
+          "title": "No career break",
+          "text": "Upskill without quitting — learn online, in English, from anywhere in the world."
+        },
+        {
+          "title": "Proof for your next move",
+          "text": "Finish with real AI projects that strengthen your case for a raise, promotion or switch."
+        }
+      ],
+      "learnHeading": "What you build",
+      "learn": [
+        "AI automations for your day-to-day work",
+        "An AI tool tied to your role or industry",
+        "An AI-assisted analysis or content workflow",
+        "A portfolio that supports your next career move"
+      ],
+      "faqs": [
+        {
+          "q": "Can I do this while working full-time?",
+          "a": "Yes — that's exactly who it's for. Live evening and weekend cohorts across time zones fit around a full-time job."
+        },
+        {
+          "q": "I'm not technical — can I still take it?",
+          "a": "Yes. It's built for professionals from any background; you build with AI copilots and no-/low-code tools."
+        },
+        {
+          "q": "Is it available outside India?",
+          "a": "Yes — fully online, in English, with a worldwide audience and time-zone-friendly batches."
+        },
+        {
+          "q": "How will it help my career?",
+          "a": "You'll apply AI in your current role immediately and finish with a portfolio that supports a raise, promotion or move."
+        }
+      ],
+      "cta": "Join the next global cohort",
+      "form": {
+        "source": "Global - AI Course Working Professionals Online",
+        "campaign": "global-ai-working-pros-online",
+        "program": "AI course for professionals (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses",
+          "url": "https://onrol.in/programs"
+        },
+        {
+          "name": "AI Course for Working Professionals (Online)",
+          "url": "https://onrol.in/ai-course-for-working-professionals-online/"
+        }
+      ]
     }
   ]
 }
