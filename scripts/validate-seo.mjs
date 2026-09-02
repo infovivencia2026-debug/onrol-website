@@ -52,10 +52,10 @@ const tokensByType = {};
 /* ---- per-page structural checks ---- */
 for (const p of catalog) {
   const errs = [], warns = [];
-  const file = resolve(ROOT, "public", p.slug, "index.html");
+  const file = resolve(ROOT, "public", "sites", p.slug, "index.html");
   if (!existsSync(file)) { rows.push({ slug: p.slug, errs: ["missing generated file"], warns: [] }); fail++; continue; }
   const html = readFileSync(file, "utf8");
-  const url = `${ORIGIN}/${p.slug}/`;
+  const url = `${ORIGIN}/sites/${p.slug}/`;
 
   // required catalog fields
   for (const f of ["title", "description", "eyebrow", "h1", "lead", "cta", "faqs", "breadcrumb"])

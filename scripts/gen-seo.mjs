@@ -30,7 +30,9 @@ const SAME_AS = [
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const attr = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;");
 const jsonld = (o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`;
-const canon = (slug) => `${ORIGIN}/${slug}/`;
+// All programmatic SEO pages live under /sites/<slug>/ (directory-based).
+const PREFIX = "sites";
+const canon = (slug) => `${ORIGIN}/${PREFIX}/${slug}/`;
 
 /* ---- inline SVG icon set (stroke, currentColor via CSS) ---- */
 const ICONS = {
@@ -48,8 +50,11 @@ const OUTCOME_ICONS = ["target", "bolt", "screen", "chat"];
 
 /* ------------------------------- schema -------------------------------- */
 function breadcrumbSchema(page) {
+  const bc = page.breadcrumb || [];
   const items = [{ "@type": "ListItem", position: 1, name: "Home", item: `${ORIGIN}/` }];
-  (page.breadcrumb || []).forEach((b, i) => items.push({ "@type": "ListItem", position: i + 2, name: b.name, item: b.url }));
+  // The last crumb is the page itself → force its own /sites/ canonical URL.
+  // Parent crumbs (Programs, Best AI course in India, …) are root SPA pages, kept as-is.
+  bc.forEach((b, i) => items.push({ "@type": "ListItem", position: i + 2, name: b.name, item: i === bc.length - 1 ? canon(page.slug) : b.url }));
   return jsonld({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: items });
 }
 function faqSchema(page) {
@@ -249,12 +254,13 @@ const FEATURED = {
 function relatedLinks(page, all) {
   const bySlug = Object.fromEntries(all.map((p) => [p.slug, p]));
   const pick = (slugs) => slugs.filter((s) => s !== page.slug && bySlug[s]).map((s) => bySlug[s]);
+  // p.url wins for root SPA pages (Programs, pillar pages); programmatic pages use canon → /sites/.
   const group = (title, items) => items.length
-    ? `<div class="sx-rel-col"><h3>${title}</h3><ul>${items.map((p) => `<li><a href="${canon(p.slug)}">${esc(LABEL(p))}</a></li>`).join("")}</ul></div>` : "";
+    ? `<div class="sx-rel-col"><h3>${title}</h3><ul>${items.map((p) => `<li><a href="${p.url || canon(p.slug)}">${esc(LABEL(p))}</a></li>`).join("")}</ul></div>` : "";
   const cols = [
     group("AI courses by city", pick(FEATURED.geo)),
     group("Popular courses", pick(FEATURED.course)),
-    group("Career &amp; programs", pick(FEATURED.jobready).concat({ slug: "programs", breadcrumb: [{ name: "All ONROL programs" }] }, { slug: "best-ai-course-in-india", breadcrumb: [{ name: "Best AI course in India" }] })),
+    group("Career &amp; programs", pick(FEATURED.jobready).concat({ slug: "programs", url: "/programs", breadcrumb: [{ name: "All ONROL programs" }] }, { slug: "best-ai-course-in-india", url: "/best-ai-course-in-india", breadcrumb: [{ name: "Best AI course in India" }] })),
   ].filter(Boolean).join("");
   return `<section class="sx-sec sx-related"><p class="sx-kick">Explore more</p><h2 class="sx-h2">Keep exploring ONROL.</h2><div class="sx-rel">${cols}</div></section>`;
 }
@@ -383,11 +389,11 @@ const manifest = {};
 let n = 0;
 for (const page of catalog.pages) {
   const html = render(page, catalog.pages);
-  const dir = resolve(OUT, page.slug);
+  const dir = resolve(OUT, PREFIX, page.slug);
   mkdirSync(dir, { recursive: true });
   writeFileSync(resolve(dir, "index.html"), html);
   manifest[page.slug] = createHash("sha1").update(html).digest("hex").slice(0, 12);
   n++;
 }
 writeFileSync(resolve(ROOT, "data/.seo-manifest.json"), JSON.stringify(manifest, null, 2) + "\n");
-console.log(`gen-seo: ${n} pages → public/<slug>/index.html  (manifest: data/.seo-manifest.json)`);
+console.log(`gen-seo: ${n} pages → public/${PREFIX}/<slug>/index.html  (manifest: data/.seo-manifest.json)`);

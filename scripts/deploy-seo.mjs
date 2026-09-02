@@ -38,7 +38,7 @@ let allPages = catalog.pages;
 for (const gf of ["data/cross-generated.json", "data/cross-personas-gen.json"]) {
   try { const gen = JSON.parse(readFileSync(resolve(ROOT, gf), "utf8")).pages; if (Array.isArray(gen)) allPages = allPages.concat(gen); } catch {}
 }
-const allUrls = allPages.map((p) => `${ORIGIN}/${p.slug}/`);
+const allUrls = allPages.map((p) => `${ORIGIN}/sites/${p.slug}/`);
 
 if (!changed.length) {
   console.log("deploy-seo: nothing changed — 0 files uploaded.");
@@ -52,9 +52,9 @@ console.log(`deploy-seo: ${changed.length} changed page(s): ${changed.join(", ")
 const stage = resolve(ROOT, ".deploy-seo-tmp");
 rmSync(stage, { recursive: true, force: true });
 for (const slug of changed) {
-  const dst = resolve(stage, slug);
+  const dst = resolve(stage, "sites", slug);
   mkdirSync(dst, { recursive: true });
-  copyFileSync(resolve(ROOT, "public", slug, "index.html"), resolve(dst, "index.html"));
+  copyFileSync(resolve(ROOT, "public", "sites", slug, "index.html"), resolve(dst, "index.html"));
 }
 // Relative paths only in shell commands — Git Bash's GNU tar reads a "C:\" as a
 // remote host:path. sh() runs from the project root.
@@ -64,7 +64,7 @@ sh(`scp -O .deploy-seo.tgz ${SSH}:"${remoteTgz}"`);
 sh(`ssh ${SSH} "mkdir -p '${WEBROOT}' && tar -xzf ${remoteTgz} -C '${WEBROOT}' && rm -f ${remoteTgz}"`);
 rmSync(stage, { recursive: true, force: true });
 rmSync(resolve(ROOT, ".deploy-seo.tgz"), { force: true });
-for (const slug of changed) console.log(`  ↑ /${slug}/`);
+for (const slug of changed) console.log(`  ↑ /sites/${slug}/`);
 
 /* 4. merge changed URLs into public/sitemap.xml + upload */
 let sm = readFileSync(resolve(ROOT, "public/sitemap.xml"), "utf8");
@@ -82,7 +82,7 @@ sh(`scp -O "public/sitemap.xml" ${SSH}:"${WEBROOT}/sitemap.xml"`);
 console.log(`  ↑ sitemap.xml (${added} new URL${added === 1 ? "" : "s"})`);
 
 /* 5. ping IndexNow for the changed URLs only */
-const changedUrls = changed.map((s) => `${ORIGIN}/${s}/`);
+const changedUrls = changed.map((s) => `${ORIGIN}/sites/${s}/`);
 await new Promise((res) => {
   const body = JSON.stringify({ host: "onrol.in", key: KEY, keyLocation: `${ORIGIN}/${KEY}.txt`, urlList: changedUrls });
   const req = https.request("https://api.indexnow.org/indexnow", { method: "POST", headers: { "Content-Type": "application/json", "Content-Length": Buffer.byteLength(body) } },
