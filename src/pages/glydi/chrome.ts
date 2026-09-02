@@ -441,9 +441,18 @@ export function initApplyModal(): () => void {
     const phone = (document.getElementById("leadPhone") as HTMLInputElement)?.value.trim();
     if (!name || !email || !phone) return;
     try {
+      // Attribution: live URL wins, else the first-touch capture from the landing page.
+      let stored: Record<string, string> = {};
+      try { stored = JSON.parse(sessionStorage.getItem("onrol_attribution") || "{}"); } catch { /* ignore */ }
+      const ap = new URLSearchParams(window.location.search);
+      const attr: Record<string, string> = {};
+      for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "ref"]) {
+        const v = ap.get(k) || stored[k];
+        if (v) attr[k] = v;
+      }
       fetch("https://go.onrol.in/api/public/leads", {
         method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ name, phone, email, source: "Apply modal", campaign: "apply" }), keepalive: true,
+        body: JSON.stringify({ name, phone, email, source: "Apply modal", campaign: "apply", ...attr }), keepalive: true,
       }).catch(() => {});
     } catch { /* never block */ }
     const text = "Hi ONROL, I’d like to apply for the next cohort.%0A%0AName: " + encodeURIComponent(name) +

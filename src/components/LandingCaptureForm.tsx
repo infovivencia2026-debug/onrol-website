@@ -72,10 +72,14 @@ interface UtmContext {
 
 function readUtm(): UtmContext {
   if (typeof window === "undefined") return {};
+  // Fall back to the first-touch attribution captured on the landing page
+  // (SPA navigation strips ?utm_… before the visitor reaches this form).
+  let stored: Record<string, string> = {};
+  try { stored = JSON.parse(sessionStorage.getItem("onrol_attribution") || "{}"); } catch { /* ignore */ }
   const params = new URLSearchParams(window.location.search);
   const out: UtmContext = {};
   for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"] as const) {
-    const v = params.get(k);
+    const v = params.get(k) || stored[k];
     if (v) out[k] = v;
   }
   return out;

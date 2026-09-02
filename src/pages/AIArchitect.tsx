@@ -242,10 +242,19 @@ function InlineRegistrationForm() {
       notes: form.role ? "role: " + form.role : "",
     };
     try {
+      // Attribution: live URL wins, else the first-touch capture from the landing page.
+      let stored: Record<string, string> = {};
+      try { stored = JSON.parse(sessionStorage.getItem("onrol_attribution") || "{}"); } catch { /* ignore */ }
+      const ap = new URLSearchParams(window.location.search);
+      const attr: Record<string, string> = {};
+      for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "ref"]) {
+        const v = ap.get(k) || stored[k];
+        if (v) attr[k] = v;
+      }
       const res = await fetch("https://go.onrol.in/api/public/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, ...attr }),
       });
       if (!res.ok) {
         if (res.status === 429) throw new Error("Too many submissions — please wait a minute and try again.");
