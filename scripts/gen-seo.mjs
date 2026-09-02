@@ -174,7 +174,7 @@ const CSS = `<style id="nav-login-fix">.nav .nav-login-btn,.nav.on-dark .nav-log
 .sx-list li{display:flex;gap:11px;align-items:flex-start;font-size:15px;line-height:1.55;color:var(--sx-ink)}
 .sx-list li svg{width:19px;height:19px;flex:none;stroke:var(--orange);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;margin-top:1px}
 .sx-related{border-top:1px solid var(--sx-line)}
-.sx-rel{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:26px}
+.sx-rel{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;margin-top:26px}
 @media(max-width:640px){.sx-rel{grid-template-columns:1fr;gap:22px}}
 .sx-rel-col h3{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin:0 0 12px}
 .sx-rel-col ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
@@ -250,6 +250,9 @@ const FEATURED = {
   geo: ["ai-course-in-bangalore", "ai-course-in-hyderabad-online", "ai-course-in-mumbai", "ai-course-in-delhi-ncr", "ai-course-in-chennai"],
   course: ["courses/data-analytics-with-ai", "courses/ai-digital-marketing", "courses/vibe-coding", "courses/ai-agents", "courses/power-bi"],
   jobready: ["ai-course-with-placement-support"],
+  // Hub-and-spoke: every page links to these high-value global/guide pages so the
+  // whole (indexing) city network passes discovery + equity to the newer pages.
+  guides: ["learn-ai-online", "online-ai-course", "how-to-become-an-ai-engineer", "what-is-an-ai-agent", "is-learning-ai-worth-it", "ai-skills-in-demand-2026"],
 };
 function relatedLinks(page, all) {
   const bySlug = Object.fromEntries(all.map((p) => [p.slug, p]));
@@ -260,6 +263,7 @@ function relatedLinks(page, all) {
   const cols = [
     group("AI courses by city", pick(FEATURED.geo)),
     group("Popular courses", pick(FEATURED.course)),
+    group("AI guides &amp; online courses", pick(FEATURED.guides)),
     group("Career &amp; programs", pick(FEATURED.jobready).concat({ slug: "programs", url: "/programs", breadcrumb: [{ name: "All ONROL programs" }] }, { slug: "best-ai-course-in-india", url: "/best-ai-course-in-india", breadcrumb: [{ name: "Best AI course in India" }] })),
   ].filter(Boolean).join("");
   return `<section class="sx-sec sx-related"><p class="sx-kick">Explore more</p><h2 class="sx-h2">Keep exploring ONROL.</h2><div class="sx-rel">${cols}</div></section>`;
