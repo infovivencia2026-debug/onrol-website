@@ -13986,6 +13986,2970 @@
           "url": "https://onrol.in/ai-course-for-working-professionals-online/"
         }
       ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-for-software-developers",
+      "title": "AI for Software Developers — Live Online Course | ONROL",
+      "description": "AI for Software Developers: a live online, build-first AI course made for your role. No coding needed — finish with a portfolio. Worldwide cohorts at ONROL.",
+      "eyebrow": "Live Online · For your role",
+      "h1": "AI for Software Developers",
+      "h1accent": "that ships",
+      "lead": "You already build software — now build with AI inside it. ONROL's live online track for developers goes past autocomplete to designing agents, RAG systems and AI features you put into production, worldwide.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "Live online, worldwide"
+        },
+        {
+          "icon": "target",
+          "text": "Built for your role"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Beyond the copilot",
+          "text": "Move from AI-assisted typing to designing systems: tool-using agents, retrieval, evaluation and guardrails."
+        },
+        {
+          "title": "Ship AI into real products",
+          "text": "Wire LLMs into apps you already build — with the reliability practices production demands."
+        },
+        {
+          "title": "Portfolio for AI roles",
+          "text": "Finish with deployed AI features and systems, the proof AI-engineering interviews actually ask for."
+        },
+        {
+          "title": "Global and live",
+          "text": "Online cohorts in English across time zones — upskill without leaving your job."
+        }
+      ],
+      "learnHeading": "What developers build",
+      "learn": [
+        "a tool-using AI agent with evaluation and guardrails",
+        "a retrieval-augmented feature over real data",
+        "an LLM feature deployed into an existing app",
+        "a portfolio of production-minded AI systems"
+      ],
+      "faqs": [
+        {
+          "q": "Do I need to switch languages or stacks?",
+          "a": "No. You bring your existing stack; the course adds AI patterns (agents, RAG, evals) you can apply in any language."
+        },
+        {
+          "q": "Is this just prompt tips?",
+          "a": "No — it's engineering: structured prompts, retrieval, evaluation and reliability, not one-off tricks."
+        },
+        {
+          "q": "Will it help me get an AI-engineering role?",
+          "a": "Yes — you leave with deployed systems and a portfolio, which is what those interviews assess."
+        },
+        {
+          "q": "Is it available worldwide?",
+          "a": "Yes, fully online in English with time-zone-friendly cohorts."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Career - AI for Software Developers",
+        "campaign": "career-ai-for-software-developers",
+        "program": "AI for Software Developers (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses",
+          "url": "https://onrol.in/programs"
+        },
+        {
+          "name": "AI for Software Developers",
+          "url": "https://onrol.in/sites/ai-for-software-developers/"
+        }
+      ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-for-product-managers",
+      "title": "AI for Product Managers — Live Online Course | ONROL",
+      "description": "AI for Product Managers: a live online, build-first AI course made for your role. No coding needed — finish with a portfolio. Worldwide cohorts at ONROL.",
+      "eyebrow": "Live Online · For your role",
+      "h1": "AI for Product Managers",
+      "h1accent": "who ship AI features",
+      "lead": "Shipping AI features means knowing what's actually possible, what breaks, and how to scope it. ONROL's live online track for product managers teaches you to spec, prototype and evaluate AI products — no coding required.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "Live online, worldwide"
+        },
+        {
+          "icon": "target",
+          "text": "Built for your role"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Scope AI that works",
+          "text": "Learn what LLMs can and can't do reliably, so your specs are grounded, not hype."
+        },
+        {
+          "title": "Prototype without engineers",
+          "text": "Build working AI prototypes with no-/low-code tools to validate before you commit a team."
+        },
+        {
+          "title": "Evaluate AI quality",
+          "text": "Define and measure AI feature quality — the metric conversations PMs now own."
+        },
+        {
+          "title": "Global, live, role-focused",
+          "text": "Online in English, evenings and weekends, built for working PMs anywhere."
+        }
+      ],
+      "learnHeading": "What product managers build",
+      "learn": [
+        "a working AI feature prototype to validate an idea",
+        "an evaluation rubric for AI output quality",
+        "a spec grounded in what AI can actually do",
+        "a portfolio piece that proves AI-product judgement"
+      ],
+      "faqs": [
+        {
+          "q": "I'm non-technical — is that fine?",
+          "a": "Yes. It's built for PMs; you prototype with no-code AI tools, not code."
+        },
+        {
+          "q": "What will I be able to do after?",
+          "a": "Scope, prototype and evaluate AI features, and lead AI product conversations with credibility."
+        },
+        {
+          "q": "Is it theory or hands-on?",
+          "a": "Hands-on — you build real AI prototypes, not just read about them."
+        },
+        {
+          "q": "Can I take it from any country?",
+          "a": "Yes — live online in English, cohorts across time zones."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Career - AI for Product Managers",
+        "campaign": "career-ai-for-product-managers",
+        "program": "AI for Product Managers (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses",
+          "url": "https://onrol.in/programs"
+        },
+        {
+          "name": "AI for Product Managers",
+          "url": "https://onrol.in/sites/ai-for-product-managers/"
+        }
+      ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-for-marketers",
+      "title": "AI for Marketers — Live Online Course | ONROL",
+      "description": "AI for Marketers: a live online, build-first AI course made for your role. No coding needed — finish with a portfolio. Worldwide cohorts at ONROL.",
+      "eyebrow": "Live Online · For your role",
+      "h1": "AI for Marketers",
+      "h1accent": "who build the systems",
+      "lead": "Anyone can prompt a chatbot. ONROL's live online track for marketers teaches you to build AI systems — content engines, research agents and campaign workflows that hold your brand voice and actually save hours, worldwide.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "Live online, worldwide"
+        },
+        {
+          "icon": "target",
+          "text": "Built for your role"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Systems, not one-off prompts",
+          "text": "Build repeatable AI workflows for content, research and reporting — not lucky single generations."
+        },
+        {
+          "title": "On-brand, grounded output",
+          "text": "Learn to keep AI output on-voice and factual with retrieval and prompt discipline."
+        },
+        {
+          "title": "Own the AI marketing stack",
+          "text": "Connect AI to your real tools so campaigns run faster end to end."
+        },
+        {
+          "title": "Global and live",
+          "text": "Online in English across time zones, around a full-time marketing job."
+        }
+      ],
+      "learnHeading": "What marketers build",
+      "learn": [
+        "a brand-voice content engine that stays on-identity",
+        "a research/insights agent over real sources",
+        "an AI campaign or reporting workflow",
+        "a portfolio of AI marketing systems you can reuse"
+      ],
+      "faqs": [
+        {
+          "q": "Do I need coding?",
+          "a": "No — you build with no-/low-code AI tools and prompting."
+        },
+        {
+          "q": "How is this different from watching AI tips online?",
+          "a": "You build real, reusable systems tied to your work, not disposable prompts."
+        },
+        {
+          "q": "Will it keep my brand voice?",
+          "a": "Yes — a core focus is grounding and voice control so output stays on-brand."
+        },
+        {
+          "q": "Is it worldwide?",
+          "a": "Yes, live online in English with time-zone-friendly batches."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Career - AI for Marketers",
+        "campaign": "career-ai-for-marketers",
+        "program": "AI for Marketers (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses",
+          "url": "https://onrol.in/programs"
+        },
+        {
+          "name": "AI for Marketers",
+          "url": "https://onrol.in/sites/ai-for-marketers/"
+        }
+      ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-for-data-analysts",
+      "title": "AI for Data Analysts — Live Online Course | ONROL",
+      "description": "AI for Data Analysts: a live online, build-first AI course made for your role. No coding needed — finish with a portfolio. Worldwide cohorts at ONROL.",
+      "eyebrow": "Live Online · For your role",
+      "h1": "AI for Data Analysts",
+      "h1accent": "who go further, faster",
+      "lead": "AI doesn't replace analysts — it multiplies the good ones. ONROL's live online track teaches you to use AI for faster analysis, natural-language querying and automated reporting, and to build AI tools on top of your data, worldwide.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "Live online, worldwide"
+        },
+        {
+          "icon": "target",
+          "text": "Built for your role"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Analyse faster with AI",
+          "text": "Use AI to explore, clean and summarise data in a fraction of the time — with judgement, not blind trust."
+        },
+        {
+          "title": "Natural-language data tools",
+          "text": "Build interfaces that let stakeholders ask your data questions in plain language."
+        },
+        {
+          "title": "Automate the repetitive",
+          "text": "Turn recurring reports and checks into AI-assisted workflows."
+        },
+        {
+          "title": "Global and live",
+          "text": "Online in English across time zones, built around your analyst role."
+        }
+      ],
+      "learnHeading": "What analysts build",
+      "learn": [
+        "an AI-assisted analysis and cleaning workflow",
+        "a natural-language query tool over a dataset",
+        "an automated reporting pipeline",
+        "a portfolio of AI-for-analytics projects"
+      ],
+      "faqs": [
+        {
+          "q": "Will AI replace data analysts?",
+          "a": "It replaces slow, manual analysis — not analysts with judgement. This course makes you the analyst who leverages AI."
+        },
+        {
+          "q": "Do I need heavy coding?",
+          "a": "No — you build with AI tools and any technical steps are taught progressively."
+        },
+        {
+          "q": "What tools will I use?",
+          "a": "AI copilots plus no-/low-code data tools; the focus is capability, not one vendor."
+        },
+        {
+          "q": "Available outside my country?",
+          "a": "Yes — live online in English, cohorts across time zones."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Career - AI for Data Analysts",
+        "campaign": "career-ai-for-data-analysts",
+        "program": "AI for Data Analysts (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses",
+          "url": "https://onrol.in/programs"
+        },
+        {
+          "name": "AI for Data Analysts",
+          "url": "https://onrol.in/sites/ai-for-data-analysts/"
+        }
+      ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-for-designers",
+      "title": "AI for Designers — Live Online Course | ONROL",
+      "description": "AI for Designers: a live online, build-first AI course made for your role. No coding needed — finish with a portfolio. Worldwide cohorts at ONROL.",
+      "eyebrow": "Live Online · For your role",
+      "h1": "AI for Designers",
+      "h1accent": "who direct the tools",
+      "lead": "AI image and interface tools change weekly. ONROL's live online track teaches designers to direct them with intent — building repeatable AI design workflows, not chasing hype, worldwide.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "Live online, worldwide"
+        },
+        {
+          "icon": "target",
+          "text": "Built for your role"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Direct AI with intent",
+          "text": "Move from random generations to controlled, on-brief AI output you can iterate."
+        },
+        {
+          "title": "Repeatable design workflows",
+          "text": "Build AI into your process for ideation, variation and production — consistently."
+        },
+        {
+          "title": "Stay the creative director",
+          "text": "Learn where AI helps and where taste and craft still decide — and own that line."
+        },
+        {
+          "title": "Global and live",
+          "text": "Online in English across time zones, around your design work."
+        }
+      ],
+      "learnHeading": "What designers build",
+      "learn": [
+        "a controlled AI ideation-to-production workflow",
+        "an on-brief AI asset system with guardrails",
+        "an AI-assisted design tool for a real use case",
+        "a portfolio showing AI-directed design work"
+      ],
+      "faqs": [
+        {
+          "q": "Will AI replace designers?",
+          "a": "No — it replaces designers who ignore it. Direction, taste and systems are exactly what this teaches."
+        },
+        {
+          "q": "Do I need to code?",
+          "a": "No — you work with AI creative and no-code tools."
+        },
+        {
+          "q": "Is it about one tool?",
+          "a": "No — it teaches the judgement and workflow that survive tools changing."
+        },
+        {
+          "q": "Can I join from anywhere?",
+          "a": "Yes — live online in English, time-zone-friendly cohorts."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Career - AI for Designers",
+        "campaign": "career-ai-for-designers",
+        "program": "AI for Designers (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses",
+          "url": "https://onrol.in/programs"
+        },
+        {
+          "name": "AI for Designers",
+          "url": "https://onrol.in/sites/ai-for-designers/"
+        }
+      ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-for-entrepreneurs",
+      "title": "AI for Entrepreneurs — Live Online Course | ONROL",
+      "description": "AI for Entrepreneurs: a live online, build-first AI course made for your role. No coding needed — finish with a portfolio. Worldwide cohorts at ONROL.",
+      "eyebrow": "Live Online · For your role",
+      "h1": "AI for Entrepreneurs",
+      "h1accent": "who build lean",
+      "lead": "One founder with AI can now do what used to take a team. ONROL's live online track teaches entrepreneurs to build AI into the business itself — automations, agents and AI products — so you ship more with less, worldwide.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "Live online, worldwide"
+        },
+        {
+          "icon": "target",
+          "text": "Built for your role"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Run leaner with AI",
+          "text": "Automate operations, support and content so a small team moves like a big one."
+        },
+        {
+          "title": "Build AI products, not just use them",
+          "text": "Ship an AI feature or tool your customers actually pay for."
+        },
+        {
+          "title": "Decide what to build vs buy",
+          "text": "Learn to judge AI opportunities and avoid expensive dead ends."
+        },
+        {
+          "title": "Global and live",
+          "text": "Online in English across time zones, around building your company."
+        }
+      ],
+      "learnHeading": "What founders build",
+      "learn": [
+        "AI automations across ops, support and marketing",
+        "an AI feature or micro-product for your business",
+        "a build-vs-buy AI roadmap for your company",
+        "a portfolio of AI systems running your business"
+      ],
+      "faqs": [
+        {
+          "q": "I'm non-technical — can I still build?",
+          "a": "Yes — you build with no-/low-code AI tools; that's the point."
+        },
+        {
+          "q": "Will this help my existing business or a new one?",
+          "a": "Both — you apply everything to your own real business or idea."
+        },
+        {
+          "q": "Is it strategy or hands-on?",
+          "a": "Hands-on building, with the judgement to prioritise what's worth building."
+        },
+        {
+          "q": "Available worldwide?",
+          "a": "Yes — live online in English, cohorts across time zones."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Career - AI for Entrepreneurs",
+        "campaign": "career-ai-for-entrepreneurs",
+        "program": "AI for Entrepreneurs (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses",
+          "url": "https://onrol.in/programs"
+        },
+        {
+          "name": "AI for Entrepreneurs",
+          "url": "https://onrol.in/sites/ai-for-entrepreneurs/"
+        }
+      ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-for-consultants",
+      "title": "AI for Consultants — Live Online Course | ONROL",
+      "description": "AI for Consultants: a live online, build-first AI course made for your role. No coding needed — finish with a portfolio. Worldwide cohorts at ONROL.",
+      "eyebrow": "Live Online · For your role",
+      "h1": "AI for Consultants",
+      "h1accent": "who deliver more",
+      "lead": "Clients now expect AI in the answer. ONROL's live online track teaches consultants and advisors to build AI into research, analysis and deliverables — so you deliver deeper work, faster, worldwide.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "Live online, worldwide"
+        },
+        {
+          "icon": "target",
+          "text": "Built for your role"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Research and analyse faster",
+          "text": "Use AI to accelerate discovery, synthesis and drafting — with the rigour clients pay for."
+        },
+        {
+          "title": "Build client-ready AI tools",
+          "text": "Ship small AI tools and prototypes as part of engagements, not just slides."
+        },
+        {
+          "title": "Advise on AI credibly",
+          "text": "Speak to AI strategy from having built it, not from headlines."
+        },
+        {
+          "title": "Global and live",
+          "text": "Online in English across time zones, around client work."
+        }
+      ],
+      "learnHeading": "What consultants build",
+      "learn": [
+        "an AI research-and-synthesis workflow",
+        "a client-facing AI prototype or tool",
+        "an AI strategy framework grounded in what's real",
+        "a portfolio of AI-enabled consulting deliverables"
+      ],
+      "faqs": [
+        {
+          "q": "Do I need a technical background?",
+          "a": "No — you build with no-/low-code AI tools and AI copilots."
+        },
+        {
+          "q": "How does this help my practice?",
+          "a": "You deliver faster, add AI prototypes to engagements, and advise on AI with credibility."
+        },
+        {
+          "q": "Is client confidentiality covered?",
+          "a": "Yes — you learn practical, responsible AI use including data-handling judgement."
+        },
+        {
+          "q": "Available in my country?",
+          "a": "Yes — live online in English, time-zone-friendly."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Career - AI for Consultants",
+        "campaign": "career-ai-for-consultants",
+        "program": "AI for Consultants (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses",
+          "url": "https://onrol.in/programs"
+        },
+        {
+          "name": "AI for Consultants",
+          "url": "https://onrol.in/sites/ai-for-consultants/"
+        }
+      ]
+    },
+    {
+      "type": "course",
+      "slug": "ai-for-writers-and-editors",
+      "title": "AI for Writers & Editors — Live Online Course | ONROL",
+      "description": "AI for Writers & Editors: a live online, build-first AI course made for your role. No coding needed — finish with a portfolio. Worldwide cohorts at ONROL.",
+      "eyebrow": "Live Online · For your role",
+      "h1": "AI for Writers & Editors",
+      "h1accent": "who stay the author",
+      "lead": "AI can draft — but it can't decide what's true, sharp or worth saying. ONROL's live online track teaches writers and editors to build AI into research, drafting and editing while keeping authorship and voice, worldwide.",
+      "meta": [
+        {
+          "icon": "screen",
+          "text": "Live online, worldwide"
+        },
+        {
+          "icon": "target",
+          "text": "Built for your role"
+        },
+        {
+          "icon": "shield",
+          "text": "No coding needed"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Author with AI, don't outsource to it",
+          "text": "Use AI for speed on research and drafts while your judgement and voice stay in charge."
+        },
+        {
+          "title": "Build repeatable writing systems",
+          "text": "Create AI workflows for briefs, outlines, drafts and fact-checks you reuse."
+        },
+        {
+          "title": "Edit AI output well",
+          "text": "Learn to spot and fix the specific ways AI writing fails — the editor's new core skill."
+        },
+        {
+          "title": "Global and live",
+          "text": "Online in English across time zones, around your writing work."
+        }
+      ],
+      "learnHeading": "What writers build",
+      "learn": [
+        "an AI research-and-drafting workflow that keeps your voice",
+        "a fact-check and editing system for AI output",
+        "a repeatable content system for your niche",
+        "a portfolio of AI-assisted writing projects"
+      ],
+      "faqs": [
+        {
+          "q": "Will AI replace writers?",
+          "a": "It replaces writers who ship raw AI output. Voice, judgement and editing are what this course sharpens."
+        },
+        {
+          "q": "Do I need coding?",
+          "a": "No — it's built for writers using AI writing and no-code tools."
+        },
+        {
+          "q": "Will my writing still sound like me?",
+          "a": "Yes — keeping voice and authorship is a central focus."
+        },
+        {
+          "q": "Can I join from anywhere?",
+          "a": "Yes — live online in English, cohorts across time zones."
+        }
+      ],
+      "cta": "Join the next cohort",
+      "form": {
+        "source": "Career - AI for Writers & Editors",
+        "campaign": "career-ai-for-writers-and-editors",
+        "program": "AI for Writers & Editors (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Courses",
+          "url": "https://onrol.in/programs"
+        },
+        {
+          "name": "AI for Writers & Editors",
+          "url": "https://onrol.in/sites/ai-for-writers-and-editors/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "how-to-become-an-ai-engineer",
+      "title": "How to Become an AI Engineer (2026) | ONROL",
+      "description": "You don't need a PhD to become an AI engineer in 2026 — you need to build. Here's the honest path: what to learn, in what order, and how to prove it with a po",
+      "eyebrow": "AI Learning Guide",
+      "h1": "Become an AI engineer,",
+      "h1accent": "step by step",
+      "lead": "You don't need a PhD to become an AI engineer in 2026 — you need to build. Here's the honest path: what to learn, in what order, and how to prove it with a portfolio.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Build over credentials",
+          "text": "AI-engineering hiring increasingly weighs a portfolio of working systems over degrees."
+        },
+        {
+          "title": "Start applied",
+          "text": "Begin with agents, RAG and AI apps — not months of pure maths theory."
+        },
+        {
+          "title": "Prove it publicly",
+          "text": "Deployed, reviewable projects are what move you past the résumé screen."
+        },
+        {
+          "title": "Iterate fast",
+          "text": "The field moves monthly; the skill is learning to build and adapt, not memorising."
+        }
+      ],
+      "learnHeading": "The path in short",
+      "learn": [
+        "learn AI fundamentals applied, not academic",
+        "build a tool-using agent with evaluation",
+        "build a retrieval-augmented (RAG) system",
+        "deploy an AI app and publish the portfolio"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "How to Become an AI Engineer",
+      "context": [
+        "Becoming an AI engineer in 2026 is less about a specific degree and more about demonstrable building ability. The most direct path is applied: learn enough foundations to be dangerous, then build real systems — agents that use tools, retrieval pipelines that ground answers in data, and AI features deployed into apps. Employers hiring AI engineers increasingly screen on a portfolio of working systems, because that is the actual job.",
+        "A realistic order: (1) get comfortable using AI tools and prompting well; (2) build a tool-using agent with guardrails and a way to evaluate it; (3) build a RAG system over real data so you understand grounding; (4) ship an AI feature into a small app end to end; (5) publish everything as a portfolio with clear write-ups. Depth of maths can grow later — start by building.",
+        "This is exactly the shape of ONROL's AI Engineer track: live, online and build-first, so you finish with deployed systems and a portfolio rather than only a certificate. Whether you learn with us or on your own, the principle holds — build in public, and let the work speak."
+      ],
+      "faqs": [
+        {
+          "q": "Do I need a CS degree to be an AI engineer?",
+          "a": "No. A portfolio of working AI systems increasingly matters more than a specific degree for applied AI-engineering roles."
+        },
+        {
+          "q": "How long does it take?",
+          "a": "With consistent, project-based effort, many people build a credible portfolio in a few months — it depends on time and prior background."
+        },
+        {
+          "q": "Do I need to be great at maths?",
+          "a": "You need applied fundamentals, not research-level maths, to start. You can deepen the theory as you go."
+        },
+        {
+          "q": "What projects should I build?",
+          "a": "A tool-using agent, a RAG system, and a deployed AI app — the systems the role actually involves."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - How to Become an AI Engineer",
+        "campaign": "aeo-how-to-become-an-ai-engineer",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "How to Become an AI Engineer",
+          "url": "https://onrol.in/sites/how-to-become-an-ai-engineer/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "how-to-learn-ai-from-scratch",
+      "title": "How to Learn AI From Scratch (2026) | ONROL",
+      "description": "Learning AI from scratch is simpler than the internet makes it look — if you build instead of only watching. Here's a beginner path that gets you to real proj",
+      "eyebrow": "AI Learning Guide",
+      "h1": "Learn AI from scratch,",
+      "h1accent": "the right way",
+      "lead": "Learning AI from scratch is simpler than the internet makes it look — if you build instead of only watching. Here's a beginner path that gets you to real projects fast.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Build from day one",
+          "text": "Projects, not endless prerequisites, are what make AI stick."
+        },
+        {
+          "title": "Skip the maths gate",
+          "text": "You can start with no coding and no heavy maths, and add depth later."
+        },
+        {
+          "title": "Use AI to learn AI",
+          "text": "Modern AI tools flatten the learning curve dramatically."
+        },
+        {
+          "title": "Finish with proof",
+          "text": "A small portfolio beats a stack of unfinished courses."
+        }
+      ],
+      "learnHeading": "A beginner path",
+      "learn": [
+        "use AI tools well and learn to prompt with structure",
+        "build a simple automation that does real work",
+        "build a small AI assistant grounded in your own data",
+        "publish 2–3 projects as a starter portfolio"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "How to Learn AI From Scratch",
+      "context": [
+        "The biggest mistake beginners make is treating AI like a maths degree — months of theory before touching anything real. In 2026, the fastest way to learn AI from scratch is the opposite: start building small, useful things immediately, using AI copilots and no-/low-code tools that remove the coding barrier.",
+        "A practical order for a complete beginner: learn to use AI tools and prompt them with structure; build one automation that saves you real time; build a small assistant grounded in your own documents so you understand how AI 'knows' things; then package a couple of projects with short write-ups. Each step teaches a concept by doing, which is what makes it stick.",
+        "You can absolutely self-teach this way. If you'd rather learn live with mentors and a cohort — which is what gets most people to actually finish — that's the model ONROL is built on: beginner-friendly, project-first, and online worldwide."
+      ],
+      "faqs": [
+        {
+          "q": "Can a complete beginner learn AI?",
+          "a": "Yes. With today's tools you can start with no coding and build useful projects while learning the concepts."
+        },
+        {
+          "q": "What should I learn first?",
+          "a": "How to use AI tools and prompt them well, then a first small automation — concepts through building, not upfront theory."
+        },
+        {
+          "q": "Is maths required to start?",
+          "a": "No — applied AI can be learned without heavy maths at the start; you can deepen theory later."
+        },
+        {
+          "q": "How do I know I'm making progress?",
+          "a": "You have finished projects. A small portfolio is the clearest signal you're actually learning."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - How to Learn AI From Scratch",
+        "campaign": "aeo-how-to-learn-ai-from-scratch",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "How to Learn AI From Scratch",
+          "url": "https://onrol.in/sites/how-to-learn-ai-from-scratch/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "is-learning-ai-worth-it",
+      "title": "Is Learning AI Worth It in 2026? | ONROL",
+      "description": "Short answer: yes — but not for the reason most people think. The value isn't 'knowing AI', it's becoming the person on your team who can build with it. Here'",
+      "eyebrow": "AI Learning Guide",
+      "h1": "Is learning AI",
+      "h1accent": "worth it?",
+      "lead": "Short answer: yes — but not for the reason most people think. The value isn't 'knowing AI', it's becoming the person on your team who can build with it. Here's the honest case.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "AI is now table stakes",
+          "text": "Across roles, using AI well is becoming an expectation, not an edge."
+        },
+        {
+          "title": "Building beats knowing",
+          "text": "The real value is producing AI systems, not just being aware of tools."
+        },
+        {
+          "title": "Compounding advantage",
+          "text": "Early, practical skill compounds as AI spreads into every workflow."
+        },
+        {
+          "title": "Low downside",
+          "text": "Even a few real projects change how you work — the effort pays back quickly."
+        }
+      ],
+      "learnHeading": "Where the value is",
+      "learn": [
+        "hours saved by automating repetitive work",
+        "new abilities: building tools you couldn't before",
+        "stronger career positioning as AI spreads",
+        "a portfolio that proves capability, not just interest"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "Is Learning AI Worth It?",
+      "context": [
+        "Whether learning AI is 'worth it' depends on what you mean by learning it. Passively knowing which chatbot is popular has little value. Being the person who can build an automation, an agent, or an AI feature that saves your team hours — that has real, compounding value, because AI is moving into nearly every role and workflow.",
+        "The honest downside is small: even a modest investment leaves you with practical skills and a couple of projects that change how you work day to day. The upside is career positioning as AI literacy shifts from 'nice to have' to 'expected'. The people who benefit most are those who learn by building, not by collecting courses.",
+        "So yes — learning AI is worth it in 2026, provided you learn it the applied way: build real things, keep them as proof, and stay curious as the tools evolve. That build-first, portfolio-driven approach is exactly what ONROL is designed around."
+      ],
+      "faqs": [
+        {
+          "q": "Is it too late to learn AI?",
+          "a": "No — it's early. AI is still spreading into most roles; practical skill now compounds as adoption grows."
+        },
+        {
+          "q": "Is AI worth learning if I'm not technical?",
+          "a": "Yes. No-/low-code AI tools let non-technical people build genuinely useful things."
+        },
+        {
+          "q": "Will AI skills stay relevant?",
+          "a": "The specific tools change, but the skill of building with AI and adapting is durable."
+        },
+        {
+          "q": "What's the fastest way to see value?",
+          "a": "Automate one repetitive task this month — the payback is immediate and motivating."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - Is Learning AI Worth It?",
+        "campaign": "aeo-is-learning-ai-worth-it",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "Is Learning AI Worth It?",
+          "url": "https://onrol.in/sites/is-learning-ai-worth-it/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "can-you-learn-ai-without-coding",
+      "title": "Can You Learn AI Without Coding? | ONROL",
+      "description": "Yes — you can genuinely learn and build with AI without writing traditional code. Here's what's possible without coding, what benefits from a little, and how ",
+      "eyebrow": "AI Learning Guide",
+      "h1": "Learn AI",
+      "h1accent": "without coding",
+      "lead": "Yes — you can genuinely learn and build with AI without writing traditional code. Here's what's possible without coding, what benefits from a little, and how to start.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "No-code is real now",
+          "text": "Modern AI and no-/low-code tools let you build working systems without programming."
+        },
+        {
+          "title": "Build, not just chat",
+          "text": "You can create automations, agents and AI apps visually."
+        },
+        {
+          "title": "Some code helps later",
+          "text": "A little scripting extends what you can do — but it's optional to start."
+        },
+        {
+          "title": "Judgement matters most",
+          "text": "Knowing what to build and how to evaluate it beats syntax."
+        }
+      ],
+      "learnHeading": "What you can build without coding",
+      "learn": [
+        "automations that connect your apps and act for you",
+        "AI agents built with visual/low-code tools",
+        "assistants grounded in your own documents",
+        "AI features prototyped without a developer"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "Can You Learn AI Without Coding?",
+      "context": [
+        "It's a common myth that AI requires programming. In 2026, a large amount of real AI building happens with no-/low-code tools and AI copilots — you can create automations, tool-using agents, and document-grounded assistants without writing traditional code. The barrier that used to stop non-programmers has largely fallen.",
+        "That said, a little code eventually widens what you can do, and AI copilots make picking up small amounts of scripting far easier than before. But it's genuinely optional at the start — many people build useful, portfolio-worthy AI systems entirely through visual tools while they gradually absorb the technical concepts.",
+        "The skills that matter most are not syntax: knowing what's worth building, how to structure prompts and retrieval, and how to evaluate whether the output is actually good. That's why ONROL's courses are built for people from any background — you start building with no coding required, and depth grows naturally."
+      ],
+      "faqs": [
+        {
+          "q": "Can I really build AI with no coding?",
+          "a": "Yes — automations, agents and grounded assistants can all be built with no-/low-code tools and AI copilots."
+        },
+        {
+          "q": "Will I be limited without code?",
+          "a": "At first, barely. Some scripting later widens your range, and AI makes learning it much easier."
+        },
+        {
+          "q": "What should a non-coder learn first?",
+          "a": "Prompting with structure, then a no-code automation, then a document-grounded assistant."
+        },
+        {
+          "q": "Is a no-code AI portfolio taken seriously?",
+          "a": "Yes — a working, deployed system demonstrates capability regardless of how it was built."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - Can You Learn AI Without Coding?",
+        "campaign": "aeo-can-you-learn-ai-without-coding",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "Can You Learn AI Without Coding?",
+          "url": "https://onrol.in/sites/can-you-learn-ai-without-coding/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "ai-skills-in-demand-2026",
+      "title": "AI Skills in Demand (2026) | ONROL",
+      "description": "Beyond the buzzwords, a clear set of AI skills is what employers and clients are paying for in 2026. Here's what's genuinely in demand — and how to build each",
+      "eyebrow": "AI Learning Guide",
+      "h1": "The AI skills",
+      "h1accent": "actually in demand",
+      "lead": "Beyond the buzzwords, a clear set of AI skills is what employers and clients are paying for in 2026. Here's what's genuinely in demand — and how to build each one.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Applied beats theoretical",
+          "text": "Demand centres on building and shipping, not reciting concepts."
+        },
+        {
+          "title": "Agents and RAG lead",
+          "text": "Tool-using agents and retrieval systems are the hot, hireable skills."
+        },
+        {
+          "title": "Evaluation is underrated",
+          "text": "Knowing whether AI output is good is a scarce, valued skill."
+        },
+        {
+          "title": "Domain + AI wins",
+          "text": "AI skill applied to a specific industry is more valuable than either alone."
+        }
+      ],
+      "learnHeading": "The in-demand skills",
+      "learn": [
+        "building tool-using AI agents with guardrails",
+        "retrieval-augmented generation (RAG) over real data",
+        "prompt engineering with testing and evaluation",
+        "shipping AI features into real products"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "AI Skills in Demand 2026",
+      "context": [
+        "The AI skills in demand in 2026 are strikingly practical. At the top: building tool-using agents that can actually do things, and retrieval-augmented generation (RAG) that grounds AI answers in real data. These show up across job posts because they map directly to what businesses want AI to do.",
+        "Two underrated skills round it out: prompt engineering done as engineering (with testing and evaluation, not guesswork), and the ability to evaluate AI output quality objectively. As more teams ship AI, the people who can tell whether it's working — and fix it when it isn't — become disproportionately valuable.",
+        "The biggest multiplier is combining AI skill with domain knowledge: AI for finance, healthcare, marketing, law, operations. That pairing is far more valuable than generic AI awareness. ONROL's courses are built around exactly these in-demand, buildable skills — with a portfolio to prove them."
+      ],
+      "faqs": [
+        {
+          "q": "What's the single most in-demand AI skill?",
+          "a": "Building tool-using AI agents and RAG systems — they map directly to what employers want AI to do."
+        },
+        {
+          "q": "Are prompt-engineering skills still valued?",
+          "a": "Yes, when done rigorously — with testing and evaluation — as products embed AI more deeply."
+        },
+        {
+          "q": "Do I need to specialise by industry?",
+          "a": "It helps a lot. AI skill plus domain knowledge is more valuable than generic AI awareness."
+        },
+        {
+          "q": "How do I prove these skills?",
+          "a": "Build and deploy the systems, then publish them as a portfolio with clear write-ups."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - AI Skills in Demand 2026",
+        "campaign": "aeo-ai-skills-in-demand-2026",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "AI Skills in Demand 2026",
+          "url": "https://onrol.in/sites/ai-skills-in-demand-2026/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "how-long-does-it-take-to-learn-ai",
+      "title": "How Long Does It Take to Learn AI? | ONROL",
+      "description": "It takes less time than you fear to become useful with AI, and forever to master it. Here's a realistic timeline from first project to job-ready portfolio.",
+      "eyebrow": "AI Learning Guide",
+      "h1": "How long to",
+      "h1accent": "learn AI?",
+      "lead": "It takes less time than you fear to become useful with AI, and forever to master it. Here's a realistic timeline from first project to job-ready portfolio.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Useful in weeks",
+          "text": "You can automate real work within a few weeks of focused practice."
+        },
+        {
+          "title": "Job-ready in months",
+          "text": "A credible portfolio is a months-long, project-based effort for most."
+        },
+        {
+          "title": "Depends on time + method",
+          "text": "Building beats watching; consistency beats intensity."
+        },
+        {
+          "title": "Never really 'done'",
+          "text": "The field evolves, so the durable skill is continuous building."
+        }
+      ],
+      "learnHeading": "A realistic timeline",
+      "learn": [
+        "weeks: first automations and confident tool use",
+        "1–2 months: a working agent and a RAG project",
+        "2–4 months: a deployed app and a real portfolio",
+        "ongoing: adapting as tools evolve"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "How Long to Learn AI",
+      "context": [
+        "There's no single answer, but there is a realistic shape. To become useful with AI — automating tasks, building simple assistants — most people need only a few weeks of consistent, hands-on practice. The barrier is far lower than it was, because AI tools now do much of the heavy lifting.",
+        "To become job-ready — with a portfolio of deployed systems (an agent, a RAG project, an AI app) — expect a months-long, project-based effort. The exact time depends on how much you build versus watch, how many hours you can give it weekly, and your starting point. People who build in a cohort with deadlines tend to finish faster than solo self-learners.",
+        "And honestly, you're never 'done' — the tools shift monthly, so the real skill is the habit of building and adapting. ONROL's live, project-first cohorts are designed to compress the job-ready timeline by keeping you building and accountable rather than stuck in tutorials."
+      ],
+      "faqs": [
+        {
+          "q": "Can I learn AI in a month?",
+          "a": "You can become genuinely useful — automating tasks and building simple tools — in a few weeks of focused practice."
+        },
+        {
+          "q": "How long to get job-ready?",
+          "a": "Typically a few months of project-based work to build a credible portfolio, depending on time and background."
+        },
+        {
+          "q": "Does a bootcamp make it faster?",
+          "a": "Often yes — deadlines, mentors and a cohort help people finish instead of stalling in tutorials."
+        },
+        {
+          "q": "Do I need to keep learning after?",
+          "a": "Yes — the tools evolve, so ongoing building is part of the skill."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - How Long to Learn AI",
+        "campaign": "aeo-how-long-does-it-take-to-learn-ai",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "How Long to Learn AI",
+          "url": "https://onrol.in/sites/how-long-does-it-take-to-learn-ai/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "what-is-an-ai-agent",
+      "title": "What Is an AI Agent? (Plain-English Guide) | ONROL",
+      "description": "An AI agent is software that can decide and act — not just answer. Here's a plain-English explanation of what agents are, how they work, and where they're act",
+      "eyebrow": "AI Learning Guide",
+      "h1": "What is an",
+      "h1accent": "AI agent?",
+      "lead": "An AI agent is software that can decide and act — not just answer. Here's a plain-English explanation of what agents are, how they work, and where they're actually useful.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Agents act, chatbots reply",
+          "text": "An agent can take steps and use tools to complete a goal, not just generate text."
+        },
+        {
+          "title": "Tools are the key",
+          "text": "Agents get power from tools they can call — search, code, APIs, your apps."
+        },
+        {
+          "title": "Guardrails matter",
+          "text": "Useful agents need limits, checks and evaluation to be trusted."
+        },
+        {
+          "title": "Practical, not magic",
+          "text": "The best agents automate specific, well-scoped tasks reliably."
+        }
+      ],
+      "learnHeading": "What an agent needs to work",
+      "learn": [
+        "a goal and clear instructions",
+        "tools it can call (search, APIs, your apps)",
+        "memory or context about the task",
+        "guardrails and a way to check its work"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "What Is an AI Agent?",
+      "context": [
+        "An AI agent is a system built around a language model that can decide what to do and then do it — by calling tools — rather than only producing an answer. Where a chatbot replies to you, an agent can take a goal like 'find these numbers and put them in a report', break it into steps, use tools to complete each step, and return a result.",
+        "The magic isn't the model alone; it's the tools and structure around it. An agent becomes useful when it can call things — a search, a calculator, an API, your internal apps — and when it has guardrails that keep it inside safe, correct behaviour. Without evaluation and limits, agents drift; with them, they automate real work reliably.",
+        "In practice, the most valuable agents are narrow and well-scoped: they automate a specific task end to end. Building one — with tools, guardrails and evaluation — is one of the most in-demand AI skills, and it's a core project in ONROL's applied courses."
+      ],
+      "faqs": [
+        {
+          "q": "What's the difference between an AI agent and a chatbot?",
+          "a": "A chatbot replies with text; an agent can take steps and use tools to actually complete a goal."
+        },
+        {
+          "q": "What makes an agent useful?",
+          "a": "Tools it can call, context about the task, and guardrails plus evaluation so it behaves reliably."
+        },
+        {
+          "q": "Are AI agents hard to build?",
+          "a": "Simple, well-scoped agents are very buildable today — you can create one with the right guidance and tools."
+        },
+        {
+          "q": "Where are agents actually useful?",
+          "a": "Automating specific, repetitive tasks end to end — research, reporting, data entry, support triage."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - What Is an AI Agent?",
+        "campaign": "aeo-what-is-an-ai-agent",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "What Is an AI Agent?",
+          "url": "https://onrol.in/sites/what-is-an-ai-agent/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "what-is-prompt-engineering",
+      "title": "What Is Prompt Engineering? (2026) | ONROL",
+      "description": "Prompt engineering is designing the instructions that make AI reliable — closer to engineering than to clever wording. Here's what it really means in 2026 and",
+      "eyebrow": "AI Learning Guide",
+      "h1": "What is",
+      "h1accent": "prompt engineering?",
+      "lead": "Prompt engineering is designing the instructions that make AI reliable — closer to engineering than to clever wording. Here's what it really means in 2026 and why it still matters.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "More than phrasing",
+          "text": "It's structure, constraints and examples, not magic words."
+        },
+        {
+          "title": "Reliability is the goal",
+          "text": "Good prompts behave consistently across many runs, not just once."
+        },
+        {
+          "title": "Testing makes it engineering",
+          "text": "Real prompt work includes evaluation and versioning."
+        },
+        {
+          "title": "Still relevant",
+          "text": "As AI embeds in products, dependable prompting is a genuine skill."
+        }
+      ],
+      "learnHeading": "What good prompting involves",
+      "learn": [
+        "clear structure, roles and constraints",
+        "examples that show the desired output",
+        "edge-case handling so it doesn't break",
+        "testing and versioning like real code"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "What Is Prompt Engineering?",
+      "context": [
+        "Prompt engineering is the practice of designing the inputs that make an AI model produce reliable, useful output. Early on it looked like a trick — find the magic phrasing. In 2026 the serious version looks like engineering: structuring instructions, setting constraints, providing examples, handling edge cases, and testing that the prompt behaves consistently across many inputs.",
+        "The distinction matters because of reliability. A prompt that works once in a demo but fails one time in ten is useless in a product. Professionals treat prompts like code — they version them, build evaluation sets to measure quality, and iterate. That discipline is what separates a party trick from a production skill.",
+        "Some claim prompt engineering is 'dead' as models get better. In reality, as AI is embedded into more products, designing prompts that behave dependably — with testing and versioning — remains a real, hireable skill. It's a core, hands-on part of ONROL's applied AI courses."
+      ],
+      "faqs": [
+        {
+          "q": "Is prompt engineering just about wording?",
+          "a": "No — it's structure, constraints, examples, edge-case handling, plus testing and versioning for reliability."
+        },
+        {
+          "q": "Is prompt engineering dead in 2026?",
+          "a": "No. As AI embeds into products, dependable, tested prompting remains a genuine, valued skill."
+        },
+        {
+          "q": "Do I need to code to do prompt engineering?",
+          "a": "No coding is required to start, though evaluation and integration benefit from a little scripting."
+        },
+        {
+          "q": "How do I get good at it?",
+          "a": "Build real prompt-driven tools, create test sets to measure quality, and iterate — practice, not theory."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - What Is Prompt Engineering?",
+        "campaign": "aeo-what-is-prompt-engineering",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "What Is Prompt Engineering?",
+          "url": "https://onrol.in/sites/what-is-prompt-engineering/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "what-is-generative-ai",
+      "title": "What Is Generative AI? (Plain-English Guide) | ONROL",
+      "description": "Generative AI is technology that creates new content — text, images, code, audio — from patterns it learned. Here's a plain-English guide to what it is, how i",
+      "eyebrow": "AI Learning Guide",
+      "h1": "What is",
+      "h1accent": "generative AI?",
+      "lead": "Generative AI is technology that creates new content — text, images, code, audio — from patterns it learned. Here's a plain-English guide to what it is, how it works, and how to use it well.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "It creates, not just classifies",
+          "text": "Generative AI produces new content rather than only labelling existing data."
+        },
+        {
+          "title": "It predicts patterns",
+          "text": "It generates by predicting likely next pieces based on training data."
+        },
+        {
+          "title": "It can be wrong confidently",
+          "text": "Grounding and checking matter — it can fabricate."
+        },
+        {
+          "title": "Building beats watching",
+          "text": "Real value comes from building grounded tools, not just chatting."
+        }
+      ],
+      "learnHeading": "How to use it well",
+      "learn": [
+        "ground it in real data to reduce fabrication",
+        "give clear structure and examples",
+        "verify important output before trusting it",
+        "build repeatable tools, not one-off chats"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "What Is Generative AI?",
+      "context": [
+        "Generative AI refers to systems that create new content — text, images, code, music, video — rather than just analysing or classifying existing data. They work by learning patterns from vast training data and then predicting plausible new output: the next word, the next pixel, the next note. That's why they can feel creative, and also why they can be confidently wrong.",
+        "The practical skill isn't using a chatbot; it's building generative tools that are reliable. That means grounding output in real data (so it cites facts instead of inventing them), giving structure and examples, and verifying anything important. Done well, generative AI drafts, summarises, designs and codes at remarkable speed — as a multiplier for a skilled human, not a replacement for judgement.",
+        "Understanding generative AI deeply enough to build with it — grounded assistants, content engines, cited answer tools — is a highly valuable skill. That's the focus of ONROL's generative-AI course: build real, dependable generative tools, not just prompt a chatbot."
+      ],
+      "faqs": [
+        {
+          "q": "What does generative AI actually do?",
+          "a": "It creates new content — text, images, code, audio — by predicting patterns learned from training data."
+        },
+        {
+          "q": "Why does generative AI make mistakes?",
+          "a": "It predicts plausible output, so without grounding it can fabricate confidently. Grounding and verification reduce this."
+        },
+        {
+          "q": "Is generative AI the same as ChatGPT?",
+          "a": "ChatGPT is one product built on generative AI; the field is much broader, spanning text, images, code and more."
+        },
+        {
+          "q": "How do I use generative AI professionally?",
+          "a": "Build grounded, repeatable tools and verify important output — not one-off chats."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - What Is Generative AI?",
+        "campaign": "aeo-what-is-generative-ai",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "What Is Generative AI?",
+          "url": "https://onrol.in/sites/what-is-generative-ai/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "what-is-rag-retrieval-augmented-generation",
+      "title": "What Is RAG (Retrieval-Augmented Generation)? | ONROL",
+      "description": "RAG lets AI answer using your data instead of only what it memorised — the technique behind trustworthy AI assistants. Here's a plain-English guide to how it ",
+      "eyebrow": "AI Learning Guide",
+      "h1": "What is",
+      "h1accent": "RAG?",
+      "lead": "RAG lets AI answer using your data instead of only what it memorised — the technique behind trustworthy AI assistants. Here's a plain-English guide to how it works and why it matters.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Grounds AI in your data",
+          "text": "RAG feeds relevant documents to the model at answer time."
+        },
+        {
+          "title": "Reduces made-up answers",
+          "text": "Because answers come from retrieved sources, not just memory."
+        },
+        {
+          "title": "Enables citations",
+          "text": "You can show where an answer came from."
+        },
+        {
+          "title": "Core, hireable skill",
+          "text": "RAG is one of the most in-demand AI-building techniques."
+        }
+      ],
+      "learnHeading": "How RAG works, simply",
+      "learn": [
+        "store your documents so they can be searched by meaning",
+        "retrieve the most relevant pieces for a question",
+        "feed those pieces to the model as context",
+        "get an answer grounded in — and citing — your sources"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "What Is RAG?",
+      "context": [
+        "RAG, or Retrieval-Augmented Generation, is a technique that lets an AI model answer using specific, up-to-date information — like your company's documents — instead of relying only on what it memorised during training. It's the backbone of most trustworthy AI assistants you've seen that can cite sources.",
+        "The mechanism is intuitive. Your documents are stored so they can be searched by meaning, not just keywords. When someone asks a question, the system retrieves the most relevant pieces and hands them to the model as context. The model then answers grounded in those pieces — and can point to where the answer came from. This dramatically reduces fabrication and keeps answers current.",
+        "Because it turns a general model into a reliable expert on your data, RAG is one of the most in-demand AI-building skills in 2026. Building a working RAG system over real data is a core project in ONROL's applied AI and AI-engineering tracks."
+      ],
+      "faqs": [
+        {
+          "q": "What problem does RAG solve?",
+          "a": "It grounds AI answers in specific, current data (like your documents), reducing fabrication and enabling citations."
+        },
+        {
+          "q": "Is RAG hard to build?",
+          "a": "A working RAG system is very buildable today with the right guidance — it's a common hands-on project."
+        },
+        {
+          "q": "How is RAG different from fine-tuning?",
+          "a": "RAG supplies information at answer time; fine-tuning changes the model itself. RAG is usually cheaper and easier to keep current."
+        },
+        {
+          "q": "Why is RAG in demand?",
+          "a": "It turns a general model into a reliable expert on your data — exactly what businesses want from AI."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - What Is RAG?",
+        "campaign": "aeo-what-is-rag-retrieval-augmented-generation",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "What Is RAG?",
+          "url": "https://onrol.in/sites/what-is-rag-retrieval-augmented-generation/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "ai-vs-machine-learning",
+      "title": "AI vs Machine Learning: What's the Difference? | ONROL",
+      "description": "AI and machine learning get used interchangeably, but they aren't the same. Here's a clear, plain-English explanation — and which one you should actually lear",
+      "eyebrow": "AI Learning Guide",
+      "h1": "AI vs",
+      "h1accent": "machine learning",
+      "lead": "AI and machine learning get used interchangeably, but they aren't the same. Here's a clear, plain-English explanation — and which one you should actually learn.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "AI is the goal",
+          "text": "AI is the broad aim of machines doing intelligent tasks."
+        },
+        {
+          "title": "ML is one method",
+          "text": "Machine learning is a way to achieve AI by learning from data."
+        },
+        {
+          "title": "Today's tools sit on top",
+          "text": "Most modern AI tools are built on ML, especially deep learning."
+        },
+        {
+          "title": "You can build without ML theory",
+          "text": "Applied AI building rarely requires training models from scratch."
+        }
+      ],
+      "learnHeading": "How they relate",
+      "learn": [
+        "AI = the broad field of intelligent behaviour",
+        "ML = systems that learn patterns from data",
+        "deep learning = the ML approach behind modern AI",
+        "applied AI = building with existing models and tools"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "AI vs Machine Learning",
+      "context": [
+        "Artificial Intelligence (AI) is the broad idea of machines performing tasks that normally require human intelligence — understanding language, recognising images, making decisions. Machine Learning (ML) is one approach to achieving AI: instead of hand-coding rules, you let a system learn patterns from data. So ML is a subset of AI, not a synonym.",
+        "Most of what people call 'AI' today — chatbots, image generators, assistants — is built using ML, and specifically deep learning. But here's the practical part: building useful AI in 2026 usually means using powerful existing models and tools, not training your own from scratch. That's a different, more accessible skill than classical ML research.",
+        "So which should you learn? If your goal is to build AI products and features, focus on applied AI — using and combining existing models, agents and RAG. Classical ML theory is valuable for some roles but isn't a prerequisite to start building. ONROL's courses focus on that applied, buildable path."
+      ],
+      "faqs": [
+        {
+          "q": "Is machine learning the same as AI?",
+          "a": "No — ML is one method for achieving AI. AI is the broad field; ML is systems that learn from data."
+        },
+        {
+          "q": "Do I need to learn ML to work with AI?",
+          "a": "Not to build with modern AI tools and models. Classical ML theory helps some roles but isn't required to start."
+        },
+        {
+          "q": "What is deep learning then?",
+          "a": "A powerful branch of ML, using neural networks, that underlies most modern AI tools."
+        },
+        {
+          "q": "Which should a beginner focus on?",
+          "a": "Applied AI — building with existing models, agents and RAG — is the most accessible, in-demand starting point."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - AI vs Machine Learning",
+        "campaign": "aeo-ai-vs-machine-learning",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "AI vs Machine Learning",
+          "url": "https://onrol.in/sites/ai-vs-machine-learning/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "do-you-need-a-degree-for-ai",
+      "title": "Do You Need a Degree for an AI Career? | ONROL",
+      "description": "You don't need a specific degree to build an AI career in 2026 — you need proof you can build. Here's the honest picture of degrees, portfolios and how hiring",
+      "eyebrow": "AI Learning Guide",
+      "h1": "Do you need a degree",
+      "h1accent": "for AI?",
+      "lead": "You don't need a specific degree to build an AI career in 2026 — you need proof you can build. Here's the honest picture of degrees, portfolios and how hiring actually works.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Portfolio over paper",
+          "text": "Demonstrable projects increasingly outweigh a specific degree for applied roles."
+        },
+        {
+          "title": "Degrees still help some paths",
+          "text": "Research and certain roles still value formal credentials."
+        },
+        {
+          "title": "Skills are checkable now",
+          "text": "Deployed AI systems prove ability directly."
+        },
+        {
+          "title": "Access has widened",
+          "text": "Anyone who builds can enter, regardless of background."
+        }
+      ],
+      "learnHeading": "What actually gets you hired",
+      "learn": [
+        "a portfolio of deployed AI systems",
+        "clear write-ups explaining your decisions",
+        "the ability to talk through trade-offs",
+        "continuous, visible building"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "Do You Need a Degree for AI?",
+      "context": [
+        "For most applied AI roles in 2026, you do not need a specific AI degree. Hiring for AI engineering, AI product work and applied building increasingly weighs a portfolio of working systems over formal credentials — because a deployed agent or RAG system proves capability far more directly than a transcript.",
+        "That's not to say degrees are worthless. Research roles, some large enterprises, and certain specialised positions still value formal credentials, and a strong academic background can open doors. But for the fast-growing world of applied AI, the barrier has shifted from 'what did you study' to 'what have you built and can you explain it'.",
+        "The practical takeaway: if you have a degree, great — pair it with a portfolio. If you don't, you can still enter by building in public and documenting your work. That portfolio-first path is exactly what ONROL is designed to produce, whatever your background."
+      ],
+      "faqs": [
+        {
+          "q": "Can I get an AI job without a degree?",
+          "a": "For many applied AI roles, yes — a portfolio of working systems increasingly matters more than a specific degree."
+        },
+        {
+          "q": "When does a degree still matter?",
+          "a": "Research roles, some enterprises and specialised positions still value formal credentials."
+        },
+        {
+          "q": "What replaces a degree in AI hiring?",
+          "a": "A portfolio of deployed AI systems, clear write-ups, and the ability to explain your trade-offs."
+        },
+        {
+          "q": "I have a non-tech degree — can I switch to AI?",
+          "a": "Yes. Many people transition by building applied AI projects; your prior domain often becomes an advantage."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - Do You Need a Degree for AI?",
+        "campaign": "aeo-do-you-need-a-degree-for-ai",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "Do You Need a Degree for AI?",
+          "url": "https://onrol.in/sites/do-you-need-a-degree-for-ai/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "how-to-build-an-ai-portfolio",
+      "title": "How to Build an AI Portfolio That Gets You Hired | ONROL",
+      "description": "In AI, your portfolio is your résumé. Here's how to build one that proves capability — what projects to include, how to present them, and what employers actua",
+      "eyebrow": "AI Learning Guide",
+      "h1": "Build an AI portfolio",
+      "h1accent": "that gets hired",
+      "lead": "In AI, your portfolio is your résumé. Here's how to build one that proves capability — what projects to include, how to present them, and what employers actually look for.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Deployed beats described",
+          "text": "Working, reachable projects beat write-ups of ideas."
+        },
+        {
+          "title": "Range shows depth",
+          "text": "An agent, a RAG system and an app cover the key skills."
+        },
+        {
+          "title": "Explain your decisions",
+          "text": "Employers hire for judgement — show your trade-offs."
+        },
+        {
+          "title": "Real problems win",
+          "text": "Projects tied to real use cases stand out."
+        }
+      ],
+      "learnHeading": "What to include",
+      "learn": [
+        "a tool-using agent with evaluation",
+        "a RAG system over real data",
+        "a deployed AI app or feature",
+        "short write-ups explaining each decision"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "How to Build an AI Portfolio",
+      "context": [
+        "In AI, a portfolio does what a résumé can't: it proves you can actually build. The strongest portfolios contain deployed, reachable projects — not screenshots of ideas — because a working system a hiring manager can open is worth more than any bullet point. Aim for range that maps to real skills: a tool-using agent, a retrieval (RAG) system, and a deployed AI app or feature.",
+        "Presentation matters as much as the code. For each project, write a short, honest explanation: what problem it solves, how you built it, what trade-offs you made, and what you'd improve. This is where you demonstrate judgement — the thing employers are really hiring for. A well-explained modest project beats an impressive-looking one you can't reason about.",
+        "Finally, tie projects to real problems, ideally from a domain you know. 'AI that drafts compliant insurance summaries' beats 'a generic chatbot'. ONROL's courses are built to produce exactly this kind of portfolio — you finish with deployed systems and the write-ups to explain them."
+      ],
+      "faqs": [
+        {
+          "q": "What projects should an AI portfolio have?",
+          "a": "A tool-using agent, a RAG system over real data, and a deployed AI app — plus clear write-ups."
+        },
+        {
+          "q": "Does the code need to be perfect?",
+          "a": "No — it needs to work and be explainable. Judgement and reasoning matter more than polish."
+        },
+        {
+          "q": "Where do I host my portfolio?",
+          "a": "Anywhere reachable — a simple site or repo with live links and short write-ups per project."
+        },
+        {
+          "q": "How many projects is enough?",
+          "a": "A few strong, deployed, well-explained projects beat many shallow ones."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - How to Build an AI Portfolio",
+        "campaign": "aeo-how-to-build-an-ai-portfolio",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "How to Build an AI Portfolio",
+          "url": "https://onrol.in/sites/how-to-build-an-ai-portfolio/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "is-ai-a-good-career",
+      "title": "Is AI a Good Career Choice in 2026? | ONROL",
+      "description": "AI is one of the strongest career bets of the decade — but the best opportunities aren't where most people look. Here's an honest take on demand, roles, and h",
+      "eyebrow": "AI Learning Guide",
+      "h1": "Is AI a good",
+      "h1accent": "career choice?",
+      "lead": "AI is one of the strongest career bets of the decade — but the best opportunities aren't where most people look. Here's an honest take on demand, roles, and how to position yourself.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Broad, durable demand",
+          "text": "AI is spreading into nearly every industry and function."
+        },
+        {
+          "title": "Beyond 'AI engineer'",
+          "text": "Applied AI roles exist across product, ops, marketing and more."
+        },
+        {
+          "title": "Domain + AI is the edge",
+          "text": "Pairing AI with an industry beats generic AI skill."
+        },
+        {
+          "title": "Entry is possible now",
+          "text": "Portfolio-first paths lower the barrier to enter."
+        }
+      ],
+      "learnHeading": "Where the opportunities are",
+      "learn": [
+        "AI-engineering and AI-developer roles",
+        "AI product and program roles",
+        "AI-enabled roles inside your current field",
+        "freelance and consulting AI work"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "Is AI a Good Career?",
+      "context": [
+        "By most measures, AI is among the strongest career bets available in 2026. Demand isn't confined to a few tech hubs or the job title 'AI engineer' — it's spreading across industries and functions as organisations look for people who can actually put AI to work. That breadth is what makes it durable rather than a passing spike.",
+        "The most overlooked opportunity is applying AI inside your existing field. A marketer, analyst, lawyer or operations lead who can build AI systems is often more valuable — and faces less competition — than a generalist chasing 'AI engineer' roles. Domain knowledge plus AI capability is a rare, well-paid combination.",
+        "The honest caveat: the field moves fast, so it rewards continuous learners who build rather than coast. If that suits you, the entry barrier is lower than ever thanks to portfolio-first paths. ONROL is built to get you there — applied skills and a portfolio, whatever your starting field."
+      ],
+      "faqs": [
+        {
+          "q": "Is AI a stable career or a bubble?",
+          "a": "Demand spans many industries and functions, which makes it more durable than a single-hype spike."
+        },
+        {
+          "q": "What AI careers exist beyond AI engineer?",
+          "a": "AI product roles, AI-enabled roles within your field, freelance/consulting, and more."
+        },
+        {
+          "q": "Do I need to relocate for AI work?",
+          "a": "Often no — much AI work is remote-friendly and global, especially applied roles."
+        },
+        {
+          "q": "How do I start an AI career?",
+          "a": "Build applied projects, pair AI with a domain you know, and publish a portfolio."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - Is AI a Good Career?",
+        "campaign": "aeo-is-ai-a-good-career",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "Is AI a Good Career?",
+          "url": "https://onrol.in/sites/is-ai-a-good-career/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "how-to-switch-career-to-ai",
+      "title": "How to Switch Your Career to AI (From Any Field) | ONROL",
+      "description": "You don't have to start over to move into AI — your current field is often your biggest advantage. Here's a practical, honest plan to transition from any back",
+      "eyebrow": "AI Learning Guide",
+      "h1": "Switch your career",
+      "h1accent": "to AI",
+      "lead": "You don't have to start over to move into AI — your current field is often your biggest advantage. Here's a practical, honest plan to transition from any background.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Your domain is an asset",
+          "text": "AI plus your existing field is a rare, valuable combination."
+        },
+        {
+          "title": "Bridge, don't restart",
+          "text": "Apply AI to problems you already understand."
+        },
+        {
+          "title": "Build proof fast",
+          "text": "A small portfolio opens doors quicker than more courses."
+        },
+        {
+          "title": "Transition, then leap",
+          "text": "Add AI in your current role before switching fully."
+        }
+      ],
+      "learnHeading": "A practical transition plan",
+      "learn": [
+        "identify AI use cases in your current field",
+        "build 2–3 projects solving those real problems",
+        "apply AI in your current role to gain proof",
+        "move into an AI-focused role with a portfolio"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "How to Switch Career to AI",
+      "context": [
+        "Switching to AI rarely means throwing away your career and starting from zero. The most successful transitions bridge from what you already know: a finance professional building AI for financial workflows, a teacher building AI learning tools, an operations lead automating real processes. Your domain knowledge is exactly what makes your AI work valuable and distinctive.",
+        "A practical plan: first, identify concrete AI use cases in your current field. Then build two or three projects that solve those real problems — this is your proof. Next, start applying AI in your current role, which both builds skill and creates a track record. Finally, with a portfolio in hand, move into a more AI-focused role or offer AI services in your domain.",
+        "This bridge approach is faster and lower-risk than restarting, and it plays to your strengths. It's the transition ONROL's applied, project-first courses are designed to support — you build a domain-relevant portfolio while keeping your day job."
+      ],
+      "faqs": [
+        {
+          "q": "Can I move into AI from a non-tech job?",
+          "a": "Yes — many do. Applying AI to problems in your existing field is often the fastest, strongest path."
+        },
+        {
+          "q": "Do I need to quit my job to switch?",
+          "a": "Usually not. Start by applying AI in your current role and building projects on the side."
+        },
+        {
+          "q": "What's the first step?",
+          "a": "Find real AI use cases in your field and build a project that solves one — proof beats more courses."
+        },
+        {
+          "q": "How long does a transition take?",
+          "a": "Often a few months of project-based effort to build a portfolio, depending on your time and background."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - How to Switch Career to AI",
+        "campaign": "aeo-how-to-switch-career-to-ai",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "How to Switch Career to AI",
+          "url": "https://onrol.in/sites/how-to-switch-career-to-ai/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "best-way-to-learn-ai-in-2026",
+      "title": "The Best Way to Learn AI in 2026 | ONROL",
+      "description": "The best way to learn AI in 2026 isn't more videos — it's building real things with accountability. Here's what works, what wastes time, and how to choose you",
+      "eyebrow": "AI Learning Guide",
+      "h1": "The best way",
+      "h1accent": "to learn AI",
+      "lead": "The best way to learn AI in 2026 isn't more videos — it's building real things with accountability. Here's what works, what wastes time, and how to choose your path.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Build, don't binge",
+          "text": "Projects create durable skill; passive video rarely does."
+        },
+        {
+          "title": "Accountability finishes you",
+          "text": "Cohorts and deadlines beat solo willpower."
+        },
+        {
+          "title": "Applied over academic",
+          "text": "Start by building, add theory as needed."
+        },
+        {
+          "title": "Publish as you go",
+          "text": "A growing portfolio is both proof and motivation."
+        }
+      ],
+      "learnHeading": "What actually works",
+      "learn": [
+        "learn by building small, real projects",
+        "get feedback from mentors or peers",
+        "work to deadlines so you finish",
+        "publish projects to build a portfolio"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "Best Way to Learn AI 2026",
+      "context": [
+        "The best way to learn AI in 2026 is defined more by method than by any specific resource. The method that works is building: creating small, real projects that teach concepts through doing. The method that mostly fails is passive consumption — watching endless videos or collecting courses you never finish. Skill comes from output, not input.",
+        "Two things dramatically improve outcomes: feedback and accountability. Feedback from mentors or peers catches mistakes and speeds learning; accountability — deadlines, a cohort, people expecting your work — is what actually gets people to finish rather than stall. This is why live cohorts tend to outperform self-paced video for most learners, despite the flexibility of the latter.",
+        "So the best path is: build applied projects, get feedback, work to deadlines, and publish as you go. Whether you do that solo or in a structured program, keep the principle. ONROL is built entirely around it — live, mentor-led, project-first, and global."
+      ],
+      "faqs": [
+        {
+          "q": "What's the fastest way to learn AI?",
+          "a": "Build small real projects with feedback and deadlines — output-based learning beats passive video."
+        },
+        {
+          "q": "Are self-paced courses or live cohorts better?",
+          "a": "Self-paced offers flexibility, but live cohorts' accountability helps most people actually finish and build."
+        },
+        {
+          "q": "Should I learn theory or practice first?",
+          "a": "Start by building; add theory as specific needs arise. Applied-first keeps momentum."
+        },
+        {
+          "q": "How do I stay motivated?",
+          "a": "Publish projects as you go — visible progress and accountability keep you going."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - Best Way to Learn AI 2026",
+        "campaign": "aeo-best-way-to-learn-ai-in-2026",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "Best Way to Learn AI 2026",
+          "url": "https://onrol.in/sites/best-way-to-learn-ai-in-2026/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "ai-jobs-for-beginners",
+      "title": "AI Jobs for Beginners: Where to Start | ONROL",
+      "description": "You don't need years of experience to land your first AI-related role — you need the right entry points and proof. Here's where beginners actually break in.",
+      "eyebrow": "AI Learning Guide",
+      "h1": "AI jobs",
+      "h1accent": "for beginners",
+      "lead": "You don't need years of experience to land your first AI-related role — you need the right entry points and proof. Here's where beginners actually break in.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Entry points exist",
+          "text": "Several roles welcome capable beginners with a portfolio."
+        },
+        {
+          "title": "Hybrid roles are easiest",
+          "text": "AI-enabled versions of familiar jobs are accessible first steps."
+        },
+        {
+          "title": "Proof beats experience",
+          "text": "A portfolio substitutes for a track record early on."
+        },
+        {
+          "title": "Freelance builds a record",
+          "text": "Small AI gigs create real experience fast."
+        }
+      ],
+      "learnHeading": "Beginner-friendly entry points",
+      "learn": [
+        "AI-enabled versions of your current role",
+        "junior AI/automation builder roles",
+        "freelance AI projects and small gigs",
+        "internships and apprenticeships with AI work"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "AI Jobs for Beginners",
+      "context": [
+        "Breaking into AI as a beginner is more achievable than it looks, provided you target the right entry points. The easiest is the AI-enabled version of a job you can already do: a marketer, analyst or support lead who can build AI workflows is hireable now, because you combine a familiar role with a scarce new skill.",
+        "Beyond that, junior automation/AI-builder roles, freelance AI gigs, and internships or apprenticeships with real AI work are all realistic first steps. The common thread is that they value what you can build over how long you've done it. Early on, a portfolio of small, working AI projects substitutes for years of experience.",
+        "The fastest way in for most beginners: build a couple of AI projects tied to a field you know, take on a small freelance project or two to create a track record, and target hybrid roles. That's the on-ramp ONROL's applied courses are designed to build toward — capability plus proof."
+      ],
+      "faqs": [
+        {
+          "q": "Can beginners really get AI jobs?",
+          "a": "Yes — especially AI-enabled versions of familiar roles, junior builder roles, and freelance work, backed by a portfolio."
+        },
+        {
+          "q": "What's the easiest AI job to start with?",
+          "a": "Often the AI-enabled version of your current role, since you pair existing skills with new AI capability."
+        },
+        {
+          "q": "Do I need experience to freelance AI work?",
+          "a": "A small portfolio is usually enough to start; early gigs then build your track record."
+        },
+        {
+          "q": "How do I prove myself as a beginner?",
+          "a": "A portfolio of small, working AI projects tied to real problems does the proving."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - AI Jobs for Beginners",
+        "campaign": "aeo-ai-jobs-for-beginners",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "AI Jobs for Beginners",
+          "url": "https://onrol.in/sites/ai-jobs-for-beginners/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "how-to-use-ai-at-work",
+      "title": "How to Use AI at Work (Without Getting It Wrong) | ONROL",
+      "description": "Using AI at work can save hours — or create expensive mistakes. Here's how to use it effectively and responsibly, whatever your role.",
+      "eyebrow": "AI Learning Guide",
+      "h1": "Use AI at work,",
+      "h1accent": "the right way",
+      "lead": "Using AI at work can save hours — or create expensive mistakes. Here's how to use it effectively and responsibly, whatever your role.",
+      "meta": [
+        {
+          "icon": "chat",
+          "text": "Straight-answer guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By ONROL mentors"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Automate the repetitive",
+          "text": "Point AI at recurring, low-judgement tasks first."
+        },
+        {
+          "title": "Verify what matters",
+          "text": "Always check AI output before it affects real decisions."
+        },
+        {
+          "title": "Mind the data",
+          "text": "Know what's safe to put into AI tools."
+        },
+        {
+          "title": "Build workflows, not one-offs",
+          "text": "Repeatable systems compound the time savings."
+        }
+      ],
+      "learnHeading": "How to start safely",
+      "learn": [
+        "pick a repetitive task to automate first",
+        "keep a human check on important output",
+        "avoid pasting sensitive data into open tools",
+        "turn what works into a reusable workflow"
+      ],
+      "contextKicker": "The full answer",
+      "contextHeading": "How to Use AI at Work",
+      "context": [
+        "Used well, AI at work is a genuine multiplier: it can draft, summarise, analyse and automate repetitive tasks, giving you hours back each week. The best place to start is exactly there — low-judgement, recurring work like first drafts, summaries, formatting and routine research, where speed matters more than nuance.",
+        "Used carelessly, AI creates real risk. It can be confidently wrong, so anything that affects a real decision, customer or record needs a human check. And data matters: know your organisation's rules about what's safe to put into AI tools, and default to caution with sensitive or confidential information. Responsible use is a skill, not an afterthought.",
+        "The people who benefit most don't just chat with AI occasionally — they build repeatable workflows around it, so the time savings compound. Learning to do that well, safely, is a core outcome of ONROL's applied courses, whatever your role or industry."
+      ],
+      "faqs": [
+        {
+          "q": "What tasks should I use AI for at work?",
+          "a": "Start with repetitive, low-judgement work — drafts, summaries, formatting, routine research."
+        },
+        {
+          "q": "Is it safe to put company data into AI tools?",
+          "a": "Only per your organisation's rules. Default to caution with sensitive or confidential data."
+        },
+        {
+          "q": "How do I avoid AI mistakes at work?",
+          "a": "Keep a human check on anything affecting real decisions — AI can be confidently wrong."
+        },
+        {
+          "q": "How do I get more from AI at work?",
+          "a": "Build repeatable workflows instead of one-off chats, so the time savings compound."
+        }
+      ],
+      "cta": "Learn it by building — join a cohort",
+      "regHeading": "Prefer to learn this by building?",
+      "regSub": "ONROL teaches all of this live and project-first, online worldwide. Drop your details and we'll share the next cohort.",
+      "form": {
+        "source": "AEO - How to Use AI at Work",
+        "campaign": "aeo-how-to-use-ai-at-work",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "How to Use AI at Work",
+          "url": "https://onrol.in/sites/how-to-use-ai-at-work/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "online-vs-offline-ai-course",
+      "title": "Online vs Offline AI Course: Which Is Better? | ONROL",
+      "description": "Should you learn AI online or in a classroom? For most people in 2026, live online wins — but not for every reason. Here's an honest, brand-free comparison.",
+      "eyebrow": "Decision Guide",
+      "h1": "Online vs offline",
+      "h1accent": "AI course",
+      "lead": "Should you learn AI online or in a classroom? For most people in 2026, live online wins — but not for every reason. Here's an honest, brand-free comparison.",
+      "meta": [
+        {
+          "icon": "target",
+          "text": "Decision guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By category — no brand names"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Access and reach",
+          "text": "Online opens mentors and cohorts worldwide; offline limits you to local options."
+        },
+        {
+          "title": "Live is the real variable",
+          "text": "The gap that matters is live vs recorded, more than online vs offline."
+        },
+        {
+          "title": "Cost and flexibility",
+          "text": "Online usually costs less and fits around a job."
+        },
+        {
+          "title": "Networking nuance",
+          "text": "Offline offers in-person contact; good online cohorts recreate much of it."
+        }
+      ],
+      "learnHeading": "How to decide",
+      "learn": [
+        "prefer live over recorded, whichever the mode",
+        "choose online for access, flexibility and cost",
+        "choose offline only if in-person is essential to you",
+        "in all cases, insist on real projects and mentors"
+      ],
+      "contextKicker": "The honest comparison",
+      "contextHeading": "Online vs Offline AI Course",
+      "context": [
+        "The online-versus-offline question is often the wrong frame. The variable that most affects outcomes isn't location — it's whether the course is live and project-first versus pre-recorded and passive. A live online cohort with mentors beats a mediocre in-person class, and vice versa. Judge that first.",
+        "On the mode itself: online generally wins on access (mentors and peers worldwide, not just your city), flexibility (fits around a job, no commute), and cost. Offline's genuine advantage is in-person contact and networking — real, but increasingly matched by well-run online cohorts with active communities and live sessions.",
+        "For most learners in 2026, live online is the practical choice: the reach and flexibility are decisive, and the networking gap has narrowed. Choose offline only if in-person interaction is genuinely essential to how you learn. Either way, insist on live mentorship and real projects — that's what determines whether you finish able to build. ONROL is built as live, project-first and online worldwide."
+      ],
+      "faqs": [
+        {
+          "q": "Is an online AI course as good as offline?",
+          "a": "For most people, a live online course matches or beats offline — the key factor is live vs recorded, not location."
+        },
+        {
+          "q": "What does offline offer that online doesn't?",
+          "a": "In-person contact and networking — real advantages, though good online cohorts now recreate much of it."
+        },
+        {
+          "q": "Is online cheaper?",
+          "a": "Usually yes, and it removes commuting and relocation costs while fitting around a job."
+        },
+        {
+          "q": "What matters most in either mode?",
+          "a": "Live mentorship and real, deployed projects — that's what determines your outcome."
+        }
+      ],
+      "cta": "Talk to ONROL about your path",
+      "regHeading": "Not sure which path fits you?",
+      "regSub": "Tell us your goal and background — our team will give you a straight recommendation, no pressure.",
+      "form": {
+        "source": "Compare - Online vs Offline AI Course",
+        "campaign": "compare-online-vs-offline-ai-course",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "Online vs Offline AI Course",
+          "url": "https://onrol.in/sites/online-vs-offline-ai-course/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "self-paced-vs-live-ai-course",
+      "title": "Self-Paced vs Live AI Course: Which Should You Choose? | ONROL",
+      "description": "Self-paced courses promise flexibility; live courses deliver completion. Here's an honest, brand-free look at which actually gets you to real skill.",
+      "eyebrow": "Decision Guide",
+      "h1": "Self-paced vs live",
+      "h1accent": "AI course",
+      "lead": "Self-paced courses promise flexibility; live courses deliver completion. Here's an honest, brand-free look at which actually gets you to real skill.",
+      "meta": [
+        {
+          "icon": "target",
+          "text": "Decision guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By category — no brand names"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Flexibility vs accountability",
+          "text": "Self-paced flexes to your schedule; live keeps you accountable."
+        },
+        {
+          "title": "Completion is the catch",
+          "text": "Self-paced completion rates are notoriously low."
+        },
+        {
+          "title": "Feedback speed",
+          "text": "Live gives real-time feedback; self-paced you're mostly alone."
+        },
+        {
+          "title": "Cost vs outcome",
+          "text": "Self-paced is cheaper up front; unfinished, it costs more in lost time."
+        }
+      ],
+      "learnHeading": "How to decide",
+      "learn": [
+        "choose live if you struggle to finish alone",
+        "choose self-paced only if you're highly self-driven",
+        "either way, prioritise projects and feedback",
+        "consider hybrids that add live check-ins"
+      ],
+      "contextKicker": "The honest comparison",
+      "contextHeading": "Self-Paced vs Live AI Course",
+      "context": [
+        "Self-paced courses are appealing: lower cost, total flexibility, learn whenever you want. The catch is well documented — most people don't finish them. Without deadlines, feedback or anyone expecting your work, self-paced learning collides with everyday life and stalls, no matter how good the content is.",
+        "Live courses trade some flexibility for the two things that most improve outcomes: accountability and feedback. Set sessions, mentors and a cohort create the pressure and support that get people to actually finish and build. For most learners, that difference outweighs the convenience of self-paced.",
+        "The honest guidance: if you're exceptionally self-driven and just need material, self-paced can work. If, like most people, you finish more when others are involved, choose live — or a hybrid that adds live check-ins to flexible content. In every case, prioritise real projects and feedback. ONROL is deliberately live and project-first for exactly this reason."
+      ],
+      "faqs": [
+        {
+          "q": "Are self-paced AI courses worth it?",
+          "a": "They can be for highly self-driven learners, but low completion rates mean many people don't finish them."
+        },
+        {
+          "q": "Why do live courses work better?",
+          "a": "Accountability and real-time feedback get people to finish and build — the biggest predictors of outcome."
+        },
+        {
+          "q": "Is self-paced cheaper overall?",
+          "a": "Cheaper up front, but an unfinished course costs more in lost time and momentum."
+        },
+        {
+          "q": "What's a good middle ground?",
+          "a": "Hybrids that pair flexible content with live check-ins and mentor feedback."
+        }
+      ],
+      "cta": "Talk to ONROL about your path",
+      "regHeading": "Not sure which path fits you?",
+      "regSub": "Tell us your goal and background — our team will give you a straight recommendation, no pressure.",
+      "form": {
+        "source": "Compare - Self-Paced vs Live AI Course",
+        "campaign": "compare-self-paced-vs-live-ai-course",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "Self-Paced vs Live AI Course",
+          "url": "https://onrol.in/sites/self-paced-vs-live-ai-course/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "ai-bootcamp-vs-degree",
+      "title": "AI Bootcamp vs Degree: Which Is Right for You? | ONROL",
+      "description": "A multi-year degree or a focused bootcamp? They serve different goals. Here's an honest, brand-free comparison to help you choose for your situation.",
+      "eyebrow": "Decision Guide",
+      "h1": "AI bootcamp vs",
+      "h1accent": "degree",
+      "lead": "A multi-year degree or a focused bootcamp? They serve different goals. Here's an honest, brand-free comparison to help you choose for your situation.",
+      "meta": [
+        {
+          "icon": "target",
+          "text": "Decision guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By category — no brand names"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Time and cost",
+          "text": "Bootcamps are short and focused; degrees are long and broad."
+        },
+        {
+          "title": "Depth vs speed",
+          "text": "Degrees go deep and theoretical; bootcamps get you building fast."
+        },
+        {
+          "title": "Outcome focus",
+          "text": "Bootcamps target job-ready skills; degrees target broad foundations."
+        },
+        {
+          "title": "It's not either/or",
+          "text": "Many pair a degree with a bootcamp or self-built portfolio."
+        }
+      ],
+      "learnHeading": "How to decide",
+      "learn": [
+        "choose a bootcamp for fast, applied, job-ready skills",
+        "choose a degree for research paths or deep theory",
+        "for most applied roles, a bootcamp + portfolio suffices",
+        "whatever you choose, build a portfolio"
+      ],
+      "contextKicker": "The honest comparison",
+      "contextHeading": "AI Bootcamp vs Degree",
+      "context": [
+        "A degree and a bootcamp answer different questions. A degree offers breadth, depth and theoretical foundations over years, and remains valuable for research roles, some enterprises and specialised paths. A bootcamp offers a short, focused, applied route to job-ready skills — trading breadth for speed and practicality.",
+        "For the fast-growing world of applied AI — building agents, RAG systems and AI features — a focused, project-first bootcamp plus a strong portfolio is often enough to enter, because hiring increasingly weighs demonstrated building over credentials. For research or highly specialised roles, a degree (often postgraduate) still carries weight.",
+        "It's rarely truly either/or. Many people pair formal education with a bootcamp or a self-built portfolio to become both grounded and job-ready. The deciding factors are your goal, time and budget. If you want applied skills fast, a project-first program like ONROL's — with a portfolio outcome — is designed exactly for that."
+      ],
+      "faqs": [
+        {
+          "q": "Is a bootcamp enough to get an AI job?",
+          "a": "For many applied roles, a focused bootcamp plus a strong portfolio is enough, since hiring weighs demonstrated building."
+        },
+        {
+          "q": "When is a degree the better choice?",
+          "a": "For research roles, certain enterprises, and highly specialised positions that value formal credentials."
+        },
+        {
+          "q": "Can I do both?",
+          "a": "Yes — many pair a degree with a bootcamp or self-built portfolio to be both grounded and job-ready."
+        },
+        {
+          "q": "What matters most either way?",
+          "a": "A portfolio of real, deployed projects that proves you can build."
+        }
+      ],
+      "cta": "Talk to ONROL about your path",
+      "regHeading": "Not sure which path fits you?",
+      "regSub": "Tell us your goal and background — our team will give you a straight recommendation, no pressure.",
+      "form": {
+        "source": "Compare - AI Bootcamp vs Degree",
+        "campaign": "compare-ai-bootcamp-vs-degree",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "AI Bootcamp vs Degree",
+          "url": "https://onrol.in/sites/ai-bootcamp-vs-degree/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "free-vs-paid-ai-course",
+      "title": "Free vs Paid AI Course: Is Paying Worth It? | ONROL",
+      "description": "There's excellent free AI content — so is a paid course ever worth it? Here's an honest, brand-free breakdown of what you pay for and when it matters.",
+      "eyebrow": "Decision Guide",
+      "h1": "Free vs paid",
+      "h1accent": "AI course",
+      "lead": "There's excellent free AI content — so is a paid course ever worth it? Here's an honest, brand-free breakdown of what you pay for and when it matters.",
+      "meta": [
+        {
+          "icon": "target",
+          "text": "Decision guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By category — no brand names"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Free is great for exposure",
+          "text": "Free content is ideal for exploring and basics."
+        },
+        {
+          "title": "Paid buys structure",
+          "text": "You pay for a path, mentors, feedback and accountability."
+        },
+        {
+          "title": "Completion is the divide",
+          "text": "Paid, live programs get more people to finish."
+        },
+        {
+          "title": "Match spend to goal",
+          "text": "Casual curiosity vs career change need different investments."
+        }
+      ],
+      "learnHeading": "How to decide",
+      "learn": [
+        "start free to explore and confirm interest",
+        "pay when you need structure and accountability",
+        "value mentorship, feedback and a portfolio outcome",
+        "avoid paying for what's just repackaged free video"
+      ],
+      "contextKicker": "The honest comparison",
+      "contextHeading": "Free vs Paid AI Course",
+      "context": [
+        "The internet is full of excellent free AI material, and for exploring the field or picking up basics, it's often all you need. If your goal is casual curiosity, start free — there's no reason to pay to find out whether AI interests you.",
+        "What a good paid course buys isn't information — it's structure, mentorship, feedback, accountability and a clear path to a portfolio. Those are precisely the things free content can't provide, and precisely what determines whether most people finish and end up able to build. If your goal is a career change or job-ready skills, that structure is usually worth paying for.",
+        "The caveat: not all paid courses earn it. Avoid ones that just repackage free videos with no live support or real projects. Judge a paid course on mentorship, live interaction and portfolio outcomes — that's the value. ONROL is built around those, which is what separates a worthwhile program from repackaged content."
+      ],
+      "faqs": [
+        {
+          "q": "Are free AI courses good enough?",
+          "a": "For exploring the field and basics, often yes. For structure, mentorship and a portfolio, paid programs add real value."
+        },
+        {
+          "q": "What do you actually pay for in a paid course?",
+          "a": "Structure, mentors, feedback, accountability, and a clear path to a portfolio — not information itself."
+        },
+        {
+          "q": "When is paying worth it?",
+          "a": "When your goal is a career change or job-ready skills and you need the accountability to finish."
+        },
+        {
+          "q": "How do I avoid overpaying?",
+          "a": "Skip courses that just repackage free video; insist on live support and real projects."
+        }
+      ],
+      "cta": "Talk to ONROL about your path",
+      "regHeading": "Not sure which path fits you?",
+      "regSub": "Tell us your goal and background — our team will give you a straight recommendation, no pressure.",
+      "form": {
+        "source": "Compare - Free vs Paid AI Course",
+        "campaign": "compare-free-vs-paid-ai-course",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "Free vs Paid AI Course",
+          "url": "https://onrol.in/sites/free-vs-paid-ai-course/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "ai-generalist-vs-ai-specialist",
+      "title": "AI Generalist vs Specialist: Which Path Wins? | ONROL",
+      "description": "Should you learn AI broadly or go deep on one area? Both paths win in different situations. Here's an honest, brand-free guide to choosing.",
+      "eyebrow": "Decision Guide",
+      "h1": "AI generalist vs",
+      "h1accent": "specialist",
+      "lead": "Should you learn AI broadly or go deep on one area? Both paths win in different situations. Here's an honest, brand-free guide to choosing.",
+      "meta": [
+        {
+          "icon": "target",
+          "text": "Decision guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By category — no brand names"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Generalists adapt",
+          "text": "Broad AI skill fits many roles and a fast-changing field."
+        },
+        {
+          "title": "Specialists go deep",
+          "text": "Deep expertise commands premium value in its niche."
+        },
+        {
+          "title": "Start broad, then focus",
+          "text": "Most benefit from breadth first, depth later."
+        },
+        {
+          "title": "Domain focus is a specialty",
+          "text": "Specialising by industry is often the best of both."
+        }
+      ],
+      "learnHeading": "How to decide",
+      "learn": [
+        "start as a generalist to find your footing",
+        "go deep once you know where the value is",
+        "consider specialising by industry, not just technique",
+        "keep building across the field either way"
+      ],
+      "contextKicker": "The honest comparison",
+      "contextHeading": "AI Generalist vs Specialist",
+      "context": [
+        "The generalist-versus-specialist choice isn't permanent — it's usually a sequence. Generalists who understand the whole applied-AI toolkit (agents, RAG, automation, prompting) adapt well across roles and cope with a fast-changing field. That breadth is especially valuable early, when you don't yet know where you'll create the most value.",
+        "Specialists who go deep — on a technique like agent systems, or a domain like AI for healthcare — command premium value in their niche, because depth is scarce. The risk is specialising too early, before you know which depth is worth it, or in an area that shifts under you.",
+        "For most people the winning path is: start broad to find your footing and build range, then specialise once you can see where the value and your interest align. Increasingly, the strongest specialisation is by industry — AI for a specific field — which pairs depth with durable demand. ONROL's programs build broad applied ability first, with room to specialise as you grow."
+      ],
+      "faqs": [
+        {
+          "q": "Should I be an AI generalist or specialist?",
+          "a": "Usually start broad to build range, then specialise once you see where the value and your interest align."
+        },
+        {
+          "q": "Do specialists earn more?",
+          "a": "Deep expertise in a scarce niche often commands premium value — but specialising too early carries risk."
+        },
+        {
+          "q": "What's the safest specialisation?",
+          "a": "Often by industry — AI for a specific field — which pairs depth with durable demand."
+        },
+        {
+          "q": "Can I stay a generalist?",
+          "a": "Yes — broad applied skill adapts well across roles in a fast-changing field."
+        }
+      ],
+      "cta": "Talk to ONROL about your path",
+      "regHeading": "Not sure which path fits you?",
+      "regSub": "Tell us your goal and background — our team will give you a straight recommendation, no pressure.",
+      "form": {
+        "source": "Compare - AI Generalist vs Specialist",
+        "campaign": "compare-ai-generalist-vs-ai-specialist",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "AI Generalist vs Specialist",
+          "url": "https://onrol.in/sites/ai-generalist-vs-ai-specialist/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "coding-vs-no-code-ai-path",
+      "title": "Coding vs No-Code AI: Which Path Should You Take? | ONROL",
+      "description": "Do you need to code to build AI, or is no-code enough? Both are legitimate paths in 2026. Here's an honest, brand-free comparison to pick yours.",
+      "eyebrow": "Decision Guide",
+      "h1": "Coding vs no-code",
+      "h1accent": "for AI",
+      "lead": "Do you need to code to build AI, or is no-code enough? Both are legitimate paths in 2026. Here's an honest, brand-free comparison to pick yours.",
+      "meta": [
+        {
+          "icon": "target",
+          "text": "Decision guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By category — no brand names"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "No-code is genuinely capable",
+          "text": "You can build real AI systems without programming."
+        },
+        {
+          "title": "Code widens the ceiling",
+          "text": "Some scripting extends what's possible."
+        },
+        {
+          "title": "Start no-code, add code",
+          "text": "A common, low-friction progression."
+        },
+        {
+          "title": "Judgement matters most",
+          "text": "What to build and how to evaluate it beats syntax."
+        }
+      ],
+      "learnHeading": "How to decide",
+      "learn": [
+        "start no-code to build fast without barriers",
+        "add small amounts of code as needs arise",
+        "choose a code-first path only for deep engineering roles",
+        "prioritise judgement and evaluation over syntax"
+      ],
+      "contextKicker": "The honest comparison",
+      "contextHeading": "Coding vs No-Code AI",
+      "context": [
+        "The coding-versus-no-code question has a more forgiving answer than it used to. No-/low-code AI tools are genuinely capable in 2026 — you can build automations, agents and grounded assistants without writing traditional code, and produce a real portfolio doing so. For many roles and builders, that's enough.",
+        "Coding still raises the ceiling. A little scripting lets you customise, integrate and extend beyond what visual tools allow, and deep AI-engineering roles do expect it. The good news is that AI copilots make picking up small amounts of code dramatically easier than before, so 'adding code later' is a gentle on-ramp rather than a wall.",
+        "The pragmatic path for most: start no-code to build momentum without barriers, then add code as specific needs arise. Choose a code-first route from the start only if you're targeting deep engineering roles. In every case, the scarce skill is judgement — knowing what to build and how to evaluate it — not syntax. ONROL starts you building with no code and lets depth grow."
+      ],
+      "faqs": [
+        {
+          "q": "Can I build AI without coding?",
+          "a": "Yes — no-/low-code tools let you build automations, agents and assistants and produce a real portfolio."
+        },
+        {
+          "q": "When do I need to code?",
+          "a": "For deep customisation, integration and engineering roles. A little scripting, made easier by AI copilots, goes far."
+        },
+        {
+          "q": "What's the best path for a beginner?",
+          "a": "Start no-code to build momentum, then add small amounts of code as needs arise."
+        },
+        {
+          "q": "What matters more than coding?",
+          "a": "Judgement — knowing what to build and how to evaluate it — is the scarce, valuable skill."
+        }
+      ],
+      "cta": "Talk to ONROL about your path",
+      "regHeading": "Not sure which path fits you?",
+      "regSub": "Tell us your goal and background — our team will give you a straight recommendation, no pressure.",
+      "form": {
+        "source": "Compare - Coding vs No-Code AI",
+        "campaign": "compare-coding-vs-no-code-ai-path",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "Coding vs No-Code AI",
+          "url": "https://onrol.in/sites/coding-vs-no-code-ai-path/"
+        }
+      ]
+    },
+    {
+      "type": "jobready",
+      "slug": "certificate-vs-portfolio-ai",
+      "title": "AI Certificate vs Portfolio: What Do Employers Value? | ONROL",
+      "description": "Is an AI certificate enough, or do you need a portfolio? Here's an honest, brand-free look at what actually moves hiring decisions.",
+      "eyebrow": "Decision Guide",
+      "h1": "AI certificate vs",
+      "h1accent": "portfolio",
+      "lead": "Is an AI certificate enough, or do you need a portfolio? Here's an honest, brand-free look at what actually moves hiring decisions.",
+      "meta": [
+        {
+          "icon": "target",
+          "text": "Decision guide"
+        },
+        {
+          "icon": "clock",
+          "text": "Updated 2026"
+        },
+        {
+          "icon": "shield",
+          "text": "By category — no brand names"
+        }
+      ],
+      "outcomes": [
+        {
+          "title": "Portfolio proves ability",
+          "text": "Deployed projects show you can do the work."
+        },
+        {
+          "title": "Certificates signal effort",
+          "text": "They indicate you completed something, not that you can build."
+        },
+        {
+          "title": "Together they're strong",
+          "text": "A certificate backed by a portfolio is the ideal."
+        },
+        {
+          "title": "Beware empty certificates",
+          "text": "A certificate with no real work behind it means little."
+        }
+      ],
+      "learnHeading": "How to decide",
+      "learn": [
+        "prioritise building a real portfolio",
+        "treat certificates as a supplement, not the goal",
+        "choose courses whose certificate is portfolio-backed",
+        "be ready to explain every project you list"
+      ],
+      "contextKicker": "The honest comparison",
+      "contextHeading": "AI Certificate vs Portfolio",
+      "context": [
+        "Certificates and portfolios play different roles. A certificate signals that you completed a course — useful, but it says little about whether you can actually build. A portfolio of deployed AI systems proves capability directly, which is why it increasingly carries more weight in hiring for applied AI roles.",
+        "That doesn't make certificates worthless. They can help pass initial filters and show commitment, especially early in a career. The problem is certificates with nothing behind them — completion badges for passive courses that produced no real work. Those impress no one who knows the field.",
+        "The strongest position combines both: a certificate that is backed by real, explainable projects. Choose courses whose certificate reflects a portfolio you actually built, and be ready to talk through every project you list — that's where capability is judged. ONROL backs its certificate with deployed projects for exactly this reason."
+      ],
+      "faqs": [
+        {
+          "q": "Is an AI certificate enough to get hired?",
+          "a": "Often not on its own. A portfolio of real, deployed projects proves capability and increasingly matters more."
+        },
+        {
+          "q": "Do certificates have any value?",
+          "a": "Yes — they signal completion and commitment and can help pass early filters, especially for beginners."
+        },
+        {
+          "q": "What's the ideal combination?",
+          "a": "A certificate backed by a real, explainable portfolio — the strongest position for applied AI roles."
+        },
+        {
+          "q": "How are portfolios judged?",
+          "a": "On whether projects work, solve real problems, and whether you can explain your decisions."
+        }
+      ],
+      "cta": "Talk to ONROL about your path",
+      "regHeading": "Not sure which path fits you?",
+      "regSub": "Tell us your goal and background — our team will give you a straight recommendation, no pressure.",
+      "form": {
+        "source": "Compare - AI Certificate vs Portfolio",
+        "campaign": "compare-certificate-vs-portfolio-ai",
+        "program": "AI course (online, worldwide)"
+      },
+      "breadcrumb": [
+        {
+          "name": "AI Learning Guides",
+          "url": "https://onrol.in/blog"
+        },
+        {
+          "name": "AI Certificate vs Portfolio",
+          "url": "https://onrol.in/sites/certificate-vs-portfolio-ai/"
+        }
+      ]
     }
   ]
 }
