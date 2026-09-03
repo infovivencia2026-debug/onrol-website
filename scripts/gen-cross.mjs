@@ -37,7 +37,8 @@ function buildPage(city, course) {
   const slug = `${course.key}-course-in-${city.slug}`;
   const name = city.name;
   const [i0, i1, i2] = city.industries;
-  const [a0, a1, a2, a3] = city.areas;
+  const [a0, a1, a2, a3, a4] = city.areas;
+  const areaTail = a4 ? `${a3} and ${a4}` : a3; // use the real 5th neighbourhood where present
   const seed = hash(slug);
   const cname = course.label;
   const V = (salt, arr) => arr[hash(slug + "~" + salt) % arr.length]; // per-slot stable variant
@@ -48,6 +49,8 @@ function buildPage(city, course) {
     `Learn ${course.noun} live online from anywhere in ${name} — ${a0}, ${a1} or ${a2}. In ${city.anchor}, home to ${i0}, ${i1} and ${i2}, ONROL teaches you to ${applied} — and you keep the work as a portfolio.`,
     `${cap(cname)}, taught live online across ${name} — join from ${a0}, ${a1} or ${a2}. With the city built on ${i0}, ${i1} and ${i2}, ONROL has you ${applied}, and you walk away with the work as proof.`,
     `Study ${course.noun} online and live, wherever you are in ${name} — ${a0} through ${a2}. ${cap(city.anchor)} runs on ${i0}, ${i1} and ${i2}, and ONROL trains you to ${applied}, keeping every build as your portfolio.`,
+    `${cap(cname)} for ${name}, live online and reaching learners from ${a1}, ${a2} and ${areaTail}. As ${city.state}'s ${city.region} hub built on ${i0}, ${i1} and ${i2}, this is where ONROL trains you to ${applied} — portfolio included.`,
+    `Learn ${course.noun} online, live, without leaving ${name} — from ${a0} to ${areaTail}. With ${i0}, ${i1} and ${i2} anchoring the local economy, ONROL has you ${applied}, keeping every build as proof you can show.`,
   ]);
 
   const outcomes = [
@@ -82,7 +85,9 @@ function buildPage(city, course) {
     V("c0", [
       `${name}, ${city.state}'s ${city.tier === 1 ? "leading" : "fast-rising"} ${city.region} hub, is ${city.anchor}. Its economy runs on ${i0}, ${i1} and ${i2} — and ${city.demand}. Each of those is being reshaped by AI, which is why a ${cname} skill lands in ${name} rather than in the abstract.`,
       `As ${city.state}'s ${city.tier === 1 ? "leading" : "fast-rising"} ${city.region} hub, ${name} is ${city.anchor}. Work here turns on ${i0}, ${i1} and ${i2}, and ${city.demand} AI is reworking all three — so ${cname} pays off concretely in ${name}, not in theory.`,
-      `${name} — ${city.anchor}, and ${city.state}'s ${city.tier === 1 ? "leading" : "fast-rising"} ${city.region} centre — lives on ${i0}, ${i1} and ${i2}. ${cap(city.demand)} With AI reshaping each, a ${cname} skill has somewhere real to land in ${name}.`]),
+      `${name} — ${city.anchor}, and ${city.state}'s ${city.tier === 1 ? "leading" : "fast-rising"} ${city.region} centre — lives on ${i0}, ${i1} and ${i2}. ${cap(city.demand)} With AI reshaping each, a ${cname} skill has somewhere real to land in ${name}.`,
+      `Across ${name} — from ${a0} and ${a1} out to ${areaTail} — the economy leans on ${i0}, ${i1} and ${i2}, and ${city.demand} As ${city.state}'s ${city.region} centre feels AI move through each of those, ${cname} becomes a concrete edge here, not a buzzword.`,
+      `In ${name}, a ${city.region} hub in ${city.state}, work clusters around ${i0}, ${i1} and ${i2} — and ${city.demand} Those are exactly the areas AI is reshaping, so learners from ${a1}, ${a2} and ${areaTail} find ${cname} pays off on real local work.`]),
     V("c1", [
       `That is why ONROL teaches ${course.noun} — ${distinct} — against ${name}'s real work, helping you ${applied} for ${i0} and ${i1} the way local teams already operate. You use AI to move faster, and you learn the judgement, not just the tool. This is ${cname}, not a generic AI overview.`,
       `So ONROL's ${course.noun} is ${distinct}, taught against ${name}'s actual work: you ${applied} for ${i0} and ${i1} the way teams here do. You get speed from AI and the judgement to use it — ${cname}, not a generic overview.`,

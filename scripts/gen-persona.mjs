@@ -64,6 +64,7 @@ function buildPage(persona, city) {
   const name = city.name;
   const [i0, i1, i2] = city.industries;
   const [a0, a1, a2, a3, a4] = city.areas;
+  const areaTail = a4 ? `${a3} and ${a4}` : a3;
   const L = persona.label;
   const T = persona.Title;
   const V = (salt, arr) => arr[hashN(slug + "~" + salt) % arr.length]; // stable per page
@@ -74,6 +75,8 @@ function buildPage(persona, city) {
     `An AI course built for ${L} in ${name} — live online from ${a0}, ${a1} or ${a2}. In ${city.anchor}, where ${persona.sector} sit alongside ${i0}, ${i1} and ${i2}, ONROL helps ${L} ${persona.angle}, with a portfolio to show for it.`,
     `Built for ${L} across ${name} and taught live online — join from ${a0}, ${a1} or ${a2}. With the city running on ${i0}, ${i1} and ${i2} beside ${persona.sector}, ONROL turns ${L} into people who ${persona.angle}, and proves it with real work.`,
     `${cap(T)} in ${name} don't need more theory — they need to build. Streaming live to ${a0}, ${a1} and ${a2}, ONROL helps ${L} ${persona.angle} against a local economy of ${i0}, ${i1} and ${i2}, finishing with a portfolio rather than notes.`,
+    `For ${L} anywhere in ${name} — ${a1}, ${a2} or ${areaTail} — this is a live online AI course that fits your role. In ${city.state}'s ${city.region} hub, where ${persona.sector} work beside ${i0}, ${i1} and ${i2}, ONROL helps you ${persona.angle}, with real projects to show.`,
+    `A live online AI course for ${L} across ${name}, reaching ${a0}, ${a2} and ${areaTail}. With ${persona.sector} set among ${i0}, ${i1} and ${i2}, ONROL turns ${L} into people who ${persona.angle} — and can prove it.`,
   ]);
 
   const outcomes = [
@@ -113,7 +116,9 @@ function buildPage(persona, city) {
     V("c0", [
       `For ${L} in ${name}, AI has stopped being optional. ${cap(pns)}, and in a city that runs on ${i0}, ${i1}, ${i2} and ${persona.sector}, the people who can put AI to work are pulling ahead. ${cap(city.demand)}.`,
       `AI is no longer a nice-to-have for ${L} in ${name}. ${cap(pns)} — and where the economy turns on ${i0}, ${i1}, ${i2} and ${persona.sector}, those who can actually apply AI move first. ${cap(city.demand)}.`,
-      `In ${name}, ${L} are feeling the shift: ${pns}. With ${i0}, ${i1}, ${i2} and ${persona.sector} all around, AI fluency is becoming the divide. ${cap(city.demand)}.`]),
+      `In ${name}, ${L} are feeling the shift: ${pns}. With ${i0}, ${i1}, ${i2} and ${persona.sector} all around, AI fluency is becoming the divide. ${cap(city.demand)}.`,
+      `Across ${name} — ${a0}, ${a2} and out to ${areaTail} — ${L} face the same reality: ${pns}. In ${city.state}'s ${city.region} hub, with ${i0}, ${i1} and ${i2} beside ${persona.sector}, applying AI is what sets people apart. ${cap(city.demand)}.`,
+      `${cap(pns)}. That hits ${L} in ${name} directly — a ${city.region} centre running on ${i0}, ${i1}, ${i2} and ${persona.sector}, where the ones who can put AI to work are pulling ahead. ${cap(city.demand)}.`]),
     V("c1", [
       `That is why ONROL's course for ${L} is built around doing, not watching. You learn to ${uc} — against real scenarios from ${name}'s economy — and finish with ${bld}. It is applied AI for your role, not a generic overview.`,
       `So ONROL's course for ${L} is hands-on from day one. You ${uc} on cases from ${name}'s own economy and end with ${bld} — role-specific, not a one-size-fits-all overview.`,
