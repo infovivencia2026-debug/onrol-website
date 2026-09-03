@@ -48,6 +48,39 @@ const ICONS = {
 const icon = (name, cls = "") => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name] || ICONS.spark}</svg>`;
 const OUTCOME_ICONS = ["target", "bolt", "screen", "chat"];
 
+/* ---- per-page deterministic variation (anti-duplicate; item 04 of the SEO brief) ----
+   A stable hash of the slug drives which phrasing variant + ordering each page gets, so
+   two same-template pages differ in structure & wording, while ONE page stays identical
+   across crawls. This is what keeps 5-word-shingle overlap below the near-duplicate wall. */
+function hashN(s) { let h = 5381; for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0; return Math.abs(h); }
+const vpick = (slug, salt, arr) => arr[hashN(slug + "|" + salt) % arr.length];
+function shuffle(slug, salt, arr) {
+  const a = arr.slice(); let seed = hashN(slug + "#" + salt);
+  for (let i = a.length - 1; i > 0; i--) { seed = (seed * 1103515245 + 12345) & 0x7fffffff; const j = seed % (i + 1); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+}
+// Variant pools for the site-wide boilerplate (the biggest shared-text offender).
+const V_METHOD = [
+  { k: "The ONROL method", h: "Build the evidence. Keep the proof.", p: "ONROL is an execution school, not a lecture hall. Every session you ship something real — an automation, an agent, an app — and you keep it. You don't leave with a certificate alone; you leave with a portfolio of working AI products that proves what you can do." },
+  { k: "How ONROL works", h: "Learn by shipping, not by watching.", p: "This isn't a lecture series. Each session ends with a working thing you built — a bot, a workflow, an app — and it's yours to keep. What you walk away with is a body of real AI work, not a certificate that sits in a drawer." },
+  { k: "Why it sticks", h: "Proof beats theory, every time.", p: "Skills you only hear about fade in a week. Skills you build stay. At ONROL you spend the time making real AI systems that run, so your evidence of ability is the work itself — a portfolio an employer or client can actually open." },
+  { k: "The build-first idea", h: "You'll have receipts, not just notes.", p: "Most courses hand you slides; ONROL hands you a track record. You ship real AI — automations, agents, apps — throughout, and keep every piece. The result is demonstrable capability: things you made that work, not a list of topics you sat through." },
+];
+const V_OUT_H2 = ["Real skills, real projects — not another slide deck.", "What you'll actually be able to do.", "Skills you build, not just hear about.", "The concrete outcomes, not vague promises."];
+const V_FAQ_KICK = ["Questions", "Good to know", "Common questions", "Before you ask"];
+const V_FAQ_H2 = ["Straight answers.", "No fluff, just answers.", "The honest answers.", "Answers, plainly."];
+const V_REL_KICK = ["Explore more", "Keep going", "Related on ONROL", "More to explore"];
+const V_REL_H2 = ["Keep exploring ONROL.", "More ways in.", "Where to go next.", "Explore the rest of ONROL."];
+const V_PROG_KICK = ["Recommended programs", "Where to take this", "Your next step", "Programs to consider"];
+const V_PROG_H2 = ["Where to take this at ONROL.", "Ready to go deeper?", "Turn this into a program.", "Take the next step with ONROL."];
+const V_REG_H = ["Ready when you are. Register in 20 seconds.", "Take the first step — it takes 20 seconds.", "Start here. One short form.", "Your seat's a form away."];
+const V_REG_SUB = [
+  "Drop your details and our team confirms the next live cohort and answers anything about the program, timing and outcomes.",
+  "Leave your details — we'll share the next cohort dates and answer anything on timing, format and what you'll build.",
+  "Tell us a little about you and we'll follow up with the upcoming batch, the schedule, and how the program works.",
+  "Share your details and our team reaches out with the next cohort, the timings, and answers to your questions.",
+];
+
 /* ------------------------------- schema -------------------------------- */
 function breadcrumbSchema(page) {
   const bc = page.breadcrumb || [];
@@ -267,7 +300,7 @@ function relatedLinks(page, all) {
     group("AI guides &amp; online courses", pick(FEATURED.guides)),
     group("Career &amp; programs", pick(FEATURED.jobready).concat({ slug: "programs", url: "/programs", breadcrumb: [{ name: "All ONROL programs" }] }, { slug: "best-ai-course-in-india", url: "/best-ai-course-in-india", breadcrumb: [{ name: "Best AI course in India" }] })),
   ].filter(Boolean).join("");
-  return `<section class="sx-sec sx-related"><p class="sx-kick">Explore more</p><h2 class="sx-h2">Keep exploring ONROL.</h2><div class="sx-rel">${cols}</div></section>`;
+  return `<section class="sx-sec sx-related"><p class="sx-kick">${esc(vpick(page.slug, "relk", V_REL_KICK))}</p><h2 class="sx-h2">${esc(vpick(page.slug, "relh", V_REL_H2))}</h2><div class="sx-rel">${cols}</div></section>`;
 }
 
 /* Recommended-programs block: real links to the actual program pages so every
@@ -279,9 +312,10 @@ const FLAGSHIP = [
   { name: "AI Career Accelerator", url: "/programs/aica", why: "A 21-day career-focused entry — practical AI skills, real projects and job readiness." },
 ];
 function programsSection(page) {
-  const progs = (page.programs && page.programs.length) ? page.programs : FLAGSHIP;
+  const base = (page.programs && page.programs.length) ? page.programs : FLAGSHIP;
+  const progs = shuffle(page.slug, "prog", base);
   const cards = progs.map((p) => `<a class="sx-pcard" href="${p.url}"><h3>${esc(p.name)}</h3><p>${esc(p.why)}</p><span class="sx-pgo">Explore program ${"→"}</span></a>`).join("");
-  return `<section class="sx-sec sx-progs"><p class="sx-kick">Recommended programs</p><h2 class="sx-h2">Where to take this at ONROL.</h2><div class="sx-pgrid">${cards}</div><p class="sx-pall"><a href="/programs">See all ONROL programs &rarr;</a></p></section>`;
+  return `<section class="sx-sec sx-progs"><p class="sx-kick">${esc(vpick(page.slug, "progk", V_PROG_KICK))}</p><h2 class="sx-h2">${esc(vpick(page.slug, "progh", V_PROG_H2))}</h2><div class="sx-pgrid">${cards}</div><p class="sx-pall"><a href="/programs">See all ONROL programs &rarr;</a></p></section>`;
 }
 
 /* --------------------------- page renderer ----------------------------- */
@@ -289,13 +323,15 @@ function render(page, all) {
   const url = canon(page.slug);
   const OG = `${ORIGIN}/og/${page.type === "geo" ? "default" : "programs"}.png`;
   const meta = (page.meta || []).map((m) => `<span class="sx-chip">${icon(m.icon)}${esc(m.text)}</span>`).join("");
-  const outcomes = (page.outcomes || []).map((o, i) => `<article class="sx-card"><span class="ic">${icon(OUTCOME_ICONS[i % 4])}</span><h3>${esc(o.title)}</h3><p>${esc(o.text)}</p></article>`).join("");
-  const learn = (page.learn || []).map((l) => `<li>${icon("check")}<span>${esc(l)}</span></li>`).join("");
+  // Per-page ordering variation (stable per slug) so same-template pages differ in sequence.
+  const outcomes = shuffle(page.slug, "out", page.outcomes || []).map((o, i) => `<article class="sx-card"><span class="ic">${icon(OUTCOME_ICONS[i % 4])}</span><h3>${esc(o.title)}</h3><p>${esc(o.text)}</p></article>`).join("");
+  const learn = shuffle(page.slug, "learn", page.learn || []).map((l) => `<li>${icon("check")}<span>${esc(l)}</span></li>`).join("");
   const context = (page.context && page.context.length)
     ? `<section class="sx-sec"><p class="sx-kick">${esc(page.contextKicker || "Local context")}</p><h2 class="sx-h2">${esc(page.contextHeading)}</h2><div class="sx-prose">${page.context.map((p) => `<p>${esc(p)}</p>`).join("")}</div></section>`
     : "";
-  const faqs = (page.faqs || []).map((f) => `<details><summary>${esc(f.q)}</summary><div class="a">${esc(f.a)}</div></details>`).join("");
+  const faqs = shuffle(page.slug, "faq", page.faqs || []).map((f) => `<details><summary>${esc(f.q)}</summary><div class="a">${esc(f.a)}</div></details>`).join("");
   const honest = page.honest ? `<div class="sx-honest"><b>The honest answer</b><p>${esc(page.honest)}</p></div>` : "";
+  const M = vpick(page.slug, "method", V_METHOD);
 
   const body = `<body class="sx">
 ${NAV}
@@ -308,29 +344,29 @@ ${NAV}
 <main>
   <section class="sx-sec">
     <p class="sx-kick">${esc(page.learnHeading || "What you'll walk away with")}</p>
-    <h2 class="sx-h2">Real skills, real projects — not another slide deck.</h2>
+    <h2 class="sx-h2">${esc(vpick(page.slug, "outh2", V_OUT_H2))}</h2>
     <div class="sx-grid">${outcomes}</div>
     ${learn ? `<ul class="sx-list">${learn}</ul>` : ""}
     ${honest}
   </section>
   ${context}
   <section class="sx-method"><div class="in">
-    <p class="k">The ONROL method</p>
-    <h2>Build the evidence. Keep the proof.</h2>
-    <p>ONROL is an execution school, not a lecture hall. Every session you ship something real — an automation, an agent, an app — and you keep it. You don't leave with a certificate alone; you leave with a portfolio of working AI products that proves what you can do.</p>
+    <p class="k">${esc(M.k)}</p>
+    <h2>${esc(M.h)}</h2>
+    <p>${esc(M.p)}</p>
   </div></section>
   ${programsSection(page)}
   <section class="sx-sec">
-    <p class="sx-kick">Questions</p>
-    <h2 class="sx-h2">Straight answers.</h2>
+    <p class="sx-kick">${esc(vpick(page.slug, "faqk", V_FAQ_KICK))}</p>
+    <h2 class="sx-h2">${esc(vpick(page.slug, "faqh", V_FAQ_H2))}</h2>
     <div class="sx-faq">${faqs}</div>
   </section>
   ${relatedLinks(page, all)}
   <section class="sx-reg" id="sx-register"><div class="in">
     <div>
       <p class="k">${esc(page.cta)}</p>
-      <h2>${esc(page.regHeading || "Ready when you are. Register in 20 seconds.")}</h2>
-      <p class="rp">${esc(page.regSub || "Drop your details and our team confirms the next live cohort and answers anything about the program, timing and outcomes.")}</p>
+      <h2>${esc(page.regHeading || vpick(page.slug, "regh", V_REG_H))}</h2>
+      <p class="rp">${esc(page.regSub || vpick(page.slug, "regsub", V_REG_SUB))}</p>
       <p style="margin-top:22px"><a class="sx-back" href="/programs">&larr; See all ONROL programs</a></p>
     </div>
     <div class="sx-panel">
