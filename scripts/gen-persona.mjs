@@ -101,10 +101,10 @@ function buildPage(persona, city) {
 
   const learnHeading = V("lh", [`What ${T} in ${name} build`, `What you'll build in ${name}`, `${cap(T)} in ${name} walk away with`]);
   const learn = [
-    persona.build,
-    `AI workflows applied to ${persona.sector} in ${name}`,
-    `a portfolio piece that proves you can build with AI, not just talk about it`,
-    `the judgement to use AI well — where it helps and where it does not`,
+    bld,
+    V("l1", [`AI workflows applied to ${persona.sector} in ${name}`, `AI put to work across ${persona.sector} in ${name}`, `AI built into ${persona.sector} the way ${name} runs them`]),
+    V("l2", ["a portfolio piece that proves you can build with AI, not just talk about it", "a portfolio project that shows you build with AI, not just discuss it", "real, showable work that proves you build with AI rather than describe it"]),
+    V("l3", ["the judgement to use AI well — where it helps and where it does not", "the judgement for when AI helps and when it does not", "a working sense of where AI adds value and where it falls short"]),
   ];
 
   const contextKicker = V("ck", [`Why ${T} in ${name} need AI`, `The case for AI, ${name}`, `Why this matters in ${name}`]);
@@ -126,13 +126,25 @@ function buildPage(persona, city) {
 
   const faqs = [
     { q: V("q0", [`Is this AI course for ${L} in ${name} online or offline?`, `Do ${L} in ${name} attend in person or online?`, `Is the ${name} course online?`]),
-      a: `100% live online. ${T} from ${a0}, ${a1}, ${a2} and ${a3} join the same interactive cohort — no travel or career break needed.` },
+      a: V("a0", [
+        `100% live online. ${T} from ${a0}, ${a1}, ${a2} and ${a3} join the same interactive cohort — no travel or career break needed.`,
+        `It's fully live online — ${T} across ${a0}, ${a1}, ${a2} and ${a3} share one interactive cohort, with no commute or break from work.`,
+        `Entirely online and live. Whether you're in ${a0}, ${a1}, ${a2} or ${a3}, it's the same hands-on cohort — no travel, no career gap.`]) },
     { q: V("q1", [`Do ${L} need a coding background for this course?`, `Is coding required for ${L} to join?`, `Can non-coders take this?`]),
-      a: `No. It is built for ${L}, not developers — you learn to build with AI using no-/low-code tools and AI copilots, with any technical steps taught step by step.` },
+      a: V("a1", [
+        `No. It is built for ${L}, not developers — you learn to build with AI using no-/low-code tools and AI copilots, with any technical steps taught step by step.`,
+        `Not at all. Designed for ${L} rather than developers, it has you build with no-/low-code tools and AI copilots, teaching any technical bits as they come up.`,
+        `No coding needed. It's made for ${L}, so you build using no-/low-code tools and AI copilots, and pick up the technical parts step by step.`]) },
     { q: V("q2", ["How is this different from a generic AI course?", "Why not just take a general AI course?", "What makes this role-specific?"]),
-      a: `It is applied to your role and your city: you ${uc}, on scenarios from ${name}'s ${persona.sector}, and finish with ${bld}.` },
+      a: V("a2", [
+        `It is applied to your role and your city: you ${uc}, on scenarios from ${name}'s ${persona.sector}, and finish with ${bld}.`,
+        `It's built around your role and ${name}: you ${uc}, working on ${persona.sector} scenarios, and leave with ${bld}.`,
+        `Because it's specific to your role in ${name} — you ${uc}, against ${persona.sector} cases, ending with ${bld}.`]) },
     { q: V("q3", ["Will I have something to show at the end?", "What do I walk away with?", "Is there a portfolio outcome?"]),
-      a: `Yes — ${bld}. A portfolio you can show any ${name} employer, not just a certificate.` },
+      a: V("a3", [
+        `Yes — ${bld}. A portfolio you can show any ${name} employer, not just a certificate.`,
+        `You do — ${bld}. That's real, showable proof for a ${name} employer, well beyond a certificate.`,
+        `Yes: ${bld}. Something a ${name} employer can actually open and trust, not just a certificate.`]) },
   ];
 
   return {

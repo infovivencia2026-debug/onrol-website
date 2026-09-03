@@ -95,13 +95,25 @@ function buildPage(city, course) {
 
   const faqs = [
     { q: V("q0", [`Is the ${cname} course in ${name} offline or online?`, `Do I attend the ${name} course in person or online?`, `Is ${cname} in ${name} taught online?`]),
-      a: `100% live online. Learners from ${a0}, ${a1}, ${a2} and ${a3} join the same interactive, hands-on cohort — no travel or relocation needed.` },
+      a: V("a0", [
+        `100% live online. Learners from ${a0}, ${a1}, ${a2} and ${a3} join the same interactive, hands-on cohort — no travel or relocation needed.`,
+        `Fully live online — people from ${a0}, ${a1}, ${a2} and ${a3} share one hands-on cohort, with no commute or relocation.`,
+        `It's entirely online and live. Whether you're in ${a0}, ${a1}, ${a2} or ${a3}, it's the same interactive cohort — no travel required.`]) },
     { q: V("q1", [`Do I need a coding background for this ${cname} course?`, `Is coding required for ${cname} in ${name}?`, `Can I take ${cname} without coding?`]),
-      a: `No. You start from the fundamentals and use AI copilots as you build; any technical steps are taught step by step.` },
+      a: V("a1", [
+        `No. You start from the fundamentals and use AI copilots as you build; any technical steps are taught step by step.`,
+        `Not at all — you begin at the fundamentals and lean on AI copilots while building, with technical bits taught as they arise.`,
+        `No coding background needed. You start from basics, build with AI copilots, and pick up any technical steps along the way.`]) },
     { q: V("q2", [`Which ${name} roles does ${cname} help with?`, `What jobs in ${name} does ${cname} suit?`, `Who in ${name} is ${cname} for?`]),
-      a: `${cap(course.roles)} across ${i0} and ${i1} — the sectors that define ${name}'s job market.` },
+      a: V("a2", [
+        `${cap(course.roles)} across ${i0} and ${i1} — the sectors that define ${name}'s job market.`,
+        `It suits ${course.roles} in ${i0} and ${i1}, the sectors that anchor ${name}'s job market.`,
+        `Mostly ${course.roles} working in ${i0} and ${i1} — the industries that shape hiring in ${name}.`]) },
     { q: V("q3", ["Will I have a portfolio at the end?", "Do I finish with something to show?", "Is there a portfolio outcome?"]),
-      a: `Yes. You publish ${course.build[3]} on a ${name}-relevant scenario — shareable proof for any ${name} employer, not just a certificate.` },
+      a: V("a3", [
+        `Yes. You publish ${course.build[3]} on a ${name}-relevant scenario — shareable proof for any ${name} employer, not just a certificate.`,
+        `You do — ${course.build[3]}, built on a ${name} scenario. Shareable proof for a ${name} employer, not just a certificate.`,
+        `Yes: ${course.build[3]} on a real ${name} scenario — something a ${name} employer can open and trust, beyond a certificate.`]) },
   ];
 
   return {
